@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Implements hook_field_group_build_pre_render_alter().
+ *
+ * @see field_group.api.php
+ */
+function sof_general_tweaks_field_group_build_pre_render_alter(& $element) {
+
+    //Add states for fieldgroups in publication content type
+    if($element['#form_id'] == 'publication_node_form'){
+        
+           
+        $element['group_upload']['#states'] = array(
+            'visible' => array(
+              'select[name="field_publication_file_type[' . LANGUAGE_NONE . ']"]' => array('value' => '1'),
+            ),
+            'expanded' => array(
+              'select[name="field_publication_file_type[' . LANGUAGE_NONE . ']"]' => array('value' => '1'),
+            ),
+        );
+        
+        $element['group_generate_from_content']['#states'] = array(
+            'visible' => array(
+              'select[name="field_publication_file_type[' . LANGUAGE_NONE . ']"]' => array('value' => '2'),
+            ),
+            'expanded' => array(
+              'select[name="field_publication_file_type[' . LANGUAGE_NONE . ']"]' => array('value' => '2'),
+            ),
+        );
+        
+               
+    }
+
+}
