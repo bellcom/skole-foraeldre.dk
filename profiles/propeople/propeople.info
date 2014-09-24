@@ -38,6 +38,7 @@ dependencies[] = devel
 dependencies[] = features              
 dependencies[] = fe_block
 dependencies[] = entityreference
+dependencies[] = field_group
 dependencies[] = references_dialog
 dependencies[] = file_entity
 dependencies[] = media
@@ -45,9 +46,11 @@ dependencies[] = mediafield
 dependencies[] = diff
 dependencies[] = libraries
 dependencies[] = entity
+dependencies[] = entity_view_mode
 dependencies[] = libraries
 dependencies[] = pathauto
 dependencies[] = redirect
+dependencies[] = scheduler
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = panelizer
@@ -62,6 +65,7 @@ dependencies[] = metatag_opengraph
 dependencies[] = metatag_panels
 dependencies[] = views
 dependencies[] = views_ui
+
 
 ;Contrib language modules
 dependencies[] = i18n
@@ -78,8 +82,12 @@ dependencies[] = i18n_variable
 dependencies[] = i18n_node
 dependencies[] = i18nviews
 
-; Custom
+;Custom
+dependencies[] = sof_general_tweaks
+dependencies[] = sof_pdf_generator
 
-; Features
+;Features
+dependencies[] = sof_field_bases
+dependencies[] = sof_publication
 
 

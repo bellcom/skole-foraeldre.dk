@@ -1,0 +1,12 @@
+name = SOF pdf generator
+description = Generate pdf files with custom pront page from random selected nodes using wkhtmltopdf library. Used for publication content type.
+core = 7.x
+package = "SOF custom"
+
+;Dependencies
+dependencies[] = print   
+dependencies[] = print_pdf
+dependencies[] = print_pdf_wkhtmltopdf
+
+;Files
+files[] = sof_pdf_generator.module

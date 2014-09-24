@@ -1,0 +1,10 @@
+.sof-pdf-cover { 
+    height: 297mm;
+    display:table;
+    font-size:40px;
+    background-color: #b8e9f4;
+}
+.sof-pdf-cover .field-name-field-pdf-title{ 
+    display:table-cell;
+    vertical-align:middle;
+}

@@ -1,0 +1,120 @@
+<?php
+/**
+ * Implements hook_permission().
+ */
+function sof_pdf_generator_permission() {
+  return array(
+    'sof generate publication pdf' => array(
+      'title' => t('SOF generate publication pdf '),
+      'description' => t('Allow generating pdf from preselected nodes'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+
+function sof_pdf_generator_menu() {
+ 
+  $items = array();
+
+  // Download link.
+  $items['sof-pdf-generate/%'] = array(
+    'title' => 'Default Contact Block',
+    'description' => 'Administer Default Contact Block',
+    'access arguments' => array('sof generate publication pdf'),
+    'page callback' => 'sof_generate_pdf_from_nodes',
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * SOF pdf generator callback
+ * 
+ * @param $nid integer
+ *  node id from wich content the pdf will be generated
+ * 
+ */
+ function sof_generate_pdf_from_nodes( $nid ){
+     
+     if(!isset($nid))
+        return;
+     
+     if( $node_obj = node_load($nid) ){
+         
+         if($node_obj->type == 'publication'){
+             
+             //Add Template css
+                drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
+             
+             //Get node rendering array
+                $node_view = node_view($node_obj, 'sof_publication_view');
+             
+             
+             //Create template variables
+                $sof_print_vars['css'] = drupal_get_css();
+                $sof_print_vars['nodeobj'] = $node_obj; //Full node obj just in case
+                $sof_print_vars['title'] = $node_view['field_pdf_title'];
+                $sof_print_vars['content'] = $node_view['field_pdf_content'];
+                
+             
+             //Get html returned by the template file
+              $html_render = theme('sof_pdf_generator', $sof_print_vars);
+                         
+             
+             //DEBUG CONTENT
+              $html = drupal_render(node_view($node_obj, 'sof_publication_view'));
+              $meta = array(
+                'url' => 'http://example.com', 
+                'name' => 'John Smith', 
+                'title' => 'Testing Pdf Generate', 
+                'node' => $node_obj, 
+               );
+              $filename = 'test_pdf.pdf';
+              $paper_size = NULL;
+              $page_orientation = NULL;
+             //DEBUG CONTENT
+             
+             
+             $pdf_tool = explode('|', variable_get('print_pdf_pdf_tool', PRINT_PDF_PDF_TOOL_DEFAULT));
+
+             module_load_include('inc', $pdf_tool[0], $pdf_tool[0] . '.pages');
+            
+             $function = $pdf_tool[0] . '_print_pdf_generate';
+             if (function_exists($function)) {
+               $pdf = $function($html_render, $meta, $paper_size, $page_orientation);
+             }
+             
+             if ($filename) {
+               return print_pdf_dispose_content($pdf, $filename);
+             }
+            
+             return $pdf;
+         }
+
+         //print $html_render;
+     }
+     
+     
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sof_pdf_generator_theme($existing, $type, $theme, $path) {
+  return array(
+    'sof_pdf_generator' => array(
+      'variables' => array(
+        'css'     => NULL,
+        'nodeobj' => NULL,
+        'title'   => NULL,
+        'content' => NULL,
+      ),
+      'template' => 'theme/sof_pdf_generator',
+    ),
+  );
+}
