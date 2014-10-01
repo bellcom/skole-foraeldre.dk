@@ -17,7 +17,6 @@ body {
  *   MENU CONTAINERS
  * ========================================================================== */
 #header{
-	max-width:728px;
 	margin:0 auto;
 	float:none;
 }
@@ -28,7 +27,7 @@ body {
 .header-navigation-container.active{
 	background: none repeat scroll 0 0 #fff;
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 0;
     z-index: 100;
 }
@@ -43,6 +42,7 @@ body {
 .top-navigation-second{
 	display:block;
 	float:left;
+	margin-top:40px;
 }
 #nav-activation-link{
 	display:block;
@@ -78,13 +78,13 @@ body {
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
-#block-system-main-menu ul li, #block-system-main-menu ul li.last{
+#block-system-main-menu ul li, #block-system-main-menu ul li.last .menu-depth-1{
 	float:none;
 	display:block;
 	padding-left:25px;
-	background-image:url('images/nav-drop-dow-arrow.png');
-	background-position:left 27px;
-	background-repeat:no-repeat;
+	background-image:url('images/nav-drop-dow-arrow.png')!important;
+	background-position:left 27px!important;
+	background-repeat:no-repeat!important;
 }
 #block-system-main-menu ul li a{
 	color:#000;
@@ -107,4 +107,11 @@ body {
   	text-decoration: none;
   	text-transform: uppercase;
 }
-	
+
+/* =============================================================================
+ *   Footer
+ * ========================================================================== */
+#footer .region-footer{
+	padding-right:30px;
+	padding-left:30px;
+}

@@ -92,3 +92,17 @@ function adaptivetheme_subtheme_preprocess_block(&$vars) {
 function adaptivetheme_subtheme_process_block(&$vars) {
 }
 // */
+
+
+ /**
+ * Preprocess variables for the html template.
+ */
+ 
+ // Add body class when page is not found  or access id denided
+ function sof_theme_preprocess_html(&$vars) {
+	$status = drupal_get_http_header("status");
+	if(($status == '404 Not Found') || ($status == '403 Forbidden')){
+		$vars['classes_array'][] = 'page-404';
+	}
+ }
+ 

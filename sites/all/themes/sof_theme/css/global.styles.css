@@ -103,6 +103,8 @@ html, body {
     color: black;
     font-size: 14px;
     line-height: 20px;
+    position:relative;
+    height:100%;
 }
 
 
@@ -187,10 +189,13 @@ var {
  *
  * The .container class holds the page width value from theme settings.
  */
-#page-wrapper {}
+#page-wrapper {
+	height:100%;
+}
 #page {
 	margin-top:30px;
 	position:relative;
+	height:100%;
 }
 #page .container {}
 
@@ -198,17 +203,28 @@ var {
  * Wraps all header elements - branding and .region-header
  */
 #header {
-	float:left;
-	margin:0;
+	margin:0 auto;
 	width:100%;
 	max-width:1170px;
 	position:relative;
+	padding-bottom:30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
 }
 
 /*
  * Wraps the sidebars the content column
  */
-#columns {}
+#columns {
+	padding-bottom:-330px;
+	height:100%;
+	max-width:1170px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
 
 /*
  * Main content column wrapper
@@ -219,7 +235,12 @@ var {
  * Wraps the main-content-header, the content region and feed-icons. Use this
  * wrapper to style the entire main content column
  */
-#main-content {}
+#main-content {
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	position:relative;
+}
 
 /*
  * Wraps the content region, avoid applying styles to this wrapper, its used
@@ -230,8 +251,31 @@ var {
 /*
  * Footer wrapper
  */
-#footer {}
-
+#footer {
+	width:100%;
+    background-color: #00a2eb;
+    position: relative;
+    margin-top: -330px; /* negative value of footer height */
+    clear:both;
+    padding:40px 0 60px 0;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
+/*
+ * Footer region
+ */
+.region-footer {
+	max-width:1170px;
+	margin:0 auto;
+	color: black;
+    font-family: "conduit_itclight",sans-serif;
+    font-size: 19px;
+    padding:0 30px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
 /*
  * Panels may need additional margin wrangling when in the $content region
  */
@@ -315,6 +359,7 @@ var {
  */
 #branding {
 	float:left;
+	margin:0;
 }
 
 /*
@@ -523,10 +568,7 @@ ul.links li {
  */
 .region-tertiary-content {}
 
-/*
- * Footer region
- */
-.region-footer {}
+
 
 
 /* =============================================================================
@@ -645,7 +687,7 @@ a:focus {
     text-decoration: none;
     vertical-align: top;	
 }
-#block-system-main-menu ul li.last{
+#block-system-main-menu ul li.last.menu-depth-1{
 	padding-right:35px;
 	background-image:url('images/search.png');
   	background-repeat:no-repeat;
@@ -1345,10 +1387,6 @@ ul.action-links li {}
  */
 #block-aggregator-feed-1 {}
 
-/*
- * First block created with "Add block" link
- */
-#block-block-1 {}
 
 /*
  * "Recent blog posts" block
@@ -1468,9 +1506,30 @@ ul.action-links li {}
 /*
  * "Who's online" block for a list of the online users
  */
-#block-user-online {}
-
-
+#footer .block{
+	float:left;
+	margin:0;
+	padding:0;
+	width:70%;
+}
+#footer .region-inner .block:first-child{
+	width:70%;
+}
+#footer .region-inner .block:nth-child(2){
+	width:30%;
+	line-height:24px;
+}
+#footer .region-inner .block:nth-child(2) h2{
+	font-size: 24px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+#footer .region-inner .block:nth-child(2) .block-inner{
+	float:right;
+}
+#footer .region-inner .block:nth-child(2) a{
+	color:#000;
+}
 /* =============================================================================
  *   Node Styling
  * ========================================================================== */
@@ -1952,3 +2011,33 @@ tr.error {}
   min-height: 260px;
   width: auto;
 }
+
+
+/* =============================================================================
+ *   404, 403 Pages Styling
+ * ========================================================================== */
+body.page-404 #page-title{
+	display:none;
+}
+body.page-404 #content{
+	font-size:35px;
+	text-align:center;
+	padding:50px 30px;
+}
+body.page-404 #content .action-links{
+	margin-bottom:40px;
+}
+
+
+/* =============================================================================
+ *   Media Queries
+ * ========================================================================== */
+@media all and (max-width: 1170px){
+	#columns{
+		padding:0 30px;
+	}
+	#header{
+		padding:0 30px 30px 30px;
+	}
+}
+
