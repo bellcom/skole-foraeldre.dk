@@ -22,6 +22,70 @@
  *   Base
  * ========================================================================== */
 
+/* =============================================================================
+ *   Font faces
+ * ========================================================================== */
+@font-face {
+    font-family: 'conduit_itcregular';
+    src: url('fonts/condult_itc/conduit_itc-webfont.eot');
+    src: url('fonts/condult_itc/conduit_itc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/condult_itc/conduit_itc-webfont.woff2') format('woff2'),
+         url('fonts/condult_itc/conduit_itc-webfont.woff') format('woff'),
+         url('fonts/condult_itc/conduit_itc-webfont.ttf') format('truetype'),
+         url('fonts/condult_itc/conduit_itc-webfont.svg#conduit_itcregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itcbold';
+    src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot');
+    src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.svg#conduit_itcbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itclight';
+    src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot');
+    src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.svg#conduit_itclight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itcmedium_italic';
+    src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot');
+    src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.svg#conduit_itcmedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
@@ -30,15 +94,17 @@
  * element as these can be overridden using font theme settings.
  */
 
-html {
-  background: #fff;
+html, body {
+	margin-right: 0px;
+  	margin-bottom: 0px;
+ 	margin-left: 0px;
+ 	padding-left: 0px;
+    font-family:"conduit_itcregular",sans-serif;
+    color: black;
+    font-size: 14px;
+    line-height: 20px;
 }
 
-
-body {
-  font-family: "Trebuchet MS", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 87.5%;
-}
 
 
 /* =============================================================================
@@ -122,13 +188,22 @@ var {
  * The .container class holds the page width value from theme settings.
  */
 #page-wrapper {}
-#page {}
+#page {
+	margin-top:30px;
+	position:relative;
+}
 #page .container {}
 
 /*
  * Wraps all header elements - branding and .region-header
  */
-#header {}
+#header {
+	float:left;
+	margin:0;
+	width:100%;
+	max-width:1170px;
+	position:relative;
+}
 
 /*
  * Wraps the sidebars the content column
@@ -238,7 +313,9 @@ var {
 /*
  * Wraps all the branding elements, logo, name and slogan
  */
-#branding {}
+#branding {
+	float:left;
+}
 
 /*
  * Logo
@@ -400,7 +477,11 @@ ul.links li {
 /*
  * Header region, embedded in the #header
  */
-.region-header {}
+.region-header {
+	float:right;
+	margin:0;
+	padding:0;
+}
 
 /*
  * Generally used to output Drupals help block, if the help module is enabled
@@ -499,18 +580,90 @@ a:focus {
   padding: 0 10px;
 }
 
-.nav li a:visited,
-.nav ul.menu li a:visited {}
-
-.nav li a:hover,
-.nav li a:focus,
-.nav ul.menu li a:hover,
-.nav ul.menu li a:focus {}
-
 .nav .block {
   margin-bottom: 0;
 }
 
+
+/* =============================================================================
+ *   MENU CONTAINERS
+ * ========================================================================== */
+
+.header-navigation-container{
+	float:right;
+}
+#nav-activation-link{
+	display:none;
+}
+
+.top-navigation-second{
+	display:none;
+}
+/* =============================================================================
+ *   Top Header Menu
+ * ========================================================================== */
+ #block-menu-menu-top-navigation {
+ 	margin:0;
+ }
+ #block-menu-menu-top-navigation ul{
+ 	margin:0;
+ 	text-align:right;
+ }
+ #block-menu-menu-top-navigation ul li{
+ 	display:inline-block;
+ 	list-style:none;
+ 	padding-left: 43px;
+ }
+  #block-menu-menu-top-navigation ul li.last{
+  	padding-right:0;
+  }
+ #block-menu-menu-top-navigation ul li a{
+     color: #6c6c6c;
+     font-size: 17px;
+     text-decoration: none;
+     text-transform: uppercase;
+ }
+
+/* =============================================================================
+ *   Main Navigation
+ * ========================================================================== */
+#block-system-main-menu{
+	margin:0;
+}
+#block-system-main-menu ul{
+	margin:35px 0 0 0;
+}
+#block-system-main-menu ul li {
+	float:left;
+ 	list-style:none;
+ 	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 0 20px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;	
+}
+#block-system-main-menu ul li.last{
+	padding-right:35px;
+	background-image:url('images/search.png');
+  	background-repeat:no-repeat;
+  	background-position: right 17px;
+}
+#block-system-main-menu ul li a{
+	-webkit-transition: all 500ms ease;
+  	-o-transition: all 500ms ease;
+  	transition: all 500ms ease;
+  	color: #00a2eb;
+  	font-size: 24px;
+  	text-decoration: none;
+  	text-transform: uppercase;
+}
+#block-system-main-menu ul li a:hover {
+  border-bottom-width: 5px;
+  color: black;
+}
 
 /* =============================================================================
  *   Superfish

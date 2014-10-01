@@ -6,9 +6,105 @@
  *   the Global theme settings.
  *
  * - Read the _README file in this directory, it contains useful help and other information.
+ *  - only screen and (min-width:769px) and (max-width:1024px)
  */
 
 /* Increase the body font size on tablet devices */
 body {
   font-size: 93.8%;
 }
+/* =============================================================================
+ *   MENU CONTAINERS
+ * ========================================================================== */
+#header{
+	max-width:728px;
+	margin:0 auto;
+	float:none;
+}
+.header-inner-navigation-container{
+	display:none;
+	float:right;
+}
+.header-navigation-container.active{
+	background: none repeat scroll 0 0 #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+.top-navigation-main, 
+.top-navigation-first, 
+.top-navigation-second{
+	width:100%;
+}
+.top-navigation-first{
+	display:none;
+}
+.top-navigation-second{
+	display:block;
+	float:left;
+}
+#nav-activation-link{
+	display:block;
+    float: right;
+    width:100%;
+    margin:40px 25px 0 0;
+}
+#nav-activation-link span{
+	cursor: pointer;
+	font-size: 24px;
+    padding: 0 25px 0 0;
+    position: relative;
+    float:right;
+    text-transform:uppercase;
+    background-image:url('images/nav_button.png');
+    background-position:right 6px;
+    background-repeat:no-repeat;
+}
+#nav-activation-link span.active{
+	background-image:url('images/nav_close_button.png');
+    background-position:right 0;
+    background-repeat:no-repeat;
+    text-indent:-9999px;
+    height:23px;
+    width:0;
+    display:block;
+    float:right;
+}
+#nav-activation-link:hover{
+	text-decoration:none;
+}
+
+/* =============================================================================
+ *   Main Navigation
+ * ========================================================================== */
+#block-system-main-menu ul li, #block-system-main-menu ul li.last{
+	float:none;
+	display:block;
+	padding-left:25px;
+	background-image:url('images/nav-drop-dow-arrow.png');
+	background-position:left 27px;
+	background-repeat:no-repeat;
+}
+#block-system-main-menu ul li a{
+	color:#000;
+}
+/* =============================================================================
+ *   Top Header Menu
+ * ========================================================================== */
+#block-menu-menu-top-navigation ul li{
+	float:none;
+	display:block;
+	padding-left:25px;
+	padding-top:20px;
+	background-image:url('images/nav-drop-dow-arrow-grey.png');
+	background-position:left 27px;
+	background-repeat:no-repeat;
+	text-align:left;
+}
+#block-menu-menu-top-navigation ul li a{
+	font-size: 24px;
+  	text-decoration: none;
+  	text-transform: uppercase;
+}
+	
