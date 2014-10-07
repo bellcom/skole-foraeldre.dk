@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Template for a 2 column panel layout.
+ * Template for a 3 column panel layout.
  *
- * This template provides a two column panel display layout, with
- * each column roughly equal in width.
+ * This template provides a three column panel display layout, with
+ * each column roughly equal in width and one at the bottom with 100%.
  *
  * Variables:
  * - $id: An optional CSS id to use for the layout.

@@ -280,6 +280,11 @@ var {
  * Panels may need additional margin wrangling when in the $content region
  */
 #content .panel-display {}
+.panel-3col-custom{
+	width:100%;
+	max-width:1170px;
+	margin:0 auto;
+}
 
 /*
  * Full Width Wrappers
