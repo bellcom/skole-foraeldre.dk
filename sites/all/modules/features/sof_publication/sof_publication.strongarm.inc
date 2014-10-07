@@ -95,26 +95,43 @@ function sof_publication_strongarm() {
       'sof_publication_view' => array(
         'custom_settings' => TRUE,
       ),
+      'related_content_reference' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '11',
         ),
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '4',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_publication';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_publication';
+  $strongarm->value = array();
+  $export['i18n_node_options_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -1,0 +1,12 @@
+name = SOF views references
+description = Exports views used for entity reference and similar functionality
+core = 7.x
+package = Views
+dependencies[] = references_dialog
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = reference_dialog_article
+features[views_view][] = reference_dialog_banner
+features[views_view][] = reference_dialog_content
+features_exclude[dependencies][ctools] = ctools

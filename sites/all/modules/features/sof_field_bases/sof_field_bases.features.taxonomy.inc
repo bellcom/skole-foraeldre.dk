@@ -9,6 +9,29 @@
  */
 function sof_field_bases_taxonomy_default_vocabularies() {
   return array(
+    'general_category' => array(
+      'name' => 'General category',
+      'machine_name' => 'general_category',
+      'description' => 'Use the category to group postings on similar topics into a main category used for relating content.',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'publication_category' => array(
       'name' => 'Publication category',
       'machine_name' => 'publication_category',

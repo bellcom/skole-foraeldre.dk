@@ -24,6 +24,12 @@ function sof_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'sof_publication_view' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -58,7 +64,7 @@ function sof_publication_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -75,6 +81,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'sof_publication_view' => array(
         'label' => 'inline',
@@ -102,7 +114,7 @@ function sof_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -118,6 +130,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 1,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'sof_publication_view' => array(
         'label' => 'hidden',
@@ -164,7 +182,7 @@ function sof_publication_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -183,6 +201,16 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'related_content_reference_image',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'sof_publication_view' => array(
         'label' => 'hidden',
@@ -236,7 +264,7 @@ function sof_publication_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -256,6 +284,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 6,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'sof_publication_view' => array(
         'label' => 'hidden',
@@ -294,7 +328,7 @@ function sof_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 17,
     ),
   );
 
@@ -311,6 +345,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'sof_publication_view' => array(
         'label' => 'hidden',
@@ -341,7 +381,7 @@ function sof_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 16,
     ),
   );
 
@@ -358,6 +398,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 7,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'sof_publication_view' => array(
         'label' => 'above',
@@ -384,7 +430,7 @@ function sof_publication_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -400,6 +446,12 @@ function sof_publication_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'sof_publication_view' => array(
@@ -431,7 +483,7 @@ function sof_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 

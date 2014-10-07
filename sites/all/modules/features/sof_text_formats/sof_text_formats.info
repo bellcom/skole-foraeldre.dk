@@ -1,0 +1,13 @@
+name = SOF text formats
+description = Exports text formats, cKeditor profiles and all related settings
+core = 7.x
+package = Configuration
+dependencies[] = ckeditor
+dependencies[] = features
+dependencies[] = filter
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[features_api][] = api:2
+features[filter][] = full_html
+features[filter][] = plain_text

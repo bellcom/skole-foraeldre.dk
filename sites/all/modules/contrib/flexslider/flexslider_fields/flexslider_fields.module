@@ -64,21 +64,11 @@ function flexslider_fields_field_formatter_settings_form($field, $instance, $vie
   );
 
   // If the image field doesn't have the Title field enabled, tell the user.
-  if ($instance['settings']['title_field'] == FALSE) {
-    $form['caption'] = array(
-      '#title' => t('Use image title as the caption'),
-      '#type' => 'checkbox',
-      '#disabled' => TRUE,
-      '#description' => t('You need to <a href="@url">enable the Title field</a> for this image field to be able use it as a caption.', array('@url' => url('admin/structure/types/manage/' . $instance['bundle'] . '/fields/' . $instance['field_name'], array('fragment' => 'edit-instance-settings-title-field', 'query' => array('destination' => 'admin/structure/types/manage/' . $instance['bundle'] . '/display'))))),
-    );
-  }
-  else {
     $form['caption'] = array(
       '#title' => t('Use image title as the caption'),
       '#type' => 'checkbox',
       '#default_value' => $settings['caption'],
     );
-  }
 
   return $form;
 }
@@ -168,7 +158,12 @@ function flexslider_fields_field_formatter_view($entity_type, $entity, $field, $
 
       // Check caption settings
       if ($display['settings']['caption']) {
-        $item['caption'] = filter_xss($item['item']['title']);
+       if ($instance["widget"]["module"] == "media" && isset($item["item"]["field_file_image_title_text"]) && count($item["item"]["field_file_image_title_text"])) {
+          $item['caption'] = $item["item"]["field_file_image_title_text"][$langcode][0]["value"];
+        }
+        if ($instance["widget"]["module"] == "file" && isset($item['item']['title'])) {
+          $item['caption'] = filter_xss($item['item']['title']);
+        }
       }
 
       $items[$key] = $item;
