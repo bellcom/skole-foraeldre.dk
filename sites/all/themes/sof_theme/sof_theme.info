@@ -118,8 +118,8 @@
   ; Page layout plugins
   :plugins[page_layout][layouts] = layouts/page
 
-  ; Panels layout plugins
-  :plugins[panels][layouts] = layouts/panels
+  ; Panels layouts. You can place multiple layouts under the "layouts" folder.
+    plugins[panels][layouts] = templates/panels_layouts
 
 
 ;----------// Site Features
