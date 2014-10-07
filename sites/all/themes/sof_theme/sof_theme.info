@@ -15,6 +15,7 @@
   ; See each stylesheet for extensive documentation and help.
   stylesheets[screen][] = css/global.base.css
   stylesheets[screen][] = css/global.styles.css
+  stylesheets[all][]    = css/colors.css
 
   ; Print - uncomment to load basic print styles.
   ; stylesheets[print][] = css/print.css
@@ -71,24 +72,26 @@
   ; following as a guide:
 
   ; ie_scripts[lte IE 8][] = scripts/my-script.js
+  scripts[] = scripts/custom.js
 
 
 ;----------// Regions
 
-  regions[sidebar_first]     = Sidebar first
-  regions[sidebar_second]    = Sidebar second
-  regions[content]           = Main Content
-  regions[highlighted]       = Highlighted
-  regions[content_aside]     = Aside
-  regions[secondary_content] = Secondary
-  regions[tertiary_content]  = Tertiary
-  regions[footer]            = Footer
-  regions[leaderboard]       = Leaderboard
-  regions[header]            = Header
-  regions[menu_bar]          = Menu Bar
-  regions[help]              = Help
-  regions[page_top]          = Page top
-  regions[page_bottom]       = Page bottom
+  regions[sidebar_first]          = Sidebar first
+  regions[sidebar_second]         = Sidebar second
+  regions[content]                = Main Content
+  regions[highlighted]            = Highlighted
+  regions[content_aside]          = Aside
+  regions[secondary_content]      = Secondary
+  regions[tertiary_content]       = Tertiary
+  regions[footer]                 = Footer
+  regions[leaderboard]            = Leaderboard
+  regions[top_header_navigation]  = Top Header Navigation
+  regions[header]                 = Header
+  regions[menu_bar]               = Menu Bar
+  regions[help]                   = Help
+  regions[page_top]               = Page top
+  regions[page_bottom]            = Page bottom
 
 
 ;----------// Gpanel Regions
@@ -115,8 +118,8 @@
   ; Page layout plugins
   :plugins[page_layout][layouts] = layouts/page
 
-  ; Panels layout plugins
-  :plugins[panels][layouts] = layouts/panels
+  ; Panels layouts. You can place multiple layouts under the "layouts" folder.
+    plugins[panels][layouts] = templates/panels_layouts
 
 
 ;----------// Site Features
@@ -139,8 +142,8 @@
   settings[toggle_comment_user_picture]      = 0
   settings[toggle_comment_user_verification] = 0
   settings[toggle_favicon]                   = 1
-  settings[toggle_main_menu]                 = 1
-  settings[toggle_secondary_menu]            = 1
+  settings[toggle_main_menu]                 = 0
+  settings[toggle_secondary_menu]            = 0
 
 
 ;----------// Theme Settings
@@ -153,8 +156,7 @@
   settings[bigscreen_page_width]     = 100
   settings[bigscreen_sidebar_first]  = 1
   settings[bigscreen_sidebar_second] = 1
-  settings[bigscreen_set_max_width]  = 1
-  settings[bigscreen_max_width]      = 1170
+  settings[bigscreen_set_max_width]  = 0
   settings[bigscreen_media_query]    = 'only screen and (min-width:1025px)'
 
 
@@ -163,8 +165,8 @@
   settings[tablet_landscape_page_unit]      = '%'
   settings[tablet_landscape_sidebar_unit]   = '%'
   settings[tablet_landscape_page_width]     = 100
-  settings[tablet_landscape_sidebar_first]  = 20
-  settings[tablet_landscape_sidebar_second] = 20
+  settings[tablet_landscape_sidebar_first]  = 1
+  settings[tablet_landscape_sidebar_second] = 1
   settings[tablet_landscape_media_query]    = 'only screen and (min-width:769px) and (max-width:1024px)'
 
 
@@ -173,8 +175,8 @@
   settings[tablet_portrait_page_unit]      = '%'
   settings[tablet_portrait_sidebar_unit]   = '%'
   settings[tablet_portrait_page_width]     = 100
-  settings[tablet_portrait_sidebar_first]  = 50
-  settings[tablet_portrait_sidebar_second] = 50
+  settings[tablet_portrait_sidebar_first]  = 1
+  settings[tablet_portrait_sidebar_second] = 1
   settings[tablet_portrait_media_query]    = 'only screen and (min-width:581px) and (max-width:768px)'
 
 
@@ -183,9 +185,9 @@
   settings[smalltouch_landscape_page_unit]      = '%'
   settings[smalltouch_landscape_sidebar_unit]   = '%'
   settings[smalltouch_landscape_page_width]     = 100
-  settings[smalltouch_landscape_sidebar_first]  = 50
-  settings[smalltouch_landscape_sidebar_second] = 50
-  settings[smalltouch_landscape_media_query]    = 'only screen and (min-width:321px) and (max-width:580px)'
+  settings[smalltouch_landscape_sidebar_first]  = 1
+  settings[smalltouch_landscape_sidebar_second] = 1
+  settings[smalltouch_landscape_media_query]    = 'only screen and (min-width:320px) and (max-width:580px)'
 
 
   ; Layout settings - Smalltouch portrait

@@ -22,6 +22,71 @@
  *   Base
  * ========================================================================== */
 
+/* =============================================================================
+ *   Font faces
+ * ========================================================================== */
+
+@font-face {
+    font-family: 'conduit_itcregular';
+    src: url('fonts/condult_itc/conduit_itc-webfont.eot');
+    src: url('fonts/condult_itc/conduit_itc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/condult_itc/conduit_itc-webfont.woff2') format('woff2'),
+         url('fonts/condult_itc/conduit_itc-webfont.woff') format('woff'),
+         url('fonts/condult_itc/conduit_itc-webfont.ttf') format('truetype'),
+         url('fonts/condult_itc/conduit_itc-webfont.svg#conduit_itcregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itcbold';
+    src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot');
+    src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.svg#conduit_itcbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itclight';
+    src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot');
+    src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_light/conduit_itc_light1-webfont.svg#conduit_itclight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'conduit_itcmedium_italic';
+    src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot');
+    src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff2') format('woff2'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff') format('woff'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.ttf') format('truetype'),
+         url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.svg#conduit_itcmedium_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
@@ -30,15 +95,19 @@
  * element as these can be overridden using font theme settings.
  */
 
-html {
-  background: #fff;
+html, body {
+	margin-right: 0px;
+  	margin-bottom: 0px;
+ 	margin-left: 0px;
+ 	padding-left: 0px;
+    font-family:"conduit_itcregular",sans-serif;
+    color: black;
+    font-size: 14px;
+    line-height: 20px;
+    position:relative;
+    height:100%;
 }
 
-
-body {
-  font-family: "Trebuchet MS", "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 87.5%;
-}
 
 
 /* =============================================================================
@@ -121,19 +190,42 @@ var {
  *
  * The .container class holds the page width value from theme settings.
  */
-#page-wrapper {}
-#page {}
+#page-wrapper {
+	height:100%;
+}
+#page {
+	margin-top:30px;
+	position:relative;
+	height:100%;
+}
 #page .container {}
 
 /*
  * Wraps all header elements - branding and .region-header
  */
-#header {}
+#header {
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	position:relative;
+	padding-bottom:30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
 
 /*
  * Wraps the sidebars the content column
  */
-#columns {}
+#columns {
+	padding-bottom:-330px;
+	height:100%;
+	max-width:1170px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
 
 /*
  * Main content column wrapper
@@ -144,7 +236,12 @@ var {
  * Wraps the main-content-header, the content region and feed-icons. Use this
  * wrapper to style the entire main content column
  */
-#main-content {}
+#main-content {
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	position:relative;
+}
 
 /*
  * Wraps the content region, avoid applying styles to this wrapper, its used
@@ -155,12 +252,39 @@ var {
 /*
  * Footer wrapper
  */
-#footer {}
-
+#footer {
+	width:100%;
+    position: relative;
+    margin-top: -330px; /* negative value of footer height */
+    clear:both;
+    padding:40px 0 60px 0;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
+/*
+ * Footer region
+ */
+.region-footer {
+	max-width:1170px;
+	margin:0 auto;
+	color: black;
+    font-family: "conduit_itclight",sans-serif;
+    font-size: 19px;
+    padding:0 30px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+}
 /*
  * Panels may need additional margin wrangling when in the $content region
  */
 #content .panel-display {}
+.panel-3col-custom{
+	width:100%;
+	max-width:1170px;
+	margin:0 auto;
+}
 
 /*
  * Full Width Wrappers
@@ -238,7 +362,10 @@ var {
 /*
  * Wraps all the branding elements, logo, name and slogan
  */
-#branding {}
+#branding {
+	float:left;
+	margin:0;
+}
 
 /*
  * Logo
@@ -400,7 +527,11 @@ ul.links li {
 /*
  * Header region, embedded in the #header
  */
-.region-header {}
+.region-header {
+	float:right;
+	margin:0;
+	padding:0;
+}
 
 /*
  * Generally used to output Drupals help block, if the help module is enabled
@@ -442,10 +573,7 @@ ul.links li {
  */
 .region-tertiary-content {}
 
-/*
- * Footer region
- */
-.region-footer {}
+
 
 
 /* =============================================================================
@@ -499,18 +627,90 @@ a:focus {
   padding: 0 10px;
 }
 
-.nav li a:visited,
-.nav ul.menu li a:visited {}
-
-.nav li a:hover,
-.nav li a:focus,
-.nav ul.menu li a:hover,
-.nav ul.menu li a:focus {}
-
 .nav .block {
   margin-bottom: 0;
 }
 
+
+/* =============================================================================
+ *   MENU CONTAINERS
+ * ========================================================================== */
+
+.header-navigation-container{
+	float:right;
+}
+#nav-activation-link{
+	display:none;
+}
+
+.top-navigation-second{
+	display:none;
+}
+/* =============================================================================
+ *   Top Header Menu
+ * ========================================================================== */
+ #block-menu-menu-top-navigation {
+ 	margin:0;
+ }
+ #block-menu-menu-top-navigation ul{
+ 	margin:0;
+ 	text-align:right;
+ }
+ #block-menu-menu-top-navigation ul li{
+ 	display:inline-block;
+ 	list-style:none;
+ 	padding-left: 43px;
+ }
+  #block-menu-menu-top-navigation ul li.last{
+  	padding-right:0;
+  }
+ #block-menu-menu-top-navigation ul li a{
+     color: #6c6c6c;
+     font-size: 17px;
+     text-decoration: none;
+     text-transform: uppercase;
+ }
+
+/* =============================================================================
+ *   Main Navigation
+ * ========================================================================== */
+#block-system-main-menu{
+	margin:0;
+}
+#block-system-main-menu ul{
+	margin:35px 0 0 0;
+}
+#block-system-main-menu ul li {
+	float:left;
+ 	list-style:none;
+ 	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 0 20px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;	
+}
+#block-system-main-menu ul li.last.menu-depth-1{
+	padding-right:35px;
+	background-image:url('images/search.png');
+  	background-repeat:no-repeat;
+  	background-position: right 17px;
+}
+#block-system-main-menu ul li a{
+	-webkit-transition: all 500ms ease;
+  	-o-transition: all 500ms ease;
+  	transition: all 500ms ease;
+  	color: #00a2eb;
+  	font-size: 24px;
+  	text-decoration: none;
+  	text-transform: uppercase;
+}
+#block-system-main-menu ul li a:hover {
+  border-bottom-width: 5px;
+  color: black;
+}
 
 /* =============================================================================
  *   Superfish
@@ -1192,10 +1392,6 @@ ul.action-links li {}
  */
 #block-aggregator-feed-1 {}
 
-/*
- * First block created with "Add block" link
- */
-#block-block-1 {}
 
 /*
  * "Recent blog posts" block
@@ -1315,9 +1511,30 @@ ul.action-links li {}
 /*
  * "Who's online" block for a list of the online users
  */
-#block-user-online {}
-
-
+#footer .block{
+	float:left;
+	margin:0;
+	padding:0;
+	width:70%;
+}
+#footer .region-inner .block:first-child{
+	width:70%;
+}
+#footer .region-inner .block:nth-child(2){
+	width:30%;
+	line-height:24px;
+}
+#footer .region-inner .block:nth-child(2) h2{
+	font-size: 24px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+#footer .region-inner .block:nth-child(2) .block-inner{
+	float:right;
+}
+#footer .region-inner .block:nth-child(2) a{
+	color:#000;
+}
 /* =============================================================================
  *   Node Styling
  * ========================================================================== */
@@ -1799,3 +2016,40 @@ tr.error {}
   min-height: 260px;
   width: auto;
 }
+
+/* =============================================================================
+ *   Messages
+ * ========================================================================== */
+#messages{
+	width:100%;
+	max-width:1170px;
+	margin:0 auto;
+}
+/* =============================================================================
+ *   404, 403 Pages Styling
+ * ========================================================================== */
+body.page-404 #page-title{
+	display:none;
+}
+body.page-404 #content{
+	font-size:35px;
+	text-align:center;
+	padding:50px 30px;
+}
+body.page-404 #content .action-links{
+	margin-bottom:40px;
+}
+
+
+/* =============================================================================
+ *   Media Queries
+ * ========================================================================== */
+@media all and (max-width: 1170px){
+	#columns{
+		padding:0 30px;
+	}
+	#header{
+		padding:0 30px 30px 30px;
+	}
+}
+
