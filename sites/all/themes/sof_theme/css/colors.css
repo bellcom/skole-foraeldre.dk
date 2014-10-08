@@ -1,10 +1,16 @@
 
 /* ---------- Color Module Styles ----------- */
 
-a,#block-system-main-menu ul li a {
+a,
+#block-system-main-menu ul li a,
+.article-region .field-name-body h4,
+.article-region .field-name-body h2,
+.article-region .field-name-body blockquote p {
   color: #00a2eb;
 }
 
-#footer {
-  background: #00a2eb;
+#footer,
+.article-region .field-name-body a.download-article-pdf{
+  background-color: #00a2eb;
 }
+
