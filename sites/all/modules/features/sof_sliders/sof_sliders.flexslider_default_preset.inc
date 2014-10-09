@@ -44,7 +44,7 @@ function sof_sliders_flexslider_default_presets() {
     'slideshow' => 1,
     'slideshowSpeed' => '7000',
     'directionNav' => 1,
-    'controlNav' => '1',
+    'controlNav' => '0',
     'prevText' => 'Previous',
     'nextText' => 'Next',
     'pausePlay' => 0,
