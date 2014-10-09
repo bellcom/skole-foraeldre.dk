@@ -2,11 +2,11 @@
 
 // Plugin definition
 $plugin = array(
-  'title' => t('SOF Custom'),
+  'title' => t('Sof two column bottom'),
   'category' => t('SOF Custom'),
-  'icon' => 'sofcustom.png',
-  'theme' => 'panels-sofcustom',
-  'css' => 'sofcustom.css',
+  'icon' => 'sof-two-column-bottom.png',
+  'theme' => 'panels-sof-two-column-bottom',
+  'css' => 'sof-two-column-bottom.css',
   'regions' => array(
    'left' => t('Left column'),
     'right' => t('Right column'),

@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="calendar" unicode="&#xe800;" d="m800 700q42 0 71-29t29-71l0-600q0-40-29-70t-71-30l-700 0q-40 0-70 30t-30 70l0 600q0 42 30 71t70 29l46 0 0-100 160 0 0 100 290 0 0-100 160 0 0 100 44 0z m0-700l0 400-700 0 0-400 700 0z m-540 800l0-170-70 0 0 170 70 0z m450 0l0-170-70 0 0 170 70 0z" horiz-adv-x="900" />
+<glyph glyph-name="search" unicode="&#xe801;" d="m746 209l254-255-105-105-254 254q-106-72-232-72-169 0-289 120t-120 289 120 289 289 120 289-120 120-289q0-127-72-231z m-65 231q0 113-79 193t-193 80-193-80-80-193 80-192 193-80 193 80 79 192z" horiz-adv-x="1000" />
+<glyph glyph-name="citat-ikon" unicode="&#xe802;" d="m690 749c-44-19-94-45-149-78-55-32-100-64-133-94-38-35-72-73-103-116-30-43-54-91-71-147h79c82 0 144-15 184-47 41-31 61-75 61-131 0-72-30-138-91-197-61-59-133-89-216-89-89 0-152 24-192 72-39 48-59 110-59 186 0 149 63 292 189 429 126 136 279 241 461 313l40-101z m702 0c-44-19-93-45-149-78-55-32-99-64-132-94-38-35-73-73-103-116-31-43-55-91-72-147h79c83 0 144-15 185-47 40-31 61-75 61-131 0-72-31-138-91-197-61-59-133-89-217-89-88 0-152 24-192 72-39 48-59 110-59 186 0 149 63 292 189 429 126 136 280 241 461 313l40-101z" horiz-adv-x="1392" />
+</font>
+</defs>
+</svg>

@@ -23,7 +23,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'important' => 1,
           'property' => 'background-color',
-          'selector' => '.banner-background-color',
+          'selector' => '.entity-bean.bean-banner',
         ),
         'type' => 'color_field_css_declaration',
         'weight' => 1,
