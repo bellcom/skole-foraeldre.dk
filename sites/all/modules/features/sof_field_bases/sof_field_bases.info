@@ -17,6 +17,7 @@ features[field_base][] = comment_body
 features[field_base][] = field_banner
 features[field_base][] = field_category
 features[field_base][] = field_category_publication
+features[field_base][] = field_category_single
 features[field_base][] = field_color
 features[field_base][] = field_file
 features[field_base][] = field_file_image_alt_text
