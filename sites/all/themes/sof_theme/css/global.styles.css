@@ -87,6 +87,18 @@
 
 }
 
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello/fontello.eot?82788797');
+  src: url('fonts/fontello/fontello.eot?82788797#iefix') format('embedded-opentype'),
+       url('fonts/fontello/fontello.woff?82788797') format('woff'),
+       url('fonts/fontello/fontello.ttf?82788797') format('truetype'),
+       url('fonts/fontello/fontello.svg?82788797#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+
 /*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
@@ -95,12 +107,14 @@
  * element as these can be overridden using font theme settings.
  */
 
+
 html, body {
 	margin-right: 0px;
   	margin-bottom: 0px;
  	margin-left: 0px;
  	padding-left: 0px;
     font-family:"conduit_itcregular",sans-serif;
+    font-weight:normal;
     color: black;
     font-size: 14px;
     line-height: 20px;
@@ -386,6 +400,9 @@ body.node-type-article #page-title{
 	float:left;
 	position:relative;
 }
+article.contextual-links-region{
+	margin-bottom:0;
+}
 /* Left Article Region  */
 .left-article-region{
 	width:66.6%;
@@ -403,19 +420,57 @@ h3 .field-group-format-toggler{
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border-radius: px;
     box-shadow: none;
-    margin: 0;
+    margin:10px 0 0  0;
     position: relative;
+    float:left;
+    background-color:#f0f0f0;
 }
 .flexslider ul li{
 	display:block!important;
 }
-.article-region h2.node-article-title{
+.flex-caption{
+	background-color: #f0f0f0;
+    color: #6c6c6c;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    padding: 20px;
+}
+.left-article-region nav{
 	margin:40px 0 0 0;
-	font-size:46px;
+	width:100%;
+	float:left;
+	text-align:right;
+}
+.left-article-region nav ul {
+	float:right;
+}
+.left-article-region nav ul li{
+	float:left;
+}
+.left-article-region nav ul li.print_html{
+	background-image:url('images/print-link-icon.png');
+	background-repeat:no-repeat;
+	background-position: center center;
+	width:30px;
+	height:28px;
+
+}
+.left-article-region nav ul li.print_html a{
+	color:transparent;
+}
+.article-region h2.node-article-title{
 	color: black;
-    font-family: "conduit_itclight",sans-serif; 
-    font-weight:normal;  
-    line-height:44px;
+    float: left;
+    font-family: "conduit_itclight",sans-serif;
+    font-size: 46px;
+    font-weight: normal;
+    line-height: 44px;
+    margin: 40px 0 0;
+    width: 100%;
+}
+#node_article_full_group_leftaregion{
+	float:left;
 }
 .article-region .field-name-field-teaser {
 	color: black;
@@ -476,14 +531,19 @@ h3 .field-group-format-toggler{
     padding-top: 20px;
     text-decoration: none;
 }
-.article-region .field-name-body blockquote{
-    padding: 0 20px 20px 65px;
-    margin:45px 0 0 0;
-    background-image:url('images/citat-Ikon.png');
-    background-position:left 0px;
-    background-repeat:no-repeat;
-    
+blockquote{
+	margin:0;
 }
+.article-region .field-name-body blockquote{
+	margin:45px 0 0 0;
+}
+.article-region .field-name-body blockquote:before{
+    content: '\e802'; /* '' */
+	font-family: 'fontello';
+	color: #00a2eb;
+	font-size:35px;
+}
+
 .article-region .field-name-body blockquote p{
 	bottom: 0;
     clear: none;
@@ -493,11 +553,15 @@ h3 .field-group-format-toggler{
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    left: 0;
+    left: 60px;
     line-height: 30px;
     margin:0;
     position: relative;
-    top: 0;
+    bottom:40px;
+    width:88%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 .article-region .field-name-body h3{
 	color: black;
@@ -526,7 +590,8 @@ h3 .field-group-format-toggler{
     color: #454545;
     font-style: normal;
     font-weight: 200;
-
+    float:left;
+    width:100%;
 }
 .article-region hr{
 	border:1px solid #b2b2b2;
@@ -578,7 +643,8 @@ h3 .field-group-format-toggler{
     line-height: 28px;
     margin-bottom: 10px;
     margin-top: 40px;
-    font-family: "conduit_itclight",sans-serif;
+    font-family:"conduit_itcregular",sans-serif;
+    font-weight:normal;
 }
 .right-article-region .field-group-format-wrapper .field-name-field-related-content .field-item{
 	background-color: #f0f0f0;
@@ -602,8 +668,8 @@ h3 .field-group-format-toggler{
     line-height: 24px;
     margin-top: 15px;
     padding-left: 0;
-    font-family: "conduit_itclight",sans-serif;  	
-	width:100%;
+    font-family: "conduit_itcregular",sans-serif;  	
+    font-weight:400;
     float:left;
 }
 .right-article-region .field-group-format-wrapper .field-name-field-related-content .field-item .node-title a:hover{
@@ -614,6 +680,59 @@ h3 .field-group-format-toggler{
 .bottom-article-region{
 	width:100%;
 }
+/* =============================================================================
+ *   BLOCKS
+ * ========================================================================== */
+/* Banner Identity */
+.entity-bean.bean-banner{
+	float:left;
+	width:100%;
+	max-width:360px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
+	text-align:center;
+	margin: 20px 0;
+    padding:30px;
+}
+.entity-bean.bean-banner:hover{
+	opacity:0.9;
+}
+.entity-bean.bean-banner .field-name-field-image .field-item{
+	width:120px;
+	height:120px;
+    background: rgba(0,0,0,0.1);
+    display:inline-block;
+    border: 0 solid black;
+    border-radius: 200px;
+    display: block;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+.entity-bean.bean-banner .field-name-field-small-title{
+	color: #000;
+    font-size: 30px;
+    line-height: 32px;
+    padding-top: 20px;
+    text-align: center;
+    text-transform: none;
+}
+.entity-bean.bean-banner .field-name-field-teaser{
+	color: #000;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 26px;
+    padding-top: 10px;
+    text-align: center;
+}
+.entity-bean.bean-banner .field-name-field-image img{
+	max-width:80px;
+	max-height:80px;
+	padding-top:15px;
+}
+
 /* =============================================================================
  *   Branding
  * ========================================================================== */
@@ -951,12 +1070,14 @@ a:focus {
     text-decoration: none;
     vertical-align: top;	
 }
-#block-system-main-menu ul li.last.menu-depth-1{
-	padding-right:35px;
-	background-image:url('images/search.png');
-  	background-repeat:no-repeat;
-  	background-position: right 17px;
-}
+#block-system-main-menu ul li.last.menu-depth-1:before { 
+    content: '\e801'; /* '' */ 
+	font-family: 'fontello';
+	padding-right:5px;
+	color: #00a2eb;
+  	font-size: 22px;
+	} /* '' */
+
 #block-system-main-menu ul li a{
 	-webkit-transition: all 500ms ease;
   	-o-transition: all 500ms ease;
