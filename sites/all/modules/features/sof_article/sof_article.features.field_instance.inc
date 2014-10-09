@@ -163,7 +163,7 @@ function sof_article_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Category',
+    'label' => 'Categories',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -183,7 +183,7 @@ function sof_article_field_default_field_instances() {
   $field_instances['node-article-field_image_slider'] = array(
     'bundle' => 'article',
     'deleted' => 0,
-    'description' => 'Upload images that will be used as slider',
+    'description' => 'Upload images that will be used as slider. Title of the image will be used as caption',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -257,9 +257,66 @@ function sof_article_field_default_field_instances() {
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'upload' => 'upload',
         ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'media_generic',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_publication_control_link'
+  $field_instances['node-article-field_publication_control_link'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Uncheck to hide the publication link on this posting',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publication_control_link',
+    'label' => 'Show publication link',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 5,
     ),
   );
 
@@ -452,16 +509,18 @@ function sof_article_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Banner');
   t('Body');
-  t('Category');
+  t('Categories');
   t('Choose a category that fits your content.');
   t('Related articles');
   t('Related content');
   t('Selct banner that goes with this posting.');
   t('Select related articles that will be presented as slider');
   t('Select related content of this article');
+  t('Show publication link');
   t('Teaser');
   t('Top slider');
-  t('Upload images that will be used as slider');
+  t('Uncheck to hide the publication link on this posting');
+  t('Upload images that will be used as slider. Title of the image will be used as caption');
 
   return $field_instances;
 }

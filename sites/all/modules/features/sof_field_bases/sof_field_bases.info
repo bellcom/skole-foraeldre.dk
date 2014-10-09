@@ -25,6 +25,7 @@ features[field_base][] = field_image
 features[field_base][] = field_image_slider
 features[field_base][] = field_pdf_content
 features[field_base][] = field_pdf_title
+features[field_base][] = field_publication_control_link
 features[field_base][] = field_publication_file_type
 features[field_base][] = field_related_article
 features[field_base][] = field_related_content

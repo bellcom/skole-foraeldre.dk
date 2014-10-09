@@ -4,4 +4,5 @@ core = 7.x
 package = Configuration
 dependencies[] = image
 features[features_api][] = api:2
+features[image][] = article_top_slider
 features[image][] = related_content_reference_image

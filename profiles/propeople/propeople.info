@@ -64,6 +64,7 @@ dependencies[] = panels
 dependencies[] = panels_ipe
 dependencies[] = globalredirect
 dependencies[] = print   
+dependencies[] = print_ui
 dependencies[] = print_pdf
 dependencies[] = print_pdf_wkhtmltopdf
 dependencies[] = metatag
@@ -99,6 +100,7 @@ dependencies[] = sof_banner
 dependencies[] = sof_field_bases
 dependencies[] = sof_image_styles
 dependencies[] = sof_publication
+dependencies[] = sof_sliders
 dependencies[] = sof_text_formats
 dependencies[] = sof_views_references
 

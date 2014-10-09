@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF sliders feature.
+ */
+
+include_once 'sof_sliders.features.inc';
