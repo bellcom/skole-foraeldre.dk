@@ -29,7 +29,7 @@ function sof_article_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'related_content_reference' => array(
         'label' => 'hidden',
@@ -88,7 +88,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -146,7 +146,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -205,7 +205,7 @@ function sof_article_field_default_field_instances() {
           'optionset' => 'sof_field',
         ),
         'type' => 'flexslider',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'related_content_reference' => array(
         'label' => 'hidden',
@@ -340,7 +340,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -408,7 +408,7 @@ function sof_article_field_default_field_instances() {
           'view_mode' => 'related_content_reference',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -471,7 +471,7 @@ function sof_article_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'related_content_reference' => array(
         'label' => 'above',
