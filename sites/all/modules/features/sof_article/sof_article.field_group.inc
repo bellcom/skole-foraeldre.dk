@@ -21,7 +21,7 @@ function sof_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Bottom Article Region',
-    'weight' => '8',
+    'weight' => '2',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(

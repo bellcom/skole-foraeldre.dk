@@ -99,9 +99,13 @@ dependencies[] = sof_article
 dependencies[] = sof_banner
 dependencies[] = sof_field_bases
 dependencies[] = sof_image_styles
+dependencies[] = sof_pathauto_settings
 dependencies[] = sof_publication
+dependencies[] = sof_section
 dependencies[] = sof_sliders
 dependencies[] = sof_text_formats
+dependencies[] = sof_variables
+dependencies[] = sof_views_contents
 dependencies[] = sof_views_references
 
 

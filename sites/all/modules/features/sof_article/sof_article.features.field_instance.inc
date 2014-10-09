@@ -88,7 +88,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -143,7 +143,7 @@ function sof_article_field_default_field_instances() {
         'weight' => 6,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
@@ -286,7 +286,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -340,7 +340,7 @@ function sof_article_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -408,7 +408,7 @@ function sof_article_field_default_field_instances() {
           'view_mode' => 'related_content_reference',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'related_content_reference' => array(
         'label' => 'above',
