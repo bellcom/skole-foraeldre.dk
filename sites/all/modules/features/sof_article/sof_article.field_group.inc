@@ -114,7 +114,8 @@ function sof_article_field_group_info() {
     'label' => 'Right Article Region',
     'weight' => '1',
     'children' => array(
-      0 => 'field_related_content',
+      0 => 'field_banner',
+      1 => 'field_related_content',
     ),
     'format_type' => 'div',
     'format_settings' => array(
