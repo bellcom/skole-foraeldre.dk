@@ -124,10 +124,6 @@ hide($content['links']);
      <div class="top-article-content">
 	  	  <!-- Left Region -->
 		  <div class="left-article-region article-region">
-		  	<!-- Top links for printing and sharing -->
-		  	<?php if ($links = render($content['links'])): ?>
-			   <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
-			<?php endif; ?>
 			<!-- Left Region Group --> 
 		  	<?php print render($content['group_leftaregion']['field_image_slider']); ?>
 		  	<h2 class="node-article-title"><?php print $title; ?></h2>
@@ -140,6 +136,10 @@ hide($content['links']);
 		   </div> 
 	       <!-- Right Region -->
 		   <div class="right-article-region article-region">
+		    <!-- Top links for printing and sharing -->
+		  	<?php if ($links = render($content['links'])): ?>
+			   <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
+			<?php endif; ?>
 		    <?php print render($content['group_rightaregion']); ?>
 		   </div>
 	   </div>

@@ -436,29 +436,7 @@ h3 .field-group-format-toggler{
     line-height: 23px;
     padding: 20px;
 }
-.left-article-region nav{
-	margin:40px 0 0 0;
-	width:100%;
-	float:left;
-	text-align:right;
-}
-.left-article-region nav ul {
-	float:right;
-}
-.left-article-region nav ul li{
-	float:left;
-}
-.left-article-region nav ul li.print_html{
-	background-image:url('images/print-link-icon.png');
-	background-repeat:no-repeat;
-	background-position: center center;
-	width:30px;
-	height:28px;
 
-}
-.left-article-region nav ul li.print_html a{
-	color:transparent;
-}
 .article-region h2.node-article-title{
 	color: black;
     float: left;
@@ -634,6 +612,40 @@ blockquote{
     box-sizing: border-box;
     padding:0 10px 0 30px;
        
+}
+.right-article-region nav ul li{
+	margin:0;
+}
+.right-article-region nav ul li.print_html{
+	background-color: #00a2eb;
+	background-image:url("images/download-pdf-icon-small.png");
+	background-position:97% center;
+	background-repeat:no-repeat;
+    font-size: 20px;
+    margin-bottom: 6px;
+    margin-right: 0;
+    margin-top: 10px;
+    padding: 12px 20px;
+    width:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    float:left;
+}
+.right-article-region  nav ul li.print_html a{
+	color:#fff;
+	font-size: 22px;
+    line-height: 24px;
+    margin-top: 15px;
+    padding-left: 0;
+    text-transform:uppercase;
+    font-family: 'conduit_itclight';
+}
+.right-article-region  nav ul li.print_html:hover{
+	opacity:0.9;
+}
+.right-article-region  nav ul li.print_html a:hover{
+	text-decoration:none;
 }
 .right-article-region .field-group-format-wrapper {
 	width:100%;
