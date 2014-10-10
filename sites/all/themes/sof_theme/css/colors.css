@@ -6,12 +6,15 @@ a,
 .article-region .field-name-body h4,
 .article-region .field-name-body h2,
 .article-region .field-name-body blockquote p,
-#block-system-main-menu ul li.last.menu-depth-1:before  {
+.article-region .field-name-body blockquote:before,
+#block-system-main-menu ul li.last.menu-depth-1:after,
+#block-views-related-content-block .field-content a  {
   color: #00a2eb;
 }
 
 #footer,
-.article-region .field-name-body a.download-article-pdf{
+.article-region .field-name-body a.download-article-pdf,
+.right-article-region nav ul li.print_html{
   background-color: #00a2eb;
 }
 
