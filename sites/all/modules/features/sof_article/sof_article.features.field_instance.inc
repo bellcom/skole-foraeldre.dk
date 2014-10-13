@@ -15,7 +15,7 @@ function sof_article_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter the body of this posting.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -50,7 +50,7 @@ function sof_article_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 0,
       'text_processing' => 1,
@@ -60,6 +60,12 @@ function sof_article_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_label_summary' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_summary' => '',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 20,
         'summary_rows' => 5,
       ),
@@ -128,7 +134,7 @@ function sof_article_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Selct banner that goes with this posting.',
+    'description' => 'Select banner that goes with this posting.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -304,6 +310,8 @@ function sof_article_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -312,9 +320,13 @@ function sof_article_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 'upload',
+          'youtube' => 0,
         ),
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
@@ -499,6 +511,7 @@ function sof_article_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'match_operator' => 'CONTAINS',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'path' => '',
         'references_dialog_add' => 1,
         'references_dialog_edit' => 0,
@@ -648,9 +661,10 @@ function sof_article_field_default_field_instances() {
   t('Body');
   t('Categories');
   t('Choose a category that fits your content.');
+  t('Enter the body of this posting.');
   t('Related articles');
   t('Related content');
-  t('Selct banner that goes with this posting.');
+  t('Select banner that goes with this posting.');
   t('Select related articles that will be presented as slider');
   t('Select related content of this article');
   t('Show publication link');
