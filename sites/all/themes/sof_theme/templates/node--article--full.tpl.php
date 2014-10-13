@@ -125,6 +125,9 @@ hide($content['links']);
 	  	  <!-- Left Region -->
 		  <div class="left-article-region article-region">
 			<!-- Left Region Group --> 
+			<div class="top-sharing-printing-links">
+				<?php print render($content['group_leftaregion']['field_add_this']); ?>
+		  	</div>	
 		  	<?php print render($content['group_leftaregion']['field_image_slider']); ?>
 		  	<h2 class="node-article-title"><?php print $title; ?></h2>
 		    <?php print render($content['group_leftaregion']); ?>
