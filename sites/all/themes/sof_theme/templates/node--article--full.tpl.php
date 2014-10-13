@@ -124,10 +124,6 @@ hide($content['links']);
      <div class="top-article-content">
 	  	  <!-- Left Region -->
 		  <div class="left-article-region article-region">
-		  	<!-- Top links for printing and sharing -->
-		  	<?php if ($links = render($content['links'])): ?>
-			   <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
-			<?php endif; ?>
 			<!-- Left Region Group --> 
 		  	<?php print render($content['group_leftaregion']['field_image_slider']); ?>
 		  	<h2 class="node-article-title"><?php print $title; ?></h2>
@@ -140,6 +136,19 @@ hide($content['links']);
 		   </div> 
 	       <!-- Right Region -->
 		   <div class="right-article-region article-region">
+		    <!-- Top links for printing and sharing -->
+		  	<?php if ($links = render($content['links'])): ?>
+			   <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
+			<?php endif; ?>
+			<!-- Related terms block -->
+			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>
+				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedterms)))); ?>
+			<?php endif; ?>
+			<!-- Related articles / slideshow -->
+			<?php if ( $blockrelatedslider = block_load('views', 'related_articles_slider-block')): ?>
+				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedslider)))); ?>
+			<?php endif; ?>
+			<!-- Rest of the fields -->
 		    <?php print render($content['group_rightaregion']); ?>
 		   </div>
 	   </div>

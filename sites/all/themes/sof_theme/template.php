@@ -152,10 +152,12 @@ function sof_theme_process_page(&$variables) {
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
 }
-//function sof_theme_field__field_related_content__article(&$variables){
-	//kpr($variables);
-//}
+
+/**
+ * Override related content field in article node.
+ */
 function sof_theme_field__field_related_content__article($variables) {
+	//kpr($variables);
   $output = '';
   // Render the label, if it's not hidden.
   if (!$variables['label_hidden']) {
@@ -164,6 +166,7 @@ function sof_theme_field__field_related_content__article($variables) {
   // Render the items.
   $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
   foreach ($variables['items'] as $delta => $item) {
+  	//kpr($item['node']);
     $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
     $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
   }
@@ -172,3 +175,19 @@ function sof_theme_field__field_related_content__article($variables) {
   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
   return $output;
 }
+
+/**
+ * Override elated content reference image field
+ */
+function sof_theme_preprocess_field(&$vars) {
+  $element = $vars['element'];
+  // Field type image
+  if ($element['#field_type'] == 'image') {
+    // Reduce number of images in related content reference view mode to single image
+    if ($element['#view_mode'] == 'related_content_reference') {
+       $item = reset($vars['items']);
+       $vars['items'] = array($item);
+    }
+  }
+}
+
