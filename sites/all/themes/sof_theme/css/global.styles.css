@@ -461,6 +461,7 @@ h3 .field-group-format-toggler{
 }
 #node_article_full_group_leftaregion{
 	float:left;
+	width:100%;
 }
 .article-region .field-name-field-teaser {
 	color: black;
@@ -614,7 +615,15 @@ blockquote{
     padding-top: 4px;
     text-align: left;
 }
-
+.article-region .field-name-field-video,
+.media-vimeo-video{
+	width:100%;
+	float:left;
+}
+.article-region .field-name-field-video video,
+.media-vimeo-video iframe{
+	width:100%;
+}
 /* Right Article Region  */
 #node_article_full_group_rightaregion{
 	float:left;
