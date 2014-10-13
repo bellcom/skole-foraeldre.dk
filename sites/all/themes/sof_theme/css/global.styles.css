@@ -424,6 +424,22 @@ article.contextual-links-region{
     padding:0 30px 0 0;
        
 }
+.top-sharing-printing-links{
+	float:right;
+}
+.addthis_button {
+	float:left;
+	background-image:url('images/share-this.png');
+	background-repeat:no-repeat;
+	background-position:0 0;
+	width:32px;
+	height:25px;
+}
+.addthis_button img{
+	opacity:0;
+	height:25px;
+}
+
 h3 .field-group-format-toggler{
 	display:none;
 }
