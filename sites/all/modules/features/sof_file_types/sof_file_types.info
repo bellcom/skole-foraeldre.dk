@@ -1,0 +1,17 @@
+name = SOF file types
+description = Exports all file types settings
+core = 7.x
+package = Configuration
+dependencies[] = ctools
+dependencies[] = file_entity
+features[ctools][] = file_entity:file_default_displays:1
+features[features_api][] = api:2
+features[file_display][] = image__full__file_image
+features[file_display][] = video__default__file_field_file_default
+features[file_display][] = video__default__file_field_file_download_link
+features[file_display][] = video__default__file_field_file_table
+features[file_display][] = video__default__file_field_file_url_plain
+features[file_display][] = video__default__file_field_media_large_icon
+features[file_display][] = video__default__media_vimeo_image
+features[file_display][] = video__default__media_youtube_image
+features[file_display][] = video__default__media_youtube_video

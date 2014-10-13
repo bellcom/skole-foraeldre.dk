@@ -32,6 +32,29 @@ function sof_field_bases_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'media_folders' => array(
+      'name' => 'Media Folders',
+      'machine_name' => 'media_folders',
+      'description' => 'Use media folders to organize your media',
+      'hierarchy' => 1,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'publication_category' => array(
       'name' => 'Publication category',
       'machine_name' => 'publication_category',
