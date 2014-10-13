@@ -789,10 +789,18 @@ blockquote{
  	box-sizing: border-box;	
 	text-align:center;
 	margin: 20px 0;
-    padding:30px;
+}
+.banner-bean-link{
+	padding:30px;
+	float:left;
+}
+.banner-bean-link:hover, .banner-bean-link:focus{
+	text-decoration:none;
+	border:none;
 }
 .entity-bean.bean-banner:hover{
-	opacity:0.9;
+	opacity:0.8;
+	
 }
 .entity-bean.bean-banner .field-name-field-image .field-item{
 	width:120px;
@@ -963,7 +971,7 @@ ul.links li {
 .attribution {
   display: block;
   opacity: 0.65;
-  padding: 1em 0;
+  padding: 1ezm 0;
   text-align: center;
 }
 
@@ -1059,14 +1067,14 @@ a {
 }
 
 a:link,
-a:visited {}
+a:visited { }
 
 a:active,
-a.active {}
+a.active { }
 
 a:hover,
 a:focus {
-  text-decoration: underline;
+
 }
 
 
