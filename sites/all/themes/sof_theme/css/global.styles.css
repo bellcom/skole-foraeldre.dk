@@ -242,7 +242,7 @@ var {
  * Wraps the sidebars the content column
  */
 #columns {
-	padding-bottom:-330px;
+	padding:0 30px;
 	height:100%;
 	max-width:1170px;
 	margin:0 auto;
@@ -386,25 +386,31 @@ var {
 
 
 /* =============================================================================
- *   Articles
+ *   Articles and News
  * ========================================================================== */
 
 body.node-type-article #columns,
 body.node-type-article #content,
-body.node-type-article #main-content{
+body.node-type-article #main-content,
+body.node-type-news #columns,
+body.node-type-news #content,
+body.node-type-news #main-content{
 	width:100%!important;
 	max-width:100%!important;
 }
-body.node-type-article #columns{
+body.node-type-article #columns,
+body.node-type-news #columns{
 	margin-top:40px;
 }
 .top-article-content,
-body.node-type-article #main-content-header{
+body.node-type-article #main-content-header,
+body.node-type-news #main-content-header{
 	max-width:1170px;
 	margin:0 auto;
 	display:block;
 }
-body.node-type-article #page-title{
+body.node-type-article #page-title,
+body.node-type-news #page-title{
 	display:none;
 }
 .article-region{
@@ -444,14 +450,12 @@ h3 .field-group-format-toggler{
 	display:none;
 }
 .flexslider{
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border-radius:0px;
     border:0px;
     box-shadow: none;
     margin:10px 0 0  0;
     position: relative;
     float:left;
-    background-color:#f0f0f0;
 }
 .flexslider ul li{
 	display:block!important;
@@ -461,8 +465,8 @@ h3 .field-group-format-toggler{
     color: #6c6c6c;
     font-size: 18px;
     font-weight: 400;
-    line-height: 23px;
-    padding: 20px;
+    padding:20px;
+    line-height:23px;
 }
 
 .article-region h2.node-article-title{
@@ -475,7 +479,8 @@ h3 .field-group-format-toggler{
     margin: 40px 0 0;
     width: 100%;
 }
-#node_article_full_group_leftaregion{
+#node_article_full_group_leftaregion,
+#node_news_full_group_leftaregion{
 	float:left;
 	width:100%;
 }
@@ -571,7 +576,7 @@ blockquote{
     box-sizing: border-box;
 }
 .article-region .field-name-body h3{
-	color: black;
+	color: #000;
     font-family: "conduit_itcregular",sans-serif;
     font-size: 21px;
     font-weight: 800;
@@ -588,6 +593,16 @@ blockquote{
     margin-bottom: 10px;
     margin-top: 20px;
     text-decoration: none;
+}
+.article-region .field-name-body h5{
+	color: #094974;
+    font-size: 30px;
+    line-height: 34px;
+    margin:0;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-decoration: none;
+    font-weight: 400;
 }
 .article-region  .author-datetime{
 	margin:20px 0 0 0;
@@ -643,6 +658,7 @@ blockquote{
 /* Right Article Region  */
 #node_article_full_group_rightaregion{
 	float:left;
+	margin-bottom:40px;
 }
 .right-article-region{
 	width:33.3%;
@@ -650,7 +666,7 @@ blockquote{
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
-    padding:0 10px 0 30px;
+    padding:0 0 0 30px;
        
 }
 .right-article-region nav ul li{
@@ -674,10 +690,11 @@ blockquote{
 }
 .right-article-region  nav ul li.print_html a{
 	color:#fff;
-	font-size: 22px;
+	font-size: 21px;
     line-height: 24px;
     margin-top: 15px;
     padding-left: 0;
+    padding-right:15px;
     text-transform:uppercase;
     font-family: 'conduit_itclight';
     font-weight:normal;
@@ -813,7 +830,7 @@ blockquote{
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	
 	text-align:center;
-	margin: 20px 0;
+	margin: 40px 0 0 0 ;
 }
 .banner-bean-link{
 	padding:30px;
@@ -824,7 +841,7 @@ blockquote{
 	border:none;
 }
 .entity-bean.bean-banner:hover{
-	opacity:0.8;
+	opacity:0.9;
 	
 }
 .entity-bean.bean-banner .field-name-field-image .field-item{

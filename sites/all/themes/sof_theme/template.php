@@ -154,7 +154,7 @@ function sof_theme_process_page(&$variables) {
 }
 
 /**
- * Override related content field in article node.
+ * Override related content field in article node. Block:Related Content Single Blocks
  */
 function sof_theme_field__field_related_content__article($variables) {
 	//kpr($variables);
@@ -177,7 +177,7 @@ function sof_theme_field__field_related_content__article($variables) {
 }
 
 /**
- * Override elated content reference image field
+ * Override related content reference image field. Block: Related Content Single Block
  */
 function sof_theme_preprocess_field(&$vars) {
   $element = $vars['element'];
@@ -191,3 +191,18 @@ function sof_theme_preprocess_field(&$vars) {
   }
 }
 
+/**
+ * Override or insert variables into the node templates.
+ */
+function sof_theme_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $view_mode = $variables['view_mode'];
+  
+  if ( $node->type == 'news' || $node->type == 'article' ) {
+  	if($view_mode == 'full'){
+   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
+	}else if($view_mode == 'related_content_reference'){
+		$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
+	}
+  }  
+}
