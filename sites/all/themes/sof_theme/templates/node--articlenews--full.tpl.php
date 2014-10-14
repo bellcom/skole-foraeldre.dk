@@ -157,11 +157,18 @@ hide($content['links']);
 	   </div>
    	   <!-- Bottom Region -->
   	   <div class="bottom-article-region article-region">
-  	   	<!-- Related Articles Bottom Block -->
-  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
-             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
-         <?php endif; ?>
-   		 <?php print render($content['group_bottomaregion']); ?>
+	  	   	<!-- Related Articles Bottom Block -->
+	  	   	<div class="bottom-read-also-block">
+	  	   		<h2 class="block-title"><?php echo t('Read Also');?></h2>
+	  	   		<div class="bottom-read-also-block-inner">
+	  	   			 <!-- Read Also Content -->
+			  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
+			             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
+			         <?php endif; ?>
+			          <!-- Read Also Articles --> 
+			    </div>    
+	        </div>
+	   		 <?php print render($content['group_bottomaregion']); ?>
        </div>	
   </div>
   <!-- Main Content -->
