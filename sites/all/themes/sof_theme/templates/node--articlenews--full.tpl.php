@@ -157,6 +157,10 @@ hide($content['links']);
 	   </div>
    	   <!-- Bottom Region -->
   	   <div class="bottom-article-region article-region">
+  	   	<!-- Related Articles Bottom Block -->
+  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
+             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
+         <?php endif; ?>
    		 <?php print render($content['group_bottomaregion']); ?>
        </div>	
   </div>
