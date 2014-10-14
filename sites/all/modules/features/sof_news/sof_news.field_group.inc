@@ -51,9 +51,9 @@ function sof_news_field_group_info() {
     'label' => 'Content references',
     'weight' => '6',
     'children' => array(
-      0 => 'field_related_article',
-      1 => 'field_related_content',
-      2 => 'field_banner',
+      0 => 'field_related_content',
+      1 => 'field_banner',
+      2 => 'field_related_news',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

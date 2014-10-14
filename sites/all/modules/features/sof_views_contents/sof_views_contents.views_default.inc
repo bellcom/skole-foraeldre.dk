@@ -148,10 +148,10 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'related_articles_slider';
-  $view->description = 'Small slider used on article page for showing related artilcles.';
+  $view->description = 'Small slider used on article or news page for showing related content as slider of the same type.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Related articles slider';
+  $view->human_name = 'Related articles-news slider (Also see block)';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -220,6 +220,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'news' => 'news',
   );
 
   /* Display: Block */

@@ -34,6 +34,7 @@ features[field_base][] = field_publication_control_link
 features[field_base][] = field_publication_file_type
 features[field_base][] = field_related_article
 features[field_base][] = field_related_content
+features[field_base][] = field_related_news
 features[field_base][] = field_single_link
 features[field_base][] = field_small_title
 features[field_base][] = field_tags
