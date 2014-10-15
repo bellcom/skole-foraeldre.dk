@@ -76,6 +76,7 @@ dependencies[] = metatag_opengraph
 dependencies[] = metatag_panels
 dependencies[] = addthis_displays
 dependencies[] = addthis
+dependencies[] = jquery_update
 dependencies[] = ckeditor
 dependencies[] = variable
 dependencies[] = variable_realm
@@ -106,6 +107,7 @@ dependencies[] = sof_pdf_generator
 
 ;Features
 dependencies[] = sof_banner
+dependencies[] = sof_file_types
 dependencies[] = sof_image_styles                                           
 dependencies[] = sof_pathauto_settings                                
 dependencies[] = sof_sliders                                                    
