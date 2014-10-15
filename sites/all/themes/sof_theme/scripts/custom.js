@@ -15,10 +15,6 @@
 			$('.header-navigation-container').toggleClass("active");
 		});	
 		
-		//Search page if no results
-	    if($('.slides .field-content .item-list').length == 0){ 
-			$('#block-views-related-articles-slider-block').hide();
-	    };
                                      	
    }
   };
