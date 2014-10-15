@@ -27,11 +27,11 @@
  * @see template_process()
  */	
 ?>
-<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+<div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?> style="background-color:<?php print render($field_color[0]['rgb']);?>">
   <div class="content">
   	<a class="banner-bean-link" href="<?php print render($field_single_link[0]['url'] ); ?>">
     <?php
+     hide($content['field_color']);
      hide($content['field_single_link']);
      print render($content);
     ?>
