@@ -408,6 +408,10 @@ body.node-type-news #main-content-header{
 	max-width:1170px;
 	margin:0 auto;
 	display:block;
+	padding:0 30px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 body.node-type-article #page-title,
 body.node-type-news #page-title{
@@ -483,6 +487,9 @@ h3 .field-group-format-toggler{
 #node_news_full_group_leftaregion{
 	float:left;
 	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 .article-region .field-name-field-teaser {
 	color: black;
@@ -707,6 +714,9 @@ blockquote{
 }
 .right-article-region .field-group-format-wrapper {
 	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 .right-article-region .field-group-format-wrapper .field-name-field-related-content .field-label{
 	font-size: 24px;
@@ -779,10 +789,16 @@ blockquote{
 	width:100%;
 	background:#fff;
 	float:left;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 #block-views-read-also-block{
 	float:left;
 	width:66.6%;
+}
+#block-views-read-also-block .block-inner{
+	margin:0;
 }
 #block-views-read-also-block .views-row{
 	width:50%;
@@ -811,7 +827,7 @@ blockquote{
 	color: #000;
     font-size: 30px;
     font-weight: 400;
-    margin-top: 20px;
+    margin:0;
     text-align: left;
     text-decoration: none;
     line-height: 32px;
@@ -838,6 +854,9 @@ blockquote{
     padding-top: 10px;
     text-align: left;
     text-transform: uppercase;
+}
+#block-views-read-also-block .views-field-view-node a:hover{
+	color:#000;
 }
 /* =============================================================================
  *   BLOCKS
@@ -2657,11 +2676,16 @@ body.page-404 #content .action-links{
  *   Media Queries
  * ========================================================================== */
 @media all and (max-width: 1170px){
-	#columns{
-		padding:0 30px;
-	}
 	#header{
 		padding:0 30px 30px 30px;
+	}
+	.bottom-read-also-block,
+	.top-article-content{
+		max-width:940px;
+		padding:0;
+		-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
 	}
 }
 

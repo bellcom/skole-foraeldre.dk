@@ -149,7 +149,23 @@ body {
 .entity-bean.bean-banner{
 	max-width:none;	
 }
-
+#block-views-read-also-block,
+#block-views-read-also-block .views-row{
+	width:100%;
+}
+#block-views-read-also-block .views-field-view-node{
+	text-align:center;
+}
+#block-views-read-also-block .views-row{
+	padding:35px 15px;
+}
+.article-region .field-name-body blockquote p{
+	width:81%;
+}
+.bottom-read-also-block, 
+.top-article-content{
+	padding:0 10px;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
