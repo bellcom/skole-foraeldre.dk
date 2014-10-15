@@ -177,7 +177,6 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_related_article_target_id';
   $handler->display->display_options['fields']['title']['ui_name'] = '(not shown) Slide caption';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
@@ -186,7 +185,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
   $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider_1']['relationship'] = 'field_related_article_target_id';
+  $handler->display->display_options['fields']['field_image_slider_1']['relationship'] = 'field_related_news_target_id';
   $handler->display->display_options['fields']['field_image_slider_1']['ui_name'] = 'Slide image';
   $handler->display->display_options['fields']['field_image_slider_1']['label'] = '';
   $handler->display->display_options['fields']['field_image_slider_1']['element_label_colon'] = FALSE;
@@ -225,6 +224,66 @@ function sof_views_contents_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: (not shown) Slide caption */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_related_article_target_id';
+  $handler->display->display_options['fields']['title']['ui_name'] = '(not shown) Slide caption';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Slide image */
+  $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
+  $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider_1']['relationship'] = 'field_related_article_target_id';
+  $handler->display->display_options['fields']['field_image_slider_1']['ui_name'] = 'Slide image';
+  $handler->display->display_options['fields']['field_image_slider_1']['label'] = '';
+  $handler->display->display_options['fields']['field_image_slider_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_slider_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_slider_1']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_related_news_target_id']['id'] = 'field_related_news_target_id';
+  $handler->display->display_options['relationships']['field_related_news_target_id']['table'] = 'field_data_field_related_news';
+  $handler->display->display_options['relationships']['field_related_news_target_id']['field'] = 'field_related_news_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: (not shown) Slide caption */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_related_news_target_id';
+  $handler->display->display_options['fields']['title']['ui_name'] = '(not shown) Slide caption';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Slide image */
+  $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
+  $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider_1']['relationship'] = 'field_related_news_target_id';
+  $handler->display->display_options['fields']['field_image_slider_1']['ui_name'] = 'Slide image';
+  $handler->display->display_options['fields']['field_image_slider_1']['label'] = '';
+  $handler->display->display_options['fields']['field_image_slider_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_slider_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_slider_1']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
   $export['related_articles_slider'] = $view;
 
   $view = new view();

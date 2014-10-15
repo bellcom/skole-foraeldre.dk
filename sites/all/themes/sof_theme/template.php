@@ -201,6 +201,16 @@ function sof_theme_preprocess_node(&$variables) {
   if ( $node->type == 'news' || $node->type == 'article' ) {
   	if($view_mode == 'full'){
    		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
+        
+        //Pass slider block $delta as variable
+        switch($node->type){
+            case 'article':
+                $variables['slider_block_delta'] = 'related_articles_slider-block';
+                break;
+            case 'news':
+                $variables['slider_block_delta'] = 'related_articles_slider-block_1';
+                break;
+        }        
 	}else if($view_mode == 'related_content_reference'){
 		$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
 	}

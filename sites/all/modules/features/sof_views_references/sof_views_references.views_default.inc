@@ -241,6 +241,7 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_banner:article',
+    1 => 'node:field_banner:news',
   );
   $export['reference_dialog_banner'] = $view;
 
