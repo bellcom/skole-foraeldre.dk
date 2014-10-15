@@ -147,8 +147,8 @@ hide($content['links']);
 			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>
 				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedterms)))); ?>
 			<?php endif; ?>
-			<!-- Related articles / slideshow -->
-			<?php if ( $blockrelatedslider = block_load('views', 'related_articles_slider-block')): ?>
+			<!-- Related articles/news slideshow -->
+			<?php if ( $blockrelatedslider = block_load('views', $slider_block_delta)): ?>
 				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedslider)))); ?>
 			<?php endif; ?>
 			<!-- Rest of the fields -->
