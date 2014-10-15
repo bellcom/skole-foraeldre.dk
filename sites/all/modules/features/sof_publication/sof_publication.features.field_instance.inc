@@ -328,7 +328,46 @@ function sof_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 17,
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-publication-field_pdf_cover_color'
+  $field_instances['node-publication-field_pdf_cover_color'] = array(
+    'bundle' => 'publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select cover color for the generated pdf file',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'color_field',
+        'settings' => array(),
+        'type' => 'color_field_default_formatter',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pdf_cover_color',
+    'label' => 'Publication cover color',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'color_field',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'color_field_default_widget',
+      'weight' => 18,
     ),
   );
 
@@ -381,7 +420,7 @@ function sof_publication_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 19,
     ),
   );
 
@@ -498,9 +537,11 @@ function sof_publication_field_default_field_instances() {
   t('Image');
   t('PDF');
   t('Publication content');
+  t('Publication cover color');
   t('Publication file type');
   t('Publication title');
   t('Selct if the pdf file will be uploaded or generated from webpage content');
+  t('Select cover color for the generated pdf file');
   t('Select nodes that will be printed as pdf content');
   t('Teaser');
   t('Upload an image to go with this posting.');

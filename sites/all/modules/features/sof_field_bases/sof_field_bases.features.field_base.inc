@@ -488,6 +488,28 @@ function sof_field_bases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_pdf_cover_color'
+  $field_bases['field_pdf_cover_color'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pdf_cover_color',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'rgb' => array(
+        0 => 'rgb',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'color_field',
+    'settings' => array(
+      'default_colors' => '#EBECEC,#00A0ED,#6CCDBB,#FCE470',
+    ),
+    'translatable' => 0,
+    'type' => 'color_field_rgb',
+  );
+
   // Exported field_base: 'field_pdf_title'
   $field_bases['field_pdf_title'] = array(
     'active' => 1,

@@ -25,6 +25,7 @@ function sof_publication_field_group_info() {
     'children' => array(
       0 => 'field_pdf_content',
       1 => 'field_pdf_title',
+      2 => 'field_pdf_cover_color',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
