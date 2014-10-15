@@ -84,6 +84,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['ui_name'] = 'Teaser';
   $handler->display->display_options['fields']['field_teaser']['label'] = '';
+  $handler->display->display_options['fields']['field_teaser']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
   /* Field: Link */
