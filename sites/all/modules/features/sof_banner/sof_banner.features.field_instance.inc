@@ -20,12 +20,8 @@ function sof_banner_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'color_field',
-        'settings' => array(
-          'important' => 1,
-          'property' => 'background-color',
-          'selector' => '.entity-bean.bean-banner',
-        ),
-        'type' => 'color_field_css_declaration',
+        'settings' => array(),
+        'type' => 'color_field_default_formatter',
         'weight' => 3,
       ),
     ),

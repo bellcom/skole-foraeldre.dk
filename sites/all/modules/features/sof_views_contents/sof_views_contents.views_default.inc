@@ -208,6 +208,10 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -223,6 +227,19 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Related news (field_related_news:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_related_news';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['delta']['group'] = 2;
+  /* Filter criterion: Content: Related articles (field_related_article) */
+  $handler->display->display_options['filters']['field_related_article_target_id']['id'] = 'field_related_article_target_id';
+  $handler->display->display_options['filters']['field_related_article_target_id']['table'] = 'field_data_field_related_article';
+  $handler->display->display_options['filters']['field_related_article_target_id']['field'] = 'field_related_article_target_id';
+  $handler->display->display_options['filters']['field_related_article_target_id']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_related_article_target_id']['group'] = 2;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
