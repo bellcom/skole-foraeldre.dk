@@ -1,0 +1,24 @@
+<?php
+/**
+ * Implements hook_libraries_info().
+ */
+function columnizer_libraries_info() {
+  $libraries['columnizer'] = array(
+    'name' => 'Columnizer',
+    'vendor url' => 'http://welcome.totheinter.net/columnizer-jquery-plugin/',
+    'download url' => 'https://github.com/adamwulf/Columnizer-jQuery-Plugin',
+    'version arguments' => array(
+      'file' => 'jquery.columnizer.min.js',
+      // version 1.6.0
+      'pattern' => '/version (\d+\.+\d+)/',
+      'lines' => 5,
+    ),
+    'files' => array(
+      'js' => array(
+        'jquery.columnizer.min.js',
+      ),
+    ),
+  );
+ 
+  return $libraries;
+}

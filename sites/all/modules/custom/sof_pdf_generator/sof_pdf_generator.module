@@ -50,18 +50,31 @@ function sof_pdf_generator_menu() {
              
              //Add Template css
                 drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
-             
+                
+             //Add Columnizer library
+                libraries_load('columnizer');
+
              //Get node rendering array
                 $node_view = node_view($node_obj, 'sof_publication_view');
              
              
              //Create template variables
                 $sof_print_vars['css'] = drupal_get_css();
+                $sof_print_vars['js']  = drupal_get_js();
                 $sof_print_vars['nodeobj'] = $node_obj; //Full node obj just in case
                 $sof_print_vars['title'] = $node_view['field_pdf_title'];
-                $sof_print_vars['content'] = $node_view['field_pdf_content'];
+                $sof_print_vars['content'] = array();
                 
-             
+                $node_items = $node_view['field_pdf_content']['#items'];
+                foreach($node_items as $key=>$item){
+                    $sof_print_vars['content'][] = array(
+                        'title'  => $item['entity']->title,
+                        'teaser' => $item['entity']->field_teaser[LANGUAGE_NONE][0]['value'],
+                        'body'   => $item['entity']->body[LANGUAGE_NONE][0]['safe_value'],
+                    );
+                
+                }
+
              //Get html returned by the template file
               $html_render = theme('sof_pdf_generator', $sof_print_vars);
                          
@@ -110,6 +123,7 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
     'sof_pdf_generator' => array(
       'variables' => array(
         'css'     => NULL,
+        'js'      => NULL,
         'nodeobj' => NULL,
         'title'   => NULL,
         'content' => NULL,
