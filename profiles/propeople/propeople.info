@@ -121,4 +121,5 @@ dependencies[] = sof_publication
 dependencies[] = sof_section
 dependencies[] = sof_views_contents                                       
 dependencies[] = sof_views_references
+dependencies[] = sof_blocks
 
