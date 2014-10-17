@@ -128,8 +128,8 @@ html, body {
     color: black;
     font-size: 14px;
     line-height: 20px;
-    position:relative;
-    height:100%;
+    height: 100%;
+    min-height:100%;
 }
 
 
@@ -215,11 +215,12 @@ var {
  * The .container class holds the page width value from theme settings.
  */
 #page-wrapper {
+	min-height:100%;
 	height:100%;
 }
 #page {
 	margin-top:30px;
-	position:relative;
+	min-height:100%;
 	height:100%;
 }
 #page .container {}
@@ -243,12 +244,14 @@ var {
  */
 #columns {
 	padding:0px;
-	height:100%;
 	max-width:1170px;
-	margin:0 auto;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
- 	box-sizing: border-box;	
+ 	box-sizing: border-box;	 	
+ 	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -330px; /* the bottom margin is the negative value of the footer's height */
 }
 
 /*
@@ -265,6 +268,7 @@ var {
 	width:100%;
 	max-width:1170px;
 	position:relative;
+	height:100%;
 }
 
 /*
@@ -278,13 +282,12 @@ var {
  */
 #footer {
 	width:100%;
-    position: relative;
-    margin-top: -330px; /* negative value of footer height */
     clear:both;
     padding:40px 0 60px 0;
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	
+    height: 330px;
 }
 /*
  * Footer region
@@ -858,6 +861,45 @@ blockquote{
 }
 #block-views-read-also-block .views-field-view-node a:hover{
 	color:#000;
+}
+
+/* =============================================================================
+ *   SECTIONS 
+ * ========================================================================== */
+body.node-type-section #page-title{
+	display:none;
+}
+.panel-col-full-main{
+	width:100%;
+	max-width:1170px;
+	float:left;
+}
+.node-section .panel-pane{
+	float:left;
+	width:100%;
+}
+.node-section  .pane-page-title  h1{
+	color: #000;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 50px;
+	margin:40px 0 0 0;
+}
+.node-section .field-name-field-teaser h2{
+	display:none;
+}
+.node-section .field-name-field-teaser .field-item{
+    color: #000;
+    font-family: 'conduit_itclight';
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 44px;
+    padding-right: 0;
+    padding-top: 20px;
+    text-align: left;
 }
 /* =============================================================================
  *   BLOCKS
