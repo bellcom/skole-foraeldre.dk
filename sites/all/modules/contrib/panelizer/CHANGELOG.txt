@@ -1,21 +1,5 @@
 Panelizer 7.x-3.x-dev, xxxx-xx-xx
 ---------------------------------
-#2302867 by DamienMcKenna: Resolve problems in hook_entity_load().
-#2291537 by DamienMcKenna: Removed the unused and empty CSS file.
-#2302867 by DamienMcKenna, Andrew M Riley: has_default_panel() did not check if
-  a default display existed, and related regressions.
-#2303079 by DamienMcKenna: Tidied up the entity bundle configuration variable.
-#2288683 by dstol: Ensure PanelizerEntityDefault class is always available.
-#2295091 by DamienMcKenna: Added a warning about Pathauto loosing entity URL
-  aliases.
-#2248781 by DamienMcKenna: hook_entity_load was not resetting $revision_id for
-  each entity, leading to errors upon hook_entity_update.
-#2280467 by DamienMcKenna: Clean up hook_menu().
-#2275421 by maximpodorov: Undefined variable in
-  panelizer_handler_filter_panelizer_status().
-#2267601 by Wim Leers, DamienMcKenna: Added a new variable (panelizer_view_mode)
-  so hook_preprocess_field() can know what view mode is being used to display
-  the entity the field is attached to.
 #2218275 by DamienMcKenna: 'Reset' action should reset to the default, not
   delete all {panelizer_entity} records.
 #2155715 by DamienMcKenna: Don't show the "Allow" selector if there's only one
