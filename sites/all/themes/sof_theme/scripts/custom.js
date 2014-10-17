@@ -1,6 +1,5 @@
 (function($) {
 
-	
   /**
   * Header Scripts 
   */	
@@ -14,6 +13,7 @@
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		});	
+
 		
                                      	
    }

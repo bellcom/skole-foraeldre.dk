@@ -228,12 +228,10 @@
     <?php print render($page['tertiary_content']); ?>
 
     <!-- !Footer -->
-    <?php if ($page['footer'] || $attribution): ?>
       <footer<?php print $footer_attributes; ?>>
         <?php print render($page['footer']); ?>
         <?php print $attribution; ?>
       </footer>
-    <?php endif; ?>
 
   </div>
 </div>
