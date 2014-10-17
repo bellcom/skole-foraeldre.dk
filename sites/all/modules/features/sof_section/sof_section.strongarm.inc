@@ -64,7 +64,32 @@ function sof_section_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__section';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
@@ -130,6 +155,77 @@ function sof_section_strongarm() {
   $strongarm->name = 'node_submitted_section';
   $strongarm->value = 0;
   $export['node_submitted_section'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_defaults_node_section';
+  $strongarm->value = array(
+    'status' => 1,
+    'view modes' => array(
+      'page_manager' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'default' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'full' => array(
+        'status' => 1,
+        'default' => 1,
+        'default display' => 'node:section:default:full',
+        'choice' => 0,
+      ),
+      'teaser' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'rss' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'search_index' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'search_result' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'diff_standard' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'print' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+      'token' => array(
+        'status' => 0,
+        'default' => 0,
+        'default display' => 0,
+        'choice' => 0,
+      ),
+    ),
+  );
+  $export['panelizer_defaults_node_section'] = $strongarm;
 
   return $export;
 }
