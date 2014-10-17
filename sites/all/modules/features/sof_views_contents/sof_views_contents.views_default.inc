@@ -392,7 +392,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'section_default_content';
-  $view->description = '';
+  $view->description = 'Contains 2 displays for default content on the section page.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Section default content';
