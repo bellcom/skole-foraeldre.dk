@@ -3,16 +3,24 @@
 /*  overflow: hidden;  */
 }
 
+.panel-3col-custom .panel-col-left{ 
+  float: left; 
+  width: 70%; 
+}
+* html .panel-3col-custom .panel-col-left {
+  width: 70%;
+}
+
 .panel-3col-custom .panel-col-first .inside { 
   margin: 0 .5em 1em 0;
 }
 
-.panel-3col-custom .panel-col-full-main { 
+.panel-3col-custom .panel-col-right { 
   float: left; 
-  width: 100%; 
+  width: 30%; 
 }
-* html .panel-3col-custom .panel-col-full-main {
-  width: 100%;
+* html .panel-3col-custom .panel-col-right {
+  width: 30%;
 }
 
 .panel-3col-custom .panel-col-last .inside { 
