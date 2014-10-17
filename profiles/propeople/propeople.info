@@ -102,6 +102,7 @@ dependencies[] = i18n_variable
 dependencies[] = i18nviews
 
 ;Custom
+dependencies[] = columnizer
 dependencies[] = sof_general_tweaks
 dependencies[] = sof_pdf_generator
 
