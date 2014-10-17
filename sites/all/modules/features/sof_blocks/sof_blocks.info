@@ -1,5 +1,5 @@
 name = SOF Blocks
-description = SOF Blocks 
+description = SOF Blocks
 core = 7.x
 package = Features
 dependencies[] = fe_block
