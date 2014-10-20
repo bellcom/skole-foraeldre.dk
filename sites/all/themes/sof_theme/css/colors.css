@@ -14,7 +14,12 @@ a,
 
 #footer,
 .article-region .field-name-body a.download-article-pdf,
-.right-article-region nav ul li.print_html{
+.right-article-region nav ul li.print_html,
+ul.pager li.pager-current,
+ul.pager li.pager-next,
+ul.pager li.pager-last,
+ul.pager li.pager-first,
+ul.pager li.pager-previous{
   background-color: #00a2eb;
 }
 

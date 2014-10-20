@@ -123,6 +123,25 @@ body {
 	padding:0 10px;
 }
 /* =============================================================================
+ *   Sections
+ * ========================================================================== */	
+.section-header .views-row{
+	width:100%;
+	padding:0;
+	padding-bottom:0;
+	margin-bottom:0;
+	margin-top:20px;
+	border:none;	
+}
+.section-header .views-field-field-image-slider img{
+	width:100%;
+}
+
+#content .panel-display, 
+#content .panel-flexible{
+	margin:0px!important;
+}
+/* =============================================================================
  *   Blocks
  * ========================================================================== */
 /*Banner identity */
