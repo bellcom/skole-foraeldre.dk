@@ -217,4 +217,3 @@ function sof_theme_preprocess_node(&$variables) {
   }  
 }
 
-
