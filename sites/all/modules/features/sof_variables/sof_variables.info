@@ -7,3 +7,4 @@ dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = i18n_string_source_language
+features[variable][] = site_frontpage

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF home page feature.
+ */
+
+include_once 'sof_home_page.features.inc';
