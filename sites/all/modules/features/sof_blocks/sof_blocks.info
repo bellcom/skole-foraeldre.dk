@@ -1,9 +1,13 @@
 name = SOF Blocks
-description = SOF Blocks
+description = Exports block settings
 core = 7.x
-package = Features
+package = Configuration
 dependencies[] = fe_block
 dependencies[] = menu
-features[fe_block_settings][] = menu-menu-top-navigation
+features[fe_block_boxes][] = footer_contact_block
+features[fe_block_boxes][] = footer_desc_block
+features[fe_block_settings][] = block-footer_contact_block
+features[fe_block_settings][] = block-footer_desc_block
+features[fe_block_settings][] = menu-menu-menu-top-navigation
 features[fe_block_settings][] = system-main-menu
 features[features_api][] = api:2
