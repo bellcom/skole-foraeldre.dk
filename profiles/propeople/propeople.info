@@ -88,6 +88,7 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_tree
 dependencies[] = views_ui
+dependencies[] = webform
 
 ;Contrib language modules
 dependencies[] = i18n_field     
@@ -122,6 +123,7 @@ dependencies[] = sof_news
 dependencies[] = sof_field_bases                                             
 dependencies[] = sof_publication                                             
 dependencies[] = sof_section
+dependencies[] = sof_webform
 dependencies[] = sof_home_page
 dependencies[] = sof_views_contents                                       
 dependencies[] = sof_views_references
