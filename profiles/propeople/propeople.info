@@ -57,6 +57,7 @@ dependencies[] = media_youtube
 dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entity_view_mode
+dependencies[] = follow
 dependencies[] = libraries
 dependencies[] = multiform
 dependencies[] = pathauto
