@@ -11,3 +11,5 @@ features[variable][] = pathauto_node_news_pattern
 features[variable][] = pathauto_node_pattern
 features[variable][] = pathauto_node_publication_pattern
 features[variable][] = pathauto_node_section_pattern
+features[variable][] = pathauto_node_slider_pattern
+features[variable][] = pathauto_node_webform_pattern
