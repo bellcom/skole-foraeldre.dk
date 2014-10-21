@@ -228,10 +228,16 @@
     <?php print render($page['tertiary_content']); ?>
 
     <!-- !Footer -->
+    <div class="footer-main-container">
+      <!-- Social media region -->	
+      <div class="footer-social-region">
+      	<?php print render($page['social_media_region']); ?>
+      </div>	
+      <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
         <?php print render($page['footer']); ?>
         <?php print $attribution; ?>
       </footer>
-
+    </div>
   </div>
 </div>

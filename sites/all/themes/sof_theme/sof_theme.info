@@ -92,6 +92,7 @@
   regions[help]                   = Help
   regions[page_top]               = Page top
   regions[page_bottom]            = Page bottom
+  regions[social_media_region]    = Social Media Region
 
 
 ;----------// Gpanel Regions
