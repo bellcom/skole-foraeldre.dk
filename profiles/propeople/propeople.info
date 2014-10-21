@@ -59,6 +59,7 @@ dependencies[] = entity
 dependencies[] = entity_view_mode
 dependencies[] = follow
 dependencies[] = libraries
+dependencies[] = menu_block
 dependencies[] = multiform
 dependencies[] = pathauto
 dependencies[] = redirect
