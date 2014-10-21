@@ -2397,22 +2397,25 @@ ul.action-links li {}
 	padding:0;
 	width:70%;
 }
-#footer .region-inner .block:first-child{
+#footer .region-footer .footer-logo{
 	width:70%;
+	float:left;
+	margin:0;
+	padding:0;
 }
-#footer .region-inner .block:nth-child(2){
+#footer .region-footer .block:nth-child(2){
 	width:30%;
 	line-height:24px;
 }
-#footer .region-inner .block:nth-child(2) h2{
+#footer .region-footer .block:nth-child(2) h2{
 	font-size: 24px;
     padding-bottom: 20px;
     text-transform: uppercase;
 }
-#footer .region-inner .block:nth-child(2) .block-inner{
+#footer .region-footer .block:nth-child(2) .block-inner{
 	float:right;
 }
-#footer .region-inner .block:nth-child(2) a{
+#footer .region-footer .block:nth-child(2) a{
 	color:#000;
 }
 /* =============================================================================

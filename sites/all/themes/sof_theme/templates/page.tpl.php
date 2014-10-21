@@ -235,8 +235,16 @@
       </div>	
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
-        <?php print render($page['footer']); ?>
-        <?php print $attribution; ?>
+        <div class="region-footer">
+	        <?php if ($site_logo): ?>
+	            <div class="footer-logo">
+	              <?php print $site_logo; ?>
+	            </div>
+	        <?php endif; ?>
+	        <?php print render($page['footer']['block_1']); ?>
+	        <?php print render($page['footer']['block_2']); ?>
+	        <?php print $attribution; ?>
+	     </div> 
       </footer>
     </div>
   </div>

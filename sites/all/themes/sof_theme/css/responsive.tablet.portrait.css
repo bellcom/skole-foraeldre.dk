@@ -161,17 +161,19 @@ body {
 /* =============================================================================
  *   Footer
  * ========================================================================== */
-#footer .region-footer{
+#footer .region-footer,{
 	padding-right:30px;
 	padding-left:30px;
 }
-#footer .block{
+#footer .block,
+#footer .region-footer .footer-logo{
 	float:left;
-	margin:0;
+	margin:0 0 20px 0;
 	padding:0;
 	width:100%!important;
+	text-align:left;
 }
 	
-#footer .region-inner .block:nth-child(2) .block-inner{
+#footer .region-footer .block:nth-child(2) .block-inner{
 	float:left!important;
 }
