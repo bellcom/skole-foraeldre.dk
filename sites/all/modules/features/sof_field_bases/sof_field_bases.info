@@ -38,6 +38,7 @@ features[field_base][] = field_related_article
 features[field_base][] = field_related_content
 features[field_base][] = field_related_news
 features[field_base][] = field_single_link
+features[field_base][] = field_slider_reference
 features[field_base][] = field_slides_content
 features[field_base][] = field_small_title
 features[field_base][] = field_tags
