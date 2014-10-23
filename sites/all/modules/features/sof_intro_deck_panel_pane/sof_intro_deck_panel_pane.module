@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF intro deck panel pane feature.
+ */
+
+include_once 'sof_intro_deck_panel_pane.features.inc';
