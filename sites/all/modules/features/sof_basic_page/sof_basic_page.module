@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF basic page feature.
+ */
+
+include_once 'sof_basic_page.features.inc';

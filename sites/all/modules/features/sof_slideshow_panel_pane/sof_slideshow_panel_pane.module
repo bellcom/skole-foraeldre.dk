@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF slideshow panel pane feature.
+ */
+
+include_once 'sof_slideshow_panel_pane.features.inc';
