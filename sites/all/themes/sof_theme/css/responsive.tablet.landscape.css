@@ -21,26 +21,34 @@ body {
 	float:none;
 }
 .header-inner-navigation-container{
-	display:none;
+   background: none repeat scroll 0 0 #fff;
+   top:70px;
+   right:0;
+   position: absolute;
+   z-index: 9999;
+   display:none;
+   width:100%;
+}
+.header-inner-navigation-container-hidden{
+	display:block;
 	float:right;
+	width:100%;
 }
 .header-navigation-container.active{
-	background: none repeat scroll 0 0 #fff;
     position: absolute;
-    right: 30px;
-    top: 0;
     z-index: 100;
+    width:100%;
 }
 .top-navigation-main, 
 .top-navigation-first, 
 .top-navigation-second{
 	width:100%;
 }
-.top-navigation-first{
+/*.top-navigation-first{
 	display:none;
-}
+}*/
 .top-navigation-second{
-	display:block;
+	display:none;
 	float:left;
 	margin-top:40px;
 }
@@ -78,35 +86,75 @@ body {
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
-#block-system-main-menu ul li, #block-system-main-menu ul li.last .menu-depth-1{
+.header-right-main-container,
+.header-navigation-container{
+	float:right;
+	position:relative;
+}
+.first-level{
+	padding:0 20px;
+}
+.region-header{
+	width:100%;
+}
+.region-header nav ul{
+	width:auto;
+}
+.region-header nav ul.first-level li{
 	float:none;
 	display:block;
-	padding-left:25px;
-	background-image:url('images/nav-drop-dow-arrow.png')!important;
-	background-position:left 27px!important;
-	background-repeat:no-repeat!important;
+	padding-bottom:25px;
 }
-#block-system-main-menu ul li a{
+
+.region-header nav .first-level li.last.leaf:after{
+	content:"";
+}
+
+.region-header nav ul.first-level li a{
 	color:#000;
+	background-image:url('images/nav-drop-dow-arrow.png');
+	background-position:left 9px!important;
+	background-repeat:no-repeat!important;
+	padding-left:25px;
+	width:100%;
+}
+.first-level li.slideul a{
+	border-bottom: 0;
+}
+/*Second, third level*/
+
+.second-level-main-container{
+	top:0px;
+	position:relative;
+}
+.second-level-main-container span{
+	display:none;
+}
+.second-level-main-container .second-level{
+	width:100%;
+	padding-bottom:20px;
+}
+.region-header nav ul.second-level li{
+	width:100%;
+	background-image:none!important;
+}
+.second-level{
+	position:relative;
+}
+.second-level  li{
+	border:none;
+	padding:0!important;
+}
+.third-level li a{
+	background-image:none!important;
+}
+.third-level-main-container{
+	margin-bottom:-20px;
 }
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
-#block-menu-menu-top-navigation ul li{
-	float:none;
-	display:block;
-	padding-left:25px;
-	padding-top:20px;
-	background-image:url('images/nav-drop-dow-arrow-grey.png');
-	background-position:left 27px;
-	background-repeat:no-repeat;
-	text-align:left;
-}
-#block-menu-menu-top-navigation ul li a{
-	font-size: 24px;
-  	text-decoration: none;
-  	text-transform: uppercase;
-}
+
 /* =============================================================================
  *   Articles , blocks
  * ========================================================================== */
@@ -119,7 +167,7 @@ body {
 /* =============================================================================
  *   Footer
  * ========================================================================== */
-#footer .region-footer{
+.region-footer{
 	padding-right:30px;
 	padding-left:30px;
 }

@@ -151,6 +151,7 @@ function sof_theme_process_page(&$variables) {
     // Make sure the shortcut link is the first item in title_suffix.
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
+
 }
 
 /**
@@ -216,4 +217,56 @@ function sof_theme_preprocess_node(&$variables) {
 	}
   }  
 }
+/**
+ * Implements theme_menu_tree__menu_block().
+ */
+function sof_theme_menu_tree__menu_block(&$variables) {
+  return '<ul class="first-level">' . $variables['tree'] . '</ul>';
+}
 
+/**
+ * Implements theme_menu_link().
+ */
+function sof_theme_menu_link(array $variables) {
+  $element = $variables['element'];
+  //kpr($element);
+  $description = '';
+  $sub_menu    = '';
+  $depth       = '';
+  //get menu depth
+	  	
+	  $depth = $element['#original_link']['depth'];
+  	
+	  //get menu description on level 1
+	  if ($depth == 1) {
+	  	
+	  	 if($element['#localized_options']){
+	  		$description = $element['#localized_options']['attributes']['title'] ;
+		 }
+		 
+		 if ($element['#below']) {
+		   // Wrap in container
+		    unset($element['#below']['#theme_wrappers']);
+			$sub_menu = '<div class="second-level-main-container">';
+			$sub_menu .= '<span class="menu-description">'. $description .'</span>';
+		    $sub_menu .= '<ul class="second-level">' . drupal_render($element['#below']) . '</ul>';
+			$sub_menu .='</div>';
+		  }
+		 
+	  }  
+	  //Depth 2 submenu
+	  if ($depth == 2) {
+	  	
+	  	  if ($element['#below']) {
+		   // Wrap in container
+		    unset($element['#below']['#theme_wrappers']);
+			$sub_menu = '<div class="third-level-main-container">';
+		    $sub_menu .= '<ul class="third-level">' . drupal_render($element['#below']) . '</ul>';
+			$sub_menu .='</div>';
+		  }	
+	  }
+  		 
+    
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}

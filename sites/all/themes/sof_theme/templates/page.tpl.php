@@ -126,18 +126,22 @@
 
         </div>
       <?php endif; ?>
-      <!-- NAVIGATION CONTAINERS -->
-      <div class="header-navigation-container">
-		  <!-- Custom html element for mediaum and small navigation link -->
-		  <div id="nav-activation-link"><span>Menu</span></div>	
-		  <!-- Custom html element for mediaum and small navigation link -->
-	      <!-- !Header Region -->
-	      <div class="header-inner-navigation-container">
-	      	<div class="top-navigation-first"><?php print render($page['top_header_navigation']); ?></div>
-	      	<div class="top-navigation-main"><?php print render($page['header']); ?></div>
-	      	<div class="top-navigation-second"><?php print render($page['top_header_navigation']); ?></div>
-	      </div	
-	  </div>
+	  <!-- NAVIGATION CONTAINERS -->
+	  <div class="header-right-main-container">
+	      <div class="top-navigation-first"><?php print render($page['top_header_navigation']); ?></div>
+	      <div class="header-navigation-container">
+			  <!-- Custom html element for mediaum and small navigation link -->
+			  <div id="nav-activation-link"><span>Menu</span></div>	
+			  <!-- Custom html element for mediaum and small navigation link -->
+		      <!-- !Header Region -->
+		      <div class="header-inner-navigation-container">
+		      	<div class="header-inner-navigation-container-hidden">
+		      		<div class="top-navigation-main"><?php print render($page['header']); ?></div>
+		      		<div class="top-navigation-second"><?php print render($page['top_header_navigation']); ?></div>
+		      	</div>	
+		      </div>
+		  </div>
+	  </div> 
 	  <!-- NAVIGATION CONTAINERS -->
     </header>
 
