@@ -22,24 +22,37 @@ body {
 	float:none;
 }
 .header-inner-navigation-container{
-	display:none;
-	float:right;
+   background: none repeat scroll 0 0 #fff;
+   top:70px;
+   right:0;
+   position: absolute;
+   z-index: 9999;
+   display:none;
+   width:100%;
+   min-width:320px;	
 }
+.header-inner-navigation-container-hidden{
+	display:block;
+	float:right;
+	width:100%;
+}
+
 .header-navigation-container.active{
-	background: none repeat scroll 0 0 #fff;
     position: absolute;
-    right: 10px;
-    top: 0;
     z-index: 100;
+    width:100%;
+ 
 }
 .top-navigation-main, 
-.top-navigation-first, 
 .top-navigation-second{
 	width:100%;
 }
 .top-navigation-first{
 	display:none;
 }
+/*.top-navigation-first{
+	display:none;
+}*/
 .top-navigation-second{
 	display:block;
 	float:left;
@@ -49,7 +62,7 @@ body {
 	display:block;
     float: right;
     width:100%;
-    margin:40px 25px 0 0;
+    margin:40px 0 0 0;
 }
 #nav-activation-link span{
 	cursor: pointer;
@@ -75,24 +88,78 @@ body {
 #nav-activation-link:hover{
 	text-decoration:none;
 }
-
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
-#block-system-main-menu ul li, #block-system-main-menu ul li.last .menu-depth-1{
+.header-right-main-container,
+.header-navigation-container{
+	float:right;
+	position:relative;
+}
+.first-level{
+	padding:0 20px;
+}
+.region-header{
+	width:100%;
+}
+.region-header nav ul{
+	width:auto;
+}
+.region-header nav ul.first-level li{
 	float:none;
 	display:block;
-	padding-left:25px;
-	background-image:url('images/nav-drop-dow-arrow.png')!important;
-	background-position:left 27px!important;
+	padding-bottom:25px;
+}
+
+.region-header nav .first-level li.last.leaf:after{
+	content:"";
+}
+
+.region-header nav ul.first-level li a{
+	color:#000;
+	background-image:url('images/nav-drop-dow-arrow.png');
+	background-position:left 9px!important;
 	background-repeat:no-repeat!important;
 }
-#block-system-main-menu ul li a{
-	color:#000;
+.first-level li.slideul a{
+	border-bottom: 0;
+}
+/*Second, third level*/
+
+.second-level-main-container{
+	top:0px;
+	position:relative;
+}
+.second-level-main-container span{
+	display:none;
+}
+.second-level-main-container .second-level{
+	width:100%;
+	padding-bottom:20px;
+}
+.region-header nav ul.second-level li{
+	width:100%;
+	background-image:none!important;
+}
+.second-level{
+	position:relative;
+}
+.second-level  li{
+	border:none;
+	padding:0!important;
+}
+.third-level li a{
+	background-image:none!important;
+}
+.third-level-main-container{
+	margin-bottom:-20px;
 }
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
+#block-menu-menu-top-navigation{
+	padding-bottom:30px;
+}
 #block-menu-menu-top-navigation ul li{
 	float:none;
 	display:block;
@@ -165,13 +232,15 @@ body {
 	padding-right:30px;
 	padding-left:30px;
 }
-#footer .block{
+#footer .block,
+#footer .region-footer .footer-logo{
 	float:left;
-	margin:0;
+	margin:0 0 20px 0;
 	padding:0;
 	width:100%!important;
+	text-align:left;
 }
 	
-#footer .region-inner .block:nth-child(2) .block-inner{
+#footer .region-footer .block:nth-child(2) .block-inner{
 	float:left!important;
 }

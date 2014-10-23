@@ -426,6 +426,9 @@ body.node-type-news #page-title{
 article.contextual-links-region{
 	margin-bottom:0;
 }
+.contextual-links-region{
+	position:unset;
+}
 /* Left Article Region  */
 .left-article-region{
 	width:66.6%;
@@ -1539,10 +1542,11 @@ a:focus {
 /* =============================================================================
  *   MENU CONTAINERS
  * ========================================================================== */
-
+.header-right-main-container,
 .header-navigation-container{
 	float:right;
 }
+
 #nav-activation-link{
 	display:none;
 }
@@ -1553,7 +1557,8 @@ a:focus {
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
- #block-menu-menu-top-navigation {
+ #block-menu-menu-top-navigation,
+ #block-menu-menu-top-navigation .block-inner {
  	margin:0;
  }
  #block-menu-menu-top-navigation ul{
@@ -1578,33 +1583,69 @@ a:focus {
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
-#block-system-main-menu{
+/*.menu-level-1 li ul{
+	display:none;
+}
+.menu-level-1 li ul.active{
+	display:block;
+}
+.second-level-navigation{
+	display:block;
+}*/
+/* First Level Navigation */
+.menu-block-wrapper{
+	float:left;
+}
+
+.region-header nav{
 	margin:0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
 }
-#block-system-main-menu ul{
+.region-header nav ul{
 	margin:35px 0 0 0;
+	float:left;
 }
-#block-system-main-menu ul li {
+.region-header nav ul.first-level li {
 	float:left;
  	list-style:none;
  	display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 20px 0 20px;
-    position: relative;
+    padding: 20px 0px 40px 0px;
     text-align: left;
     text-decoration: none;
     vertical-align: top;	
 }
-#block-system-main-menu ul li.last.menu-depth-1:after { 
+.first-level li a{
+    padding:0 20px 13px 20px;
+}
+.first-level li.slideul a{
+	border-bottom: 5px solid black;
+}
+.first-level li.slideul a{
+	color:#000!important;
+}
+
+.region-header nav .first-level  li.last.leaf:after { 
     content: '\e801'; /* '' */ 
 	font-family: 'fontello';
 	padding-left:15px;
 	color: #00a2eb;
   	font-size: 22px;
 	} /* '' */
-
-#block-system-main-menu ul li a{
+.region-header nav .first-level  li.last.leaf a{
+	border:none;
+}
+.region-header nav .second-level  li.last.leaf:after { 
+    content:"";
+	font-family: 'fontello';
+	padding-left:15px;
+	color: #00a2eb;
+  	font-size: 22px;
+	} /* '' */
+.region-header nav  ul.first-level li a{
 	-webkit-transition: all 500ms ease;
   	-o-transition: all 500ms ease;
   	transition: all 500ms ease;
@@ -1613,11 +1654,112 @@ a:focus {
   	text-decoration: none;
   	text-transform: uppercase;
 }
-#block-system-main-menu ul li a:hover {
-  border-bottom-width: 5px;
+.region-header nav ul.first-level li a:hover {
   color: #000;
 }
+/* Second Level Navigation */
+.second-level{
+	float:left;
+	margin:0!important;
+	padding:0;
+}
+.second-level-main-container{
+	position:absolute;
+	left:0;
+	top:140px;
+	display:none;
+	width:100%;
+	background:#fff;
+	z-index:100;
+}
+.second-level-main-container.active{
+	display:block;
+}
 
+.second-level li.slideul a{
+	border-bottom: 0!important;
+}
+
+.second-level li a{
+	display:none;
+}
+
+.second-level-main-container span{
+	float:left;
+	width:25%;
+	border-left: 1px solid #b2b2b2;
+    min-height: 1px;
+    padding:20px 10px 10px 20px;
+    position: relative;
+    color: black;
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 400;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+.second-level-main-container .second-level{
+	float:left;
+	width:75%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+.second-level .second-level-main-container{
+	position:relative;
+}
+.second-level  li{
+	border-left: 1px solid #b2b2b2;
+	display: inline-block!important;
+    float: none!important;
+    list-style: outside none none!important;
+    position: relative!important;
+    text-align: left!important;
+    text-decoration: none!important;
+    vertical-align: top!important;
+    margin:0!important;
+    padding:0 10px!important;
+    width:33%;
+     min-height: 1px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+/* Third Level Navigation */
+.third-level-main-container{
+	float:left;
+	margin:0;
+	padding:0;
+}
+.third-level{
+	float:left;
+	margin:0!important;
+	padding:0!important;
+}
+.third-level li{
+	width:100%;
+	border:none;
+	padding:0!important;
+}
+.third-level li a{
+    font-weight: 400;
+    font-size:21px!important;
+    line-height:25px;
+    margin-top: 20px;
+    text-align: left;
+    text-transform:capitalize!important;
+}
+.first-level li.slideul .third-level a{
+	color:#00a2eb!important;
+	display:block;
+	border-bottom:none;
+	padding-bottom:0;
+}
+.first-level li.slideul .third-level a:hover{
+	color:#000!important;
+	display:block;
+}
 /* =============================================================================
  *   Superfish
  * ========================================================================== */
@@ -2397,22 +2539,25 @@ ul.action-links li {}
 	padding:0;
 	width:70%;
 }
-#footer .region-inner .block:first-child{
+#footer .region-footer .footer-logo{
 	width:70%;
+	float:left;
+	margin:0;
+	padding:0;
 }
-#footer .region-inner .block:nth-child(2){
+#footer .region-footer .block:nth-child(2){
 	width:30%;
 	line-height:24px;
 }
-#footer .region-inner .block:nth-child(2) h2{
+#footer .region-footer .block:nth-child(2) h2{
 	font-size: 24px;
     padding-bottom: 20px;
     text-transform: uppercase;
 }
-#footer .region-inner .block:nth-child(2) .block-inner{
+#footer .region-footer .block:nth-child(2) .block-inner{
 	float:right;
 }
-#footer .region-inner .block:nth-child(2) a{
+#footer .region-footer .block:nth-child(2) a{
 	color:#000;
 }
 /* =============================================================================

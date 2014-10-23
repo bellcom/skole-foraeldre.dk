@@ -76,10 +76,10 @@ function sof_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['menu-menu-menu-top-navigation'] = array(
+  $export['menu-menu-top-navigation'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'menu-menu-top-navigation',
+    'delta' => 'menu-top-navigation',
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -101,10 +101,42 @@ function sof_blocks_default_fe_block_settings() {
         'region' => 'top_header_navigation',
         'status' => 1,
         'theme' => 'sof_theme',
-        'weight' => 0,
+        'weight' => -20,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-4'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 4,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'sof_theme',
+        'weight' => -19,
+      ),
+    ),
+    'title' => '<none>',
     'visibility' => 0,
   );
 
@@ -130,8 +162,8 @@ function sof_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
       'sof_theme' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'sof_theme',
         'weight' => -11,
       ),
