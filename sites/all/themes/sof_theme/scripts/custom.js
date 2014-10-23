@@ -13,7 +13,7 @@
 			if(slideul){
 				$(this).find('.second-level-main-container').stop(true, true).delay(400).slideDown();
 			}else{
-				$(this).find('.second-level-main-container').delay(400).slideUp();
+				$(this).find('.second-level-main-container').slideUp();
 			}
 		});	
 		
