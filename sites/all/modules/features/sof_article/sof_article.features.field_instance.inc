@@ -31,6 +31,12 @@ function sof_article_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'primary_selected_node' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'related_content_reference' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -98,6 +104,12 @@ function sof_article_field_default_field_instances() {
         'type' => 'addthis_basic_button',
         'weight' => 0,
       ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -154,6 +166,12 @@ function sof_article_field_default_field_instances() {
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 5,
+      ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -213,6 +231,12 @@ function sof_article_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -271,6 +295,16 @@ function sof_article_field_default_field_instances() {
         ),
         'type' => 'flexslider',
         'weight' => 1,
+      ),
+      'primary_selected_node' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'article_top_slider',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'related_content_reference' => array(
         'label' => 'hidden',
@@ -359,6 +393,12 @@ function sof_article_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -412,6 +452,12 @@ function sof_article_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -481,6 +527,12 @@ function sof_article_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 4,
       ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -545,6 +597,13 @@ function sof_article_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'primary_selected_node' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -600,6 +659,12 @@ function sof_article_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 4,
+      ),
+      'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'related_content_reference' => array(
         'label' => 'above',

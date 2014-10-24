@@ -34,3 +34,35 @@ function sof_general_tweaks_field_group_build_pre_render_alter(& $element) {
 
 
 }
+
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function sof_general_tweaks_field_extra_fields() {
+  
+  //News deck
+  //Additional fild for additional latest news   
+  $extra['node']['news']['display']['additional_bottom_nodes'] = array(
+    'label' => t('Additional bottom news'),
+    'description' => t('Renders latest 3 news'),
+    'weight' => 4,
+  );
+  
+  return $extra;
+
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
+  
+  //Render latest 3 news view   
+  if ($view_mode == 'primary_selected_node' && $node->type == 'news') {
+    $node->content['additional_bottom_nodes'] = array(
+      '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'),
+    );
+  }
+
+}

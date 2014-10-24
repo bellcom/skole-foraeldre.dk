@@ -98,6 +98,9 @@ function sof_publication_strongarm() {
       'related_content_reference' => array(
         'custom_settings' => TRUE,
       ),
+      'primary_selected_node' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
