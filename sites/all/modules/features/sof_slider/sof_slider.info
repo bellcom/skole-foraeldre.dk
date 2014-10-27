@@ -25,6 +25,7 @@ features[variable][] = comment_form_location_slider
 features[variable][] = comment_preview_slider
 features[variable][] = comment_slider
 features[variable][] = comment_subject_field_slider
+features[variable][] = domain_node_slider
 features[variable][] = field_bundle_settings_node__slider
 features[variable][] = language_content_type_slider
 features[variable][] = menu_options_slider
