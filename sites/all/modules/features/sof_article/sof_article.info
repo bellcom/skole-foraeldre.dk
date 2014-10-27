@@ -44,6 +44,7 @@ features[variable][] = comment_default_per_page_article
 features[variable][] = comment_form_location_article
 features[variable][] = comment_preview_article
 features[variable][] = comment_subject_field_article
+features[variable][] = domain_node_article
 features[variable][] = field_bundle_settings_node__article
 features[variable][] = i18n_node_extended_article
 features[variable][] = i18n_node_options_article

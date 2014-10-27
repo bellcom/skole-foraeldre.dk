@@ -38,6 +38,7 @@ features[variable][] = comment_form_location_publication
 features[variable][] = comment_preview_publication
 features[variable][] = comment_publication
 features[variable][] = comment_subject_field_publication
+features[variable][] = domain_node_publication
 features[variable][] = field_bundle_settings_node__publication
 features[variable][] = i18n_node_extended_publication
 features[variable][] = i18n_node_options_publication
