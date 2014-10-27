@@ -191,7 +191,6 @@ function sof_theme_preprocess_field(&$vars) {
     }
   }
 }
-
 /**
  * Override or insert variables into the node templates.
  */
