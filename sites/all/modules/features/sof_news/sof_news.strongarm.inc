@@ -120,7 +120,20 @@ function sof_news_strongarm() {
           'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'domain' => array(
+          'primary_selected_node' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+        'additional_bottom_nodes' => array(
+          'primary_selected_node' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__news'] = $strongarm;

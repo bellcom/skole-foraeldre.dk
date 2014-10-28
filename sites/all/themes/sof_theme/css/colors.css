@@ -19,7 +19,10 @@ ul.pager li.pager-current,
 ul.pager li.pager-next,
 ul.pager li.pager-last,
 ul.pager li.pager-first,
-ul.pager li.pager-previous{
+ul.pager li.pager-previous,
+.news-deck-newsletter,
+.follow-link-wrapper-facebook,
+.follow-link-wrapper-twitter{
   background-color: #00a2eb;
 }
 

@@ -23,8 +23,8 @@ function sof_intro_deck_panel_pane_field_group_info() {
     'label' => 'First links group',
     'weight' => '2',
     'children' => array(
-      0 => 'field_link_group_title_first',
-      1 => 'field_five_links_first',
+      0 => 'field_five_links_first',
+      1 => 'field_link_group_title_first',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -84,8 +84,8 @@ function sof_intro_deck_panel_pane_field_group_info() {
     'label' => 'Second links group',
     'weight' => '3',
     'children' => array(
-      0 => 'field_link_group_title_second',
-      1 => 'field_five_links_second',
+      0 => 'field_five_links_second',
+      1 => 'field_link_group_title_second',
     ),
     'format_type' => 'div',
     'format_settings' => array(

@@ -591,7 +591,7 @@ function sof_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'related_content_reference' => array(

@@ -226,6 +226,43 @@ body {
 	padding:35px 15px;
 }
 /* =============================================================================
+ *  Decks
+ * ========================================================================== */
+/* News Deck */
+.news-deck-top-left-content,
+.news-deck-top-right-content{
+	width:100%;
+	padding:0 20px;
+}
+.news-deck-top-right-content .read-more{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.news-deck-view-content .views-row,
+.news-deck-view-content .views-field-title{
+	width:100%;	
+	float:left;
+	padding-right:0;
+}
+.news-deck-view-content .views-field-view-node{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.news-deck-bottom-right-content{
+	margin-top:20px;
+}
+.news-deck-bottom-left-content,
+.news-deck-bottom-right-content{
+	width:100%;
+	text-align:center;
+}
+.news-deck-bottom-content{
+	padding-bottom:25px;
+}
+
+/* =============================================================================
  *   Footer
  * ========================================================================== */
 #footer .region-footer{
