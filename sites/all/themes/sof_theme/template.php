@@ -220,21 +220,16 @@ function sof_theme_preprocess_node(&$variables) {
         }        
 	}else if($view_mode == 'related_content_reference'){
 		$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
-<<<<<<< HEAD
 	}
 	else if($view_mode == 'primary_selected_node'){
 		$date = $variables['created'];
         $variables['formatteddate'] = format_date($date, 'custom', 'd.m.Y'); 
 		$variables['submitted'] = $variables['formatteddate'];		
 		$variables['theme_hook_suggestion'] = 'node__news__newsdeck';
-	}
-=======
 	}else if($view_mode == 'teaser'){
         $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
     }
->>>>>>> 0b2024424accbbcb1665bdc508b20d42e673eeeb
-  }  
-}
+ }  
 /**
  * Implements theme_menu_tree__menu_block().
  */
