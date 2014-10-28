@@ -51,6 +51,7 @@ features[field_base][] = field_slides_content
 features[field_base][] = field_small_title
 features[field_base][] = field_tags
 features[field_base][] = field_teaser
+features[field_base][] = field_three_videos
 features[field_base][] = field_video
 features[taxonomy][] = general_category
 features[taxonomy][] = magazine_categories
