@@ -213,7 +213,9 @@ function sof_theme_preprocess_node(&$variables) {
         }        
 	}else if($view_mode == 'related_content_reference'){
 		$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
-	}
+	}else if($view_mode == 'teaser'){
+        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+    }
   }  
 }
 /**

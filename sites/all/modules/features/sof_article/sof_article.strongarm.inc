@@ -129,6 +129,10 @@ function sof_article_strongarm() {
             'weight' => '2',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

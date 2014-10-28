@@ -129,10 +129,26 @@ function sof_news_strongarm() {
             'weight' => '1',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'additional_bottom_nodes' => array(
           'video_reference_listing' => array(
             'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),
