@@ -20,6 +20,8 @@ function sof_slider_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -83,7 +85,10 @@ function sof_slider_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_plain',
         'weight' => 1,
       ),
@@ -119,7 +124,10 @@ function sof_slider_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_plain',
         'weight' => 2,
       ),
@@ -162,6 +170,8 @@ function sof_slider_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -171,6 +181,8 @@ function sof_slider_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'flexslider_field_collection',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'optionset' => 'sof_field',
           'view_mode' => 'full',
         ),

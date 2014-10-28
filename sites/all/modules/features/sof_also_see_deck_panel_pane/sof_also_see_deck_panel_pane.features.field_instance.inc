@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * sof_news_deck_panel_pane.features.field_instance.inc
+ * sof_also_see_deck_panel_pane.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function sof_news_deck_panel_pane_field_default_field_instances() {
+function sof_also_see_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-news_pane-field_primary_referenced_node'
-  $field_instances['fieldable_panels_pane-news_pane-field_primary_referenced_node'] = array(
-    'bundle' => 'news_pane',
+  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_related_article_news'
+  $field_instances['fieldable_panels_pane-also_see_pane-field_related_article_news'] = array(
+    'bundle' => 'also_see_pane',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please select primary article or news for this deck',
+    'description' => 'Select content that you wish to recommend',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -24,16 +24,16 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'links' => 1,
-          'view_mode' => 'primary_selected_node',
+          'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_primary_referenced_node',
-    'label' => 'Primary item',
-    'required' => 1,
+    'field_name' => 'field_related_article_news',
+    'label' => 'Content',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -55,17 +55,17 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-news_pane-field_single_link'
-  $field_instances['fieldable_panels_pane-news_pane-field_single_link'] = array(
-    'bundle' => 'news_pane',
+  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_single_link'
+  $field_instances['fieldable_panels_pane-also_see_pane-field_single_link'] = array(
+    'bundle' => 'also_see_pane',
     'default_value' => array(
       0 => array(
-        'title' => 'See all news',
+        'title' => 'See more',
         'url' => '',
       ),
     ),
     'deleted' => 0,
-    'description' => 'Add external link',
+    'description' => 'Enter link to an external location',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -80,7 +80,7 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
     ),
     'entity_type' => 'fieldable_panels_pane',
     'field_name' => 'field_single_link',
-    'label' => 'All news link',
+    'label' => 'Link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -117,10 +117,10 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add external link');
-  t('All news link');
-  t('Please select primary article or news for this deck');
-  t('Primary item');
+  t('Content');
+  t('Enter link to an external location');
+  t('Link');
+  t('Select content that you wish to recommend');
 
   return $field_instances;
 }

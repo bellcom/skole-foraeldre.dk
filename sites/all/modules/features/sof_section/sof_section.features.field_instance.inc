@@ -20,14 +20,20 @@ function sof_section_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -41,6 +47,8 @@ function sof_section_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -84,14 +92,20 @@ function sof_section_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
@@ -138,6 +152,8 @@ function sof_section_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -148,6 +164,8 @@ function sof_section_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -217,14 +235,20 @@ function sof_section_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),

@@ -101,6 +101,9 @@ function sof_section_strongarm() {
       'primary_selected_node' => array(
         'custom_settings' => FALSE,
       ),
+      'video_reference_listing' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

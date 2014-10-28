@@ -20,7 +20,10 @@ function sof_webform_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 1,
       ),
@@ -68,6 +71,8 @@ function sof_webform_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -137,7 +142,10 @@ function sof_webform_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),

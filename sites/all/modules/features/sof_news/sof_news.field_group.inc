@@ -81,10 +81,10 @@ function sof_news_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_teaser',
+      1 => 'field_add_this',
       2 => 'field_image_slider',
-      3 => 'field_video',
-      4 => 'field_add_this',
+      3 => 'field_teaser',
+      4 => 'field_video',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -143,8 +143,8 @@ function sof_news_field_group_info() {
     'label' => 'Right Article Region',
     'weight' => '1',
     'children' => array(
-      0 => 'field_related_content',
-      1 => 'field_banner',
+      0 => 'field_banner',
+      1 => 'field_related_content',
     ),
     'format_type' => 'div',
     'format_settings' => array(

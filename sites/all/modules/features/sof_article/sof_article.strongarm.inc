@@ -104,6 +104,9 @@ function sof_article_strongarm() {
       'primary_selected_node' => array(
         'custom_settings' => FALSE,
       ),
+      'video_reference_listing' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -120,7 +123,18 @@ function sof_article_strongarm() {
           'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'domain' => array(
+          'video_reference_listing' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__article'] = $strongarm;

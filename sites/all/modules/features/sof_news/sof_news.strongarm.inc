@@ -104,6 +104,9 @@ function sof_news_strongarm() {
       'primary_selected_node' => array(
         'custom_settings' => TRUE,
       ),
+      'video_reference_listing' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -122,15 +125,31 @@ function sof_news_strongarm() {
       ),
       'display' => array(
         'domain' => array(
-          'primary_selected_node' => array(
+          'video_reference_listing' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'full' => array(
             'weight' => '1',
             'visible' => TRUE,
           ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'additional_bottom_nodes' => array(
-          'primary_selected_node' => array(
+          'video_reference_listing' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'full' => array(
             'weight' => '4',
-            'visible' => TRUE,
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '11',
+            'visible' => FALSE,
           ),
         ),
       ),

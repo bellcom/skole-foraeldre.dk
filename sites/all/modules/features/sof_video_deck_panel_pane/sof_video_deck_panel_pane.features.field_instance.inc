@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * sof_slideshow_panel_pane.features.field_instance.inc
+ * sof_video_deck_panel_pane.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function sof_slideshow_panel_pane_field_default_field_instances() {
+function sof_video_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-slideshow_pane-field_slider_reference'
-  $field_instances['fieldable_panels_pane-slideshow_pane-field_slider_reference'] = array(
-    'bundle' => 'slideshow_pane',
+  // Exported field_instance: 'fieldable_panels_pane-video_pane-field_three_videos'
+  $field_instances['fieldable_panels_pane-video_pane-field_three_videos'] = array(
+    'bundle' => 'video_pane',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select slider to be shown as deck',
+    'description' => 'Select three video nodes for this deck',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -24,15 +24,15 @@ function sof_slideshow_panel_pane_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'links' => 1,
-          'view_mode' => 'full',
+          'view_mode' => 'video_reference_listing',
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
-    'field_name' => 'field_slider_reference',
-    'label' => 'Slider reference',
+    'field_name' => 'field_three_videos',
+    'label' => 'Video',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -57,8 +57,8 @@ function sof_slideshow_panel_pane_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Select slider to be shown as deck');
-  t('Slider reference');
+  t('Select three video nodes for this deck');
+  t('Video');
 
   return $field_instances;
 }
