@@ -205,29 +205,30 @@ function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
   
-  if ( $node->type == 'news' || $node->type == 'article' ) {
-  	if($view_mode == 'full'){
-   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
-        
-        //Pass slider block $delta as variable
-        switch($node->type){
-            case 'article':
-                $variables['slider_block_delta'] = 'related_articles_slider-block';
-                break;
-            case 'news':
-                $variables['slider_block_delta'] = 'related_articles_slider-block_1';
-                break;
-        }        
-	}else if($view_mode == 'related_content_reference'){
-		$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
-	}
-	else if($view_mode == 'primary_selected_node'){
-		$date = $variables['created'];
-        $variables['formatteddate'] = format_date($date, 'custom', 'd.m.Y'); 
-		$variables['submitted'] = $variables['formatteddate'];		
-		$variables['theme_hook_suggestion'] = 'node__news__newsdeck';
-	}else if($view_mode == 'teaser'){
-        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+  	if ( $node->type == 'news' || $node->type == 'article' ) {
+	  	if($view_mode == 'full'){
+	   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
+	        
+	        //Pass slider block $delta as variable
+	        switch($node->type){
+	            case 'article':
+	                $variables['slider_block_delta'] = 'related_articles_slider-block';
+	                break;
+	            case 'news':
+	                $variables['slider_block_delta'] = 'related_articles_slider-block_1';
+	                break;
+	        }        
+		}else if($view_mode == 'related_content_reference'){
+			$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
+		}
+		else if($view_mode == 'primary_selected_node'){
+			$date = $variables['created'];
+	        $variables['formatteddate'] = format_date($date, 'custom', 'd.m.Y'); 
+			$variables['submitted'] = $variables['formatteddate'];		
+			$variables['theme_hook_suggestion'] = 'node__news__newsdeck';
+		}else if($view_mode == 'teaser'){
+	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+	    }
     }
  }  
 /**
