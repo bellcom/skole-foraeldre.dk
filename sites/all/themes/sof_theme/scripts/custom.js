@@ -1,11 +1,10 @@
 (function($) {
-
   /**
   * Header Scripts 
   */	
   Drupal.behaviors.sofHeader = {
-    attach: function (context, settings) {      
-				
+    attach: function (context, settings) {   
+    	   	
 		//Show / Hide navigation script
 		$(".first-level li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");

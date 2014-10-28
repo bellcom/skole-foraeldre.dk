@@ -380,8 +380,110 @@ var {
   background: rgba(255, 192, 203, 0.5);
 }
 #footer-wrapper .container {}
+/* =============================================================================
+ *   Home Page
+ * ========================================================================== */
+body.page-home #columns,
+body.page-home #main-content,
+#home-page-panel,
+body.page-home .panel-col-full-main{
+	box-sizing: border-box;
+    height: auto !important;
+    margin: 0!important;
+    min-height: 100%;
+    padding: 0;
+    width: 100%;
+    max-width:100%;
+}
 
+/* =============================================================================
+ *   DECK STYLING
+ * ========================================================================== */
+/* Slider Deck  */
+body.node-type-slider #columns,
+body.node-type-slider #main-content{
+	max-width:100%;
+}
 
+.node-slider{
+	background: none repeat scroll 0 0 rgba(153, 153, 153, 0.5);
+    clear: both;
+    position: relative;
+    text-align: center;
+	height: 500px;
+}
+.node-slider .node-content,
+.node-slider .node-content .flexslider,
+.node-slider .node-content .flexslider .slides,
+.node-slider .node-content .flexslider .slides li{
+   width:100%;
+   margin:0;
+   padding:0;
+}
+.node-slider  .node-title,
+.node-slider ul.links{
+	display:none!important;
+}
+.field-collection-item-field-slides-content{
+	height:500px;
+}
+.field-collection-item-field-slides-content .content{
+	height:100%;
+}
+.slide-background{
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;	
+}
+.slide-inner-content{
+	width:100%;
+	max-width:1170px;
+	margin:60px auto 0 auto;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.slide-inner-content .field-name-field-small-title .field-item{
+	left: 15%;
+	top: 75px;
+	z-index: 21;
+	width: 100%;
+	padding-right: 30px;
+	padding-left: 30px;
+	float: left;
+	color: white;
+	font-size: 4.5em;
+	line-height: 95%;
+	list-style-type: none;
+	text-shadow: #000 1px 1px 19px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.slide-inner-content .field-name-field-teaser .field-item{
+	border-radius: 0;
+    color: #fff;
+    float: left;
+    font-size: 26px;
+    font-weight: 200;
+    left: 15%;
+    line-height: 30px;
+    padding: 20px 30px 10px 30px;
+    text-align: left;
+    text-shadow: 1px 1px 16px #000;
+    top: 135px;
+    width: 100%;
+    z-index: 3;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -1135,6 +1237,7 @@ ul.pager li.pager-previous a{
     font-weight: lighter;
     line-height: 1;
     text-shadow:none;
+    width:40px;
 }
 .flex-direction-nav a.flex-next:before {
     content: '\e801';  /* '' */
@@ -1583,15 +1686,6 @@ a:focus {
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
-/*.menu-level-1 li ul{
-	display:none;
-}
-.menu-level-1 li ul.active{
-	display:block;
-}
-.second-level-navigation{
-	display:block;
-}*/
 /* First Level Navigation */
 .menu-block-wrapper{
 	float:left;
@@ -1671,6 +1765,7 @@ a:focus {
 	width:100%;
 	background:#fff;
 	z-index:100;
+	padding-bottom:20px;
 }
 .second-level-main-container.active{
 	display:block;
@@ -3073,6 +3168,12 @@ body.page-404 #content .action-links{
 	.panel-col-full-main {
 		padding:0 30px 30px;
 	}
+	.slide-inner-content .field-name-field-teaser .field-item,
+	.slide-inner-content .field-name-field-small-title .field-item{
+		padding-left:60px;
+		padding-right:60px;
+	}
+	
 }
 @media all and (max-width: 1170px){
 	#header{
