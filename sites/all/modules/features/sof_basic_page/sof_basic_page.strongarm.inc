@@ -101,6 +101,9 @@ function sof_basic_page_strongarm() {
       'primary_selected_node' => array(
         'custom_settings' => FALSE,
       ),
+      'video_reference_listing' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -121,6 +124,20 @@ function sof_basic_page_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__basic_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_basic_page';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_basic_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_basic_page';
+  $strongarm->value = array();
+  $export['i18n_node_options_basic_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

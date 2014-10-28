@@ -21,6 +21,8 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
           'links' => 1,
           'view_mode' => 'primary_selected_node',
         ),
@@ -68,7 +70,10 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
         'type' => 'link_default',
         'weight' => 1,
       ),
