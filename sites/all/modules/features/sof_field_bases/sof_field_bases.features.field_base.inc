@@ -129,6 +129,29 @@ function sof_field_bases_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_banner_collection'
+  $field_bases['field_banner_collection'] = array(
+    'active' => 1,
+    'cardinality' => 4,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_banner_collection',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
   // Exported field_base: 'field_category'
   $field_bases['field_category'] = array(
     'active' => 1,
@@ -443,6 +466,43 @@ function sof_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_icon'
+  $field_bases['field_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_icon',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'the_research_shows' => 'The research shows',
+        'testimonials_cases' => 'Testimonials/cases',
+        'annual_plan' => 'Annual plan',
+        'article_skoleboern' => 'Article from Skoleboern',
+        'qanda' => 'Q & A',
+        'article_from_foraeldreraadgivning' => 'Article from foraeldreraadgivning',
+        'the_law_says' => 'The law says',
+        'principles' => 'Principles',
+        'chairman' => 'The chairman says / Skole og foraeldre',
+        'video' => 'Video',
+        'publications' => 'Publications',
+        'school_board_manual' => 'School board manual',
+        'newsletter' => 'Newsletter',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_image'
@@ -836,6 +896,54 @@ function sof_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_integer',
+  );
+
+  // Exported field_base: 'field_reference_node'
+  $field_bases['field_reference_node'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_reference_node',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'article' => 'article',
+          'basic_page' => 'basic_page',
+          'news' => 'news',
+          'publication' => 'publication',
+          'section' => 'section',
+          'webform' => 'webform',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_related_article'

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF banners deck panel pane feature.
+ */
+
+include_once 'sof_banners_deck_panel_pane.features.inc';

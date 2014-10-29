@@ -199,7 +199,11 @@ function sof_theme_field__field_video($variables) {
  * Override related content reference image field. Block: Related Content Single Block
  */
 function sof_theme_preprocess_field(&$vars) {
+      
+  global $base_path;
+  
   $element = $vars['element'];
+  
   // Field type image
   if ($element['#field_type'] == 'image') {
     // Reduce number of images in related content reference view mode to single image
@@ -208,6 +212,20 @@ function sof_theme_preprocess_field(&$vars) {
        $vars['items'] = array($item);
     }
   }
+
+  /* 
+   * Banner deck settings
+   */
+        //Display banner icon as image
+        if ($element['#field_name'] == 'field_icon' && $element['#entity_type'] == 'field_collection_item') {
+            
+           $machine_value = $element['#items'][0]['value'];
+           $icon_link = $base_path . drupal_get_path('theme', 'sof_theme') .'/css/images/banner_deck_images/icon_' . $machine_value . '.svg';
+              
+           $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
+           $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';   
+        }
+        
 }
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php

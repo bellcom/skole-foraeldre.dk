@@ -561,8 +561,9 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['attach'] = array(
-    0 => 'node:field_related_content:article',
-    1 => 'node:field_related_content:news',
+    0 => 'field_collection_item:field_reference_node:field_banner_collection',
+    1 => 'node:field_related_content:article',
+    2 => 'node:field_related_content:news',
   );
   $export['reference_dialog_content'] = $view;
 
