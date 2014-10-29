@@ -761,6 +761,148 @@ body.node-type-slider #main-content{
 .news-deck-bottom-right-content .follow-link-wrapper{
 	float:left;
 }
+/* Also See Deck */
+
+.pane-bundle-also-see-pane{
+	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    background-color:#fff;
+}
+.pane-bundle-also-see-pane .block-inner{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+}
+.pane-bundle-also-see-pane .block-title{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	background:#fff;
+	text-align:center;
+	color: #000;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+.pane-bundle-also-see-pane .block-content{
+	float:left;
+	padding:20px 0;
+}
+.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
+	float:left;
+	border-right: 1px solid #f0f0f0;
+    margin-bottom:20px;
+    padding:0px 15px 20px 15px;
+    width:33.3%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    min-height:580px;
+}
+.pane-bundle-also-see-pane  .field-name-field-related-article-news,
+.pane-bundle-also-see-pane  .field-name-field-single-link{
+	float:left;
+}
+.pane-bundle-also-see-pane .field-name-field-image-slider .field-item{
+	width:100%;
+	border:none;
+	padding:0;
+	margin-bottom:20px;
+	min-height:unset!important;
+}
+.pane-bundle-also-see-pane .field-name-field-image-slider .field-item img{
+	width:100%;
+}
+.pane-bundle-also-see-pane .author-datetime{
+	float:left;
+	width:100%;
+	color: rgba(69, 69, 69, 0.6);
+    font-size: 15px;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    line-height:20px;
+}
+.pane-bundle-also-see-pane .node-title{
+	float:left;
+	width:100%;
+}
+.pane-bundle-also-see-pane .node-title a{
+	color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: left;
+    text-decoration: none;
+    line-height:32px;
+}
+.pane-bundle-also-see-pane .node-title a:hover {
+    color: rgba(69, 69, 69, 0.8);
+}
+.pane-bundle-also-see-pane .field-name-field-teaser{
+	float:left;
+}
+.pane-bundle-also-see-pane  .field-name-field-teaser .field-item{
+	width:100%;
+	min-height:unset!important;
+	border:none;
+	padding:0;
+	margin:0;
+	border-radius: 0;
+    color: #454545;
+    font-size: 19px;
+    font-weight: 200;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    text-align: left;
+}
+.pane-bundle-also-see-pane .read-more{
+	float:left;
+	width:100%;
+}
+.pane-bundle-also-see-pane .read-more a{
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.pane-bundle-also-see-pane .read-more a:hover{
+	color:#000;
+}
+.pane-bundle-also-see-pane .field-name-field-single-link{
+	float:left;
+	width:100%;
+	text-align:center;
+}
+.pane-bundle-also-see-pane .field-name-field-single-link a{
+	background-color: #00a2eb;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 40px 10px 20px;
+    padding: 10px 14px;
+    position: static;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.pane-bundle-also-see-pane .field-name-field-single-link a:hover{
+	opacity:0.8;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -804,10 +946,12 @@ body.node-type-news #page-title{
 }
 article.contextual-links-region{
 	margin-bottom:0;
+	position:inherit!important;
 }
 .contextual-links-region{
-	position:unset;
+	position:inherit!important;
 }
+
 /* Left Article Region  */
 .left-article-region{
 	width:66.6%;

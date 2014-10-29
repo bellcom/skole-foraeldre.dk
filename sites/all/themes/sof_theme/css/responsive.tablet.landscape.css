@@ -176,3 +176,12 @@ body {
 	padding-right:30px;
 	padding-left:30px;
 }
+/* =============================================================================
+ *   Media Queries
+ * ========================================================================== */
+@media all and (max-width: 900px){
+	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
+		min-height:620px;
+	}
+	
+}

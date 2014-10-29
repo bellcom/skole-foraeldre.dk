@@ -76,6 +76,38 @@ function sof_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['follow-site'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'site',
+    'module' => 'follow',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'sof_theme',
+        'weight' => -14,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['menu-menu-top-navigation'] = array(
     'cache' => -1,
     'custom' => 0,

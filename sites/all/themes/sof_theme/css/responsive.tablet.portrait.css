@@ -261,7 +261,16 @@ body {
 .news-deck-bottom-content{
 	padding-bottom:25px;
 }
-
+/* See also Deck */
+.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
+	width:100%;
+	border:none;
+	min-height:unset;
+	
+}
+.pane-bundle-also-see-pane .read-more{
+	text-align:center;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

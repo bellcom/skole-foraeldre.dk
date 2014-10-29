@@ -717,8 +717,9 @@ function sof_article_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'trim_length' => 200,
         ),
-        'type' => 'text_plain',
+        'type' => 'text_trimmed',
         'weight' => 4,
       ),
       'video_reference_listing' => array(

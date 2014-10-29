@@ -134,7 +134,7 @@ function sof_news_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),
@@ -148,7 +148,7 @@ function sof_news_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '11',
+            'weight' => '12',
             'visible' => FALSE,
           ),
         ),

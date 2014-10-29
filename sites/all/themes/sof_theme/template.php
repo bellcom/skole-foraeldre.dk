@@ -191,6 +191,7 @@ function sof_theme_preprocess_field(&$vars) {
     }
   }
 }
+
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
  */
@@ -204,7 +205,6 @@ function sof_theme_preprocess_fieldable_panels_pane(&$vars) {
 function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
-  
   	if ( $node->type == 'news' || $node->type == 'article' ) {
 	  	if($view_mode == 'full'){
 	   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
@@ -221,13 +221,12 @@ function sof_theme_preprocess_node(&$variables) {
 		}else if($view_mode == 'related_content_reference'){
 			$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
 		}
-		else if($view_mode == 'primary_selected_node'){
-			$date = $variables['created'];
-	        $variables['formatteddate'] = format_date($date, 'custom', 'd.m.Y'); 
-			$variables['submitted'] = $variables['formatteddate'];		
+		else if($view_mode == 'primary_selected_node'){		
+			$variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__news__newsdeck';
 		}else if($view_mode == 'teaser'){
 	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+			$variables['theme_hook_suggestion'] = 'node__seealso_deck';
 	    }
     }
  }  
