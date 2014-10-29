@@ -304,6 +304,10 @@ ul.pager li{
 .pane-bundle-also-see-pane .read-more{
 	text-align:center;
 }
+/* Video Deck */
+.pane-bundle-video-pane  .field-name-field-three-videos .field-item{
+	width:100%;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
