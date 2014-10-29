@@ -225,6 +225,9 @@ function sof_views_references_views_default_views() {
   /* Display: Reference dialog news with images */
   $handler = $view->new_display('references_dialog', 'Reference dialog news with images', 'references_dialog_news_images');
   $handler->display->display_options['display_description'] = 'This display is used for refferencing nodes of type news that contain top slider image';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
