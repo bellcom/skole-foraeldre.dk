@@ -108,11 +108,8 @@ hide($content['comments']);
 hide($content['links']);
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="news-deck-top-left-content">
-    <!-- Image -->
-    <?php  print render ($content['field_image_slider']);?>
-  </div>
-  <div class="news-deck-top-right-content">
+	<!-- Image -->
+	<?php  print render ($content['field_image_slider']);?>
   	<!-- Post Date -->
     <p class="author-datetime"><?php print $submitted; ?></p>
     <!-- Title -->
@@ -125,14 +122,9 @@ hide($content['links']);
     <?php print render($content['field_teaser']); ?>
     <!-- Read More -->
      <?php if ($links = render($content['links'])): ?>
-    <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
+    <nav class="read-more"<?php print $links_attributes; ?>><?php print $links; ?></nav>
     <?php endif; ?>
-    <a class="read-more" href="<?php echo $node_url?>"><?php echo t('Read more');?></a>
-   </div>
-   <div class="news-deck-view-content">
     <!-- Reast of the content-->
     <?php print render($content); ?>
-   </div>
-  </div>
 </article>
 

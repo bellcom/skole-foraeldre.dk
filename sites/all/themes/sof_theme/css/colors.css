@@ -22,7 +22,8 @@ ul.pager li.pager-first,
 ul.pager li.pager-previous,
 .news-deck-newsletter,
 .follow-link-wrapper-facebook,
-.follow-link-wrapper-twitter{
+.follow-link-wrapper-twitter,
+.pane-bundle-also-see-pane .field-name-field-single-link a{
   background-color: #00a2eb;
 }
 
