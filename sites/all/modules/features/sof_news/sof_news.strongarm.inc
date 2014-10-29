@@ -137,6 +137,10 @@ function sof_news_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'primary_selected_node' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
         ),
         'additional_bottom_nodes' => array(
           'video_reference_listing' => array(
@@ -150,6 +154,10 @@ function sof_news_strongarm() {
           'teaser' => array(
             'weight' => '11',
             'visible' => FALSE,
+          ),
+          'primary_selected_node' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
       ),
