@@ -57,6 +57,7 @@ features[field_base][] = field_tags
 features[field_base][] = field_teaser
 features[field_base][] = field_three_videos
 features[field_base][] = field_video
+features[field_base][] = field_we_recommend
 features[taxonomy][] = general_category
 features[taxonomy][] = magazine_categories
 features[taxonomy][] = media_folders

@@ -47,9 +47,18 @@ function sof_general_tweaks_field_extra_fields() {
     'label' => t('Additional bottom news'),
     'description' => t('Renders latest 3 news'),
     'weight' => 4,
+    'visible' => FALSE,
   );
   
-  return $extra;
+  //Recommended items deck
+  //Additional fild for additional latest news   
+  $extra['fieldable_panels_pane']['recommended_items_pane']['display']['overview_recommended_items'] = array(
+    'label' => t('Overview'),
+    'description' => t('Overview of the items in this section'),
+    'weight' => 4,
+  );
+  
+    return $extra;
 
 }
 
@@ -58,11 +67,33 @@ function sof_general_tweaks_field_extra_fields() {
  */
 function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
   
-  //Render latest 3 news view   
+  //Attach 'news_deck_latest_3_nodes' to the node as extra field  
   if ($view_mode == 'primary_selected_node' && $node->type == 'news') {
     $node->content['additional_bottom_nodes'] = array(
       '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'),
     );
   }
 
+}
+
+
+/**
+ * Implements hook_entity_view().
+ */
+function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) { 
+  
+  switch ($type) {
+      
+      //Arrach 'recommended_items_overview' view to the panel pane as extra field
+      case 'fieldable_panels_pane':
+        if($entity->bundle == 'recommended_items_pane') {
+            $entity->content['overview_recommended_items'] = array(
+              '#type' => 'item',
+              '#title'  => t('Overview'),
+              '#markup' => views_embed_view('recommended_items_overview', 'recommended_items_overview'),
+            );
+        }
+      break;
+  }
+  
 }
