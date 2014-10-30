@@ -106,7 +106,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
     ),
     'insert_plugin' => array(
       'plugin' => 'raw_url',
-      'url_method' => '2',
+      'url_method' => '1',
     ),
     'attribute_plugins' => array(
       'rel' => array(
@@ -217,7 +217,6 @@ function sof_linkit_profiles_default_linkit_profiles() {
       'group_by_bundle' => 0,
       'show_scheme' => 0,
       'group_by_scheme' => 0,
-      'direct_download' => 0,
       'image_extra_info' => array(
         'thumbnail' => 'thumbnail',
         'dimensions' => 'dimensions',
@@ -238,8 +237,8 @@ function sof_linkit_profiles_default_linkit_profiles() {
       'result_description' => '',
     ),
     'insert_plugin' => array(
-      'plugin' => 'html_link',
-      'url_method' => '2',
+      'plugin' => 'raw_url',
+      'url_method' => '1',
     ),
     'attribute_plugins' => array(
       'rel' => array(

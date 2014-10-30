@@ -139,6 +139,7 @@ dependencies[] = sof_banners_deck_panel_pane
 dependencies[] = sof_intro_deck_panel_pane
 dependencies[] = sof_magazine_panel_pane
 dependencies[] = sof_news_deck_panel_pane
+dependencies[] = sof_recommended_items_deck_panel_pane
 dependencies[] = sof_slideshow_panel_pane
 dependencies[] = sof_video_deck_panel_pane
 dependencies[] = sof_home_page

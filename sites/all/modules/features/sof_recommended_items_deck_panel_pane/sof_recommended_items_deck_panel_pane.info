@@ -1,0 +1,13 @@
+name = SOF recommended items deck panel pane
+description = Recommended items deck fieldable panel pane settings
+core = 7.x
+package = Panel panes
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = fieldable_panels_panes
+dependencies[] = link
+dependencies[] = sof_field_bases
+features[ctools][] = fieldable_panels_panes:fieldable_panels_pane_type:1
+features[features_api][] = api:2
+features[field_instance][] = fieldable_panels_pane-recommended_items_pane-field_we_recommend
+features[fieldable_panels_pane_type][] = recommended_items_pane

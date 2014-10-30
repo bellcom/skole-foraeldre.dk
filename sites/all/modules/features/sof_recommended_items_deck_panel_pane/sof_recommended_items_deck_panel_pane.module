@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF recommended items deck panel pane feature.
+ */
+
+include_once 'sof_recommended_items_deck_panel_pane.features.inc';
