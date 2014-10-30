@@ -275,6 +275,14 @@ body {
 .pane-bundle-video-pane  .field-name-field-three-videos .field-item{
 	width:100%;
 }
+/* Intro Deck */
+.intro-deck-group-first,
+.intro-deck-group{
+	width:33.3%;
+}
+.intro-deck-group .field-type-link-field .field-items{
+	padding-right:10px;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
