@@ -153,7 +153,6 @@ function sof_theme_process_page(&$variables) {
   }
 
 }
-
 /**
  * Override related content field in article node. Block:Related Content Single Blocks
  */
@@ -174,6 +173,25 @@ function sof_theme_field__field_related_content__article($variables) {
   $output .= '</div>';
   // Render the top-level DIV.
   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+  return $output;
+}
+/**
+ * Override field field_video
+ */
+function sof_theme_field__field_video($variables) {
+  $output = '';
+
+  // Render the label, if it's not hidden.
+  if (!$variables['label_hidden']) {
+    $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
+  }
+  
+  // Render the item.
+  $output .= '<div id="video"' . $variables['content_attributes'] . '>';
+  foreach ($variables['items'] as $delta => $item) {
+    $output .= drupal_render($item);
+  }
+  $output .= '</div>';
   return $output;
 }
 
@@ -209,7 +227,6 @@ function sof_theme_preprocess_field(&$vars) {
         }
         
 }
-
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
  */
@@ -236,15 +253,25 @@ function sof_theme_preprocess_node(&$variables) {
 	                $variables['slider_block_delta'] = 'related_articles_slider-block_1';
 	                break;
 	        }        
-		}else if($view_mode == 'related_content_reference'){
+		}
+		//Realted Articles Side Block display
+		else if($view_mode == 'related_content_reference'){
 			$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
 		}
+		//News Deck top article display
 		else if($view_mode == 'primary_selected_node'){		
 			$variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__news__newsdeck';
-		}else if($view_mode == 'teaser'){
+		}
+		//See also deck display
+		else if($view_mode == 'teaser'){
 	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__seealso_deck';
+	    }
+        //Video Deck display
+        else if($view_mode == 'video_reference_listing'){
+	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+			$variables['theme_hook_suggestion'] = 'node__video_reference';
 	    }
     }
  }  

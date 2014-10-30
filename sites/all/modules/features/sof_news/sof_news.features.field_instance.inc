@@ -380,7 +380,7 @@ function sof_news_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => 1,
           'field_multiple_limit_offset' => 0,
-          'image_link' => 'content',
+          'image_link' => '',
           'image_style' => 'article_top_slider',
         ),
         'type' => 'image',

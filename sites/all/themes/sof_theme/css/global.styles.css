@@ -903,6 +903,104 @@ body.node-type-slider #main-content{
 .pane-bundle-also-see-pane .field-name-field-single-link a:hover{
 	opacity:0.8;
 }
+/* Video Deck */
+.pane-bundle-video-pane{
+	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    background-color:#f0f0f0;
+}
+.pane-bundle-video-pane .block-inner{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+}
+.pane-bundle-video-pane .block-title{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	background:#f0f0f0;
+	text-align:center;
+	color: #000;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+.pane-bundle-video-pane .block-content{
+	float:left;
+	padding:20px 0;
+	width:100%;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .field-item{
+	float:left;
+    margin-bottom:20px;
+    padding:0px 10px 0px 10px;
+    width:33.3%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+
+.pane-bundle-video-pane  .field-name-field-three-videos .node-title{
+    background-color: rgba(255, 255, 255, 0.84);
+    border-bottom-style: none;
+    font-size: 21px;
+    padding:10px 15px;
+    float:left;
+    width:100%;
+     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .node-title a{
+	color: #454545;
+	font-weight:400;
+	line-height: 23px;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .node-title a:hover{
+	opacity: 0.8;
+}
+.video-deck-img{
+	position:relative;
+	float:left;
+}
+.arrow-div{
+	background-image: url("images/video-background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 120px;
+    left: 50%;
+    margin-left:-60px;
+    margin-bottom:-60px;
+    position: absolute;
+    bottom: 50%;
+    width: 120px;
+}
+.arrow-div:hover{
+	opacity:0.8;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .field-type-image{
+	float:left;
+	width:100%;
+	background-color:#fff;
+	position:relative;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .field-type-image figure{
+	margin:0;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .field-type-image .field-item{
+	width:100%;
+	padding:0;
+}
+.pane-bundle-video-pane  .field-name-field-three-videos .field-type-image img{
+	width:100%;
+}
+
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -1109,6 +1207,9 @@ blockquote{
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
+}
+.group-leftaregion #video{
+	padding:40px 0 0 0;
 }
 .article-region .field-name-body h3{
 	color: #000;
