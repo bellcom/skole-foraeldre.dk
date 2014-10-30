@@ -126,7 +126,8 @@ dependencies[] = sof_pdf_generator
 ;Features
 dependencies[] = sof_banner
 dependencies[] = sof_file_types
-dependencies[] = sof_image_styles                                           
+dependencies[] = sof_image_styles
+dependencies[] = sof_linkit_profiles                                           
 dependencies[] = sof_pathauto_settings                                
 dependencies[] = sof_sliders                                                    
 dependencies[] = sof_text_formats                                          
