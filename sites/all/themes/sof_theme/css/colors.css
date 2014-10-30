@@ -2,12 +2,14 @@
 /* ---------- Color Module Styles ----------- */
 
 a,
+.region-header nav ul.first-level li a,
+.first-level li.slideul .third-level a,
 #block-system-main-menu ul li a,
 .article-region .field-name-body h4,
 .article-region .field-name-body h2,
 .article-region .field-name-body blockquote p,
 .article-region .field-name-body blockquote:before,
-#block-system-main-menu ul li.last.menu-depth-1:after,
+.region-header nav .first-level li.last.leaf:after,
 #block-views-related-content-block .field-content a  {
   color: #00a2eb;
 }
@@ -23,7 +25,8 @@ ul.pager li.pager-previous,
 .news-deck-newsletter,
 .follow-link-wrapper-facebook,
 .follow-link-wrapper-twitter,
-.pane-bundle-also-see-pane .field-name-field-single-link a{
+.pane-bundle-also-see-pane .field-name-field-single-link a,
+.pane-bundle-intro-deck-pane{
   background-color: #00a2eb;
 }
 

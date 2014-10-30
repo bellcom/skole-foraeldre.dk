@@ -399,6 +399,25 @@ body.page-home .panel-col-full-main{
 /* =============================================================================
  *   DECK STYLING
  * ========================================================================== */
+.panel-3col-custom .panel-separator{
+	margin:0;
+}
+.panel-pane .pane-title{
+	display:none;
+}
+.panel-pane .fixed-pane-title{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	text-align:center;
+	color: #000;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
 /* Slider Deck  */
 body.node-type-slider #columns,
 body.node-type-slider #main-content{
@@ -498,19 +517,8 @@ body.node-type-slider #main-content{
 	width:100%;
 	max-width:1170px;
 }
-.pane-bundle-news-pane .block-title{
-	margin:0 auto;
-	width:100%;
-	max-width:1170px;
+.pane-bundle-news-pane .fixed-pane-title{
 	background:#f0f0f0;
-	text-align:center;
-	color: #000;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 50px;
-    padding-bottom: 30px;
-    padding-top: 25px;
-    text-transform: uppercase;
 }
 .pane-bundle-news-pane .block-content{
 	width:100%;
@@ -776,20 +784,7 @@ body.node-type-slider #main-content{
 	width:100%;
 	max-width:1170px;
 }
-.pane-bundle-also-see-pane .block-title{
-	margin:0 auto;
-	width:100%;
-	max-width:1170px;
-	background:#fff;
-	text-align:center;
-	color: #000;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 50px;
-    padding-bottom: 30px;
-    padding-top: 25px;
-    text-transform: uppercase;
-}
+
 .pane-bundle-also-see-pane .block-content{
 	float:left;
 	padding:20px 0;
@@ -917,19 +912,8 @@ body.node-type-slider #main-content{
 	width:100%;
 	max-width:1170px;
 }
-.pane-bundle-video-pane .block-title{
-	margin:0 auto;
-	width:100%;
-	max-width:1170px;
+.pane-bundle-video-pane .fixed-pane-title{
 	background:#f0f0f0;
-	text-align:center;
-	color: #000;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 50px;
-    padding-bottom: 30px;
-    padding-top: 25px;
-    text-transform: uppercase;
 }
 .pane-bundle-video-pane .block-content{
 	float:left;
@@ -1000,7 +984,87 @@ body.node-type-slider #main-content{
 .pane-bundle-video-pane  .field-name-field-three-videos .field-type-image img{
 	width:100%;
 }
-
+/* Intro Deck */
+.pane-bundle-intro-deck-pane{
+	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-intro-deck-pane .block-inner{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	padding:30px 0 35px 0;
+}
+.intro-deck-group-first{
+	float:left;
+	width:50%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    padding:0 10px;
+}
+.intro-deck-group-first .field-name-field-teaser{
+    color: #fff;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 36px;
+    padding-bottom: 40px;
+    padding-right: 60px;
+    padding-top: 20px;
+    text-align: center;
+    text-align:left;
+}
+.intro-deck-group-first .field-name-field-single-link{
+    font-size: 19px;
+    font-weight: 200;
+    line-height: 26px;
+    list-style-type: none;
+    padding-left: 0;
+    text-align:left;
+}
+.pane-bundle-intro-deck-pane  a{
+    color:#fff;
+}
+.pane-bundle-intro-deck-pane  a:hover{
+    color:#000;
+}
+.intro-deck-group{
+	float:left;
+	width:25%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    padding:0 10px;
+}
+.intro-deck-group .field-type-text{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: top;
+    color: #fff;
+    font-size: 22px;
+    font-style: normal;
+    padding: 0 0 10px;
+    text-transform:uppercase;
+}
+.intro-deck-group .field-type-link-field .field-items{
+	padding-right:23%;
+}
+.intro-deck-group .field-type-link-field a{
+	font-family: 'conduit_itclight';
+    line-height: 26px;
+    font-size: 19px;
+    list-style-type: none;
+    padding-left: 0;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -2241,7 +2305,7 @@ a:focus {
 	border-bottom: 5px solid black;
 }
 .first-level li.slideul a{
-	color:#000!important;
+	/*color:#000!important;*/
 }
 
 .region-header nav .first-level  li.last.leaf:after { 
@@ -2265,7 +2329,6 @@ a:focus {
 	-webkit-transition: all 500ms ease;
   	-o-transition: all 500ms ease;
   	transition: all 500ms ease;
-  	color: #00a2eb;
   	font-size: 24px;
   	text-decoration: none;
   	text-transform: uppercase;
@@ -2368,7 +2431,6 @@ a:focus {
     text-transform:capitalize!important;
 }
 .first-level li.slideul .third-level a{
-	color:#00a2eb!important;
 	display:block;
 	border-bottom:none;
 	padding-bottom:0;

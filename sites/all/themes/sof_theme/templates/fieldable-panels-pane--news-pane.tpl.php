@@ -1,3 +1,4 @@
+<h2 class="fixed-pane-title"><?php print render($variables['panetitle']);?></h2>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print render($title_suffix); ?>
   <!-- Top Content -->

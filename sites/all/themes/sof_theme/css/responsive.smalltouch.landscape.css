@@ -308,6 +308,20 @@ ul.pager li{
 .pane-bundle-video-pane  .field-name-field-three-videos .field-item{
 	width:100%;
 }
+/* Intro Deck */
+.intro-deck-group-first{
+	width:100%;
+	padding-bottom:30px;
+	text-align:center;
+}
+.intro-deck-group{
+    width:100%;
+	padding-bottom:30px;
+	text-align:left;  
+}
+.intro-deck-group-first .field-name-field-teaser{
+	padding-right:0;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

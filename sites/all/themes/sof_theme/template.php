@@ -196,7 +196,7 @@ function sof_theme_field__field_video($variables) {
 }
 
 /**
- * Override related content reference image field. Block: Related Content Single Block
+ * Override field
  */
 function sof_theme_preprocess_field(&$vars) {
       
@@ -204,14 +204,17 @@ function sof_theme_preprocess_field(&$vars) {
   
   $element = $vars['element'];
   
-  // Field type image
-  if ($element['#field_type'] == 'image') {
-    // Reduce number of images in related content reference view mode to single image
-    if ($element['#view_mode'] == 'related_content_reference') {
-       $item = reset($vars['items']);
-       $vars['items'] = array($item);
-    }
-  }
+   /* 
+   * Block: Related Content Single Block
+   */
+	  // Field type image
+	  if ($element['#field_type'] == 'image') {
+	    // Reduce number of images in related content reference view mode to single image
+	    if ($element['#view_mode'] == 'related_content_reference') {
+	       $item = reset($vars['items']);
+	       $vars['items'] = array($item);
+	    }
+	  }
 
   /* 
    * Banner deck settings
@@ -224,14 +227,37 @@ function sof_theme_preprocess_field(&$vars) {
               
            $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
            $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';   
-        }
-        
+        }       
 }
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
  */
-function sof_theme_preprocess_fieldable_panels_pane(&$vars) {
- //kpr($vars['elements']);
+function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
+  $fieldable_pane_type = $variables['elements']['#bundle'];  
+  //Add title on every deck
+  switch($fieldable_pane_type){
+	            case 'news_pane':
+	                $variables['panetitle'] = t('News deck');
+	                break;
+	            case 'slideshow_pane':
+	                $variables['panetitle'] = '';
+	                break;
+			    case 'intro_deck_pane':
+                    $variables['panetitle'] = '';
+                    break;
+			    case 'video_pane':
+                    $variables['panetitle'] = t('Video deck');
+                    break;
+				case 'also_see_pane':
+               		 $variables['panetitle'] = t('Also see');
+                break;
+				case 'banner_pane':
+               		 $variables['panetitle'] = '';
+                break;
+                case 'magazine_pane':
+               		 $variables['panetitle'] = t('Magazine');
+                break;
+	        } 
 }
 
 /**
