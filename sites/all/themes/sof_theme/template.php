@@ -175,6 +175,8 @@ function sof_theme_field__field_related_content__article($variables) {
   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
   return $output;
 }
+
+
 /**
  * Override field field_video
  */
@@ -199,11 +201,13 @@ function sof_theme_field__field_video($variables) {
  * Override field
  */
 function sof_theme_preprocess_field(&$vars) {
-      
+ 
   global $base_path;
   
   $element = $vars['element'];
-  
+  if ($element['#field_type'] == 'field_collection') {
+  	//kpr($vars);
+  }
    /* 
    * Block: Related Content Single Block
    */
@@ -227,7 +231,7 @@ function sof_theme_preprocess_field(&$vars) {
               
            $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
            $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';   
-        }       
+        } 
 }
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
