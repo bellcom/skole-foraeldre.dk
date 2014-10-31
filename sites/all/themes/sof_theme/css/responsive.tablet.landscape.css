@@ -170,9 +170,7 @@ body {
 	font-size:24px;
 }
 /* Banner Deck */
-.banner-main-wrapper,
-.banner-main-wrapper .field-name-field-banner-link,
-.field-name-field-banner-link a {
+.banner-main-wrapper {
 	min-height:420px;
 }
 /* =============================================================================

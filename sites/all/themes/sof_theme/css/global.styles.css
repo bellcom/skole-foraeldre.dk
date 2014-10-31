@@ -1116,7 +1116,7 @@ body.node-type-slider #main-content{
 
 .banner-main-wrapper .field-name-field-banner-link,.field-name-field-banner-link .field-item a {
 	color: transparent;
-    height: 340px;
+    height: 100%;
     left: 10px;
     position: absolute;
     text-indent: -9999px;
