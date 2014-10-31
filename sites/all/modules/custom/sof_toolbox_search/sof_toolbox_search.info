@@ -1,0 +1,7 @@
+name = SOF toolbox search
+description = Provides custom pane with custom form to search by specific parameters.
+core = 7.x
+package = "SOF custom"
+
+;dependencies
+dependencies[] = ctools
