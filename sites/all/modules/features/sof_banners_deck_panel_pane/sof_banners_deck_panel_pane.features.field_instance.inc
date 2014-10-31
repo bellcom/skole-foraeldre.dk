@@ -24,7 +24,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
-        'type' => 'link_plain',
+        'type' => 'link_url',
         'weight' => 3,
       ),
     ),

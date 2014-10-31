@@ -16,5 +16,4 @@ features[fe_block_settings][] = menu_block-1
 features[fe_block_settings][] = menu_block-2
 features[fe_block_settings][] = menu_block-3
 features[fe_block_settings][] = menu_block-4
-features[fe_block_settings][] = system-main-menu
 features[features_api][] = api:2
