@@ -173,6 +173,13 @@ body {
 .banner-main-wrapper {
 	min-height:420px;
 }
+/* Magazine Deck */
+.pane-bundle-magazine-pane .block-inner{
+	padding:0 30px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
@@ -183,6 +190,13 @@ body {
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
+@media all and (max-width: 920px){
+	.fixed-pane-title-magazine{
+		font-size:45px;
+		padding-top:55px;
+	}
+	
+}
 @media all and (max-width: 900px){
 	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
 		min-height:620px;

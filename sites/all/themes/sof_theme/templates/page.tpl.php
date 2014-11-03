@@ -128,7 +128,8 @@
       <?php endif; ?>
 	  <!-- NAVIGATION CONTAINERS -->
 	  <div class="header-right-main-container">
-	      <div class="top-navigation-first"><?php print render($page['top_header_navigation']); ?></div>
+	      <div class="top-navigation-first">
+	      	<?php print render($page['top_header_navigation']); ?></div>
 	      <div class="header-navigation-container">
 			  <!-- Custom html element for mediaum and small navigation link -->
 			  <div id="nav-activation-link"><span>Menu</span></div>	

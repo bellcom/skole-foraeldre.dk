@@ -44,10 +44,13 @@
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {   
 	
+	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');
       $(".pane-bundle-intro-deck-pane .field-name-field-link-group-title-first, .pane-bundle-intro-deck-pane .field-name-field-five-links-first").wrapAll('<div class="intro-deck-group"></div>');
       $(".pane-bundle-intro-deck-pane .field-name-field-link-group-title-second, .pane-bundle-intro-deck-pane .field-name-field-five-links-second").wrapAll('<div class="intro-deck-group"></div>');
-                     	
+      
+      //Magazine Deck               	
+      $(".field-name-field-magazine-category, .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
    }
   };
 

@@ -109,6 +109,15 @@
   font-style: normal;
 } 
 
+@font-face {
+  font-family: 'Georgia';
+  src: url('fonts/Georgia/Georgia.eot?#iefix') format('embedded-opentype'),  
+       url('fonts/Georgia/Georgia.woff') format('woff'), 
+       url('fonts/Georgia/Georgia.ttf')  format('truetype'),
+       url('fonts/Georgia/Georgia.svg#Georgia') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
@@ -284,6 +293,7 @@ var {
 	width:100%;
     clear:both;
     padding:40px 0 60px 0;
+    margin:20px 0 0 0;
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	
@@ -731,7 +741,7 @@ body.node-type-slider #main-content{
     border-radius:45px;
     margin-right:15px;
 }
-.follow-link-wrapper-facebook{
+.news-deck-bottom-right-content .follow-link-wrapper-facebook{
 	 background-color: #00a2eb;
     background-image: url("images/Ikon_cirkel_FB_hvid.png");
     background-position: center center;
@@ -743,12 +753,12 @@ body.node-type-slider #main-content{
     border-radius:45px;
     margin-right:15px;
 }
-.follow-links a.follow-link-facebook,
-.follow-links a.follow-link-twitter{
+.news-deck-bottom-right-content .follow-links a.follow-link-facebook,
+.news-deck-bottom-right-content .follow-links a.follow-link-twitter{
 	background:none;
 	color:transparent;
 }
-.follow-link-wrapper-twitter{
+.news-deck-bottom-right-content .follow-link-wrapper-twitter{
 	 background-color: #00a2eb;
     background-image: url("images/Ikon_cirkel_Twitter_hvid.png");
     background-position: center center;
@@ -1090,7 +1100,7 @@ body.node-type-slider #main-content{
     position:relative;
     margin-bottom:-99999px;
     padding-bottom:99999px;
-    margin-top:10px;
+    margin-top:20px;
 }
 .banner-main-wrapper:nth-child(1){
 	background-color:#00a2eb;
@@ -1166,6 +1176,116 @@ body.node-type-slider #main-content{
     font-family: 'conduit_itclight';
     margin: 10px 0 0;
     padding:0 10px;
+}
+/* Magazine Deck */
+.pane-bundle-magazine-pane{
+	width:100%;
+	padding:20px 0 60px 0;
+	margin:0;
+	background-image:url('images/magazine-deck-bg.jpg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-magazine-pane .block-content{
+	width:100%;
+	max-width:1170px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.fixed-pane-title-magazine{
+	margin:0;
+	color: black;
+    font-family: 'Georgia';
+    font-weight:normal;
+    font-size: 75px;
+    line-height: 60px;
+    padding-bottom: 30px;
+    padding-top: 0;
+    text-align: center;
+}
+.pane-bundle-magazine-pane .fieldable-panels-pane{
+	width:100%;
+}
+.pane-bundle-magazine-pane .field-name-field-image,
+.mag-deck-right-group{
+	float: left;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    width: 50%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-magazine-pane .field-name-field-image img{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	box-shadow: #6c6c6c 0px 0px 6px 0px;
+	-webkit-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.field-name-field-magazine-category-term,
+.field-name-field-small-title{
+	margin:0!important;
+}
+
+.field-name-field-magazine-category-term ul{
+	margin:0;
+	padding:0;
+}
+.field-name-field-magazine-category-term ul li{
+	list-style:none;
+	margin-top: 10px;
+    margin-bottom: -3px;
+    padding:25px 0 0 0;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 22px;
+    line-height: 24px;
+    text-transform:uppercase;
+    text-align:left;
+    font-weight:400;
+}
+.field-name-field-small-title .mag-deck-default{
+	font-size: 30px;
+    line-height: 31px;
+    margin-left: 0;
+    margin-top: 5px;
+    color:#000;
+    float:left;
+}
+.field-name-field-small-title .mag-deck-default:hover {
+    color: rgba(51, 51, 51, 0.6);
+}
+.field-name-field-magazine-links{
+	font-size: 24px;
+    padding-top: 19px;
+    text-transform: uppercase;
+}
+.field-name-field-magazine-links .field-item a{
+	float:left;
+}
+.field-name-field-magazine-links .field-item.even a:after {
+    content: " . ";
+    font-weight: bold;
+    font-style: italic;
+    position:relative;
+    top:-5px;
+    color:#000;
+}
+.field-name-field-magazine-links .field-item.odd a{
+	margin-left:5px;
+}
+.field-name-field-magazine-links .field-item a:hover{
+	color: #000;
 }
 /* =============================================================================
  *   NODE STYLING
@@ -1360,10 +1480,10 @@ blockquote{
     clear: none;
     color: #00a2eb;
     float: none;
-    font-family: Georgia,Times,"Times New Roman",serif;
+    font-family: 'Georgia';
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     left: 60px;
     line-height: 30px;
     margin:0;
@@ -1911,7 +2031,154 @@ ul.pager li.pager-first a,
 ul.pager li.pager-previous a{
 	color:#fff;
 }
-
+/* =============================================================================
+ *   WEBFORM
+ * ========================================================================== */
+body.node-type-webform .submitted,
+body.node-type-webform .print_html{
+	display:none;
+}
+.node-webform .field-name-field-teaser{
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 30px;
+    text-align: left;
+}
+.node-webform  .field-name-body{
+    color: #454545;
+    font-family: "conduit_itclight",sans-serif;
+    font-size: 19px;
+    font-weight: 200;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    text-align: left;
+}
+.node-webform .webform-progressbar-page.current,
+.node-webform .webform-progressbar-page,
+.node-webform .webform-progressbar-page,
+.webform-progressbar-inner{
+	background-color:#00a2eb;
+}
+.node-webform .webform-progressbar-outer{
+	border: 1px solid #00a2eb;
+}
+.node-webform .webform-container-inline .form-item{
+	background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    margin: 0 10px 0 0;
+    width: auto;
+    float:left;
+}
+.node-webform .webform-container-inline .form-item select{
+    background: none;
+    border: medium none;
+}
+.node-webform .form-item label{
+	color:#00a2eb;
+	font-size: 19px;
+    font-weight: 200!important;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    text-align: left;
+}
+.webform-calendar{
+	border: 1px solid #bbbbbb;
+	display: inline;
+    margin: 0!important;
+    padding: 3px!important;
+    width: auto !important;
+}
+#ui-datepicker-div {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #00a2eb;
+    z-index: 9999 !important;
+}
+.ui-datepicker table, .ui-datepicker table thead, .ui-datepicker table tbody {
+    border: medium none !important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid transparent;
+}
+.ui-datepicker table tr td a:hover, .ui-widget-content .ui-state-highlight {
+    background: none repeat scroll 0 0 #0077ea;
+    color: #fff;
+}
+.ui-datepicker-header, .ui-datepicker-calendar tr {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+}
+.ui-datepicker-title select {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+}
+.ui-datepicker th {
+    font-weight: normal;
+}
+.node-webform  .form-item input{
+    border: 1px solid #bbbbbb;
+    border-radius: 0;
+    box-sizing: border-box;
+    margin: 10px 0 0;
+    padding: 10px;
+}
+.node-webform .webform-component-file input {
+    border: medium none;
+    padding: 0;
+    width: 40%;
+}
+   
+.node-webform .form-submit.ajax-processed {
+    background-color: #00a2eb;
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    margin-left: 20px;
+    padding: 5px 10px !important;
+    text-transform: uppercase;
+    width: 20% !important;
+}
+.node-webform .form-number{
+	max-width:150px;
+}
+.node-webform .form-actions input {
+    background-color: #00a2eb;
+	border:none;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 13px;
+    margin-left: 20px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+}
+.form-type-radio input {
+    width:auto;
+    margin:0 5px 0 0!important;
+}
+.form-textarea-wrapper textarea{
+	max-width:600px;
+}
+.webform-component-time .form-item {
+	float:none!important;
+}
+.form-item-submitted-time-hour:after{
+	content:none;
+}
+.webform-component-time .form-item.form-type-radio{
+	border:none;
+}
+.webform-component-time .form-item.form-type-select{
+	margin-left:5px;
+}
 /* =============================================================================
  *   BLOCKS
  * ========================================================================== */
@@ -2348,9 +2615,45 @@ a:focus {
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
+/* Follow Links */
+.region-top-header-navigation .follow-links{
+	float:right;
+	width:90px;
+}
+.region-top-header-navigation .follow-link-wrapper-facebook{
+	background-color: rgba(178, 178, 178, 0.56);
+    background-image: url("images/fb-follow.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: transparent;
+    float: left;
+    width: 25px;
+    height:25px;
+    border-radius:25px;
+    margin-right:15px;
+}
+.region-top-header-navigation  .follow-links a.follow-link-facebook,
+.region-top-header-navigation  .follow-links a.follow-link-twitter{
+	background:none;
+	color:transparent;
+}
+.region-top-header-navigation .follow-link-wrapper-twitter{
+	background-color: rgba(178, 178, 178, 0.56);
+    background-image: url("images/twiiter-follow.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: transparent;
+    float: left;
+    width: 25px;
+    height:25px;
+    border-radius:25px;
+    margin-right:15px;
+}
+/* Top Navigation */
  #block-menu-menu-top-navigation,
  #block-menu-menu-top-navigation .block-inner {
  	margin:0;
+ 	float:right;
  }
  #block-menu-menu-top-navigation ul{
  	margin:0;
@@ -2361,7 +2664,10 @@ a:focus {
  	list-style:none;
  	padding-left: 43px;
  }
-  #block-menu-menu-top-navigation ul li.last{
+#block-menu-menu-top-navigation ul li.first{
+	padding-left:0;
+}
+#block-menu-menu-top-navigation ul li.last{
   	padding-right:0;
   }
  #block-menu-menu-top-navigation ul li a{
