@@ -169,6 +169,10 @@ body {
 .news-deck-view-content .views-field-title a{
 	font-size:24px;
 }
+/* Banner Deck */
+.banner-main-wrapper {
+	min-height:420px;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

@@ -1065,6 +1065,108 @@ body.node-type-slider #main-content{
     list-style-type: none;
     padding-left: 0;
 }
+/* Banner Deck */
+.pane-bundle-banner-pane .block-inner {
+	max-width:1170px!important;
+	margin:0 auto;
+	padding:0;
+	overflow:hidden;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-banner-pane .block-inner  .field-collection-container{
+	border-bottom:none!important;
+}
+.banner-main-wrapper{
+	width:32%;
+	min-height:340px;
+	float:left;
+    text-align:center;
+    padding:0 10px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    position:relative;
+    margin-bottom:-99999px;
+    padding-bottom:99999px;
+    margin-top:10px;
+}
+.banner-main-wrapper:nth-child(1){
+	background-color:#00a2eb;
+	margin-right:2%;
+}
+.banner-main-wrapper:nth-child(2){
+	background-color:#76ccbc;
+	margin-right:2%;
+}
+.banner-main-wrapper:nth-child(3){
+	background-color:#fde571;
+}
+
+.banner-main-wrapper .field-collection-view{
+	margin:0;
+	height:100%;
+	padding:15px 0px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    border-bottom:none!important;
+}
+
+.banner-main-wrapper .field-name-field-banner-link,.field-name-field-banner-link .field-item a {
+	color: transparent;
+    height: 100%;
+    left: 10px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 0;
+    width: 95%;
+}
+.banner-main-wrapper .field-name-field-icon{
+	background-color: rgba(0, 0, 0, 0.2);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 75px;
+    display: block;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 19px;
+    width: 130px;
+    text-align:center;
+}
+.banner-main-wrapper .field-name-field-icon img{
+	height: 80px;
+    left: 3px;
+    position: relative;
+    top: 25px;
+    vertical-align: middle;
+    width: 80px;
+}
+.banner-main-wrapper .field-name-field-small-title{
+	border-top-color: black;
+    color: black;
+    display: block;
+    font-size: 32px;
+    font-weight: 200;
+    height: 65px;
+    line-height: 31px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 14px;
+    text-align: center;
+}
+.banner-main-wrapper  .field-name-field-teaser{
+	font-size: 17px;
+    line-height: 19px;
+    text-align: center;
+	border-radius: 0;
+    color: black;
+    font-family: 'conduit_itclight';
+    margin: 10px 0 0;
+    padding:0 10px;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -3756,6 +3858,9 @@ body.page-404 #content .action-links{
 	.slide-inner-content .field-name-field-small-title .field-item{
 		padding-left:60px;
 		padding-right:60px;
+	}
+	.pane-bundle-banner-pane .block-inner{
+		padding:0 20px;
 	}
 	
 }
