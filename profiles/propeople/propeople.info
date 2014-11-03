@@ -136,6 +136,7 @@ dependencies[] = sof_slider
 dependencies[] = sof_webform
 dependencies[] = sof_also_see_deck_panel_pane
 dependencies[] = sof_banners_deck_panel_pane
+dependencies[] = sof_full_html_deck_panel_pane
 dependencies[] = sof_intro_deck_panel_pane
 dependencies[] = sof_magazine_panel_pane
 dependencies[] = sof_news_deck_panel_pane

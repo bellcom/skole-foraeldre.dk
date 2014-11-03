@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF full html deck panel pane feature.
+ */
+
+include_once 'sof_full_html_deck_panel_pane.features.inc';

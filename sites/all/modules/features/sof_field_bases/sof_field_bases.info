@@ -31,6 +31,7 @@ features[field_base][] = field_file_image_title_text
 features[field_base][] = field_five_links_first
 features[field_base][] = field_five_links_second
 features[field_base][] = field_folder
+features[field_base][] = field_full_html_field
 features[field_base][] = field_icon
 features[field_base][] = field_image
 features[field_base][] = field_image_slider
