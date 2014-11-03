@@ -15,26 +15,15 @@ $plugin = array(
  */
  function sof_toolbox_search_content_type_edit_form($form, &$form_state){
   
-  $conf = $form_state['conf'];
-  
-  $form['terms_wrapper'] = array(
-    '#type'        => 'fieldset',
-    '#title'       => t('Predefined toolbox terms'),
-    '#weight'      => 5,
-    '#collapsible' => FALSE,
-    '#description' => t('Specify predefined search terms'),
-  );
-  
+  $conf = $form_state['conf']; 
   
   //Add max 10 terms for bottom predefined search
-  $delta = 0;
-  for($delta =0;$delta <= 10; $delta++){
-    $form['terms_wrapper']['term'][$delta] = array(
-        '#title' => t('Term'),
-        '#type' => 'textfield',
-        '#default_value' => $conf['term_val'][$delta] ? $conf['term_val'][$delta] : '',
+    $form['terms_val'] = array(
+        '#title' => t('Terms'),
+        '#type' => 'textarea',
+        '#default_value' => $conf['terms_val'] ? $conf['terms_val'] : '',
+        '#description' => t('Use comma or new line to separate the terms'),
     ); 
-  }
   
   return $form;
  }
@@ -44,8 +33,8 @@ $plugin = array(
   * Submit handler for edit form.
   */
  function sof_toolbox_search_content_type_edit_form_submit($form, &$form_state) {
-     
-   $form_state['conf']['term_val'] = $form_state['values'];
+   
+   $form_state['conf']['terms_val'] = $form_state['values']['terms_val'];
  
  }
  
@@ -80,9 +69,8 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
     
     //Deck bottom part (links)
     //Get only numeric array keys with the terms
-    $numerickeys = array_filter(array_keys($conf['term_val']), 'is_int');
-
-    if(!empty($numerickeys)){
+    
+    if(!empty($conf['terms_val'])){
         
       $items['toolbox_bottom'] = array(
         '#type' => 'container',
@@ -91,13 +79,16 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
         ),
       );
       
-      foreach ($numerickeys as $key) {
+      //Convert terms to array
+      $data = array_map('trim',preg_split("/[\r\n,]+/", $conf['terms_val'], -1, PREG_SPLIT_NO_EMPTY));
+      
+      foreach ($data as $key=>$value) {
         $items['toolbox_bottom']['predefinded_term'][$key] = array(
             '#type'    => 'link',
-            '#title'   => $conf['term_val'][$key],
+            '#title'   => $value,
             '#options' => array(
                 'attributes' => array(
-                    'title'  => $conf['term_val'][$key],
+                    'title'  => $value,
                 )
             ),
            '#href'    => '/',
@@ -106,6 +97,7 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
       }
         
     }    
+    
     
     $block->content = theme('sof_toolbox_search',array( 'items' => $items ));
     
