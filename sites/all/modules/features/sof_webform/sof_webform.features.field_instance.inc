@@ -18,7 +18,7 @@ function sof_webform_field_default_field_instances() {
     'description' => 'Enter the body of this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -68,7 +68,7 @@ function sof_webform_field_default_field_instances() {
     'description' => 'Upload an image to go with this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -140,7 +140,7 @@ function sof_webform_field_default_field_instances() {
     'description' => 'Enter the teaser of this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
