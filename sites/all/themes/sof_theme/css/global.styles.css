@@ -951,6 +951,7 @@ body.node-type-slider #main-content{
     padding:10px 15px;
     float:left;
     width:100%;
+    min-height:70px;
      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
