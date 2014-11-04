@@ -1275,15 +1275,15 @@ body.node-type-slider #main-content{
 .field-name-field-small-title .mag-deck-default:hover {
     color: rgba(51, 51, 51, 0.6);
 }
-.field-name-field-magazine-links{
+.mag-deck-right-group .field-name-field-magazine-links{
 	font-size: 24px;
     padding-top: 19px;
     text-transform: uppercase;
 }
-.field-name-field-magazine-links .field-item a{
+.mag-deck-right-group .field-name-field-magazine-links .field-item a{
 	float:left;
 }
-.field-name-field-magazine-links .field-item.even a:after {
+.mag-deck-right-group .field-name-field-magazine-links .field-item.even a:after {
     content: " . ";
     font-weight: bold;
     font-style: italic;
@@ -1291,10 +1291,10 @@ body.node-type-slider #main-content{
     top:-5px;
     color:#000;
 }
-.field-name-field-magazine-links .field-item.odd a{
+.mag-deck-right-group .field-name-field-magazine-links .field-item.odd a{
 	margin-left:5px;
 }
-.field-name-field-magazine-links .field-item a:hover{
+.mag-deck-right-group .field-name-field-magazine-links .field-item a:hover{
 	color: #000;
 }
 /* =============================================================================
