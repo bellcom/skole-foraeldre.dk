@@ -854,14 +854,13 @@ body.node-type-slider #main-content{
 }
 .pane-bundle-also-see-pane  .field-name-field-teaser .field-item{
 	width:100%;
-	min-height:unset!important;
 	border:none;
 	padding:0;
 	margin:0;
 	border-radius: 0;
     color: #454545;
     font-size: 19px;
-    font-weight: 200;
+    font-family:"conduit_itclight";
     line-height: 24px;
     margin-bottom: 15px;
     margin-left: 0;
