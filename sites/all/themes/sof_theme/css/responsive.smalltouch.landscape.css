@@ -343,6 +343,7 @@ ul.pager li{
 	padding:0;
 }
 /* Magazine Deck */
+
 .fixed-pane-title-magazine{
 		font-size:45px;
 		padding-top:55px;
@@ -360,6 +361,10 @@ ul.pager li{
 .field-name-field-magazine-links .field-item a{
 	width:100%;
 	margin-left:0!important;
+}
+/* Slider Deck */
+.slide-inner-content .field-name-field-small-title .field-item{
+	font-size:2.5em;
 }
 /* =============================================================================
  *   Footer
