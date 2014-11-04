@@ -967,6 +967,7 @@ body.node-type-slider #main-content{
 .video-deck-img{
 	position:relative;
 	float:left;
+	width:100%;
 }
 .arrow-div{
 	background-image: url("images/video-background.png");
