@@ -819,7 +819,7 @@ body.node-type-slider #main-content{
 	border:none;
 	padding:0;
 	margin-bottom:20px;
-	min-height:initial;
+	min-height:0%;
 }
 .pane-bundle-also-see-pane .field-name-field-image-slider .field-item img{
 	width:100%;
@@ -867,7 +867,7 @@ body.node-type-slider #main-content{
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
-    min-height:initial;
+    min-height:0%;
     
 }
 .pane-bundle-also-see-pane .read-more{

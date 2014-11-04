@@ -311,7 +311,7 @@ ul.pager li{
 .pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
 	width:100%;
 	border:none;
-	min-height:unset;
+	min-height:0%;
 }
 .pane-bundle-also-see-pane .read-more{
 	text-align:center;
