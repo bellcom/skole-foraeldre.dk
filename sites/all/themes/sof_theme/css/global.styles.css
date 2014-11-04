@@ -997,7 +997,7 @@ body.node-type-slider #main-content{
 	padding:0;
 }
 .pane-bundle-video-pane  .field-name-field-three-videos .field-type-image img{
-	width:100%;
+	width:100%!important;
 	max-width:750px;
 }
 /* Intro Deck */
