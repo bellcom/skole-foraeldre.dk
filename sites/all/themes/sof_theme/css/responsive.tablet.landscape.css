@@ -201,5 +201,9 @@ body {
 	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
 		min-height:620px;
 	}
+	.pane-bundle-also-see-pane .field-name-field-image-slider .field-item,
+	.pane-bundle-also-see-pane  .field-name-field-teaser .field-item{
+		min-height:0%;
+	}
 	
 }

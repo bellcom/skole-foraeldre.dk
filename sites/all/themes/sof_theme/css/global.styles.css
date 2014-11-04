@@ -1125,14 +1125,15 @@ body.node-type-slider #main-content{
     border-bottom:none!important;
 }
 
-.banner-main-wrapper .field-name-field-banner-link,.field-name-field-banner-link .field-item a {
+.banner-main-wrapper .field-name-field-banner-link,
+.field-name-field-banner-link .field-item a {
 	color: transparent;
     height: 100%;
-    left: 10px;
+    left: 0;
     position: absolute;
     text-indent: -9999px;
     top: 0;
-    width: 95%;
+    width: 100%;
 }
 .banner-main-wrapper .field-name-field-icon{
 	background-color: rgba(0, 0, 0, 0.2);
@@ -1167,6 +1168,10 @@ body.node-type-slider #main-content{
     margin-right: auto;
     margin-top: 14px;
     text-align: center;
+}
+.banner-main-wrapper .field-name-field-small-title .field-item{
+	margin-top:14px;
+	padding: 0 10px;
 }
 .banner-main-wrapper  .field-name-field-teaser{
 	font-size: 17px;
