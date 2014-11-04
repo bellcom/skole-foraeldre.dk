@@ -286,6 +286,11 @@ body {
 .intro-deck-group .field-type-link-field .field-items{
 	padding-right:10px;
 }
+.intro-deck-group-first .field-name-field-teaser{
+	font-size: 25px;
+    line-height: 26px;
+    padding-right: 10px;
+}
 /* Banner Deck */
 .banner-main-wrapper {
 	width:100%;
