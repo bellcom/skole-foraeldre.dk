@@ -405,7 +405,10 @@ body.page-home .panel-col-full-main{
     width: 100%;
     max-width:100%;
 }
-
+.panels-ipe-portlet-wrapper{
+	float:left;
+	width:100%;
+}
 /* =============================================================================
  *   DECK STYLING
  * ========================================================================== */
@@ -1267,6 +1270,7 @@ body.node-type-slider #main-content{
     margin-top: 5px;
     color:#000;
     float:left;
+    font-family: 'Georgia';
 }
 .field-name-field-small-title .mag-deck-default:hover {
     color: rgba(51, 51, 51, 0.6);
