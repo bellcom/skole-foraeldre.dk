@@ -793,7 +793,7 @@ body.node-type-slider #main-content{
     background-color:#fff;
 }
 .pane-bundle-also-see-pane .block-inner{
-	margin:0 auto;
+	margin:0 auto!important;
 	width:100%;
 	max-width:1170px;
 }
@@ -1841,7 +1841,7 @@ body.node-type-section #page-title{
 .node-section .field-name-field-teaser h2{
 	display:none;
 }
-.node-section .field-name-field-teaser .field-item{
+.node-section .field-name-field-teaser.view-mode-_custom_display .field-item{
     color: #000;
     font-family: 'conduit_itclight';
     font-size: 26px;
