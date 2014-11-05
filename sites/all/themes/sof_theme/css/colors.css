@@ -8,9 +8,12 @@ a,
 .article-region .field-name-body h4,
 .article-region .field-name-body h2,
 .article-region .field-name-body blockquote p,
+body.node-type-basic-page .field-name-body blockquote p,
 .article-region .field-name-body blockquote:before,
 .region-header nav .first-level li.last.leaf:after,
-#block-views-related-content-block .field-content a  {
+#block-views-related-content-block .field-content a,
+h2,
+h4  {
   color: #00a2eb;
 }
 
