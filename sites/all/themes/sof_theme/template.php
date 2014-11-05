@@ -200,9 +200,7 @@ function sof_theme_field__field_video($variables) {
  * Override field
  */
 function sof_theme_preprocess_field(&$vars) {
-	
-	
- 
+
   global $base_path;
  
   $element = $vars['element'];
@@ -224,13 +222,13 @@ function sof_theme_preprocess_field(&$vars) {
    * Block: Related Content Single Block
    */
 	  // Field type image
-	  if ($element['#field_type'] == 'image') {
+	 // if ($element['#field_type'] == 'image') {
 	    // Reduce number of images in related content reference view mode to single image
-	    if ($element['#view_mode'] == 'related_content_reference') {
-	       $item = reset($vars['items']);
-	       $vars['items'] = array($item);
-	    }
-	  }
+	   // if ($element['#view_mode'] == 'related_content_reference') {
+	     //  $item = reset($vars['items']);
+	     //  $vars['items'] = array($item);
+	    ///}
+	  //}
 
   /* 
    * Banner deck settings
