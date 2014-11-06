@@ -202,8 +202,8 @@ function sof_theme_field__field_video($variables) {
 function sof_theme_preprocess_field(&$vars) {
 
   global $base_path;
- 
   $element = $vars['element'];
+  
     /**
      * Magazine Deck fields preprocess: Field Category title
     */
@@ -211,6 +211,7 @@ function sof_theme_preprocess_field(&$vars) {
 	    $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
 	    $vars['items'][0]['#suffix'] = '</a>';
 	}
+	
 	/**
 	 * Magazine Deck fields preprocess: Field Image
 	*/
@@ -218,10 +219,10 @@ function sof_theme_preprocess_field(&$vars) {
 		$vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
 		$vars['items'][0]['#suffix'] = '</a>';
 	}
-   /* 
-   * Block: Related Content Single Block
-   */
-	  // Field type image
+	
+    /**
+     * Block: Related Content Single Block
+    */
 	  if ($element['#field_type'] == 'image') {
 	    // Reduce number of images in related content reference view mode to single image
 	    if ($element['#view_mode'] == 'related_content_reference') {
@@ -230,8 +231,8 @@ function sof_theme_preprocess_field(&$vars) {
 	    }
 	  }
 
-  /* 
-   * Banner deck settings
+   /** 
+    * Banner deck settings
    */
     //Display banner icon as image
     if ($element['#field_name'] == 'field_icon' && $element['#entity_type'] == 'field_collection_item') {
@@ -251,35 +252,28 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
   $fieldable_pane_type = $variables['elements']['#bundle']; 
   //Add title on every deck
   switch($fieldable_pane_type){
-	            case 'news_pane':
-	                $variables['panetitle'] = t('News deck');
-	                break;
-	            case 'slideshow_pane':
-	                $variables['panetitle'] = '';
-	                break;
-			    case 'intro_deck_pane':
-                    $variables['panetitle'] = '';
-                    break;
-			    case 'video_pane':
-                    $variables['panetitle'] = t('Video deck');
-                    break;
-				case 'also_see_pane':
-               		 $variables['panetitle'] = t('Also see');
-                break;
-				case 'banner_pane':
-               		 $variables['panetitle'] = '';
-                break;
-                case 'magazine_pane':
-               		 $variables['panetitle'] = t('Magazine');
-					 $variables['title'] = '';
-					 if(!empty($variables['elements']['#fieldable_panels_pane']->title)) {
-					    $variables['title'] = $variables['elements']['#fieldable_panels_pane']->title;
-					  } 
-                break;
-				case 'recommended_items_pane':
-               		 $variables['panetitle'] = t('Recommended Items');
-                break;
-	        } 
+        case 'news_pane':
+            $variables['panetitle'] = t('News deck');
+            break;
+	    case 'video_pane':
+            $variables['panetitle'] = t('Video deck');
+            break;
+		case 'also_see_pane':
+       		 $variables['panetitle'] = t('Also see');
+        break;
+        case 'magazine_pane':
+       		 $variables['panetitle'] = t('Magazine');
+			 $variables['title'] = '';
+			 if(!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+			    $variables['title'] = $variables['elements']['#fieldable_panels_pane']->title;
+			  } 
+        break;
+		case 'recommended_items_pane':
+       		 $variables['panetitle'] = t('School Board - Overview');
+        break;
+		 default:
+             $variables['panetitle'] = '';
+    } 
 }
 
 /**

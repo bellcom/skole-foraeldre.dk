@@ -314,6 +314,12 @@ body {
 .mag-deck-right-group{
 	width:100%;
 }
+/* Recomended Items Deck */
+.pane-bundle-recommended-items-pane  .form-item,
+.pane-bundle-recommended-items-pane .field-name-field-we-recommend,
+.recomendation-overview{
+	width:100%;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

@@ -366,6 +366,12 @@ ul.pager li{
 .slide-inner-content .field-name-field-small-title .field-item{
 	font-size:2.5em;
 }
+/* Recomended Items Deck */
+.pane-bundle-recommended-items-pane  .form-item,
+.pane-bundle-recommended-items-pane .field-name-field-we-recommend,
+.recomendation-overview{
+	width:100%;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

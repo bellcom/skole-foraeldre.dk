@@ -3,8 +3,8 @@
   * Header Scripts 
   */	
   Drupal.behaviors.sofHeader = {
-    attach: function (context, settings) {   
-	
+    attach: function (context, settings) {
+    		
 		//Show / Hide navigation script
 		$(".first-level li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");
@@ -46,8 +46,7 @@
 			$('.header-inner-navigation-container').stop().slideToggle('fast');
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
-		});	
-                     	
+		});	    	
    }
   };
   
@@ -64,6 +63,24 @@
       
       //Magazine Deck               	
       $(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
+   
+   		
+      //Recomended item deck, wrapp 10 elements in one
+      var $span = $(".view-id-recommended_items_overview .views-row");
+	  for (var i = 0; i < $span.length; i += 10) {
+		    var $div = $("<div/>", {
+		        class: 'recomendation-overview'
+		    });
+		    $span.slice(i, i + 10).wrapAll($div);
+      }
+               
+	  //Remove colons from field label 
+	  $('.field-name-field-we-recommend .field-label').each(
+	        function() {
+	          var myText = $(this);
+	          myText.text( myText.text().replace(':','') );
+	        }
+       );   
    }
   };
 
