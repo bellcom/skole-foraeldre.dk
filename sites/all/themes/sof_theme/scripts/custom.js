@@ -18,7 +18,8 @@
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
-			$(".first-level li").click(function(){
+			$(".first-level li").click(function(event){
+				event.preventDefault();
 				$(this).delay(400).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
 				if(slideul){

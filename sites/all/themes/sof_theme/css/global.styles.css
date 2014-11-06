@@ -2298,6 +2298,7 @@ body.page-node-done #page-title  {
     font-weight: normal;
     line-height: 44px;
     width: 100%;
+    margin:0 0 20px 0;
 }
 body.page-node-done #content {
 	float:left;
@@ -2392,6 +2393,15 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
  *   BLOCKS
  * ========================================================================== */
 /* Related Terms and Related Articles Slideshow */
+.flex-direction-nav li a{
+	display:block!important;
+}
+.flex-direction-nav .flex-prev{
+	left:0!important;
+}
+.flex-direction-nav .flex-next{
+	right:10px!important;
+}
 .flex-direction-nav a:before {
     color: #fff;
     content: '\e800'; /* '' */
@@ -2980,7 +2990,9 @@ a:focus {
 .second-level li a{
 	display:none;
 }
-
+.third-level-main-container li a{
+	display:block;
+}
 .second-level-main-container span{
 	float:left;
 	width:25%;
