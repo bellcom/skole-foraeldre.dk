@@ -27,6 +27,16 @@ function sof_publication_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -84,7 +94,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Choose a category that fit this publication.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -92,6 +102,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -139,7 +155,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Upload the PDF publication that you wish to provide as a download.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -147,6 +163,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'file_default',
         'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -188,6 +210,8 @@ function sof_publication_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -196,10 +220,15 @@ function sof_publication_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
           'upload' => 'upload',
+          'youtube' => 0,
         ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'media_generic',
       'weight' => 7,
@@ -213,7 +242,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Upload an image to go with this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -223,6 +252,18 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -320,6 +361,12 @@ function sof_publication_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 6,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -365,7 +412,7 @@ function sof_publication_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -377,7 +424,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Select cover color for the generated pdf file',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'color_field',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -385,6 +432,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'color_field_default_formatter',
         'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -411,12 +464,12 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_pdf_title'
-  $field_instances['node-publication-field_pdf_title'] = array(
+  // Exported field_instance: 'node-publication-field_pdf_description'
+  $field_instances['node-publication-field_pdf_description'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the title for the front page of the PDF file',
+    'description' => 'Enter the description for the front page of the PDF file',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -426,7 +479,71 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pdf_description',
+    'label' => 'Publication description',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 300,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-publication-field_pdf_title'
+  $field_instances['node-publication-field_pdf_title'] = array(
+    'bundle' => 'publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the title for the front page of the PDF file. Make sure not to split the title in more than 2 lines.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
         'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -456,6 +573,11 @@ function sof_publication_field_default_field_instances() {
     'label' => 'Publication title',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -463,6 +585,10 @@ function sof_publication_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 60,
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
         'rows' => 5,
       ),
       'type' => 'text_textarea',
@@ -478,7 +604,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Selct if the pdf file will be uploaded or generated from webpage content',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -486,6 +612,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'list_default',
         'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -530,7 +662,7 @@ function sof_publication_field_default_field_instances() {
     'description' => 'Enter the teaser of this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -538,6 +670,16 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -587,12 +729,14 @@ function sof_publication_field_default_field_instances() {
   t('Category');
   t('Choose a category that fit this publication.');
   t('Enter the body of this posting.');
+  t('Enter the description for the front page of the PDF file');
   t('Enter the teaser of this posting.');
-  t('Enter the title for the front page of the PDF file');
+  t('Enter the title for the front page of the PDF file. Make sure not to split the title in more than 2 lines.');
   t('Image');
   t('PDF');
   t('Publication content');
   t('Publication cover color');
+  t('Publication description');
   t('Publication file type');
   t('Publication title');
   t('Selct if the pdf file will be uploaded or generated from webpage content');

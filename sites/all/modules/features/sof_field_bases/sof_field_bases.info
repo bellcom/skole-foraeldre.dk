@@ -42,6 +42,7 @@ features[field_base][] = field_magazine_category_term
 features[field_base][] = field_magazine_links
 features[field_base][] = field_pdf_content
 features[field_base][] = field_pdf_cover_color
+features[field_base][] = field_pdf_description
 features[field_base][] = field_pdf_title
 features[field_base][] = field_primary_referenced_node
 features[field_base][] = field_publication_control_link
