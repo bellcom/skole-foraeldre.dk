@@ -8,5 +8,4 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = entity_view_modes
 features[variable][] = i18n_string_source_language
-features[variable][] = menu_block_1_level
 features[variable][] = site_frontpage

@@ -43,7 +43,7 @@
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.preventDefault();
-			$('.header-inner-navigation-container').stop().slideToggle('fast');
+			$('.header-inner-navigation-container').stop().slideToggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		});	    	
