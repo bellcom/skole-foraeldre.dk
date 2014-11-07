@@ -518,13 +518,14 @@ body.node-type-slider #main-content{
 	border-radius: 0;
     color: #454545;
     font-size: 19px;
-    font-weight: 200;
+    font-family:"conduit_itclight";
     line-height: 24px;
     margin-bottom: 15px;
     margin-left: 0;
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+    
 }
 .news-deck-top-right-content .read-more{
     font-size: 20px;
@@ -571,8 +572,6 @@ body.node-type-slider #main-content{
     text-transform: uppercase;
 }
 .news-deck-view-content .views-field-title a{
-	color: black;
-    font-family: "Conduit itc",sans-serif;
     font-size: 30px;
     font-weight: 400;
     margin-top: 20px;
@@ -586,7 +585,7 @@ body.node-type-slider #main-content{
 	border-radius: 0;
     color: #454545;
     font-size: 19px;
-    font-weight: 200;
+    font-family:'conduit_itclight';
     line-height: 24px;
     margin-bottom: 15px;
     margin-left: 0;
