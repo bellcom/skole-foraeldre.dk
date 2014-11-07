@@ -9,6 +9,7 @@ dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = news_deck_latest_3_nodes
+features[views_view][] = other_releases
 features[views_view][] = read_also
 features[views_view][] = recommended_items_overview
 features[views_view][] = related_articles_slider
