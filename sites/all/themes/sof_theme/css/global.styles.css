@@ -1486,7 +1486,19 @@ body.node-type-publication #main-content {
  	float:right!important;
  	background-image:url('images/close-publication.png');
  	background-repeat:no-repeat:
- }
+}
+.publication-bottom-container{
+	float:left;
+	width:100%;
+}
+.publication-bottom-container *{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;	
+}
+.publication-bottom-container-inner{
+	
+}
 /* =============================================================================
  *   Articles, Basic Page and News
  * ========================================================================== */

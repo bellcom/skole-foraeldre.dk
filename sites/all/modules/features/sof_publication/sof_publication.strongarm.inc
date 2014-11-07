@@ -136,6 +136,12 @@ function sof_publication_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'domain' => array(
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

@@ -132,6 +132,13 @@ hide($content['links']);
      </div>
   </div>
   <!-- Publication Bottom Main Container(View) -->
+  <div class="publication-bottom-container">
+	 <!-- Read Also Content -->
+   	 <?php if ( $blockotherelease = block_load('views', 'other_releases-block')): ?>
+         <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockotherelease)))); ?>
+     <?php endif; ?>
+      <!-- Read Also Articles --> 
+  </div> 
   <!-- Content Type Links -->
   <?php if ($links = render($content['links'])): ?>
     <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
