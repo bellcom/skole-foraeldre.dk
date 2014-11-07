@@ -8,9 +8,14 @@ a,
 .article-region .field-name-body h4,
 .article-region .field-name-body h2,
 .article-region .field-name-body blockquote p,
+body.node-type-basic-page .field-name-body blockquote p,
 .article-region .field-name-body blockquote:before,
 .region-header nav .first-level li.last.leaf:after,
-#block-views-related-content-block .field-content a  {
+#block-views-related-content-block .field-content a,
+body.node-type-basic-page .field-name-body  h2,
+body.node-type-basic-page .field-name-body  h4,
+.node-webform .form-item label,
+.node-webform .webform-progressbar-outer  {
   color: #00a2eb;
 }
 
@@ -23,10 +28,17 @@ ul.pager li.pager-last,
 ul.pager li.pager-first,
 ul.pager li.pager-previous,
 .news-deck-newsletter,
-.follow-link-wrapper-facebook,
+.news-deck-bottom-right-content .follow-link-wrapper-facebook,
+.news-deck-bottom-right-content .follow-link-wrapper-twitter,
 .follow-link-wrapper-twitter,
 .pane-bundle-also-see-pane .field-name-field-single-link a,
-.pane-bundle-intro-deck-pane{
+.pane-bundle-intro-deck-pane,
+.node-webform .webform-progressbar-page.current,
+.node-webform .webform-progressbar-page,
+.node-webform .webform-progressbar-page,
+.webform-progressbar-inner,
+.node-webform .form-submit.ajax-processed,
+.node-webform .form-actions input{
   background-color: #00a2eb;
 }
 

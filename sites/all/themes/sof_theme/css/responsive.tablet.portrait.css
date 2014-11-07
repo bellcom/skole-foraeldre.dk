@@ -75,18 +75,17 @@ body {
     background-position:right 6px;
     background-repeat:no-repeat;
 }
-#nav-activation-link span.active{
-	background-image:url('images/nav_close_button.png');
-    background-position:right 0;
-    background-repeat:no-repeat;
-    text-indent:-9999px;
-    height:23px;
-    width:0;
-    display:block;
-    float:right;
-}
+
 #nav-activation-link:hover{
 	text-decoration:none;
+}
+#block-follow-site{
+	width:100%;
+	float:left;
+	padding: 0 0 25px 35px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
 }
 /* =============================================================================
  *   Main Navigation
@@ -159,6 +158,7 @@ body {
  * ========================================================================== */
 #block-menu-menu-top-navigation{
 	padding-bottom:30px;
+	float:left;
 }
 #block-menu-menu-top-navigation ul li{
 	float:none;
@@ -169,6 +169,9 @@ body {
 	background-position:left 27px;
 	background-repeat:no-repeat;
 	text-align:left;
+}
+#block-menu-menu-top-navigation ul li.first{
+	padding-left:25px;
 }
 #block-menu-menu-top-navigation ul li a{
 	font-size: 24px;
@@ -265,7 +268,7 @@ body {
 .pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
 	width:100%;
 	border:none;
-	min-height:unset;
+	min-height:0%;
 	
 }
 .pane-bundle-also-see-pane .read-more{
@@ -283,6 +286,11 @@ body {
 .intro-deck-group .field-type-link-field .field-items{
 	padding-right:10px;
 }
+.intro-deck-group-first .field-name-field-teaser{
+	font-size: 25px;
+    line-height: 26px;
+    padding-right: 10px;
+}
 /* Banner Deck */
 .banner-main-wrapper {
 	width:100%;
@@ -290,6 +298,27 @@ body {
 	min-height:420px;
 	margin:0 0 20px 0;
 	padding:0;
+}
+/* Magazine Deck */
+.fixed-pane-title-magazine{
+		font-size:45px;
+		padding-top:55px;
+	}
+.pane-bundle-magazine-pane .block-inner{
+	padding:0 30px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-magazine-pane .field-name-field-image, 
+.mag-deck-right-group{
+	width:100%;
+}
+/* Recomended Items Deck */
+.pane-bundle-recommended-items-pane  .form-item,
+.pane-bundle-recommended-items-pane .field-name-field-we-recommend,
+.recomendation-overview{
+	width:100%;
 }
 /* =============================================================================
  *   Footer

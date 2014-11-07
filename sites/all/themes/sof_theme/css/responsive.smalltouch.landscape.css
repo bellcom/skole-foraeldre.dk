@@ -185,6 +185,7 @@ body {
  * ========================================================================== */
 #block-menu-menu-top-navigation{
 	padding-bottom:30px;
+	float:left;
 }
 #block-menu-menu-top-navigation ul li{
 	float:none;
@@ -200,6 +201,17 @@ body {
 	font-size: 24px;
   	text-decoration: none;
   	text-transform: uppercase;
+}
+#block-menu-menu-top-navigation ul li.first{
+	padding-left:25px;
+}
+#block-follow-site{
+	width:100%;
+	float:left;
+	padding: 0 0 25px 35px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
 }
 /* =============================================================================
  *   Articles
@@ -299,7 +311,7 @@ ul.pager li{
 .pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
 	width:100%;
 	border:none;
-	min-height:unset;
+	min-height:0%;
 }
 .pane-bundle-also-see-pane .read-more{
 	text-align:center;
@@ -327,8 +339,38 @@ ul.pager li{
 	width:100%;
 	padding: 20px;
 	min-height:420px;
-	margin:0 0 20px 0;
+	margin:20px 0 0 0;
 	padding:0;
+}
+/* Magazine Deck */
+
+.fixed-pane-title-magazine{
+		font-size:45px;
+		padding-top:55px;
+	}
+.pane-bundle-magazine-pane .block-inner{
+	padding:0 30px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.pane-bundle-magazine-pane .field-name-field-image, 
+.mag-deck-right-group{
+	width:100%;
+}
+.field-name-field-magazine-links .field-item a{
+	width:100%;
+	margin-left:0!important;
+}
+/* Slider Deck */
+.slide-inner-content .field-name-field-small-title .field-item{
+	font-size:2.5em;
+}
+/* Recomended Items Deck */
+.pane-bundle-recommended-items-pane  .form-item,
+.pane-bundle-recommended-items-pane .field-name-field-we-recommend,
+.recomendation-overview{
+	width:100%;
 }
 /* =============================================================================
  *   Footer
