@@ -214,6 +214,25 @@ body {
     box-sizing: border-box;
 }
 /* =============================================================================
+ *   Publications 
+ * ========================================================================== */
+.publication-top-left-container,
+.publication-top-right-container{
+	width:100%;
+}
+.publication-top-left-container{
+	padding:0 20px 20px 20px;	
+}
+.publication-top-left-container img{
+	width:60%;	
+}
+.publication-top-right-container{
+	padding:20px;
+}
+.publication-top-right-container .node-title a{
+	font-size:30px;
+}
+/* =============================================================================
  *   Articles
  * ========================================================================== */
 .left-article-region,

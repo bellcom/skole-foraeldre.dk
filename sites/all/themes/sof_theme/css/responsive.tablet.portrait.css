@@ -179,6 +179,22 @@ body {
   	text-transform: uppercase;
 }
 /* =============================================================================
+ *   Publications 
+ * ========================================================================== */
+.publication-top-left-container,
+.publication-top-right-container{
+	width:100%;
+}
+.publication-top-left-container{
+	padding:0 30px 20px 30px;	
+}
+.publication-top-left-container img{
+	width:60%;	
+}
+.publication-top-right-container{
+	padding:20px 30px;
+}
+/* =============================================================================
  *   Articles
  * ========================================================================== */
 .left-article-region,
