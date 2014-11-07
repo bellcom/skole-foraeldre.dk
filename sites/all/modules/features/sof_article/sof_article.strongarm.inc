@@ -134,6 +134,12 @@ function sof_article_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'download_as_pdf' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

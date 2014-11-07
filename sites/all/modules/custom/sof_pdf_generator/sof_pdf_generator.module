@@ -215,6 +215,50 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Implements hook_field_extra_fields().
+ */
+function sof_pdf_generator_field_extra_fields() {
+  
+  //Additiona field for download links on article, news and publication
+  foreach(array('news', 'article', 'publication') as $node_type) {
+
+    $extra['node'][$node_type]['display']['download_as_pdf'] = array(
+        'label' => t('Download pdf'),
+        'description' => t('Provides link for pdf download'),
+        'weight' => 10,
+        'visible' => FALSE,
+    );
+
+  }
+  
+  return $extra;
+
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function sof_pdf_generator_node_view($node, $view_mode, $langcode) {
+  
+  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  $extrafield_name = 'download_as_pdf';
+  
+  //Attach download as pdf link to articles, news and publication
+  if (isset($extrafields[$extrafield_name])
+      && isset($extrafields[$extrafield_name]['visible'])
+      && $extrafields[$extrafield_name]['visible']) {
+      
+    $node->content['download_as_pdf'] = array(
+      '#markup' => l(t('Download as pdf'), ($node->type == 'publication' ? 'sof-pdf-generate/' : 'sof-pdf-single/')  . $node->nid, array(
+        'attributes' => array(
+            'class' => array('download-as-pdf'),
+        ),
+      )),
+    );
+    
+  }
+}
 
 /**
  * Helper function for generating pdf files of the publication

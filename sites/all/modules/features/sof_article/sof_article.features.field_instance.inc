@@ -189,7 +189,7 @@ function sof_article_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 5,
+        'weight' => 12,
       ),
       'primary_selected_node' => array(
         'label' => 'above',
@@ -611,7 +611,7 @@ function sof_article_field_default_field_instances() {
           'view_mode' => 'related_content_reference',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 4,
+        'weight' => 11,
       ),
       'primary_selected_node' => array(
         'label' => 'above',

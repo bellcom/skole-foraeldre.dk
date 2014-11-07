@@ -129,7 +129,14 @@ function sof_publication_strongarm() {
           'weight' => '9',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'download_as_pdf' => array(
+          'full' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__publication'] = $strongarm;

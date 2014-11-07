@@ -160,6 +160,12 @@ function sof_news_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'download_as_pdf' => array(
+          'full' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

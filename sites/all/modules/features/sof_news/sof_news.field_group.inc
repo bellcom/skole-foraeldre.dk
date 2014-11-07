@@ -145,6 +145,7 @@ function sof_news_field_group_info() {
     'children' => array(
       0 => 'field_banner',
       1 => 'field_related_content',
+      2 => 'download_as_pdf',
     ),
     'format_type' => 'div',
     'format_settings' => array(

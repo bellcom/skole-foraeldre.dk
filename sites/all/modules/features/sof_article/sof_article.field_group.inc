@@ -82,10 +82,10 @@ function sof_article_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'field_teaser',
+      1 => 'field_add_this',
       2 => 'field_image_slider',
-      3 => 'field_video',
-      4 => 'field_add_this',
+      3 => 'field_teaser',
+      4 => 'field_video',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -146,6 +146,7 @@ function sof_article_field_group_info() {
     'children' => array(
       0 => 'field_banner',
       1 => 'field_related_content',
+      2 => 'download_as_pdf',
     ),
     'format_type' => 'div',
     'format_settings' => array(

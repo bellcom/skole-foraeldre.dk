@@ -30,6 +30,7 @@ features[field_instance][] = node-publication-field_pdf_cover_color
 features[field_instance][] = node-publication-field_pdf_description
 features[field_instance][] = node-publication-field_pdf_title
 features[field_instance][] = node-publication-field_publication_file_type
+features[field_instance][] = node-publication-field_single_link
 features[field_instance][] = node-publication-field_teaser
 features[node][] = publication
 features[variable][] = comment_anonymous_publication
