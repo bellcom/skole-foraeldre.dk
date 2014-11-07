@@ -4,9 +4,7 @@ core = 7.x
 package = "SOF custom"
 
 ;Dependencies
-dependencies[] = print   
-dependencies[] = print_pdf
-dependencies[] = print_pdf_wkhtmltopdf
+dependencies[] = phpwkhtmltopdf   
 
 ;Files
 files[] = sof_pdf_generator.module

@@ -1,10 +1,34 @@
 .sof-pdf-cover { 
-    height: 297mm;
+    height: 214mm;
     display:table;
     font-size:40px;
     background-color: #b8e9f4;
+    position:relative;
 }
-.sof-pdf-cover .field-name-field-pdf-title{ 
-    display:table-cell;
-    vertical-align:middle;
+.sof-pdf-cover img.sof-pdf-logo{ 
+    position:absolute;
+    left:10mm;
+    bottom:10mm;
+    max-width:50mm;
+}
+.sof-pdf-cover-vertical{
+   display:table-cell;
+   vertical-align:middle;
+}
+.sof-pdf-cover .sof-pdf-cover-vertical h1,
+.sof-pdf-cover .sof-pdf-cover-vertical p{ 
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10mm;
+}
+.sof-pdf-cover .sof-pdf-cover-vertical h1{
+	font-size:50px;
+	line-height:50px;
+}
+.sof-pdf-cover .sof-pdf-cover-vertical p{
+	font-size:25px;
+	line-height:25px;
+}
+.sof-pdf-content{
+	margin: 10mm;
 }

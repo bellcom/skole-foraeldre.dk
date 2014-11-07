@@ -273,6 +273,14 @@ function sof_theme_preprocess_node(&$variables) {
 	  	if($view_mode == 'full'){
 	   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';
 	        
+            //Add pdf download link
+            $nid = $variables['node']->nid;
+            $variables['download_as_pdf_link'] = l(t('Download as pdf'), 'sof-pdf-single/' . $nid, array(
+                'attributes' => array(
+                    'class' => array('download-as-pdf'),
+                ),
+            ));
+                   
 	        //Pass slider block $delta as variable
 	        switch($node->type){
 	            case 'article':

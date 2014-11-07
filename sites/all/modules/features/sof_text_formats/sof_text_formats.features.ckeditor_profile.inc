@@ -84,8 +84,8 @@ function sof_text_formats_ckeditor_profile_defaults() {
     \'/\',
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\',\'CreateDiv\'],
-    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\',\'-\',\'Language\'],
-    [\'Link\',\'Unlink\',\'Anchor\'],
+    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\',\'-\'],
+    [\'linkit\',\'Unlink\',\'Anchor\'],
     [\'DrupalBreak\'],
     \'/\',
     [\'Format\',\'Font\',\'FontSize\'],
@@ -143,6 +143,17 @@ function sof_text_formats_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 't',
+          ),
+          'linkit' => array(
+            'name' => 'linkit',
+            'desc' => 'Support for Linkit module',
+            'path' => '%base_path%sites/all/modules/contrib/linkit/editors/ckeditor/',
+            'buttons' => array(
+              'linkit' => array(
+                'label' => 'Linkit',
+                'icon' => 'icons/linkit.png',
+              ),
+            ),
           ),
           'tableresize' => array(
             'name' => 'tableresize',

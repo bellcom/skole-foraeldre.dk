@@ -140,9 +140,9 @@ hide($content['links']);
 	       <!-- Right Region -->
 		   <div class="right-article-region article-region">
 		    <!-- Top links for printing and sharing -->
-		  	<?php if ($links = render($content['links'])): ?>
-			   <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
-			<?php endif; ?>
+		  	<ul>
+		  	    <li><?php print $download_as_pdf_link; ?></li>
+		  	</ul>
 			<!-- Related terms block -->
 			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>
 				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedterms)))); ?>

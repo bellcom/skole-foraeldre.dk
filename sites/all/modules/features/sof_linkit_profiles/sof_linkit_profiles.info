@@ -8,3 +8,4 @@ features[ctools][] = linkit:linkit_profiles:1
 features[features_api][] = api:2
 features[linkit_profiles][] = sof_banner_deck_links
 features[linkit_profiles][] = sof_recommended_items
+features[linkit_profiles][] = sof_wysiwyg
