@@ -5,6 +5,7 @@ package = Configuration
 dependencies[] = ckeditor
 dependencies[] = features
 dependencies[] = filter
+dependencies[] = pathologic
 features[ckeditor_profile][] = Advanced
 features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = Full
