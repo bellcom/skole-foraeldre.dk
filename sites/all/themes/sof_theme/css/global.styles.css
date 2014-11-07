@@ -138,7 +138,6 @@ html, body {
     font-size: 14px;
     line-height: 20px;
     height: 100%;
-    min-height:100%;
 }
 
 
@@ -161,10 +160,13 @@ html, body {
 }
 #page {
 	margin-top:30px;
-	min-height:100%;
 	height:100%;
+	display:table;
 }
-
+.footer-main-container{
+	height:1px;
+	display:table-row;
+}
 /*
  * Wraps all header elements - branding and .region-header
  */
@@ -1677,11 +1679,18 @@ body.node-type-basic-page video{
     padding:0 0 0 30px;
        
 }
-.right-article-region nav ul li{
+.right-article-region ul.right-region-top-links{
+	float:left;
 	margin:0;
+	padding:0;
+	width:100%;
 }
-.right-article-region nav ul li.print_html{
-	background-color: #00a2eb;
+.right-article-region ul.right-region-top-links li{
+	margin:0;
+	list-style:none;
+	float:left;
+}
+.right-article-region ul.right-region-top-links li:nth-child(1){
 	background-image:url("images/download-pdf-icon-small.png");
 	background-position:97% center;
 	background-repeat:no-repeat;
@@ -1696,7 +1705,7 @@ body.node-type-basic-page video{
     box-sizing: border-box;
     float:left;
 }
-.right-article-region  nav ul li.print_html a{
+.right-article-region ul.right-region-top-links li:nth-child(1) a{
 	color:#fff;
 	font-size: 21px;
     line-height: 24px;
@@ -1707,12 +1716,11 @@ body.node-type-basic-page video{
     font-family: 'conduit_itclight';
     font-weight:normal;
 }
-.right-article-region  nav ul li.print_html:hover{
-	opacity:0.9;
-}
-.right-article-region  nav ul li.print_html a:hover{
+.right-article-region ul.right-region-top-links li:nth-child(1):hover{
+	opacity:0.8;
 	text-decoration:none;
 }
+
 .right-article-region .field-group-format-wrapper {
 	width:100%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

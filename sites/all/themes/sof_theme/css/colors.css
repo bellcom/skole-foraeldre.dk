@@ -21,7 +21,7 @@ body.node-type-basic-page .field-name-body  h4,
 
 #footer,
 .article-region .field-name-body a.download-article-pdf,
-.right-article-region nav ul li.print_html,
+.right-article-region ul li:nth-child(1),
 ul.pager li.pager-current,
 ul.pager li.pager-next,
 ul.pager li.pager-last,

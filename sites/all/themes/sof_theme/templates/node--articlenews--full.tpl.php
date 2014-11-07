@@ -139,8 +139,8 @@ hide($content['links']);
 		   </div> 
 	       <!-- Right Region -->
 		   <div class="right-article-region article-region">
-		    <!-- Top links for printing and sharing -->
-		  	<ul>
+		    <!-- Top links for printing and publication link -->
+		  	<ul class="right-region-top-links">
 		  	    <li><?php print $download_as_pdf_link; ?></li>
 		  	</ul>
 			<!-- Related terms block -->
