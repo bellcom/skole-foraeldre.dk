@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the SOF Blocks feature.
  */
+
+include_once 'sof_blocks.features.inc';
