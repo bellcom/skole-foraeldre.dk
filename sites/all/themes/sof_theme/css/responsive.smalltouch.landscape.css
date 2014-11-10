@@ -232,6 +232,12 @@ body {
 .publication-top-right-container .node-title a{
 	font-size:30px;
 }
+.recomendation-public{
+	width:100%;
+}
+.publication-bottom-container .views-row{
+    width:50%;
+}
 /* =============================================================================
  *   Articles
  * ========================================================================== */
@@ -423,6 +429,12 @@ ul.pager li{
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
+
+@media all and (max-width: 480px){
+	.publication-bottom-container .views-row{
+	    width:100%;
+   }
+}
 @media all and (max-width: 470px){
 	#logo img{
 		max-width:180px;

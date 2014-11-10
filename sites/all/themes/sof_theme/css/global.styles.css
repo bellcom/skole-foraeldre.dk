@@ -1446,7 +1446,7 @@ body.node-type-publication #main-content {
 	background-repeat:no-repeat;
 	background-position:98% center;
 }
-.publication-top-right-container .field-name-field-single-link a{
+.publication-top-right-container .field-name-field-single-link .field-item {
 	color: #fff;
     font-size: 20px;
     font-weight: 200;
@@ -1496,8 +1496,70 @@ body.node-type-publication #main-content {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
 }
-.publication-bottom-container-inner{
-	
+.publication-bottom-container .block-views{
+	width:100%;
+	max-width:1170px;
+	margin:0 auto;
+}
+.publication-bottom-container .block-views .block-inner{
+	width:100%;
+	float:left;
+	padding:0 0 20px 0;
+}
+.publication-bottom-container .block-title{
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-bottom: 30px;
+    padding-top: 0;
+    color: rgba(69, 69, 69, 0.8);
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+.publication-bottom-container .views-row{
+	float: left;
+    padding:20px;
+    position: relative;
+    width: 50%;
+}
+.recomendation-public{
+	float:left;
+	width:50%;
+}
+.publication-bottom-container .views-row:hover{
+	background-color:#f0f0f0;
+}
+.publication-bottom-container .views-field{
+	float:left;
+	width:100%;
+}
+.publication-bottom-container .views-field-field-image img{
+    box-shadow: 0 0 6px 0 #454545;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;	
+}
+.publication-bottom-container  .views-field-title a{
+    font-size: 22px;
+    line-height: 24px;
+    padding-top: 20px;
+    float:left;
+    width:100%;
+}
+.publication-bottom-container .views-field-field-teaser{ 
+    color: #454545;
+    font-family:'conduit_itclight';
+    font-size: 19px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    text-align: left;
 }
 /* =============================================================================
  *   Articles, Basic Page and News

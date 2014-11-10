@@ -74,6 +74,14 @@
 		    });
 		    $span.slice(i, i + 10).wrapAll($div);
       }
+      
+      var $span = $(".view-other-releases .views-row");
+	  for (var i = 0; i < $span.length; i += 2) {
+		    var $div = $("<div/>", {
+		        class: 'recomendation-public'
+		    });
+		    $span.slice(i, i + 2).wrapAll($div);
+      }
                
 	  //Remove colons from field label 
 	  $('.field-name-field-we-recommend .field-label').each(

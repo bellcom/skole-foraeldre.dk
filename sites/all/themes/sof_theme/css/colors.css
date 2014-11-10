@@ -16,7 +16,8 @@ body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
 .node-webform .form-item label,
 .node-webform .webform-progressbar-outer,
-.back-to-all-releases-link  {
+.back-to-all-releases-link,
+.publication-bottom-container  .views-field-title a  {
   color: #00a2eb;
 }
 
