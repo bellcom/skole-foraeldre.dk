@@ -27,7 +27,7 @@
 			}
 		});
 			
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		if( /webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
 			$("#block-system-main-menu .menu li").click(function(event){
 				event.preventDefault();
