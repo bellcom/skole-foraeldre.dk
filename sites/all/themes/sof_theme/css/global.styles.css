@@ -166,7 +166,6 @@ html, body {
 .footer-main-container{
 	height:1px;
 	display:table-row-group;
-	float:left;
 	width:100%;
 }
 /*
