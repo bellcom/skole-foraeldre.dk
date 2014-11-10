@@ -6,7 +6,7 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		$(".menu li").hover(function(){
+		$("#block-system-main-menu .menu li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");
 			var slideul = $(this).hasClass("slideul") ? true : false;
 			if(slideul){
@@ -18,7 +18,7 @@
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
-			$(".menu li").click(function(event){
+			$("#block-system-main-menu .menu li").click(function(event){
 				event.preventDefault();
 				$(this).delay(400).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
@@ -28,18 +28,7 @@
 					$(this).find('.second-level-main-container').slideUp();
 				}
 			});		
-		}
-		
-		//Show / Hide navigation script
-		$(".menu li").click(function(){
-			$(this).toggleClass("slideul");
-			var slideul = $(this).hasClass("slideul") ? true : false;
-			if(slideul){
-				$(this).find('.second-level-main-container').delay(800).stop(true, true).show();
-			}else{
-				$(this).find('.second-level-main-container').delay(1000).hide();
-			}
-		});		
+		}	
                 
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){

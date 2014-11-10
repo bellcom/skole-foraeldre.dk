@@ -11,7 +11,6 @@
 .article-region .field-name-body blockquote p,
 body.node-type-basic-page .field-name-body blockquote p,
 .article-region .field-name-body blockquote:before,
-.region-header nav .first-level li.last.leaf:after,
 #block-views-related-content-block .field-content a,
 body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
@@ -22,7 +21,8 @@ body.node-type-basic-page .field-name-body  h4,
 body.node-type-basic-page .field-name-body blockquote:before,
 #block-views-read-also-block .views-field-view-node a,
 .section-header .views-field-view-node a,
-.section-default-listiing .views-row a {
+.section-default-listiing .views-row a,
+.region-header nav .menu  li.last.leaf:after {
   color: #00a2eb;
 }
 
