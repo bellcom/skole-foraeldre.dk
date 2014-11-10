@@ -30,7 +30,7 @@
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
 			$("#block-system-main-menu .menu li").click(function(){
-				$(this).delay(400).toggleClass("slideul");
+				//$(this).delay(400).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
 				if(slideul){
 					$(this).find('.second-level-main-container').stop(true, true).delay(400).slideDown();
