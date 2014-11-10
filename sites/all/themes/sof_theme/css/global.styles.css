@@ -166,6 +166,8 @@ html, body {
 .footer-main-container{
 	height:1px;
 	display:table-row;
+	float:left;
+	width:100%;
 }
 /*
  * Wraps all header elements - branding and .region-header
@@ -1628,18 +1630,30 @@ article.contextual-links-region{
 }
 .top-sharing-printing-links{
 	float:right;
+	width:80px;
+}
+.print-btn{
+	float:left;
+	background-image:url('images/print-article.png');
+	background-repeat:no-repeat;
+	background-position:0 0;
+	width:32px;
+	height:25px;
+	color:transparent;
+	margin-right:20px;
 }
 .addthis_button {
 	float:left;
 	background-image:url('images/share-this.png');
 	background-repeat:no-repeat;
 	background-position:0 0;
-	width:32px;
+	width:26px;
 	height:25px;
 }
 .addthis_button img{
 	opacity:0;
 	height:25px;
+	width:0;
 }
 
 h3 .field-group-format-toggler{
