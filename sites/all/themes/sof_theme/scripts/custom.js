@@ -6,7 +6,7 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		$(".first-level li").hover(function(){
+		$(".menu li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");
 			var slideul = $(this).hasClass("slideul") ? true : false;
 			if(slideul){
@@ -18,7 +18,7 @@
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
-			$(".first-level li").click(function(event){
+			$(".menu li").click(function(event){
 				event.preventDefault();
 				$(this).delay(400).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
@@ -31,7 +31,7 @@
 		}
 		
 		//Show / Hide navigation script
-		$(".first-level li").click(function(){
+		$(".menu li").click(function(){
 			$(this).toggleClass("slideul");
 			var slideul = $(this).hasClass("slideul") ? true : false;
 			if(slideul){

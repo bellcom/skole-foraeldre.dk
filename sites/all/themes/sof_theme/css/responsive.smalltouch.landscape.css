@@ -122,7 +122,7 @@ body {
 	float:right;
 	position:relative;
 }
-.first-level{
+.menu{
 	padding:0 20px;
 }
 .region-header{
@@ -131,23 +131,23 @@ body {
 .region-header nav ul{
 	width:auto;
 }
-.region-header nav ul.first-level li{
+.region-header nav ul.menu li{
 	float:none;
 	display:block;
 	padding-bottom:25px;
 }
 
-.region-header nav .first-level li.last.leaf:after{
+.region-header nav .menu li.last.leaf:after{
 	content:"";
 }
 
-.region-header nav ul.first-level li a{
+.region-header nav ul.menu li a{
 	color:#000;
 	background-image:url('images/nav-drop-dow-arrow.png');
 	background-position:left 9px!important;
 	background-repeat:no-repeat!important;
 }
-.first-level li.slideul a{
+.menu li.slideul a{
 	border-bottom: 0;
 }
 /*Second, third level*/
