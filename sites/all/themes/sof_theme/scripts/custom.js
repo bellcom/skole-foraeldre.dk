@@ -17,8 +17,7 @@
 		//});
 		
 		//Show / Hide navigation script
-		$("#block-system-main-menu .menu li").hover(function(event){
-			event.preventDefault();
+		$("#block-system-main-menu .menu li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");
 			var slideul = $(this).hasClass("slideul") ? true : false;
 			if(slideul){
@@ -30,8 +29,7 @@
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 			//Show / Hide navigation script on iphones
-			$("#block-system-main-menu .menu li").click(function(event){
-				event.preventDefault();
+			$("#block-system-main-menu .menu li").click(function(){
 				$(this).delay(400).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
 				if(slideul){
@@ -57,6 +55,8 @@
   */	
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {   
+	
+	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
 	
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');

@@ -3160,7 +3160,9 @@ a:focus {
 .menu-block-wrapper{
 	float:left;
 }
-
+#block-system-main-menu li.expanded > a{
+	cursor:pointer;
+}
 .region-header nav{
 	margin:0;
 	-webkit-box-sizing: border-box;
