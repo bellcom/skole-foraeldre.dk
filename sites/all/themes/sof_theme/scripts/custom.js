@@ -32,9 +32,9 @@
 			$("#block-system-main-menu .menu li").click(function(){
 				$(this).toggleClass("slideul");
 				var slideul = $(this).hasClass("slideul") ? true : false;
-				if(slideul){
+				if(slideul == true){
 					$(this).find('.second-level-main-container').stop(true).slideDown();
-				}else{
+				}if(slideul == false){
 					$(this).find('.second-level-main-container').slideUp();
 				}
 			});		
