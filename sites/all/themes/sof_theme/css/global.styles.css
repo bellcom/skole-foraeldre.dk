@@ -1362,6 +1362,9 @@ body.node-type-publication #main-content {
 	width:100%;
 	max-width:100%;
 }
+article.node-publication .field-type-image.field-label-above h2{
+	display:none;
+}
 .publication-top-container{
 	width:100%;
 	float:left;
@@ -1776,7 +1779,6 @@ body.node-type-basic-page blockquote{
 body.node-type-basic-page .field-name-body blockquote:before{
     content: '\e802'; /* '' */
 	font-family: 'fontello';
-	color: #00a2eb;
 	font-size:35px;
 }
 

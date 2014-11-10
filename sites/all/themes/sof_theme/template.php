@@ -331,6 +331,12 @@ function sof_theme_preprocess_node(&$variables) {
 			$variables['theme_hook_suggestion'] = 'node__video_reference';
 	    }
     }
+	if ($node->type == 'publication') {
+		//Realted Publication Side Block display
+		if($view_mode == 'related_content_reference'){
+			$variables['theme_hook_suggestion'] = 'node__article__related_content_reference';	
+		}
+	}
  }  
 /**
  * Implements theme_menu_tree__menu_block().

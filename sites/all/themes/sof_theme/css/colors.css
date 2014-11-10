@@ -1,7 +1,8 @@
 
 /* ---------- Color Module Styles ----------- */
-
-a,
+.news-deck-view-content .views-field-title a,
+.news-deck-top-right-content .read-more,
+.news-deck-view-content .views-field-view-node a,
 .region-header nav ul.first-level li a,
 .first-level li.slideul .third-level a,
 #block-system-main-menu ul li a,
@@ -17,7 +18,11 @@ body.node-type-basic-page .field-name-body  h4,
 .node-webform .form-item label,
 .node-webform .webform-progressbar-outer,
 .back-to-all-releases-link,
-.publication-bottom-container  .views-field-title a  {
+.publication-bottom-container  .views-field-title a,
+body.node-type-basic-page .field-name-body blockquote:before,
+#block-views-read-also-block .views-field-view-node a,
+.section-header .views-field-view-node a,
+.section-default-listiing .views-row a {
   color: #00a2eb;
 }
 
