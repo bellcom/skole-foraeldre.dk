@@ -1,0 +1,11 @@
+name = SOF Footer Social Media
+description = Custom block for Twitter and Facebook Links
+core = 7.x
+package = "SOF custom"
+
+;dependencies
+dependencies[] = follow
+
+;files
+files[] = sof_footer_social_media.module
+

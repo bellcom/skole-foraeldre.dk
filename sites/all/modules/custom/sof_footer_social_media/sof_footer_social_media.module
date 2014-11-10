@@ -1,0 +1,145 @@
+<?php
+/**
+ * Implements hook_permission().
+ */
+function sof_footer_social_media_permission() {
+  return array(
+    'administer sof footer social media' => array(
+      'title' => t('Administer SOF Footer Social Media'),
+      'description' => t('Perform administrative tasks on SOF Footer Social Media'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function sof_footer_social_media_block_info() { 
+  $blocks['sof_footer_social_media'] = array(
+    'info' => t('SOF Footer Social Media Block'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function sof_footer_social_media_block_view($delta = '') {
+  $block = array();
+  
+  switch ($delta) {
+    case 'sof_footer_social_media':
+      $block['title'] = '';
+      $block['content'] =  _sof_footer_social_media_contents($delta);
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function sof_footer_social_media_block_configure($delta = '') { 
+  $form = array();
+  switch ($delta) {
+    case 'sof_footer_social_media':
+      $form['sof_fsm_fb'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Facebook description text'),
+        '#attributes' => array('maxlength' => 150),
+        '#default_value' => variable_get('sof_fsm_fb'), 
+        '#size' => 60,
+      );
+      $form['sof_fsm_tw'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Twitter description text'),
+        '#attributes' => array('maxlength' => 150),
+        '#default_value' => variable_get('sof_fsm_tw'), 
+        '#size' => 60,
+      );
+      break;
+  }
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function sof_footer_social_media_block_save($delta = '', $edit = array()) { 
+  switch ($delta) {
+    case 'sof_footer_social_media':  
+      variable_set('sof_fsm_fb', $edit['sof_fsm_fb']);
+      variable_set('sof_fsm_tw', $edit['sof_fsm_tw']);
+      break;
+  }
+}
+
+/**
+ * Block contents helper function
+ * 
+ * @param $delta string
+ *  Block unique identifier
+ * 
+ * @return array
+ *  Block contents renderable array
+ */
+function _sof_footer_social_media_contents($delta){
+    
+  switch ($delta) {
+    case 'sof_footer_social_media':{
+        
+        $items = array();     
+      
+        //Get follow social media links from follow module
+        //@see follow.inc for more info
+        $follow_uri = follow_links_load();
+        
+        //Facebook items
+        $items['facebook'] = array(
+            'icon'  => drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png',
+            'title' => t('Facebook'),
+            'description' => variable_get('sof_fsm_fb'),
+            'read_more' => l(t('Read more'), $follow_uri['facebook']->path, array(
+                'external' => TRUE,
+                'attributes' => array(
+                    'target' => '_blank'
+                ),
+              )
+            ),
+        );
+        
+        //Twitter items
+        $items['twitter'] = array(
+            'icon'  => drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png',
+            'title' => t('Twitter'),
+            'description' => variable_get('sof_fsm_tw'),
+            'read_more' => l(t('Read more'), $follow_uri['twitter']->path, array(
+                'external' => TRUE,
+                'attributes' => array(
+                    'target' => '_blank'
+                ),
+              )
+            ),
+        );      
+        
+    }
+    break;
+  }
+
+  return theme('sof_footer_social_media_map', array('items' => $items));
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sof_footer_social_media_theme($existing, $type, $theme, $path) {
+  return array(
+    'sof_footer_social_media_map' => array(
+      'variables' => array(
+      	'items' => NULL
+	  ),
+	  'template' => 'theme/sof_footer_social_media',
+    ),
+  );
+}
