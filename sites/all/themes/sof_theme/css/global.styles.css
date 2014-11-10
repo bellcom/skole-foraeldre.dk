@@ -3087,6 +3087,9 @@ a:focus {
  *   Top Header Menu
  * ========================================================================== */
 /* Follow Links */
+.region-top-header-navigation .block-follow {
+	float:right;
+}
 .region-top-header-navigation .follow-links{
 	float:right;
 	width:66px;
@@ -3129,14 +3132,16 @@ a:focus {
  #block-menu-menu-top-navigation ul{
  	margin:0;
  	text-align:right;
+ 	padding:0;
  }
  #block-menu-menu-top-navigation ul li{
  	display:inline-block;
  	list-style:none;
+ 	padding-left:30px;
  }
  
 #block-menu-menu-top-navigation ul li.first{
-	padding-left:0;
+	padding-left:15px;
 }
 #block-menu-menu-top-navigation ul li.last{
   	padding-right:0;
@@ -3146,6 +3151,7 @@ a:focus {
      font-size: 17px;
      text-decoration: none;
      text-transform: uppercase;
+     padding:0;
  }
 
 /* =============================================================================

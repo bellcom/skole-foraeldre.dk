@@ -6,13 +6,24 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
+		//$("#block-system-main-menu .menu li").hover(function(){
+			//$(this).delay(400).toggleClass("slideul");
+			//var slideul = $(this).hasClass("slideul") ? true : false;
+			//if(slideul){
+				//$(this).find('.second-level-main-container').stop(true, true).delay(400).show();
+			//}else{
+				//$(this).find('.second-level-main-container').hide();
+			//}
+		//});
+		
+		//Show / Hide navigation script
 		$("#block-system-main-menu .menu li").hover(function(){
 			$(this).delay(400).toggleClass("slideul");
 			var slideul = $(this).hasClass("slideul") ? true : false;
 			if(slideul){
-				$(this).find('.second-level-main-container').stop(true, true).delay(400).slideDown();
+				$(this).find('.second-level-main-container').stop(true, true).delay(400).show();
 			}else{
-				$(this).find('.second-level-main-container').slideUp();
+				$(this).find('.second-level-main-container').hide();
 			}
 		});
 			
