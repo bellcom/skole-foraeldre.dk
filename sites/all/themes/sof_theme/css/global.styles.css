@@ -1727,6 +1727,9 @@ body.node-type-basic-page .field-name-body blockquote p{
 .group-leftaregion #video{
 	padding:40px 0 0 0;
 }
+.media-youtube-player{
+	width:100%;
+}
 .article-region .field-name-body h3,
 body.node-type-basic-page .field-name-body h3{
 	color: #000;
@@ -2300,6 +2303,7 @@ body.node-type-webform .print_html,
 body.node-type-basic-page .print_html{
 	display:none;
 }
+
 .node-webform .field-name-field-teaser{
     font-size: 26px;
     font-weight: 200;
@@ -2318,9 +2322,20 @@ body.node-type-basic-page .print_html{
     padding-top: 14px;
     text-align: left;
 }
-
+.webform-component{
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.webform-progressbar{
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
 .node-webform .webform-progressbar-outer{
 	border: 1px solid;
+	width:95%;
 }
 .node-webform .webform-container-inline .form-item{
 	background: none repeat scroll 0 0 #fff;
@@ -2388,7 +2403,9 @@ body.node-type-basic-page .print_html{
     padding: 0;
     width: 33%;
 }
-   
+.form-managed-file{
+	max-width:520px;
+}   
 .node-webform .form-submit.ajax-processed {
     border: medium none;
     color: #fff;
@@ -2398,8 +2415,10 @@ body.node-type-basic-page .print_html{
     margin-left: 20px;
     padding: 5px 10px !important;
     text-transform: uppercase;
-    width: 15% !important;
+    width: auto !important;
+    float:right;
 }
+
 .node-webform .form-number{
 	max-width:150px;
 }
@@ -2423,7 +2442,7 @@ body.node-type-basic-page .print_html{
 .form-textarea-wrapper textarea{
 	border: 1px solid #bbbbbb;
     border-radius: 0;
-    max-width: 580px;
+    max-width: 520px;
 }
 .webform-component-time .form-item {
 	float:none!important;
@@ -2451,6 +2470,9 @@ body.page-node-done #page-title  {
     line-height: 44px;
     width: 100%;
     margin:0 0 20px 0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
 }
 body.page-node-done #content {
 	float:left;
@@ -4555,7 +4577,18 @@ body.page-404 #content .action-links{
 	.publication-top-container-inner{
 		max-width:940px;	
 	}
-	
+	.webform-component,
+	.node-webform .field,
+	body.node-type-webform #page-title{
+		padding-left:20px;
+		padding-right:20px;
+		-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        box-sizing: border-box;
+	}
+	.node-webform .form-actions input{
+		margin-right:20px;
+	}
 }
 @media all and (max-width: 1170px){
 	#header{
