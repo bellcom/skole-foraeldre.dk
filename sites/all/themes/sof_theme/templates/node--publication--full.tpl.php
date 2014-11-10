@@ -107,74 +107,41 @@
 hide($content['comments']);
 hide($content['links']);
 ?>
+<!-- Publication Main Container -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
-  <?php if ($title && !$page): ?>
-    <header<?php print $header_attributes; ?>>
-      <?php if ($title): ?>
-        <h1<?php print $title_attributes; ?>>
-          <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $node->title; ?></a>
-        </h1>
-      <?php endif; ?>
-    </header>
-  <?php endif; ?>
-  <!-- Main Content -->
-  <div<?php print $content_attributes; ?>>
-     <!-- Top Article Content -->
-     <div class="top-article-content">
-	  	  <!-- Left Region -->
-		  <div class="left-article-region article-region">
-			<!-- Left Region Group --> 
-			<div class="top-sharing-printing-links">
-			    <?php print $print_button; ?>
-				<?php print render($content['group_leftaregion']['field_add_this']); ?>
-		  	</div>	
-		  	<?php print render($content['group_leftaregion']['field_image_slider']); ?>
-		  	<h2 class="node-article-title"><?php print $title; ?></h2>
-		    <?php print render($content['group_leftaregion']); ?>
-		        <!-- Submited by -->
-		 	<?php if(!empty($user_picture) || $display_submitted): ?>
-		      <p class="author-datetime"><?php print $submitted; ?></p>
-			<?php endif; ?>
-			<!-- Submited by -->
-		   </div> 
-	       <!-- Right Region -->
-		   <div class="right-article-region article-region">
-		   	 <!-- Top links (download as pdf, publication link) -->
-		   	 <div class="right-region-top-links">
-		   	 	<?php print render($content['group_rightaregion']['download_as_pdf']); ?>
-		   	 </div>	
-			<!-- Related terms block -->
-			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>
-				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedterms)))); ?>
-			<?php endif; ?>
-			<!-- Related articles/news slideshow -->
-			<?php if ( $blockrelatedslider = block_load('views', $slider_block_delta)): ?>
-				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedslider)))); ?>
-			<?php endif; ?>
-			<!-- Rest of the fields -->
-		    <?php print render($content['group_rightaregion']); ?>
-		   </div>
-	   </div>
-   	   <!-- Bottom Region -->
-  	   <div class="bottom-article-region article-region">
-	  	   	<!-- Related Articles Bottom Block -->
-	  	   	<div class="bottom-read-also-block">
-	  	   		<h2 class="block-title"><?php echo t('Read Also');?></h2>
-	  	   		<div class="bottom-read-also-block-inner">
-	  	   			 <!-- Read Also Content -->
-			  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
-			             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
-			         <?php endif; ?>
-			          <!-- Read Also Articles --> 
-			    </div>    
-	        </div>
-	   		 <?php print render($content['group_bottomaregion']); ?>
-       </div>	
+  <!-- Publication Top Main Container -->
+  <div class="publication-top-container">
+  	 <div class="publication-top-container-inner">
+  	 	 <!-- Left Content  -->
+  	 	 <div class="publication-top-left-container">
+	    	 <?php print render($content['field_image']); ?>
+	     </div>
+	     <!-- Right Content -->
+	     <div class="publication-top-right-container">
+		     <?php if ($title): ?>
+		        <h1<?php print $title_attributes; ?>>
+		          <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
+		          <a class="back-to-all-releases-button" href="">&nbsp;</a>
+		        </h1>
+		     <?php endif; ?>
+		     <!-- Print rest of the content -->
+		     <?php print render($content); ?>
+		     <a class="back-to-all-releases-link" href=""><?php print t('Back to all releases');?></a>
+	     </div>
+     </div>
   </div>
-  <!-- Main Content -->
-
-  <?php print render($content['comments']); ?>
-
+  <!-- Publication Bottom Main Container(View) -->
+  <div class="publication-bottom-container">
+	 <!-- Read Also Content -->
+   	 <?php if ( $blockotherelease = block_load('views', 'other_releases-block')): ?>
+         <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockotherelease)))); ?>
+     <?php endif; ?>
+      <!-- Read Also Articles --> 
+  </div> 
+  <!-- Content Type Links -->
+  <?php if ($links = render($content['links'])): ?>
+    <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
+  <?php endif; ?>
   <?php print render($title_suffix); ?>
 </article>

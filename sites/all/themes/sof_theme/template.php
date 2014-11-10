@@ -282,6 +282,12 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
+  
+    //Add theme sugestions for publication
+    if ( $node->type == 'publication' ){
+    	$variables['theme_hook_suggestion'] = 'node__publication__full';
+    }
+	//Add theme sugestions for news and articles 
   	if ( $node->type == 'news' || $node->type == 'article' ) {
 	  	if($view_mode == 'full'){
 	   		$variables['theme_hook_suggestion'] = 'node__articlenews__full';

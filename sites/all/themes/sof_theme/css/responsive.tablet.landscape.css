@@ -190,11 +190,19 @@ body {
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
+@media all and (max-width: 970px){
+	.publication-top-container-inner{
+		padding:0 30px;	
+	}	
+	.publication-top-left-container{
+		padding:0 20px;
+	}	
+}
 @media all and (max-width: 920px){
 	.fixed-pane-title-magazine{
 		font-size:45px;
 		padding-top:55px;
-	}
+	}	
 	
 }
 @media all and (max-width: 900px){

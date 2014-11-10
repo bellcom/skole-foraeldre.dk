@@ -29,12 +29,8 @@ function sof_publication_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'text_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'related_content_reference' => array(

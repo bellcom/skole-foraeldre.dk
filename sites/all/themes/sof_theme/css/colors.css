@@ -15,13 +15,14 @@ body.node-type-basic-page .field-name-body blockquote p,
 body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
 .node-webform .form-item label,
-.node-webform .webform-progressbar-outer  {
+.node-webform .webform-progressbar-outer,
+.back-to-all-releases-link  {
   color: #00a2eb;
 }
 
 #footer,
 .article-region .field-name-body a.download-article-pdf,
-.right-article-region ul li:nth-child(1),
+.right-article-region .right-region-top-links .download-as-pdf,
 ul.pager li.pager-current,
 ul.pager li.pager-next,
 ul.pager li.pager-last,
@@ -38,7 +39,9 @@ ul.pager li.pager-previous,
 .node-webform .webform-progressbar-page,
 .webform-progressbar-inner,
 .node-webform .form-submit.ajax-processed,
-.node-webform .form-actions input{
+.node-webform .form-actions input,
+.publication-top-right-container .field-name-field-single-link,
+.publication-top-right-container .download-as-pdf{
   background-color: #00a2eb;
 }
 

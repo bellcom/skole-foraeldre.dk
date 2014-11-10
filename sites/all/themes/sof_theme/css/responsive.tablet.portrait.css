@@ -179,6 +179,22 @@ body {
   	text-transform: uppercase;
 }
 /* =============================================================================
+ *   Publications 
+ * ========================================================================== */
+.publication-top-left-container,
+.publication-top-right-container{
+	width:100%;
+}
+.publication-top-left-container{
+	padding:0 30px 20px 30px;	
+}
+.publication-top-left-container img{
+	width:60%;	
+}
+.publication-top-right-container{
+	padding:20px 30px;
+}
+/* =============================================================================
  *   Articles
  * ========================================================================== */
 .left-article-region,
@@ -319,6 +335,19 @@ body {
 .pane-bundle-recommended-items-pane .field-name-field-we-recommend,
 .recomendation-overview{
 	width:100%;
+}
+/* =============================================================================
+ *   Webform
+ * ========================================================================== */
+.node-webform .form-item input{
+	width:100%;
+}
+.form-textarea-wrapper textarea{
+	max-width:100%;	
+}
+.form-item .form-type-radio input,
+.form-managed-file{
+	width:auto;
 }
 /* =============================================================================
  *   Footer
