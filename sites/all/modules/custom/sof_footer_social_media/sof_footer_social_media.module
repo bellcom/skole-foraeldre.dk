@@ -89,6 +89,8 @@ function _sof_footer_social_media_contents($delta){
   switch ($delta) {
     case 'sof_footer_social_media':{
         
+        global $base_url;
+        
         $items = array();     
       
         //Get follow social media links from follow module
@@ -97,7 +99,7 @@ function _sof_footer_social_media_contents($delta){
         
         //Facebook items
         $items['facebook'] = array(
-            'icon'  => drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png',
+            'icon'  => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png',
             'title' => t('Facebook'),
             'description' => variable_get('sof_fsm_fb'),
             'read_more' => l(t('Read more'), $follow_uri['facebook']->path, array(
@@ -111,7 +113,7 @@ function _sof_footer_social_media_contents($delta){
         
         //Twitter items
         $items['twitter'] = array(
-            'icon'  => drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png',
+            'icon'  => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png',
             'title' => t('Twitter'),
             'description' => variable_get('sof_fsm_tw'),
             'read_more' => l(t('Read more'), $follow_uri['twitter']->path, array(
