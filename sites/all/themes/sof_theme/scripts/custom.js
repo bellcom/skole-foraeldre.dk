@@ -6,29 +6,34 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		//$("#block-system-main-menu .menu li").hover(function(){
-			//$(this).delay(400).toggleClass("slideul");
-			//var slideul = $(this).hasClass("slideul") ? true : false;
-			//if(slideul){
-				//$(this).find('.second-level-main-container').stop(true, true).delay(400).show();
-			//}else{
-				//$(this).find('.second-level-main-container').hide();
-			//}
-		//});
+		$("#block-system-main-menu .menu li").hover(function(){
+		     $(this).delay(400).toggleClass("slideul");
+			 var slideul = $(this).hasClass("slideul") ? true : false;
+			 if(slideul){
+			 	$(this).find('.second-level-main-container').stop(true, true).delay(400).show();
+			 }else{
+			 	$(this).find('.second-level-main-container').hide();
+			}
+		});
 			
 		
-        $('.menu > li').bind('mouseover', openSubMenu); 
-        $('.menu > li').bind('mouseout', closeSubMenu);  
-        function openSubMenu() {
-        	 $(this).addClass("slideul");
-        	 $(this).find('.second-level-main-container').stop(true).slideDown();
-        }; 
-        function closeSubMenu() { 
-        	$(this).removeClass("slideul");
-        	$(this).find('.second-level-main-container').slideUp();
-        };
+       // $('.menu > li').bind('m', openSubMenu); 
+       // $('.menu > li').bind('mouseout', closeSubMenu);  
+        //function openSubMenu() {
+        	/// $(this).toggleClass("slideul");
+        	// $(this).find('.second-level-main-container').stop(true).slideToggle();
+       // }; 
+        //function closeSubMenu() { 
+        	//$(this).removeClass("slideul");
+        	//$(this).find('.second-level-main-container').slideUp();
+        //};
 			
-		//if( /webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+		    $('.menu > li').bind('click', openSubMenu); 
+	        function openSubMenu() {
+	        	 $(this).toggleClass("slideul");
+	        	 $(this).find('.second-level-main-container').stop(true).slideToggle();
+	        }; 
 			///Show / Hide navigation script on iphones
 			//$("#block-system-main-menu .menu li").click(function(){
 				//$(this).toggleClass("slideul");
@@ -39,7 +44,7 @@
 				//	$(this).find('.second-level-main-container').slideUp();
 				//}
 			//});		
-		//}	
+		}	
                 
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
