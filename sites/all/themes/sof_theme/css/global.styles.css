@@ -165,8 +165,7 @@ html, body {
 }
 .footer-main-container{
 	height:1px;
-	display:table-row;
-	float:left;
+	display:table-row-group;
 	width:100%;
 }
 /*
@@ -3087,9 +3086,12 @@ a:focus {
  *   Top Header Menu
  * ========================================================================== */
 /* Follow Links */
+.region-top-header-navigation .block-follow {
+	float:right;
+}
 .region-top-header-navigation .follow-links{
 	float:right;
-	width:90px;
+	width:66px;
 }
 .region-top-header-navigation .follow-link-wrapper-facebook{
 	background-color: rgba(178, 178, 178, 0.56);
@@ -3118,7 +3120,7 @@ a:focus {
     width: 25px;
     height:25px;
     border-radius:25px;
-    margin-right:15px;
+    margin-right:0;
 }
 /* Top Navigation */
  #block-menu-menu-top-navigation,
@@ -3129,14 +3131,16 @@ a:focus {
  #block-menu-menu-top-navigation ul{
  	margin:0;
  	text-align:right;
+ 	padding:0;
  }
  #block-menu-menu-top-navigation ul li{
  	display:inline-block;
  	list-style:none;
- 	padding-left: 43px;
+ 	padding-left:30px;
  }
+ 
 #block-menu-menu-top-navigation ul li.first{
-	padding-left:0;
+	padding-left:15px;
 }
 #block-menu-menu-top-navigation ul li.last{
   	padding-right:0;
@@ -3146,6 +3150,7 @@ a:focus {
      font-size: 17px;
      text-decoration: none;
      text-transform: uppercase;
+     padding:0;
  }
 
 /* =============================================================================
@@ -3155,7 +3160,9 @@ a:focus {
 .menu-block-wrapper{
 	float:left;
 }
-
+#block-system-main-menu li.expanded > a{
+	cursor:pointer;
+}
 .region-header nav{
 	margin:0;
 	-webkit-box-sizing: border-box;
@@ -3191,7 +3198,6 @@ a:focus {
     content: '\e801'; /* '' */ 
 	font-family: 'fontello';
 	padding-left:15px;
-	color: #00a2eb;
   	font-size: 22px;
 	} /* '' */
 .region-header nav .menu  li.last.leaf a{

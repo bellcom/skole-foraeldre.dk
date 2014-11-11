@@ -101,7 +101,7 @@ function sof_blocks_default_fe_block_settings() {
         'region' => 'top_header_navigation',
         'status' => 1,
         'theme' => 'sof_theme',
-        'weight' => -21,
+        'weight' => -20,
       ),
     ),
     'title' => '<none>',

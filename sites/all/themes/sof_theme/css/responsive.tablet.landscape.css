@@ -126,6 +126,8 @@ body {
 .second-level-main-container{
 	top:0px;
 	position:relative;
+	height:auto!important;
+	padding-bottom:0!important;
 }
 .second-level-main-container span{
 	display:none;

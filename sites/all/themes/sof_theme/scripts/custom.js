@@ -6,41 +6,23 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		$(".menu li").hover(function(){
-			$(this).delay(400).toggleClass("slideul");
-			var slideul = $(this).hasClass("slideul") ? true : false;
-			if(slideul){
-				$(this).find('.second-level-main-container').stop(true, true).delay(400).slideDown();
-			}else{
-				$(this).find('.second-level-main-container').slideUp();
-			}
-		});
-			
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-			//Show / Hide navigation script on iphones
-			$(".menu li").click(function(event){
-				event.preventDefault();
-				$(this).delay(400).toggleClass("slideul");
-				var slideul = $(this).hasClass("slideul") ? true : false;
-				if(slideul){
-					$(this).find('.second-level-main-container').stop(true, true).delay(400).slideDown();
-				}else{
-					$(this).find('.second-level-main-container').slideUp();
-				}
-			});		
-		}
 		
-		//Show / Hide navigation script
-		$(".menu li").click(function(){
-			$(this).toggleClass("slideul");
-			var slideul = $(this).hasClass("slideul") ? true : false;
-			if(slideul){
-				$(this).find('.second-level-main-container').delay(800).stop(true, true).show();
-			}else{
-				$(this).find('.second-level-main-container').delay(1000).hide();
-			}
-		});		
-                
+		
+		if(("ontouchstart" in window)){
+		     $("#block-system-main-menu .menu > li").click(function(){
+	        	$(this).find('.second-level-main-container').toggleClass("active");
+	         }); 			
+        }else{
+           	$("#block-system-main-menu .menu li").hover(function(){
+			     $(this).delay(400).toggleClass("slideul");
+				 var slideul = $(this).hasClass("slideul") ? true : false;
+				 if(slideul){
+				 	$(this).find('.second-level-main-container').addClass("active");
+				 }else{
+				 	$(this).find('.second-level-main-container').removeClass("active");
+				}
+			});
+        }   
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.preventDefault();
@@ -56,6 +38,8 @@
   */	
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {   
+	
+	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
 	
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');
