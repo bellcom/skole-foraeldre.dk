@@ -203,7 +203,19 @@ function sof_theme_preprocess_field(&$vars) {
 
   global $base_path;
   $element = $vars['element'];
-  
+  if($element['#field_name']== 'field_we_recommend_reference'){
+  	
+  	$nid = array_shift(array_keys($element['#items']));
+	$title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
+	$linktonode =$element['#items'][$nid]['entity']->vid;
+	$vars['nodecustomlink'] = l(t($title), '/node/' . $linktonode . '', array(
+        'attributes' => array(
+            'class' => array('node-title-werecommend'),
+        ),
+        'fragment' => '',
+        'external' =>true,
+    ));
+  }
     /**
      * Magazine Deck fields preprocess: Field Category title
     */
@@ -330,6 +342,11 @@ function sof_theme_preprocess_node(&$variables) {
 	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__video_reference';
 	    }
+		//Link to nodes display
+        else if($view_mode == 'links_to_nodes'){
+	        $variables['submitted'] = FALSE;
+	    }
+		
     }
 	if ($node->type == 'publication') {
 		//Realted Publication Side Block display

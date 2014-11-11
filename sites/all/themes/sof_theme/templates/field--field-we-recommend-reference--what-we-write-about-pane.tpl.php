@@ -72,6 +72,7 @@
  * - $field_type_css: The css-compatible field type.
  * - $classes_array: Array of html class attribute values. It is flattened
  *   into a string within the variable $classes.
+ *   $nodecustomlink  = Link to full node - came from preprocess in template.php
  *
  * @see template_preprocess_field()
  * @see theme_field()
@@ -80,7 +81,6 @@
  * @see adaptivetheme_field__taxonomy_term_reference()
  * @see adaptivetheme_field__image()
  */
- 
 ?>
 <<?php print $tag; ?> class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
@@ -95,13 +95,15 @@
             $nid = array_shift(array_keys($item['node']));
             //Hide images on bottom
             if($delta !== 0 ){
-                unset($item['node'][$nid]['field_image_slider']);
-                unset($item['node'][$nid]['field_image']);
+                $item['node'][$nid]['field_image_slider']= FALSE;
+                $item['node'][$nid]['field_image'] = FALSE;
+				$nodecustomlink = FALSE;
+				print render($item);
             }
-        ?>   
-        <?php print render($item); ?>
+        ?>  
+        <?php print render ($item['node'][$nid]['field_image_slider']); ?> 
+        <?php print $nodecustomlink; ?>
       </div>
     <?php endforeach; ?>
   </div>
-
 </<?php print $tag; ?>>
