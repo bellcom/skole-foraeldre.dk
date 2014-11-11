@@ -13,10 +13,10 @@
 	         }); 			
         }else{
            	$("#block-system-main-menu .menu li").hover(function(e){
-			     $(this).delay(400).toggleClass("slideul");
+			     $(this).toggleClass("slideul");
 				 var slideul = $(this).hasClass("slideul") ? true : false;
 				 if(slideul){
-				 	$(this).find('.second-level-main-container').addClass("active");
+				 	$(this).find('.second-level-main-container').delay(5000).addClass("active");
 				 }else{
 				 	$(this).find('.second-level-main-container').removeClass("active");
 				}
@@ -30,14 +30,7 @@
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
-		});
-		
-		         
-        $("body").on('click',function() {
-		    $(".header-inner-navigation-container").hide();
-		    $('#nav-activation-link span').removeClass("active");
-			$('.header-navigation-container').removeClass("active");
-		});	    	
+		});    	
    }
   };
   

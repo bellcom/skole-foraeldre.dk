@@ -222,7 +222,7 @@ html, body {
 	width:100%;
     clear:both;
     padding:40px 0 60px 0;
-    margin:20px 0 0 0;
+    margin:0;
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	
@@ -230,6 +230,93 @@ html, body {
 /*
  * Footer region
  */
+.footer-social-region{
+	width:100%;
+	float:left;
+	padding:0;
+	margin:0;
+	background:#f0f0f0;
+}
+.footer-social-region h2{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	text-align:center;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.footer-social-region .region-social-media-region{
+	margin:0 auto 30px auto;
+	width:100%;
+	max-width:1170px;
+}
+.footer-social-region .region-social-media-region *{
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;
+} 	
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	width:50%;
+	float:left;
+	padding:0 10px;
+	text-align:center;
+}
+.sof_footer_social_media_icon{
+    margin:0 auto;
+    border-radius:40px;
+    width:80px;
+    height:80px;
+}
+.footer_social_media_facebook .sof_footer_social_media_icon img{
+	width:25px;
+	margin-top:15px;
+}
+.footer_social_media_twitter .sof_footer_social_media_icon img{
+	width:55px;
+	margin-top:20px;
+}
+.footer_social_media_facebook h5,
+.footer_social_media_twitter h5{
+	color: rgba(69, 69, 69, 0.8);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.footer_social_media_facebook p,
+.footer_social_media_twitter p{
+	color: #454545;
+    font-size: 19px;
+    font-weight: 200;
+    height: 64px;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom:5px;
+}
+.footer_social_media_facebook a,
+.footer_social_media_twitter a{
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+.block-sof-footer-social-media{
+	float:right;
+	width:66.6%;
+}
 .region-footer {
 	max-width:1170px;
 	margin:0 auto;

@@ -395,3 +395,12 @@ body {
 #footer .region-footer .block:nth-child(2) .block-inner{
 	float:left!important;
 }
+.block-sof-footer-social-media,
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	width:100%;
+}
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	margin-bottom:30px;
+}

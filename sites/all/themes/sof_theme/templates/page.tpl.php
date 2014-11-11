@@ -236,6 +236,7 @@
     <div class="footer-main-container">
       <!-- Social media region -->	
       <div class="footer-social-region">
+      	<h2><?php print t('follow with'); ?></h2>
       	<?php print render($page['social_media_region']); ?>
       </div>	
       <!-- Footer region -->
