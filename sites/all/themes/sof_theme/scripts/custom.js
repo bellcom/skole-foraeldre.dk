@@ -6,7 +6,7 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		/*$("#block-system-main-menu .menu li").hover(function(){
+		$("#block-system-main-menu .menu li").hover(function(){
 		     $(this).delay(400).toggleClass("slideul");
 			 var slideul = $(this).hasClass("slideul") ? true : false;
 			 if(slideul){
@@ -14,28 +14,11 @@
 			 }else{
 			 	$(this).find('.second-level-main-container').hide();
 			}
-		});*/
+		});
 		
-		
-       // $('.menu > li').bind('m', openSubMenu); 
-       // $('.menu > li').bind('mouseout', closeSubMenu);  
-        //function openSubMenu() {
-        	/// $(this).toggleClass("slideul");
-        	// $(this).find('.second-level-main-container').stop(true).slideToggle();
-       // }; 
-        //function closeSubMenu() { 
-        	//$(this).removeClass("slideul");
-        	//$(this).find('.second-level-main-container').slideUp();
-        //};
-       /* $("#block-system-main-menu .menu > li").click(function(){ 
-        	//console.log($(this));
-	        	$(this).find('.second-level-main-container').toggleClass("active");
-	        	// $(this).find('.second-level-main-container').stop(true).toggle();
-	         }); */
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
 		     $("#block-system-main-menu .menu > li").click(function(){
-		     	console.log($(this)); 
 	        	$(this).find('.second-level-main-container').toggleClass("active");
 	         }); 		
 		}	
