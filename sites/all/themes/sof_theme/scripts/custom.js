@@ -27,26 +27,17 @@
         	//$(this).removeClass("slideul");
         	//$(this).find('.second-level-main-container').slideUp();
         //};
-        $(".menu li").click(function(){ 
+       /* $("#block-system-main-menu .menu > li").click(function(){ 
         	//console.log($(this));
 	        	$(this).find('.second-level-main-container').toggleClass("active");
 	        	// $(this).find('.second-level-main-container').stop(true).toggle();
-	         }); 
+	         }); */
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		      $(".menu li").click(function(){ 
+		     $("#block-system-main-menu .menu > li").click(function(){
+		     	console.log($(this)); 
 	        	$(this).find('.second-level-main-container').toggleClass("active");
-	         }); 
-			///Show / Hide navigation script on iphones
-			//$("#block-system-main-menu .menu li").click(function(){
-				//$(this).toggleClass("slideul");
-				//var slideul = $(this).hasClass("slideul") ? true : false;
-				//if(slideul == true){
-					//$(this).find('.second-level-main-container').stop(true).slideDown();
-				//}if(slideul == false){
-				//	$(this).find('.second-level-main-container').slideUp();
-				//}
-			//});		
+	         }); 		
 		}	
                 
 		//Show / Hide navigation script on medium and small
