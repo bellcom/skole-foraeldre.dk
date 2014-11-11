@@ -10,19 +10,17 @@
 		     $(this).delay(400).toggleClass("slideul");
 			 var slideul = $(this).hasClass("slideul") ? true : false;
 			 if(slideul){
-			 	$(this).find('.second-level-main-container').stop(true, true).delay(400).show();
+			 	$(this).find('.second-level-main-container').addClass("active");
 			 }else{
-			 	$(this).find('.second-level-main-container').hide();
+			 	$(this).find('.second-level-main-container').removeClass("active");
 			}
 		});
 		
-			
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
+			if(("ontouchstart" in window)){
 		     $("#block-system-main-menu .menu > li").click(function(){
 	        	$(this).find('.second-level-main-container').toggleClass("active");
-	         }); 		
-		}	
-                
+	         }); 			
+           }     
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.preventDefault();
