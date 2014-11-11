@@ -15,7 +15,7 @@
 			 	$(this).find('.second-level-main-container').hide();
 			}
 		});
-			
+		
 		
        // $('.menu > li').bind('m', openSubMenu); 
        // $('.menu > li').bind('mouseout', closeSubMenu);  
@@ -27,13 +27,13 @@
         	//$(this).removeClass("slideul");
         	//$(this).find('.second-level-main-container').slideUp();
         //};
+
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		    $('.menu > li').bind('click', openSubMenu); 
-	        function openSubMenu() {
+		     $("#block-system-main-menu .menu > li").click(function(){ 
 	        	 $(this).toggleClass("slideul");
 	        	 $(this).find('.second-level-main-container').stop(true).slideToggle();
-	        }; 
+	         }); 
 			///Show / Hide navigation script on iphones
 			//$("#block-system-main-menu .menu li").click(function(){
 				//$(this).toggleClass("slideul");
