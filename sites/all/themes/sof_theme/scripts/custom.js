@@ -6,21 +6,23 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		$("#block-system-main-menu .menu li").hover(function(){
-		     $(this).delay(400).toggleClass("slideul");
-			 var slideul = $(this).hasClass("slideul") ? true : false;
-			 if(slideul){
-			 	$(this).find('.second-level-main-container').addClass("active");
-			 }else{
-			 	$(this).find('.second-level-main-container').removeClass("active");
-			}
-		});
 		
-			if(("ontouchstart" in window)){
+		
+		if(("ontouchstart" in window)){
 		     $("#block-system-main-menu .menu > li").click(function(){
 	        	$(this).find('.second-level-main-container').toggleClass("active");
 	         }); 			
-           }     
+        }else{
+           	$("#block-system-main-menu .menu li").hover(function(){
+			     $(this).delay(400).toggleClass("slideul");
+				 var slideul = $(this).hasClass("slideul") ? true : false;
+				 if(slideul){
+				 	$(this).find('.second-level-main-container').addClass("active");
+				 }else{
+				 	$(this).find('.second-level-main-container').removeClass("active");
+				}
+			});
+        }   
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.preventDefault();
