@@ -114,9 +114,18 @@ body {
 #nav-activation-link:hover{
 	text-decoration:none;
 }
+#block-menu-menu-top-navigation{
+	padding-left:17px;
+}
+.region-top-header-navigation .follow-links{
+	float:left;
+}
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
+#block-system-main-menu .menu> li > a{
+	color:#000!important;
+}
 .header-right-main-container,
 .header-navigation-container{
 	float:right;
