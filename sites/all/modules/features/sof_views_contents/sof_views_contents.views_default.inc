@@ -353,7 +353,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'recommended_items_overview';
-  $view->description = 'Block on the bottom of the articles/news. Two random related articles(left) and categories with links to section pages(right).';
+  $view->description = 'Attached on recommended items deck as extra filed. Listing max 20 links to nodes from same category.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Recommended items overview';
@@ -903,6 +903,187 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
   $export['section_default_content'] = $view;
+
+  $view = new view();
+  $view->name = 'we_are_writing_about_additional_displays';
+  $view->description = 'Two additional listings for the "We are writing about deck". Most popular (ga_stats) and Latest updated.';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'We are writing about additional displays';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content revision: Updated date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'node_revision';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'news' => 'news',
+    'section' => 'section',
+  );
+
+  /* Display: Latest updated */
+  $handler = $view->new_display('panel_pane', 'Latest updated', 'latest_updated');
+  $handler->display->display_options['display_description'] = 'Links to latest 4 last updated nodes';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Header latest updated display */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['ui_name'] = 'Header latest updated display';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'we_are_writing_about_additional_displays:header_latest_updated';
+
+  /* Display: Header latest updated */
+  $handler = $view->new_display('panel_pane', 'Header latest updated', 'header_latest_updated');
+  $handler->display->display_options['display_description'] = 'Latest updated node for header in latest updated';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Image (article, news) */
+  $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['ui_name'] = 'Image (article, news)';
+  $handler->display->display_options['fields']['field_image_slider']['label'] = '';
+  $handler->display->display_options['fields']['field_image_slider']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+    'field_multiple_limit' => '-1',
+    'field_multiple_limit_offset' => '0',
+  );
+  $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
+  /* Field: Image (section) */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['ui_name'] = 'Image (section)';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+  );
+  /* Field: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+
+  /* Display: Most popular */
+  $handler = $view->new_display('panel_pane', 'Most popular', 'most_popular');
+  $handler->display->display_options['display_description'] = 'Links to latest 4 most popular nodes (ga_stats)';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Header most popular display */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['ui_name'] = 'Header most popular display';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'we_are_writing_about_additional_displays:header_most_popular';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Statistics: Page Views in the past 31 days */
+  $handler->display->display_options['sorts']['count']['id'] = 'count';
+  $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_month';
+  $handler->display->display_options['sorts']['count']['field'] = 'count';
+  $handler->display->display_options['sorts']['count']['order'] = 'DESC';
+
+  /* Display: Header most popular */
+  $handler = $view->new_display('panel_pane', 'Header most popular', 'header_most_popular');
+  $handler->display->display_options['display_description'] = 'Most popular node for header in most popular';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Image (section) */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['ui_name'] = 'Image (section)';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+  );
+  /* Field: Image (article, news) */
+  $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
+  $handler->display->display_options['fields']['field_image_slider']['ui_name'] = 'Image (article, news)';
+  $handler->display->display_options['fields']['field_image_slider']['label'] = '';
+  $handler->display->display_options['fields']['field_image_slider']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
+    'image_style' => 'article_top_slider',
+    'image_link' => 'content',
+    'field_multiple_limit' => '-1',
+    'field_multiple_limit_offset' => '0',
+  );
+  $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
+  /* Field: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Statistics: Page Views in the past 31 days */
+  $handler->display->display_options['sorts']['count']['id'] = 'count';
+  $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_month';
+  $handler->display->display_options['sorts']['count']['field'] = 'count';
+  $handler->display->display_options['sorts']['count']['order'] = 'DESC';
+  $export['we_are_writing_about_additional_displays'] = $view;
 
   return $export;
 }

@@ -37,6 +37,12 @@ function sof_section_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -109,6 +115,12 @@ function sof_section_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
@@ -171,6 +183,18 @@ function sof_section_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 2,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => 'content',
+          'image_style' => 'article_top_slider',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -251,6 +275,12 @@ function sof_section_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'related_content_reference' => array(
         'label' => 'above',

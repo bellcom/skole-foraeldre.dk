@@ -107,6 +107,9 @@ function sof_article_strongarm() {
       'video_reference_listing' => array(
         'custom_settings' => TRUE,
       ),
+      'links_to_nodes' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -133,11 +136,16 @@ function sof_article_strongarm() {
             'weight' => '2',
             'visible' => FALSE,
           ),
+          'links_to_nodes' => NULL,
         ),
         'download_as_pdf' => array(
           'full' => array(
             'weight' => '10',
             'visible' => TRUE,
+          ),
+          'links_to_nodes' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),

@@ -37,6 +37,12 @@ function sof_news_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 13,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'primary_selected_node' => array(
         'label' => 'above',
         'settings' => array(),
@@ -118,6 +124,12 @@ function sof_news_field_default_field_instances() {
         'type' => 'addthis_basic_button',
         'weight' => 10,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'primary_selected_node' => array(
         'label' => 'above',
         'settings' => array(),
@@ -190,6 +202,12 @@ function sof_news_field_default_field_instances() {
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 12,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'primary_selected_node' => array(
         'label' => 'above',
@@ -264,6 +282,12 @@ function sof_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'primary_selected_node' => array(
         'label' => 'above',
         'settings' => array(),
@@ -337,6 +361,18 @@ function sof_news_field_default_field_instances() {
         ),
         'type' => 'flexslider',
         'weight' => 11,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => 1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => 'content',
+          'image_style' => 'article_top_slider',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'primary_selected_node' => array(
         'label' => 'hidden',
@@ -460,6 +496,12 @@ function sof_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'primary_selected_node' => array(
         'label' => 'above',
         'settings' => array(),
@@ -534,6 +576,12 @@ function sof_news_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 11,
       ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'primary_selected_node' => array(
         'label' => 'above',
         'settings' => array(),
@@ -603,6 +651,12 @@ function sof_news_field_default_field_instances() {
         'weight' => 10,
       ),
       'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'links_to_nodes' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -684,6 +738,12 @@ function sof_news_field_default_field_instances() {
         ),
         'type' => 'text_default',
         'weight' => 12,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'primary_selected_node' => array(
         'label' => 'hidden',
@@ -769,6 +829,12 @@ function sof_news_field_default_field_instances() {
         ),
         'type' => 'media',
         'weight' => 14,
+      ),
+      'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'primary_selected_node' => array(
         'label' => 'above',
