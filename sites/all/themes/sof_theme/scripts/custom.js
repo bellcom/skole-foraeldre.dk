@@ -6,7 +6,7 @@
     attach: function (context, settings) {
     		
 		//Show / Hide navigation script
-		$("#block-system-main-menu .menu li").hover(function(){
+		/*$("#block-system-main-menu .menu li").hover(function(){
 		     $(this).delay(400).toggleClass("slideul");
 			 var slideul = $(this).hasClass("slideul") ? true : false;
 			 if(slideul){
@@ -14,7 +14,7 @@
 			 }else{
 			 	$(this).find('.second-level-main-container').hide();
 			}
-		});
+		});*/
 		
 		
        // $('.menu > li').bind('m', openSubMenu); 
@@ -27,12 +27,15 @@
         	//$(this).removeClass("slideul");
         	//$(this).find('.second-level-main-container').slideUp();
         //};
-
+        $(".menu li").click(function(){ 
+        	//console.log($(this));
+	        	$(this).find('.second-level-main-container').toggleClass("active");
+	        	// $(this).find('.second-level-main-container').stop(true).toggle();
+	         }); 
 			
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-		     $("#block-system-main-menu .menu > li").click(function(){ 
-	        	 $(this).toggleClass("slideul");
-	        	 $(this).find('.second-level-main-container').stop(true).slideToggle();
+		      $(".menu li").click(function(){ 
+	        	$(this).find('.second-level-main-container').toggleClass("active");
 	         }); 
 			///Show / Hide navigation script on iphones
 			//$("#block-system-main-menu .menu li").click(function(){
