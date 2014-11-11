@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF we are writing about deck panel pane feature.
+ */
+
+include_once 'sof_we_are_writing_about_deck_panel_pane.features.inc';

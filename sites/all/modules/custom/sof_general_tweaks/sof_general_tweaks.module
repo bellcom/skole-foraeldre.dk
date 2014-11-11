@@ -58,7 +58,21 @@ function sof_general_tweaks_field_extra_fields() {
     'weight' => 4,
   );
   
-    return $extra;
+   //What we write about deck
+   //Additional field for most read
+   $extra['fieldable_panels_pane']['what_we_write_about_pane']['display']['most_read_nodes'] = array(
+    'label' => t('Most read'),
+    'description' => t('Most read nodes'),
+    'weight' => 4,
+   );
+   //Additional field for most read
+   $extra['fieldable_panels_pane']['what_we_write_about_pane']['display']['last_updated_nodes'] = array(
+    'label' => t('Last updated'),
+    'description' => t('Last updated nodes'),
+    'weight' => 4,
+   );
+   
+   return $extra;
 
 }
 
@@ -67,11 +81,18 @@ function sof_general_tweaks_field_extra_fields() {
  */
 function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
   
-  //Attach 'news_deck_latest_3_nodes' to the node as extra field  
-  if ($view_mode == 'primary_selected_node' && $node->type == 'news') {
+  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  $extrafield_name = 'primary_selected_node';
+  
+  //Attach 'news_deck_latest_3_nodes' to the node as extra field
+  if (isset($extrafields[$extrafield_name])
+      && isset($extrafields[$extrafield_name]['visible'])
+      && $extrafields[$extrafield_name]['visible']) {
+          
     $node->content['additional_bottom_nodes'] = array(
       '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'),
     );
+    
   }
 
 }
@@ -84,13 +105,27 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
   
   switch ($type) {
       
-      //Arrach 'recommended_items_overview' view to the panel pane as extra field
       case 'fieldable_panels_pane':
-        if($entity->bundle == 'recommended_items_pane') {
+        
+        //Attach 'recommended_items_overview' view to the panel pane as extra field
+        if($entity->bundle == 'recommended_items_pane') { 
             $entity->content['overview_recommended_items'] = array(
               '#type' => 'item',
               '#title'  => t('Overview'),
               '#markup' => views_embed_view('recommended_items_overview', 'recommended_items_overview'),
+            );
+        }
+        //Attach 'we_are_writing_about_additional_displays' view to the panel pane as extra field
+        else if($entity->bundle == 'what_we_write_about_pane'){
+            $entity->content['most_read_nodes'] = array(
+              '#type' => 'item',
+              '#title'  => t('Most read'),
+              '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'most_popular'),
+            );
+            $entity->content['last_updated_nodes'] = array(
+              '#type' => 'item',
+              '#title'  => t('Latest updated'),
+              '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'latest_updated'),
             );
         }
       break;

@@ -196,6 +196,7 @@ function sof_theme_field__field_video($variables) {
   $output .= '</div>';
   return $output;
 }
+
 /**
  * Override field
  */
@@ -330,6 +331,10 @@ function sof_theme_preprocess_node(&$variables) {
 	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__video_reference';
 	    }
+        //What we write abot deck
+        else if($view_mode == 'links_to_nodes'){
+            $variables['display_submitted'] = FALSE;
+        }
     }
 	if ($node->type == 'publication') {
 		//Realted Publication Side Block display

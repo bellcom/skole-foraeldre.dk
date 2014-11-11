@@ -104,6 +104,9 @@ function sof_slider_strongarm() {
       'video_reference_listing' => array(
         'custom_settings' => FALSE,
       ),
+      'links_to_nodes' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

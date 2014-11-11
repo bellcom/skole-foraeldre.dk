@@ -144,6 +144,7 @@ dependencies[] = sof_news_deck_panel_pane
 dependencies[] = sof_recommended_items_deck_panel_pane
 dependencies[] = sof_slideshow_panel_pane
 dependencies[] = sof_video_deck_panel_pane
+dependencies[] = sof_we_are_writing_about_deck_panel_pane
 dependencies[] = sof_home_page
 dependencies[] = sof_views_contents                                       
 dependencies[] = sof_views_references

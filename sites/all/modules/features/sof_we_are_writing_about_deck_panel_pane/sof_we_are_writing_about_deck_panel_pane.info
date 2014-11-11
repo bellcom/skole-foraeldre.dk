@@ -1,0 +1,13 @@
+name = SOF we are writing about deck panel pane
+description = We are writing about deck fieldable panel pane settings
+core = 7.x
+package = Panel panes
+dependencies[] = ctools
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = fieldable_panels_panes
+dependencies[] = sof_field_bases
+features[ctools][] = fieldable_panels_panes:fieldable_panels_pane_type:1
+features[features_api][] = api:2
+features[field_instance][] = fieldable_panels_pane-what_we_write_about_pane-field_we_recommend_reference
+features[fieldable_panels_pane_type][] = what_we_write_about_pane

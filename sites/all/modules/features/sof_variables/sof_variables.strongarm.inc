@@ -24,6 +24,10 @@ function sof_variables_strongarm() {
         'label' => 'Video reference listing',
         'custom settings' => 1,
       ),
+      'links_to_nodes' => array(
+        'label' => 'Links to nodes',
+        'custom settings' => 1,
+      ),
     ),
   );
   $export['entity_view_modes'] = $strongarm;
