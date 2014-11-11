@@ -75,7 +75,16 @@ body {
     background-position:right 6px;
     background-repeat:no-repeat;
 }
-
+#nav-activation-link span.active{
+	background-image:url('images/nav_close_button.png');
+    background-position:right 0;
+    background-repeat:no-repeat;
+    text-indent:-9999px;
+    height:23px;
+    width:0;
+    display:block;
+    float:right;
+}
 #nav-activation-link:hover{
 	text-decoration:none;
 }
@@ -87,6 +96,12 @@ body {
     -moz-box-sizing: border-box; 
     box-sizing: border-box;
 }
+#block-menu-menu-top-navigation{
+	padding-left:17px;
+}
+.region-top-header-navigation .follow-links{
+	float:left;
+}
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
@@ -94,6 +109,9 @@ body {
 .header-navigation-container{
 	float:right;
 	position:relative;
+}
+#block-system-main-menu .menu> li > a{
+	color:#000!important;
 }
 .menu{
 	padding:0 20px;

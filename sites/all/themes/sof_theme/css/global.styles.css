@@ -1568,6 +1568,9 @@ article.node-publication .field-type-image.field-label-above h2{
 /* =============================================================================
  *   Articles, Basic Page and News
  * ========================================================================== */
+#breadcrumb{
+	display:none;
+}
 body.node-type-basic-page #content-column{
 	width:100%;
 	padding:0 30px;

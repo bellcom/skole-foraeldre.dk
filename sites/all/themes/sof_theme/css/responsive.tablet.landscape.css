@@ -58,6 +58,10 @@ body {
     width:100%;
     margin:40px 0 0 0;
 }
+
+#block-system-main-menu .menu> li > a{
+	color:#000!important;
+}
 #nav-activation-link span{
 	cursor: pointer;
 	font-size: 24px;
