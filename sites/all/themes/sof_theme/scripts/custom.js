@@ -5,7 +5,7 @@
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
     			
-		/*//Hide navigation on click on body if naviagation container is visible
+		//Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){	
           $(document).on('click touchstart', 'html',function () {       
 	        	$(".header-inner-navigation-container").hide();
@@ -17,19 +17,24 @@
         //Stop propagating for links of the navigation
         $(document).on('click touchstart', '.header-inner-navigation-container',function (e) {
 			e.stopPropagation();
-		});*/
+		});
 		 
 		//Show / Hide navigation script	for submenu
+         var tOut = null; 
 	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
 	     	e.preventDefault();
-     		$(this).addClass("slideul");
-	        $(this).find('.second-level-main-container').addClass("active")	;       	
-         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(){
-	     	$(this).removeClass("slideul");
-        	$(this).find('.second-level-main-container').removeClass("active");
-         });  			
-	     
-    
+	     	var $this=$(this);
+	     	tOut=  setTimeout(function () { //Here
+	     		$this.addClass("slideul"),
+		        $this.find('.second-level-main-container').addClass("active")
+		    }, 500);	        	
+         }); 
+         $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
+	     	var $this = $(this);
+        	$this.find('.second-level-main-container').removeClass("active");
+        	$this.removeClass("slideul");
+         }); 			
+     
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
