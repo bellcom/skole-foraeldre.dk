@@ -139,81 +139,145 @@ function propeople_create_initial_content() {
         menu_save($menu);
      }
    }
+   
+   //Create header top menu
+   $items = array(
+      array(          
+        'link_title' => t('About us'),
+        'link_path'  => '<front>',
+        'weight'     => 0,
+        'expanded'   => false,
+      ),
+      array(          
+        'link_title' => t('Contact'),
+        'link_path'  => '<front>',
+        'weight'     => 1,
+        'expanded'   => false,
+      ),
+      array(          
+        'link_title' => t('Membership'),
+        'link_path'  => '<front>',
+        'weight'     => 1,
+        'expanded'   => false,
+      ),
+   );
+   populate_menu($items, 'menu-top-navigation');
     
-
-    $links = array(
-      array(
-        array(
-          'link_title' => t('About us'),
-          'link_path' => '<front>',
-          'menu_name' => 'menu-top-navigation',
-          'weight' => 0,
-        ),
-        array(
-          'link_title' => t('Contact'),
-          'link_path' => '<front>',
-          'menu_name' => 'menu-top-navigation',
-          'weight' => 1,
-        ),
-         array(
-          'link_title' => t('Membership'),
-          'link_path' => '<front>',
-          'menu_name' => 'menu-top-navigation',
-          'weight' => 2,
+   //Create main menu
+   $items = array(
+      array(          
+        'link_title' => t('School board'),
+        'link_path'  => '<front>',
+        'weight'     => 0,
+        'expanded'   => true,
+        'childs'     => array(
+          array(
+            'link_title' => t('Column I'),
+            'link_path'  => '<front>',
+            'weight'     => 0,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column II'),
+            'link_path' => '<front>',
+            'weight'     => 1,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column III'),
+            'link_path'  => '<front>',
+            'weight'     => 2,
+            'expanded'   => true,
+          ),
         ),
       ),
-      array(
-        array(
-          'link_title' => t('School board'),
-          'link_path' => '<front>',
-          'menu_name' => 'main-menu',
-          'weight' => 0,
-        ),
-         array(
-          'link_title' => t('Parents'),
-          'link_path' => '<front>',
-          'menu_name' => 'main-menu',
-          'weight' => 1,
-        ),
-        array(
-          'link_title' => t('News'),
-          'link_path' => '<front>',
-          'menu_name' => 'main-menu',
-          'weight' => 2,
-        ),
-        array(
-          'link_title' => t('Topics'),
-          'link_path' => '<front>',
-          'menu_name' => 'main-menu',
-          'weight' => 3,
-        ),
-        array(
-          'link_title' => t('Search'),
-          'link_path' => '<front>',
-          'menu_name' => 'main-menu',
-          'weight' => 4,
+      array(          
+        'link_title' => t('Parents'),
+        'link_path'  => '<front>',
+        'weight'     => 1,
+        'expanded'   => true,
+        'childs'     => array(
+          array(
+            'link_title' => t('Column I'),
+            'link_path'  => '<front>',
+            'weight'     => 0,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column II'),
+            'link_path' => '<front>',
+            'weight'     => 1,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column III'),
+            'link_path'  => '<front>',
+            'weight'     => 2,
+            'expanded'   => true,
+          ),
         ),
       ),
-    );
-    
-    $item = '';     
-    foreach ($links as $layer1) {
-      foreach ($layer1 as $link) {
-        // Build an array of menu link 
-        $item = array(
-          'link_path' => $link['link_path'],
-          'link_title' => $link['link_title'],
-          'menu_name' => $link['menu_name'],
-          'weight' => $link['weight'],
-        );
-        // Look the table first if the data does exist
-        $exists = db_query("SELECT mlid from {menu_links} WHERE link_title=:link_title AND link_path=:link_path", array(':link_title' =>  $link['link_title'], ':link_path' => $link['link_path']))->fetchField();
-        // Save the record if the data does not exist
-        if (!$exists) {  
-          menu_link_save($item);
-        }
-      }
-    }
+      array(          
+        'link_title' => t('News'),
+        'link_path'  => '<front>',
+        'weight'     => 2,
+        'expanded'   => true,
+        'childs'     => array(
+          array(
+            'link_title' => t('Column I'),
+            'link_path'  => '<front>',
+            'weight'     => 0,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column II'),
+            'link_path' => '<front>',
+            'weight'     => 1,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column III'),
+            'link_path'  => '<front>',
+            'weight'     => 2,
+            'expanded'   => true,
+          ),
+        ),
+      ),
+      array(          
+        'link_title' => t('Topics'),
+        'link_path'  => '<front>',
+        'weight'     => 3,
+        'expanded'   => true,
+        'childs'     => array(
+          array(
+            'link_title' => t('Column I'),
+            'link_path'  => '<front>',
+            'weight'     => 0,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column II'),
+            'link_path' => '<front>',
+            'weight'     => 1,
+            'expanded'   => true,
+          ),
+          array(
+            'link_title' => t('Column III'),
+            'link_path'  => '<front>',
+            'weight'     => 2,
+            'expanded'   => true,
+          ),
+        ),
+      ),
+      array(          
+        'link_title' => t('Search'),
+        'link_path'  => '<front>',
+        'weight'     => 4,
+        'expanded'   => true,
+      ),
+   );
+   populate_menu($items, 'main-menu');
+   
  }
 
 /**
@@ -256,3 +320,41 @@ function propeople_create_initial_content() {
     ->execute();
     
  }
+ 
+ 
+ /**
+  * Helper function for menu create
+  * 
+  * @param $links array
+  *     Contains all links data used menu_link_save()
+  * @param $menu_name string
+  *     Menu machine name
+  * @param $plid int (optional)
+  *     Menu link parent id
+  * 
+  */
+ function populate_menu($links, $menu_name, $plid = 0) {
+  foreach ($links as $link) {
+    $ls = array(
+      'menu_name'  => $menu_name,
+      'link_title' => $link['link_title'],
+      'link_path'  => $link['link_path'],
+      'plid'       => $plid,
+      'weight'     => $link['weight'],
+      'expanded'   => $link['expanded'],
+    );
+    
+    // Look the table first if the data does exist
+    $exists = db_query("SELECT mlid from {menu_links} WHERE link_title=:link_title AND link_path=:link_path", array(':link_title' =>  $ls['link_title'], ':link_path' => $ls['link_path']))->fetchField();
+    
+    // Save the record if the data does not exist
+    if (!$exists) {  
+      $newpid = menu_link_save($ls);
+      if (!empty($link['childs'])) {
+         populate_menu($link['childs'], $menu_name, $newpid);
+      };
+    }
+    
+  }
+}
+ 
