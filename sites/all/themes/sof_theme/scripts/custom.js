@@ -8,14 +8,14 @@
 
 		//Show / Hide navigation script	for submenu
          var tOut = null; 
-	     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
+	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
 	     	e.preventDefault();
 	     	var $this=$(this);
 	     	tOut=  setTimeout(function () { //Here
 	     		$this.addClass("slideul"),
 		        $this.find('.second-level-main-container').addClass("active")
 		    }, 500);	        	
-         }).on('mouseleave','#block-system-main-menu .menu > li',function(e){
+         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
 	     	var $this = $(this);
 	     	$this.removeClass("slideul");
         	$this.find('.second-level-main-container').removeClass("active");
