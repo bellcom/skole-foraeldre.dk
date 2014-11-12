@@ -4,14 +4,14 @@
   */	
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-    		
+	
 		//Show / Hide navigation script	for submenu 	
 		// if(("ontouchstart" in window)){         
-		     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
+		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
 		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
-	         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(){
+	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
 	        	$(this).find('.second-level-main-container').removeClass("active");
 	        	$(this).removeClass("slideul");
 	         }); 			
