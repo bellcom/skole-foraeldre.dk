@@ -20,7 +20,6 @@
 		});*/
 		 
 		//Show / Hide navigation script	for submenu
-         var tOut = null; 
 	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
 	     	e.preventDefault();
      		$(this).addClass("slideul");

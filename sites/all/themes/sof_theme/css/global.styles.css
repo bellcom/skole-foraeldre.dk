@@ -3349,7 +3349,7 @@ a:focus {
 	float:left;
 }
 #block-system-main-menu li.expanded > a{
-	/*cursor:pointer;*/
+	cursor:pointer;
 }
 .region-header nav{
 	margin:0;
