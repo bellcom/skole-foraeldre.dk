@@ -22,7 +22,9 @@ function sof_news_field_group_info() {
   $field_group->data = array(
     'label' => 'Bottom Article Region',
     'weight' => '2',
-    'children' => array(),
+    'children' => array(
+      0 => 'field_link',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -51,9 +53,10 @@ function sof_news_field_group_info() {
     'label' => 'Content references',
     'weight' => '6',
     'children' => array(
-      0 => 'field_related_content',
-      1 => 'field_banner',
+      0 => 'field_banner',
+      1 => 'field_related_content',
       2 => 'field_related_news',
+      3 => 'field_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

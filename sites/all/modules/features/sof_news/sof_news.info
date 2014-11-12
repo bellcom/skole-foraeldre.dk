@@ -31,6 +31,7 @@ features[field_instance][] = node-news-field_add_this
 features[field_instance][] = node-news-field_banner
 features[field_instance][] = node-news-field_category
 features[field_instance][] = node-news-field_image_slider
+features[field_instance][] = node-news-field_link
 features[field_instance][] = node-news-field_publication_control_link
 features[field_instance][] = node-news-field_related_content
 features[field_instance][] = node-news-field_related_news

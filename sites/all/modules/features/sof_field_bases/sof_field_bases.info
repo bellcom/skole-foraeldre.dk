@@ -35,6 +35,7 @@ features[field_base][] = field_full_html_field
 features[field_base][] = field_icon
 features[field_base][] = field_image
 features[field_base][] = field_image_slider
+features[field_base][] = field_link
 features[field_base][] = field_link_group_title_first
 features[field_base][] = field_link_group_title_second
 features[field_base][] = field_magazine_category

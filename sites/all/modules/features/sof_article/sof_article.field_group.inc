@@ -22,7 +22,9 @@ function sof_article_field_group_info() {
   $field_group->data = array(
     'label' => 'Bottom Article Region',
     'weight' => '2',
-    'children' => array(),
+    'children' => array(
+      0 => 'field_link',
+    ),
     'format_type' => 'div',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -49,11 +51,12 @@ function sof_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content references',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_related_article',
-      1 => 'field_related_content',
-      2 => 'field_banner',
+      0 => 'field_banner',
+      1 => 'field_related_article',
+      2 => 'field_related_content',
+      3 => 'field_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -114,7 +117,7 @@ function sof_article_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_image_slider',
       1 => 'field_video',
