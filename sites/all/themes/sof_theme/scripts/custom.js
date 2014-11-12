@@ -4,38 +4,32 @@
   */	
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-    			
-		//Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){	
-          $(document).on('click touchstart', 'html',function () {       
-	        	$(".header-inner-navigation-container").hide();
-			    $('#nav-activation-link span').removeClass("active");
-				$('.header-navigation-container').removeClass("active");
-	         }); 	  
-		}
-		
-        //Stop propagating for links of the navigation
-        $(document).on('click touchstart', '.header-inner-navigation-container',function (e) {
-			e.stopPropagation();
-		});
-		 
-		 
-		//Show / Hide navigation script	for submenu
-         var tOut = null; 
-	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
-	     	e.preventDefault();
-	     	var $this=$(this);
-	     	/*tOut=  setTimeout(function () { //Here*/
-	     		$this.addClass("slideul");
-		        $this.find('.second-level-main-container').addClass("active");
-		    /*}, 500);	 */       	
-         }); 
-         $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
-	     	var $this = $(this);
-        	$this.find('.second-level-main-container').removeClass("active");
-        	$this.removeClass("slideul");
-         }); 		
-     
+    		
+		//Show / Hide navigation script	for submenu 	
+		// if(("ontouchstart" in window)){         
+		     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
+		     	e.stopPropagation();
+	        	$(this).find('.second-level-main-container').addClass("active");
+	        	$(this).addClass("slideul");
+	         }); 
+	         $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
+		     	e.stopPropagation();
+	        	$(this).find('.second-level-main-container').removeClass("active");
+	        	$(this).removeClass("slideul");
+	         }); 			
+        // }else{
+           	// $("#block-system-main-menu .menu li").hover(function(e){
+			     // $(this).toggleClass("slideul");
+				 // var slideul = $(this).hasClass("slideul") ? true : false;
+				 // if(slideul){
+				 	// $(this).find('.second-level-main-container').delay(5000).addClass("active");
+				 // }else{
+				 	// $(this).find('.second-level-main-container').removeClass("active");
+				// }
+			// });
+        // } 
+
+          
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
@@ -43,7 +37,15 @@
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		});
- 
+		
+		//Hide navigation on click on body if naviagation container is visible
+         if($('.header-inner-navigation-container:visible').length == 0){	         
+		     $("html").click(function(){
+	        	 $(".header-inner-navigation-container").hide();
+			    $('#nav-activation-link span').removeClass("active");
+				$('.header-navigation-container').removeClass("active");
+	         }); 	  
+		} 
    }
   };
   
