@@ -4,7 +4,21 @@
   */	
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-    		
+    			
+		//Hide navigation on click on body if naviagation container is visible
+         if($('.header-inner-navigation-container:visible').length == 0){	         
+		   $('html').bind( "click touchstart", function(){
+	        	$(".header-inner-navigation-container").hide();
+			    $('#nav-activation-link span').removeClass("active");
+				$('.header-navigation-container').removeClass("active");
+	         }); 	  
+		}
+		
+        //Stop propagating for links of the navigation
+		$('#block-system-main-menu .menu > li > a	').bind( "click touchstart", function(e){
+			e.stopPropagation();
+		});
+		 
 		//Show / Hide navigation script	for submenu
          var tOut = null; 
 	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
@@ -21,8 +35,7 @@
         	$this.find('.second-level-main-container').removeClass("active");
         	$this.removeClass("slideul");
          }); 			
-
-          
+     
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
@@ -30,15 +43,7 @@
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		});
-		
-		//Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){	         
-		   $(document).on('click touchstart','html',function(e){
-	        	$(".header-inner-navigation-container").hide();
-			    $('#nav-activation-link span').removeClass("active");
-				$('.header-navigation-container').removeClass("active");
-	         }); 	  
-		} 
+ 
    }
   };
   
