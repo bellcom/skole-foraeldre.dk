@@ -8,6 +8,7 @@
 		//Show / Hide navigation script	for submenu 	
 		// if(("ontouchstart" in window)){         
 		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
+		     	e.stopPropagation();
 		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
@@ -37,14 +38,14 @@
 			$('.header-navigation-container').toggleClass("active");
 		});
 		
-		//Hide navigation on click on body if naviagation container is visible
+		/*//Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){	         
 		     $("html").click(function(){
 	        	 $(".header-inner-navigation-container").hide();
 			    $('#nav-activation-link span').removeClass("active");
 				$('.header-navigation-container').removeClass("active");
 	         }); 	  
-		} 
+		} */
    }
   };
   
