@@ -362,6 +362,16 @@ body {
 .recomendation-overview{
 	width:100%;
 }
+/* What we write about Deck */
+.field-name-field-we-recommend-reference,
+.pane-bundle-what-we-write-about-pane  .form-item{
+	width:100%;
+	padding:20px 30px;
+	margin:0;
+}
+.pane-bundle-what-we-write-about-pane  .form-item{
+	border:none;
+}
 /* =============================================================================
  *   Webform
  * ========================================================================== */

@@ -314,6 +314,10 @@ html, body {
     padding-top: 10px;
     text-transform: uppercase;
 }
+.footer_social_media_facebook a:hover,
+.footer_social_media_twitter a:hover{
+	color:#000;
+}
 .block-sof-footer-social-media{
 	float:right;
 	width:66.6%;
@@ -440,9 +444,11 @@ body.page-home .panel-col-full-main{
     font-size: 36px;
     font-weight: 400;
     line-height: 50px;
-    padding-bottom: 30px;
-    padding-top: 25px;
+    padding:25px 20px 30px 20px;
     text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 /* Slider Deck  */
 .flexslider .flex-prev,
@@ -1430,7 +1436,7 @@ body.node-type-slider #main-content{
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
 }
-/* We recommend Deck */
+/* What we write about */
 .pane-bundle-what-we-write-about-pane{
 	width:100%;
 	float:left;
@@ -1438,10 +1444,85 @@ body.node-type-slider #main-content{
 	padding:0;
 	background:#f0f0f0;
 }
-.pane-bundle-what-we-write-about-pane .block-content{
+.pane-bundle-what-we-write-about-pane .block-inner{
 	margin:0 auto;
 	width:100%;
 	max-width:1170px;
+}
+.pane-bundle-what-we-write-about-pane .fieldable-panels-pane{
+	width:100%;
+	background:#fff;
+	float:left;
+	padding:20px 0;
+	overflow:hidden;
+}
+.field-name-field-we-recommend-reference,
+.pane-bundle-what-we-write-about-pane  .form-item{
+	float:left;
+	width:33.3%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    margin-bottom:-9999px;
+    padding-bottom:9999px;
+}
+.pane-bundle-what-we-write-about-pane .form-item{
+	border-left: 1px solid #f0f0f0;
+}
+.field-name-field-we-recommend-reference h2,
+.pane-bundle-what-we-write-about-pane  .form-item label{
+	color: rgba(69, 69, 69, 0.8);
+    font-size: 30px;
+    font-weight: 400!important;
+    line-height: 30px;
+    margin-bottom: 25px!important;
+    margin-top: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    float:none!important;
+}
+.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a{
+	color:#000;
+	height:130px;
+	float:left;
+	width:100%;
+	overflow:hidden;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 31px;
+}
+.field-name-field-we-recommend-reference .field-name-field-image-slider img,
+.pane-bundle-what-we-write-about-pane  .form-item img{
+	width:100%;
+	margin-bottom:20px;
+}
+.field-name-field-we-recommend-reference .field-item,
+.field-name-field-we-recommend-reference .field-item article,
+.view-we-are-writing-about-additional-displays .views-row{
+	float:left;
+	width:100%;
+}
+.field-name-field-we-recommend-reference .field-item .node-title a,
+.view-we-are-writing-about-additional-displays .view-content .views-row a{
+	color:#000;
+	font-size:19px;
+	border-top: 1px solid rgba(0, 0, 0, 0.27);
+    line-height: 20px;
+    padding-bottom: 13px;
+    padding-top: 11px;
+    float:left;
+	font-weight: normal;
+	width:100%;
+}
+.view-we-are-writing-about-additional-displays .view-header .view-content .views-row a{
+	border:none;
+	padding:0;
 }
 /* =============================================================================
  *   NODE STYLING
