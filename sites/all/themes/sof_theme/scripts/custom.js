@@ -28,12 +28,7 @@
 
 			$("#block-system-main-menu .menu li").hover(function(e){
 			     $(this).toggleClass("slideul");
-				 var slideul = $(this).hasClass("slideul") ? true : false;
-				 if(slideul){
-				  $(this).find('.second-level-main-container').delay(5000).addClass("active");
-				  }else{
-				  $(this).find('.second-level-main-container').removeClass("active");
-				}
+			     $(this).find('.second-level-main-container').toggleClass("active");
 		    });
 		  /* $(document).on('mouseenter mouseleave','#block-system-main-menu .menu > li',function(e){
 			     $(this).toggleClass("slideul");
