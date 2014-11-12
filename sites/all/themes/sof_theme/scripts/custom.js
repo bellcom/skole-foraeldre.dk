@@ -22,7 +22,6 @@
 		//Show / Hide navigation script	for submenu
          var tOut = null; 
 	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
-	     	e.stopPropagation();
 	     	var $this=$(this);
 	     	tOut=  setTimeout(function () { //Here
 	     		$this.addClass("slideul"),
@@ -30,7 +29,6 @@
 		    }, 500);	        	
          }); 
          $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
-	     	e.stopPropagation();
 	     	var $this = $(this);
 	     	$this.removeClass("slideul");
         	$this.find('.second-level-main-container').removeClass("active");
@@ -38,7 +36,6 @@
      
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
-			e.stopPropagation();
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
