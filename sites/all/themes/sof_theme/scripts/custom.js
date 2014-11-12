@@ -8,12 +8,10 @@
 		//Show / Hide navigation script	for submenu 	
 		// if(("ontouchstart" in window)){         
 		     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
-		     	e.stopPropagation();
+		     	e.preventDefault();
+		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
-	        	$(this).addClass("slideul");
-	         }); 
-	         $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
-		     	e.stopPropagation();
+	         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(){
 	        	$(this).find('.second-level-main-container').removeClass("active");
 	        	$(this).removeClass("slideul");
 	         }); 			
