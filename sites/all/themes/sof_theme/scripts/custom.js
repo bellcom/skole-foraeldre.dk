@@ -11,7 +11,8 @@
 		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
-	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
+	         }).on('mouseleave','#block-system-main-menu .menu > li',function(e){
+	         	e.stopPropagation();
 	        	$(this).find('.second-level-main-container').removeClass("active");
 	        	$(this).removeClass("slideul");
 	         }); 			
