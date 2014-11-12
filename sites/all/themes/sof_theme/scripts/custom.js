@@ -14,7 +14,7 @@
 	         }); 	  
 		}
 		//Stop propagating for links of the navigation
-        $(document).on('click touchstart', '.header-inner-navigation-container',function (e) {
+        $(document).on('click touchstart', '.header-right-main-container',function (e) {
 			e.stopPropagation();
 		});
 	   //Show / Hide navigation script	for submenu 	
