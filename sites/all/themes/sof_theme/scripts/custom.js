@@ -26,7 +26,16 @@
 			// });
         // } */
 
-		   $(document).on('mouseenter mouseleave','#block-system-main-menu .menu > li',function(e){
+			$("#block-system-main-menu .menu > li")
+			  .mouseenter(function() {
+			  	 $(this).addClass("slideul");
+			     $(this).find('.second-level-main-container').addClass("active");
+			  })
+			  .mouseleave(function() {
+			  	 $(this).removeClass("slideul");
+			     $(this).find('.second-level-main-container').removeClass("active");
+			  });
+		  /* $(document).on('mouseenter mouseleave','#block-system-main-menu .menu > li',function(e){
 			     $(this).toggleClass("slideul");
 				 var slideul = $(this).hasClass("slideul") ? true : false;
 				 if(slideul){
@@ -34,7 +43,7 @@
 				 }else{
 				  $(this).find('.second-level-main-container').removeClass("active");
 			 }
-		   });
+		   });*/
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
