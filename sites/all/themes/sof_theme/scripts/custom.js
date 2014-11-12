@@ -6,8 +6,8 @@
     attach: function (context, settings) {
     			
 		//Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){	         
-		   $('html').bind( "click touchstart", function(){
+         if($('.header-inner-navigation-container:visible').length == 0){	
+          $(document).on('click touchstart', 'html',function () {       
 	        	$(".header-inner-navigation-container").hide();
 			    $('#nav-activation-link span').removeClass("active");
 				$('.header-navigation-container').removeClass("active");
@@ -15,7 +15,7 @@
 		}
 		
         //Stop propagating for links of the navigation
-		$('#block-system-main-menu .menu > li > a	').bind( "click touchstart", function(e){
+        $(document).on('click touchstart', '#block-system-main-menu .menu > li > a',function () {
 			e.stopPropagation();
 		});
 		 
