@@ -38,14 +38,7 @@
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		});
-		//Show / Hide navigation script on medium and small
-		$('#nav-activation-link span').click(function(e){
-			e.stopPropagation();
-			$('.header-inner-navigation-container').stop().toggle();
-			$('#nav-activation-link span').toggleClass("active");
-			$('.header-navigation-container').toggleClass("active");
-		});
-		
+
 		/*//Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){	         
 		     $("html").click(function(){
