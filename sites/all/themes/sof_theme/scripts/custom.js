@@ -36,6 +36,7 @@
      
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
+			e.stopPropagation();
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
