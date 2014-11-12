@@ -6,9 +6,8 @@
     attach: function (context, settings) {
 	
 		//Show / Hide navigation script	for submenu 	
-		// if(("ontouchstart" in window)){         
+		/*// if(("ontouchstart" in window)){         
 		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
-		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
 	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
@@ -25,9 +24,17 @@
 				 	// $(this).find('.second-level-main-container').removeClass("active");
 				// }
 			// });
-        // } 
+        // } */
 
-          
+		   $(document).on('mouseenter mouseleave','#block-system-main-menu .menu > li',function(e){
+			     $(this).toggleClass("slideul");
+				 var slideul = $(this).hasClass("slideul") ? true : false;
+				 if(slideul){
+				  $(this).find('.second-level-main-container').addClass("active");
+				 }else{
+				  $(this).find('.second-level-main-container').removeClass("active");
+			 }
+		   });
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
