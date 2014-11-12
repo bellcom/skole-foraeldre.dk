@@ -15,7 +15,7 @@
 	<?php foreach ($items as $key=>$item) : ?>
 		 <div class="footer_social_media_<?php print $key; ?>" >
 		   <div class="sof_footer_social_media_icon" >
-		       <img src="<?php print $item['icon']; ?>" height="50px" />
+		       <img src="<?php print $item['icon']; ?>" />
 		   </div>
 		   <h5><?php print $item['title']?></h5>  
 		   <p><?php print $item['description']?></p>

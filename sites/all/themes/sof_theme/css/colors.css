@@ -22,7 +22,9 @@ body.node-type-basic-page .field-name-body blockquote:before,
 #block-views-read-also-block .views-field-view-node a,
 .section-header .views-field-view-node a,
 .section-default-listiing .views-row a,
-.region-header nav .menu  li.last.leaf:after {
+.region-header nav .menu  li.last.leaf:after,
+.footer_social_media_facebook a,
+.footer_social_media_twitter a {
   color: #00a2eb;
 }
 
@@ -47,7 +49,8 @@ ul.pager li.pager-previous,
 .node-webform .form-submit.ajax-processed,
 .node-webform .form-actions input,
 .publication-top-right-container .field-name-field-single-link,
-.publication-top-right-container .download-as-pdf{
+.publication-top-right-container .download-as-pdf,
+.sof_footer_social_media_icon{
   background-color: #00a2eb;
 }
 

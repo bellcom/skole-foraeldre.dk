@@ -140,6 +140,38 @@ function sof_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['sof_footer_social_media-sof_footer_social_media'] = array(
+    'cache' => 1,
+    'custom' => 0,
+    'delta' => 'sof_footer_social_media',
+    'module' => 'sof_footer_social_media',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => 'social_media_region',
+        'status' => 1,
+        'theme' => 'sof_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['system-main-menu'] = array(
     'cache' => -1,
     'custom' => 0,

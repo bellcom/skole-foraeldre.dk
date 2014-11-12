@@ -18,7 +18,7 @@ function sof_we_are_writing_about_deck_panel_pane_field_default_field_instances(
     'description' => 'Select 5 recommended nodes',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'field_multiple_limit' => -1,

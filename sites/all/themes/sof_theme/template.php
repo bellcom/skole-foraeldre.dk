@@ -196,7 +196,6 @@ function sof_theme_field__field_video($variables) {
   $output .= '</div>';
   return $output;
 }
-
 /**
  * Override field
  */
@@ -204,7 +203,19 @@ function sof_theme_preprocess_field(&$vars) {
 
   global $base_path;
   $element = $vars['element'];
-  
+  if($element['#field_name']== 'field_we_recommend_reference'){
+  	
+  	$nid = array_shift(array_keys($element['#items']));
+	$title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
+	$linktonode =$element['#items'][$nid]['entity']->vid;
+	$vars['nodecustomlink'] = l(t($title), '/node/' . $linktonode . '', array(
+        'attributes' => array(
+            'class' => array('node-title-werecommend'),
+        ),
+        'fragment' => '',
+        'external' =>true,
+    ));
+  }
     /**
      * Magazine Deck fields preprocess: Field Category title
     */
@@ -270,7 +281,10 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 			  } 
         break;
 		case 'recommended_items_pane':
-       		 $variables['panetitle'] = t('School Board - Overview');
+       		 $variables['panetitle'] = t('School board - overview');
+        break;
+        case 'what_we_write_about_pane':
+       		 $variables['panetitle'] = t('School and parents write about');
         break;
 		 default:
              $variables['panetitle'] = '';
@@ -331,10 +345,11 @@ function sof_theme_preprocess_node(&$variables) {
 	        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
 			$variables['theme_hook_suggestion'] = 'node__video_reference';
 	    }
-        //What we write abot deck
+		//Link to nodes display
         else if($view_mode == 'links_to_nodes'){
-            $variables['display_submitted'] = FALSE;
-        }
+	        $variables['submitted'] = FALSE;
+	    }
+		
     }
 	if ($node->type == 'publication') {
 		//Realted Publication Side Block display

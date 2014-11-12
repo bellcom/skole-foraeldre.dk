@@ -156,7 +156,7 @@ body {
 	background-position:left 9px!important;
 	background-repeat:no-repeat!important;
 }
-.menu li.slideul a{
+.menu li.expanded.slideul a{
 	border-bottom: 0;
 }
 /*Second, third level*/
@@ -408,6 +408,16 @@ ul.pager li{
 .recomendation-overview{
 	width:100%;
 }
+/* What we write about Deck */
+.field-name-field-we-recommend-reference,
+.pane-bundle-what-we-write-about-pane  .form-item{
+	width:100%;
+	padding:20px 20px;
+	margin:0;
+}
+.pane-bundle-what-we-write-about-pane  .form-item{
+	border:none;
+}
 /* =============================================================================
  *   Webform
  * ========================================================================== */
@@ -436,7 +446,15 @@ ul.pager li{
 #footer .region-footer .block:nth-child(2) .block-inner{
 	float:left!important;
 }
-
+.block-sof-footer-social-media,
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	width:100%;
+}
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	margin-bottom:30px;
+}
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */

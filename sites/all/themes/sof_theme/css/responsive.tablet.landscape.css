@@ -122,7 +122,7 @@ body {
 	padding-left:25px;
 	width:100%;
 }
-.menu li.slideul a{
+.menu li.expanded.slideul a{
 	border-bottom: 0;
 }
 /*Second, third level*/

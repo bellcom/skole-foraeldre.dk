@@ -222,7 +222,7 @@ html, body {
 	width:100%;
     clear:both;
     padding:40px 0 60px 0;
-    margin:20px 0 0 0;
+    margin:0;
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	
@@ -230,6 +230,98 @@ html, body {
 /*
  * Footer region
  */
+.footer-social-region{
+	width:100%;
+	float:left;
+	padding:0;
+	margin:0;
+	background:#f0f0f0;
+}
+.footer-social-region h2{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+	text-align:center;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.footer-social-region .region-social-media-region{
+	margin:0 auto 30px auto;
+	width:100%;
+	max-width:1170px;
+}
+.footer-social-region .region-social-media-region *{
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;
+} 	
+.footer_social_media_facebook,
+.footer_social_media_twitter{
+	width:50%;
+	float:left;
+	padding:0 10px;
+	text-align:center;
+}
+.sof_footer_social_media_icon{
+    margin:0 auto;
+    border-radius:40px;
+    width:80px;
+    height:80px;
+}
+.footer_social_media_facebook .sof_footer_social_media_icon img{
+	width:25px;
+	margin-top:15px;
+}
+.footer_social_media_twitter .sof_footer_social_media_icon img{
+	width:55px;
+	margin-top:20px;
+}
+.footer_social_media_facebook h5,
+.footer_social_media_twitter h5{
+	color: rgba(69, 69, 69, 0.8);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.footer_social_media_facebook p,
+.footer_social_media_twitter p{
+	color: #454545;
+    font-size: 19px;
+    font-weight: 200;
+    height: 64px;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom:5px;
+    font-family: 'conduit_itclight';
+}
+.footer_social_media_facebook a,
+.footer_social_media_twitter a{
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+.footer_social_media_facebook a:hover,
+.footer_social_media_twitter a:hover{
+	color:#000;
+}
+.block-sof-footer-social-media{
+	float:right;
+	width:66.6%;
+}
 .region-footer {
 	max-width:1170px;
 	margin:0 auto;
@@ -352,9 +444,11 @@ body.page-home .panel-col-full-main{
     font-size: 36px;
     font-weight: 400;
     line-height: 50px;
-    padding-bottom: 30px;
-    padding-top: 25px;
+    padding:25px 20px 30px 20px;
     text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 /* Slider Deck  */
 .flexslider .flex-prev,
@@ -1342,6 +1436,94 @@ body.node-type-slider #main-content{
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
 }
+/* What we write about */
+.pane-bundle-what-we-write-about-pane{
+	width:100%;
+	float:left;
+	margin:0;
+	padding:0;
+	background:#f0f0f0;
+}
+.pane-bundle-what-we-write-about-pane .block-inner{
+	margin:0 auto;
+	width:100%;
+	max-width:1170px;
+}
+.pane-bundle-what-we-write-about-pane .fieldable-panels-pane{
+	width:100%;
+	background:#fff;
+	float:left;
+	padding:20px 0;
+	overflow:hidden;
+}
+.field-name-field-we-recommend-reference,
+.pane-bundle-what-we-write-about-pane  .form-item{
+	float:left;
+	width:33.3%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    margin-top: -20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    margin-bottom:-9999px;
+    padding-bottom:9999px;
+}
+.pane-bundle-what-we-write-about-pane .form-item{
+	border-left: 1px solid #f0f0f0;
+}
+.field-name-field-we-recommend-reference h2,
+.pane-bundle-what-we-write-about-pane  .form-item label{
+	color: rgba(69, 69, 69, 0.8);
+    font-size: 30px;
+    font-weight: 400!important;
+    line-height: 30px;
+    margin-bottom: 25px!important;
+    margin-top: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    float:none!important;
+}
+.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a{
+	color:#000;
+	height:130px;
+	float:left;
+	width:100%;
+	overflow:hidden;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 31px;
+}
+.field-name-field-we-recommend-reference .field-name-field-image-slider img,
+.pane-bundle-what-we-write-about-pane  .form-item img{
+	width:100%;
+	margin-bottom:20px;
+}
+.field-name-field-we-recommend-reference .field-item,
+.field-name-field-we-recommend-reference .field-item article,
+.view-we-are-writing-about-additional-displays .views-row{
+	float:left;
+	width:100%;
+}
+.field-name-field-we-recommend-reference .field-item .node-title a,
+.view-we-are-writing-about-additional-displays .view-content .views-row a{
+	color:#000;
+	font-size:19px;
+	border-top: 1px solid rgba(0, 0, 0, 0.27);
+    line-height: 20px;
+    padding-bottom: 13px;
+    padding-top: 11px;
+    float:left;
+	font-weight: normal;
+	width:100%;
+}
+.view-we-are-writing-about-additional-displays .view-header .view-content .views-row a{
+	border:none;
+	padding:0;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -1434,6 +1616,7 @@ article.node-publication .field-type-image.field-label-above h2{
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+    font-family: 'conduit_itclight';
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
@@ -1451,11 +1634,13 @@ article.node-publication .field-type-image.field-label-above h2{
 	background-position:98% center;
 }
 .publication-top-right-container .field-name-field-single-link .field-item {
-	color: #fff;
     font-size: 20px;
     font-weight: 200;
     text-decoration: none;
     text-transform:uppercase;
+}
+.publication-top-right-container .field-name-field-single-link .field-item a{
+	color:#fff;
 }
 .publication-top-right-container .download-as-pdf{
 	background-image:url('images/download-pdf-icon-small.png');
@@ -3190,12 +3375,10 @@ a:focus {
 .menu li a{
     padding:0 20px 13px 20px;
 }
-.menu li.slideul a{
+.menu li.expanded.slideul a{
 	border-bottom: 5px solid black;
 }
-.menu li.slideul a{
-	/*color:#000!important;*/
-}
+
 
 .region-header nav .menu  li.last.leaf:after { 
     content: '\e801'; /* '' */ 
@@ -3221,7 +3404,7 @@ a:focus {
   	text-decoration: none;
   	text-transform: uppercase;
 }
-.region-header nav ul.menu li a:hover {
+#block-system-main-menu li a:hover {
   color: #000;
 }
 /* Second Level Navigation */
@@ -3244,7 +3427,7 @@ a:focus {
 	display:block;
 }
 
-.second-level li.slideul a{
+.second-level li.expanded.slideul a{
 	border-bottom: 0!important;
 }
 
@@ -3320,12 +3503,12 @@ a:focus {
     text-align: left;
     text-transform:capitalize!important;
 }
-.menu li.slideul .third-level a{
+.menu li.expanded.slideul .third-level a{
 	display:block;
 	border-bottom:none;
 	padding-bottom:0;
 }
-.menu li.slideul .third-level a:hover{
+.menu li.expanded.slideul .third-level a:hover{
 	color:#000!important;
 	display:block;
 }
