@@ -22,22 +22,15 @@
 		//Show / Hide navigation script	for submenu
          var tOut = null; 
 	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
-	     	e.stopPropagation();
-	     	 e.preventDefault();
-	     	var $this=$(this);
-	     	tOut=  setTimeout(function () { //Here
-	     		$this.addClass("slideul"),
-		        $this.find('.second-level-main-container').addClass("active")
-		    }, 500);	        	
-         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
+	     	e.preventDefault();
+     		$(this).addClass("slideul");
+	        $(this).find('.second-level-main-container').addClass("active")	;       	
+         }).on('mouseleave touchend','#block-system-main-menu .menu > li',function(){
 	     	$(this).removeClass("slideul");
         	$(this).find('.second-level-main-container').removeClass("active");
          });  			
 	     
-         
-         
-			
-	     
+    
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
