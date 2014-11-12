@@ -15,7 +15,7 @@
 		}
 		
         //Stop propagating for links of the navigation
-        $(document).on('click touchstart', '#block-system-main-menu .menu > li > a',function () {
+        $(document).on('click touchstart', '.header-inner-navigation-container',function (e) {
 			e.stopPropagation();
 		});
 		 
@@ -32,8 +32,8 @@
          $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
 	     	e.stopPropagation();
 	     	var $this = $(this);
+	     	$this.removeClass("slideul");
         	$this.find('.second-level-main-container').removeClass("active");
-        	$this.removeClass("slideul");
          }); 			
      
 		//Show / Hide navigation script on medium and small

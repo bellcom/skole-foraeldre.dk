@@ -281,7 +281,10 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 			  } 
         break;
 		case 'recommended_items_pane':
-       		 $variables['panetitle'] = t('School Board - Overview');
+       		 $variables['panetitle'] = t('School board - overview');
+        break;
+        case 'what_we_write_about_pane':
+       		 $variables['panetitle'] = t('School and parents write about');
         break;
 		 default:
              $variables['panetitle'] = '';
