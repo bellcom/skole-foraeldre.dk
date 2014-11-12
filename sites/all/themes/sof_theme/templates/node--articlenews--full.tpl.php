@@ -166,10 +166,11 @@ hide($content['links']);
 			  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
 			             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
 			         <?php endif; ?>
-			          <!-- Read Also Articles --> 
+			          <!-- Read Also Links --> 
+			          <?php print render($content['group_bottomaregion']); ?>
 			    </div>    
 	        </div>
-	   		 <?php print render($content['group_bottomaregion']); ?>
+	   		 
        </div>	
   </div>
   <!-- Main Content -->
