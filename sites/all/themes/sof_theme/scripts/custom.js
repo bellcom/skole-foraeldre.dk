@@ -9,11 +9,9 @@
 		// if(("ontouchstart" in window)){         
 		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
 		     	e.stopPropagation();
-		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
-	         }).on('mouseleave','#block-system-main-menu .menu > li',function(e){
-	         	e.stopPropagation();
+	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
 	        	$(this).find('.second-level-main-container').removeClass("active");
 	        	$(this).removeClass("slideul");
 	         }); 			
