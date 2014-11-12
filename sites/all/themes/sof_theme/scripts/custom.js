@@ -8,7 +8,7 @@
 		//Show / Hide navigation script	for submenu 	
 		// if(("ontouchstart" in window)){         
 		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
-		     	e.stopPropagation();
+		     	e.preventDefault();
 		     	$(this).addClass("slideul");
 	        	$(this).find('.second-level-main-container').addClass("active");
 	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
