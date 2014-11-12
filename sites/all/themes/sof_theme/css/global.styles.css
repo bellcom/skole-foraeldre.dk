@@ -3277,12 +3277,10 @@ a:focus {
 .menu li a{
     padding:0 20px 13px 20px;
 }
-.menu li.slideul a{
+.menu li.expanded.slideul a{
 	border-bottom: 5px solid black;
 }
-.menu li.slideul a{
-	/*color:#000!important;*/
-}
+
 
 .region-header nav .menu  li.last.leaf:after { 
     content: '\e801'; /* '' */ 
@@ -3308,7 +3306,7 @@ a:focus {
   	text-decoration: none;
   	text-transform: uppercase;
 }
-.region-header nav ul.menu li a:hover {
+#block-system-main-menu li a:hover {
   color: #000;
 }
 /* Second Level Navigation */
@@ -3331,7 +3329,7 @@ a:focus {
 	display:block;
 }
 
-.second-level li.slideul a{
+.second-level li.expanded.slideul a{
 	border-bottom: 0!important;
 }
 
@@ -3407,12 +3405,12 @@ a:focus {
     text-align: left;
     text-transform:capitalize!important;
 }
-.menu li.slideul .third-level a{
+.menu li.expanded.slideul .third-level a{
 	display:block;
 	border-bottom:none;
 	padding-bottom:0;
 }
-.menu li.slideul .third-level a:hover{
+.menu li.expanded.slideul .third-level a:hover{
 	color:#000!important;
 	display:block;
 }

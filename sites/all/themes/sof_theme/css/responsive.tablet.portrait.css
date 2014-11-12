@@ -138,7 +138,7 @@ body {
 	background-position:left 9px!important;
 	background-repeat:no-repeat!important;
 }
-.menu li.slideul a{
+.menu li.expanded.slideul a{
 	border-bottom: 0;
 }
 /*Second, third level*/
