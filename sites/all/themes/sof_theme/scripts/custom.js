@@ -7,7 +7,7 @@
 	
          //Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){	         
-		     $("html").click(function(){
+		    $(document).on('click touchstart', 'html',function () {
 	        	 $(".header-inner-navigation-container").hide();
 			    $('#nav-activation-link span').removeClass("active");
 				$('.header-navigation-container').removeClass("active");
@@ -20,6 +20,7 @@
 	   //Show / Hide navigation script	for submenu 	
          var tOut = null; 
 	     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
+	     	e.stopPropagation();
 	     	e.preventDefault();
 	     	var $this=$(this);
 	     	tOut=  setTimeout(function () {
@@ -28,6 +29,7 @@
 		   }, 500);       	
          }); 
          $(document).on('mouseleave','#block-system-main-menu .menu > li',function(e){
+         	e.stopPropagation();
 	     	var $this = $(this);
         	$this.find('.second-level-main-container').removeClass("active");
         	$this.removeClass("slideul");
