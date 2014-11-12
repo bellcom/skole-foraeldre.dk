@@ -6,17 +6,7 @@
     attach: function (context, settings) {
 	
 		//Show / Hide navigation script	for submenu 	
-		/*// if(("ontouchstart" in window)){         
-		     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
-		     	$(this).addClass("slideul");
-	        	$(this).find('.second-level-main-container').addClass("active");
-	         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
-	        	$(this).find('.second-level-main-container').removeClass("active");
-	        	$(this).removeClass("slideul");
-	         }); 			
-        // }else{
-        	*/
-         $("#block-system-main-menu .menu > li").hover(function(e){
+        /* $("#block-system-main-menu .menu > li").hover(function(e){
 			     $(this).toggleClass("slideul");
 				 var slideul = $(this).hasClass("slideul") ? true : false;
 				 if(slideul){
@@ -24,9 +14,30 @@
 				 }else{
 				  $(this).find('.second-level-main-container').removeClass("active");
 				}
-			});
+			});*/
 
-
+         var tOut = null; 
+	     $(document).on('mouseenter touchstart','#block-system-main-menu .menu > li',function(e){
+	     	e.preventDefault();
+	     	var $this=$(this);
+	     	tOut=  setTimeout(function () {
+	     		$this.addClass("slideul");
+		        $this.find('.second-level-main-container').addClass("active");
+		   }, 500);       	
+         }); 
+         $(document).on('mouseleave touchend','#block-system-main-menu .menu > li',function(e){
+	     	var $this = $(this);
+        	$this.find('.second-level-main-container').removeClass("active");
+        	$this.removeClass("slideul");
+         }); 		
+     
+		//Show / Hide navigation script on medium and small
+		$('#nav-activation-link span').click(function(e){
+			e.stopPropagation();
+			$('.header-inner-navigation-container').stop().toggle();
+			$('#nav-activation-link span').toggleClass("active");
+			$('.header-navigation-container').toggleClass("active");
+		});
 		//Show / Hide navigation script on medium and small
 		$('#nav-activation-link span').click(function(e){
 			e.stopPropagation();
