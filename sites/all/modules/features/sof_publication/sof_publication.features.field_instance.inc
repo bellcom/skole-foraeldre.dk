@@ -262,7 +262,7 @@ function sof_publication_field_default_field_instances() {
         'weight' => 0,
       ),
       'related_content_reference' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'field_multiple_limit' => -1,
@@ -400,6 +400,7 @@ function sof_publication_field_default_field_instances() {
       'module' => 'entityreference',
       'settings' => array(
         'match_operator' => 'CONTAINS',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'path' => '',
         'references_dialog_add' => 1,
         'references_dialog_edit' => 0,
@@ -434,6 +435,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -482,6 +489,12 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -681,6 +694,12 @@ function sof_publication_field_default_field_instances() {
         ),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

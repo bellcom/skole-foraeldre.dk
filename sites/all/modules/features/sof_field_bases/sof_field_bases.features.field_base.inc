@@ -832,6 +832,7 @@ function sof_field_bases_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'article' => 'article',
+          'news' => 'news',
         ),
       ),
       'target_type' => 'node',

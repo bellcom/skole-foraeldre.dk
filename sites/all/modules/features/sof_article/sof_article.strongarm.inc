@@ -147,6 +147,10 @@ function sof_article_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

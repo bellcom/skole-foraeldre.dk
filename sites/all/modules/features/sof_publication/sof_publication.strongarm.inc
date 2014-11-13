@@ -138,6 +138,10 @@ function sof_publication_strongarm() {
             'weight' => '4',
             'visible' => TRUE,
           ),
+          'related_content_reference' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'domain' => array(
           'full' => array(

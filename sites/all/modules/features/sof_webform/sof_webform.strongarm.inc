@@ -107,6 +107,9 @@ function sof_webform_strongarm() {
       'links_to_nodes' => array(
         'custom_settings' => FALSE,
       ),
+      'related_content_reference' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

@@ -28,6 +28,10 @@ function sof_variables_strongarm() {
         'label' => 'Links to nodes',
         'custom settings' => 1,
       ),
+      'related_content_reference' => array(
+        'label' => 'Related content reference',
+        'custom settings' => 1,
+      ),
     ),
   );
   $export['entity_view_modes'] = $strongarm;
