@@ -32,3 +32,15 @@
 .sof-pdf-content{
 	margin: 10mm;
 }
+.sof-pdf-top-image{
+	width:100%;
+}
+.sof-pdf-top-image p{
+	background-color: #f0f0f0;
+    color: #6c6c6c;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    padding: 20px;
+}
+

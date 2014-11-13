@@ -160,8 +160,7 @@ function sof_views_references_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['attach'] = array(
-    0 => 'node:field_pdf_content:publication',
-    1 => 'node:field_related_article:article',
+    0 => 'node:field_related_article:article',
   );
 
   /* Display: Reference dialog news */
@@ -388,7 +387,8 @@ function sof_views_references_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['attach'] = array(
-    0 => 'fieldable_panels_pane:field_related_article_news:also_see_pane',
+    0 => 'node:field_pdf_content:publication',
+    1 => 'fieldable_panels_pane:field_related_article_news:also_see_pane',
   );
   $export['reference_dialog_article'] = $view;
 
@@ -529,6 +529,7 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
@@ -543,6 +544,13 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'news' => 'news',
+    'publication' => 'publication',
+    'section' => 'section',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
@@ -553,6 +561,7 @@ function sof_views_references_views_default_views() {
     1 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
 
   /* Display: Reference dialog content */
   $handler = $view->new_display('references_dialog', 'Reference dialog content', 'references_dialog_content');

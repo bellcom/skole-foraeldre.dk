@@ -338,10 +338,10 @@ function sof_news_field_default_field_instances() {
     'description' => 'Upload images that will be used as slider. Title of the image will be used as caption',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'field_multiple_limit' => -1,
+          'field_multiple_limit' => 1,
           'field_multiple_limit_offset' => 0,
           'image_link' => '',
           'image_style' => '',
@@ -503,6 +503,12 @@ function sof_news_field_default_field_instances() {
         'weight' => 0,
       ),
       'primary_selected_node' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -814,7 +820,7 @@ function sof_news_field_default_field_instances() {
     'description' => 'Enter the teaser of this posting.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,

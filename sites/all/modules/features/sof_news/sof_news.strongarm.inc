@@ -166,6 +166,10 @@ function sof_news_strongarm() {
             'weight' => '4',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
         ),
         'download_as_pdf' => array(
           'full' => array(
@@ -173,6 +177,10 @@ function sof_news_strongarm() {
             'visible' => TRUE,
           ),
           'links_to_nodes' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'default' => array(
             'weight' => '10',
             'visible' => FALSE,
           ),

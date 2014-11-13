@@ -339,15 +339,14 @@ function sof_article_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'flexslider_fields',
+        'module' => 'image',
         'settings' => array(
-          'caption' => 1,
-          'field_multiple_limit' => -1,
+          'field_multiple_limit' => 1,
           'field_multiple_limit_offset' => 0,
+          'image_link' => '',
           'image_style' => '',
-          'optionset' => 'default',
         ),
-        'type' => 'flexslider',
+        'type' => 'image',
         'weight' => 0,
       ),
       'full' => array(
@@ -498,6 +497,12 @@ function sof_article_field_default_field_instances() {
         'weight' => 0,
       ),
       'links_to_nodes' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_content_reference' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -818,7 +823,7 @@ function sof_article_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
