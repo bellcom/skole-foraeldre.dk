@@ -344,16 +344,11 @@ function propeople_create_initial_content() {
       'expanded'   => $link['expanded'],
     );
     
-    // Look the table first if the data does exist
-    $exists = db_query("SELECT mlid from {menu_links} WHERE link_title=:link_title AND link_path=:link_path", array(':link_title' =>  $ls['link_title'], ':link_path' => $ls['link_path']))->fetchField();
-    
-    // Save the record if the data does not exist
-    if (!$exists) {  
-      $newpid = menu_link_save($ls);
-      if (!empty($link['childs'])) {
-         populate_menu($link['childs'], $menu_name, $newpid);
-      };
-    }
+    // Save the record if the database
+    $newpid = menu_link_save($ls);
+    if (!empty($link['childs'])) {
+      populate_menu($link['childs'], $menu_name, $newpid);
+    };
     
   }
 }
