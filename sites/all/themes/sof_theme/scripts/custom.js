@@ -1,46 +1,52 @@
 (function($) {
   /**
   * Header Scripts 
-  */	
+  */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
+	   //Show Hide navigation script	for submenu 	
+	   var navTimers = [];
+	   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
+	   	    var id = jQuery.data( this );
+	   	    var $this=$(this);
+     		/*$this.addClass("slideul"); */
+     		navTimers[id] = setTimeout( function() {
+				$this.addClass("slideul");
+				$this.find('.second-level-main-container').stop(true, true).addClass("active");
+				navTimers[id] = "";
+			}, 500 );
+	        /*$(this).find('.second-level-main-container').addClass("active");   */
+		});
+		//Hide navigation script	for submenu 	
+		$('#block-system-main-menu .menu > li').live('mouseleave', function() { 
+    	     var id = jQuery.data( this );
+			 if ( navTimers[id] != "" ) {
+				 clearTimeout( navTimers[id] );
+			 } else {
+				 $(this).find('.second-level-main-container').removeClass("active");
+    	    	 $(this).removeClass("slideul");
+			 }    
+		});
 	
          //Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){	         
-		    $(document).on('click touchstart', 'html',function () {
-	        	 $(".header-inner-navigation-container").hide();
+         if($('.header-inner-navigation-container:visible').length == 0){
+         	$('html').live('click touchstart', function() {	         
+	        	$(".header-inner-navigation-container").hide();
 			    $('#nav-activation-link span').removeClass("active");
 				$('.header-navigation-container').removeClass("active");
 	         }); 	  
-		}
-		//Stop propagating for links of the navigation
-        $(document).on('click touchstart', '.header-right-main-container',function (e) {
+		 }
+		 //Stop propagating for links of the navigation
+		 $('.header-right-main-container').live('click touchstart', function(e) {	
 			e.stopPropagation();
-		});
-	   //Show / Hide navigation script	for submenu 	
-         var tOut = null; 
-	     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
-	     	e.stopPropagation();
-	     	e.preventDefault();
-	     	var $this=$(this);
-	     	tOut=  setTimeout(function () {
-	     		$this.addClass("slideul");
-		        $this.find('.second-level-main-container').addClass("active");
-		   }, 500);       	
-         }); 
-         $(document).on('mouseleave','#block-system-main-menu .menu > li',function(e){
-         	e.stopPropagation();
-	     	var $this = $(this);
-        	$this.find('.second-level-main-container').removeClass("active");
-        	$this.removeClass("slideul");
-         }); 		
-     
-		//Show / Hide navigation script on medium and small
-			$(document).on('click', '#nav-activation-link span',function (e) {
+		 });
+         
+	     //Show / Hide navigation script on medium and small
+	      $('#nav-activation-link span').live('click', function(e) {
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
-		});
+		 });
    }
   };
   
@@ -79,7 +85,7 @@
       }
                
 	  //Remove colons from field label 
-	  $('.field-name-field-we-recommend .field-label').each(
+	  $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
 	        function() {
 	          var myText = $(this);
 	          myText.text( myText.text().replace(':','') );

@@ -261,7 +261,8 @@ body {
 	max-width:none;	
 }
 #block-views-read-also-block,
-#block-views-read-also-block .views-row{
+#block-views-read-also-block .views-row,
+#node_article_full_group_bottomaregion{
 	width:100%;
 }
 #block-views-read-also-block .views-field-view-node{

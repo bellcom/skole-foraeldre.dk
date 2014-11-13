@@ -50,7 +50,8 @@ ul.pager li.pager-previous,
 .node-webform .form-actions input,
 .publication-top-right-container .field-name-field-single-link,
 .publication-top-right-container .download-as-pdf,
-.sof_footer_social_media_icon{
+.sof_footer_social_media_icon,
+#node_article_full_group_bottomaregion  .field-item a{
   background-color: #00a2eb;
 }
 
