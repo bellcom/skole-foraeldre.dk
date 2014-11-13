@@ -5,14 +5,27 @@
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
 	   //Show Hide navigation script	for submenu 	
+	   var navTimers = [];
 	   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
-     		$(this).addClass("slideul");
-	        $(this).find('.second-level-main-container').addClass("active");   
+	   	    var id = jQuery.data( this );
+	   	    var $this=$(this);
+     		/*$this.addClass("slideul"); */
+     		navTimers[id] = setTimeout( function() {
+				$this.addClass("slideul");
+				$this.find('.second-level-main-container').stop(true, true).addClass("active");
+				navTimers[id] = "";
+			}, 500 );
+	        /*$(this).find('.second-level-main-container').addClass("active");   */
 		});
-		 //Hide navigation script	for submenu 	
-		$('#block-system-main-menu .menu > li').live('mouseleave', function() {
-		     $(this).find('.second-level-main-container').removeClass("active");
-    	     $(this).removeClass("slideul");
+		//Hide navigation script	for submenu 	
+		$('#block-system-main-menu .menu > li').live('mouseleave', function() { 
+    	     var id = jQuery.data( this );
+			 if ( navTimers[id] != "" ) {
+				 clearTimeout( navTimers[id] );
+			 } else {
+				 $(this).find('.second-level-main-container').removeClass("active");
+    	    	 $(this).removeClass("slideul");
+			 }    
 		});
 	
          //Hide navigation on click on body if naviagation container is visible
@@ -72,7 +85,7 @@
       }
                
 	  //Remove colons from field label 
-	  $('.field-name-field-we-recommend .field-label').each(
+	  $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
 	        function() {
 	          var myText = $(this);
 	          myText.text( myText.text().replace(':','') );
