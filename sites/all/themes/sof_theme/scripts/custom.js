@@ -1,41 +1,35 @@
 (function($) {
   /**
   * Header Scripts 
-  */	
+  */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
+	   //Show Hide navigation script	for submenu 	
+	   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
+     		$(this).addClass("slideul");
+	        $(this).find('.second-level-main-container').addClass("active");   
+		});
+		 //Hide navigation script	for submenu 	
+		$('#block-system-main-menu .menu > li').live('mouseleave', function() {
+		     $(this).find('.second-level-main-container').removeClass("active");
+    	     $(this).removeClass("slideul");
+		});
 	
          //Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){	         
-		    $(document).on('click touchstart', 'html',function () {
-	        	 $(".header-inner-navigation-container").hide();
+         if($('.header-inner-navigation-container:visible').length == 0){
+         	$('html').live('click touchstart', function() {	         
+	        	$(".header-inner-navigation-container").hide();
 			    $('#nav-activation-link span').removeClass("active");
 				$('.header-navigation-container').removeClass("active");
 	         }); 	  
 		 }
 		 //Stop propagating for links of the navigation
-         $(document).on('click touchstart', '.header-right-main-container',function (e) {
+		 $('.header-right-main-container').live('click touchstart', function(e) {	
 			e.stopPropagation();
 		 });
          
-	     //Show / Hide navigation script	for submenu 	
-         var tOut = null; 
-	     $(document).on('mouseenter','#block-system-main-menu .menu > li',function(e){
-	     	e.stopPropagation();
-	     	e.preventDefault();
-	     	var $this=$(this);
-	     	/*tOut=  setTimeout(function () {*/
-	     		$this.addClass("slideul");
-		        $this.find('.second-level-main-container').addClass("active");
-		   /*}, 500); */      	
-         }).on('mouseleave','#block-system-main-menu .menu > li',function(){
-	     	var $this = $(this);
-        	$this.find('.second-level-main-container').removeClass("active");
-        	$this.removeClass("slideul");
-         });	
-            
 	     //Show / Hide navigation script on medium and small
-		 $(document).on('click', '#nav-activation-link span',function (e) {
+	      $('#nav-activation-link span').live('click', function(e) {
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
