@@ -36,8 +36,7 @@
          }); 		
      
 		//Show / Hide navigation script on medium and small
-			$(document).on('click touchstart', '#nav-activation-link span',function (e) {
-			e.stopPropagation();
+			$(document).on('click', '#nav-activation-link span',function (e) {
 			$('.header-inner-navigation-container').stop().toggle();
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
