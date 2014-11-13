@@ -36,7 +36,6 @@
          url('fonts/condult_itc/ConduitITC.svg#conduit_itcregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -2039,6 +2038,10 @@ body.node-type-basic-page .author-datetime{
     float:left;
     width:100%;
 }
+.article-region  .author-datetime a,
+body.node-type-basic-page .author-datetime a{
+    color:#000;
+}
 .article-region hr,
 body.node-type-basic-page hr{
 	border:1px solid #b2b2b2;
@@ -3362,9 +3365,9 @@ a:focus {
 	float:left;
 }
 .region-header nav ul.menu li {
-	float:left;
- 	list-style:none;
- 	display: inline-block;
+	  float:left;
+ 	  list-style:none;
+   	display: inline-block;
     margin-left: auto;
     margin-right: auto;
     padding: 20px 0px 40px 0px;
@@ -3376,7 +3379,8 @@ a:focus {
     padding:0 20px 13px 20px;
 }
 .menu li.expanded.slideul a{
-	border-bottom: 5px solid black;
+    border-bottom: 5px solid black;
+    transition:none;
 }
 
 
