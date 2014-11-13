@@ -14,7 +14,7 @@
         <article>
             <?php print render($node['image']); ?>
             <header>
-              <h1><?php print $node['title']; ?></h1>
+              <h1><?php print render($node['title']); ?></h1>
               <p><?php print render($node['teaser']); ?></p>
             </header>
             <div class="sof-column-content">

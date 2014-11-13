@@ -1830,6 +1830,7 @@ article.contextual-links-region{
 	height:25px;
 	color:transparent;
 	margin-right:20px;
+  text-indent:-9999px;
 }
 .addthis_button {
 	float:left;
@@ -2883,8 +2884,9 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 	display:block!important;
 }
 .flex-direction-nav .flex-prev{
-	left:0!important;
+    left:10px!important;
 }
+
 .flex-direction-nav .flex-next{
 	right:10px!important;
 }

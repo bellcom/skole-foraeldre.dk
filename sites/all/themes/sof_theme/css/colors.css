@@ -9,8 +9,11 @@
 .article-region .field-name-body h4,
 .article-region .field-name-body h2,
 .article-region .field-name-body blockquote p,
+.sof-column-content blockquote p,
 body.node-type-basic-page .field-name-body blockquote p,
+.sof-column-content blockquote p,
 .article-region .field-name-body blockquote:before,
+.sof-column-content blockquote:before,
 #block-views-related-content-block .field-content a,
 body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
@@ -24,7 +27,9 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .section-default-listiing .views-row a,
 .region-header nav .menu  li.last.leaf:after,
 .footer_social_media_facebook a,
-.footer_social_media_twitter a {
+.footer_social_media_twitter a,
+.sof-column-content h2,
+.sof-column-content h4 {
   color: #00a2eb;
 }
 
