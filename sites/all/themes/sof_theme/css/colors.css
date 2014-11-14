@@ -29,7 +29,10 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .footer_social_media_facebook a,
 .footer_social_media_twitter a,
 .sof-column-content h2,
-.sof-column-content h4 {
+.sof-column-content h4,
+.recomendation-overview .views-row a,
+.pane-bundle-also-see-pane .read-more a,
+.mag-deck-right-group .field-name-field-magazine-links .field-item a{
   color: #00a2eb;
 }
 

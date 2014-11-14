@@ -1055,6 +1055,7 @@ body.node-type-slider #main-content{
     text-align: center;
     text-align:left;
 }
+
 .intro-deck-group-first .field-name-field-single-link{
     font-size: 19px;
     font-weight: 200;
@@ -1856,6 +1857,7 @@ h3 .field-group-format-toggler{
     margin:10px 0 0  0;
     position: relative;
     float:left;
+    width:100%;
 }
 .flexslider ul li{
 	display:block!important;
@@ -3512,8 +3514,7 @@ a:focus {
 .second-level .second-level-main-container{
 	position:relative;
 }
-.second-level  li{
-	border-left: 1px solid #b2b2b2;
+.second-level li{
 	display: inline-block!important;
     float: none!important;
     list-style: outside none none!important;
@@ -3541,6 +3542,7 @@ a:focus {
 	padding:0!important;
 }
 .third-level li{
+	border-left: 1px solid #b2b2b2;
 	width:100%;
 	border:none;
 	padding:0!important;
