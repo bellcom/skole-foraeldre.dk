@@ -150,7 +150,6 @@ function sof_pdf_generator_menu() {
              ));  
              $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
              
-			 //print($content_page);
             //Send html to print
              if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
                
