@@ -66,7 +66,7 @@
 <head>
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <?php print $styles; ?>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>

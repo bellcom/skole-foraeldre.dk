@@ -11,5 +11,7 @@
 ?>
 <div class="sof-pdf-top-image">
    <?php print render($image); ?>
-   <p> <?php print $image[0]['#item']['title']; ?></p>
+   <?php if($image[0]['#item']['title']):?>
+   	<p> <?php print $image[0]['#item']['title']; ?></p>
+   <?php endif; ?>
 </div>

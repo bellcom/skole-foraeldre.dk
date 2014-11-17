@@ -17,6 +17,7 @@
   <head>
     <?php print $css; ?>
     <?php print $js; ?>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
     

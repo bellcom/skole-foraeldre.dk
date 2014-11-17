@@ -9,13 +9,11 @@
 	   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
 	   	    var id = jQuery.data( this );
 	   	    var $this=$(this);
-     		/*$this.addClass("slideul"); */
      		navTimers[id] = setTimeout( function() {
 				$this.addClass("slideul");
 				$this.find('.second-level-main-container').stop(true, true).addClass("active");
 				navTimers[id] = "";
 			}, 500 );
-	        /*$(this).find('.second-level-main-container').addClass("active");   */
 		});
 		//Hide navigation script	for submenu 	
 		$('#block-system-main-menu .menu > li').live('mouseleave', function() { 
