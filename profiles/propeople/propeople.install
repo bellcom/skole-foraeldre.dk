@@ -103,6 +103,12 @@ function propeople_install_tasks() {
     'propeople_create_initial_content' => array(
       'display_name' => st('Create initial content'),
     ),
+    'propeople_add_default_solr_search' => array(
+      'display_name' => st('Default Solr Search Options'),
+    ),
+    'propeople_change_settings_of_core_search_page' => array(
+      'display_name' => st('Default Solr Search Page'),
+    ),
   );
 }
 
@@ -271,7 +277,7 @@ function propeople_create_initial_content() {
       ),
       array(          
         'link_title' => t('Search'),
-        'link_path'  => '<front>',
+        'link_path'  => 'search/site',
         'weight'     => 4,
         'expanded'   => 1,
       ),
@@ -352,4 +358,119 @@ function propeople_create_initial_content() {
     
   }
 }
+ 
+/**
+ * Programatically configure solr configuration
+ */
+ function propeople_add_default_solr_search(){
+        
+    //Set devel apache solr index
+    variable_set('url_default_apachesolr_index', 'http://aegirdb.workingpropeople.com:8983/solr/sof');
+    
+    $url_solr = variable_get('url_default_apachesolr_index');
+    
+    // Setup SOLR
+    if ($url_solr) {
+      _propeople_configure_default_apachesolr_environment($url_solr);
+    }
+ }
+ 
+/**
+ * Helper function that configurate apachesolr environment.
+ * 
+ * @param $url_solr string
+ *    Default search index url. Will be changed on the production page trough the ui
+ * 
+ */
+function _propeople_configure_default_apachesolr_environment($url_solr) {
+
+  $env_id = apachesolr_default_environment();
+  $environment = apachesolr_environment_load($env_id);
+  $environment['name'] = 'SOF Solr Index';
+  $environment['url'] = $url_solr;
+  $environment['conf']['multisitesearch'] = 1;
+  $environment['name'] = 'SOF Solr Index';
+  $environment['index_bundles']['node'] = array(
+    0 => 'article',
+    1 => 'basic_page',
+    2 => 'news',
+    3 => 'publication',
+    4 => 'section',
+    5 => 'webform',
+  );
+   $environment['conf'] = array(
+    'apachesolr_direct_commit' => 0,
+    'apachesolr_index_last' => array(),
+    'apachesolr_read_only' => '0',
+    'apachesolr_search_changed_boost' => '0:0',
+    'apachesolr_search_comment_boost' => '0:0',
+    'apachesolr_search_date_boost' => '0:0',
+    'apachesolr_search_promote_boost' => '0',
+    'apachesolr_search_sticky_boost' => '0',
+    'apachesolr_search_type_boosts' => array(
+        'article'     => '0',
+        'basic_page'  => '0',
+        'news'        => '0',
+        'publication' => '0',
+        'section'     => '0',
+        'slider'      => '0',
+        'webform'     => '0',
+    ),
+    'apachesolr_soft_commit' => 0,
+    'field_bias' => array(
+      'content'            => '1.0',
+      'label'              => '5.0',
+      'tags_h1'            => '5.0',
+      'tags_h2_h3'         => '3.0',
+      'tags_h4_h5_h6'      => '2.0',
+      'tags_inline'        => '1.0',
+      'taxonomy_names'     => '0',
+      'tos_content_extra'  => '0',
+      'tos_name'           => '0',
+      'tos_name_formatted' => '0',
+      'ts_comments'        => '0',
+      'ts_custom_text'     => '1.0',
+    )
+  );
+  apachesolr_environment_save($environment);
+  cache_clear_all('apachesolr:environments', 'cache_apachesolr');
+    
+}
+
+/**
+ * Helper function that change core search page settings.
+ */
+function propeople_change_settings_of_core_search_page() {
+    
+  drupal_static_reset('apachesolr_search_load_all_search_pages');
+  
+  $search_page = apachesolr_search_page_load('core_search');
+  if (!empty($search_page)) {
+    
+    //Desable "Did you mean … ?" above search results.
+    $search_page['settings']['apachesolr_search_spellcheck'] = 0;
+    
+    //Select 'Show enabled facets' blocks in their configured regions' 
+    $search_page['settings']['apachesolr_search_browse'] = 'blocks';
+    
+    apachesolr_search_page_save($search_page);
+  }
+}
+
+/**
+ * Helper function for dropping multiple fields and then purges the field data. Use with caution.
+ * 
+ * @param array $params
+ * @param array $include_additional
+ * 
+ * @see field_read_instances().
+ */
+ function propeople_delete_fields_instances(array $params, $include_additional = array()) {
+   if ($instances = field_read_instances($params, $include_additional)) {
+     foreach ($instances as $instance) {
+       field_delete_instance($instance, TRUE);
+     }
+     field_purge_batch(20);
+   }
+ }
  

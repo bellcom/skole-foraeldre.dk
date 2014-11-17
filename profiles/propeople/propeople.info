@@ -78,6 +78,9 @@ dependencies[] = panelizer
 dependencies[] = panels
 dependencies[] = panels_ipe
 dependencies[] = globalredirect
+dependencies[] = apachesolr
+dependencies[] = apachesolr_search
+dependencies[] = facetapi
 dependencies[] = ga_stats
 dependencies[] = googleanalytics
 dependencies[] = metatag
@@ -119,6 +122,7 @@ dependencies[] = sof_pdf_generator
 dependencies[] = sof_toolbox_search
 
 ;Features
+dependencies[] = sof_apache_solr_configuration
 dependencies[] = sof_banner
 dependencies[] = sof_file_types
 dependencies[] = sof_image_styles

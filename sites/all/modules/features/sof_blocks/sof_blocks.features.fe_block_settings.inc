@@ -76,6 +76,38 @@ function sof_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['current_search-search_results'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'search_results',
+    'module' => 'current_search',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => 'global_search_top_region',
+        'status' => 1,
+        'theme' => 'sof_theme',
+        'weight' => -18,
+      ),
+    ),
+    'title' => 'Search result',
+    'visibility' => 0,
+  );
+
   $export['follow-site'] = array(
     'cache' => 1,
     'custom' => 0,
@@ -101,7 +133,7 @@ function sof_blocks_default_fe_block_settings() {
         'region' => 'top_header_navigation',
         'status' => 1,
         'theme' => 'sof_theme',
-        'weight' => -20,
+        'weight' => -19,
       ),
     ),
     'title' => '<none>',
@@ -133,7 +165,7 @@ function sof_blocks_default_fe_block_settings() {
         'region' => 'top_header_navigation',
         'status' => 1,
         'theme' => 'sof_theme',
-        'weight' => -21,
+        'weight' => -19,
       ),
     ),
     'title' => '<none>',
