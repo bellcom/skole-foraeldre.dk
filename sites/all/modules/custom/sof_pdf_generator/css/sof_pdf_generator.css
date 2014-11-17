@@ -4,6 +4,9 @@
     font-size:40px;
     background-color: #b8e9f4;
     position:relative;
+    width:100%;
+    margin:0;
+    padding:0;
 }
 .sof-pdf-cover img.sof-pdf-logo{ 
     position:absolute;
@@ -32,7 +35,8 @@
 	font-weight:normal;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical{
-	margin: 10mm;
+	margin: 5mm;
+	padding:0 10mm;
 }
 .sof-pdf-content{
 	padding:0 0 20px 0;
@@ -80,15 +84,19 @@
     margin:0;
     padding:20px;
 }
-.sof-column-content .column > *{
-	padding:0 10px 0 0;
-}
+
 .sof-column-content{
 	padding:0!important;
 	margin:0!important;
 }
 .sof-column-content .first.column{
-	padding:0 10px 0 0;
+	padding:0 15px 0 0;
+	 -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.sof-column-content .last{
+	padding:0 0 0 15px;
 	 -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
@@ -214,7 +222,7 @@
     color: #454545;
     font-family: "conduit_itclight";
     font-size: 19px;
-    font-weight: normal;
+    font-weight: 200;
     line-height: 24px;
     margin:0;
     padding:0!important;
