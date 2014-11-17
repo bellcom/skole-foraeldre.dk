@@ -152,6 +152,10 @@ function sof_theme_process_page(&$variables) {
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
 
+  // Add theme hook suggestion for search page
+  if (arg(0)=='search' && arg(1) && arg(2)) { 
+    $vars['theme_hook_suggestions'][] = 'page__search';
+  }
 }
 /**
  * Override related content field in article node. Block:Related Content Single Blocks
@@ -411,6 +415,8 @@ function sof_theme_menu_link(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
+
+
 /**
 * Implements hook_textarea
 * Remove resizable part
@@ -436,4 +442,27 @@ function sof_theme_textarea($variables) {
   $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
   $output .= '</div>';
   return $output;
+}
+     
+
+/**
+ * Preprocess search page result
+ * 
+ * @see template_preprocess_search_result()
+ */
+function sof_theme_preprocess_search_result(&$variables) {
+ 
+ unset($variables['info_split']['user']);
+ 
+ //Add node teaser instead of snippet
+ $nid = $variables['result']['node']->entity_id;
+ $node = node_load($nid);
+ 
+ if($node){
+   $variables['teaser'] = isset($node->field_teaser[LANGUAGE_NONE][0]['value']) 
+    ?  $node->field_teaser[LANGUAGE_NONE][0]['value'] :  $variables['snippet'];
+ }else{
+     $variables['teaser'] = $variables['snippet'] ;
+ }
+ 
 }

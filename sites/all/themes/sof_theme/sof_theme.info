@@ -77,22 +77,23 @@
 
 ;----------// Regions
 
-  regions[sidebar_first]          = Sidebar first
-  regions[sidebar_second]         = Sidebar second
-  regions[content]                = Main Content
-  regions[highlighted]            = Highlighted
-  regions[content_aside]          = Aside
-  regions[secondary_content]      = Secondary
-  regions[tertiary_content]       = Tertiary
-  regions[footer]                 = Footer
-  regions[leaderboard]            = Leaderboard
-  regions[top_header_navigation]  = Top Header Navigation
-  regions[header]                 = Header
-  regions[menu_bar]               = Menu Bar
-  regions[help]                   = Help
-  regions[page_top]               = Page top
-  regions[page_bottom]            = Page bottom
-  regions[social_media_region]    = Social Media Region
+  regions[sidebar_first]            = Sidebar first
+  regions[sidebar_second]           = Sidebar second
+  regions[content]                  = Main Content
+  regions[highlighted]              = Highlighted
+  regions[content_aside]            = Aside
+  regions[secondary_content]        = Secondary
+  regions[tertiary_content]         = Tertiary
+  regions[footer]                   = Footer
+  regions[leaderboard]              = Leaderboard
+  regions[top_header_navigation]    = Top Header Navigation
+  regions[header]                   = Header
+  regions[menu_bar]                 = Menu Bar
+  regions[help]                     = Help
+  regions[page_top]                 = Page top
+  regions[page_bottom]              = Page bottom
+  regions[social_media_region]      = Social Media Region
+  regions[global_search_top_region] = Global Search Top Region
 
 
 ;----------// Gpanel Regions

@@ -132,3 +132,43 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
   }
   
 }
+
+/**
+ * Implements hook_apachesolr_index_document_build_ENTITY_TYPE().
+ * 
+ * @see apachesolr.api.php for additional info
+ */
+function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
+    
+  $node = node_load($entity->vid);
+  
+  //Render the node and strip all html tags from it
+  $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
+  
+  //Add new field for drupal search
+  $document->addField('ts_custom_text', $full_node_html);
+         
+}
+
+/**
+ * Implements hook_apachesolr_query_prepare().
+ *  
+ * @see apachesolr.api.php for additional info
+ */
+function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $query) {
+  
+  //Make ts_custom_text custom field searchable  
+  $query->addParam('fl', 'ts_custom_text');
+  
+}
+
+/**
+ * Implements hook_apachesolr_field_name_map_alter()
+ *
+ * @see apachesolr.api.php for additional info
+ */
+function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
+  
+  //Add human readable name for our custom field    
+  $map['ts_custom_text'] = t('The full node object');
+}

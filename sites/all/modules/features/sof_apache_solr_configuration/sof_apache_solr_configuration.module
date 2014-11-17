@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF Apache Solr Configuration feature.
+ */
+
+include_once 'sof_apache_solr_configuration.features.inc';
