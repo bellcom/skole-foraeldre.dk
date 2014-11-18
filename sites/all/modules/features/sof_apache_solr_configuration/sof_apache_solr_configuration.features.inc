@@ -11,6 +11,9 @@ function sof_apache_solr_configuration_ctools_plugin_api($module = NULL, $api = 
   if ($module == "current_search" && $api == "current_search") {
     return array("version" => "1");
   }
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }

@@ -1,13 +1,16 @@
 name = SOF Apache Solr Configuration
-description = Facet blocks, search blocks and variables regarding the global search configurations
+description = Facet blocks, search blocks and variables regarding the search configurations
 core = 7.x
 package = Configuration
 dependencies[] = ctools
 dependencies[] = current_search
+dependencies[] = facetapi
 dependencies[] = strongarm
 features[ctools][] = current_search:current_search:1
+features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = strongarm:strongarm:1
 features[current_search][] = search_results
+features[facetapi][] = apachesolr@solr:block:im_field_category_publication
 features[features_api][] = api:2
 features[variable][] = search_active_modules
 features[variable][] = search_cron_limit
