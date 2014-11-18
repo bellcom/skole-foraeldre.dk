@@ -143,6 +143,9 @@ hide($content['links']);
 		   	 <!-- Top links (download as pdf, publication link) -->
 		   	 <div class="right-region-top-links">
 		   	 	<?php print render($content['group_rightaregion']['download_as_pdf']); ?>
+		   	 	<?php if(isset($publication_link)): ?>
+		   	 	    <?php print $publication_link; ?>
+		   	 	<?php endif; ?>
 		   	 </div>	
 			<!-- Related terms block -->
 			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>

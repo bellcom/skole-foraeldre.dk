@@ -200,6 +200,7 @@ function sof_theme_field__field_video($variables) {
   $output .= '</div>';
   return $output;
 }
+
 /**
  * Override field
  */
@@ -319,6 +320,19 @@ function sof_theme_preprocess_node(&$variables) {
                 'fragment' => '',
                 'external' =>true,
             ));
+            
+            //Publication link variable
+            if($variables['field_publication_control_link'][LANGUAGE_NONE][0]['value'] == 1){
+                
+                $variables['publication_link'] = l(t('See all publications'), 'releases', array(
+                    'attributes' => array(
+                        'class' => array('publications-btn'),
+                    ),
+                    'fragment' => '',
+                ));
+            }
+            
+            
             
 	        //Pass slider block $delta as variable
 	        switch($node->type){
