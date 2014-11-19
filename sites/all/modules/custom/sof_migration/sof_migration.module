@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * SOF Migration main file.
+ */
+
+/**
+* Implements hook_ctools_plugin_directory().
+*/
+function sof_migration_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'feeds_tamper') {
+    return 'plugins';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function sof_migration_menu() {
+  $items = array();
+
+  $items['admin/config/sof-migration'] = array(
+    'title' => 'SOF migration',
+    'description' => 'SOF migration related configuration pages.',
+    'position' => 'right',
+    'weight' => 10,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('god mode'), // This is intentional.
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/sof-migration/post-migrate'] = array(
+    'title' => 'SOF migration post-migrate operations',
+    'description' => 'Execute SOF migration post-migrate operations - fix links, make files permanent.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sof_migration_post_migrate'),
+    'access arguments' => array('god mode'), // This is intentional.
+    'file' => 'sof_migration.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
