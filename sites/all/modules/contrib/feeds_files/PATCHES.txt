@@ -1,0 +1,4 @@
+The following patches have been applied to this project:
+- http://www.drupal.org/files/issues/uri_required_validate-feeds_files-2298021-1.patch
+- http://www.drupal.org/files/issues/allow_undefined_file_type-feeds_files-2298027-1.patch
+- http://www.drupal.org/files/issues/feeds_files-file-copy-functionality-1943752-3.patch

@@ -223,8 +223,6 @@ class FeedsFileProcessor extends FeedsProcessor {
       'bundle' => $type,
       'author' => 0,
       'authorize' => TRUE,
-      'copy_source' => '',
-      'copy_destination' => '',
       'debug' => array(),
     ) + parent::configDefaults();
   }
@@ -254,19 +252,6 @@ class FeedsFileProcessor extends FeedsProcessor {
       '#title' => t('Authorize'),
       '#description' => t('Check that the author has permission to create the file.'),
       '#default_value' => $this->config['authorize'],
-    );
-
-    $form['copy_source'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Copy files from local source'),
-      '#description' => t('Give a source path for the phisical files to be copied from.'),
-      '#default_value' => $this->config['copy_source'],
-    );
-    $form['copy_destination'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Copy files to destination'),
-      '#description' => t('Give a destination path for the phisical files to be copied to.'),
-      '#default_value' => $this->config['copy_destination'],
     );
 
     $debug_options = array(
@@ -324,10 +309,6 @@ class FeedsFileProcessor extends FeedsProcessor {
       'description' => t('The URI of the file. NOTE: use this feature with care, file URIs are usually assigned by Drupal. If the media module is installed, it will attempt to parse the passed URI for remote files.'),
       'optional_unique' => TRUE,
     );
-    $targets['copy'] = array(
-      'name' => t('Copy file from source'),
-      'description' => t('Copy file from local source. File URI will be set automatically.'),
-    );
     $targets['bundle'] = array(
       'name' => t('File Type'),
       'description' => t('The type/bundle of the file. NOTE: use this feature with care, file types are usually assigned by Drupal.'),
@@ -380,20 +361,6 @@ class FeedsFileProcessor extends FeedsProcessor {
         else {
           $target_file->uri = $value;
         }
-        break;
-      case 'copy':
-        $source_prefix = $this->config['copy_source'] ? $this->config['copy_source'] . '/' : '';
-        $source = $source_prefix . $value;
-        $destination_prefix = $this->config['copy_destination'] ?
-                $this->config['copy_destination'] . '/' :
-                variable_get('file_default_scheme', 'public') . '://';
-
-        $file_name = !empty($target_file->filename) ? $target_file->filename : basename($source);
-        $destination = file_stream_wrapper_uri_normalize($destination_prefix . $file_name);
-        $destination_directory = dirname($destination);
-        file_prepare_directory($destination_directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
-        $destination = file_unmanaged_copy($source, $destination, FILE_EXISTS_RENAME);
-        $target_file->uri = file_stream_wrapper_uri_normalize($destination);
         break;
       case 'user_name':
         if ($user = user_load_by_name($value)) {

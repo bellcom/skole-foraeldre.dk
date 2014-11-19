@@ -24,7 +24,8 @@ define('FEEDS_TAXONOMY_SEARCH_TERM_GUID', 2);
  * Implements hook_feeds_parser_sources_alter().
  */
 function taxonomy_feeds_parser_sources_alter(&$sources, $content_type) {
-  if (!empty($content_type)) {
+//SOF-3 allow files importer to use media folder target without specifying files type.
+//  if (!empty($content_type)) {
     foreach (taxonomy_get_vocabularies($content_type) as $vocabulary) {
       $sources['parent:taxonomy:' . $vocabulary->machine_name] = array(
         'name' => t('Feed node: Taxonomy: @vocabulary', array('@vocabulary' => $vocabulary->name)),
@@ -32,7 +33,7 @@ function taxonomy_feeds_parser_sources_alter(&$sources, $content_type) {
         'callback' => 'taxonomy_feeds_get_source',
       );
     }
-  }
+//  }
 }
 
 /**
