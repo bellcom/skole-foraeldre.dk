@@ -214,6 +214,72 @@ function sof_views_contents_views_default_views() {
   $export['other_releases'] = $view;
 
   $view = new view();
+  $view->name = 'publication_listing_view';
+  $view->description = 'Publication listing from the Apachesolr index';
+  $view->tag = 'default';
+  $view->base_table = 'apachesolr__solr';
+  $view->human_name = 'Publication listing view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Url(not shown) */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['ui_name'] = 'Url(not shown)';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  /* Field: Image */
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['id'] = 'sm_thumb_article_top_slider_field_image';
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['field'] = 'sm_thumb_article_top_slider_field_image';
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['ui_name'] = 'Image';
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['label'] = '';
+  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['element_label_colon'] = FALSE;
+  /* Field: Title */
+  $handler->display->display_options['fields']['label']['id'] = 'label';
+  $handler->display->display_options['fields']['label']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['label']['field'] = 'label';
+  $handler->display->display_options['fields']['label']['ui_name'] = 'Title';
+  $handler->display->display_options['fields']['label']['label'] = '';
+  $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['label']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
+  /* Field: Teaser */
+  $handler->display->display_options['fields']['teaser']['id'] = 'teaser';
+  $handler->display->display_options['fields']['teaser']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
+  $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
+  $handler->display->display_options['fields']['teaser']['label'] = '';
+  $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  /* Filter criterion: Apache Solr: bundle */
+  $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['value'] = 'publication';
+
+  /* Display: Grid listing publication page */
+  $handler = $view->new_display('panel_pane', 'Grid listing publication page', 'grid_listing_publication');
+  $handler->display->display_options['display_description'] = 'List of publications as greed 2x4. Image, title and teaser';
+  $export['publication_listing_view'] = $view;
+
+  $view = new view();
   $view->name = 'read_also';
   $view->description = 'Block on the bottom of the articles/news. Two random related articles(left) and categories with links to section pages(right).';
   $view->tag = 'default';

@@ -256,7 +256,7 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'article_top_slider',
         ),
         'type' => 'image',
         'weight' => 0,
