@@ -468,15 +468,44 @@ function sof_theme_preprocess_search_result(&$variables) {
  
  unset($variables['info_split']['user']);
  
- //Add node teaser instead of snippet
- $nid = $variables['result']['node']->entity_id;
- $node = node_load($nid);
- 
- if($node){
-   $variables['teaser'] = isset($node->field_teaser[LANGUAGE_NONE][0]['value']) 
-    ?  $node->field_teaser[LANGUAGE_NONE][0]['value'] :  $variables['snippet'];
- }else{
-     $variables['teaser'] = $variables['snippet'] ;
+ //Add Articles/News category
+ if(isset($variables['result']['fields']['im_field_category'])){
+     $variables['category'] = _sof_category_terms_links($variables['result']['fields']['im_field_category']);
+ }
+ //Add Publication category
+ if(isset($variables['result']['fields']['im_field_category_publication'])){
+     $variables['category'] = _sof_category_terms_links($variables['result']['fields']['im_field_category_publication']);
+ }
+ //Add Section category
+ if(isset($variables['result']['fields']['im_field_category_single'])){
+     $variables['category'] = _sof_category_terms_links($variables['result']['fields']['im_field_category_single']);
  }
  
+ 
+ //Add node teaser instead of snippet
+ $variables['teaser'] = $variables['result']['fields']['teaser'];
+ 
+}
+
+/**
+ * Helper function for generating "Category"(term) links for template_preprocess_search_result()
+ * 
+ * @param $category_field Array
+ *  taxonomy term ids of the node
+ */
+function _sof_category_terms_links($category_field){
+    
+    foreach ($category_field as $key => $value) {
+         $term_links[] = array(
+            'title' => taxonomy_term_load($value)->name, 
+            'href'  => 'taxonomy/term/' . $value,
+         );
+     }
+     
+     return theme('links', array(
+      'links'      => $term_links,
+      'heading'    => array('text' => t('Categories :'), 'level' => 'label'), 
+      'attributes' => array('class' => array('links', 'inline')),
+    ));
+    
 }

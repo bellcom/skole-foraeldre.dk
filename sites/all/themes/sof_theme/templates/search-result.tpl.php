@@ -74,5 +74,8 @@
     <?php if ($teaser): ?>
       <p class="search-snippet"<?php print $content_attributes; ?>><?php print $teaser; ?></p>
     <?php endif; ?>
+    <?php if(isset($category)) : ?>
+       <div class="search-category"> <?php print render($category); ?> </div> 
+    <?php endif;?>
   </div>
 </li>

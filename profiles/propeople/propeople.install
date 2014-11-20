@@ -12,7 +12,7 @@
  * @see system_install()
  */
 function propeople_install() {
-    
+
   $full_html_format = array(
     'format' => 'full_html',
     'name' => 'Full HTML',
@@ -35,7 +35,7 @@ function propeople_install() {
       ),
     ),
   );
-  $full_html_format = (object) $full_html_format;
+  $full_html_format = (object)$full_html_format;
   filter_format_save($full_html_format);
 
   // Enable user picture support and set the default to a square thumbnail option.
@@ -49,46 +49,52 @@ function propeople_install() {
 
   // Enable default permissions for system roles.
   $full_html_format = filter_permission_name($full_html_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments', $full_html_format));
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval', $full_html_format));
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array(
+    'access content',
+    'access comments',
+    $full_html_format
+  ));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array(
+    'access content',
+    'access comments',
+    'post comments',
+    'skip comment approval',
+    $full_html_format
+  ));
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
-  $admin_role->name = 'administrator';
-  $admin_role->weight = 2;
+  $admin_role -> name = 'administrator';
+  $admin_role -> weight = 2;
   user_role_save($admin_role);
-  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
-  
+  user_role_grant_permissions($admin_role -> rid, array_keys(module_invoke_all('permission')));
+
   // Set this as the administrator role.
-  variable_set('user_admin_role', $admin_role->rid);
+  variable_set('user_admin_role', $admin_role -> rid);
 
   // Assign user 1 the "administrator" role.
-  db_insert('users_roles')
-    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
-    ->execute();
+  db_insert('users_roles') -> fields(array(
+    'uid' => 1,
+    'rid' => $admin_role -> rid
+  )) -> execute();
 
   // Update the menu router information.
   menu_rebuild();
-  
+
   // Enable the Origins theme and set it as the default.
-  theme_enable(array('adaptivetheme', 'sof_theme'));
+  theme_enable(array(
+    'adaptivetheme',
+    'sof_theme'
+  ));
 
   // The Bartik theme is automatically enabled during installation. Disable it.
-  db_update('system')
-    ->fields(array('status' => 0))
-    ->condition('type', 'theme')
-    ->condition('name', 'bartik')
-    ->execute();
+  db_update('system') -> fields(array('status' => 0)) -> condition('type', 'theme') -> condition('name', 'bartik') -> execute();
 
   // Set the default and administration themes.
   variable_set('theme_default', 'sof_theme');
 
   // Enable the admin theme.
-  db_update('system')
-    ->fields(array('status' => 1))
-    ->condition('type', 'theme')
-    ->condition('name', 'seven')
-    ->execute();
+  db_update('system') -> fields(array('status' => 1)) -> condition('type', 'theme') -> condition('name', 'seven') -> execute();
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
 }
@@ -100,15 +106,9 @@ function propeople_install() {
  */
 function propeople_install_tasks() {
   return array(
-    'propeople_create_initial_content' => array(
-      'display_name' => st('Create initial content'),
-    ),
-    'propeople_add_default_solr_search' => array(
-      'display_name' => st('Default Solr Search Options'),
-    ),
-    'propeople_change_settings_of_core_search_page' => array(
-      'display_name' => st('Default Solr Search Page'),
-    ),
+    'propeople_create_initial_content' => array('display_name' => st('Create initial content'), ),
+    'propeople_add_default_solr_search' => array('display_name' => st('Default Solr Search Options'), ),
+    'propeople_change_settings_of_core_search_pages' => array('display_name' => st('Default Solr Search Pages'), ),
   );
 }
 
@@ -126,261 +126,262 @@ function propeople_create_initial_content() {
  *  - Top navigation menu and links
  *  - Main menu main links only
  */
- function _propeople_create_menus(){
- 
-    $menus = array(
+function _propeople_create_menus() {
+
+  $menus = array( array(
+      'menu_name' => 'menu-top-navigation',
+      'title' => 'Top navigation',
+      'description' => 'Used for the links in the upper right corner of the page',
+    ), );
+
+  // Look the table first if the data does exist
+  foreach ($menus as $menu) {
+    $exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", array(':menu_name' => $menu['menu_name'])) -> fetchField();
+
+    // Save the record if the data does not exist
+    if (!$exists) {
+      menu_save($menu);
+    }
+  }
+
+  //Create header top menu
+  $items = array(
+    array(
+      'link_title' => t('About us'),
+      'link_path' => '<front>',
+      'weight' => 0,
+      'expanded' => 1,
+    ),
+    array(
+      'link_title' => t('Contact'),
+      'link_path' => '<front>',
+      'weight' => 1,
+      'expanded' => 1,
+    ),
+    array(
+      'link_title' => t('Membership'),
+      'link_path' => '<front>',
+      'weight' => 1,
+      'expanded' => 1,
+    ),
+  );
+  populate_menu($items, 'menu-top-navigation');
+
+  //Create main menu
+  $items = array(
+    array(
+      'link_title' => t('School board'),
+      'link_path' => '<front>',
+      'weight' => 0,
+      'expanded' => 1,
+      'childs' => array(
         array(
-            'menu_name'   => 'menu-top-navigation',
-            'title'       => 'Top navigation',
-            'description' => 'Used for the links in the upper right corner of the page',
+          'link_title' => t('Column I'),
+          'link_path' => '<front>',
+          'weight' => 0,
+          'expanded' => 1,
         ),
-    );
-    
-   // Look the table first if the data does exist
-   foreach ($menus as $menu){
-     $exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", array(':menu_name' => $menu['menu_name']))->fetchField();
-     
-     // Save the record if the data does not exist
-     if (!$exists) {
-        menu_save($menu);
-     }
-   }
-   
-   //Create header top menu
-   $items = array(
-      array(          
-        'link_title' => t('About us'),
-        'link_path'  => '<front>',
-        'weight'     => 0,
-        'expanded'   => 1,
-      ),
-      array(          
-        'link_title' => t('Contact'),
-        'link_path'  => '<front>',
-        'weight'     => 1,
-        'expanded'   => 1,
-      ),
-      array(          
-        'link_title' => t('Membership'),
-        'link_path'  => '<front>',
-        'weight'     => 1,
-        'expanded'   => 1,
-      ),
-   );
-   populate_menu($items, 'menu-top-navigation');
-    
-   //Create main menu
-   $items = array(
-      array(          
-        'link_title' => t('School board'),
-        'link_path'  => '<front>',
-        'weight'     => 0,
-        'expanded'   => 1,
-        'childs'     => array(
-          array(
-            'link_title' => t('Column I'),
-            'link_path'  => '<front>',
-            'weight'     => 0,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column II'),
-            'link_path' => '<front>',
-            'weight'     => 1,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column III'),
-            'link_path'  => '<front>',
-            'weight'     => 2,
-            'expanded'   => 1,
-          ),
+        array(
+          'link_title' => t('Column II'),
+          'link_path' => '<front>',
+          'weight' => 1,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column III'),
+          'link_path' => '<front>',
+          'weight' => 2,
+          'expanded' => 1,
         ),
       ),
-      array(          
-        'link_title' => t('Parents'),
-        'link_path'  => '<front>',
-        'weight'     => 1,
-        'expanded'   => 1,
-        'childs'     => array(
-          array(
-            'link_title' => t('Column I'),
-            'link_path'  => '<front>',
-            'weight'     => 0,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column II'),
-            'link_path' => '<front>',
-            'weight'     => 1,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column III'),
-            'link_path'  => '<front>',
-            'weight'     => 2,
-            'expanded'   => 1,
-          ),
+    ),
+    array(
+      'link_title' => t('Parents'),
+      'link_path' => '<front>',
+      'weight' => 1,
+      'expanded' => 1,
+      'childs' => array(
+        array(
+          'link_title' => t('Column I'),
+          'link_path' => '<front>',
+          'weight' => 0,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column II'),
+          'link_path' => '<front>',
+          'weight' => 1,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column III'),
+          'link_path' => '<front>',
+          'weight' => 2,
+          'expanded' => 1,
         ),
       ),
-      array(          
-        'link_title' => t('News'),
-        'link_path'  => '<front>',
-        'weight'     => 2,
-        'expanded'   => 1,
-        'childs'     => array(
-          array(
-            'link_title' => t('Column I'),
-            'link_path'  => '<front>',
-            'weight'     => 0,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column II'),
-            'link_path' => '<front>',
-            'weight'     => 1,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column III'),
-            'link_path'  => '<front>',
-            'weight'     => 2,
-            'expanded'   => 1,
-          ),
+    ),
+    array(
+      'link_title' => t('News'),
+      'link_path' => '<front>',
+      'weight' => 2,
+      'expanded' => 1,
+      'childs' => array(
+        array(
+          'link_title' => t('Column I'),
+          'link_path' => '<front>',
+          'weight' => 0,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column II'),
+          'link_path' => '<front>',
+          'weight' => 1,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column III'),
+          'link_path' => '<front>',
+          'weight' => 2,
+          'expanded' => 1,
         ),
       ),
-      array(          
-        'link_title' => t('Topics'),
-        'link_path'  => '<front>',
-        'weight'     => 3,
-        'expanded'   => 1,
-        'childs'     => array(
-          array(
-            'link_title' => t('Column I'),
-            'link_path'  => '<front>',
-            'weight'     => 0,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column II'),
-            'link_path' => '<front>',
-            'weight'     => 1,
-            'expanded'   => 1,
-          ),
-          array(
-            'link_title' => t('Column III'),
-            'link_path'  => '<front>',
-            'weight'     => 2,
-            'expanded'   => 1,
-          ),
+    ),
+    array(
+      'link_title' => t('Topics'),
+      'link_path' => '<front>',
+      'weight' => 3,
+      'expanded' => 1,
+      'childs' => array(
+        array(
+          'link_title' => t('Column I'),
+          'link_path' => '<front>',
+          'weight' => 0,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column II'),
+          'link_path' => '<front>',
+          'weight' => 1,
+          'expanded' => 1,
+        ),
+        array(
+          'link_title' => t('Column III'),
+          'link_path' => '<front>',
+          'weight' => 2,
+          'expanded' => 1,
         ),
       ),
-      array(          
-        'link_title' => t('Search'),
-        'link_path'  => 'search/site',
-        'weight'     => 4,
-        'expanded'   => 1,
-      ),
-   );
-   populate_menu($items, 'main-menu');
-   
- }
+    ),
+    array(
+      'link_title' => t('Search'),
+      'link_path' => 'search/site',
+      'weight' => 4,
+      'expanded' => 1,
+    ),
+  );
+  populate_menu($items, 'main-menu');
+
+}
 
 /**
  * Programatically create follow links
  *  - Remove the rss follow link (added by default on module install)
  *  - Add the new facebook link
  *  - Add the new twitter link
- * 
+ *
  *  @see https://www.drupal.org/project/follow
  */
- function _propeople_default_follow_link(){
-    
+function _propeople_default_follow_link() {
+
   // Add a default facebook and twitter links to the page
   $values = array(
     array(
-        'name' => 'facebook',
-        'path' => 'https://www.facebook.com/SkoleOgForaeldre',
-        'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
-        'uid' => 0,
-        'weight' => -10,
+      'name' => 'facebook',
+      'path' => 'https://www.facebook.com/SkoleOgForaeldre',
+      'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
+      'uid' => 0,
+      'weight' => -10,
     ),
     array(
-        'name' => 'twitter',
-        'path' => 'https://twitter.com/SkoleForaeldre',
-        'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
-        'uid' => 0,
-        'weight' => -9,
+      'name' => 'twitter',
+      'path' => 'https://twitter.com/SkoleForaeldre',
+      'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
+      'uid' => 0,
+      'weight' => -9,
     ),
-   );
-   
-  $query = db_insert('follow_links')->fields(array('name', 'path', 'options','uid','weight'));
+  );
+
+  $query = db_insert('follow_links') -> fields(array(
+    'name',
+    'path',
+    'options',
+    'uid',
+    'weight'
+  ));
   foreach ($values as $record) {
-    $query->values($record);
+    $query -> values($record);
   }
-  $query->execute();
-    
+  $query -> execute();
+
   //Remove default RSS link crated on module install
-  db_delete('follow_links')
-    ->condition('lid', 1)
-    ->execute();
-    
- }
- 
- 
- /**
-  * Helper function for menu create
-  * 
-  * @param $links array
-  *     Contains all links data used menu_link_save()
-  * @param $menu_name string
-  *     Menu machine name
-  * @param $plid int (optional)
-  *     Menu link parent id
-  * 
-  */
- function populate_menu($links, $menu_name, $plid = 0) {
+  db_delete('follow_links') -> condition('lid', 1) -> execute();
+
+}
+
+/**
+ * Helper function for menu create
+ *
+ * @param $links array
+ *     Contains all links data used menu_link_save()
+ * @param $menu_name string
+ *     Menu machine name
+ * @param $plid int (optional)
+ *     Menu link parent id
+ *
+ */
+function populate_menu($links, $menu_name, $plid = 0) {
   foreach ($links as $link) {
     $ls = array(
-      'menu_name'  => $menu_name,
+      'menu_name' => $menu_name,
       'link_title' => $link['link_title'],
-      'link_path'  => $link['link_path'],
-      'plid'       => $plid,
-      'weight'     => $link['weight'],
-      'expanded'   => $link['expanded'],
+      'link_path' => $link['link_path'],
+      'plid' => $plid,
+      'weight' => $link['weight'],
+      'expanded' => $link['expanded'],
     );
-    
+
     // Save the record if the database
     $newpid = menu_link_save($ls);
     if (!empty($link['childs'])) {
       populate_menu($link['childs'], $menu_name, $newpid);
     };
-    
+
   }
 }
- 
+
 /**
  * Programatically configure solr configuration
  */
- function propeople_add_default_solr_search(){
-        
-    //Set devel apache solr index
-    variable_set('url_default_apachesolr_index', 'http://aegirdb.workingpropeople.com:8983/solr/sof');
-    
-    $url_solr = variable_get('url_default_apachesolr_index');
-    
-    // Setup SOLR
-    if ($url_solr) {
-      _propeople_configure_default_apachesolr_environment($url_solr);
-    }
- }
- 
+function propeople_add_default_solr_search() {
+
+  //Set devel apache solr index
+  variable_set('url_default_apachesolr_index', 'http://aegirdb.workingpropeople.com:8983/solr/sof');
+
+  $url_solr = variable_get('url_default_apachesolr_index');
+
+  // Setup SOLR
+  if ($url_solr) {
+    _propeople_configure_default_apachesolr_environment($url_solr);
+  }
+}
+
 /**
  * Helper function that configurate apachesolr environment.
- * 
+ *
  * @param $url_solr string
  *    Default search index url. Will be changed on the production page trough the ui
- * 
+ *
  */
 function _propeople_configure_default_apachesolr_environment($url_solr) {
 
@@ -398,7 +399,7 @@ function _propeople_configure_default_apachesolr_environment($url_solr) {
     4 => 'section',
     5 => 'webform',
   );
-   $environment['conf'] = array(
+  $environment['conf'] = array(
     'apachesolr_direct_commit' => 0,
     'apachesolr_index_last' => array(),
     'apachesolr_read_only' => '0',
@@ -408,69 +409,90 @@ function _propeople_configure_default_apachesolr_environment($url_solr) {
     'apachesolr_search_promote_boost' => '0',
     'apachesolr_search_sticky_boost' => '0',
     'apachesolr_search_type_boosts' => array(
-        'article'     => '0',
-        'basic_page'  => '0',
-        'news'        => '0',
-        'publication' => '0',
-        'section'     => '0',
-        'slider'      => '0',
-        'webform'     => '0',
+      'article' => '0',
+      'basic_page' => '0',
+      'news' => '0',
+      'publication' => '0',
+      'section' => '0',
+      'slider' => '0',
+      'webform' => '0',
     ),
     'apachesolr_soft_commit' => 0,
     'field_bias' => array(
-      'content'            => '1.0',
-      'label'              => '5.0',
-      'tags_h1'            => '5.0',
-      'tags_h2_h3'         => '3.0',
-      'tags_h4_h5_h6'      => '2.0',
-      'tags_inline'        => '1.0',
-      'taxonomy_names'     => '0',
-      'tos_content_extra'  => '0',
-      'tos_name'           => '0',
+      'content' => '1.0',
+      'label' => '5.0',
+      'tags_h1' => '5.0',
+      'tags_h2_h3' => '3.0',
+      'tags_h4_h5_h6' => '2.0',
+      'tags_inline' => '1.0',
+      'taxonomy_names' => '0',
+      'tos_content_extra' => '0',
+      'tos_name' => '0',
       'tos_name_formatted' => '0',
-      'ts_comments'        => '0',
-      'ts_custom_text'     => '1.0',
+      'ts_comments' => '0',
+      'ts_custom_text' => '1.0',
     )
   );
   apachesolr_environment_save($environment);
   cache_clear_all('apachesolr:environments', 'cache_apachesolr');
-    
+
 }
 
 /**
- * Helper function that change core search page settings.
+ * Helper function that change core search and terms search page settings.
  */
-function propeople_change_settings_of_core_search_page() {
-    
+function propeople_change_settings_of_core_search_pages() {
+
   drupal_static_reset('apachesolr_search_load_all_search_pages');
-  
+
+  //Set settings for the
   $search_page = apachesolr_search_page_load('core_search');
   if (!empty($search_page)) {
-    
+
     //Desable "Did you mean … ?" above search results.
     $search_page['settings']['apachesolr_search_spellcheck'] = 0;
-    
-    //Select 'Show enabled facets' blocks in their configured regions' 
+
+    //Select 'Show enabled facets' blocks in their configured regions'
     $search_page['settings']['apachesolr_search_browse'] = 'blocks';
-    
+
     apachesolr_search_page_save($search_page);
+  }
+
+  $terms_page = apachesolr_search_page_load('taxonomy_search');
+  if (!empty($terms_page)) {
+
+    //Add global settings for the terms page
+    $terms_page['label'] = 'Taxonomy Search';
+    $terms_page['description'] = 'Search all items with given term';
+    $terms_page['page_title'] = 'Site';
+    $terms_page['env_id'] = 'solr';
+
+    //Enable search form on the terms page
+    $terms_page['settings']['apachesolr_search_search_box'] = 0;
+
+    //Desable "Did you mean … ?" above search results.
+    $terms_page['settings']['apachesolr_search_spellcheck'] = 0;
+
+    //Select 'Show enabled facets' blocks in their configured regions and show all results form the first page
+    $terms_page['settings']['apachesolr_search_browse'] = 'results';
+
+    apachesolr_search_page_save($terms_page);
   }
 }
 
 /**
  * Helper function for dropping multiple fields and then purges the field data. Use with caution.
- * 
+ *
  * @param array $params
  * @param array $include_additional
- * 
+ *
  * @see field_read_instances().
  */
- function propeople_delete_fields_instances(array $params, $include_additional = array()) {
-   if ($instances = field_read_instances($params, $include_additional)) {
-     foreach ($instances as $instance) {
-       field_delete_instance($instance, TRUE);
-     }
-     field_purge_batch(20);
-   }
- }
- 
+function propeople_delete_fields_instances(array $params, $include_additional = array()) {
+  if ($instances = field_read_instances($params, $include_additional)) {
+    foreach ($instances as $instance) {
+      field_delete_instance($instance, TRUE);
+    }
+    field_purge_batch(20);
+  }
+}
