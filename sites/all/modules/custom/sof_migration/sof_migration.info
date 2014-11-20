@@ -1,0 +1,13 @@
+name = SOF migration
+description = SOF initial site migration from Sitecore.
+core = 7.x
+package = SOF Custom
+dependencies[] = uuid
+dependencies[] = node
+dependencies[] = file_entity
+dependencies[] = feeds
+dependencies[] = feeds_files
+dependencies[] = feeds_tamper
+dependencies[] = feeds_tamper_php
+dependencies[] = feeds_xpathparser
+dependencies[] = field_collection_feeds

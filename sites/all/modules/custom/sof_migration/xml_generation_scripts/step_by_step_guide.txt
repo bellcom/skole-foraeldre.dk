@@ -1,0 +1,38 @@
+1. Enable our custom sof_migration module, let it install/enable all required modules.
+2. Patch the following:
+UUID
+- http://www.drupal.org/files/uuid-feeds-mapper-1800730-10_1.patch
+Feeds_files
+- http://www.drupal.org/files/issues/uri_required_validate-feeds_files-2298021-1.patch
+- http://www.drupal.org/files/issues/allow_undefined_file_type-feeds_files-2298027-1.patch
+- http://www.drupal.org/files/issues/feeds_files-file-copy-functionality-1943752-3.patch
+3. Download and extract "Items" and "Files" from Sitecore.
+4. From the items/ directory - delete "installer", "metadata" and "properties" directoryes, leave only items.
+5. From the files/ directory - delete "installer", "metadata" and "properties" directoryes, leave only blob+items.
+6. Build the items xml
+- copy the following files to "items/":
+generate-items-xml-skole.php
+generate-tree-templates.php
+- run "php generate-items-xml-skole.php"
+- file named "package-fallback-package.xml" should be generated, note the file as it will be imported later to "Articles importer" and "News Importer".
+7. Build the files xml
+- copy the following files to "files/":
+generate-files-xml-skole.php
+generate-tree-templates-files.php
+- run "php generate-files-xml-skole.php"
+- file named "package-fallback-package.xml" should be generated, note the file as it will be imported later to "Files importer"
+8. Build the following file structure in the destination site public files directory and the appropriate taxonomy term in media folders vocabulary.
+public://sitecore - Copy all files from "package/blob"
+public://migrated_files
+Note: Make sure both folders have sufficient permissions to r/w files.
+9. From the Drupal site run importers:
+http://skole.loc/import/articles_importer
+http://skole.loc/import/news_importer
+http://skole.loc/import/files
+Note: Files importer may generate some warnings/errors like ("Created 125 files. Failed importing 18 files.") which is perfectly fine. 
+Propable cause can be either missing file in the imported blob, cross sub-site /media link to files from other sitecore sub-sites databases(Noko article has a link to SOF file)
+ or the item is actually a foldername from the sitecore.
+10. Navigate to "admin/config/sof-migration/post-migrate" and press "Fix links" button. 
+Fix links is performed on the whole node table so do it after you have imported all multisites items AND files.
+
+
