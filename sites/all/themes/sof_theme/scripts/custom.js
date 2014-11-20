@@ -45,6 +45,7 @@
 			$('#nav-activation-link span').toggleClass("active");
 			$('.header-navigation-container').toggleClass("active");
 		 });
+		 		 
    }
   };
   
@@ -55,7 +56,8 @@
     attach: function (context, settings) {   
 	
 	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
-	
+	 $( "#edit-submit" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');
       $(".pane-bundle-intro-deck-pane .field-name-field-link-group-title-first, .pane-bundle-intro-deck-pane .field-name-field-five-links-first").wrapAll('<div class="intro-deck-group"></div>');

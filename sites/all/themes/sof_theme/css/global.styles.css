@@ -4872,8 +4872,200 @@ body.page-404 #content{
 body.page-404 #content .action-links{
 	margin-bottom:40px;
 }
+/* =============================================================================
+ *  Search Page
+ * ========================================================================== */
+body.page-search #columns{
+	padding-bottom:20px;
+}
+body.page-search #block-system-main .search-form{
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0 auto;
+}
+body.page-search #content h2{
+	display:none;
+}
+body.page-search #block-system-main  .apachesolr-browse-blocks{
+	display:block;
+	max-width:1170px;
+	width:100%;
+	margin:0 auto;
+}
+body.page-search #block-system-main .search-form > div{
+	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+body.page-search #block-system-main .search-form .form-item-keys label{
+	display:none;
+}
+body.page-search #block-system-main .search-form  .form-wrapper{
+	background-color: #f0f0f0;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    height:50px;
+}
+body.page-search #block-system-main .search-form  .form-wrapper .form-type-textfield{
+	width:90%;
+	margin:0;
+	padding:0;
+	float:left;
+}
+body.page-search #block-system-main .search-form  .form-wrapper .form-type-textfield input{
+	width:100%;
+	float:left;
+	border:none;
+	background:transparent;
+	height:50px;
+	padding:0 0 0 20px;
+}
 
+.new-search-wrapper{
+  float:right;
+  border: 0;
+  font-size: 0;
+  line-height: 38px;
+  font-family: a;
+  text-shadow: none;
+  width: 10%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: 0.25s ease background;
+   transition: 0.25s ease background;
+}
 
+.new-search-wrapper:before {
+   content: "";
+   font-family: "fontello";
+   font-size: 30px;
+   width: 100%;
+   text-align: center;
+   line-height: 38px;
+   position: absolute;
+   left: 0;
+   padding:5px 0 0 2%;
+}
+
+.new-search-wrapper input {
+  border: 0;
+  font-size: 0;
+  line-height: 38px;
+  font-family: a;
+  text-shadow: none;
+  color: transparent;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  display: block;
+}
+#block-facetapi-apachesolr-im-field-category-publication{
+	float:left;
+	width:100%;
+	padding:0 15px;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+#block-facetapi-apachesolr-im-field-category-publication h2{
+	color: #000;
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+#block-facetapi-apachesolr-im-field-category-publication ul {
+	float:left;
+}
+#block-facetapi-apachesolr-im-field-category-publication ul li {
+	float:left;
+	list-style:none;
+}
+#block-facetapi-apachesolr-im-field-category-publication ul li a{
+	color: #000;
+    font-size: 20px;
+    font-weight: 200;
+    padding-bottom: 0;
+}
+#block-facetapi-apachesolr-im-field-category-publication ul li a:hover{
+	color:#000;
+}
+#block-facetapi-apachesolr-im-field-category-publication ul li.first{
+	margin-left:0;
+}
+.apachesolr-browse-blocks > p,
+.apachesolr-browse-blocks > h2{
+	display:none;
+}
+#block-current-search-search-results{
+	float:left
+}
+#block-current-search-search-results h2{
+	margin-top:30px;
+	line-height:44px;
+	color:#000;
+	font-size:46px;
+	font-weight:400;
+}
+#block-current-search-search-results .block-content h2{
+	margin-bottom:20px;
+	margin-top:20px;
+	font-size:30px;
+	font-weight:400;
+}
+.apachesolr_search-results li{
+	float:left;
+	width:100%;
+	padding-bottom:10px;
+	border-bottom:1px solid #b2b2b2;
+}
+.apachesolr_search-results li h3 a{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-decoration: none;
+}
+.search-snippet-info {
+	border-radius: 0;
+    color: #454545;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    padding-left:0!important;
+    text-align: left;
+}
+body.page-search #block-system-main > ul{
+	float:left;
+	margin:0;
+	padding:20px 0 0 10px;
+}
+body.page-search #block-system-main > ul li{
+	list-style:none;
+	margin:3px 0 0 0;
+	font-size:14px;
+	font-weight:normal;
+}
+.form-item-retain-filters{
+	float:left;
+}
+.form-item-retain-filters label{
+	font-weight:normal;
+	font-size:16px;
+}
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
@@ -4881,6 +5073,9 @@ body.page-404 #content .action-links{
 	body.node-type-section #main-content-header{
 		padding:0 30px 30px;
 	}
+	body.page-search #columns{
+		padding:0 20px 20px 20px;
+    }
 	.panel-col-full-main{
 		padding:0;
 	}

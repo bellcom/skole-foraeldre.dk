@@ -32,7 +32,9 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .sof-column-content h4,
 .recomendation-overview .views-row a,
 .pane-bundle-also-see-pane .read-more a,
-.mag-deck-right-group .field-name-field-magazine-links .field-item a{
+.mag-deck-right-group .field-name-field-magazine-links .field-item a,
+.new-search-wrapper:before,
+.apachesolr_search-results li h3 a {
   color: #00a2eb;
 }
 

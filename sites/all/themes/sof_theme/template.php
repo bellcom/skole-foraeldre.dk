@@ -157,6 +157,9 @@ function sof_theme_process_page(&$variables) {
     $vars['theme_hook_suggestions'][] = 'page__search';
   }
 }
+
+
+
 /**
  * Override related content field in article node. Block:Related Content Single Blocks
  */
@@ -263,9 +266,17 @@ function sof_theme_preprocess_field(&$vars) {
 }
 
 /**
+ * Preprocess function for apache solr search field - Add placeholder
+ */ 
+function sof_theme_form_alter(&$form, &$form_state, $form_id) {
+	$form['basic']['keys']['#attributes']['placeholder'] = t('Search');
+} 
+
+/**
  * Preprocess function for fieldable-panels-pane.tpl.php
- */
+ */ 
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
+
   $fieldable_pane_type = $variables['elements']['#bundle']; 
   //Add title on every deck
   switch($fieldable_pane_type){
