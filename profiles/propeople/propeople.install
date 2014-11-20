@@ -468,7 +468,7 @@ function propeople_change_settings_of_core_search_pages() {
     $terms_page['env_id'] = 'solr';
 
     //Enable search form on the terms page
-    $terms_page['settings']['apachesolr_search_search_box'] = 0;
+    $terms_page['settings']['apachesolr_search_search_box'] = 1;
 
     //Desable "Did you mean … ?" above search results.
     $terms_page['settings']['apachesolr_search_spellcheck'] = 0;
