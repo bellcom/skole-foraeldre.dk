@@ -13,6 +13,24 @@ function sof_variables_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'apachesolr_image_index_styles';
+  $strongarm->value = array(
+    'article_top_slider' => 'article_top_slider',
+    'related_content_reference_image' => 'related_content_reference_image',
+    'flexslider_full' => 0,
+    'flexslider_thumbnail' => 0,
+    'thumbnail' => 0,
+    'medium' => 0,
+    'large' => 0,
+    'linkit_thumb' => 0,
+    'media_thumbnail' => 0,
+    'publication_related' => 0,
+  );
+  $export['apachesolr_image_index_styles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_view_modes';
   $strongarm->value = array(
     'node' => array(
@@ -42,6 +60,20 @@ function sof_variables_strongarm() {
   $strongarm->name = 'i18n_string_source_language';
   $strongarm->value = 'en';
   $export['i18n_string_source_language'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_admin_version';
+  $strongarm->value = '';
+  $export['jquery_update_jquery_admin_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_version';
+  $strongarm->value = '1.5';
+  $export['jquery_update_jquery_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
