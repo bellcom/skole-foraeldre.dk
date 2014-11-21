@@ -151,11 +151,15 @@ function sof_theme_process_page(&$variables) {
     // Make sure the shortcut link is the first item in title_suffix.
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
-
   // Add theme hook suggestion for search page
-  if (arg(0)=='search' && arg(1) && arg(2) || $variables['theme_hook_suggestions'][0] = 'page__taxonomy') {
+  if (arg(0)=='search' && arg(1) && arg(2)) {
     $variables['theme_hook_suggestions'][] = 'page__search';
   }
+  if($variables['theme_hook_suggestions'][0] == 'page__taxonomy'){
+  	$variables['theme_hook_suggestions'][] = 'page__search';
+  }
+    	kpr($variables);
+
 }
 
 
