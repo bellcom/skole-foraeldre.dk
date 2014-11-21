@@ -158,8 +158,6 @@ function sof_theme_process_page(&$variables) {
   if($variables['theme_hook_suggestions'][0] == 'page__taxonomy'){
   	$variables['theme_hook_suggestions'][] = 'page__search';
   }
-    	kpr($variables);
-
 }
 
 
