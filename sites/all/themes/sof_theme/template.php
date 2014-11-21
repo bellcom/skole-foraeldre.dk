@@ -153,8 +153,8 @@ function sof_theme_process_page(&$variables) {
   }
 
   // Add theme hook suggestion for search page
-  if (arg(0)=='search' && arg(1) && arg(2)) {
-    $vars['theme_hook_suggestions'][] = 'page__search';
+  if (arg(0)=='search' && arg(1) && arg(2) || $variables['theme_hook_suggestions'][0] = 'page__taxonomy') {
+    $variables['theme_hook_suggestions'][] = 'page__search';
   }
 }
 
@@ -313,7 +313,6 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
-
     //Add theme sugestions for publication
     if ( $node->type == 'publication' ){
       $variables['theme_hook_suggestion'] = 'node__publication__full';

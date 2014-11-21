@@ -34,7 +34,8 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .pane-bundle-also-see-pane .read-more a,
 .mag-deck-right-group .field-name-field-magazine-links .field-item a,
 .new-search-wrapper:before,
-.apachesolr_search-results li h3 a {
+.apachesolr_search-results li h3 a,
+.search-category .links li a {
   color: #00a2eb;
 }
 
