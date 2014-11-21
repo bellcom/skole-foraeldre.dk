@@ -1,0 +1,7 @@
+7.x-1.2. 21-11-2014
+--------------------
+* a110d58 - (HEAD, origin/dev, dev) SOF-2 Added the PATCHES.txt file and removed the patch file. Committed by Lachezar Valchev at 2014-11-21 11:49:07 +0200
+* be4c2b8 - SOF-10 - Core update issue fix for refference dialog Committed by rkoteska at 2014-11-21 18:45:45 +1000
+* 1622929 -  SOF-92 Global Search - FrontEnd Committed by rkoteska at 2014-11-21 01:11:52 +1000
+* a2e3e81 -  SOF-20 Article Content Type - FrontEnd  - Styling link for see all publication Committed by rkoteska at 2014-11-20 19:26:27 +1000
+
