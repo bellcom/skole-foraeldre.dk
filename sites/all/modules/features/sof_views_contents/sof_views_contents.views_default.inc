@@ -230,6 +230,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -268,15 +269,38 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
   $handler->display->display_options['fields']['teaser']['label'] = '';
   $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  /* Contextual filter: Apache Solr: content */
+  $handler->display->display_options['arguments']['content']['id'] = 'content';
+  $handler->display->display_options['arguments']['content']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['arguments']['content']['field'] = 'content';
+  $handler->display->display_options['arguments']['content']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['content']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['content']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['content']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['content']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['content']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['content']['validate_options']['code'] = 'return $argument ? true : false;';
+  $handler->display->display_options['arguments']['content']['validate']['fail'] = 'ignore';
   /* Filter criterion: Apache Solr: bundle */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['value'] = 'publication';
+  $handler->display->display_options['filters']['bundle']['group'] = 1;
 
   /* Display: Grid listing publication page */
   $handler = $view->new_display('panel_pane', 'Grid listing publication page', 'grid_listing_publication');
   $handler->display->display_options['display_description'] = 'List of publications as greed 2x4. Image, title and teaser';
+  $handler->display->display_options['argument_input'] = array(
+    'content' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Panel context argument',
+    ),
+  );
   $export['publication_listing_view'] = $view;
 
   $view = new view();
