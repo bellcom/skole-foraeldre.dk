@@ -135,7 +135,6 @@ html, body {
     font-weight:normal;
     color: black;
     font-size: 14px;
-    line-height: 20px;
     height: 100%;
 }
 
@@ -159,12 +158,11 @@ html, body {
 }
 #page {
 	margin-top:30px;
-	height:100%;
-	display:table;
+	/*height:100%;*/
+	/*display:table;*/
 }
 .footer-main-container{
-	height:1px;
-	display:table-row-group;
+	float:left;
 	width:100%;
 }
 /*
@@ -190,7 +188,7 @@ html, body {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box; 
  	box-sizing: border-box;	 	
- 	min-height: 100%;
+ 	min-height: 50%!important;
 	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
 	height: 100%;
 	margin: 0 auto;
@@ -229,6 +227,7 @@ html, body {
 /*
  * Footer region
  */
+
 .footer-social-region{
 	width:100%;
 	float:left;
@@ -4878,32 +4877,33 @@ body.page-404 #content .action-links{
 body.page-search #columns{
 	padding-bottom:20px;
 }
-body.page-search #block-system-main .search-form{
+#block-system-main .search-form{
 	float:left;
 	width:100%;
 	padding:0;
 	margin:0 auto;
 }
-body.page-search #content h2{
+body.page-search #content h2,
+body.page-taxonomy-term #content h2{
 	display:none;
 }
-body.page-search #block-system-main  .apachesolr-browse-blocks{
+#block-system-main  .apachesolr-browse-blocks{
 	display:block;
 	max-width:1170px;
 	width:100%;
 	margin:0 auto;
 }
-body.page-search #block-system-main .search-form > div{
+#block-system-main .search-form > div{
 	float:left;
 	width:100%;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box; 
     box-sizing: border-box;
 }
-body.page-search #block-system-main .search-form .form-item-keys label{
+#block-system-main .search-form .form-item-keys label{
 	display:none;
 }
-body.page-search #block-system-main .search-form  .form-wrapper{
+#block-system-main .search-form  .form-wrapper{
 	background-color: #f0f0f0;
     border-radius: 30px;
     margin-bottom: 10px;
@@ -4912,13 +4912,13 @@ body.page-search #block-system-main .search-form  .form-wrapper{
     padding-top: 0;
     height:50px;
 }
-body.page-search #block-system-main .search-form  .form-wrapper .form-type-textfield{
+#block-system-main .search-form  .form-wrapper .form-type-textfield{
 	width:90%;
 	margin:0;
 	padding:0;
 	float:left;
 }
-body.page-search #block-system-main .search-form  .form-wrapper .form-type-textfield input{
+#block-system-main .search-form  .form-wrapper .form-type-textfield input{
 	width:100%;
 	float:left;
 	border:none;
@@ -5021,7 +5021,7 @@ body.page-search #block-system-main .search-form  .form-wrapper .form-type-textf
 	font-size:30px;
 	font-weight:400;
 }
-.apachesolr_search-results li{
+.apachesolr_search-results li.search-result{
 	float:left;
 	width:100%;
 	padding-bottom:10px;
@@ -5065,6 +5065,26 @@ body.page-search #block-system-main > ul li{
 .form-item-retain-filters label{
 	font-weight:normal;
 	font-size:16px;
+}
+.search-category {
+	float:left;
+	width:100%;
+}
+.search-category label,
+.search-category .links li a{
+	float:left;
+	color:#454545;
+	font-size: 18px;
+    font-weight: 400;
+    line-height:28px;
+    padding-right: 5px;
+    margin-right:20px;
+}
+.search-category .links{
+	float:left;
+}
+.search-category .links li a:hover{
+	color:#000;
 }
 /* =============================================================================
  *   Media Queries
