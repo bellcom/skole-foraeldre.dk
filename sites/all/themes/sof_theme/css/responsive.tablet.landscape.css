@@ -164,11 +164,7 @@ body {
 /* =============================================================================
  *   Articles , blocks
  * ========================================================================== */
-.bottom-read-also-block,
-.top-article-content{
-		max-width:728px;
-		padding:0;
-	}
+
 /* =============================================================================
  *   Decks
  * ========================================================================== */	
@@ -208,8 +204,13 @@ body {
 	.fixed-pane-title-magazine{
 		font-size:45px;
 		padding-top:55px;
+	}
+	.left-article-region{
+		padding-right:10px;
 	}	
-	
+	.right-article-region{
+		padding-left:10px;
+	}
 }
 @media all and (max-width: 900px){
 	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
@@ -220,4 +221,11 @@ body {
 		min-height:0%;
 	}
 	
+}
+@media all and (max-width: 860px){
+	.right-article-region .right-region-top-links a{
+		font-size:18px;
+		padding-left:8px;
+		padding-right:8px;	
+	}
 }

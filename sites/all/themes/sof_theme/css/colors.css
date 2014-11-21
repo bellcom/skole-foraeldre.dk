@@ -32,13 +32,15 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .sof-column-content h4,
 .recomendation-overview .views-row a,
 .pane-bundle-also-see-pane .read-more a,
-.mag-deck-right-group .field-name-field-magazine-links .field-item a{
+.mag-deck-right-group .field-name-field-magazine-links .field-item a,
+.new-search-wrapper:before,
+.apachesolr_search-results li h3 a {
   color: #00a2eb;
 }
 
 #footer,
 .article-region .field-name-body a.download-article-pdf,
-.right-article-region .right-region-top-links .download-as-pdf,
+.right-article-region .right-region-top-links a,
 ul.pager li.pager-current,
 ul.pager li.pager-next,
 ul.pager li.pager-last,
