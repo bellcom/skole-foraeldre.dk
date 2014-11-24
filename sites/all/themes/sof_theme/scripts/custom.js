@@ -57,6 +57,7 @@
 	
 	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
 	 $( ".search-form #edit-submit" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
 	 
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');

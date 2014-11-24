@@ -98,7 +98,7 @@ body {
     float:right;
     text-transform:uppercase;
     background-image:url('images/nav_button.png');
-    background-position:right 6px;
+    background-position:right 11px;
     background-repeat:no-repeat;
 }
 #nav-activation-link span.active{
@@ -343,6 +343,10 @@ ul.pager li{
 }
 .news-deck-bottom-content{
 	padding-bottom:25px;
+}
+/* Toolbox Deck */
+.toolbox-search-wrapper{
+	font-size:14px;
 }
 /* See also Deck */
 .pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{

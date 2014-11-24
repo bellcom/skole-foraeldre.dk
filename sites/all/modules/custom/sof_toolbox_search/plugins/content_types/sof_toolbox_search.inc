@@ -76,6 +76,7 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
     }
 
     $items['toolbox_bottom'] = array(
+      '#title' => t('Other searches'),
       '#theme' => 'item_list',
       '#items' => $links,
       '#attributes' => array(

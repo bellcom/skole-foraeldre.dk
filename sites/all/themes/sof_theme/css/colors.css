@@ -35,7 +35,8 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .mag-deck-right-group .field-name-field-magazine-links .field-item a,
 .new-search-wrapper:before,
 .apachesolr_search-results li h3 a,
-.search-category .links li a {
+.search-category .links li a,
+.toolbox-search-wrapper:after {
   color: #00a2eb;
 }
 
@@ -62,7 +63,8 @@ ul.pager li.pager-previous,
 .publication-top-right-container .field-name-field-single-link,
 .publication-top-right-container .download-as-pdf,
 .sof_footer_social_media_icon,
-#node_article_full_group_bottomaregion  .field-item a{
+#node_article_full_group_bottomaregion  .field-item a,
+.pane-sof-toolbox-search{
   background-color: #00a2eb;
 }
 

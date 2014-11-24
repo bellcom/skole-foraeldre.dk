@@ -537,6 +537,91 @@ body.node-type-slider #main-content{
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
 }
+/* Search in the Toolbox */
+.pane-sof-toolbox-search{
+	float:left;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.pane-sof-toolbox-search .block-content{
+	width:100%;
+	max-width:1170px;
+	margin:0px auto;
+}
+.sof_toolbox_wrapper,
+.sof_toolbox_wrapper .form-item,
+.sof_toolbox_wrapper .item-list{
+	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    margin:0;
+}
+.sof_toolbox_wrapper .form-item label{
+	color:#fff;
+	margin:23px 0 25px 0;
+	padding:18px 0 0 0;
+	line-height:50px;
+	font-weight:400;
+	font-size:30px;
+	text-align:center;
+	text-transform:uppercase;
+}
+.toolbox-search-wrapper{
+	width:100%;
+	background-color:#f0f0f0;
+	border-radius:30px;
+	border:none;
+	padding:15px 15px 10px 20px;
+	font-size:16px;
+	color:rgba(69, 69, 69, 0.61);
+	position:relative;
+	 -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.toolbox-search-wrapper input{
+	width:100%;
+	border:none;
+	background:#f0f0f0;
+}
+.toolbox-search-wrapper:after{
+   content: "";
+   font-family: "fontello";
+   font-size: 30px;
+   text-align: center;
+   line-height: 38px;
+   position: absolute;
+   right: 20px;
+   bottom:6px;
+   padding:5px 0 0 2%;	
+}
+.sof_toolbox_wrapper .item-list{
+	padding:0 0 10px 0;
+	text-align:center;
+}
+.sof_toolbox_wrapper .item-list h3{
+	color:#000;
+	font-size:24px;
+    font-weight: 200;
+    margin:28px 0 10px 0;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+	
+}
+.sof_toolbox_wrapper .item-list a{
+	color:#fff;
+	font-size:20px;
+	font-weight:28px;
+	font-weight:200px;
+	margin:0 20px 0 0;
+}
+.sof_toolbox_wrapper .item-list a:hover{
+	color:#000;
+}
 /* News Deck */
 .pane-bundle-news-pane{
 	float:left;
@@ -5093,7 +5178,8 @@ body.page-search #block-system-main > ul li{
 	body.node-type-section #main-content-header{
 		padding:0 30px 30px;
 	}
-	body.page-search #columns{
+	body.page-search #columns,
+	.sof_toolbox_wrapper{
 		padding:0 20px 20px 20px;
     }
 	.panel-col-full-main{
