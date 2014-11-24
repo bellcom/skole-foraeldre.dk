@@ -1,25 +1,22 @@
 <?php
+
 /**
  * Implements hook_ctools_plugin_directory().
  */
- function sof_toolbox_search_ctools_plugin_directory($owner, $plugin_type) {	
-	
-	if ($owner == 'ctools' && $plugin_type == 'content_types') {
-		return 'plugins/' . $plugin_type;
-	}
+function sof_toolbox_search_ctools_plugin_directory($owner, $plugin_type) {
+
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/' . $plugin_type;
+  }
 }
- 
+
 /**
  * Implements hook_theme().
  */
- function sof_toolbox_search_theme() {
-  return array(
-    'sof_toolbox_search' => array(
-      'variables' => array(
-        'items' => NULL,
-      ),
+function sof_toolbox_search_theme() {
+  return array('sof_toolbox_search' => array(
+      'variables' => array('items' => NULL, ),
       'template' => 'theme/sof_toolbox_search',
-    ),
-  );
+    ), );
 }
- 
+
