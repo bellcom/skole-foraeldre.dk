@@ -268,6 +268,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
   $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
   $handler->display->display_options['fields']['teaser']['label'] = '';
+  $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
   /* Contextual filter: Apache Solr: content */
   $handler->display->display_options['arguments']['content']['id'] = 'content';

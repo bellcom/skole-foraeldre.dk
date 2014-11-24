@@ -1796,11 +1796,20 @@ article.node-publication .field-type-image.field-label-above h2{
 	float: left;
     padding:20px;
     position: relative;
-    width: 50%;
+    width: 25%;
 }
 .recomendation-public{
 	float:left;
-	width:50%;
+	width:100%;
+	overflow:hidden;
+}
+.view-other-releases .view-content,
+.view-publication-listing-view .view-content{
+	overflow:hidden;
+}
+.recomendation-public .views-row{
+	margin-bottom:-99999px;
+	padding-bottom:99999px;
 }
 .publication-bottom-container .views-row:hover{
 	background-color:#f0f0f0;
@@ -1833,6 +1842,135 @@ article.node-publication .field-type-image.field-label-above h2{
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+}
+/* Publication Listing Page */
+.page-releases h1{
+	font-size:46px;
+	font-weight:400;
+	line-height:44px;
+	margin:30px 0 0 0;
+}
+.page-releases .pane-apachesolr-form{
+	width:100%;
+	float:left;
+}
+.page-releases .pane-apachesolr-form .block-title{
+	color: rgba(69, 69, 69, 0.52);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 34px;
+    padding: 10px 0 15px 0;
+    text-align: left;
+    text-transform:uppercase;
+    width:50%;
+    float:left;
+}
+#apachesolr-panels-search-form > div{
+	background-color: #f0f0f0;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    height:40px;
+}
+#apachesolr-panels-search-form .form-type-textfield{
+	float:left;
+	width:80%;
+	margin:0;
+	padding:10px 0 10px 20px;
+}
+#apachesolr-panels-search-form .form-type-textfield input{
+	background:none;
+	border:none;
+}
+
+#apachesolr-panels-search-form .new-search-wrapper:before {
+   content: "";
+   font-family: "fontello";
+   font-size: 22px;
+   width: 100%;
+   text-align: center;
+   line-height: 38px;
+   position: absolute;
+   left: 0;
+   padding:0px 0 0 2%;
+}
+
+.page-releases .pane-apachesolr-form .block-content{
+	float:left;
+	width:50%;
+}
+.pane-apachesolr-form h2{
+	display:block!important;
+}
+#facetapi-facet-apachesolrsolr-block-im-field-category-publication{
+	float:left;
+	width:100%;
+	margin:0;
+	padding:20px 0 20px 0;
+}
+#facetapi-facet-apachesolrsolr-block-im-field-category-publication li{
+	float:left;
+	list-style:none;
+	margin:0 20px 0 0;	
+}
+#facetapi-facet-apachesolrsolr-block-im-field-category-publication li a{
+	font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-left: 0;
+    margin-right: 20px;
+    text-decoration: none;
+}
+#facetapi-facet-apachesolrsolr-block-im-field-category-publication li a:hover{
+	color:#000;
+	border-bottom:2px solid #000;
+	padding-bottom:6px;
+}
+.view-publication-listing-view{
+	width:100%;
+	float:left;
+}
+.view-publication-listing-view .views-row{
+	float:left;
+	padding:20px 20px 99999px 20px;
+	width:25%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;	
+}
+.view-publication-listing-view .views-row:hover{
+	background-color:#f0f0f0;
+}
+.view-publication-listing-view .views-row .views-field-sm-thumb-article-top-slider-field-image img{
+    box-shadow: 0 0 6px 0 #454545;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}  
+.view-publication-listing-view .views-field-label a{
+	font-size: 22px;
+    line-height: 24px;
+    padding-top: 20px;
+    float:left;
+    width:100%;
+}
+.view-publication-listing-view .views-field-label a:hover{
+	color:#000;
+}
+.view-publication-listing-view .views-field-teaser{
+    color: #454545;
+    font-family: 'conduit_itclight';
+    font-size: 19px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    margin-left: 0;
+    padding-right: 17px;
+    padding-top: 14px;
+    text-align: left;
+    float:left;
 }
 /* =============================================================================
  *   Articles, Basic Page and News

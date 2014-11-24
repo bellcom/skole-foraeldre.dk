@@ -79,7 +79,7 @@ function sof_releases_page_default_page_manager_pages() {
       'prompt' => '',
       'show_keys' => 0,
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Sort in publications',
     );
     $pane->cache = array();
     $pane->style = array(

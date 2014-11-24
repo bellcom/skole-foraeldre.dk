@@ -122,12 +122,12 @@ hide($content['links']);
 		     <?php if ($title): ?>
 		        <h1<?php print $title_attributes; ?>>
 		          <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
-		          <a class="back-to-all-releases-button" href="">&nbsp;</a>
+		          <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
 		        </h1>
 		     <?php endif; ?>
 		     <!-- Print rest of the content -->
 		     <?php print render($content); ?>
-		     <a class="back-to-all-releases-link" href=""><?php print t('Back to all releases');?></a>
+		     <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
 	     </div>
      </div>
   </div>
