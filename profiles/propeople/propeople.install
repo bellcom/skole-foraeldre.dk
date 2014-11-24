@@ -452,6 +452,9 @@ function propeople_change_settings_of_core_search_pages() {
     //Desable "Did you mean … ?" above search results.
     $search_page['settings']['apachesolr_search_spellcheck'] = 0;
 
+    //Enable user input trough url (Toolbox search filters)
+    $search_page['settings']['apachesolr_search_allow_user_input'] = 1;
+
     //Select 'Show enabled facets' blocks in their configured regions'
     $search_page['settings']['apachesolr_search_browse'] = 'blocks';
 

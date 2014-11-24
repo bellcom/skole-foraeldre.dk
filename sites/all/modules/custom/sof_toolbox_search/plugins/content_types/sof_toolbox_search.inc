@@ -41,8 +41,6 @@ function sof_toolbox_search_content_type_edit_form_submit($form, &$form_state) {
 
 /**
  * Run-time rendering of the body of the block (content type)
- *
- * @todo construct the url for the search page on line 71 and 103
  */
 function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context) {
 
