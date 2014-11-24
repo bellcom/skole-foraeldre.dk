@@ -1,27 +1,34 @@
 <?php
+
+/**
+ * @file
+ * Install and uninstall hooks for operations on install/uninstall module.
+ *
+ * @author Lachezar Valchev <lachezar@propeople.dk>
+ */
+
 /**
  * Implements hook_install().
  */
 function sof_footer_social_media_install() {
-	// Set default variables.
-	variable_set('sof_fsm_fb', 'We publish articles and links. We also take discussions, where you are welcome to attend.');
-	variable_set('sof_fsm_tw', 'We are debating items links, updates, and relevant links on Twitter. Join the debate.');
+  // Set default variables.
+  variable_set('sof_fsm_fb', 'We publish articles and links. We also take discussions, where you are welcome to attend.');
+  variable_set('sof_fsm_tw', 'We are debating items links, updates, and relevant links on Twitter. Join the debate.');
 
-
-	// Set message for variables creation
-	$t = get_t();
-	drupal_set_message($t('Social media variables created'));
+  // Set message for variables creation.
+  $t = get_t();
+  drupal_set_message($t('Social media variables created'));
 }
 
 /**
  * Implements hook_uninstall().
  */
 function sof_footer_social_media_uninstall() {
-	// Delete variables.
-	variable_del('sof_fsm_fb');
-	variable_del('sof_fsm_tw');
+  // Delete variables.
+  variable_del('sof_fsm_fb');
+  variable_del('sof_fsm_tw');
 
-	// Set message for variables removal.
-	$t = get_t();
-	drupal_set_message($t('Social media variables removed.'));
- }
+  // Set message for variables removal.
+  $t = get_t();
+  drupal_set_message($t('Social media variables removed.'));
+}
