@@ -36,7 +36,9 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .new-search-wrapper:before,
 .apachesolr_search-results li h3 a,
 .search-category .links li a,
-.toolbox-search-wrapper:after {
+.toolbox-search-wrapper:after,
+.view-publication-listing-view .views-field-label a,
+.item-list-facetapi-facetapi-links li a {
   color: #00a2eb;
 }
 

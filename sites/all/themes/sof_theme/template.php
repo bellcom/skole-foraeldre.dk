@@ -271,7 +271,10 @@ function sof_theme_preprocess_field(&$vars) {
  * Preprocess function for apache solr search field - Add placeholder
  */ 
 function sof_theme_form_alter(&$form, &$form_state, $form_id) {
+	//Add placeholder to search page block
 	$form['basic']['keys']['#attributes']['placeholder'] = t('Search');
+	//Add placeholder to publuication listing page search block
+	$form['apachesolr_panels_search_form']['#attributes']['placeholder'] = t('Search within publications');
 } 
 
 /**

@@ -56,7 +56,7 @@
     attach: function (context, settings) {   
 	
 	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
-	 $( ".search-form #edit-submit" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
 	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
 	 
 	  //Intro Deck
@@ -77,12 +77,12 @@
 		    $span.slice(i, i + 10).wrapAll($div);
       }
       
-      var $span = $(".view-other-releases .views-row");
-	  for (var i = 0; i < $span.length; i += 2) {
+      var $span = $(".view-other-releases .views-row , .view-publication-listing-view .views-row");
+	  for (var i = 0; i < $span.length; i += 4) {
 		    var $div = $("<div/>", {
 		        class: 'recomendation-public'
 		    });
-		    $span.slice(i, i + 2).wrapAll($div);
+		    $span.slice(i, i + 4).wrapAll($div);
       }
                
 	  //Remove colons from field label 
