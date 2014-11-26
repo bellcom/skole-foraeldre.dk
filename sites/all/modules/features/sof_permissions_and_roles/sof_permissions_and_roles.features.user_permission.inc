@@ -527,13 +527,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'panelizer',
   );
 
-  // Exported permission: 'administer panelizer node publication defaults'.
-  $permissions['administer panelizer node publication defaults'] = array(
-    'name' => 'administer panelizer node publication defaults',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
   // Exported permission: 'administer panelizer node section content'.
   $permissions['administer panelizer node section content'] = array(
     'name' => 'administer panelizer node section content',
