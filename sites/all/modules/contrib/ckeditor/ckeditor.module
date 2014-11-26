@@ -45,7 +45,7 @@ define('CKEDITOR_ENTERMODE_DIV', 3);
 global $_ckeditor_configuration;
 global $_ckeditor_ids;
 
-require_once('includes/ckeditor.user.inc');
+module_load_include('inc', 'ckeditor', 'includes/ckeditor.user');
 
 $_ckeditor_configuration = array();
 $_ckeditor_ids = array();
@@ -258,7 +258,6 @@ function ckeditor_page_build(&$page) {
  */
 function ckeditor_form_user_profile_form_alter(&$form, &$form_state) {
   if ($form['#user_category'] == 'account') {
-    module_load_include('inc', 'ckeditor', 'includes/ckeditor.user');
     ckeditor_user_customize($form, $form_state, 'user_profile_form');
   }
 }
@@ -273,7 +272,6 @@ function ckeditor_element_info_alter(&$types) {
 }
 
 /**
- * PROPEOPLE HACK
  * Implements hook_form_FORM_ID_alter() for media_admin_config_browser()
  * https://drupal.org/comment/8141819#comment-8141819.
  */
@@ -286,15 +284,14 @@ function ckeditor_form_media_admin_config_browser_alter(&$form, &$form_state) {
  * https://drupal.org/comment/8141819#comment-8141819
  */
 function ckeditor_media_browser_params_alter(&$stored_params) {
-
   //Prevent this settings to override other instances
   //WYSIWYG comes without settings
   if( empty($stored_params['types']) && empty($stored_params['activePlugins'])){
-  	 $stored_params['enabledPlugins'] = variable_get('media_wysiwyg_wysiwyg_browser_plugins', array());
-  	 $stored_params['file_directory'] = variable_get('media_wysiwyg_wysiwyg_upload_directory', '');
-     $stored_params['types'] = variable_get('media_wysiwyg_wysiwyg_allowed_types', array('audio', 'image', 'video', 'document'));
+    $stored_params['enabledPlugins'] = variable_get('media_wysiwyg_wysiwyg_browser_plugins', array());
+    $stored_params['file_directory'] = variable_get('media_wysiwyg_wysiwyg_upload_directory', '');
+    $stored_params['types'] = variable_get('media_wysiwyg_wysiwyg_allowed_types', array('audio', 'image', 'video', 'document'));
   }
- }
+}
 
 /**
  * This function creates the HTML objects required for CKEditor.
@@ -770,3 +767,4 @@ function ckeditor_field_extra_fields() {
   );
   return $fields;
 }
+

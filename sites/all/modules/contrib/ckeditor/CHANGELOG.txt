@@ -1,6 +1,16 @@
-7.x-1.x dev
+7.x-1.x-dev
+Development snapshot
 
-[#2175565] removed ckeditor.make added in 1.14.
+2014-10-14
+New stable release: 7.x-1.16
+
+[#2357029] SA-CONTRIB-2014-098 - CKEditor - Cross Site Scripting (XSS)
+
+2013-07-15
+New stable release 7.x-1.15
+
+Updated the default URL to CKEditor CDN to use the 4.4.3 version.
+[#2175565] removed ckeditor.make added in 7.x-1.14.
 
 2013-05-08
 New stable release 7.x-1.14
