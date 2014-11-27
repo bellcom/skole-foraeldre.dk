@@ -74,11 +74,13 @@ function sof_general_tweaks_field_extra_fields() {
  */
 function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
   $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
-  $extrafield_name = 'primary_selected_node';
+  $extrafield_name = 'additional_bottom_nodes';
 
   // Attach 'news_deck_latest_3_nodes' to the node as extra field.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
+
     $node->content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
+
   }
 }
 
