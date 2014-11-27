@@ -160,8 +160,6 @@ function sof_theme_process_page(&$variables) {
   }
 }
 
-
-
 /**
  * Override related content field in article node. Block:Related Content Single Blocks
  */
