@@ -142,9 +142,17 @@ function sof_publication_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
         'domain' => array(
           'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
             'weight' => '1',
             'visible' => TRUE,
           ),
