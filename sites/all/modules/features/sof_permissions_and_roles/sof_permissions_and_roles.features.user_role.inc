@@ -10,9 +10,9 @@
 function sof_permissions_and_roles_user_default_roles() {
   $roles = array();
 
-  // Exported role: administrator.
-  $roles['administrator'] = array(
-    'name' => 'administrator',
+  // Exported role: editor.
+  $roles['editor'] = array(
+    'name' => 'editor',
     'weight' => 2,
   );
 

@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * @file
+ * Implements hooks and globally accesible functions.
+ *
+ * @author Lachezar Valchev <lachezar@propeople.dk>
+ */
+
 /**
  * Implements hook_libraries_info().
  */
@@ -9,7 +17,7 @@ function columnizer_libraries_info() {
     'download url' => 'https://github.com/adamwulf/Columnizer-jQuery-Plugin',
     'version arguments' => array(
       'file' => 'jquery.columnizer.min.js',
-      // version 1.6.0
+      // Version 1.6.0
       'pattern' => '/version (\d+\.+\d+)/',
       'lines' => 5,
     ),
@@ -19,6 +27,6 @@ function columnizer_libraries_info() {
       ),
     ),
   );
- 
+
   return $libraries;
 }

@@ -39,6 +39,7 @@ dependencies[] = devel
 dependencies[] = domain
 dependencies[] = domain_alias
 dependencies[] = domain_conf
+dependencies[] = domain_settings
 dependencies[] = domain_theme
 dependencies[] = features
 dependencies[] = fe_block

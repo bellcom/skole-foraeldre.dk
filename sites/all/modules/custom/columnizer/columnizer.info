@@ -2,6 +2,3 @@ name = Columnizer
 description = Integrate the Columnizer library with Drupal
 core = 7.x
 package = "SOF custom"
-
-;files
-files[] = columnizer.module

@@ -1,7 +1,11 @@
 <?php
+
 /**
  * @file
  * Feeds mapper for SOF migration module.
+ *
+ * @author Dobrin Dobrev <ddobrev@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 /**
@@ -44,19 +48,6 @@ function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $b
         'real_target' => $name,
       );
     }
-    /**
-     * Removed.
-    if ($info['type'] == 'taxonomy_term_reference') {
-      $targets["$name:explode-string"] = array(
-        'name' => t('@label by exploded string', array('@label' => check_plain($instance['label']))),
-        'callback' => 'sof_migration_explode_terms_set_target',
-        'description' => t('The @label field by exploded string.', array('@label' => $instance['label'])),
-        'summary_callback' => 'taxonomy_feeds_summary_callback',
-        'form_callback' => 'taxonomy_feeds_form_callback',
-      );
-    }
-     *
-     */
   }
 }
 
@@ -66,13 +57,15 @@ function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $b
 function sof_migration_user_sitecore_set_target($source, $entity, $target, array $values) {
   $entity->uid = 0;
 
-  if ($ident = reset($values)) {
+  $ident = reset($values);
+  if ($ident) {
     if (preg_match('/^' . preg_quote('sitecore\\') . '(.+)$/', $ident, $matches)) {
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'user');
       $query->propertyCondition('mail', "$matches[1]@", 'STARTS_WITH');
       $query->range(0, 1);
-      if ($result = $query->execute()) {
+      $result = $query->execute();
+      if ($result) {
         if (isset($result['user'])) {
           $uids = array_keys($result['user']);
           $entity->uid = reset($uids);
@@ -101,6 +94,7 @@ function sof_migration_file_guid_set_target($source, $entity, $target, array $va
 
         if (!$fid) {
           // @TODO - Possibly remove later.
+          // TODO: What would we do with this one?
           drupal_set_message("Sitecore file ID ({$guid}) could not be found!", 'error');
           watchdog('Sitecore Migrate', "Sitecore file ID ({$guid}) could not be found!", array(), WATCHDOG_ERROR);
         }
@@ -108,7 +102,8 @@ function sof_migration_file_guid_set_target($source, $entity, $target, array $va
         if ($fid && $file = file_load($fid)) {
           $field[LANGUAGE_NONE][] = array(
             'fid' => $file->fid,
-            'display' => 1, // Required for files. Flag "whether to display".
+            // Required for files. Flag "whether to display".
+            'display' => 1,
           );
         }
       }
@@ -164,8 +159,8 @@ function sof_migration_link_set_target($source, $entity, $target, array $values)
       $doc = new DOMDocument();
       $doc->loadXML($value);
       $xpath = new DOMXpath($doc);
+
       foreach ($xpath->query('//link') as $link) {
-        // dpm($doc->saveXML($link), 'link XML');
         $linktype = $link->getAttribute('linktype');
         $linkvalue = array(
           'title' => $link->getAttribute('text'),
@@ -174,7 +169,6 @@ function sof_migration_link_set_target($source, $entity, $target, array $values)
         switch ($linktype) {
           case 'internal':
           case 'media':
-            // $url = "http://kk.internal.kk/id/{$link->getAttribute('id')}"; // No!
             $uuid = $link->getAttribute('id');
             $uuid = trim($uuid, '{}');
             $uuid = strtolower($uuid);

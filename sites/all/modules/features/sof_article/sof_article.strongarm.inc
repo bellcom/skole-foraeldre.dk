@@ -137,6 +137,10 @@ function sof_article_strongarm() {
             'visible' => FALSE,
           ),
           'links_to_nodes' => NULL,
+          'related_content_reference' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
         ),
         'download_as_pdf' => array(
           'full' => array(
@@ -148,6 +152,18 @@ function sof_article_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'video_reference_listing' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
             'weight' => '10',
             'visible' => FALSE,
           ),

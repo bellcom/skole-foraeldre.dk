@@ -3,8 +3,14 @@
 /**
  * @file
  * Miscellaneous.
+ *
+ * @author Dobrin Dobrev <ddobrev@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
+/**
+ * Gets the entity IDs.
+ */
 function sof_migration_url_get_entity_ids($url) {
   $links_map = sof_migration_get_links_map();
 
@@ -20,11 +26,13 @@ function sof_migration_url_get_entity_ids($url) {
     $uuid = strtolower($uuid);
     $return['uuid'] = $uuid;
 
-    if ($nids = entity_get_id_by_uuid('node', array($uuid))) {
+    $nids = entity_get_id_by_uuid('node', array($uuid));
+    if ($nids) {
       $return['nid'] = reset($nids);
     }
 
-    if ($fids = entity_get_id_by_uuid('file', array($uuid))) {
+    $fids = entity_get_id_by_uuid('file', array($uuid));
+    if ($fids) {
       $return['fid'] = reset($fids);
     }
   }
@@ -32,24 +40,15 @@ function sof_migration_url_get_entity_ids($url) {
   return $return;
 }
 
-//function sof_migration_file_download_url($fid, $raw = TRUE) {
-//  $file = file_load($fid);
-//  $uri = file_entity_download_uri($file);
-//
-//  if ($raw) {
-//    return $uri['path'] . '?token=' . rawurlencode($uri['options']['query']['token']);
-//  }
-//
-//  // Just for clarity - this is not an absolute URL.
-//  $uri['options']['absolute'] = FALSE;
-//  return url($uri['path'], $uri['options']);
-//}
-
+/**
+ * Gets the mapping of the links.
+ */
 function sof_migration_get_links_map() {
   static $links;
 
   if (!isset($links)) {
     $links_map_file = drupal_realpath('public://import/misc/links-custom-map.php');
+    // TODO: Check with Dobrin what is the idea here.
     require $links_map_file;
     $links = $export;
   }
