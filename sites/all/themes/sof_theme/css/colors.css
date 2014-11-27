@@ -43,7 +43,6 @@ body.node-type-basic-page .field-name-body blockquote:before,
 }
 
 #footer,
-.article-region .field-name-body a.download-article-pdf,
 .right-article-region .right-region-top-links a,
 ul.pager li.pager-current,
 ul.pager li.pager-next,
@@ -66,7 +65,9 @@ ul.pager li.pager-previous,
 .publication-top-right-container .download-as-pdf,
 .sof_footer_social_media_icon,
 #node_article_full_group_bottomaregion  .field-item a,
-.pane-sof-toolbox-search{
+.pane-sof-toolbox-search,
+.article-region .field-name-body a.download-article-pdf,
+a.sof-pdf-generate-inline-link{
   background-color: #00a2eb;
 }
 

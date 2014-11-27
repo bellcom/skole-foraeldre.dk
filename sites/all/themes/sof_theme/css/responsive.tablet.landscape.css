@@ -211,6 +211,12 @@ body {
 	.right-article-region{
 		padding-left:10px;
 	}
+	/* Publication listing page */
+	.view-publication-listing-view .views-row{
+		width:50%;
+		padding:20px;
+		margin-bottom:0;
+	}
 }
 @media all and (max-width: 900px){
 	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{
