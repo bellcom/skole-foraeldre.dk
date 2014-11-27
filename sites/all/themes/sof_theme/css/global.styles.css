@@ -1883,6 +1883,7 @@ article.node-publication .field-type-image.field-label-above h2{
 #apachesolr-panels-search-form .form-type-textfield input{
 	background:none;
 	border:none;
+	width:100%;
 }
 
 #apachesolr-panels-search-form .new-search-wrapper:before {
@@ -1908,12 +1909,12 @@ article.node-publication .field-type-image.field-label-above h2{
 	float:left;
 	width:100%;
 	margin:0;
-	padding:20px 0 20px 0;
+	padding:20px 0 10px 0;
 }
 #facetapi-facet-apachesolrsolr-block-im-field-category-publication li{
 	float:left;
 	list-style:none;
-	margin:0 20px 0 0;	
+	margin:0 20px 10px 0;	
 }
 #facetapi-facet-apachesolrsolr-block-im-field-category-publication li a{
 	font-size: 22px;
@@ -2148,7 +2149,8 @@ body.node-type-basic-page .field-name-body p{
     padding-top: 14px;
     text-align: left;
  }
-.article-region .field-name-body a.download-article-pdf{
+.article-region .field-name-body a.download-article-pdf,
+a.sof-pdf-generate-inline-link{
 	color: white;
     font-size: 20px;
     font-weight: 200;
@@ -2156,7 +2158,6 @@ body.node-type-basic-page .field-name-body p{
     background-image:url('images/download-pdf-icon.png');
     background-repeat:no-repeat;
     background-position: 97% center;
-    background-color: #00a2eb;
     font-size: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -2168,8 +2169,8 @@ body.node-type-basic-page .field-name-body p{
     box-sizing: border-box;
     float:left;
 }
-.article-region .field-name-body a.download-article-pdf:hover
-{
+.article-region .field-name-body a.download-article-pdf:hover,
+a.sof-pdf-generate-inline-link:hover{
 	opacity:0.8;
 }
 .article-region .field-name-body h2,
@@ -3767,6 +3768,7 @@ a:focus {
 	float:left;
 	margin:0!important;
 	padding:0!important;
+	border-left:1px solid #B2B2B2;
 }
 .third-level li{
 	border-left: 1px solid #b2b2b2;
@@ -5315,6 +5317,9 @@ body.page-search #block-system-main > ul li{
 @media all and (max-width: 1200px){
 	body.node-type-section #main-content-header{
 		padding:0 30px 30px;
+	}
+	body.page-releases #columns{
+		padding:0 30px;
 	}
 	body.page-search #columns,
 	.sof_toolbox_wrapper{

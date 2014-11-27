@@ -249,6 +249,23 @@ body {
 .publication-bottom-container .views-row{
     width:50%;
 }
+/* Publication listing page */
+body.page-releases #columns{
+	padding:0 20px;
+}
+.view-publication-listing-view .views-row{
+	width:100%;
+	padding:20px;
+	margin-bottom:0;
+}
+.page-releases .pane-apachesolr-form .block-title,
+.page-releases .pane-apachesolr-form .block-content{
+	width:100%;
+}
+#facetapi-facet-apachesolrsolr-block-im-field-category-publication li{
+	width:100%;
+}
+/* 
 /* =============================================================================
  *   Articles
  * ========================================================================== */
