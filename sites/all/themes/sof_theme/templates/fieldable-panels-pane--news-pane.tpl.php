@@ -18,9 +18,11 @@
 		<h3 class="follow-title"><?php print t('Follow Us');?></h3>
 		<div class="follow-links">
 		  <a href="" class="news-deck-newsletter">Newsletter</a>
-		  <?php if ( $blockfollow = block_load('follow', 'site')): ?>
-		  	<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockfollow)))); ?>
-		  <?php endif; ?>
+		  <?php
+		    $block = block_load('follow', 'site');
+			$output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+			print $output;
+		  ?>
 		</div>
 	<?php endif; ?>
   	</div>
