@@ -105,7 +105,7 @@ function sof_file_types_file_default_displays() {
   $file_display->status = TRUE;
   $file_display->settings = array(
     'width' => '640',
-    'height' => '360',
+    'height' => '390',
     'theme' => 'dark',
     'color' => 'white',
     'autohide' => '2',
