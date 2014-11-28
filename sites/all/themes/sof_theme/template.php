@@ -156,7 +156,7 @@ function sof_theme_process_page(&$variables) {
     $variables['theme_hook_suggestions'][] = 'page__search';
   }
   if($variables['theme_hook_suggestions'][0] == 'page__taxonomy'){
-  	$variables['theme_hook_suggestions'][] = 'page__search';
+    $variables['theme_hook_suggestions'][] = 'page__search';
   }
 }
 
@@ -267,20 +267,20 @@ function sof_theme_preprocess_field(&$vars) {
 
 /**
  * Preprocess function for apache solr search field - Add placeholder
- */ 
+ */
 function sof_theme_form_alter(&$form, &$form_state, $form_id) {
-	//Add placeholder to search page block
-	$form['basic']['keys']['#attributes']['placeholder'] = t('Search');
-	//Add placeholder to publuication listing page search block
-	$form['apachesolr_panels_search_form']['#attributes']['placeholder'] = t('Search within publications');
-} 
+  //Add placeholder to search page block
+  $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
+  //Add placeholder to publuication listing page search block
+  $form['apachesolr_panels_search_form']['#attributes']['placeholder'] = t('Search within publications');
+}
 
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
- */ 
+ */
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 
-  $fieldable_pane_type = $variables['elements']['#bundle']; 
+  $fieldable_pane_type = $variables['elements']['#bundle'];
   //Add title on every deck
   switch($fieldable_pane_type){
         case 'news_pane':
@@ -371,11 +371,11 @@ function sof_theme_preprocess_node(&$variables) {
           $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
       $variables['theme_hook_suggestion'] = 'node__seealso_deck';
       }
-        //Video Deck display
-        else if($view_mode == 'video_reference_listing'){
-          $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
-      $variables['theme_hook_suggestion'] = 'node__video_reference';
-      }
+    //Video Deck display
+    else if($view_mode == 'video_reference_listing'){
+        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+        $variables['theme_hook_suggestion'] = 'node__video_reference';
+     }
     //Link to nodes display
         else if($view_mode == 'links_to_nodes'){
           $variables['submitted'] = FALSE;
