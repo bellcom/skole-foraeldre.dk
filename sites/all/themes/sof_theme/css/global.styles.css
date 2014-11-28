@@ -1073,6 +1073,14 @@ body.node-type-slider #main-content{
 	float:left;
 	width:100%;
 }
+.video-deck-img .media-youtube-video,
+.video-deck-img .media-vimeo-video{
+	height:190px;
+}
+.video-deck-img .media-youtube-player,
+.video-deck-img .media-vimeo-player{
+	height:100%;
+}
 .arrow-div{
 	background-image: url("images/video-background.png");
     background-position: center center;
