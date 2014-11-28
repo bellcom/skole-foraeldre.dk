@@ -73,13 +73,13 @@ function sof_general_tweaks_field_extra_fields() {
  * Implements hook_node_view().
  */
 function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
-  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
+  $extrafields = field_extra_fields_get_display('node', $node -> type, $view_mode);
   $extrafield_name = 'additional_bottom_nodes';
 
   // Attach 'news_deck_latest_3_nodes' to the node as extra field.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
 
-    $node->content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
+    $node -> content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
 
   }
 }
@@ -92,8 +92,8 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
     case 'fieldable_panels_pane':
       // Attach 'recommended_items_overview' view to the panel pane as extra
       // field.
-      if ($entity->bundle == 'recommended_items_pane') {
-        $entity->content['overview_recommended_items'] = array(
+      if ($entity -> bundle == 'recommended_items_pane') {
+        $entity -> content['overview_recommended_items'] = array(
           '#type' => 'item',
           '#title' => t('Overview'),
           '#markup' => views_embed_view('recommended_items_overview', 'recommended_items_overview'),
@@ -101,13 +101,13 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
       }
       // Attach 'we_are_writing_about_additional_displays' view to the panel
       // pane as extra field.
-      elseif ($entity->bundle == 'what_we_write_about_pane') {
-        $entity->content['most_read_nodes'] = array(
+      elseif ($entity -> bundle == 'what_we_write_about_pane') {
+        $entity -> content['most_read_nodes'] = array(
           '#type' => 'item',
           '#title' => t('Most read'),
           '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'most_popular'),
         );
-        $entity->content['last_updated_nodes'] = array(
+        $entity -> content['last_updated_nodes'] = array(
           '#type' => 'item',
           '#title' => t('Latest updated'),
           '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'latest_updated'),
@@ -123,13 +123,13 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
-  $node = node_load($entity->vid);
+  $node = node_load($entity -> vid);
 
   // Render the node and strip all html tags from it.
   $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
 
   // Add new field for drupal search.
-  $document->addField('ts_custom_text', $full_node_html);
+  $document -> addField('ts_custom_text', $full_node_html);
 }
 
 /**
@@ -139,13 +139,13 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
  */
 function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $query) {
   // Make ts_custom_text custom field searchable.
-  $query->addParam('fl', 'ts_custom_text');
+  $query -> addParam('fl', 'ts_custom_text');
 
   // Expose additional fields in the search result page.
-  $query->addParam('fl', 'im_field_category');
-  $query->addParam('fl', 'im_field_category_publication');
-  $query->addParam('fl', 'im_field_category_single');
-  $query->addParam('fl', 'teaser');
+  $query -> addParam('fl', 'im_field_category');
+  $query -> addParam('fl', 'im_field_category_publication');
+  $query -> addParam('fl', 'im_field_category_single');
+  $query -> addParam('fl', 'teaser');
 }
 
 /**
@@ -156,4 +156,30 @@ function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $q
 function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
   // Add human readable name for our custom field.
   $map['ts_custom_text'] = t('The full node object');
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
+
+  //Alter taxonomy search form
+  switch ($form_id) {
+    case 'apachesolr_search_custom_page_search_form':
+      {
+        if (isset($form['#search_page']['page_id'])) {
+          if ($form['#search_page']['page_id'] == 'taxonomy_search') {
+
+            //Remove retain filters field
+            unset($form['basic']['retain-filters']);
+
+            //Change form action to global search page
+            $form['#action'] = '/search/site';
+
+          }
+        }
+      }
+      break;
+  }
+
 }
