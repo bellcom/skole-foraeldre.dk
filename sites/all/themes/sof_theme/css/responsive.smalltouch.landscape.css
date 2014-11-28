@@ -380,7 +380,11 @@ ul.pager li{
 }
 .video-deck-img .media-youtube-video,
 .video-deck-img .media-vimeo-video{
-	height:initial;
+	height:380px;
+}
+.video-deck-img .media-youtube-player,
+.video-deck-img .media-vimeo-player{
+	height:100%;
 }
 
 /* Intro Deck */

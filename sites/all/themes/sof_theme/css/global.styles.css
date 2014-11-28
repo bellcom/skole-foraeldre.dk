@@ -324,8 +324,7 @@ html, body {
 	max-width:1170px;
 	margin:0 auto;
 	color: black;
-    font-family: "conduit_itcregular",sans-serif;
-    font-weight:normal;
+    font-family: "conduit_itclight";
     font-size: 19px;
     padding:0;
     -webkit-box-sizing: border-box;
@@ -1079,7 +1078,7 @@ body.node-type-slider #main-content{
 }
 .video-deck-img .media-youtube-player,
 .video-deck-img .media-vimeo-player{
-	height:100%;
+	height:190px;
 }
 .arrow-div{
 	background-image: url("images/video-background.png");
