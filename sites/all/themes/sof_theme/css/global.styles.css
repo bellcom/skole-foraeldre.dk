@@ -324,8 +324,7 @@ html, body {
 	max-width:1170px;
 	margin:0 auto;
 	color: black;
-    font-family: "conduit_itcregular",sans-serif;
-    font-weight:normal;
+    font-family: "conduit_itclight";
     font-size: 19px;
     padding:0;
     -webkit-box-sizing: border-box;
@@ -1072,6 +1071,14 @@ body.node-type-slider #main-content{
 	position:relative;
 	float:left;
 	width:100%;
+}
+.video-deck-img .media-youtube-video,
+.video-deck-img .media-vimeo-video{
+	height:190px;
+}
+.video-deck-img .media-youtube-player,
+.video-deck-img .media-vimeo-player{
+	height:190px;
 }
 .arrow-div{
 	background-image: url("images/video-background.png");
@@ -2319,6 +2326,7 @@ body.node-type-basic-page video{
 #node_article_full_group_rightaregion{
 	float:left;
 	margin-bottom:40px;
+	width:100%;
 }
 .right-article-region{
 	width:33.3%;
@@ -3214,6 +3222,10 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 .banner-bean-link{
 	padding:30px;
 	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
 }
 .banner-bean-link:hover, .banner-bean-link:focus{
 	text-decoration:none;

@@ -378,6 +378,15 @@ ul.pager li{
 .pane-bundle-video-pane  .field-name-field-three-videos .field-item{
 	width:100%;
 }
+.video-deck-img .media-youtube-video,
+.video-deck-img .media-vimeo-video{
+	height:380px;
+}
+.video-deck-img .media-youtube-player,
+.video-deck-img .media-vimeo-player{
+	height:100%;
+}
+
 /* Intro Deck */
 .intro-deck-group-first{
 	width:100%;
