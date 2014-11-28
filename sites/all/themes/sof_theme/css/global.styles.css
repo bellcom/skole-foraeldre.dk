@@ -2518,7 +2518,7 @@ body.node-type-basic-page video{
 #block-views-read-also-block .views-field-view-node a:hover{
 	color:#000;
 }
-#node_article_full_group_bottomaregion {
+.group-bottomaregion {
 	float:left;
 	width:33.3%;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -2526,10 +2526,10 @@ body.node-type-basic-page video{
     box-sizing: border-box;
     padding:0 15px 15px 15px;
 }
-#node_article_full_group_bottomaregion h3{
+.group-bottomaregion h3{
 	margin:0;
 }
-#node_article_full_group_bottomaregion .field-name-field-link h2{
+.group-bottomaregion .field-name-field-link h2{
 	margin-bottom: 10px;
 	font-size: 24px;
 	line-height: 28px;
@@ -2538,7 +2538,7 @@ body.node-type-basic-page video{
 	text-align: left;
 	font-weight:normal;
 }
-#node_article_full_group_bottomaregion  .field-item{
+.group-bottomaregion  .field-item{
 	width:100%;
 	float:left;
 	margin-top: 7px;
@@ -2546,18 +2546,19 @@ body.node-type-basic-page video{
 	line-height: 25px;
 	text-align: left;
 }
-#node_article_full_group_bottomaregion  .field-item a{
+.group-bottomaregion  .field-item a{
 	padding: 9px 14px 7px;
 	border-radius: 5%;
 	color: #FFF;
 	font-size: 16px;
-	text-align: center;
+	text-align: left;
+	float:left;
 	letter-spacing: 1px;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight:normal;
 }
-#node_article_full_group_bottomaregion  .field-item a:hover{
+.group-bottomaregion  .field-item a:hover{
 	opacity:0.8;
 }
 /* =============================================================================
@@ -3303,7 +3304,9 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 #site-name a:focus {
   text-decoration: underline;
 }
-
+input:focus{
+	outline: 0;
+}
 /*
  * Site slogan (h2)
  */
@@ -3494,7 +3497,7 @@ a.active { }
 
 a:hover,
 a:focus {
-
+	border:none!important;
 }
 
 
