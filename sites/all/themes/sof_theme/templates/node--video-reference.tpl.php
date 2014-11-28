@@ -113,7 +113,6 @@ $fielvideo=$content['field_video'];
     <?php if ($fielvideo): ?>
     <div class="video-deck-img">
       <?php  print render ($content['field_video']);?>
-      <a href="<?php print $node_url; ?>#video" rel="bookmark"></a>
     </div>
     <?php endif; ?>
     <?php if ($title): ?>
