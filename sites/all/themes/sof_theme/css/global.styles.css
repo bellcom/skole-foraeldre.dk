@@ -2374,7 +2374,8 @@ body.node-type-basic-page video{
 	background-image:url("images/all-publications.png");
 	background-position:97% center;
 }
-.right-article-region .right-region-top-links .download-as-pdf:hover{
+.right-article-region .right-region-top-links .download-as-pdf:hover,
+.right-article-region .right-region-top-links  .publications-btn:hover{
 	opacity:0.8;
 	text-decoration:none;
 }
@@ -3119,6 +3120,13 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
  *   BLOCKS
  * ========================================================================== */
 /* Related Terms and Related Articles Slideshow */
+.flex-direction-nav{
+	float: left;
+	position: absolute;
+	top: 109px;
+	left: 0px;
+	width: 100%;
+}
 .flex-direction-nav li a{
 	display:block!important;
 }
