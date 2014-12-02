@@ -53,9 +53,21 @@
   * Wrapping Scripts 
   */	
   Drupal.behaviors.sofWrapping = {
-    attach: function (context, settings) {   
+    attach: function (context, settings) {  
 	
+	// Position of flexslider navigation arrows
+	function SliderNavigationposition() {
+	     var heightSlideimg = $('.flexslider .slides img').height();
+   		 $('.flex-direction-nav').css('top',heightSlideimg/2);	
+	}
+
+	$(document).ready(SliderNavigationposition);
+	$(window).resize(SliderNavigationposition);
+
+     //Remove link from last navigation level 
 	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
+	 
+	 //Apache Solr Search edit form
 	 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
 	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
 	 
