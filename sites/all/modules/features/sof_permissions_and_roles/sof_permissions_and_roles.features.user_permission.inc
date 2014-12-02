@@ -1355,7 +1355,9 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1372,7 +1374,9 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'delete own basic_page content'.
   $permissions['delete own basic_page content'] = array(
     'name' => 'delete own basic_page content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1399,28 +1403,36 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'delete own news content'.
   $permissions['delete own news content'] = array(
     'name' => 'delete own news content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own publication content'.
   $permissions['delete own publication content'] = array(
     'name' => 'delete own publication content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own section content'.
   $permissions['delete own section content'] = array(
     'name' => 'delete own section content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own slider content'.
   $permissions['delete own slider content'] = array(
     'name' => 'delete own slider content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1439,6 +1451,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete own webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -1889,7 +1902,9 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'edit own article content'.
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1906,7 +1921,9 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'edit own basic_page content'.
   $permissions['edit own basic_page content'] = array(
     'name' => 'edit own basic_page content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1951,28 +1968,36 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'edit own news content'.
   $permissions['edit own news content'] = array(
     'name' => 'edit own news content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own publication content'.
   $permissions['edit own publication content'] = array(
     'name' => 'edit own publication content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own section content'.
   $permissions['edit own section content'] = array(
     'name' => 'edit own section content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own slider content'.
   $permissions['edit own slider content'] = array(
     'name' => 'edit own slider content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1991,6 +2016,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit own webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -2180,6 +2206,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'search content',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
   );
@@ -2366,6 +2394,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'use advanced search',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'search',
   );
