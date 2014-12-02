@@ -4592,6 +4592,9 @@ ul.action-links li {}
 	margin:0;
 	padding:0;
 }
+#footer .region-footer .footer-logo img{
+	max-width:300px;
+}
 #footer .region-footer .block:nth-child(2){
 	width:30%;
 	line-height:24px;
