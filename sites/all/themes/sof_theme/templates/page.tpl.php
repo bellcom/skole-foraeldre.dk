@@ -242,11 +242,9 @@
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">
-	        <?php if ($site_logo): ?>
-	            <div class="footer-logo">
-	              <?php print $site_logo; ?>
-	            </div>
-	        <?php endif; ?>
+	        <div class="footer-logo">
+	      	  <img src="<?php print file_create_url(theme_get_setting('slogo_path')); ?>" />
+	        </div>
 	        <?php print render($page['footer']['block_1']); ?>
 	        <?php print render($page['footer']['block_2']); ?>
 	        <?php print $attribution; ?>
