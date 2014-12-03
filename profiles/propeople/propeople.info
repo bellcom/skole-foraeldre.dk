@@ -164,4 +164,5 @@ dependencies[] = sof_releases_page
 dependencies[] = sof_views_contents
 dependencies[] = sof_views_references
 dependencies[] = sof_blocks
+dependencies[] = sof_mailchimp_settings
 

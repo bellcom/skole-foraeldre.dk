@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF Mailchimp settings feature.
+ */
+
+include_once 'sof_mailchimp_settings.features.inc';
