@@ -58,7 +58,7 @@
 	// Position of flexslider navigation arrows
 	function SliderNavigationposition() {
 	     var heightSlideimg = $('.flexslider .slides img').height();
-   		 $('.flex-direction-nav').css('top',heightSlideimg/2);	
+   		 $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);	
 	}
 
 	$(document).ready(SliderNavigationposition);

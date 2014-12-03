@@ -515,6 +515,9 @@ ul.pager li{
 	#header{
 		padding:0;
 	}
+	.view-related-articles-slider .flex-direction-nav{
+		top:46%;
+	}
 }
 @media all and (max-width: 350px){
 	#logo img{
