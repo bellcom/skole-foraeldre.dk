@@ -1695,6 +1695,10 @@ article.node-publication .field-type-image.field-label-above h2{
 	color:#000;
 	float:left;
 }
+.publication-top-right-container .node-title a:nth-child(1){
+		width:87%;
+	text-align:left;
+}
 .publication-top-right-container .field-name-field-teaser{
 	float:left;
 	width:100%;
