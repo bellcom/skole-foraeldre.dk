@@ -389,6 +389,25 @@ function domain_conf_domain_batch() {
       );
     }
   }
+  if (function_exists('apachesolr_site_hash')) {
+    $batch['apachesolr_site_hash'] = array(
+      '#form' => array(
+        '#title' => t('Apache Solr site hash'),
+        '#type' => 'textfield',
+        '#description' => t('Unique site hash for Apache Solr.'),
+      ),
+      '#domain_action' => 'domain_conf',
+      '#permission' => 'administer site configuration',
+      '#system_default' => apachesolr_site_hash(),
+      '#meta_description' => t('Set Apache Solr site hash for each domain.'),
+      '#variable' => 'apachesolr_site_hash',
+      '#data_type' => 'string',
+      '#weight' => 10,
+      '#group' => t('Apache Solr'),
+      '#update_all' => TRUE,
+      '#module' => t('Apache Solr'),
+    );
+  }
   foreach ($batch as $key => $value) {
     if (!isset($batch[$key]['#module'])) {
       $batch[$key]['#module'] = t('Domain Configuration');

@@ -16,5 +16,11 @@ function sof_permissions_and_roles_user_default_roles() {
     'weight' => 2,
   );
 
+  // Exported role: site editor.
+  $roles['site editor'] = array(
+    'name' => 'site editor',
+    'weight' => 3,
+  );
+
   return $roles;
 }
