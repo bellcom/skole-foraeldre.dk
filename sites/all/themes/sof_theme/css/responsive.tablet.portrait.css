@@ -263,6 +263,16 @@ body {
 #content .panel-flexible{
 	margin:0px!important;
 }
+.slide-inner-content{
+	padding-right:10%;
+	padding-left:10%;
+	width:90%;
+}
+.slide-inner-content .field-name-field-teaser .field-item,
+.slide-inner-content .field-name-field-small-title .field-item{
+		padding-left:0px;
+		padding-right:0px;
+}
 /* =============================================================================
  *   Blocks
  * ========================================================================== */
