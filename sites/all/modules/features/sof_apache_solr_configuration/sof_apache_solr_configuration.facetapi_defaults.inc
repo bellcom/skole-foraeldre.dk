@@ -13,6 +13,27 @@ function sof_apache_solr_configuration_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'apachesolr@solr::im_field_category_publication';
+  $facet->searcher = 'apachesolr@solr';
+  $facet->realm = '';
+  $facet->facet = 'im_field_category_publication';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'or',
+    'hard_limit' => '50',
+    'dependencies' => array(
+      'roles' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => 0,
+    'flatten' => '0',
+    'query_type' => 'term',
+  );
+  $export['apachesolr@solr::im_field_category_publication'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'apachesolr@solr:block:im_field_category_publication';
   $facet->searcher = 'apachesolr@solr';
   $facet->realm = 'block';

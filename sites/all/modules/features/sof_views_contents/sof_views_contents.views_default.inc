@@ -271,6 +271,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  /* Sort criterion: Apache Solr: ds_changed */
+  $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
   /* Contextual filter: Apache Solr: content */
   $handler->display->display_options['arguments']['content']['id'] = 'content';
   $handler->display->display_options['arguments']['content']['table'] = 'apachesolr__solr';
