@@ -78,7 +78,7 @@
       
       //Magazine Deck               	
       $(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
-   
+      
    		
       //Recomended item deck, wrapp 10 elements in one
       var $span = $(".view-id-recommended_items_overview .views-row");
@@ -89,12 +89,23 @@
 		    $span.slice(i, i + 10).wrapAll($div);
       }
       
+      //Publication listing page wrapp every 4 item in one 
       var $span = $(".view-other-releases .views-row , .view-publication-listing-view .views-row");
 	  for (var i = 0; i < $span.length; i += 4) {
 		    var $div = $("<div/>", {
 		        class: 'recomendation-public'
 		    });
 		    $span.slice(i, i + 4).wrapAll($div);
+      }
+      
+      //Publication listing page wrapp every 2 item in one 
+      if ( $(window).width() < 920 && $(window).width() > 580 ) {
+		  for (var i = 0; i < $span.length; i += 2) {
+			    var $div = $("<div/>", {
+			        class: 'recomendation-public'
+			    });
+			    $span.slice(i, i + 2).wrapAll($div);
+	      }
       }
                
 	  //Remove colons from field label 
