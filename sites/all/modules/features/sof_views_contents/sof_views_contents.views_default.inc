@@ -88,6 +88,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: News deck latest 3 news */
   $handler = $view->new_display('panel_pane', 'News deck latest 3 news', 'news_deck_latest_three_news');
@@ -207,6 +212,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'publication' => 'publication',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Other releases */
   $handler = $view->new_display('block', 'Other releases', 'block');
@@ -312,7 +322,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'read_also';
-  $view->description = 'Block on the bottom of the articles/news. Two random related articles(left) and categories with links to section pages(right).';
+  $view->description = 'Block on the bottom of the articles/news. Two random related articles/news on the left side of the bottom region';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Read also';
@@ -443,6 +453,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -538,6 +553,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Recommended items overview */
   $handler = $view->new_display('panel_pane', 'Recommended items overview', 'recommended_items_overview');
@@ -703,7 +723,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'related_content';
-  $view->description = 'Block on the article page with links to section pages conected to the article by terms';
+  $view->description = 'Block on the article/news page with links to related articles/news related by \'Global category\'';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Related content';
@@ -790,6 +810,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -922,6 +947,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Section header */
   $handler = $view->new_display('panel_pane', 'Section header', 'section_default_header');
@@ -1067,6 +1097,11 @@ function sof_views_contents_views_default_views() {
     'news' => 'news',
     'section' => 'section',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Latest updated */
   $handler = $view->new_display('panel_pane', 'Latest updated', 'latest_updated');

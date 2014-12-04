@@ -412,8 +412,14 @@ function sof_news_field_default_field_instances() {
       ),
       'video_reference_listing' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => 1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => '',
+          'image_style' => 'article_top_slider',
+        ),
+        'type' => 'image',
         'weight' => 1,
       ),
     ),
@@ -1026,13 +1032,8 @@ function sof_news_field_default_field_instances() {
       ),
       'video_reference_listing' => array(
         'label' => 'hidden',
-        'module' => 'mediafield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'file_view_mode' => 'default',
-        ),
-        'type' => 'media',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),

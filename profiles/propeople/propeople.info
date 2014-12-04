@@ -42,6 +42,7 @@ dependencies[] = domain_conf
 dependencies[] = domain_nav
 dependencies[] = domain_settings
 dependencies[] = domain_theme
+dependencies[] = domain_views
 dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = color_field
