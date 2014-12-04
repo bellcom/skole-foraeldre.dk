@@ -500,6 +500,33 @@ function sof_theme_preprocess_search_result(&$variables) {
 
 }
 
+/*  Preprocess search facet 
+ * hide facet counts */
+function sof_theme_facetapi_link_inactive($variables) {
+  // Builds accessible markup.
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => FALSE,
+  );
+  $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
+ 
+  // Sanitizes the link text if necessary.
+  $sanitize = empty($variables['options']['html']);
+  $variables['text'] = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
+ 
+// Adds count to link if one was passed.
+  /*if (isset($variables['count'])) {
+    $variables['text'] .= ' ' . theme('facetapi_count', $variables);
+  }*/
+
+  // Resets link text, sets to options to HTML since we already sanitized the
+  // link text and are providing additional markup for accessibility.
+  $variables['text'] .= $accessible_markup;
+  $variables['options']['html'] = TRUE;
+  return theme_link($variables);
+}
+
 /**
  * Helper function for generating "Category"(term) links for template_preprocess_search_result()
  *
