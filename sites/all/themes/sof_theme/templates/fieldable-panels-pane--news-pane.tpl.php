@@ -13,7 +13,7 @@
   	</div>
   	<!-- Right Content -->
   	<div class="news-deck-bottom-right-content">
-	<!-- Related terms block -->
+	<!-- Follow site block -->
 	<?php if ( $followlinks = block_load('follow', 'site')): ?>
 		<h3 class="follow-title"><?php print t('Follow Us');?></h3>
 		<div class="follow-links">

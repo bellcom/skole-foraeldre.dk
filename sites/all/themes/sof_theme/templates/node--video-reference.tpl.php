@@ -106,14 +106,14 @@
  */
 hide($content['comments']);
 hide($content['links']);
-$fieldiamge=$content['field_image_slider'];
+$fieldimage=$content['field_image_slider'];
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <!-- Image -->
-    <?php if ($fieldiamge): ?>
+    <?php if ($fieldimage): ?>
     <div class="video-deck-img">
-    	<?php  print render ($content['field_image_slider']);?>
-    	<a href="<?php print $node_url; ?>#video" rel="bookmark"> <div class="arrow-div"></div></a>
+      <?php print render ($content['field_image_slider']);?>
+      <a href="<?php print $node_url; ?>#video" rel="bookmark"> <div class="arrow-div"></div></a>
     </div>
     <?php endif; ?>
     <?php if ($title): ?>

@@ -88,6 +88,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: News deck latest 3 news */
   $handler = $view->new_display('panel_pane', 'News deck latest 3 news', 'news_deck_latest_three_news');
@@ -207,6 +212,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'publication' => 'publication',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Other releases */
   $handler = $view->new_display('block', 'Other releases', 'block');
@@ -230,6 +240,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '8';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -267,21 +278,51 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
   $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
   $handler->display->display_options['fields']['teaser']['label'] = '';
+  $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  /* Sort criterion: Apache Solr: ds_changed */
+  $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
+  /* Contextual filter: Apache Solr: content */
+  $handler->display->display_options['arguments']['content']['id'] = 'content';
+  $handler->display->display_options['arguments']['content']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['arguments']['content']['field'] = 'content';
+  $handler->display->display_options['arguments']['content']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['content']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['content']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['content']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['content']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['content']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['content']['validate_options']['code'] = 'return $argument ? true : false;';
+  $handler->display->display_options['arguments']['content']['validate']['fail'] = 'ignore';
   /* Filter criterion: Apache Solr: bundle */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['value'] = 'publication';
+  $handler->display->display_options['filters']['bundle']['group'] = 1;
 
   /* Display: Grid listing publication page */
   $handler = $view->new_display('panel_pane', 'Grid listing publication page', 'grid_listing_publication');
   $handler->display->display_options['display_description'] = 'List of publications as greed 2x4. Image, title and teaser';
+  $handler->display->display_options['argument_input'] = array(
+    'content' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Panel context argument',
+    ),
+  );
   $export['publication_listing_view'] = $view;
 
   $view = new view();
   $view->name = 'read_also';
-  $view->description = 'Block on the bottom of the articles/news. Two random related articles(left) and categories with links to section pages(right).';
+  $view->description = 'Block on the bottom of the articles/news. Two random related articles/news on the left side of the bottom region';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Read also';
@@ -412,6 +453,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -507,6 +553,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Recommended items overview */
   $handler = $view->new_display('panel_pane', 'Recommended items overview', 'recommended_items_overview');
@@ -672,7 +723,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'related_content';
-  $view->description = 'Block on the article page with links to section pages conected to the article by terms';
+  $view->description = 'Block on the article/news page with links to related articles/news related by \'Global category\'';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Related content';
@@ -759,6 +810,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -849,6 +905,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -886,6 +947,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Section header */
   $handler = $view->new_display('panel_pane', 'Section header', 'section_default_header');
@@ -1031,6 +1097,11 @@ function sof_views_contents_views_default_views() {
     'news' => 'news',
     'section' => 'section',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Latest updated */
   $handler = $view->new_display('panel_pane', 'Latest updated', 'latest_updated');

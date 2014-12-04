@@ -2,6 +2,3 @@ name = SOF General Tweaks
 description = Tweak hooks not related to big functionallity changes.(widget alter, form alter etc.)
 core = 7.x
 package = "SOF custom"
-
-;files
-files[] = sof_general_tweaks.module

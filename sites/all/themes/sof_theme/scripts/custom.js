@@ -53,10 +53,23 @@
   * Wrapping Scripts 
   */	
   Drupal.behaviors.sofWrapping = {
-    attach: function (context, settings) {   
+    attach: function (context, settings) {  
 	
+	// Position of flexslider navigation arrows
+	function SliderNavigationposition() {
+	     var heightSlideimg = $('.flexslider .slides img').height();
+   		 $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);	
+	}
+
+	$(document).ready(SliderNavigationposition);
+	$(window).resize(SliderNavigationposition);
+
+     //Remove link from last navigation level 
 	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
-	 $( "#edit-submit" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 
+	 //Apache Solr Search edit form
+	 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
 	 
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');
@@ -65,7 +78,7 @@
       
       //Magazine Deck               	
       $(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
-   
+      
    		
       //Recomended item deck, wrapp 10 elements in one
       var $span = $(".view-id-recommended_items_overview .views-row");
@@ -76,12 +89,23 @@
 		    $span.slice(i, i + 10).wrapAll($div);
       }
       
-      var $span = $(".view-other-releases .views-row");
-	  for (var i = 0; i < $span.length; i += 2) {
+      //Publication listing page wrapp every 4 item in one 
+      var $span = $(".view-other-releases .views-row , .view-publication-listing-view .views-row");
+	  for (var i = 0; i < $span.length; i += 4) {
 		    var $div = $("<div/>", {
 		        class: 'recomendation-public'
 		    });
-		    $span.slice(i, i + 2).wrapAll($div);
+		    $span.slice(i, i + 4).wrapAll($div);
+      }
+      
+      //Publication listing page wrapp every 2 item in one 
+      if ( $(window).width() < 920 && $(window).width() > 580 ) {
+		  for (var i = 0; i < $span.length; i += 2) {
+			    var $div = $("<div/>", {
+			        class: 'recomendation-public'
+			    });
+			    $span.slice(i, i + 2).wrapAll($div);
+	      }
       }
                
 	  //Remove colons from field label 

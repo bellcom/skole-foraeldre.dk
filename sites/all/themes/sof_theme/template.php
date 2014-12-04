@@ -151,14 +151,14 @@ function sof_theme_process_page(&$variables) {
     // Make sure the shortcut link is the first item in title_suffix.
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
-
   // Add theme hook suggestion for search page
   if (arg(0)=='search' && arg(1) && arg(2)) {
-    $vars['theme_hook_suggestions'][] = 'page__search';
+    $variables['theme_hook_suggestions'][] = 'page__search';
+  }
+  if($variables['theme_hook_suggestions'][0] == 'page__taxonomy'){
+    $variables['theme_hook_suggestions'][] = 'page__search';
   }
 }
-
-
 
 /**
  * Override related content field in article node. Block:Related Content Single Blocks
@@ -267,17 +267,20 @@ function sof_theme_preprocess_field(&$vars) {
 
 /**
  * Preprocess function for apache solr search field - Add placeholder
- */ 
+ */
 function sof_theme_form_alter(&$form, &$form_state, $form_id) {
-	$form['basic']['keys']['#attributes']['placeholder'] = t('Search');
-} 
+  //Add placeholder to search page block
+  $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
+  //Add placeholder to publuication listing page search block
+  $form['apachesolr_panels_search_form']['#attributes']['placeholder'] = t('Search within publications');
+}
 
 /**
  * Preprocess function for fieldable-panels-pane.tpl.php
- */ 
+ */
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 
-  $fieldable_pane_type = $variables['elements']['#bundle']; 
+  $fieldable_pane_type = $variables['elements']['#bundle'];
   //Add title on every deck
   switch($fieldable_pane_type){
         case 'news_pane':
@@ -313,7 +316,6 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
-
     //Add theme sugestions for publication
     if ( $node->type == 'publication' ){
       $variables['theme_hook_suggestion'] = 'node__publication__full';
@@ -369,11 +371,11 @@ function sof_theme_preprocess_node(&$variables) {
           $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
       $variables['theme_hook_suggestion'] = 'node__seealso_deck';
       }
-        //Video Deck display
-        else if($view_mode == 'video_reference_listing'){
-          $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
-      $variables['theme_hook_suggestion'] = 'node__video_reference';
-      }
+    //Video Deck display
+    else if($view_mode == 'video_reference_listing'){
+        $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+        $variables['theme_hook_suggestion'] = 'node__video_reference';
+     }
     //Link to nodes display
         else if($view_mode == 'links_to_nodes'){
           $variables['submitted'] = FALSE;
@@ -496,6 +498,78 @@ function sof_theme_preprocess_search_result(&$variables) {
  //Add node teaser instead of snippet
  $variables['teaser'] = $variables['result']['fields']['teaser'];
 
+}
+
+
+/**
+ * Returns HTML for an active facet item.
+ *
+ * @param $variables
+ *   An associative array containing the keys 'text', 'path', 'options', and
+ *   'count'. See the l() and theme_facetapi_count() functions for information
+ *   about these variables.
+ *
+ * @ingroup themeable
+ */
+function sof_theme_facetapi_link_inactive($variables) {
+  // Builds accessible markup.
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => FALSE,
+  );
+  $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
+ 
+ // Sanitizes the link text if necessary.
+  $sanitize = empty($variables['options']['html']);
+  $link_text = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
+  // Resets link text, sets to options to HTML since we already sanitized the
+  // link text and are providing additional markup for accessibility.
+  $variables['text'] .= $accessible_markup;
+  $variables['options']['html'] = TRUE;
+  $output = '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>' ;
+  $output .= $link_text;
+  $output .= '</a>';
+  return $output;
+}
+
+
+/**
+ * Returns HTML for an inactive facet item.
+ *
+ * @param $variables
+ *   An associative array containing the keys 'text', 'path', and 'options'. See
+ *   the l() function for information about these variables.
+ *
+ * @ingroup themeable
+ */
+function sof_theme_facetapi_link_active($variables) {
+
+  // Sanitizes the link text if necessary.
+  $sanitize = empty($variables['options']['html']);
+  $link_text = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
+  // Theme function variables fro accessible markup.
+  // @see http://drupal.org/node/1316580
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => TRUE,
+  );
+
+  // Builds link, passes through t() which gives us the ability to change the
+  // position of the widget on a per-language basis.
+  $replacements = array(
+    '!facetapi_deactivate_widget' => theme('facetapi_deactivate_widget'),
+    '!facetapi_accessible_markup' => theme('facetapi_accessible_markup', $accessible_vars),
+  );
+  $variables['text'] = t('!facetapi_deactivate_widget !facetapi_accessible_markup', $replacements);
+  $variables['options']['html'] = TRUE;
+ // return theme_facetapi_link($variables) . $link_text;
+ // return '<span class="facetapi-element-invisible">' . $link_text . '</span>';
+  $output = '<a href="' . check_plain(url($variables['path'], $variables['options'])) . '"' . drupal_attributes($variables['options']['attributes']) . '>' ;
+  $output .= $link_text;
+  $output .= '</a>';
+  return $output;
 }
 
 /**

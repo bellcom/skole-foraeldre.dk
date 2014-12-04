@@ -66,7 +66,7 @@ function sof_releases_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-0ea42ee1-7ce9-4572-a34e-065c21b83c2a';
+    $pane->pid = 'new-7ebbedef-a725-4e90-8117-0e5b327eb552';
     $pane->panel = 'one_main';
     $pane->type = 'apachesolr_form';
     $pane->subtype = 'apachesolr_form';
@@ -75,11 +75,11 @@ function sof_releases_page_default_page_manager_pages() {
     $pane->configuration = array(
       'path_type' => 'same',
       'path' => '',
-      'override_prompt' => 1,
+      'override_prompt' => 0,
       'prompt' => '',
-      'show_keys' => 1,
+      'show_keys' => 0,
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Sort in publications',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -89,9 +89,9 @@ function sof_releases_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '0ea42ee1-7ce9-4572-a34e-065c21b83c2a';
-    $display->content['new-0ea42ee1-7ce9-4572-a34e-065c21b83c2a'] = $pane;
-    $display->panels['one_main'][0] = 'new-0ea42ee1-7ce9-4572-a34e-065c21b83c2a';
+    $pane->uuid = '7ebbedef-a725-4e90-8117-0e5b327eb552';
+    $display->content['new-7ebbedef-a725-4e90-8117-0e5b327eb552'] = $pane;
+    $display->panels['one_main'][0] = 'new-7ebbedef-a725-4e90-8117-0e5b327eb552';
     $pane = new stdClass();
     $pane->pid = 'new-2296a5b7-0e46-48e9-95e6-52243aee424d';
     $pane->panel = 'one_main';
@@ -115,7 +115,7 @@ function sof_releases_page_default_page_manager_pages() {
     $display->content['new-2296a5b7-0e46-48e9-95e6-52243aee424d'] = $pane;
     $display->panels['one_main'][1] = 'new-2296a5b7-0e46-48e9-95e6-52243aee424d';
     $pane = new stdClass();
-    $pane->pid = 'new-71cfe0b2-298c-46c4-84a2-9f9cfc5c3a03';
+    $pane->pid = 'new-57435182-d982-4664-8da0-74cf44b21aea';
     $pane->panel = 'one_main';
     $pane->type = 'views_panes';
     $pane->subtype = 'publication_listing_view-grid_listing_publication';
@@ -130,9 +130,9 @@ function sof_releases_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '71cfe0b2-298c-46c4-84a2-9f9cfc5c3a03';
-    $display->content['new-71cfe0b2-298c-46c4-84a2-9f9cfc5c3a03'] = $pane;
-    $display->panels['one_main'][2] = 'new-71cfe0b2-298c-46c4-84a2-9f9cfc5c3a03';
+    $pane->uuid = '57435182-d982-4664-8da0-74cf44b21aea';
+    $display->content['new-57435182-d982-4664-8da0-74cf44b21aea'] = $pane;
+    $display->panels['one_main'][2] = 'new-57435182-d982-4664-8da0-74cf44b21aea';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

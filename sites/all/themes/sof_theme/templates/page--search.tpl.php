@@ -221,12 +221,14 @@
       </div>	
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
-        <div class="region-footer">
-	        <?php if ($site_logo): ?>
-	            <div class="footer-logo">
-	              <?php print $site_logo; ?>
-	            </div>
-	        <?php endif; ?>
+        <div class="region-footer">  
+	        <div class="footer-logo">
+		        <?php if (theme_get_setting('slogo_path')): ?>
+	  				<img src="<?php print file_create_url(theme_get_setting('slogo_path')); ?>" />	
+				<?php else : ?>	
+					<?php print $site_logo; ?>
+				<?php endif; ?>  
+			 </div>	 
 	        <?php print render($page['footer']['block_1']); ?>
 	        <?php print render($page['footer']['block_2']); ?>
 	        <?php print $attribution; ?>
