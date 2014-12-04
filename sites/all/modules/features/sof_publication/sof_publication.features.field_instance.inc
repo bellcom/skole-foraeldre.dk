@@ -750,6 +750,87 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-publication-field_sof_commerce_product'
+  $field_instances['node-publication-field_sof_commerce_product'] = array(
+    'bundle' => 'publication',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 5,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sof_commerce_product',
+    'label' => 'Product',
+    'required' => 0,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'product' => 'product',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'type_settings' => array(
+          'allow_existing' => 0,
+          'autogenerate_title' => 0,
+          'delete_references' => 0,
+          'label_plural' => 'products',
+          'label_singular' => 'product',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 0,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-publication-field_teaser'
   $field_instances['node-publication-field_teaser'] = array(
     'bundle' => 'publication',
@@ -831,6 +912,7 @@ function sof_publication_field_default_field_instances() {
   t('Image');
   t('PDF');
   t('Place link for external source');
+  t('Product');
   t('Publication content');
   t('Publication cover color');
   t('Publication description');
