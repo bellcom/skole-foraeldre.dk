@@ -138,6 +138,7 @@ dependencies[] = commerce_tax
 dependencies[] = commerce_tax_ui
 dependencies[] = commerce_add_to_cart_confirmation
 dependencies[] = commerce_shipping
+dependencies[] = commerce_features
 
 ;Contrib language modules
 dependencies[] = i18n_field
