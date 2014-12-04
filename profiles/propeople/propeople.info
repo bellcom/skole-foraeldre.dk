@@ -120,7 +120,7 @@ dependencies[] = commerce_cart
 dependencies[] = commerce_checkout
 dependencies[] = commerce_ui
 dependencies[] = commerce_customer
-dependencies[] = commerce_cistomer_ui
+dependencies[] = commerce_customer_ui
 dependencies[] = commerce_line_item
 dependencies[] = commerce_line_item_ui
 dependencies[] = commerce_order
@@ -138,6 +138,7 @@ dependencies[] = commerce_tax
 dependencies[] = commerce_tax_ui
 dependencies[] = commerce_add_to_cart_confirmation
 dependencies[] = commerce_shipping
+dependencies[] = commerce_features
 
 ;Contrib language modules
 dependencies[] = i18n_field
