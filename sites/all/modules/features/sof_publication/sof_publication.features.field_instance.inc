@@ -31,7 +31,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 10,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -97,13 +97,13 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 14,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -164,7 +164,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 19,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -247,7 +247,7 @@ function sof_publication_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -355,13 +355,13 @@ function sof_publication_field_default_field_instances() {
           'view_mode' => 'sof_pdf_reference',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 16,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -428,13 +428,13 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'color_field_default_formatter',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 18,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -482,13 +482,13 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 12,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -546,13 +546,13 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 15,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -620,13 +620,13 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'list_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 17,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -683,7 +683,7 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -769,7 +769,7 @@ function sof_publication_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -784,7 +784,7 @@ function sof_publication_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -846,7 +846,7 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -856,7 +856,7 @@ function sof_publication_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'related_content_reference' => array(
         'label' => 'above',
