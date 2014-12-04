@@ -1943,6 +1943,7 @@ article.node-publication .field-type-image.field-label-above h2{
 .view-publication-listing-view{
 	width:100%;
 	float:left;
+	margin:0 0 20px 0;
 }
 .view-publication-listing-view .views-row{
 	float:left;
