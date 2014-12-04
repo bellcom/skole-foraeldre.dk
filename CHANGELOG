@@ -1,3 +1,70 @@
+7.x-1.3. 04-12-2014
+--------------------
+* 7e9c0be - SOF-102 - adding Commerce module and its dependencies; publikation node feature; feature with the commerce settings. Committed by martina at 2014-12-04 13:04:08 +0200
+* 6fb955d - SOF-135  Apply max width to Title and Teaser fields Committed by rkoteska at 2014-12-04 20:51:10 +1000
+* 9d4bd7d - SOF-94  Publications Listing page-changing markup of search facet links Committed by rkoteska at 2014-12-04 20:34:36 +1000
+* 7e4ed8b - SOF-62 - Video deck news display fix Committed by Goce at 2014-12-04 11:21:23 +0100
+* 5af3d8a - SOF-62 - Video deck functionallity revert Committed by Goce at 2014-12-04 10:40:12 +0100
+* 328fbd2 - sof-24 - Domain views module added, listing vews updated filtering by domain Committed by Goce at 2014-12-04 09:35:33 +0100
+* 2e79b6f - SOF-94  Publications Listing page-removing count from facet Committed by rkoteska at 2014-12-04 18:07:09 +1000
+* 5c3ff45 - SOF-94 - Facet filtering changed with OR operator Committed by Goce at 2014-12-04 08:51:09 +0100
+* 1f103b3 - SOF-94  Publications Listing page-removing count from facet Committed by rkoteska at 2014-12-04 17:32:02 +1000
+* 654aece - SOF-132 - adding mailchimp module. Committed by martina at 2014-12-03 16:36:46 +0200
+* aa46689 - SOF-132 - export mailchimp settings and block; alter block form to add ajax. Committed by martina at 2014-12-03 16:31:16 +0200
+* 7f01a28 - SOF-94 - Publication view initial sort by date changed Committed by Goce at 2014-12-03 15:01:10 +0100
+* ed789e4 - SOF-94 Publications Listing page Committed by rkoteska at 2014-12-03 23:41:59 +1000
+* f05ee7b - SOF-120 - Editor role split, editor and site editor Committed by Goce at 2014-12-03 13:50:10 +0100
+* be66d24 - SOF-128 Slider arrows not positioned correctly on Article/News nodes Committed by rkoteska at 2014-12-03 18:09:01 +1000
+* a6c895f - SOF-22  Theming setup - Footer Secind logo Committed by rkoteska at 2014-12-03 17:22:22 +1000
+* 355af77 - SOf-26  Article Content Type - FrontEnd - Changes to Slideshow arrow position Committed by rkoteska at 2014-12-03 00:32:13 +1000
+* 4b2db35 - SOf-26  Article Content Type - FrontEnd  - small changes to styling Committed by rkoteska at 2014-12-03 00:10:00 +1000
+* 45855f0 - SOF-22 Theming setup - Adding second logo in footer Committed by rkoteska at 2014-12-03 00:00:00 +1000
+* 76b5962 - SOF-22 Theming setup - Adding second logo in footer Committed by rkoteska at 2014-12-02 23:05:12 +1000
+* cd5fb8a - SOF-24 - Wrong links on the search pages update Committed by Goce at 2014-11-28 14:44:10 +0100
+* 9af16bb - SOF-120 - Editor role update for domain dependency Committed by Goce at 2014-11-28 14:42:54 +0100
+* b8de6e3 - SOF-70  Video deck - FrontEnd - Changes to style Committed by rkoteska at 2014-11-28 23:30:09 +1000
+* bb08d4a - SOF-70  Video deck - FrontEnd Committed by rkoteska at 2014-11-28 22:26:38 +1000
+* ed442eb - SOf- 76 Banner deck - FrontEnd - fixing width Committed by rkoteska at 2014-11-28 21:00:34 +1000
+* 41ce85e - SOF-62 - youtube video default height changed Committed by Goce at 2014-11-28 11:37:32 +0100
+* 4bb7a25 - SOF-62 - Video deck fix filetype settings Committed by Goce at 2014-11-28 11:24:53 +0100
+* 4749349 - SOF-62 - Update inline playing of the deck videos Committed by Goce at 2014-11-28 10:39:54 +0100
+* 60d76f7 - SOf- 60  Also see deck - FrontEnd - Related Topics selecting class changed Committed by rkoteska at 2014-11-28 18:56:24 +1000
+* a41e78a - SOF-92 - Updated term search. Form submit redirect and unwanted field removed Committed by Goce at 2014-11-28 09:37:23 +0100
+* 1ceb1ea - SOF -64 News deck - FrontEnd Committed by rkoteska at 2014-11-28 17:50:20 +1000
+* 9d29d38 - SOF-94 Publications Listing page - FrontEnd  - responsive styling Committed by rkoteska at 2014-11-27 23:58:49 +1000
+* 8411c70 - SOF-120 - Updated permissions for editor domain access on content types Committed by Goce at 2014-11-27 14:50:45 +0100
+* 6c156bc - SOF-94 Publications Listing page - FrontEnd  - responsive styling Committed by rkoteska at 2014-11-27 23:13:25 +1000
+* bb8aa44 - SOF-57 - Fix bottom nodes rendering Committed by Goce at 2014-11-27 13:38:16 +0100
+* aa64721 -  SOF-94 Publications Listing page - FrontEnd  - responsive styling Committed by rkoteska at 2014-11-27 22:35:46 +1000
+* a1e2756 - SOf- 64  News deck - FrontEnd - removing error Committed by rkoteska at 2014-11-27 22:35:10 +1000
+* ff6a1a4 - SOF-10 - Extra fields display option fix Committed by Goce at 2014-11-27 13:18:06 +0100
+* 46c9ecf - SOF-120 - Editor role and permissions export Committed by Goce at 2014-11-27 12:58:30 +0100
+* 9c3aaf1 - SOF-10 - Scheduler module security update Committed by Goce at 2014-11-26 14:00:03 +0100
+* 72f138a - SOF-10 - CKeditor module security update Committed by Goce at 2014-11-26 13:58:34 +0100
+* f8aec18 - SOF-10 - Removed extra permission for panelizer on publication Committed by Goce at 2014-11-26 11:22:00 +0100
+* e4da10e - SOF-2 PM-02a Code review clean ups. Committed by Lachezar Valchev at 2014-11-26 10:11:18 +0100
+* df43fa8 - SOF-10 - Permissions feature enabled Committed by Goce at 2014-11-26 10:03:55 +0100
+* f1d1aad - SOF-10 - Permissions feature rebuild without admin role Committed by Goce at 2014-11-26 10:03:37 +0100
+* 552ba9c - SOF-24 - Permissions delete conflict Committed by Goce at 2014-11-26 09:58:17 +0100
+* 1ccef67 - SOF-24 - Permissions testing Committed by Goce at 2014-11-26 09:28:13 +0100
+* 5ba4a6a - SOF-24 - Enabled domain_settings submodule Committed by Goce at 2014-11-26 08:57:47 +0100
+* 8bb5370 - SOF-10 - Roles and permission export Committed by Goce at 2014-11-25 15:00:05 +0100
+* 20cd0df - SOF-24 - Enable domain, domain_alias, domain_conf, domain_theme Committed by Goce at 2014-11-25 13:36:29 +0100
+* 7387ae2 - SOF-14 - Add js behaviour for marking pdf links in body Committed by Goce at 2014-11-25 09:30:11 +0100
+* de8d8d6 - SOF-2 PM-02a Code review clean ups. Committed by Lachezar Valchev at 2014-11-24 19:40:18 +0200
+* 1d14786 - SOF-103  Publications Listing page - FrontEnd - Styling Publication listing page Committed by rkoteska at 2014-11-25 00:45:07 +1000
+* c266b55 - SOF-10 - Pathauto terms patter removed. Conflict with terms search Committed by Goce at 2014-11-24 12:55:12 +0100
+* a595250 - SOF-99  Toolbox Search deck - FrontEnd  - Styling Toolbox search deck Committed by rkoteska at 2014-11-24 21:17:15 +1000
+* 9bf9b1d - SOF-92 - Allow user input on global search page Committed by Goce at 2014-11-24 12:10:19 +0100
+* b77cbc5 - SOF-74 - Clean file Committed by Goce at 2014-11-24 12:06:52 +0100
+* 5bb00cc - SOF-74 - Update search trough the toolbox. Better theme handling Committed by Goce at 2014-11-24 11:39:32 +0100
+* eb7e02d - SOF 98 -  Global Search - FrontEnd - styling taxonomy terms page Committed by rkoteska at 2014-11-22 00:18:39 +1000
+* 8da679a - SOF 98 -  Global Search - FrontEnd - styling taxonomy terms page Committed by rkoteska at 2014-11-21 23:07:56 +1000
+* d6d7bec - SOF 98 -  Global Search - FrontEnd - styling taxonomy terms page Committed by rkoteska at 2014-11-21 22:29:11 +1000
+* c39c4e8 - SOF-29 - Allowed panel panes for section content type updated Committed by Goce at 2014-11-21 13:29:02 +0100
+* c91d249 - SOF-29 - Sticky filter for top highlighted nodes Committed by Goce at 2014-11-21 13:22:05 +0100
+* 4af5dd3 - SOF-94 - Filtering options updated for global search trough publications Committed by Goce at 2014-11-21 12:19:10 +0100
+
 7.x-1.2. 21-11-2014
 --------------------
 * a110d58 - (HEAD, origin/dev, dev) SOF-2 Added the PATCHES.txt file and removed the patch file. Committed by Lachezar Valchev at 2014-11-21 11:49:07 +0200
