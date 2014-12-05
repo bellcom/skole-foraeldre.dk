@@ -576,8 +576,7 @@ function sof_theme_facetapi_link_active($variables) {
  */
 
 function sof_theme_preprocess_block(&$vars) {
-	$vars['block'] = $vars['elements']['#block']->module;
-	if($vars['block'] == 'mailchimp_signup'){
+	if($vars['elements']['#block']->delta == 'sof_mailchimp_form'){
 		$vars['title_prefix'] = array(
 		    '#type' => 'markup',
 		    '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
