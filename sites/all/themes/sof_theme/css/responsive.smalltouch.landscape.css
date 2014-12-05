@@ -502,11 +502,13 @@ ul.pager li{
 }
 .block-sof-footer-social-media,
 .footer_social_media_facebook,
-.footer_social_media_twitter{
+.footer_social_media_twitter,
+#block-mailchimp-signup-sof-mailchimp-form{
 	width:100%;
 }
 .footer_social_media_facebook,
-.footer_social_media_twitter{
+.footer_social_media_twitter,
+#block-mailchimp-signup-sof-mailchimp-form{
 	margin-bottom:30px;
 }
 #footer .region-footer .footer-logo img{

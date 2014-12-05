@@ -53,14 +53,14 @@
   * Wrapping Scripts 
   */	
   Drupal.behaviors.sofWrapping = {
-    attach: function (context, settings) {  
-	
+    attach: function (context, settings) {
 	// Position of flexslider navigation arrows
 	function SliderNavigationposition() {
 	     var heightSlideimg = $('.flexslider .slides img').height();
    		 $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);	
 	}
-
+	
+    // Position of flexslider navigation arrows call functions
 	$(document).ready(SliderNavigationposition);
 	$(window).resize(SliderNavigationposition);
 
@@ -107,7 +107,23 @@
 			    $span.slice(i, i + 2).wrapAll($div);
 	      }
       }
-               
+      
+      //Mailchimp add focus
+   	  $('.news-deck-newsletter').bind('click', function(event){  
+	 	 event.preventDefault();
+	  	$('.mailchimp-newsletter-mergefields input').focus();    
+	  	$(window).scrollTop($('#mailchimp-newsletter-503817-mergefields').offset().top);     
+	  });
+	  	
+	  //Mailchimp form changes
+      $('input[name$="mergevars[EMAIL]"]').attr('placeholder', 'example@domain.dk');
+      $('.mailchimp-signup-subscribe-form div[style*="block"]').addClass('thanks-message-mailchimp').css('padding-top','25px');   
+      $( ".thanks-message-mailchimp" ).prepend( $( "<span class='thank-icon'></span>" ) );
+      if ($('#sof-general-tweaks-mailchimp .messages.error').length > 0) {
+		$( ".thank-icon").css('display','none');
+		$('.thanks-message-mailchimp').css('padding-top','0px');
+	  } 
+		 
 	  //Remove colons from field label 
 	  $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
 	        function() {

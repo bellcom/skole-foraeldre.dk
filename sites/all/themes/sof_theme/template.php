@@ -571,7 +571,23 @@ function sof_theme_facetapi_link_active($variables) {
   $output .= '</a>';
   return $output;
 }
+/**
+ * Override or insert variables into the block templates.
+ */
 
+function sof_theme_preprocess_block(&$vars) {
+
+	if($vars['block_html_id'] == 'block-mailchimp-signup-sof-mailchimp-form'){
+		$vars['title_prefix'] = array(
+		    '#type' => 'markup',
+		    '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
+		);
+		$vars['title_suffix'] = array(
+		    '#type' => 'markup',
+		    '#markup' => '</div>',
+		);
+	}
+}
 /**
  * Helper function for generating "Category"(term) links for template_preprocess_search_result()
  *

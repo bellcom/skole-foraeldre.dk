@@ -234,8 +234,11 @@ html, body {
 	padding:0;
 	margin:0;
 	background:#f0f0f0;
+	 -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+ 	box-sizing: border-box;	
 }
-.footer-social-region h2{
+.footer-social-region > h2{
 	margin:0 auto;
 	width:100%;
 	max-width:1170px;
@@ -248,6 +251,18 @@ html, body {
     text-align: center;
     text-transform: uppercase;
 }
+/* Mailchimp integration */
+#block-mailchimp-signup-sof-mailchimp-form {
+	float:left;
+	width:33.3%;
+}
+#block-mailchimp-signup-sof-mailchimp-form  .sof_footer_social_media_icon{
+	background-image:url('images/footer-newsleter.png');
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 54px 40px;
+}
+/* Social Media Integration */
 .footer-social-region .region-social-media-region{
 	margin:0 auto 30px auto;
 	width:100%;
@@ -280,7 +295,8 @@ html, body {
 	margin-top:20px;
 }
 .footer_social_media_facebook h5,
-.footer_social_media_twitter h5{
+.footer_social_media_twitter h5,
+.mailchimp-signup-sof h2{
 	color: rgba(69, 69, 69, 0.8);
     font-size: 30px;
     font-weight: 400;
@@ -292,7 +308,8 @@ html, body {
     text-transform: uppercase;
 }
 .footer_social_media_facebook p,
-.footer_social_media_twitter p{
+.footer_social_media_twitter p,
+#mailchimp-signup-subscribe-block-sof-mailchimp-form-form div{
 	color: #454545;
     font-size: 19px;
     font-weight: 200;
@@ -301,6 +318,96 @@ html, body {
     text-align: center;
     margin-bottom:5px;
     font-family: 'conduit_itclight';
+}
+.mailchimp-newsletter-wrapper,
+#sof-general-tweaks-mailchimp label{
+	display:none;
+}
+#sof-general-tweaks-mailchimp{
+	margin:20px 0 0 0;	
+}
+.mailchimp-newsletter-mergefields{
+	float:left;
+	width:73%;
+	height:45px!important;
+}
+.mailchimp-newsletter-mergefields div{
+	margin:0;
+	padding:0;
+}
+.mailchimp-newsletter-mergefields input{
+	float: left;
+    font-size: 16px;
+    font-weight: 200;
+    height: 45px;
+    padding:0 0 0 10px;
+    margin-right: 11px;
+    width: 100%;
+    border-radius:0px;
+    border:1px solid #ccc;
+}
+.mailchimp-newsletter-mergefields input.error{
+	background-color:rgba(255, 0, 0, 0.09);
+}
+.mailchimp-newsletter-mergefields input:focus,
+.mailchimp-newsletter-mergefields input.focus{
+	border:1px solid rgba(82, 168, 236, 0.8);
+}
+#sof-general-tweaks-mailchimp .form-submit{
+	float:right;
+	color:#fff;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 41px;
+    margin-top: 2px;
+    text-transform: uppercase;
+    width: 20%;
+    border:none;
+}
+#sof-general-tweaks-mailchimp #messages{
+	height:30px;
+}
+#sof-general-tweaks-mailchimp .messages.error:before{
+	content: '*';	
+	font-size:18px;
+}
+
+.thanks-message-mailchimp{
+	padding-top: 25px;
+	height:30px!important;
+	float: left;
+	font-size: 21px;
+	font-weight: 200;
+	color:#000!important;	
+}
+.thank-icon:nth-child(1){
+	display:none;
+}
+.thank-icon{
+	width: 30px;
+	height: 30px;
+	margin:-5px 13px 0 0 ;
+	float: left;
+	border-radius: 25px;
+	background-color: #28A17A;
+    background-image:url('images/thank-message-icon.png');
+	background-position: 50% 50%;
+	background-size: 18px 17px;
+	background-repeat: no-repeat;
+}
+.ajax-progress-throbber{
+	display:none;
+}
+#sof-general-tweaks-mailchimp .messages.error{
+	background: none;
+    border: medium none;
+    color: #d40000;
+    font-size: 18px;
+    font-style: italic;
+    height: 20px !important;
+    margin: 0;
+    padding: 0;
+    text-align: left;	
 }
 .footer_social_media_facebook a,
 .footer_social_media_twitter a{
@@ -5408,6 +5515,9 @@ body.page-search #block-system-main > ul li{
 	}
 	.node-webform .form-actions input{
 		margin-right:20px;
+	}
+	.footer-social-region{
+		padding:0 20px;
 	}
 }
 @media all and (max-width: 1170px){

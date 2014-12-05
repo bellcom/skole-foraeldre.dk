@@ -67,7 +67,8 @@ ul.pager li.pager-previous,
 #node_article_full_group_bottomaregion  .field-item a,
 .pane-sof-toolbox-search,
 .article-region .field-name-body a.download-article-pdf,
-a.sof-pdf-generate-inline-link{
+a.sof-pdf-generate-inline-link,
+#sof-general-tweaks-mailchimp .form-submit{
   background-color: #00a2eb;
 }
 
