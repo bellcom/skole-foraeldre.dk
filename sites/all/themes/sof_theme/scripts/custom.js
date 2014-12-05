@@ -48,29 +48,68 @@
 		 		 
    }
   };
-  
+  /**
+  * Wrapping General Scripts
+  */
+  Drupal.behaviors.sofGeneralScripts = {
+    attach: function (context, settings) {
+    
+    	//Extend support jquery
+		$.support.placeholder = (function(){
+		    var i = document.createElement('input');
+		    return 'placeholder' in i;
+		})();
+    
+		// Position of flexslider navigation arrows
+		function SliderNavigationposition() {
+		     var heightSlideimg = $('.flexslider .slides img').height();
+	   		 $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);	
+		}
+		
+	    // Position of flexslider navigation arrows call functions
+		$(document).ready(SliderNavigationposition);
+		$(window).resize(SliderNavigationposition);
+	
+	     //Remove link from last navigation level 
+		 $("#block-system-main-menu li.expanded > a").removeAttr("href");
+		 
+		 //Apache Solr Search edit form
+		 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
+		 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
+      
+	      //Mailchimp add focus
+	   	  $('.news-deck-newsletter').bind('click', function(event){  
+		 	 event.preventDefault();
+		  	$('.mailchimp-newsletter-mergefields input').focus();    
+		  	$(window).scrollTop($('#mailchimp-newsletter-503817-mergefields').offset().top);     
+		  });
+		  	
+		  //Mailchimp form changes
+	      $('input[name$="mergevars[EMAIL]"]').attr('placeholder', 'example@domain.dk');
+	      $('.mailchimp-signup-subscribe-form div[style*="block"]').addClass('thanks-message-mailchimp').css('padding-top','25px');   
+	      $( ".thanks-message-mailchimp" ).prepend( $( "<span class='thank-icon'></span>" ) );
+	      if ($('#sof-general-tweaks-mailchimp .messages.error').length > 0) {
+			$( ".thank-icon").css('display','none');
+			$('.thanks-message-mailchimp').css('padding-top','0px');
+		  } 
+			 
+		  //Remove colons from field label 
+		  $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
+		        function() {
+		          var myText = $(this);
+		          myText.text( myText.text().replace(':','') );
+		        }
+	       );   	 
+	 
+   	}
+   };
+
   /**
   * Wrapping Scripts 
   */	
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {
-	// Position of flexslider navigation arrows
-	function SliderNavigationposition() {
-	     var heightSlideimg = $('.flexslider .slides img').height();
-   		 $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);	
-	}
-	
-    // Position of flexslider navigation arrows call functions
-	$(document).ready(SliderNavigationposition);
-	$(window).resize(SliderNavigationposition);
 
-     //Remove link from last navigation level 
-	 $("#block-system-main-menu li.expanded > a").removeAttr("href");
-	 
-	 //Apache Solr Search edit form
-	 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
-	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
-	 
 	  //Intro Deck
       $(".pane-bundle-intro-deck-pane .field-name-field-teaser, .pane-bundle-intro-deck-pane .field-name-field-single-link").wrapAll('<div class="intro-deck-group-first"></div>');
       $(".pane-bundle-intro-deck-pane .field-name-field-link-group-title-first, .pane-bundle-intro-deck-pane .field-name-field-five-links-first").wrapAll('<div class="intro-deck-group"></div>');
@@ -107,30 +146,7 @@
 			    $span.slice(i, i + 2).wrapAll($div);
 	      }
       }
-      
-      //Mailchimp add focus
-   	  $('.news-deck-newsletter').bind('click', function(event){  
-	 	 event.preventDefault();
-	  	$('.mailchimp-newsletter-mergefields input').focus();    
-	  	$(window).scrollTop($('#mailchimp-newsletter-503817-mergefields').offset().top);     
-	  });
-	  	
-	  //Mailchimp form changes
-      $('input[name$="mergevars[EMAIL]"]').attr('placeholder', 'example@domain.dk');
-      $('.mailchimp-signup-subscribe-form div[style*="block"]').addClass('thanks-message-mailchimp').css('padding-top','25px');   
-      $( ".thanks-message-mailchimp" ).prepend( $( "<span class='thank-icon'></span>" ) );
-      if ($('#sof-general-tweaks-mailchimp .messages.error').length > 0) {
-		$( ".thank-icon").css('display','none');
-		$('.thanks-message-mailchimp').css('padding-top','0px');
-	  } 
-		 
-	  //Remove colons from field label 
-	  $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
-	        function() {
-	          var myText = $(this);
-	          myText.text( myText.text().replace(':','') );
-	        }
-       );   
+
    }
   };
 

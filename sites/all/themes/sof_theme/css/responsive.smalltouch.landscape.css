@@ -489,6 +489,10 @@ ul.pager li{
 .form-item .form-type-radio input{
 	width:auto;
 }
+#user-login .form-item,
+#user-login .form-actions{
+	width:100%;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */

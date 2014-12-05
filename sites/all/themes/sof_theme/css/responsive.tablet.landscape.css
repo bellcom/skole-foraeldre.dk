@@ -70,11 +70,13 @@ body {
     float:right;
     text-transform:uppercase;
     background-image:url('images/nav_button.png');
+     background-size:15px 11px;
     background-position:right 11px;
     background-repeat:no-repeat;
 }
 #nav-activation-link span.active{
 	background-image:url('images/nav_close_button.png');
+	background-size:26px 23px;
     background-position:right 0;
     background-repeat:no-repeat;
     text-indent:-9999px;

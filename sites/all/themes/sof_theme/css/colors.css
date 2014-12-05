@@ -38,7 +38,8 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .search-category .links li a,
 .toolbox-search-wrapper:after,
 .view-publication-listing-view .views-field-label a,
-.item-list-facetapi-facetapi-links li a {
+.item-list-facetapi-facetapi-links li a,
+#user-login label {
   color: #00a2eb;
 }
 
@@ -68,7 +69,10 @@ ul.pager li.pager-previous,
 .pane-sof-toolbox-search,
 .article-region .field-name-body a.download-article-pdf,
 a.sof-pdf-generate-inline-link,
-#sof-general-tweaks-mailchimp .form-submit{
+#sof-general-tweaks-mailchimp .form-submit,
+body.page-user ul.primary li:hover, 
+body.page-user ul.primary li.active,
+#user-login .form-submit{
   background-color: #00a2eb;
 }
 
