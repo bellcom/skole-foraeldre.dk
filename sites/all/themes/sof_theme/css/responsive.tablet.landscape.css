@@ -122,8 +122,11 @@ body {
 	padding-left:25px;
 	width:100%;
 }
-.menu li.expanded.slideul a{
-	border-bottom: 0;
+.menu li.expanded.slideul > a{
+    border-bottom:0!important;
+}
+.third-level{
+	border-left:none;
 }
 /*Second, third level*/
 
@@ -155,7 +158,7 @@ body {
 	background-image:none!important;
 }
 .third-level-main-container{
-	margin-bottom:-20px;
+	margin-bottom:-30px;
 }
 /* =============================================================================
  *   Top Header Menu

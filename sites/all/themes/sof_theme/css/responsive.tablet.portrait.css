@@ -50,6 +50,12 @@ body {
 .top-navigation-first{
 	display:none;
 }
+.menu li.expanded.slideul > a{
+    border-bottom:0!important;
+}
+.third-level{
+	border-left:none;
+}
 /*.top-navigation-first{
 	display:none;
 }*/
@@ -171,7 +177,7 @@ body {
 	background-image:none!important;
 }
 .third-level-main-container{
-	margin-bottom:-20px;
+	margin-bottom:-30px;
 }
 /* =============================================================================
  *   Top Header Menu
