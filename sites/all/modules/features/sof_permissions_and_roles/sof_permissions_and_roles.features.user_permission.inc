@@ -83,17 +83,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'access contextual links'.
-  $permissions['access contextual links'] = array(
-    'name' => 'access contextual links',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
-    ),
-    'module' => 'contextual',
-  );
-
   // Exported permission: 'access dashboard'.
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',

@@ -146,6 +146,10 @@ function sof_publication_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'default' => array(
+            'weight' => '12',
+            'visible' => TRUE,
+          ),
         ),
         'domain' => array(
           'full' => array(
@@ -155,6 +159,70 @@ function sof_publication_strongarm() {
           'teaser' => array(
             'weight' => '1',
             'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'product:sku' => array(
+          'default' => array(
+            'weight' => '15',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:title' => array(
+          'default' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:commerce_price' => array(
+          'default' => array(
+            'weight' => '13',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+        ),
+        'product:field_sof_commerce_pdf' => array(
+          'default' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '11',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:field_sof_commerce_type' => array(
+          'default' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '9',
+            'visible' => FALSE,
           ),
         ),
       ),
