@@ -13,7 +13,18 @@ function sof_commerce_settings_field_default_field_instances() {
   // Exported field_instance: 'commerce_customer_profile-billing-commerce_customer_address'
   $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
     'bundle' => 'billing',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'commerce_customer_profile|billing|commerce_customer_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'postal_code' => '',
+        'locality' => '',
+        'country' => 'DK',
+        'first_name' => '',
+        'last_name' => '',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -63,21 +74,28 @@ function sof_commerce_settings_field_default_field_instances() {
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'commerce_customer_address',
     'label' => 'Address',
-    'required' => TRUE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'addressfield',
       'settings' => array(
-        'available_countries' => array(),
-        'format_handlers' => array(
-          0 => 'address',
-          1 => 'name-oneline',
+        'available_countries' => array(
+          'DK' => 'DK',
         ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'name-oneline' => 'name-oneline',
+          'address-hide-country' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+        ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'addressfield_standard',
-      'weight' => -10,
+      'weight' => 0,
     ),
   );
 
@@ -121,7 +139,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 7,
     ),
   );
 
@@ -165,7 +183,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 8,
     ),
   );
 
@@ -184,7 +202,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -209,7 +227,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 5,
     ),
   );
 
@@ -228,7 +246,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'email_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -246,7 +264,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 32,
+      'weight' => 3,
     ),
   );
 
@@ -265,7 +283,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -290,7 +308,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 35,
+      'weight' => 6,
     ),
   );
 
@@ -336,51 +354,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 39,
-    ),
-  );
-
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_post'
-  $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_post'] = array(
-    'bundle' => 'billing',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'commerce_customer_profile',
-    'field_name' => 'field_sof_commerce_customer_post',
-    'label' => 'Post code',
-    'required' => 1,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 9,
     ),
   );
 
@@ -399,7 +373,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -424,14 +398,18 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 33,
+      'weight' => 4,
     ),
   );
 
   // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_type'
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_type'] = array(
     'bundle' => 'billing',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'private',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -460,14 +438,25 @@ function sof_commerce_settings_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 31,
+      'weight' => 2,
     ),
   );
 
   // Exported field_instance: 'commerce_customer_profile-shipping-commerce_customer_address'
   $field_instances['commerce_customer_profile-shipping-commerce_customer_address'] = array(
     'bundle' => 'shipping',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'commerce_customer_profile|shipping|commerce_customer_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'postal_code' => '',
+        'locality' => '',
+        'country' => 'DK',
+        'first_name' => '',
+        'last_name' => '',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -511,52 +500,142 @@ function sof_commerce_settings_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'commerce_customer_address',
     'label' => 'Address',
-    'required' => TRUE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'addressfield',
       'settings' => array(
-        'available_countries' => array(),
-        'format_handlers' => array(
-          0 => 'address',
-          1 => 'name-oneline',
+        'available_countries' => array(
+          'DK' => 'DK',
         ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'name-oneline' => 'name-oneline',
+          'address-hide-country' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+        ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'addressfield_standard',
-      'weight' => -10,
+      'weight' => 0,
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_firm'
-  $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_firm'] = array(
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_mail'
+  $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_mail'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'email_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_commerce_customer_mail',
+    'label' => 'Email',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_note'
+  $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_note'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
-    'field_name' => 'field_sof_commerce_customer_firm',
-    'label' => 'Firm',
+    'field_name' => 'field_sof_commerce_customer_note',
+    'label' => 'Note',
     'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => '',
+        'maxlength_js_enforce' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_tel'
+  $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_tel'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_commerce_customer_tel',
+    'label' => 'Telephone',
+    'required' => 1,
     'settings' => array(
       'linkit' => array(
         'button_text' => 'Search',
@@ -575,43 +654,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
-    ),
-  );
-
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_type'
-  $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_type'] = array(
-    'bundle' => 'shipping',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'list_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'commerce_customer_profile',
-    'field_name' => 'field_sof_commerce_customer_type',
-    'label' => 'Type',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 3,
     ),
   );
 
@@ -867,6 +910,114 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'message-sof_order_admin_message-field_sof_message_order'
+  $field_instances['message-sof_order_admin_message-field_sof_message_order'] = array(
+    'bundle' => 'sof_order_admin_message',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_sof_message_order',
+    'label' => 'SOF message order',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'message-sof_order_user_message-field_sof_message_order'
+  $field_instances['message-sof_order_user_message-field_sof_message_order'] = array(
+    'bundle' => 'sof_order_user_message',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+      'message_notify_email_body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'message_notify_email_subject' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'message',
+    'field_name' => 'field_sof_message_order',
+    'label' => 'SOF message order',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
@@ -877,8 +1028,8 @@ function sof_commerce_settings_field_default_field_instances() {
   t('Institution name');
   t('Note');
   t('Pdf');
-  t('Post code');
   t('Price');
+  t('SOF message order');
   t('Telephone');
   t('Type');
 

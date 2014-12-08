@@ -194,42 +194,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       break;
 
     case 'commerce_checkout_form_checkout':
-      $form['customer_profile_billing']['field_sof_commerce_customer_firm']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-        'required' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_cvr']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_name']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-        'required' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_ean']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-      );
-
-      $form['customer_profile_shipping']['field_sof_commerce_customer_firm']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_shipping[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
       unset($form['account']);
       break;
   }

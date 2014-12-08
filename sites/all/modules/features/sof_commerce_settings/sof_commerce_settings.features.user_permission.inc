@@ -414,6 +414,7 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view any commerce_product entity',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
     ),
     'module' => 'commerce_product',
   );
@@ -423,6 +424,7 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view any commerce_product entity of bundle product',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
     ),
     'module' => 'commerce_product',
   );
@@ -479,6 +481,7 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view own commerce_product entities',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
     ),
     'module' => 'commerce_product',
   );
@@ -488,6 +491,7 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view own commerce_product entities of bundle product',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
     ),
     'module' => 'commerce_product',
   );
