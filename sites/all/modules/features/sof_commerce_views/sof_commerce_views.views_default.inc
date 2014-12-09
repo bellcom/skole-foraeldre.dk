@@ -364,6 +364,11 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['fields']['line_item_title']['field'] = 'line_item_title';
   $handler->display->display_options['fields']['line_item_title']['relationship'] = 'commerce_line_items_line_item_id';
   $handler->display->display_options['fields']['line_item_title']['label'] = 'Product';
+  /* Field: Commerce Product: Description */
+  $handler->display->display_options['fields']['field_sof_commerce_description']['id'] = 'field_sof_commerce_description';
+  $handler->display->display_options['fields']['field_sof_commerce_description']['table'] = 'field_data_field_sof_commerce_description';
+  $handler->display->display_options['fields']['field_sof_commerce_description']['field'] = 'field_sof_commerce_description';
+  $handler->display->display_options['fields']['field_sof_commerce_description']['relationship'] = 'commerce_product_product_id';
   /* Field: Commerce Line item: Unit price */
   $handler->display->display_options['fields']['commerce_unit_price']['id'] = 'commerce_unit_price';
   $handler->display->display_options['fields']['commerce_unit_price']['table'] = 'field_data_commerce_unit_price';
