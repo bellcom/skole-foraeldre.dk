@@ -280,7 +280,7 @@ function sof_order_admin_message(Message $message) {
  */
 function sof_order_user_message(Message $message) {
   $wrapper = entity_metadata_wrapper('message', $message);
-  $view = views_get_view('commerce_cart_summary');
+  $view = views_get_view('sof_commerce_cart_checkout_summary');
   $view->set_arguments(array($wrapper->field_sof_message_order->getIdentifier()));
   $view->hide_admin_links = TRUE;
   return $view->preview();
