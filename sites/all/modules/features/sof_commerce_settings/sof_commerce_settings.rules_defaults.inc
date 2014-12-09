@@ -67,6 +67,25 @@ function sof_commerce_settings_default_rules_configuration() {
       ]
     }
   }');
+  $items['commerce_tax_rate_test'] = entity_import('rules_config', '{ "commerce_tax_rate_test" : {
+      "LABEL" : "Calculate VAT",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Commerce Tax", "vat" ],
+      "REQUIRES" : [ "commerce_tax" ],
+      "USES VARIABLES" : { "commerce_line_item" : { "type" : "commerce_line_item", "label" : "Line item" } },
+      "DO" : [
+        { "commerce_tax_rate_apply" : {
+            "USING" : {
+              "commerce_line_item" : [ "commerce-line-item" ],
+              "tax_rate_name" : "test"
+            },
+            "PROVIDE" : { "applied_tax" : { "applied_tax" : "Applied tax" } }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_custom_send_mails_to_admin'] = entity_import('rules_config', '{ "rules_custom_send_mails_to_admin" : {
       "LABEL" : "Custom send mails to admin",
       "PLUGIN" : "reaction rule",

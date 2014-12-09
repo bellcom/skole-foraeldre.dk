@@ -120,6 +120,7 @@ function sof_theme_process_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function sof_theme_process_page(&$variables) {
+	global $base_path;
   // Hook into color.module.
   if (module_exists('color')) {
     _color_page_alter($variables);
@@ -158,6 +159,7 @@ function sof_theme_process_page(&$variables) {
   if($variables['theme_hook_suggestions'][0] == 'page__taxonomy'){
     $variables['theme_hook_suggestions'][] = 'page__search';
   }
+  $variables['footer_logo'] = $base_path . drupal_get_path('theme', 'sof_theme') .'/css/images/citat-Ikon.png';
 }
 
 /**

@@ -39,7 +39,10 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .toolbox-search-wrapper:after,
 .view-publication-listing-view .views-field-label a,
 .item-list-facetapi-facetapi-links li a,
-#user-login label {
+#user-login label,
+#user-pass label,
+.article-region  .author-datetime a,
+body.node-type-basic-page .author-datetime a{
   color: #00a2eb;
 }
 
@@ -72,7 +75,8 @@ a.sof-pdf-generate-inline-link,
 #sof-general-tweaks-mailchimp .form-submit,
 body.page-user ul.primary li:hover, 
 body.page-user ul.primary li.active,
-#user-login .form-submit{
+#user-login .form-submit,
+#user-pass .form-submit{
   background-color: #00a2eb;
 }
 

@@ -222,13 +222,13 @@
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">  
-	        <div class="footer-logo">
+	       <div class="footer-logo">
 		        <?php if (theme_get_setting('slogo_path')): ?>
 	  				<img src="<?php print file_create_url(theme_get_setting('slogo_path')); ?>" />	
 				<?php else : ?>	
-					<?php print $site_logo; ?>
+					<img src="<?php print file_create_url($footer_logo); ?>" />	
 				<?php endif; ?>  
-			 </div>	 
+			 </div>	
 	        <?php print render($page['footer']['block_1']); ?>
 	        <?php print render($page['footer']['block_2']); ?>
 	        <?php print $attribution; ?>

@@ -2623,6 +2623,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'view any banner bean',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -2634,8 +2636,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'view bean page',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'bean',
   );

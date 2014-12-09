@@ -1,4 +1,29 @@
 (function($) {
+	
+   //Extend support jquery for placeholder
+   $.support.placeholder = (function(){
+	    var i = document.createElement('input');
+	    return 'placeholder' in i;
+   })();
+   $(document).ready( function(){ 
+		  if(!$.support.placeholder){
+		    $("input").each(function(){
+		      if($(this).val()=="" && $(this).attr("placeholder") != ""){
+		        $(this).val( $(this).attr("placeholder") );
+		        
+		        $(this).focus(function(){
+		          if( $(this).val()==$(this).attr("placeholder") ) 
+		          	$(this).val("");
+		        });
+		        
+		        $(this).blur(function(){
+		          if( $(this).val()=="" ) 
+		          	$(this).val( $(this).attr("placeholder") );
+		        });
+		      }
+		    });
+		  }
+	});
   /**
   * Header Scripts 
   */
@@ -53,13 +78,7 @@
   */
   Drupal.behaviors.sofGeneralScripts = {
     attach: function (context, settings) {
-    
-    	//Extend support jquery
-		$.support.placeholder = (function(){
-		    var i = document.createElement('input');
-		    return 'placeholder' in i;
-		})();
-    
+
 		// Position of flexslider navigation arrows
 		function SliderNavigationposition() {
 		     var heightSlideimg = $('.flexslider .slides img').height();
