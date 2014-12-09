@@ -2725,7 +2725,9 @@ body.node-type-section .pane-section-default-content-section-default-listing .bl
 	margin:0 auto;
 	float:none;
 }
-
+body.node-type-section .section-header{
+	margin-top:10px;
+}
 body.node-type-section  #main-content-header{
 	max-width:1170px;
 	margin:0 auto;
