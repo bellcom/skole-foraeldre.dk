@@ -361,7 +361,7 @@ function sof_theme_preprocess_node(&$variables) {
           $user = user_load($variables['uid']);
           $variables['submitted'] =  t('Submitted by !username on !datetime',
             array(
-              '!datetime' => $variables['last_update'],
+              '!datetime' => date('j F Y - g:ia', $node->type == 'article' ? $variables['changed'] : $variables['created']),
               '!username' => l($user->name, 'mailto:'.$user->mail , array('absolute' => TRUE)),
           ));
 
