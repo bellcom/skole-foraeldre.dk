@@ -1,3 +1,23 @@
+7.x-1.5. 09-12-2014
+--------------------
+* 42bd977 - (HEAD, origin/dev, dev) SOF-20 - Submited dates updated for news Committed by Goce at 2014-12-09 12:37:56 +0100
+* c35dd4d - SOF-20 - Last updated date fix Committed by Goce at 2014-12-09 11:57:14 +0100
+* d0ca6e1 - SOF-20 - Remove debug code Committed by Goce at 2014-12-09 11:46:40 +0100
+* f144cd5 - SOF-20 - Fix mailto link on node page Committed by Goce at 2014-12-09 11:36:56 +0100
+* 310f410 - SOF-102 - adding custom rules, view and updating sof commerce settings. Committed by martina at 2014-12-09 12:09:02 +0200
+* 94bfaaa - SOF-24 - Filter index by domain Committed by Goce at 2014-12-09 10:13:45 +0100
+* 08cb4dc - SOF-102 - new commerce modules - dibs, mail modules, commerce message, conditional fields. Committed by martina at 2014-12-08 17:54:32 +0200
+* 03a2caa - SOF-136  Switch colors of 2nd and 3rd banner Committed by rkoteska at 2014-12-06 00:15:04 +1000
+* d1167ca - SOf-22  Theming setup - making images double in sizes to avoid blury display on mobile Committed by rkoteska at 2014-12-05 22:09:31 +1000
+* 67a4e4d - SOF-88  Social Block - Styling mailchimp form Committed by rkoteska at 2014-12-05 20:29:37 +1000
+* ca2c010 - SOF-88  Social Block - Styling mailchimp form Committed by rkoteska at 2014-12-05 20:11:09 +1000
+* c3087de - SOF-88  Social Block - Styling mailchimp form Committed by rkoteska at 2014-12-05 19:47:22 +1000
+* 5f4071c - SOF-102 - move commerce permissions to commerce settings feature. Committed by martina at 2014-12-04 15:20:16 +0200
+* e530f24 - SOF-102 - updating feature with commerce permissions. Committed by martina at 2014-12-04 15:08:42 +0200
+* b574a11 - SOF-102 - exporting view used for commerce shopping cart block. Committed by martina at 2014-12-04 14:54:38 +0200
+* aac983e - SOF-102 - rearange Publication field display. Committed by martina at 2014-12-04 14:44:33 +0200
+* 829968a - SOF-29 - Body field not mandary Committed by Goce at 2014-12-04 13:42:09 +0100
+
 7.x-1.4. 04-12-2014
 --------------------
 * 08b5941 - (HEAD, origin/dev, dev) SOF-102 - adding commerce features module. Committed by martina at 2014-12-04 14:23:08 +0200
