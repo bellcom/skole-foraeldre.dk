@@ -66,6 +66,24 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_customer',
   );
 
+  // Exported permission: 'administer dibs settings'.
+  $permissions['administer dibs settings'] = array(
+    'name' => 'administer dibs settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'dibs',
+  );
+
+  // Exported permission: 'administer dibs transactions'.
+  $permissions['administer dibs transactions'] = array(
+    'name' => 'administer dibs transactions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'dibs',
+  );
+
   // Exported permission: 'administer line item types'.
   $permissions['administer line item types'] = array(
     'name' => 'administer line item types',
@@ -355,6 +373,17 @@ function sof_commerce_settings_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'pay using dibs'.
+  $permissions['pay using dibs'] = array(
+    'name' => 'pay using dibs',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'dibs',
   );
 
   // Exported permission: 'update payments'.
