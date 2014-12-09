@@ -1,3 +1,17 @@
+7.x-1.6. 09-12-2014
+--------------------
+* 51d894e - (HEAD, origin/dev, dev) SOF-102 - make EAN required; add description to the view that sends order info to the admin. Committed by martina at 2014-12-09 18:16:43 +0200
+* a960ce9 - SOF-102 - change views used in the user order mail. Committed by martina at 2014-12-09 18:06:01 +0200
+* c303fcf - SOF-102 - adding VAT, product description field and views with it for checkout process. Committed by martina at 2014-12-09 17:53:34 +0200
+* d83e92c - SOF-143 Article/News authoring information styling Committed by rkoteska at 2014-12-10 00:57:24 +1000
+* 0e14ef4 - SOF-102 - updating shopping cart block. Committed by martina at 2014-12-09 15:31:05 +0200
+* bd3ef32 - SOF-88  Social Block - placeholder for IE9 Committed by rkoteska at 2014-12-09 23:21:52 +1000
+* ee05cfc - SOF-88  Social Block - placeholder for IE9 Committed by rkoteska at 2014-12-09 23:18:22 +1000
+* 2091a79 - SOF-39  Section page - FrontEnd  -adding margin from top on view header Committed by rkoteska at 2014-12-09 22:46:01 +1000
+* a586c4f - SOF-140  Login and Request new password pages styling Committed by rkoteska at 2014-12-09 22:32:36 +1000
+* 450a9b3 - SOF-20 - Updated related content to list only 5 items Committed by Goce at 2014-12-09 13:19:35 +0100
+* d593eae - SOF-20 - Permissions for banner view on anonimous users Committed by Goce at 2014-12-09 13:09:32 +0100
+
 7.x-1.5. 09-12-2014
 --------------------
 * 42bd977 - (HEAD, origin/dev, dev) SOF-20 - Submited dates updated for news Committed by Goce at 2014-12-09 12:37:56 +0100
