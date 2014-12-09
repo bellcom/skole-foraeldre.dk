@@ -315,3 +315,13 @@ function sof_general_tweaks_mail_alter(&$message) {
     $message['params']['attachments'] = $attachments;
   }
 }
+
+/**
+ * Implements hook_commerce_line_item_summary_link_info_alter().
+ */
+function sof_general_tweaks_commerce_line_item_summary_link_info_alter(&$links) {
+  // Link checkout button to the cart.
+  if (isset($links['checkout'])) {
+    $links['checkout']['href'] = 'cart';
+  }
+}
