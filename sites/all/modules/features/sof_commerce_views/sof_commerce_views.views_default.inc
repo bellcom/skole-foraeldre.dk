@@ -175,7 +175,7 @@ function sof_commerce_views_views_default_views() {
   );
   $handler->display->display_options['footer']['line_item_summary']['info'] = array(
     'quantity' => 'quantity',
-    'total' => 'total',
+    'total' => 0,
   );
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -195,7 +195,7 @@ function sof_commerce_views_views_default_views() {
   );
   $handler->display->display_options['empty']['line_item_summary']['info'] = array(
     'quantity' => 'quantity',
-    'total' => 'total',
+    'total' => 0,
   );
   /* Relationship: Commerce Order: Referenced line items */
   $handler->display->display_options['relationships']['commerce_line_items_line_item_id']['id'] = 'commerce_line_items_line_item_id';
