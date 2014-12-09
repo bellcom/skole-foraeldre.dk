@@ -29,6 +29,10 @@ html.js #preview {
 #preview-logo {
   float: left;
   padding: 15px 15px 15px 10px;
+  width:230px;
+}
+#preview-logo img{
+	width:100%;
 }
 #preview-site-name {
   color: #686868;

@@ -40,7 +40,9 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .view-publication-listing-view .views-field-label a,
 .item-list-facetapi-facetapi-links li a,
 #user-login label,
-#user-pass label{
+#user-pass label,
+.article-region  .author-datetime a,
+body.node-type-basic-page .author-datetime a{
   color: #00a2eb;
 }
 

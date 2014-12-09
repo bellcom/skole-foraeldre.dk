@@ -1025,6 +1025,9 @@ body.node-type-slider #main-content{
     box-sizing: border-box;
     min-height:580px;
 }
+.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item:nth-child(3){
+	border-right:none;
+}
 .pane-bundle-also-see-pane  .field-name-field-related-article-news,
 .pane-bundle-also-see-pane  .field-name-field-single-link{
 	float:left;
@@ -2405,9 +2408,18 @@ body.node-type-basic-page .author-datetime{
     font-weight: 200;
     float:left;
     width:100%;
+    text-transform:lowercase;
+}
+.article-region  .author-datetime:first-letter,
+body.node-type-basic-page .author-datetime:first-letter{
+	text-transform:capitalize;
 }
 .article-region  .author-datetime a,
 body.node-type-basic-page .author-datetime a{
+	text-transform:unset;
+}
+.article-region  .author-datetime a:hover,
+body.node-type-basic-page .author-datetime a:hover{
     color:#000;
 }
 .article-region hr,
