@@ -73,6 +73,55 @@ function sof_commerce_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'dibs_settings_commerce_dibs_commerce_dibs';
+  $strongarm->value = array(
+    'general' => array(
+      'merchant' => '90195774',
+      'account' => '',
+      'test_mode' => '1',
+      'type' => 'flex',
+      'retry_handling' => 'new_order_id',
+      'md5' => '0',
+      'md5_key1' => '',
+      'md5_key2' => '',
+      'hmac_key' => '',
+      'lang' => 'da',
+      'currency' => '208',
+    ),
+    'paymentwindow' => array(
+      'color' => 'sand',
+    ),
+    'flexwindow' => array(
+      'color' => 'sand',
+      'decorator' => 'default',
+      'voucher' => '0',
+    ),
+    'mobilewindow' => array(
+      'paytypes' => array(
+        'MC' => 'MC',
+        'VISA' => 'VISA',
+        'ELEC' => 'ELEC',
+        'AMEX' => 'AMEX',
+        'DK' => 'DK',
+        'V-DK' => 'V-DK',
+      ),
+    ),
+    'advanced' => array(
+      'calcfee' => '0',
+      'capturenow' => '0',
+      'unqiue_order_id' => '0',
+    ),
+    'callbacks' => array(
+      'accepturl' => 'payment/dibs/accept',
+      'cancelurl' => 'payment/dibs/cancel',
+      'callbackok' => 'payment/dibs/callbackok',
+    ),
+  );
+  $export['dibs_settings_commerce_dibs_commerce_dibs'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_commerce_customer_profile__billing';
   $strongarm->value = array(
     'view_modes' => array(
@@ -92,7 +141,7 @@ function sof_commerce_settings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '10',
         ),
       ),
       'display' => array(),
@@ -122,7 +171,7 @@ function sof_commerce_settings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
@@ -538,6 +587,88 @@ function sof_commerce_settings_strongarm() {
     ),
   );
   $export['field_bundle_settings_message__commerce_order_user_comment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_message__sof_order_admin_message';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_message__sof_order_admin_message'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_message__sof_order_user_message';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(
+        'message__message_text__0' => array(
+          'message_notify_email_subject' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+        ),
+        'message__message_text__1' => array(
+          'message_notify_email_subject' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+          ),
+          'message_notify_email_body' => array(
+            'visible' => TRUE,
+            'weight' => 0,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_message__sof_order_user_message'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sof_order_admin_message';
+  $strongarm->value = 'sof_commerce_cart_summary_admin';
+  $export['sof_order_admin_message'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sof_order_user_message';
+  $strongarm->value = 'commerce_cart_summary';
+  $export['sof_order_user_message'] = $strongarm;
 
   return $export;
 }

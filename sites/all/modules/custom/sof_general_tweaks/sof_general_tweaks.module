@@ -123,6 +123,7 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
+
   $node = node_load($entity->vid);
 
   // Render the node and strip all html tags from it.
@@ -130,6 +131,28 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
 
   // Add new field for drupal search.
   $document->addField('ts_custom_text', $full_node_html);
+
+  // Add domain info in the index.
+  if (isset($entity->domains)) {
+    foreach ($entity->domains as $domain) {
+      // Switch default domain to 0, apache solr query issue on domain -1
+      if ($domain == -1) {
+        $domain = 0;
+      }
+
+      // Build an apachesolr-compatible domain search index key.
+      $key = array(
+        'name' => 'domain_id',
+        'multiple' => TRUE,
+        'index_type' => 'integer',
+      );
+      $key = apachesolr_index_key($key);
+
+      // Add domain key to document.
+      $document->setMultiValue($key, $domain);
+    }
+  }
+
 }
 
 /**
@@ -146,6 +169,10 @@ function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $q
   $query->addParam('fl', 'im_field_category_publication');
   $query->addParam('fl', 'im_field_category_single');
   $query->addParam('fl', 'teaser');
+
+  // Add domain key to filter all queries.
+  $domain = domain_get_domain();
+  $query->addParam('fq', 'im_domain_id:' . $domain['domain_id']);
 }
 
 /**
@@ -194,42 +221,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       break;
 
     case 'commerce_checkout_form_checkout':
-      $form['customer_profile_billing']['field_sof_commerce_customer_firm']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-        'required' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_cvr']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_name']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-        'required' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-      );
-
-      $form['customer_profile_billing']['field_sof_commerce_customer_ean']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_billing[field_sof_commerce_customer_type][und]"]' => array('value' => 'public'),
-        ),
-      );
-
-      $form['customer_profile_shipping']['field_sof_commerce_customer_firm']['#states'] = array(
-        'visible' => array(
-          ':input[name="customer_profile_shipping[field_sof_commerce_customer_type][und]"]' => array('value' => 'company'),
-        ),
-      );
-
       unset($form['account']);
       break;
   }
@@ -247,5 +238,80 @@ function sof_general_tweaks_mailchimp_ajax($form, $form_state) {
     unset($form['description']);
     unset($form['mailchimp_lists']);
     return $form;
+  }
+}
+
+/**
+ * Implements hook_message_presave().
+ */
+function sof_general_tweaks_message_presave($message) {
+  if ($message->type == 'sof_order_admin_message') {
+    $message->arguments['!sof-order-summary'] = array(
+      'callback' => 'sof_order_admin_message',
+      'pass message' => TRUE,
+    );
+  }
+
+  if ($message->type == 'sof_order_user_message') {
+    $message->arguments['!order-summary'] = array(
+      'callback' => 'sof_order_user_message',
+      'pass message' => TRUE,
+    );
+  }
+}
+
+/**
+ * Implements message argument callback.
+ *
+ * Message type: sof_order_admin_message.
+ */
+function sof_order_admin_message(Message $message) {
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $view = views_get_view('sof_commerce_cart_summary_admin');
+  $view->set_arguments(array($wrapper->field_sof_message_order->getIdentifier()));
+  $view->hide_admin_links = TRUE;
+  return $view->preview();
+}
+
+/**
+ * Implements message argument callback.
+ *
+ * Message type: sof_order_user_message.
+ */
+function sof_order_user_message(Message $message) {
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $view = views_get_view('commerce_cart_summary');
+  $view->set_arguments(array($wrapper->field_sof_message_order->getIdentifier()));
+  $view->hide_admin_links = TRUE;
+  return $view->preview();
+}
+
+/**
+ * Implements hook_mail_alter().
+ *
+ * Alter the mail send to the user in order to attach pdfs bought by him.
+ */
+function sof_general_tweaks_mail_alter(&$message) {
+  $attachments = array();
+
+  if ($message['key'] === 'sof_order_user_message') {
+    $order = field_get_items('message', $message['params']['message_entity'], 'field_sof_message_order');
+    $oid = $order['0']['target_id'];
+    $order_obj = commerce_order_load($oid);
+    $line_items = field_get_items('commerce_order', $order_obj, 'commerce_line_items');
+    foreach ($line_items as $line_item) {
+      $commerce_li = commerce_line_item_load($line_item['line_item_id']);
+      if (isset($commerce_li->commerce_product)) {
+        $commerce_product = field_get_items('commerce_line_item', $commerce_li, 'commerce_product');
+        $product = commerce_product_load($commerce_product[0]['product_id']);
+        if (isset($product->field_sof_commerce_pdf)) {
+          $pdf = field_get_items('commerce_product', $product, 'field_sof_commerce_pdf');
+          $attachments[] = array(
+            'filepath' => $pdf[0]['uri'],
+          );
+        }
+      }
+    }
+    $message['params']['attachments'] = $attachments;
   }
 }

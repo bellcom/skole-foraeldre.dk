@@ -70,11 +70,13 @@ body {
     float:right;
     text-transform:uppercase;
     background-image:url('images/nav_button.png');
+     background-size:15px 11px;
     background-position:right 11px;
     background-repeat:no-repeat;
 }
 #nav-activation-link span.active{
 	background-image:url('images/nav_close_button.png');
+	background-size:26px 23px;
     background-position:right 0;
     background-repeat:no-repeat;
     text-indent:-9999px;
@@ -122,8 +124,11 @@ body {
 	padding-left:25px;
 	width:100%;
 }
-.menu li.expanded.slideul a{
-	border-bottom: 0;
+.menu li.expanded.slideul > a{
+    border-bottom:0!important;
+}
+.third-level{
+	border-left:none;
 }
 /*Second, third level*/
 
@@ -155,7 +160,7 @@ body {
 	background-image:none!important;
 }
 .third-level-main-container{
-	margin-bottom:-20px;
+	margin-bottom:-30px;
 }
 /* =============================================================================
  *   Top Header Menu

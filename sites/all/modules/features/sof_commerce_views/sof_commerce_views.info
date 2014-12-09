@@ -1,0 +1,13 @@
+name = SOF Commerce views
+description = Exports views related to commerce functionality.
+core = 7.x
+package = Views
+version = 7.x-1.0
+project = sof_commerce_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = sof_commerce_cart_summary_admin
+features[views_view][] = sof_shopping_cart_block
+features_exclude[dependencies][ctools] = ctools
+mtime = 1417697678

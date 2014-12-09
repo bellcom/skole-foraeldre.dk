@@ -17,7 +17,7 @@
 	<?php if ( $followlinks = block_load('follow', 'site')): ?>
 		<h3 class="follow-title"><?php print t('Follow Us');?></h3>
 		<div class="follow-links">
-		  <a href="" class="news-deck-newsletter">Newsletter</a>
+		  <a href="#mailchimp-newsletter-503817-mergefieldss" class="news-deck-newsletter">Newsletter</a>
 		  <?php print render(_block_get_renderable_array(_block_render_blocks(array($followlinks)))); ?>
 		</div>
 	<?php endif; ?>

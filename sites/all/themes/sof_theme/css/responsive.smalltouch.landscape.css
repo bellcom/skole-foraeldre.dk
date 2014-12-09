@@ -76,6 +76,12 @@ body {
 .top-navigation-first{
 	display:none;
 }
+.menu li.expanded.slideul > a{
+    border-bottom:0!important;
+}
+.third-level{
+	border-left:none;
+}
 /*.top-navigation-first{
 	display:none;
 }*/
@@ -98,11 +104,13 @@ body {
     float:right;
     text-transform:uppercase;
     background-image:url('images/nav_button.png');
+    background-size:15px 11px;
     background-position:right 11px;
     background-repeat:no-repeat;
 }
 #nav-activation-link span.active{
 	background-image:url('images/nav_close_button.png');
+	background-size:26px 23px;
     background-position:right 0;
     background-repeat:no-repeat;
     text-indent:-9999px;
@@ -189,7 +197,7 @@ body {
 	background-image:none!important;
 }
 .third-level-main-container{
-	margin-bottom:-20px;
+	margin-bottom:-30px;
 }
 /* =============================================================================
  *   Top Header Menu
@@ -481,6 +489,10 @@ ul.pager li{
 .form-item .form-type-radio input{
 	width:auto;
 }
+#user-login .form-item,
+#user-login .form-actions{
+	width:100%;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
@@ -502,11 +514,13 @@ ul.pager li{
 }
 .block-sof-footer-social-media,
 .footer_social_media_facebook,
-.footer_social_media_twitter{
+.footer_social_media_twitter,
+#block-mailchimp-signup-sof-mailchimp-form{
 	width:100%;
 }
 .footer_social_media_facebook,
-.footer_social_media_twitter{
+.footer_social_media_twitter,
+#block-mailchimp-signup-sof-mailchimp-form{
 	margin-bottom:30px;
 }
 #footer .region-footer .footer-logo img{
