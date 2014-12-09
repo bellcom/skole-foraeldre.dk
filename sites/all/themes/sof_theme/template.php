@@ -359,7 +359,6 @@ function sof_theme_preprocess_node(&$variables) {
 
           //Alter submited by author
           $user = user_load($variables['uid']);
-          kpr($user);
 
           $variables['submitted'] =  t('Submitted by !username on !datetime',
             array(
