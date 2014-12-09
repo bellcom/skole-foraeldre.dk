@@ -1,4 +1,10 @@
 (function($) {
+	
+   //Extend support jquery
+   $.support.placeholder = (function(){
+	    var i = document.createElement('input');
+	    return 'placeholder' in i;
+   })();
   /**
   * Header Scripts 
   */
@@ -53,13 +59,7 @@
   */
   Drupal.behaviors.sofGeneralScripts = {
     attach: function (context, settings) {
-    
-    	//Extend support jquery
-		$.support.placeholder = (function(){
-		    var i = document.createElement('input');
-		    return 'placeholder' in i;
-		})();
-    
+
 		// Position of flexslider navigation arrows
 		function SliderNavigationposition() {
 		     var heightSlideimg = $('.flexslider .slides img').height();
