@@ -358,6 +358,15 @@ function sof_theme_preprocess_node(&$variables) {
                   $variables['slider_block_delta'] = 'related_articles_slider-block_1';
                   break;
           }
+
+          //Alter submited by author
+          $user = user_load($variables['uid']);
+          $variables['submitted'] =  t('Submitted by !username on !datetime',
+            array(
+              '!datetime' => date('j F Y - g:ia', $node->type == 'article' ? $variables['changed'] : $variables['created']),
+              '!username' => l($user->name, 'mailto:'.$user->mail , array('absolute' => TRUE)),
+          ));
+
     }
     //Realted Articles Side Block display
     else if($view_mode == 'related_content_reference'){
@@ -520,7 +529,7 @@ function sof_theme_facetapi_link_inactive($variables) {
     'active' => FALSE,
   );
   $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
- 
+
  // Sanitizes the link text if necessary.
   $sanitize = empty($variables['options']['html']);
   $link_text = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
@@ -573,22 +582,24 @@ function sof_theme_facetapi_link_active($variables) {
   $output .= '</a>';
   return $output;
 }
+
 /**
  * Override or insert variables into the block templates.
  */
-
 function sof_theme_preprocess_block(&$vars) {
-	if($vars['elements']['#block']->delta == 'sof_mailchimp_form'){
-		$vars['title_prefix'] = array(
-		    '#type' => 'markup',
-		    '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
-		);
-		$vars['title_suffix'] = array(
-		    '#type' => 'markup',
-		    '#markup' => '</div>',
-		);
-	}
+  if($vars['elements']['#block']->delta == 'sof_mailchimp_form'){
+    $vars['title_prefix'] = array(
+        '#type' => 'markup',
+        '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
+    );
+    $vars['title_suffix'] = array(
+        '#type' => 'markup',
+        '#markup' => '</div>',
+    );
+  }
 }
+
+
 /**
  * Helper function for generating "Category"(term) links for template_preprocess_search_result()
  *
