@@ -246,7 +246,7 @@
 		        <?php if (theme_get_setting('slogo_path')): ?>
 	  				<img src="<?php print file_create_url(theme_get_setting('slogo_path')); ?>" />	
 				<?php else : ?>	
-					<?php print $site_logo; ?>
+					<img src="<?php print file_create_url($footer_logo); ?>" />	
 				<?php endif; ?>  
 			 </div>	
 	        <?php print render($page['footer']['block_1']); ?>

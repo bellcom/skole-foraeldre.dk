@@ -30,7 +30,6 @@
     font-family: 'conduit_itcregular';
     src: url('fonts/condult_itc/ConduitITC.eot');
     src: url('fonts/condult_itc/ConduitITC.eot?#iefix') format('embedded-opentype'),
-         url('fonts/condult_itc/ConduitITC.woff2') format('woff2'),
          url('fonts/condult_itc/ConduitITC.woff') format('woff'),
          url('fonts/condult_itc/ConduitITC.ttf') format('truetype'),
          url('fonts/condult_itc/ConduitITC.svg#conduit_itcregular') format('svg');
@@ -1843,12 +1842,14 @@ article.node-publication .field-type-image.field-label-above h2{
     font-weight: 200;
     text-decoration: none;
     text-transform:uppercase;
+    color:#fff;
 }
 .publication-top-right-container .field-name-field-single-link .field-item a{
 	color:#fff;
 }
 .publication-top-right-container .download-as-pdf{
-	background-image:url('images/download-pdf-icon-small.png');
+	background-image:url('images/download-pdf-icon.png');
+	background-size:37px 31px;
 	background-repeat:no-repeat;
 	background-position:97.5% center;
 	font-size: 20px;
@@ -1879,6 +1880,7 @@ article.node-publication .field-type-image.field-label-above h2{
  	height:39px;
  	float:right!important;
  	background-image:url('images/close-publication.png');
+ 	background-size:40px 39px;
  	background-repeat:no-repeat:
 }
 .publication-bottom-container{
@@ -3213,9 +3215,10 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
     color: #fff;
     text-decoration: none;
 } 
-#user-login label{
+#user-login label,
+#user-pass label{
     color:#00a2eb;
-	font-size: 19px;
+	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
     margin-bottom: 5px;
@@ -3224,24 +3227,29 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
     padding-top: 14px;
     text-align: left;	
 }
-#user-login .form-item {
+#user-login .form-item,
+#user-pass .form-item {
 	width:50%;
 }
-#user-login  input{
+#user-login  input,
+#user-pass  input{
 	border: 1px solid #bbbbbb;
     border-radius: 0;
     box-sizing: border-box;
     padding: 10px;
     width:100%;
 }
-#user-login .description {
+#user-login .description,
+#user-pass .description{
 	font-size:15px;
 }
-#user-login .form-actions{
+#user-login .form-actions,
+#user-pass .form-actions{
 	float: left;
     width: 50%;
 }
-#user-login .form-submit {
+#user-login .form-submit,
+#user-pass .form-submit{
     background-color: #00a2eb;
 	border:none;
     color: #fff;
@@ -3252,6 +3260,9 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
     padding: 15px 25px;
     text-transform: uppercase;
     width:100px;
+}
+#user-pass .form-submit{
+	width:200px;
 }
 /* =============================================================================
  *   BLOCKS
