@@ -21,6 +21,60 @@ function sof_commerce_settings_commerce_product_default_types() {
 }
 
 /**
+ * Implements hook_commerce_tax_default_rates().
+ */
+function sof_commerce_settings_commerce_tax_default_rates() {
+  $items = array(
+    'test' => array(
+      'name' => 'test',
+      'display_title' => 'VAT',
+      'description' => '',
+      'rate' => 0.2,
+      'type' => 'vat',
+      'rules_component' => 'commerce_tax_rate_test',
+      'default_rules_component' => 1,
+      'price_component' => 'tax|test',
+      'calculation_callback' => 'commerce_tax_rate_calculate',
+      'module' => 'commerce_tax_ui',
+      'title' => 'VAT',
+      'admin_list' => TRUE,
+    ),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_commerce_tax_default_types().
+ */
+function sof_commerce_settings_commerce_tax_default_types() {
+  $items = array(
+    'sales_tax' => array(
+      'name' => 'sales_tax',
+      'display_title' => 'Sales tax',
+      'description' => 'A basic type for taxes that do not display inclusive with product prices.',
+      'display_inclusive' => 0,
+      'round_mode' => 0,
+      'rule' => 'commerce_tax_type_sales_tax',
+      'module' => 'commerce_tax_ui',
+      'title' => 'Sales tax',
+      'admin_list' => TRUE,
+    ),
+    'vat' => array(
+      'name' => 'vat',
+      'display_title' => 'VAT',
+      'description' => 'A basic type for taxes that display inclusive with product prices.',
+      'display_inclusive' => 0,
+      'round_mode' => 1,
+      'rule' => 'commerce_tax_type_vat',
+      'module' => 'commerce_tax_ui',
+      'title' => 'VAT',
+      'admin_list' => TRUE,
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_ctools_plugin_api().
  */
 function sof_commerce_settings_ctools_plugin_api($module = NULL, $api = NULL) {
