@@ -1,3 +1,12 @@
+7.x-1.7. 10-12-2014
+--------------------
+* fd8cb49 - SOF-102 - make EAN number required by using conditional fields. Committed by martina at 2014-12-10 11:05:01 +0200
+* 574d46b - SOF-20 - Cusotm date type/format added, features extra date export updated, author message changed Committed by Goce at 2014-12-10 09:40:45 +0100
+* 77af8b8 - SOF-102 - hide prroduct description from publication node view. Committed by martina at 2014-12-10 10:34:07 +0200
+* 6ee6dfb - SOF-102 - updating feature with no payment settings. Committed by martina at 2014-12-10 10:20:38 +0200
+* 1f89d69 - SOF-103  Publications Listing page - FrontEnd - update image style for related publications Committed by rkoteska at 2014-12-10 18:12:12 +1000
+* 99c89ab - SOF-103  Publications Listing page - FrontEnd - changing image style on publication default display Committed by rkoteska at 2014-12-10 17:46:15 +1000
+
 7.x-1.6. 09-12-2014
 --------------------
 * 51d894e - (HEAD, origin/dev, dev) SOF-102 - make EAN required; add description to the view that sends order info to the admin. Committed by martina at 2014-12-09 18:16:43 +0200
