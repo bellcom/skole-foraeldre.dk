@@ -285,10 +285,17 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
   $fieldable_pane_type = $variables['elements']['#bundle'];
   //Add title on every deck
   switch($fieldable_pane_type){
-        case 'news_pane':
-            $variables['panetitle'] = t('News deck');
+     case 'news_pane':{
+       $variables['panetitle'] = t('News deck');
+
+      //Follow site block
+      if ( $get_follow_site_block = block_load('follow', 'site')){
+        $variables['followlinks'] = _block_get_renderable_array(_block_render_blocks(array($get_follow_site_block)));
+      }
+
+     }
             break;
-      case 'video_pane':
+     case 'video_pane':
             $variables['panetitle'] = t('Video deck');
             break;
     case 'also_see_pane':
