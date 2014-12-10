@@ -16,6 +16,8 @@ function sof_variables_strongarm() {
   $strongarm->name = 'apachesolr_image_index_styles';
   $strongarm->value = array(
     'article_top_slider' => 'article_top_slider',
+    'publication_default_image_393x522_' => 'publication_default_image_393x522_',
+    'publication_related' => 'publication_related',
     'related_content_reference_image' => 'related_content_reference_image',
     'flexslider_full' => 0,
     'flexslider_thumbnail' => 0,
@@ -24,7 +26,6 @@ function sof_variables_strongarm() {
     'large' => 0,
     'linkit_thumb' => 0,
     'media_thumbnail' => 0,
-    'publication_related' => 0,
   );
   $export['apachesolr_image_index_styles'] = $strongarm;
 
