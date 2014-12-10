@@ -2793,6 +2793,9 @@ body.node-type-section #page-title{
     line-height: 50px;
 	margin:40px 0 0 0;
 }
+.node-section  .pane-page-title  h1{
+	padding:0 0 0 5px;
+}
 .node-section .field-name-field-teaser h2{
 	display:none;
 }
@@ -2806,6 +2809,7 @@ body.node-type-section #page-title{
     padding-bottom: 44px;
     padding-right: 0;
     padding-top: 20px;
+    padding-left:5px;
     text-align: left;
 }
 .section-header{
@@ -2890,8 +2894,11 @@ body.node-type-section #page-title{
 /* Section Default Listing */
 .section-default-listiing{
 	float:left;
-	padding:20px 0 100px 0;
+	padding:20px 15px 100px 15px;
 	width:100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 .section-default-listiing .view-content{
 	float:left;
@@ -5522,11 +5529,20 @@ body.page-search #block-system-main > ul li{
 	.panel-col-full-main{
 		padding:0;
 	}
+	.node-section .pane-page-title h1{
+		padding:0;
+	}
 	.node-section .panel-pane.pane-bundle-recommended-items-pane,
-	.node-section .pane-page-title,
-	.node-section .pane-node-field-teaser,
 	.node-section .pane-section-default-content-section-default-listing{
 		padding:0 30px;
+	}
+	.node-section .pane-page-title,
+	.node-section .pane-node-field-teaser{
+		padding:0 20px;
+	}
+	.section-default-listiing{
+		padding-left:5px;
+		padding-right:5px;
 	}
 	.node-section .pane-section-default-content-section-default-header{
 		padding:0 20px;
