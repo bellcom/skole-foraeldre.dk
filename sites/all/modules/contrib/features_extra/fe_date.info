@@ -1,0 +1,7 @@
+name = FE Date
+description = Build date format as features.
+core = 7.x
+package = Features extra
+
+dependencies[] = ctools
+dependencies[] = features
