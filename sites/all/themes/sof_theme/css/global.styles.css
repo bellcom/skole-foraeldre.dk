@@ -3273,10 +3273,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
     margin-left: 20px;
     padding: 15px 25px;
     text-transform: uppercase;
-    width:100px;
-}
-#user-pass .form-submit{
-	width:200px;
+    width:auto;
 }
 /* =============================================================================
  *   BLOCKS

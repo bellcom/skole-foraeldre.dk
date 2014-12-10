@@ -545,3 +545,27 @@ function propeople_update_7001() {
     propeople_delete_fields_instances($params, array());
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove body field from section and publication content type.
+ */
+function propeople_update_7002() {
+  $fields = array(
+    array(
+      'entity_type' => 'node',
+      'field_name' => 'body',
+      'bundle' => 'publication',
+    ),
+    array(
+      'entity_type' => 'node',
+      'field_name' => 'body',
+      'bundle' => 'section',
+    ),
+  );
+
+  foreach ($fields as $params) {
+    propeople_delete_fields_instances($params, array());
+  }
+}
