@@ -321,6 +321,9 @@ ul.pager li{
     padding: 2px 5px!important;
 
 }
+.node-section .pane-section-default-content-section-default-listing{
+		padding:0 15px;
+	}
 /* =============================================================================
  *   Blocks
  * ========================================================================== */

@@ -281,6 +281,9 @@ body {
 		padding-left:0px;
 		padding-right:0px;
 }
+.node-section .pane-section-default-content-section-default-listing{
+		padding:0 15px;
+	}
 /* =============================================================================
  *   Blocks
  * ========================================================================== */

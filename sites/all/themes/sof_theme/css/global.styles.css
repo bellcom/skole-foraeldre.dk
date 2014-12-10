@@ -5532,13 +5532,11 @@ body.page-search #block-system-main > ul li{
 	.node-section .pane-page-title h1{
 		padding:0;
 	}
-	.node-section .panel-pane.pane-bundle-recommended-items-pane{
+	.node-section .panel-pane.pane-bundle-recommended-items-pane,
+	.node-section .pane-section-default-content-section-default-listing{
 		padding:0 30px;
 	}
-	.node-section .pane-section-default-content-section-default-listing{
-		padding:0 15px;
-	}
-
+	
 	.node-section .pane-page-title,
 	.node-section .pane-node-field-teaser{
 		padding:0 20px;
