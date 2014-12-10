@@ -225,6 +225,12 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'product:field_sof_commerce_description' => array(
+          'full' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );

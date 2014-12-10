@@ -207,4 +207,5 @@ dependencies[] = sof_blocks
 dependencies[] = sof_mailchimp_settings
 dependencies[] = sof_commerce_settings
 dependencies[] = sof_commerce_views
+dependencies[] = sof_date_formats
 

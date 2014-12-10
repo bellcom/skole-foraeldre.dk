@@ -33,12 +33,12 @@ function sof_image_styles_image_default_styles() {
     ),
   );
 
-  // Exported image style: publication_related.
-  $styles['publication_related'] = array(
-    'name' => 'publication_related',
-    'label' => 'Publication related image',
+  // Exported image style: publication_default_image_393x522_.
+  $styles['publication_default_image_393x522_'] = array(
+    'name' => 'publication_default_image_393x522_',
+    'label' => 'Publication default image(393x522)',
     'effects' => array(
-      1 => array(
+      3 => array(
         'label' => 'Crop',
         'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
         'effect callback' => 'image_crop_effect',
@@ -48,11 +48,50 @@ function sof_image_styles_image_default_styles() {
         'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
-          'width' => 430,
-          'height' => 570,
+          'width' => 393,
+          'height' => 522,
           'anchor' => 'center-center',
         ),
         'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: publication_related.
+  $styles['publication_related'] = array(
+    'name' => 'publication_related',
+    'label' => 'Publication related image(422x561)',
+    'effects' => array(
+      4 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 422,
+          'height' => 561,
+          'upscale' => 0,
+        ),
+        'weight' => -10,
+      ),
+      5 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 422,
+          'height' => 561,
+        ),
+        'weight' => 3,
       ),
     ),
   );

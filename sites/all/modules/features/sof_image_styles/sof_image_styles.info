@@ -5,5 +5,7 @@ package = Configuration
 dependencies[] = image
 features[features_api][] = api:2
 features[image][] = article_top_slider
+features[image][] = publication_default_image_393x522_
 features[image][] = publication_related
 features[image][] = related_content_reference_image
+mtime = 1418197299
