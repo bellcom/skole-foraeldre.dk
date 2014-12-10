@@ -33,10 +33,34 @@ function sof_image_styles_image_default_styles() {
     ),
   );
 
+  // Exported image style: publication_default_image_393x522_.
+  $styles['publication_default_image_393x522_'] = array(
+    'name' => 'publication_default_image_393x522_',
+    'label' => 'Publication default image(393x522)',
+    'effects' => array(
+      3 => array(
+        'label' => 'Crop',
+        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
+        'effect callback' => 'image_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_crop_form',
+        'summary theme' => 'image_crop_summary',
+        'module' => 'image',
+        'name' => 'image_crop',
+        'data' => array(
+          'width' => 393,
+          'height' => 522,
+          'anchor' => 'center-center',
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: publication_related.
   $styles['publication_related'] = array(
     'name' => 'publication_related',
-    'label' => 'Publication related image',
+    'label' => 'Publication related image(430x570)',
     'effects' => array(
       1 => array(
         'label' => 'Crop',
