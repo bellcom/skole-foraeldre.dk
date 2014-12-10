@@ -311,28 +311,30 @@ function sof_pdf_generator_publication_pdf($node_view) {
     'title' => $node_view['field_pdf_title']['#items'][0]['value'],
     'teaser' => $node_view['field_pdf_description']['#items'][0]['value'],
     'logo' => theme_get_setting('logo'),
-    'color' => $node_view['field_pdf_cover_color']['#items'][0]['rgb'],
+    'color' => isset($node_view['field_pdf_cover_color']['#items'][0]['rgb']) ? $node_view['field_pdf_cover_color']['#items'][0]['rgb'] : '#ffffff',
   ));
   $cover_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
   //Content page setup
-  foreach ($node_view['field_pdf_content']['#items'] as $key => $item) {
+  if(isset($node_view['field_pdf_content']['#items'])){
+    foreach ($node_view['field_pdf_content']['#items'] as $key => $item) {
 
-    $node_content[$key] = array();
+      $node_content[$key] = array();
 
-    //Add image on top
-    if ($item['entity'] -> field_image_slider) {
-      $node_content[$key]['image'] = theme('sof_pdf_top_image', array('image' => field_view_field('node', $item['entity'], 'field_image_slider', 'default'), ));
+      //Add image on top
+      if ($item['entity'] -> field_image_slider) {
+        $node_content[$key]['image'] = theme('sof_pdf_top_image', array('image' => field_view_field('node', $item['entity'], 'field_image_slider', 'default'), ));
+      }
+
+      //Add the rest of the fields
+      $node_content[$key]['title'] = $item['entity'] -> title;
+      $node_content[$key]['teaser'] = field_view_field('node', $item['entity'], 'field_teaser', 'default');
+      $node_content[$key]['body'] = field_view_field('node', $item['entity'], 'body', 'default');
+
     }
-
-    //Add the rest of the fields
-    $node_content[$key]['title'] = $item['entity'] -> title;
-    $node_content[$key]['teaser'] = field_view_field('node', $item['entity'], 'field_teaser', 'default');
-    $node_content[$key]['body'] = field_view_field('node', $item['entity'], 'body', 'default');
-
+    $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content, ));
+    $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
   }
-  $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content, ));
-  $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
   //Send html to print
   if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
@@ -359,7 +361,9 @@ function sof_pdf_generator_publication_pdf($node_view) {
     ));
 
     //Add a HTML file, a HTML string or a page from a URL
-    $pdf -> addPage($content_page);
+    if(isset($content_page)){
+      $pdf -> addPage($content_page);
+    }
 
     //Create fielname from url alias
     $url_alias = drupal_lookup_path('alias', 'node/' . $node_view['#node'] -> nid);
