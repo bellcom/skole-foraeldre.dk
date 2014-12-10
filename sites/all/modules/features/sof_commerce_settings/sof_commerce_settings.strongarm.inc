@@ -242,6 +242,20 @@ function sof_commerce_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_payment_pane_no_method_behavior';
+  $strongarm->value = 'empty';
+  $export['commerce_payment_pane_no_method_behavior'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_payment_pane_require_method';
+  $strongarm->value = 0;
+  $export['commerce_payment_pane_require_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'dibs_settings_commerce_dibs_commerce_dibs';
   $strongarm->value = array(
     'general' => array(
