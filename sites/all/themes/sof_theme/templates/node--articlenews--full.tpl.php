@@ -166,8 +166,8 @@ hide($content['links']);
              <h2 class="block-title"><?php echo t('Read Also');?></h2>
              <div class="bottom-read-also-block-inner">
                 <!-- Read Also Content -->
-                <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
-                   <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
+                <?php if ( $blockrelatedcontent ): ?>
+                   <?php print render($blockrelatedcontent); ?>
                <?php endif; ?>
                 <!-- Read Also Links -->
                 <?php print render($content['group_bottomaregion']); ?>

@@ -357,6 +357,11 @@ function sof_theme_preprocess_node(&$variables) {
             $variables['blockrelatedslider'] = _block_get_renderable_array(_block_render_blocks(array($get_slider_block)));
           }
 
+          //Read Also Content
+          if ( $get_read_also_block = block_load('views', 'read_also-block')){
+            $variables['blockrelatedcontent'] = _block_get_renderable_array(_block_render_blocks(array($get_read_also_block)));
+          }
+
           //Alter submited by author
           $user = user_load($variables['uid']);
           $variables['submitted'] =  t('Submitted by !username on !datetime',
