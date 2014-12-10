@@ -469,7 +469,7 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Empty';
+  $handler->display->display_options['empty']['area']['content'] = '0 items';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* No results behavior: Commerce Line Item: Line item summary */
   $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';
