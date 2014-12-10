@@ -401,6 +401,14 @@ function sof_theme_preprocess_node(&$variables) {
     if($view_mode == 'related_content_reference'){
       $variables['theme_hook_suggestion'] = 'node__article__related_content_reference';
     }
+
+    //Add variable with related publications block
+    if($view_mode == 'full'){
+      if ( $get_publication_block = block_load('views', 'other_releases-block-block')){
+        $variables['blockotherelease'] = _block_get_renderable_array(_block_render_blocks(array($get_publication_block)));
+      }
+    }
+
   }
  }
 /**

@@ -112,33 +112,33 @@ hide($content['links']);
   <?php print render($title_prefix); ?>
   <!-- Publication Top Main Container -->
   <div class="publication-top-container">
-  	 <div class="publication-top-container-inner">
-  	 	 <!-- Left Content  -->
-  	 	 <div class="publication-top-left-container">
-	    	 <?php print render($content['field_image']); ?>
-	     </div>
-	     <!-- Right Content -->
-	     <div class="publication-top-right-container">
-		     <?php if ($title): ?>
-		        <h1<?php print $title_attributes; ?>>
-		          <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
-		          <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
-		        </h1>
-		     <?php endif; ?>
-		     <!-- Print rest of the content -->
-		     <?php print render($content); ?>
-		     <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
-	     </div>
+     <div class="publication-top-container-inner">
+        <!-- Left Content  -->
+        <div class="publication-top-left-container">
+         <?php print render($content['field_image']); ?>
+       </div>
+       <!-- Right Content -->
+       <div class="publication-top-right-container">
+         <?php if ($title): ?>
+            <h1<?php print $title_attributes; ?>>
+              <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
+              <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
+            </h1>
+         <?php endif; ?>
+         <!-- Print rest of the content -->
+         <?php print render($content); ?>
+         <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
+       </div>
      </div>
   </div>
   <!-- Publication Bottom Main Container(View) -->
   <div class="publication-bottom-container">
-	 <!-- Read Also Content -->
-   	 <?php if ( $blockotherelease = block_load('views', 'other_releases-block')): ?>
-         <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockotherelease)))); ?>
+   <!-- Read Also Content -->
+      <?php if ( $blockotherelease ): ?>
+         <?php print render($blockotherelease); ?>
      <?php endif; ?>
-      <!-- Read Also Articles --> 
-  </div> 
+      <!-- Read Also Articles -->
+  </div>
   <!-- Content Type Links -->
   <?php if ($links = render($content['links'])): ?>
     <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>
