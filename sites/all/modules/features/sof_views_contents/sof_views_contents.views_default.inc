@@ -257,12 +257,12 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   /* Field: Image */
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['id'] = 'sm_thumb_article_top_slider_field_image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['table'] = 'apachesolr__solr';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['field'] = 'sm_thumb_article_top_slider_field_image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['ui_name'] = 'Image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['label'] = '';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['id'] = 'sm_thumb_publication_related_field_image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['field'] = 'sm_thumb_publication_related_field_image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['ui_name'] = 'Image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['label'] = '';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['element_label_colon'] = FALSE;
   /* Field: Title */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'apachesolr__solr';
