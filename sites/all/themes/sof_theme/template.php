@@ -371,9 +371,9 @@ function sof_theme_preprocess_node(&$variables) {
 
           //Alter submited by author
           $user = user_load($variables['uid']);
-          $variables['submitted'] =  t('Submitted by !username on !datetime',
+          $variables['submitted'] =  t('Submitted on !datetime by !username',
             array(
-              '!datetime' => date('j F Y - g:ia', $node->type == 'article' ? $variables['changed'] : $variables['created']),
+              '!datetime' => format_date($node->type == 'article' ? $variables['changed'] : $variables['created'], 'sof_custom'),
               '!username' => l($user->name, 'mailto:'.$user->mail , array('absolute' => TRUE)),
           ));
 
