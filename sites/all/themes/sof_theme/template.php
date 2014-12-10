@@ -404,7 +404,7 @@ function sof_theme_preprocess_node(&$variables) {
 
     //Add variable with related publications block
     if($view_mode == 'full'){
-      if ( $get_publication_block = block_load('views', 'other_releases-block-block')){
+      if ( $get_publication_block = block_load('views', 'other_releases-block')){
         $variables['blockotherelease'] = _block_get_renderable_array(_block_render_blocks(array($get_publication_block)));
       }
     }
