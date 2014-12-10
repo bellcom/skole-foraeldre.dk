@@ -122,59 +122,59 @@ hide($content['links']);
   <div<?php print $content_attributes; ?>>
      <!-- Top Article Content -->
      <div class="top-article-content">
-	  	  <!-- Left Region -->
-		  <div class="left-article-region article-region">
-			<!-- Left Region Group --> 
-			<div class="top-sharing-printing-links">
-			    <?php print $print_button; ?>
-				<?php print render($content['group_leftaregion']['field_add_this']); ?>
-		  	</div>	
-		  	<?php print render($content['group_leftaregion']['field_image_slider']); ?>
-		  	<h2 class="node-article-title"><?php print $title; ?></h2>
-		    <?php print render($content['group_leftaregion']); ?>
-		        <!-- Submited by -->
-		 	<?php if(!empty($user_picture) || $display_submitted): ?>
-		      <p class="author-datetime"><?php print $submitted; ?></p>
-			<?php endif; ?>
-			<!-- Submited by -->
-		   </div> 
-	       <!-- Right Region -->
-		   <div class="right-article-region article-region">
-		   	 <!-- Top links (download as pdf, publication link) -->
-		   	 <div class="right-region-top-links">
-		   	 	<?php print render($content['group_rightaregion']['download_as_pdf']); ?>
-		   	 	<?php if(isset($publication_link)): ?>
-		   	 	    <?php print $publication_link; ?>
-		   	 	<?php endif; ?>
-		   	 </div>	
-			<!-- Related terms block -->
-			<?php if ( $blockrelatedterms = block_load('views', 'related_content-block')): ?>
-				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedterms)))); ?>
-			<?php endif; ?>
-			<!-- Related articles/news slideshow -->
-			<?php if ( $blockrelatedslider = block_load('views', $slider_block_delta)): ?>
-				<?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedslider)))); ?>
-			<?php endif; ?>
-			<!-- Rest of the fields -->
-		    <?php print render($content['group_rightaregion']); ?>
-		   </div>
-	   </div>
-   	   <!-- Bottom Region -->
-  	   <div class="bottom-article-region article-region">
-	  	   	<!-- Related Articles Bottom Block -->
-	  	   	<div class="bottom-read-also-block">
-	  	   		<h2 class="block-title"><?php echo t('Read Also');?></h2>
-	  	   		<div class="bottom-read-also-block-inner">
-	  	   			 <!-- Read Also Content -->
-			  	   	 <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
-			             <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
-			         <?php endif; ?>
-			          <!-- Read Also Links --> 
-			          <?php print render($content['group_bottomaregion']); ?>
-			    </div>    
-	        </div>
-	   		 
-       </div>	
+        <!-- Left Region -->
+      <div class="left-article-region article-region">
+      <!-- Left Region Group -->
+      <div class="top-sharing-printing-links">
+          <?php print $print_button; ?>
+        <?php print render($content['group_leftaregion']['field_add_this']); ?>
+        </div>
+        <?php print render($content['group_leftaregion']['field_image_slider']); ?>
+        <h2 class="node-article-title"><?php print $title; ?></h2>
+        <?php print render($content['group_leftaregion']); ?>
+            <!-- Submited by -->
+       <?php if(!empty($user_picture) || $display_submitted): ?>
+          <p class="author-datetime"><?php print $submitted; ?></p>
+      <?php endif; ?>
+      <!-- Submited by -->
+       </div>
+         <!-- Right Region -->
+       <div class="right-article-region article-region">
+          <!-- Top links (download as pdf, publication link) -->
+          <div class="right-region-top-links">
+            <?php print render($content['group_rightaregion']['download_as_pdf']); ?>
+            <?php if(isset($publication_link)): ?>
+                <?php print $publication_link; ?>
+            <?php endif; ?>
+          </div>
+      <!-- Related terms block -->
+      <?php if ( $blockrelatedterms ): ?>
+        <?php print render($blockrelatedterms); ?>
+      <?php endif; ?>
+      <!-- Related articles/news slideshow -->
+      <?php if ( $blockrelatedslider ): ?>
+        <?php print render($blockrelatedslider); ?>
+      <?php endif; ?>
+      <!-- Rest of the fields -->
+        <?php print render($content['group_rightaregion']); ?>
+       </div>
+     </div>
+        <!-- Bottom Region -->
+       <div class="bottom-article-region article-region">
+           <!-- Related Articles Bottom Block -->
+           <div class="bottom-read-also-block">
+             <h2 class="block-title"><?php echo t('Read Also');?></h2>
+             <div class="bottom-read-also-block-inner">
+                <!-- Read Also Content -->
+                <?php if ( $blockrelatedcontent = block_load('views', 'read_also-block')): ?>
+                   <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockrelatedcontent)))); ?>
+               <?php endif; ?>
+                <!-- Read Also Links -->
+                <?php print render($content['group_bottomaregion']); ?>
+          </div>
+          </div>
+
+       </div>
   </div>
   <!-- Main Content -->
 

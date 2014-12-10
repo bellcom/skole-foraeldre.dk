@@ -120,7 +120,7 @@ function sof_theme_process_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function sof_theme_process_page(&$variables) {
-	global $base_path;
+  global $base_path;
   // Hook into color.module.
   if (module_exists('color')) {
     _color_page_alter($variables);
@@ -347,16 +347,14 @@ function sof_theme_preprocess_node(&$variables) {
                 ));
             }
 
+          //Related terms block
+          if ( $get_related_block = block_load('views', 'related_content-block')){
+            $variables['blockrelatedterms'] = _block_get_renderable_array(_block_render_blocks(array($get_related_block)));
+          }
 
-
-          //Pass slider block $delta as variable
-          switch($node->type){
-              case 'article':
-                  $variables['slider_block_delta'] = 'related_articles_slider-block';
-                  break;
-              case 'news':
-                  $variables['slider_block_delta'] = 'related_articles_slider-block_1';
-                  break;
+          //Related articles/news slideshow
+          if ( $get_slider_block = block_load('views', $node->type == 'article' ? 'related_articles_slider-block' : 'related_articles_slider-block_1')){
+            $variables['blockrelatedslider'] = _block_get_renderable_array(_block_render_blocks(array($get_slider_block)));
           }
 
           //Alter submited by author
