@@ -3057,10 +3057,10 @@ body.node-type-basic-page .print_html{
     border: medium none;
 }
 .node-webform .form-item label{
-	font-size: 19px;
+	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-left: 0;
     padding-right: 17px;
     padding-top: 14px;
@@ -3109,7 +3109,7 @@ body.node-type-basic-page .print_html{
 .node-webform .webform-component-file input {
     border: medium none;
     padding: 0;
-    width: 33%;
+    width: 70%;
 }
 .form-managed-file{
 	max-width:520px;
@@ -3130,11 +3130,15 @@ body.node-type-basic-page .print_html{
 .node-webform .form-number{
 	max-width:150px;
 }
+.node-webform .form-actions{
+	float:left;
+	width:100%;
+	text-align:right;
+}
 .node-webform .form-actions input {
 	border:none;
     color: #fff;
     cursor: pointer;
-    float: right;
     font-size: 13px;
     margin-left: 20px;
     padding: 15px 25px;
@@ -3150,7 +3154,7 @@ body.node-type-basic-page .print_html{
 .form-textarea-wrapper textarea{
 	border: 1px solid #bbbbbb;
     border-radius: 0;
-    max-width: 520px;
+    max-width: 580px;
 }
 .webform-component-time .form-item {
 	float:none!important;
@@ -5532,13 +5536,11 @@ body.page-search #block-system-main > ul li{
 	.node-section .pane-page-title h1{
 		padding:0;
 	}
-	.node-section .panel-pane.pane-bundle-recommended-items-pane{
+	.node-section .panel-pane.pane-bundle-recommended-items-pane,
+	.node-section .pane-section-default-content-section-default-listing{
 		padding:0 30px;
 	}
-	.node-section .pane-section-default-content-section-default-listing{
-		padding:0 15px;
-	}
-
+	
 	.node-section .pane-page-title,
 	.node-section .pane-node-field-teaser{
 		padding:0 20px;
