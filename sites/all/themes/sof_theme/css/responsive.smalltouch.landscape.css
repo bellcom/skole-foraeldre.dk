@@ -496,6 +496,20 @@ ul.pager li{
 #user-login .form-actions{
 	width:100%;
 }
+.node-webform .form-actions input{
+	padding:15px;
+	margin-left:10px;
+}
+.node-webform .form-item label{
+	margin-right:0px;
+	padding-right:0px;
+}
+.node-webform .form-number{
+	max-width:100%;
+}
+.node-webform .webform-container-inline .form-item{
+	margin-right:5px;
+}
 /* =============================================================================
  *   Footer
  * ========================================================================== */
