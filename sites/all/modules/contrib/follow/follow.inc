@@ -129,9 +129,9 @@ function _follow_links_element(array $links, array $networks, $type, $alignment 
   }
 
   $wrapper = $alignment == 'horizontal' ? 'span' : 'div';
-
   foreach ($links as $link) {
-    $title = !empty($link->title) ? $link->title : $networks[$link->name]['title'];
+
+    $title = !empty($link->title) ? $link->title : isset($networks[$link->name]['title']) ? $networks[$link->name]['title'] : '';
 
     //Remove domain from the name to use regular css rules
     $link_name = str_replace(FOLLOW_DOMAIN . '_', '', $link->name);
