@@ -1,7 +1,7 @@
-diff --git a/sites/all/modules/contrib/follow/follow.inc b/sites/all/modules/contrib/follow/follow.inc
-index 64bf244..32b9748 100644
---- a/sites/all/modules/contrib/follow/follow.inc
-+++ b/sites/all/modules/contrib/follow/follow.inc
+diff --git a/follow.inc b/follow.inc
+index 64bf244..acf65c0 100644
+--- a/follow.inc
++++ b/follow.inc
 @@ -5,6 +5,10 @@
   * Follow module API and helper functions.
   */
@@ -34,13 +34,19 @@ index 64bf244..32b9748 100644
  
      case FOLLOW_ME:
        return t('Follow me on');
-@@ -129,8 +133,11 @@ function _follow_links_element(array $links, array $networks, $type, $alignment
-   foreach ($links as $link) {
-     $title = !empty($link->title) ? $link->title : $networks[$link->name]['title'];
+@@ -125,12 +129,15 @@ function _follow_links_element(array $links, array $networks, $type, $alignment
+   }
  
+   $wrapper = $alignment == 'horizontal' ? 'span' : 'div';
+-
+   foreach ($links as $link) {
+-    $title = !empty($link->title) ? $link->title : $networks[$link->name]['title'];
++
++    $title = !empty($link->title) ? $link->title : isset($networks[$link->name]['title']) ? $networks[$link->name]['title'] : '';
++
 +    //Remove domain from the name to use regular css rules
 +    $link_name = str_replace(FOLLOW_DOMAIN . '_', '', $link->name);
-+
+ 
      $element['follow-links'][$link->name] = array(
 -      '#prefix' => "<{$wrapper} class='follow-link-wrapper follow-link-wrapper-{$link->name}'>",
 +      '#prefix' => "<{$wrapper} class='follow-link-wrapper follow-link-wrapper-{$link_name}'>",
@@ -185,10 +191,10 @@ index 64bf244..32b9748 100644
    return base_path() . $path;
  }
 +
-diff --git a/sites/all/modules/contrib/follow/follow.module b/sites/all/modules/contrib/follow/follow.module
+diff --git a/follow.module b/follow.module
 index b43aad3..035e986 100644
---- a/sites/all/modules/contrib/follow/follow.module
-+++ b/sites/all/modules/contrib/follow/follow.module
+--- a/follow.module
++++ b/follow.module
 @@ -203,29 +203,29 @@ function follow_block_info() {
  function follow_block_configure($delta = '') {
    switch($delta) {

@@ -123,6 +123,7 @@ function propeople_install_tasks() {
  */
 function propeople_create_initial_content() {
   _propeople_create_menus();
+  _propeople_set_default_domain();
   _propeople_default_follow_link();
 }
 
@@ -292,6 +293,24 @@ function _propeople_create_menus() {
 }
 
 /**
+ * Programatically update default domain
+ *
+ * @see https://www.drupal.org/project/domain
+ */
+function _propeople_set_default_domain() {
+
+  global $base_url;
+
+  $domain_def = domain_default();
+
+  $domain_def['subdomain'] = preg_replace('(^https?://)', '', $base_url);
+  $domain_def['sitename'] = 'Skole og Forældre';
+  $domain_def['path'] = $base_url . '/';
+
+  domain_save($domain_def);
+}
+
+/**
  * Programatically create follow links.
  *
  *  - Remove the rss follow link (added by default on module install)
@@ -305,14 +324,14 @@ function _propeople_default_follow_link() {
   // Add a default facebook and twitter links to the page.
   $values = array(
     array(
-      'name' => 'facebook',
+      'name' => FOLLOW_DOMAIN . '_facebook',
       'path' => 'https://www.facebook.com/SkoleOgForaeldre',
       'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
       'uid' => 0,
       'weight' => -10,
     ),
     array(
-      'name' => 'twitter',
+      'name' => FOLLOW_DOMAIN . '_twitter',
       'path' => 'https://twitter.com/SkoleForaeldre',
       'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
       'uid' => 0,
