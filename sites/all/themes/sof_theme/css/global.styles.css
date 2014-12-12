@@ -1822,7 +1822,7 @@ body.page-cart h1{
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-checkout #edit-continue{
+#commerce-checkout-form-review #edit-continue{
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -1836,7 +1836,9 @@ body.page-cart h1{
 #views-form-commerce-cart-form-sof-default  #edit-actions input:hover,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input:hover,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input:hover,
-#commerce-checkout-form-checkout #edit-continue:hover{
+#commerce-checkout-form-checkout #edit-continue:hover,
+#commerce-checkout-form-shipping #edit-continue:hover,
+#commerce-checkout-form-review #edit-continue:hover{
 	opacity:0.8;
 }
 #views-form-commerce-cart-form-sof-default .line-item-total span{
@@ -1909,7 +1911,8 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-buttons,
 #commerce-checkout-form-shipping #edit-commerce-shipping,
 #commerce-checkout-form-shipping #edit-buttons,
-#commerce-checkout-form-review #edit-buttons{
+#commerce-checkout-form-review #edit-buttons,
+#commerce-checkout-form-review #edit-commerce-payment{
 	border:none;
 	padding:0;
 }
@@ -1917,7 +1920,8 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,
-#commerce-checkout-form-review .checkout-review .pane-title td{
+#commerce-checkout-form-review .checkout-review .pane-title td,
+#commerce-checkout-form-review #edit-commerce-payment legend{
 	width:100%;
 	color:#fff;
 	text-transform:uppercase;
@@ -1962,7 +1966,8 @@ body.page-checkout h1{
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-checkout #edit-continue{
+#commerce-checkout-form-checkout #edit-continue,
+#commerce-checkout-form-review #edit-continue{
 	font-weight:bold;
 	font-size:13px;
 	padding-top:10px;
@@ -1970,19 +1975,19 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-checkout #edit-continue{
+#commerce-checkout-form-review #edit-continue{
 	margin-left:0;
 }
 #commerce-checkout-form-checkout .button-operator,
 #commerce-checkout-form-shipping .button-operator,
-#commerce-checkout-form-checkout .button-operator{
+#commerce-checkout-form-review .button-operator{
 	margin-left:10px;
 	text-transform:uppercase;
 	color:#555555;
 }
 #commerce-checkout-form-checkout #edit-cancel,
 #commerce-checkout-form-shipping #edit-back,
-#commerce-checkout-form-checkout #edit-cancel {
+#commerce-checkout-form-review #edit-cancel {
 	text-transform:uppercase;
 }
 /* Review order */
@@ -2002,7 +2007,7 @@ table.checkout-review .pane-data-full{
 	background:#fff;
 	border:none;
 }
-#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(2n){
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(4n){
 	background-color:#f0f0f0;
 }
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item label,
@@ -2017,15 +2022,26 @@ table.checkout-review .pane-data-full{
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
 	font-size:18px;
 }
-#commerce-checkout-form-review .pane-data:nth-child(1) .pane-data-full{
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(2) .pane-data-full{
 	padding:0px;
 }
-#commerce-checkout-form-review .pane-data-full {
+#commerce-checkout-form-review .pane-data-full,
+#edit-commerce-payment .fieldset-wrapper {
 	padding:20px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
 }
+#commerce-checkout-form-review .form-item-commerce-payment-payment-method input{
+	float: left;
+	margin: 7px 5px 0px 0px !important;
+}
+#commerce-checkout-form-review .form-item-commerce-payment-payment-method label{
+	font-size: 18px;
+	font-weight: normal;
+	float: left;
+}
+
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
