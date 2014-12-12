@@ -1822,7 +1822,8 @@ body.page-cart h1{
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-review #edit-continue{
+#commerce-checkout-form-review #edit-continue,
+#dibs-frontend-redirect-form #edit-submit{
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -1838,7 +1839,8 @@ body.page-cart h1{
 .view-sof-commerce-cart-checkout-summary  #edit-actions input:hover,
 #commerce-checkout-form-checkout #edit-continue:hover,
 #commerce-checkout-form-shipping #edit-continue:hover,
-#commerce-checkout-form-review #edit-continue:hover{
+#commerce-checkout-form-review #edit-continue:hover,
+#dibs-frontend-redirect-form #edit-submit:hover{
 	opacity:0.8;
 }
 #views-form-commerce-cart-form-sof-default .line-item-total span{
@@ -1945,7 +1947,8 @@ body.page-checkout h1{
 	padding:0 0 0 10px;
 }
 #commerce-checkout-form-checkout .form-item  label,
-#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
+#dibs-frontend-redirect-form .checkout-help {
 	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
@@ -1953,8 +1956,10 @@ body.page-checkout h1{
     padding-top: 14px;
     text-align: left;
 }
-#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
+#dibs-frontend-redirect-form .checkout-help{
 	padding-bottom:20px;
+	text-transform:uppercase;
 }
 #commerce-checkout-form-checkout .form-item input{
     border: 1px solid #bbbbbb;
@@ -1967,7 +1972,8 @@ body.page-checkout h1{
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
 #commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-checkout #edit-continue,
-#commerce-checkout-form-review #edit-continue{
+#commerce-checkout-form-review #edit-continue,
+#dibs-frontend-redirect-form #edit-submit{
 	font-weight:bold;
 	font-size:13px;
 	padding-top:10px;
@@ -1975,7 +1981,8 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-review #edit-continue{
+#commerce-checkout-form-review #edit-continue,
+#dibs-frontend-redirect-form #edit-submit{
 	margin-left:0;
 }
 #commerce-checkout-form-checkout .button-operator,
@@ -1987,7 +1994,9 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout #edit-cancel,
 #commerce-checkout-form-shipping #edit-back,
-#commerce-checkout-form-review #edit-cancel {
+#commerce-checkout-form-review #edit-cance
+#commerce-checkout-form-review #edit-back,
+#commerce-checkout-form-review  .component-title {
 	text-transform:uppercase;
 }
 /* Review order */
@@ -2041,7 +2050,12 @@ table.checkout-review .pane-data-full{
 	font-weight: normal;
 	float: left;
 }
-
+#commerce-checkout-form-review #edit-buttons{
+	padding-top:20px;
+}
+#commerce-checkout-form-checkout #edit-customer-profile-shipping a{
+	color:#fff;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
