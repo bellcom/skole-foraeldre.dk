@@ -55,7 +55,12 @@ body.node-type-basic-page .author-datetime a,
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a,
 #commerce-checkout-form-review .form-item-commerce-payment-payment-method label,
-#dibs-frontend-redirect-form .checkout-help{
+#dibs-frontend-redirect-form .checkout-help,
+#commerce-checkout-form-complete .checkout-completion-message a,
+.entity-commerce-order .field-name-commerce-customer-billing .field-item,
+.entity-commerce-order .field-name-commerce-customer-shipping .field-item,
+.entity-commerce-order .field-name-commerce-customer-billing .field-item a,
+.entity-commerce-order .field-name-commerce-customer-shipping .field-item a{
   color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .added-product-title,
@@ -110,7 +115,10 @@ body.page-user ul.primary li.active,
 #commerce-checkout-form-review .checkout-review .pane-title td,
 #commerce-checkout-form-review #edit-continue,
 #commerce-checkout-form-review #edit-commerce-payment legend,
-#dibs-frontend-redirect-form #edit-submit{
+#dibs-frontend-redirect-form #edit-submit,
+.view-commerce-line-item-table tr th,
+.entity-commerce-order .field-name-commerce-customer-billing > h2,
+.entity-commerce-order .field-name-commerce-customer-shipping > h2{
   background-color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .checkout{

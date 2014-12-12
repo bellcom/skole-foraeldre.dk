@@ -1779,7 +1779,11 @@ body.page-cart h1{
 #views-form-commerce-cart-form-sof-default table,
 #views-form-commerce-cart-form-sof-default tbody,
 .view-sof-commerce-cart-checkout-summary table,
-.view-sof-commerce-cart-checkout-summary tbody{
+.view-sof-commerce-cart-checkout-summary tbody,
+.view-commerce-line-item-table table,
+.view-commerce-line-item-table tr ,
+.view-commerce-line-item-table  thead tr, 
+.view-commerce-line-item-table tbody{
 	border:none;
 }
 
@@ -1793,7 +1797,8 @@ body.page-cart h1{
 	border:none;
 }
 #views-form-commerce-cart-form-sof-default tr th,
-.view-sof-commerce-cart-checkout-summary tr th{
+.view-sof-commerce-cart-checkout-summary tr th,
+.view-commerce-line-item-table tr th{
 	color:#fff;
 	text-transform:uppercase;
 	border-right:3px solid #fff;
@@ -1801,12 +1806,17 @@ body.page-cart h1{
 	font-weight:normal;
 }
 #views-form-commerce-cart-form-sof-default tbody tr td,
-.view-sof-commerce-cart-checkout-summary tbody tr td{
+.view-sof-commerce-cart-checkout-summary tbody tr td,
+.view-commerce-line-item-table tbody tr td, 
+.commerce-price-formatted-components tbody tr  td{
 	background:#f0f0f0;
 	border-top:3px solid #fff;
 	border-right:3px solid #fff;
 	border-radius:7px;
 	color:#5e5e5e;
+}
+.commerce-price-formatted-components tbody tr  td{
+	text-transform:uppercase;
 }
 #views-form-commerce-cart-form-sof-default tbody tr td p,
 .view-sof-commerce-cart-checkout-summary tbody tr td p{
@@ -1896,7 +1906,8 @@ div.messages.commerce-add-to-cart-confirmation{
 	right:0;
 }
 /* Checkout Page */ 
-body.page-checkout #main-content {
+body.page-checkout #main-content,
+body.page-user-orders #main-content{
 	border:2px solid #4f81bd;
 	width:100%;
 	padding:10px;
@@ -1923,7 +1934,9 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,
 #commerce-checkout-form-review .checkout-review .pane-title td,
-#commerce-checkout-form-review #edit-commerce-payment legend{
+#commerce-checkout-form-review #edit-commerce-payment legend,
+.entity-commerce-order .field-name-commerce-customer-billing > h2,
+.entity-commerce-order .field-name-commerce-customer-shipping > h2{
 	width:100%;
 	color:#fff;
 	text-transform:uppercase;
@@ -1938,7 +1951,8 @@ body.page-checkout h1{
 #commerce-checkout-form-shipping #edit-customer-profile-shipping legend a.fieldset-title{
 	color:#fff;
 }
-#commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount{
+#commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount,
+#commerce-checkout-form-complete .checkout-completion-message{
 	text-transform:uppercase;
 }
 #commerce-checkout-form-checkout #edit-customer-profile-shipping .form-type-checkbox{
@@ -1948,13 +1962,17 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout .form-item  label,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
-#dibs-frontend-redirect-form .checkout-help {
+#dibs-frontend-redirect-form .checkout-help,
+#commerce-checkout-form-complete .checkout-completion-message {
 	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+}
+#commerce-checkout-form-complete .checkout-completion-message{
+	color:#ccc;
 }
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #dibs-frontend-redirect-form .checkout-help{
@@ -2006,7 +2024,10 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-review .checkout-review, 
 #commerce-checkout-form-review .checkout-review tbody,
-#commerce-checkout-form-review #edit-checkout-review tr{
+#commerce-checkout-form-review #edit-checkout-review tr,
+.field-name-commerce-order-total tr,
+.field-name-commerce-order-total tbody,
+.field-name-commerce-order-total table{
 	border:none;
 }
 table.checkout-review .pane-data-full{
@@ -2016,26 +2037,35 @@ table.checkout-review .pane-data-full{
 	background:#fff;
 	border:none;
 }
-#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(4n){
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(4n),
+.field-name-commerce-customer-billing.field-type-commerce-customer-profile-reference{
 	background-color:#f0f0f0;
 }
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item label,
-#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-label {
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-label,
+.entity-commerce-order .field-name-commerce-customer-billing h2,
+.entity-commerce-order .field-name-commerce-customer-shipping h2{
 	font-size: 18px;
-	color: grey;
+	color: #808080;
 	text-transform: uppercase;
 	font-weight: normal;
 }
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item,
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
-#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a,
+.entity-commerce-order .field-name-commerce-customer-billing .field-item,
+.entity-commerce-order .field-name-commerce-customer-shipping .field-item,
+.entity-commerce-order .field-name-commerce-customer-billing .field-item a,
+.entity-commerce-order .field-name-commerce-customer-shipping .field-item a{
 	font-size:18px;
 }
 #commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(2) .pane-data-full{
 	padding:0px;
 }
 #commerce-checkout-form-review .pane-data-full,
-#edit-commerce-payment .fieldset-wrapper {
+#edit-commerce-payment .fieldset-wrapper,
+.entity-commerce-order .field-name-commerce-customer-billing > .field-items,
+.entity-commerce-order .field-name-commerce-customer-shipping > .field-items {
 	padding:20px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
