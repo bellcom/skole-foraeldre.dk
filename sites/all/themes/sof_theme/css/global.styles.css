@@ -1904,13 +1904,16 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-cart-contents,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping,
 #commerce-checkout-form-checkout #edit-customer-profile-billing,
-#commerce-checkout-form-checkout #edit-buttons{
+#commerce-checkout-form-checkout #edit-buttons,
+#commerce-checkout-form-shipping #edit-commerce-shipping,
+#commerce-checkout-form-shipping #edit-buttons{
 	border:none;
 	padding:0;
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
-#commerce-checkout-form-checkout #edit-customer-profile-billing legend{
+#commerce-checkout-form-checkout #edit-customer-profile-billing legend,
+#commerce-checkout-form-shipping #edit-commerce-shipping legend{
 	width:100%;
 	color:#fff;
 	text-transform:uppercase;
@@ -1929,7 +1932,8 @@ body.page-checkout h1{
 	color:#5E5E5E;
 	padding:0 0 0 10px;
 }
-#commerce-checkout-form-checkout .form-item  label{
+#commerce-checkout-form-checkout .form-item  label,
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
 	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
@@ -1945,21 +1949,25 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout #edit-continue,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
-.view-sof-commerce-cart-checkout-summary  #edit-actions input{
+.view-sof-commerce-cart-checkout-summary  #edit-actions input,
+#commerce-checkout-form-shipping #edit-continue{
 	font-weight:bold;
 	font-size:13px;
 	padding-top:10px;
 	padding-bottom:10px;
 }
-#commerce-checkout-form-checkout #edit-continue{
+#commerce-checkout-form-checkout #edit-continue,
+#commerce-checkout-form-shipping #edit-continue{
 	margin-left:0;
 }
-#commerce-checkout-form-checkout .button-operator{
+#commerce-checkout-form-checkout .button-operator,
+#commerce-checkout-form-shipping .button-operator{
 	margin-left:10px;
 	text-transform:uppercase;
 	color:#555555;
 }
-#commerce-checkout-form-checkout #edit-cancel {
+#commerce-checkout-form-checkout #edit-cancel,
+#commerce-checkout-form-shipping #edit-back {
 	text-transform:uppercase;
 }
 /* =============================================================================
