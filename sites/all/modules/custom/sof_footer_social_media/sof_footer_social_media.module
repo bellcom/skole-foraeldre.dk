@@ -109,7 +109,7 @@ function _sof_footer_social_media_contents($delta) {
         'icon' => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png',
         'title' => t('Facebook'),
         'description' => variable_get('sof_fsm_fb'),
-        'read_more' => l(t('Read more'), $follow_uri['facebook']->path, array(
+        'read_more' => l(t('Read more'), isset($follow_uri[FOLLOW_DOMAIN .'_facebook']->path) ? $follow_uri[FOLLOW_DOMAIN .'_facebook']->path : '#', array(
           'external' => TRUE,
           'attributes' => array(
             'target' => '_blank',
@@ -122,7 +122,7 @@ function _sof_footer_social_media_contents($delta) {
         'icon' => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png',
         'title' => t('Twitter'),
         'description' => variable_get('sof_fsm_tw'),
-        'read_more' => l(t('Read more'), $follow_uri['twitter']->path, array(
+        'read_more' => l(t('Read more'), isset($follow_uri[FOLLOW_DOMAIN .'_twitter']->path) ? $follow_uri[FOLLOW_DOMAIN .'_twitter']->path : '#', array(
           'external' => TRUE,
           'attributes' => array(
             'target' => '_blank',
