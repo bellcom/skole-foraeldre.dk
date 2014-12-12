@@ -275,6 +275,13 @@ function sof_theme_form_alter(&$form, &$form_state, $form_id) {
   $form['basic']['keys']['#attributes']['placeholder'] = t('Search');
   //Add placeholder to publuication listing page search block
   $form['apachesolr_panels_search_form']['#attributes']['placeholder'] = t('Search within publications');
+  if($form['#id'] == 'commerce-cart-add-to-cart-form-1'){
+	  $amount         = $form_state['default_product']->commerce_price[LANGUAGE_NONE][0]['amount'];
+  	  $currency_code  = $form_state['default_product']->commerce_price[LANGUAGE_NONE][0]['currency_code'];
+  	  $price = commerce_currency_format($amount,$currency_code);
+
+  	  $form['submit']['#value'] = t('Order Publications'). " " . "(" .$price .")";
+  }
 }
 
 /**
