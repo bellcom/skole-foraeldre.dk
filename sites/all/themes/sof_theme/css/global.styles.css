@@ -2002,7 +2002,7 @@ table.checkout-review .pane-data-full{
 	background:#fff;
 	border:none;
 }
-#commerce-checkout-form-review  #edit-checkout-review .pane-data.even{
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(2n){
 	background-color:#f0f0f0;
 }
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item label,
@@ -2016,6 +2016,15 @@ table.checkout-review .pane-data-full{
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
 #commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
 	font-size:18px;
+}
+#commerce-checkout-form-review .pane-data:nth-child(1) .pane-data-full{
+	padding:0px;
+}
+#commerce-checkout-form-review .pane-data-full {
+	padding:20px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;	
 }
 /* =============================================================================
  *   NODE STYLING
