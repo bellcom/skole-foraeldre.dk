@@ -295,17 +295,14 @@ function _propeople_create_menus() {
 /**
  * Programatically update default domain
  *
+ * -Change default domain name
+ *
  * @see https://www.drupal.org/project/domain
  */
 function _propeople_set_default_domain() {
 
-  global $base_url;
-
   $domain_def = domain_default();
-
-  $domain_def['subdomain'] = preg_replace('(^https?://)', '', $base_url);
   $domain_def['sitename'] = 'Skole og Forældre';
-  $domain_def['path'] = $base_url . '/';
 
   domain_save($domain_def);
 }
@@ -321,17 +318,20 @@ function _propeople_set_default_domain() {
  */
 function _propeople_default_follow_link() {
 
+  //Default domain tag
+  $follow_domain = 'skole-og-forældre';
+
   // Add a default facebook and twitter links to the page.
   $values = array(
     array(
-      'name' => FOLLOW_DOMAIN . '_facebook',
+      'name' => $follow_domain . '_facebook',
       'path' => 'https://www.facebook.com/SkoleOgForaeldre',
       'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
       'uid' => 0,
       'weight' => -10,
     ),
     array(
-      'name' => FOLLOW_DOMAIN . '_twitter',
+      'name' => $follow_domain . '_twitter',
       'path' => 'https://twitter.com/SkoleForaeldre',
       'options' => 'a:2:{s:5:"query";a:0:{}s:8:"fragment";s:0:"";}',
       'uid' => 0,
