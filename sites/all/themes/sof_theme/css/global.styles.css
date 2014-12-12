@@ -1820,6 +1820,8 @@ body.page-cart h1{
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
+#commerce-checkout-form-checkout #edit-continue,
+#commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-checkout #edit-continue{
     border: none;
     color: #fff;
@@ -1904,13 +1906,18 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-cart-contents,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping,
 #commerce-checkout-form-checkout #edit-customer-profile-billing,
-#commerce-checkout-form-checkout #edit-buttons{
+#commerce-checkout-form-checkout #edit-buttons,
+#commerce-checkout-form-shipping #edit-commerce-shipping,
+#commerce-checkout-form-shipping #edit-buttons,
+#commerce-checkout-form-review #edit-buttons{
 	border:none;
 	padding:0;
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
-#commerce-checkout-form-checkout #edit-customer-profile-billing legend{
+#commerce-checkout-form-checkout #edit-customer-profile-billing legend,
+#commerce-checkout-form-shipping #edit-commerce-shipping legend,
+#commerce-checkout-form-review .checkout-review .pane-title td{
 	width:100%;
 	color:#fff;
 	text-transform:uppercase;
@@ -1921,6 +1928,10 @@ body.page-checkout h1{
     box-sizing: border-box;	
     font-size:16px;
 }
+
+#commerce-checkout-form-shipping #edit-customer-profile-shipping legend a.fieldset-title{
+	color:#fff;
+}
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount{
 	text-transform:uppercase;
 }
@@ -1929,13 +1940,17 @@ body.page-checkout h1{
 	color:#5E5E5E;
 	padding:0 0 0 10px;
 }
-#commerce-checkout-form-checkout .form-item  label{
+#commerce-checkout-form-checkout .form-item  label,
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
 	font-size: 18px;
     font-weight: 200!important;
     line-height: 24px;
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+}
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
+	padding-bottom:20px;
 }
 #commerce-checkout-form-checkout .form-item input{
     border: 1px solid #bbbbbb;
@@ -1945,22 +1960,71 @@ body.page-checkout h1{
 }
 #commerce-checkout-form-checkout #edit-continue,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
-.view-sof-commerce-cart-checkout-summary  #edit-actions input{
+.view-sof-commerce-cart-checkout-summary  #edit-actions input,
+#commerce-checkout-form-shipping #edit-continue,
+#commerce-checkout-form-checkout #edit-continue{
 	font-weight:bold;
 	font-size:13px;
 	padding-top:10px;
 	padding-bottom:10px;
 }
+#commerce-checkout-form-checkout #edit-continue,
+#commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-checkout #edit-continue{
 	margin-left:0;
 }
+#commerce-checkout-form-checkout .button-operator,
+#commerce-checkout-form-shipping .button-operator,
 #commerce-checkout-form-checkout .button-operator{
 	margin-left:10px;
 	text-transform:uppercase;
 	color:#555555;
 }
+#commerce-checkout-form-checkout #edit-cancel,
+#commerce-checkout-form-shipping #edit-back,
 #commerce-checkout-form-checkout #edit-cancel {
 	text-transform:uppercase;
+}
+/* Review order */
+#commerce-checkout-form-review .checkout-help{
+	text-transform: uppercase;
+	font-size: 16px;
+}
+#commerce-checkout-form-review .checkout-review, 
+#commerce-checkout-form-review .checkout-review tbody,
+#commerce-checkout-form-review #edit-checkout-review tr{
+	border:none;
+}
+table.checkout-review .pane-data-full{
+	padding:0;
+}
+#commerce-checkout-form-review .checkout-review .pane-data {
+	background:#fff;
+	border:none;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(2n){
+	background-color:#f0f0f0;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item label,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-label {
+	font-size: 18px;
+	color: grey;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
+	font-size:18px;
+}
+#commerce-checkout-form-review .pane-data:nth-child(1) .pane-data-full{
+	padding:0px;
+}
+#commerce-checkout-form-review .pane-data-full {
+	padding:20px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;	
 }
 /* =============================================================================
  *   NODE STYLING
