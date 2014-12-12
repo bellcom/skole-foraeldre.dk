@@ -42,8 +42,16 @@ body.node-type-basic-page .field-name-body blockquote:before,
 #user-login label,
 #user-pass label,
 .article-region  .author-datetime a,
-body.node-type-basic-page .author-datetime a{
+body.node-type-basic-page .author-datetime a,
+#views-form-commerce-cart-form-sof-default .views-field-line-item-title a,
+.view-sof-commerce-cart-checkout-summary .views-field-line-item-title a,
+#commerce-checkout-form-checkout .form-item  label,
+#commerce-checkout-form-checkout #edit-cancel{
   color: #00a2eb;
+}
+.commerce-add-to-cart-confirmation .added-product-title,
+.commerce-add-to-cart-confirmation .views-field-commerce-total .field-content{
+  color: #00a2eb!important;
 }
 
 #footer,
@@ -66,7 +74,7 @@ ul.pager li.pager-previous,
 .node-webform .form-submit.ajax-processed,
 .node-webform .form-actions input,
 .publication-top-right-container .field-name-field-single-link,
-.publication-top-right-container .download-as-pdf,
+.publication-top-right-container .download-as-pdf-out,
 .sof_footer_social_media_icon,
 #node_article_full_group_bottomaregion  .field-item a,
 .pane-sof-toolbox-search,
@@ -76,7 +84,23 @@ a.sof-pdf-generate-inline-link,
 body.page-user ul.primary li:hover, 
 body.page-user ul.primary li.active,
 #user-login .form-submit,
-#user-pass .form-submit{
+#user-pass .form-submit,
+.publication-ecommercebutton,
+#views-form-commerce-cart-form-sof-default .views-field-edit-delete input,
+#views-form-commerce-cart-form-sof-default tr th,
+#views-form-commerce-cart-form-sof-default  #edit-actions input,
+#commerce-checkout-form-checkout #edit-cart-contents legend,
+.view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
+.view-sof-commerce-cart-checkout-summary tr th,
+.view-sof-commerce-cart-checkout-summary  #edit-actions input,
+#commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
+#commerce-checkout-form-checkout #edit-customer-profile-billing legend,
+#commerce-checkout-form-checkout #edit-continue{
   background-color: #00a2eb;
 }
-
+.commerce-add-to-cart-confirmation .checkout{
+  background-color: #00a2eb!important;
+}
+div.messages.commerce-add-to-cart-confirmation{
+	border-color:#00a2eb;
+}

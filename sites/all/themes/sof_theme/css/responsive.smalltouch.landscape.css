@@ -286,6 +286,26 @@ body.page-releases .pane-apachesolr-form h2{
 #facetapi-facet-apachesolrsolr-block-im-field-category-publication li{
 	width:100%;
 }
+/* E-commerce */
+.table-main-container {
+	overflow-x:scroll;
+}
+.commerce-order-handler-area-order-total{
+	float:left;
+}
+.commerce-order-handler-area-order-total .commerce-price-formatted-components{
+	width:100%;
+}
+#commerce-checkout-form-checkout .form-item input{
+	width:100%;
+}
+div.messages.commerce-add-to-cart-confirmation{
+	max-width:450px;
+	width:100%;
+}
+div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper{
+	padding:40px 10px;
+}
 /* 
 /* =============================================================================
  *   Articles

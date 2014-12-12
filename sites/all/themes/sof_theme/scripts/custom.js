@@ -89,12 +89,25 @@
 		$(document).ready(SliderNavigationposition);
 		$(window).resize(SliderNavigationposition);
 	
+	    /*
+	    //E-commerce dynamic height of title and description 	
+	    function Ecommercetableheight() {
+	    	//Title height
+		    var heighttabledesc = $('tbody .views-field-field-sof-commerce-description').height();
+			$('thead .views-field-field-sof-commerce-description').css('height',heighttabledesc+12);
+			
+			//Description height	
+			var heighttabletitle = $('tbody .views-field-line-item-title').height();
+			$('thead .views-field-line-item-title').css('height',heighttabletitle+14);
+		}
+			
+		// E-commerce dynamic height of title and description call functions
+		$(document).ready(Ecommercetableheight);
+		$(window).resize(Ecommercetableheight);
+		*/
 	     //Remove link from last navigation level 
 		 $("#block-system-main-menu li.expanded > a").removeAttr("href");
 		 
-		 //Apache Solr Search edit form
-		 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
-		 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
       
 	      //Mailchimp add focus
 	   	  $('.news-deck-newsletter').bind('click', function(event){  
@@ -118,8 +131,11 @@
 		          var myText = $(this);
 		          myText.text( myText.text().replace(':','') );
 		        }
-	       );   	 
-	 
+	       ); 
+	       //Download as pdf button 
+	       $( ".publication-top-right-container .download-as-pdf" ).wrap( "<div class='download-as-pdf-out'></div>"); 
+	       //E-commerce add to cart button
+	       $( ".commerce-product-field-commerce-price , .field-name-field-sof-commerce-product" ).wrapAll( "<div class='publication-ecommercebutton'></div>" ); 	 
    	}
    };
 
@@ -137,7 +153,12 @@
       //Magazine Deck               	
       $(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
       
-   		
+   	 //Apache Solr Search edit form
+	 $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );
+	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
+	 
+	 //Ecommerce tables 
+	  $( "#views-form-commerce-cart-form-sof-default table, #edit-cart-contents" ).wrap( "<div class='table-main-container'></div>" );
       //Recomended item deck, wrapp 10 elements in one
       var $span = $(".view-id-recommended_items_overview .views-row");
 	  for (var i = 0; i < $span.length; i += 10) {

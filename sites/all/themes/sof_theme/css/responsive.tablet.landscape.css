@@ -206,6 +206,12 @@ body {
 	}	
 	.publication-top-left-container{
 		padding:0 20px;
+	}
+	.views-field-line-item-title{
+	max-width:150px;
+	}
+	.views-field-field-sof-commerce-description{
+		max-width:200px;	
 	}	
 }
 @media all and (max-width: 920px){
