@@ -1821,7 +1821,8 @@ body.page-cart h1{
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
 #commerce-checkout-form-checkout #edit-continue,
-#commerce-checkout-form-shipping #edit-continue{
+#commerce-checkout-form-shipping #edit-continue,
+#commerce-checkout-form-checkout #edit-continue{
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -1907,7 +1908,8 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-customer-profile-billing,
 #commerce-checkout-form-checkout #edit-buttons,
 #commerce-checkout-form-shipping #edit-commerce-shipping,
-#commerce-checkout-form-shipping #edit-buttons{
+#commerce-checkout-form-shipping #edit-buttons,
+#commerce-checkout-form-review #edit-buttons{
 	border:none;
 	padding:0;
 }
@@ -1927,7 +1929,7 @@ body.page-checkout h1{
     font-size:16px;
 }
 
-#commerce-checkout-form-shipping #edit-commerce-shipping legend a{
+#commerce-checkout-form-shipping #edit-customer-profile-shipping legend a.fieldset-title{
 	color:#fff;
 }
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount{
@@ -1959,24 +1961,28 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-continue,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
-#commerce-checkout-form-shipping #edit-continue{
+#commerce-checkout-form-shipping #edit-continue,
+#commerce-checkout-form-checkout #edit-continue{
 	font-weight:bold;
 	font-size:13px;
 	padding-top:10px;
 	padding-bottom:10px;
 }
 #commerce-checkout-form-checkout #edit-continue,
-#commerce-checkout-form-shipping #edit-continue{
+#commerce-checkout-form-shipping #edit-continue,
+#commerce-checkout-form-checkout #edit-continue{
 	margin-left:0;
 }
 #commerce-checkout-form-checkout .button-operator,
-#commerce-checkout-form-shipping .button-operator{
+#commerce-checkout-form-shipping .button-operator,
+#commerce-checkout-form-checkout .button-operator{
 	margin-left:10px;
 	text-transform:uppercase;
 	color:#555555;
 }
 #commerce-checkout-form-checkout #edit-cancel,
-#commerce-checkout-form-shipping #edit-back {
+#commerce-checkout-form-shipping #edit-back,
+#commerce-checkout-form-checkout #edit-cancel {
 	text-transform:uppercase;
 }
 /* Review order */
@@ -1985,12 +1991,31 @@ body.page-checkout h1{
 	font-size: 16px;
 }
 #commerce-checkout-form-review .checkout-review, 
-#commerce-checkout-form-review .checkout-review tbody{
+#commerce-checkout-form-review .checkout-review tbody,
+#commerce-checkout-form-review #edit-checkout-review tr{
 	border:none;
+}
+table.checkout-review .pane-data-full{
+	padding:0;
 }
 #commerce-checkout-form-review .checkout-review .pane-data {
 	background:#fff;
 	border:none;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data.even{
+	background-color:#f0f0f0;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item label,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-label {
+	font-size: 18px;
+	color: grey;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
+	font-size:18px;
 }
 /* =============================================================================
  *   NODE STYLING

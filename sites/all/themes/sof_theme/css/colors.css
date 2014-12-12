@@ -49,7 +49,10 @@ body.node-type-basic-page .author-datetime a,
 #commerce-checkout-form-checkout #edit-cancel,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #commerce-checkout-form-shipping #edit-back,
-#commerce-checkout-form-review .checkout-help{
+#commerce-checkout-form-review .checkout-help,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .form-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item,
+#commerce-checkout-form-review  #edit-checkout-review .pane-data .field-item a{
   color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .added-product-title,
@@ -101,7 +104,8 @@ body.page-user ul.primary li.active,
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,
 #commerce-checkout-form-shipping #edit-continue,
-#commerce-checkout-form-review .checkout-review .pane-title td{
+#commerce-checkout-form-review .checkout-review .pane-title td,
+#commerce-checkout-form-checkout #edit-continue{
   background-color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .checkout{
