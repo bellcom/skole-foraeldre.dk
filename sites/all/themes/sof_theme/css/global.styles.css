@@ -1820,7 +1820,8 @@ body.page-cart h1{
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
-#commerce-checkout-form-checkout #edit-continue{
+#commerce-checkout-form-checkout #edit-continue,
+#commerce-checkout-form-shipping #edit-continue{
     border: none;
     color: #fff;
     padding: 5px 10px;
@@ -1913,7 +1914,8 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
-#commerce-checkout-form-shipping #edit-commerce-shipping legend{
+#commerce-checkout-form-shipping #edit-commerce-shipping legend,
+#commerce-checkout-form-review .checkout-review .pane-title td{
 	width:100%;
 	color:#fff;
 	text-transform:uppercase;
@@ -1923,6 +1925,10 @@ body.page-checkout h1{
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;	
     font-size:16px;
+}
+
+#commerce-checkout-form-shipping #edit-commerce-shipping legend a{
+	color:#fff;
 }
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount{
 	text-transform:uppercase;
@@ -1940,6 +1946,9 @@ body.page-checkout h1{
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
+}
+#commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper{
+	padding-bottom:20px;
 }
 #commerce-checkout-form-checkout .form-item input{
     border: 1px solid #bbbbbb;
@@ -1969,6 +1978,19 @@ body.page-checkout h1{
 #commerce-checkout-form-checkout #edit-cancel,
 #commerce-checkout-form-shipping #edit-back {
 	text-transform:uppercase;
+}
+/* Review order */
+#commerce-checkout-form-review .checkout-help{
+	text-transform: uppercase;
+	font-size: 16px;
+}
+#commerce-checkout-form-review .checkout-review, 
+#commerce-checkout-form-review .checkout-review tbody{
+	border:none;
+}
+#commerce-checkout-form-review .checkout-review .pane-data {
+	background:#fff;
+	border:none;
 }
 /* =============================================================================
  *   NODE STYLING
