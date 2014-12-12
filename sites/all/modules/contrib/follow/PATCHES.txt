@@ -1,0 +1,6 @@
+The following patches has been applied:
+______________________________________________________________
+  Thread: https://www.drupal.org/node/1245252
+  Patch: make_follow_domain_conscious-1245252-D7.patch
+  Info: manually applied patch https://www.drupal.org/files/make_follow_domain_conscious-1245252-5.patch and converted to patch for D7
+______________________________________________________________
