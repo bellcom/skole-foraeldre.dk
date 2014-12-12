@@ -555,6 +555,17 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'administer menus per domain'.
+  $permissions['administer menus per domain'] = array(
+    'name' => 'administer menus per domain',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'domain_menu_access',
+  );
+
   // Exported permission: 'administer message types'.
   $permissions['administer message types'] = array(
     'name' => 'administer message types',
