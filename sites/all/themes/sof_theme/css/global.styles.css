@@ -1938,7 +1938,7 @@ body.page-checkout h1{
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
 .entity-commerce-order .field-name-commerce-customer-shipping > h2{
 	width:100%;
-	color:#fff;
+	color:#fff!important;
 	text-transform:uppercase;
 	padding:10px;
 	border-radius:7px;

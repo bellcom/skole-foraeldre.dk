@@ -293,7 +293,8 @@ body.page-releases .pane-apachesolr-form h2{
 .commerce-order-handler-area-order-total{
 	float:left;
 }
-.commerce-order-handler-area-order-total .commerce-price-formatted-components{
+.commerce-order-handler-area-order-total .commerce-price-formatted-components,
+.field-name-commerce-order-total .commerce-price-formatted-components{
 	width:100%;
 }
 #commerce-checkout-form-checkout .form-item input{
