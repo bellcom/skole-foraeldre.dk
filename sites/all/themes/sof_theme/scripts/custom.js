@@ -158,7 +158,7 @@
 	 $( ".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>" );
 	 
 	 //Ecommerce tables 
-	  $( "#views-form-commerce-cart-form-sof-default table, #edit-cart-contents" ).wrap( "<div class='table-main-container'></div>" );
+	  $( "#views-form-commerce-cart-form-sof-default table, #edit-cart-contents,#commerce-checkout-form-review #edit-checkout-review" ).wrap( "<div class='table-main-container'></div>" );
       //Recomended item deck, wrapp 10 elements in one
       var $span = $(".view-id-recommended_items_overview .views-row");
 	  for (var i = 0; i < $span.length; i += 10) {
