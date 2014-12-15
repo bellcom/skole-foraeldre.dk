@@ -10,6 +10,78 @@
 function sof_commerce_settings_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'commerce_coupon_code'
+  $field_bases['commerce_coupon_code'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_coupon',
+    ),
+    'field_name' => 'commerce_coupon_code',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'commerce_coupon_number_of_uses'
+  $field_bases['commerce_coupon_number_of_uses'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_coupon',
+    ),
+    'field_name' => 'commerce_coupon_number_of_uses',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'commerce_coupon_percent_amount'
+  $field_bases['commerce_coupon_percent_amount'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_coupon',
+    ),
+    'field_name' => 'commerce_coupon_percent_amount',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'label' => 'Percentage Amount',
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'precision' => 10,
+      'scale' => 2,
+    ),
+    'translatable' => 0,
+    'type' => 'number_decimal',
+  );
+
   // Exported field_base: 'commerce_customer_address'
   $field_bases['commerce_customer_address'] = array(
     'active' => 1,

@@ -31,6 +31,27 @@ function sof_commerce_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_coupon_checkout_enable_add_button';
+  $strongarm->value = 0;
+  $export['commerce_coupon_checkout_enable_add_button'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_coupon_checkout_pane_view';
+  $strongarm->value = 'commerce_coupon_review_pane|checkout';
+  $export['commerce_coupon_checkout_pane_view'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'commerce_coupon_review_pane_view';
+  $strongarm->value = 'commerce_coupon_review_pane|review';
+  $export['commerce_coupon_review_pane_view'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'commerce_customer_profile_billing_field';
   $strongarm->value = 'commerce_customer_billing';
   $export['commerce_customer_profile_billing_field'] = $strongarm;
