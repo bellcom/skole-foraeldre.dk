@@ -54,7 +54,7 @@
 			$('.second-level-main-container').live('mouseenter', function() {
 				$(this).addClass("active");
 			});
-		
+		/*
          //Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){
          	$('html').live('click touchstart', function() {	         
@@ -63,6 +63,7 @@
 				$('.header-navigation-container').removeClass("active");
 	         }); 	  
 		 }
+		 */
 		 //Stop propagating for links of the navigation
 		 $('.header-right-main-container').live('click touchstart', function(e) {	
 			e.stopPropagation();
