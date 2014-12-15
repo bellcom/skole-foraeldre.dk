@@ -102,7 +102,7 @@ function sof_article_strongarm() {
         'custom_settings' => TRUE,
       ),
       'primary_selected_node' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'video_reference_listing' => array(
         'custom_settings' => TRUE,
@@ -129,15 +129,30 @@ function sof_article_strongarm() {
       'display' => array(
         'domain' => array(
           'video_reference_listing' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '2',
+            'weight' => '6',
             'visible' => FALSE,
           ),
-          'links_to_nodes' => NULL,
+          'links_to_nodes' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
           'related_content_reference' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'primary_selected_node' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'full' => array(
             'weight' => '1',
             'visible' => TRUE,
           ),
@@ -148,24 +163,58 @@ function sof_article_strongarm() {
             'visible' => TRUE,
           ),
           'links_to_nodes' => array(
-            'weight' => '10',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-          'teaser' => array(
-            'weight' => '10',
-            'visible' => FALSE,
-          ),
-          'video_reference_listing' => array(
             'weight' => '12',
             'visible' => FALSE,
           ),
-          'related_content_reference' => array(
-            'weight' => '10',
+          'teaser' => array(
+            'weight' => '13',
             'visible' => FALSE,
+          ),
+          'video_reference_listing' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
+          'primary_selected_node' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+        ),
+        'additional_bottom_nodes' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+          'video_reference_listing' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'links_to_nodes' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'primary_selected_node' => array(
+            'weight' => '4',
+            'visible' => TRUE,
           ),
         ),
       ),

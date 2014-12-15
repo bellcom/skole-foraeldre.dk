@@ -41,6 +41,12 @@ function sof_general_tweaks_field_extra_fields() {
     'weight' => 4,
     'visible' => FALSE,
   );
+  $extra['node']['article']['display']['additional_bottom_nodes'] = array(
+    'label' => t('Additional bottom news'),
+    'description' => t('Renders latest 3 news'),
+    'weight' => 4,
+    'visible' => FALSE,
+  );
 
   // Recommended items deck.
   // Additional fild for additional latest news.
