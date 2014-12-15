@@ -482,28 +482,28 @@ function sof_commerce_settings_strongarm() {
           'weight' => '2',
         ),
         'status' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(
         'sku' => array(
           'default' => array(
-            'weight' => '-10',
+            'weight' => '0',
             'visible' => TRUE,
           ),
         ),
         'title' => array(
           'default' => array(
-            'weight' => '-5',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),
         'status' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '8',
             'visible' => TRUE,
           ),
         ),

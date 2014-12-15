@@ -5,24 +5,6 @@
  */
 
 /**
- * Implements hook_commerce_coupon_default_types().
- */
-function sof_commerce_settings_commerce_coupon_default_types() {
-  $items = array(
-    'commerce_coupon_pct' => array(
-      'type' => 'commerce_coupon_pct',
-      'label' => 'Discount',
-      'weight' => 0,
-      'data' => NULL,
-      'status' => 1,
-      'module' => NULL,
-      'rdf_mapping' => array(),
-    ),
-  );
-  return $items;
-}
-
-/**
  * Implements hook_commerce_product_default_types().
  */
 function sof_commerce_settings_commerce_product_default_types() {

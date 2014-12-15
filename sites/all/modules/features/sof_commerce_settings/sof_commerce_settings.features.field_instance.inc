@@ -10,128 +10,6 @@
 function sof_commerce_settings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_coupon-commerce_coupon_pct-commerce_coupon_code'
-  $field_instances['commerce_coupon-commerce_coupon_pct-commerce_coupon_code'] = array(
-    'bundle' => 'commerce_coupon_pct',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-        ),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'commerce_coupon',
-    'field_name' => 'commerce_coupon_code',
-    'label' => 'Coupon Code',
-    'required' => FALSE,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'commerce_coupon-commerce_coupon_pct-commerce_coupon_number_of_uses'
-  $field_instances['commerce_coupon-commerce_coupon_pct-commerce_coupon_number_of_uses'] = array(
-    'bundle' => 'commerce_coupon_pct',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Number of times that coupon code can be used by any customer on the site, before it is set to inactive',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'commerce_coupon',
-    'field_name' => 'commerce_coupon_number_of_uses',
-    'label' => 'Maximum number of Uses',
-    'required' => FALSE,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'commerce_coupon-commerce_coupon_pct-commerce_coupon_percent_amount'
-  $field_instances['commerce_coupon-commerce_coupon_pct-commerce_coupon_percent_amount'] = array(
-    'bundle' => 'commerce_coupon_pct',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'commerce_coupon',
-    'field_name' => 'commerce_coupon_percent_amount',
-    'label' => 'Percentage Amount',
-    'required' => TRUE,
-    'settings' => array(
-      'max' => 100,
-      'min' => 0,
-      'prefix' => '',
-      'suffix' => '%',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'commerce_customer_profile-billing-commerce_customer_address'
   $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
     'bundle' => 'billing',
@@ -840,7 +718,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'diff_standard' => array(
         'label' => 'hidden',
@@ -938,7 +816,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -1001,7 +879,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -1064,7 +942,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -1131,7 +1009,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -1276,19 +1154,15 @@ function sof_commerce_settings_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('CVR nr');
-  t('Coupon Code');
   t('Description');
   t('EAN number');
   t('Email');
   t('Firm');
   t('Institution name');
   t('Item Price');
-  t('Maximum number of Uses');
   t('Min Quantity');
   t('Note');
-  t('Number of times that coupon code can be used by any customer on the site, before it is set to inactive');
   t('Pdf');
-  t('Percentage Amount');
   t('SOF message order');
   t('Telephone');
   t('Type');
