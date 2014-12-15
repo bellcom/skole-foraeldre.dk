@@ -231,6 +231,12 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'product:field_sof_commerce_quantity' => array(
+          'full' => array(
+            'weight' => '6',
+            'visible' => TRUE,
+          ),
+        ),
       ),
     ),
   );

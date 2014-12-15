@@ -4115,6 +4115,52 @@ a:focus {
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
+/* E-commerce block */
+#block-views-sof-shopping-cart-block-block{
+	float:right;
+	margin:0 20px 0 0;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-summary,
+#block-views-sof-shopping-cart-block-block  .view-empty .line-item-summary{
+	float:left;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-quantity,
+#block-views-sof-shopping-cart-block-block  .view-empty p{
+	float:left;
+	padding:2px 0 0 0;
+}
+#block-views-sof-shopping-cart-block-block .view-footer span,
+#block-views-sof-shopping-cart-block-block  .view-empty p{
+	text-transform:uppercase;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-quantity-raw,
+#block-views-sof-shopping-cart-block-block  .view-empty p{
+	background:url('images/add-to-cart-header.png');
+	background-size:24px 19px;
+	background-repeat:no-repeat;
+	padding:3px 0 0 30px;
+	font-size:14px;
+	margin:0;
+}
+#block-views-sof-shopping-cart-block-block  .view-empty p{
+	background-position:left 2px;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links,
+#block-views-sof-shopping-cart-block-block  .view-empty .links{
+	float:left;
+	clear:none;
+	margin: 0px 0px 0px 10px;
+    padding: 2px 10px;
+    text-transform: uppercase;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links:hover,
+#block-views-sof-shopping-cart-block-block  .view-empty .links:hover{
+	opacity:0.8;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links li a,
+#block-views-sof-shopping-cart-block-block  .view-empty .links li a{
+	color:#fff;
+}
 /* Follow Links */
 .region-top-header-navigation .block-follow {
   float:right;
@@ -4166,6 +4212,10 @@ a:focus {
    padding:0;
  }
  #block-menu-menu-top-navigation ul li{
+ 	display:inline-block;
+ 	list-style:none;
+ 	padding-left:20px;
+ 	line-height:20px;
    display:inline-block;
    list-style:none;
    padding-left:30px;
@@ -4202,7 +4252,7 @@ a:focus {
     box-sizing: border-box;
 }
 .region-header nav ul{
-  margin:35px 0 0 0;
+  margin:15px 0 0 0;
   float:left;
 }
 .region-header nav ul.menu li {

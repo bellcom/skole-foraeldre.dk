@@ -229,6 +229,19 @@ body {
 	.view-publication-listing-view .views-row{
 		width:50%;
 	}
+	/* E-commerce block */
+	#block-views-sof-shopping-cart-block-block{
+		margin:0 10px 0 0;
+	}
+	#block-menu-menu-top-navigation ul li.first{
+		padding-left:5px;
+	}
+	 #block-menu-menu-top-navigation ul li{
+	 		padding-left:5px;
+	 }
+	 .region-top-header-navigation .follow-link-wrapper-facebook{
+	 	margin-right:5px;
+	 }
 }
 @media all and (max-width: 900px){
 	.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item{

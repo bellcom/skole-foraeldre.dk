@@ -29,28 +29,32 @@
   */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-	   //Show Hide navigation script	for submenu 	
-	   var navTimers = [];
-	   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
-	   	    var id = jQuery.data( this );
-	   	    var $this=$(this);
-     		navTimers[id] = setTimeout( function() {
-				$this.addClass("slideul");
-				$this.find('.second-level-main-container').stop(true, true).addClass("active");
-				navTimers[id] = "";
-			}, 500 );
-		});
-		//Hide navigation script	for submenu 	
-		$('#block-system-main-menu .menu > li').live('mouseleave', function() { 
-    	     var id = jQuery.data( this );
-			 if ( navTimers[id] != "" ) {
-				 clearTimeout( navTimers[id] );
-			 } else {
-				 $(this).find('.second-level-main-container').removeClass("active");
-    	    	 $(this).removeClass("slideul");
-			 }    
-		});
-	
+    	
+		   //Show Hide navigation script	for submenu 	
+		   var navTimers = [];
+		   $('#block-system-main-menu .menu > li').live('mouseenter', function() {
+		   	    var id = jQuery.data( this );
+		   	    var $this=$(this);
+	     		navTimers[id] = setTimeout( function() {
+					$this.addClass("slideul");
+					$this.find('.second-level-main-container').stop(true, true).addClass("active");
+					navTimers[id] = "";
+				}, 500 );
+			});
+			//Hide navigation script	for submenu 	
+			$('#block-system-main-menu .menu > li').live('mouseleave', function() { 
+	    	     var id = jQuery.data( this );
+				 if ( navTimers[id] != "" ) {
+					 clearTimeout( navTimers[id] );
+				 } else {
+					 $(this).find('.second-level-main-container').removeClass("active");
+	    	    	 $(this).removeClass("slideul");
+				 }    
+			});	
+			$('.second-level-main-container').live('mouseenter', function() {
+				$(this).addClass("active");
+			});
+		/*
          //Hide navigation on click on body if naviagation container is visible
          if($('.header-inner-navigation-container:visible').length == 0){
          	$('html').live('click touchstart', function() {	         
@@ -59,6 +63,7 @@
 				$('.header-navigation-container').removeClass("active");
 	         }); 	  
 		 }
+		 */
 		 //Stop propagating for links of the navigation
 		 $('.header-right-main-container').live('click touchstart', function(e) {	
 			e.stopPropagation();

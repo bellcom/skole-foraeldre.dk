@@ -97,16 +97,14 @@ body {
 	text-decoration:none;
 }
 #block-follow-site{
-	width:100%;
+	width:40%;
 	float:left;
 	padding: 0 0 25px 35px;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box; 
     box-sizing: border-box;
 }
-#block-menu-menu-top-navigation{
-	padding-left:17px;
-}
+
 .region-top-header-navigation .follow-links{
 	float:left;
 }
@@ -186,8 +184,16 @@ body {
  * ========================================================================== */
 #block-menu-menu-top-navigation{
 	padding-bottom:30px;
+	padding-left:17px;
 	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
 }
+#block-menu-menu-top-navigation .block-inner{
+	width:100%;
+}	
 #block-menu-menu-top-navigation ul li{
 	float:none;
 	display:block;

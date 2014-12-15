@@ -461,10 +461,10 @@ function sof_commerce_settings_strongarm() {
           'weight' => '2',
         ),
         'status' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(

@@ -710,7 +710,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'commerce_price',
         'settings' => array(
           'calculation' => 0,
@@ -778,15 +778,17 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_product',
     'field_name' => 'commerce_price',
-    'label' => 'Price',
-    'required' => TRUE,
+    'label' => 'Item Price',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'commerce_price',
       'settings' => array(
         'currency_code' => 'default',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'commerce_price_full',
       'weight' => 5,
@@ -912,6 +914,72 @@ function sof_commerce_settings_field_default_field_instances() {
       ),
       'type' => 'file_generic',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-product-field_sof_commerce_quantity'
+  $field_instances['commerce_product-product-field_sof_commerce_quantity'] = array(
+    'bundle' => 'product',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_sof_commerce_quantity',
+    'label' => 'Min Quantity',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -1091,9 +1159,10 @@ function sof_commerce_settings_field_default_field_instances() {
   t('Email');
   t('Firm');
   t('Institution name');
+  t('Item Price');
+  t('Min Quantity');
   t('Note');
   t('Pdf');
-  t('Price');
   t('SOF message order');
   t('Telephone');
   t('Type');
