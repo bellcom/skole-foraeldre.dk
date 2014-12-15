@@ -41,6 +41,12 @@ function sof_general_tweaks_field_extra_fields() {
     'weight' => 4,
     'visible' => FALSE,
   );
+  $extra['node']['article']['display']['additional_bottom_nodes'] = array(
+    'label' => t('Additional bottom news'),
+    'description' => t('Renders latest 3 news'),
+    'weight' => 4,
+    'visible' => FALSE,
+  );
 
   // Recommended items deck.
   // Additional fild for additional latest news.
@@ -223,6 +229,30 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
       break;
+
+    case 'views_form_commerce_cart_form_sof_default':
+      $settings = array();
+      $commerce_line_items = field_get_items('commerce_order', $form_state['order'], 'commerce_line_items');
+
+      foreach ($commerce_line_items as $key => $item) {
+        $line_item = commerce_line_item_load($item['line_item_id']);
+
+        if (isset($line_item->commerce_product)) {
+          $commerce_product_id = field_get_items('commerce_line_item', $line_item, 'commerce_product');
+          $commerce_product = commerce_product_load($commerce_product_id[0]['product_id']);
+
+          $commerce_quantity = field_get_items('commerce_product', $commerce_product, 'field_sof_commerce_quantity');
+          if (is_array($commerce_quantity) && $commerce_quantity[0]['value'] > 1) {
+            $settings[$key] = $commerce_quantity[0]['value'];
+          }
+        }
+      }
+
+      $form['#attached']['js'] = array(
+        drupal_get_path('module', 'sof_general_tweaks') . '/js/sof_general_tweaks_commerce.js',
+      );
+      drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
+      break;
   }
 }
 
@@ -355,4 +385,15 @@ function sof_general_tweaks_cart_callback() {
   }
 
   return $content;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sof_general_tweaks_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
+  $sof_quantity = field_get_items('commerce_product', $form_state['default_product'], 'field_sof_commerce_quantity');
+
+  if (is_array($sof_quantity) && $sof_quantity[0]['value'] > 1) {
+    $form['quantity']['#value'] = $sof_quantity[0]['value'];
+  }
 }

@@ -5,6 +5,24 @@
  */
 
 /**
+ * Implements hook_commerce_coupon_default_types().
+ */
+function sof_commerce_settings_commerce_coupon_default_types() {
+  $items = array(
+    'commerce_coupon_pct' => array(
+      'type' => 'commerce_coupon_pct',
+      'label' => 'Discount',
+      'weight' => 0,
+      'data' => NULL,
+      'status' => 1,
+      'module' => NULL,
+      'rdf_mapping' => array(),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_commerce_product_default_types().
  */
 function sof_commerce_settings_commerce_product_default_types() {
@@ -29,7 +47,7 @@ function sof_commerce_settings_commerce_tax_default_rates() {
       'name' => 'test',
       'display_title' => 'VAT',
       'description' => '',
-      'rate' => 0.2,
+      'rate' => 0.25,
       'type' => 'vat',
       'rules_component' => 'commerce_tax_rate_test',
       'default_rules_component' => 1,
@@ -63,7 +81,7 @@ function sof_commerce_settings_commerce_tax_default_types() {
       'name' => 'vat',
       'display_title' => 'VAT',
       'description' => 'A basic type for taxes that display inclusive with product prices.',
-      'display_inclusive' => 0,
+      'display_inclusive' => 1,
       'round_mode' => 1,
       'rule' => 'commerce_tax_type_vat',
       'module' => 'commerce_tax_ui',
