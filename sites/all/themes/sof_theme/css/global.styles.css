@@ -4115,6 +4115,41 @@ a:focus {
 /* =============================================================================
  *   Top Header Menu
  * ========================================================================== */
+/* E-commerce block */
+#block-views-sof-shopping-cart-block-block{
+	float:right;
+	margin:0 20px 0 0;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-summary{
+	float:left;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-quantity{
+	float:left;
+	padding:2px 0 0 0;
+}
+#block-views-sof-shopping-cart-block-block .view-footer span{
+	text-transform:uppercase;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .line-item-quantity-raw{
+	background:url('images/add-to-cart-header.png');
+	background-size:24px 19px;
+	background-repeat:no-repeat;
+	padding:3px 0 0 30px;
+	font-size:14px;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links{
+	float:left;
+	clear:none;
+	margin: 0px 0px 0px 10px;
+    padding: 2px 10px;
+    text-transform: uppercase;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links:hover{
+	opacity:0.8;
+}
+#block-views-sof-shopping-cart-block-block .view-footer .links li a{
+	color:#fff;
+}
 /* Follow Links */
 .region-top-header-navigation .block-follow {
 	float:right;
@@ -4168,7 +4203,8 @@ a:focus {
  #block-menu-menu-top-navigation ul li{
  	display:inline-block;
  	list-style:none;
- 	padding-left:30px;
+ 	padding-left:20px;
+ 	line-height:20px;
  }
  
 #block-menu-menu-top-navigation ul li.first{

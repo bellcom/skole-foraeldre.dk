@@ -204,7 +204,15 @@ body {
  * ========================================================================== */
 #block-menu-menu-top-navigation{
 	padding-bottom:30px;
+	padding-left:17px;
 	float:left;
+	width:100%;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+#block-menu-menu-top-navigation .block-inner{
+	width:100%;
 }
 #block-menu-menu-top-navigation ul li{
 	float:none;
@@ -225,7 +233,7 @@ body {
 	padding-left:25px;
 }
 #block-follow-site{
-	width:100%;
+	width:40%;
 	float:left;
 	padding: 0 0 25px 35px;
 	-webkit-box-sizing: border-box;
@@ -593,6 +601,12 @@ ul.pager li{
 @media all and (max-width: 360px){
 	#header{
 		padding:0;
+	}
+	#logo{
+		padding-left:4%;
+	}
+	#nav-activation-link span{
+		margin-right:10px;
 	}
 	.view-related-articles-slider .flex-direction-nav{
 		top:46%;

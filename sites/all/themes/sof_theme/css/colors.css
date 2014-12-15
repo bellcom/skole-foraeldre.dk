@@ -118,7 +118,8 @@ body.page-user ul.primary li.active,
 #dibs-frontend-redirect-form #edit-submit,
 .view-commerce-line-item-table tr th,
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
-.entity-commerce-order .field-name-commerce-customer-shipping > h2{
+.entity-commerce-order .field-name-commerce-customer-shipping > h2,
+#block-views-sof-shopping-cart-block-block .view-footer .links{
   background-color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .checkout{
