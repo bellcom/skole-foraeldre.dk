@@ -127,6 +127,7 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['fields']['edit_quantity']['label'] = 'Quantity';
   $handler->display->display_options['fields']['edit_quantity']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['edit_quantity']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['edit_quantity']['element_class'] = 'sof-commerce-quantity';
   $handler->display->display_options['fields']['edit_quantity']['element_label_colon'] = FALSE;
   /* Field: Commerce Line Item: Delete button */
   $handler->display->display_options['fields']['edit_delete']['id'] = 'edit_delete';
