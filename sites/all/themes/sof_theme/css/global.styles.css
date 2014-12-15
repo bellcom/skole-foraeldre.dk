@@ -852,7 +852,9 @@ body.node-type-slider #main-content{
     margin-bottom:-99999px;
     padding-bottom:99999px;
 }
-
+.news-deck-view-content .views-row.views-row-last{
+	border-right:none;
+}
 .news-deck-view-content  .views-field-changed{
   color: rgba(69, 69, 69, 0.6);
     font-size: 15px;
