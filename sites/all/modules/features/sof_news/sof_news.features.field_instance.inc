@@ -376,14 +376,14 @@ function sof_news_field_default_field_instances() {
       ),
       'primary_selected_node' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'image_link_formatter',
         'settings' => array(
           'field_multiple_limit' => 1,
           'field_multiple_limit_offset' => 0,
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'article_top_slider',
         ),
-        'type' => 'image',
+        'type' => 'image_link_formatter',
         'weight' => 0,
       ),
       'related_content_reference' => array(
