@@ -5928,6 +5928,9 @@ body.page-taxonomy-term #content h2{
     padding-left:0!important;
     text-align: left;
 }
+.apachesolr_search-results li h3 a:hover{
+	color:#000;
+}
 body.page-search #block-system-main > ul{
   float:left;
   margin:0;
