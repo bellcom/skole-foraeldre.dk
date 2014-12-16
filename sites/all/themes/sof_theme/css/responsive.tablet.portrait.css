@@ -141,8 +141,12 @@ body {
 .region-header nav ul.menu li a{
 	color:#000;
 	background-image:url('images/nav-drop-dow-arrow.png');
+	background-size:16px 11px;
 	background-position:left 9px!important;
 	background-repeat:no-repeat!important;
+}
+.region-header nav ul.menu li a.active{
+	background-image:url('images/nav-drop-dow-arrow-up.png');
 }
 .menu li.expanded.slideul a{
 	border-bottom: 0;
@@ -200,6 +204,7 @@ body {
 	padding-left:25px;
 	padding-top:20px;
 	background-image:url('images/nav-drop-dow-arrow-grey.png');
+	background-size:16px 11px;
 	background-position:left 27px;
 	background-repeat:no-repeat;
 	text-align:left;

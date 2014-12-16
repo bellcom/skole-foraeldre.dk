@@ -60,7 +60,8 @@ body.node-type-basic-page .author-datetime a,
 .entity-commerce-order .field-name-commerce-customer-billing .field-item,
 .entity-commerce-order .field-name-commerce-customer-shipping .field-item,
 .entity-commerce-order .field-name-commerce-customer-billing .field-item a,
-.entity-commerce-order .field-name-commerce-customer-shipping .field-item a{
+.entity-commerce-order .field-name-commerce-customer-shipping .field-item a,
+.cart-empty-page{
   color: #00a2eb;
 }
 .commerce-add-to-cart-confirmation .added-product-title,

@@ -1247,7 +1247,7 @@ body.node-type-slider #main-content{
 }
 
 .intro-deck-group-first .field-name-field-single-link{
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 200;
     line-height: 26px;
     list-style-type: none;
@@ -1750,6 +1750,13 @@ body.node-type-slider #main-content{
   margin-left:-5px;
 }
 /* Cart Page */
+.cart-empty-page{
+	font-size: 18px;
+	font-weight: 200 !important;
+	line-height: 24px;
+	text-align: left;
+	text-transform:uppercase;
+}
 body.page-cart #main-content,
 body.page-checkout #main-content {
   border:2px solid #4f81bd;
