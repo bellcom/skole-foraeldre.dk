@@ -1964,6 +1964,7 @@ body.page-checkout #edit-buttons{
   font-size:14px;
   color:#5E5E5E;
   padding:0 0 0 10px;
+  text-align:center;
 }
 #commerce-checkout-form-checkout .form-item  label,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
@@ -2091,6 +2092,9 @@ table.checkout-review .pane-data-full{
 }
 #commerce-checkout-form-checkout #edit-customer-profile-shipping a{
   color:#fff;
+}
+#edit-customer-profile-shipping.collapsed{
+	margin-bottom:20px;
 }
 #edit-customer-profile-shipping  .form-type-checkbox input{
 	float:left;
