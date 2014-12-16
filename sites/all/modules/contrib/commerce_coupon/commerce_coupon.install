@@ -131,9 +131,12 @@ function commerce_coupon_uninstall() {
   // Delete all fields that belong to the module's entity types.
   commerce_delete_instances('commerce_coupon_log');
   commerce_delete_instances('commerce_coupon');
+  commerce_delete_field('commerce_coupon_number_of_uses');
+  commerce_delete_field('commerce_coupon_code');
   commerce_delete_field('commerce_coupon_order_reference');
   commerce_delete_field('commerce_coupon_reference');
-
+  field_purge_batch(20);
+  
   // Delete all module variables.
   variable_del('commerce_coupon_default_code_size');
   variable_del('commerce_coupon_checkout_pane_view');
