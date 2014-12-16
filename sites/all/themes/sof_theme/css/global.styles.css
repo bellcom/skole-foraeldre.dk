@@ -1757,6 +1757,11 @@ body.node-type-slider #main-content{
 	text-align: left;
 	text-transform:uppercase;
 }
+ body.page-user-orders #columns{
+ 	  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+ }
 body.page-cart #main-content,
 body.page-checkout #main-content {
   border:2px solid #4f81bd;
@@ -1918,7 +1923,8 @@ body.page-checkout h1{
 #commerce-checkout-form-shipping #edit-commerce-shipping,
 #commerce-checkout-form-shipping #edit-buttons,
 #commerce-checkout-form-review #edit-buttons,
-#commerce-checkout-form-review #edit-commerce-payment{
+#commerce-checkout-form-review #edit-commerce-payment,
+#edit-commerce-coupon{
   border:none;
   padding:0;
 }
@@ -1929,7 +1935,8 @@ body.page-checkout h1{
 #commerce-checkout-form-review .checkout-review .pane-title td,
 #commerce-checkout-form-review #edit-commerce-payment legend,
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
-.entity-commerce-order .field-name-commerce-customer-shipping > h2{
+.entity-commerce-order .field-name-commerce-customer-shipping > h2,
+#edit-commerce-coupon legend{
   width:100%;
   color:#fff!important;
   text-transform:uppercase;
@@ -1940,7 +1947,12 @@ body.page-checkout h1{
     box-sizing: border-box;
     font-size:16px;
 }
-
+body.page-checkout #edit-cart-contents legend{
+	margin-bottom:5px;
+}
+body.page-checkout #edit-buttons{
+	margin-bottom:10px;
+}
 #commerce-checkout-form-shipping #edit-customer-profile-shipping legend a.fieldset-title{
   color:#fff;
 }
@@ -1978,6 +1990,7 @@ body.page-checkout h1{
     box-sizing: border-box;
     padding: 10px;
 }
+
 #commerce-checkout-form-checkout #edit-continue,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
@@ -2078,6 +2091,15 @@ table.checkout-review .pane-data-full{
 }
 #commerce-checkout-form-checkout #edit-customer-profile-shipping a{
   color:#fff;
+}
+#edit-customer-profile-shipping  .form-type-checkbox input{
+	float:left;
+	margin:6px 5px 0 0;
+}
+#edit-customer-profile-shipping  .form-type-checkbox label{
+	float: left;
+	margin: 0px;
+	padding: 0px;
 }
 /* =============================================================================
  *   NODE STYLING
@@ -2189,8 +2211,9 @@ article.node-publication .field-type-image.field-label-above h2{
     width:100%;
     float:left;
     background-image:url('images/publication-read-online.png');
-  background-repeat:no-repeat;
-  background-position:94% center;
+    background-repeat:no-repeat;
+    background-size:35px 23px;
+    background-position:94% center;
 }
 .publication-top-right-container .field-name-field-single-link .field-item {
     font-size: 20px;
@@ -3629,7 +3652,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
     width:100%;
 }
 #user-login .description,
-#user-pass .description{
+#user-pass .description,
+#commerce_coupon .description {
   font-size:15px;
 }
 #user-login .form-actions,
@@ -5958,7 +5982,8 @@ body.page-search #block-system-main > ul li{
   .node-section .pane-page-title,
   .node-section .pane-node-field-teaser,
   body.page-cart #columns,
-  body.page-checkout #columns{
+  body.page-checkout #columns,
+  body.page-user-orders #columns{
     padding:0 20px;
   }
   .section-default-listiing{
