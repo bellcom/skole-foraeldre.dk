@@ -876,6 +876,8 @@ body.node-type-slider #main-content{
     padding-top: 10px;
     text-align: left;
     text-transform: uppercase;
+    float:left;
+    width:100%;
 }
 .news-deck-view-content .views-field-view-node a:hover{
   color:#000;
