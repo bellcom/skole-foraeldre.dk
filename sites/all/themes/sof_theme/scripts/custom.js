@@ -29,61 +29,51 @@
   */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-    	
-    	
- function close_accordion_section() {
-        $('#block-system-main-menu .menu > li').removeClass('slideul');
-        $('#block-system-main-menu .menu > li').find('.second-level-main-container').stop(true, true).removeClass("active");
-        $('#block-system-main-menu .menu > li').find('a').removeClass('active');
-    }
- 
-    $('#block-system-main-menu .menu > li').click(function(e) {
-        // Grab current anchor value
-        var currentAttrValue = $(this).attr('href');
- 
-        if($(e.target).is('.active')) {
-            close_accordion_section();
-        }else {
-            close_accordion_section();
- 
-            $(this).addClass('slideul');
-        	$(this).find('.second-level-main-container').stop(true, true).addClass("active");
-        	$(this).find('a').addClass('active');
-        }
-    });
-
-/*
+    
       //Show Hide navigation script	for submenu
 	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-	    $("#block-system-main-menu .menu > li").click(function() {
-	      var $this=$(this);
-	      $this.toggleClass("slideul");
-	      $this.find('a').toggleClass('active');
-	      $this.find('.second-level-main-container').stop(true, true).toggleClass("active");
-	    });
-	  }else{
-	    var navTimers = [];
-	    $("#block-system-main-menu .menu > li").live('mouseenter',function(){
+	        	
+		function close_accordion_section() {
+		        $('#block-system-main-menu .menu > li').removeClass('slideul');
+		        $('#block-system-main-menu .menu > li').find('.second-level-main-container').stop(true, true).removeClass("active");
+		        $('#block-system-main-menu .menu > li').find('a').removeClass('active');
+		    }
+	     
+		    $('#block-system-main-menu .menu > li').click(function(e) {
+		        if($(e.target).is('.active')) {
+		            close_accordion_section();
+		        }else {
+		            close_accordion_section();
+		            $(this).addClass('slideul');
+		        	$(this).find('.second-level-main-container').stop(true, true).addClass("active");
+		        	$(this).find('a').addClass('active');
+		        }
+		    });
+	   }else{
+	     var navTimers = [];
+	     $("#block-system-main-menu .menu > li").live('mouseenter',function(){
 	        var id = jQuery.data( this );
 	        var $this=$(this);
 	        navTimers[id] = setTimeout( function() {
 	        $this.addClass("slideul");  
+	        $this.find('a').addClass('active');
 	        $this.find('.second-level-main-container').stop(true, true).addClass("active");
 	        navTimers[id] = "";
 	      }, 500 );
-	    }).live('mouseleave',function(){
+	     }).live('mouseleave',function(){
 	       var id = jQuery.data( this );
 	       if ( navTimers[id] != "" ) {
-	         clearTimeout( navTimers[id] );
-	       } else {
-	         $(this).find('.second-level-main-container').removeClass("active");
-	         $(this).removeClass("slideul");
+	         	clearTimeout( navTimers[id] );
+	         }else {
+	         	$(this).find('.second-level-main-container').removeClass("active");
+	         	$(this).removeClass("slideul");
+	         	$(this).find('a').removeClass('active');
 	       }
 	    });
 	  }
-*/
-         //Hide navigation on click on body if naviagation container is visible
-         if($('.header-inner-navigation-container:visible').length == 0){
+	  
+     //Hide navigation on click on body if naviagation container is visible
+     if($('.header-inner-navigation-container:visible').length == 0){
            $('html').live('click touchstart', function() {
             $(".header-inner-navigation-container").hide();
           $('#nav-activation-link span').removeClass("active");
