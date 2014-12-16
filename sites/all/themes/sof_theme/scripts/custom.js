@@ -31,7 +31,7 @@
     attach: function (context, settings) {
     
       //Show Hide navigation script	for submenu
-	   if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){  	
+	  //if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){  	
 		   function close_accordion_section() {
 		   	    $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		        $('#block-system-main-menu .menu > li').removeClass('slideul');
@@ -41,7 +41,6 @@
 	        $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 	        //Run script on click
 		    $('#block-system-main-menu .menu > li').click(function(e) {
-		    	e.preventDefault();
 		        if($(e.target).is('.active')) {
 		            close_accordion_section();
 		        }else {
@@ -51,7 +50,7 @@
 		        	$(this).find('.second-level-main-container').stop(true, true).addClass("active");
 		        }
 		    });
-	   }else{
+	  /* }else{
 	     var navTimers = [];
 	     $("#block-system-main-menu .menu > li").live('mouseenter',function(){
 	        var id = jQuery.data( this );
@@ -73,7 +72,7 @@
 	       }
 	    });
 	  }
-	  
+	  */
      //Hide navigation on click on body if naviagation container is visible
      if($('.header-inner-navigation-container:visible').length == 0){
            $('html').live('click touchstart', function() {
