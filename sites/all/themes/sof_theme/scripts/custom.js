@@ -31,22 +31,24 @@
     attach: function (context, settings) {
     
       //Show Hide navigation script	for submenu
-	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
-	        	
-		function close_accordion_section() {
+	   if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){  	
+		   function close_accordion_section() {
+		   	    $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		        $('#block-system-main-menu .menu > li').removeClass('slideul');
 		        $('#block-system-main-menu .menu > li').find('.second-level-main-container').stop(true, true).removeClass("active");
-		        $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		    }
-	     
+		    //Remove class by default 
+	        $('#block-system-main-menu .menu > li').find('a').removeClass('active');
+	        //Run script on click
 		    $('#block-system-main-menu .menu > li').click(function(e) {
+		    	e.preventDefault();
 		        if($(e.target).is('.active')) {
 		            close_accordion_section();
 		        }else {
 		            close_accordion_section();
+		            $(this).find('a').addClass('active');
 		            $(this).addClass('slideul');
 		        	$(this).find('.second-level-main-container').stop(true, true).addClass("active");
-		        	$(this).find('a').addClass('active');
 		        }
 		    });
 	   }else{
