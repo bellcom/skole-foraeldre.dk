@@ -288,7 +288,7 @@ function follow_block_view($delta = '') {
   switch ($delta) {
     case 'site':
       if (($content = _follow_block_content($type))
-        && (variable_get(FOLLOW_DOMAIN . '_follow_site_block_user', TRUE) || !(arg(0) == 'user' && is_numeric(arg(1))))) {
+          && (variable_get(FOLLOW_DOMAIN . '_follow_site_block_user', TRUE) || !(arg(0) == 'user' && is_numeric(arg(1))))) {
         return array(
           'subject' => _follow_block_subject(),
           'content' => $content,
@@ -394,9 +394,7 @@ function theme_follow_link($variables) {
   $title = $variables['title'];
   $classes = array();
   $classes[] = 'follow-link';
-
   $link->name = str_replace(FOLLOW_DOMAIN . '_', '', $link->name);
-
   $classes[] = "follow-link-{$link->name}";
   $classes[] = $link->uid ? 'follow-link-user' : 'follow-link-site';
   $attributes = array(
@@ -571,7 +569,7 @@ function theme_follow_links_form($variables) {
   foreach (element_children($form[FOLLOW_DOMAIN . '_follow_links']) as $key) {
     $row = array();
 
-   if (isset($form[FOLLOW_DOMAIN . '_follow_links'][$key]['weight'])) {
+    if (isset($form[FOLLOW_DOMAIN . '_follow_links'][$key]['weight'])) {
       $row[] = drupal_render($form[FOLLOW_DOMAIN . '_follow_links'][$key]['lid']) . drupal_render($form[FOLLOW_DOMAIN . '_follow_links'][$key]['name']);
       $row[] = drupal_render($form[FOLLOW_DOMAIN . '_follow_links'][$key]['url']);
       if (user_access('change follow link titles')) {
