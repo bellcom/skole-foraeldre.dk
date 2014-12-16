@@ -255,11 +255,12 @@ body {
 }
 #commerce-checkout-form-checkout .form-item input{
 	width:100%;
-	margin:auto;
+	margin:10px auto;
 	display:inline-block;
 }
-#commerce-checkout-form-checkout .form-item label{
-	text-align:center;
+
+#edit-customer-profile-shipping.collapsed{
+	margin-bottom:40px;
 }
 /* =============================================================================
  *   Articles
