@@ -319,8 +319,7 @@ function _propeople_set_default_domain() {
 function _propeople_default_follow_link() {
 
   //Default domain tag
-  $current_domain_info = domain_get_domain();
-  $follow_domain = 'domin_' . $current_domain_info['domain_id'];
+  $follow_domain = 'domin_1';
 
   // Add a default facebook and twitter links to the page.
   $values = array(
