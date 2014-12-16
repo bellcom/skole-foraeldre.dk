@@ -3115,7 +3115,8 @@ body.node-type-section .pane-section-default-content-section-default-listing .bl
   margin:0 auto;
   float:none;
 }
-body.node-type-section .section-header{
+body.node-type-section .section-header,
+#commerce-checkout-form-checkout #edit-buttons {
   margin-top:10px;
 }
 body.node-type-section  #main-content-header{

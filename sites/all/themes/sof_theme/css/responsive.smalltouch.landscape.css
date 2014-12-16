@@ -312,6 +312,7 @@ body.page-releases .pane-apachesolr-form h2{
 }
 #commerce-checkout-form-checkout .form-item input{
 	width:100%;
+	text-align:center;
 }
 div.messages.commerce-add-to-cart-confirmation{
 	max-width:450px;

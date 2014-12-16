@@ -255,6 +255,7 @@ body {
 }
 #commerce-checkout-form-checkout .form-item input{
 	width:100%;
+	text-align:center;
 }
 /* =============================================================================
  *   Articles
