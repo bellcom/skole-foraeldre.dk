@@ -6,8 +6,9 @@
  */
 
 /* DOMAIN ACCESS */
-global $_domain;
-define('FOLLOW_DOMAIN', strtolower(str_replace(' ','-',check_plain($_domain['sitename']))));
+$current_domain_info = domain_get_domain();
+$domain_slg = 'domin_' . $current_domain_info['domain_id'];
+define('FOLLOW_DOMAIN', $domain_slg);
 
 define('FOLLOW_NAME', 0);
 define('FOLLOW_ME', 1);
@@ -129,8 +130,8 @@ function _follow_links_element(array $links, array $networks, $type, $alignment 
   }
 
   $wrapper = $alignment == 'horizontal' ? 'span' : 'div';
-  foreach ($links as $link) {
 
+  foreach ($links as $link) {
     $title = !empty($link->title) ? $link->title : isset($networks[$link->name]['title']) ? $networks[$link->name]['title'] : '';
 
     //Remove domain from the name to use regular css rules
@@ -297,12 +298,10 @@ function follow_link_save($link) {
  *   An int containing the ID of a link.
  */
 function follow_link_delete($lid) {
-
   db_delete('follow_links')
     ->condition('lid', $lid)
     ->condition('name', FOLLOW_DOMAIN .'%', 'LIKE')
     ->execute();
-
 }
 
 /**
@@ -533,4 +532,3 @@ function _follow_style_icon_path(array $style) {
   $path = !empty($style['icon-path']) ? $style['icon-path'] : $default_icon_path;
   return base_path() . $path;
 }
-
