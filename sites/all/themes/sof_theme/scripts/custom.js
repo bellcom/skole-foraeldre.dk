@@ -160,9 +160,11 @@
         $('.field-name-field-link-group-title-first', this).next('.field-name-field-five-links-first').andSelf().wrapAll('<div class="intro-deck-group"></div>');
         $('.field-name-field-link-group-title-second', this).next('.field-name-field-five-links-second').andSelf().wrapAll('<div class="intro-deck-group"></div>');
       });
-
-      //Magazine Deck
-      $(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links").wrapAll('<div class="mag-deck-right-group"></div>');
+		
+       //Magazine Deck               	
+      $(".pane-bundle-magazine-pane", context).each(function(){
+      	$(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links", this).wrapAll('<div class="mag-deck-right-group"></div>');
+      });
 
       //Apache Solr Search edit form
    $( ".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>" );

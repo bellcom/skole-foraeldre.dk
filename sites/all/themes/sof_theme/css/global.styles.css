@@ -37,9 +37,6 @@
     font-style: normal;
 }
 
-
-
-
 @font-face {
     font-family: 'conduit_itcbold';
     src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot');
@@ -50,11 +47,7 @@
          url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.svg#conduit_itcbold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'conduit_itclight';
@@ -68,9 +61,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'conduit_itcmedium_italic';
@@ -126,10 +116,10 @@
 
 
 html, body {
-  margin-right: 0px;
+	margin-right: 0px;
     margin-bottom: 0px;
-   margin-left: 0px;
-   padding-left: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
     font-family:"conduit_itcregular",sans-serif;
     font-weight:normal;
     color: black;
@@ -157,8 +147,6 @@ html, body {
 }
 #page {
   margin-top:30px;
-  /*height:100%;*/
-  /*display:table;*/
 }
 .footer-main-container{
   float:left;
@@ -175,7 +163,7 @@ html, body {
   padding-bottom:30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*
@@ -186,8 +174,8 @@ html, body {
   max-width:1170px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-   box-sizing: border-box;
-   min-height: 50%!important;
+  box-sizing: border-box;
+  min-height: 50%!important;
   height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
   height: 100%;
   margin: 0 auto;
@@ -204,13 +192,6 @@ html, body {
   position:relative;
   height:100%;
 }
-
-/*
- * Wraps the content region, avoid applying styles to this wrapper, its used
- * mainly for position and invisible gutters and can be problematic to style
- */
-#content {}
-
 /*
  * Footer wrapper
  */
@@ -223,10 +204,9 @@ html, body {
   -moz-box-sizing: border-box;
    box-sizing: border-box;
 }
-/*
+/**
  * Footer region
- */
-
+**/
 .footer-social-region{
   width:100%;
   float:left;
@@ -812,7 +792,8 @@ body.node-type-slider #main-content{
     padding-right: 17px;
     padding-top: 14px;
     text-align: left;
-
+	height:168px;
+	overflow:hidden;
 }
 .news-deck-top-right-content .read-more{
     font-size: 20px;
@@ -851,7 +832,9 @@ body.node-type-slider #main-content{
     margin-bottom:-99999px;
     padding-bottom:99999px;
 }
-
+.news-deck-view-content .views-row.views-row-last{
+	border-right:none;
+}
 .news-deck-view-content  .views-field-changed{
   color: rgba(69, 69, 69, 0.6);
     font-size: 15px;
@@ -866,6 +849,7 @@ body.node-type-slider #main-content{
     text-decoration: none;
     line-height:32px;
     float:left;
+    width:100%;
 }
 .news-deck-view-content .views-field-field-teaser{
   float:left;
@@ -892,6 +876,8 @@ body.node-type-slider #main-content{
     padding-top: 10px;
     text-align: left;
     text-transform: uppercase;
+    float:left;
+    width:100%;
 }
 .news-deck-view-content .views-field-view-node a:hover{
   color:#000;
@@ -933,7 +919,7 @@ body.node-type-slider #main-content{
     font-size: 25px;
     list-style-type: none;
     padding-right: 37px;
-    padding-top: 14px;
+    padding-top: 8px;
     text-align: right;
     text-decoration: none;
     text-transform: uppercase;
@@ -1417,7 +1403,7 @@ body.node-type-slider #main-content{
 /* Magazine Deck */
 .pane-bundle-magazine-pane{
   padding:20px 0 60px 0;
-  margin:0;
+  margin:0 0 20px 0;
   background-image:url('images/magazine-deck-bg.jpg');
   background-attachment:fixed;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -3476,7 +3462,7 @@ body.node-type-basic-page .print_html{
 .form-managed-file{
   max-width:520px;
 }
-.node-webform .form-submit.ajax-processed {
+.node-webform .form-submit.ajax-processed{
     border: medium none;
     color: #fff;
     cursor: pointer;
@@ -3488,7 +3474,15 @@ body.node-type-basic-page .print_html{
     width: auto !important;
     float:right;
 }
-
+body.page-node-done #content .links a {
+	border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 0px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+}
 .node-webform .form-number{
   max-width:150px;
 }
@@ -3506,7 +3500,8 @@ body.node-type-basic-page .print_html{
     padding: 15px 25px;
     text-transform: uppercase;
 }
-.node-webform .form-actions input:hover{
+.node-webform .form-actions input:hover,
+body.page-node-done .links a:hover{
   opacity:0.8;
 }
 .form-type-radio input {
