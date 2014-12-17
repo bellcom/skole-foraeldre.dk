@@ -156,10 +156,6 @@ function commerce_flat_rate_commerce_shipping_service_info() {
       }
 
       // Add the full service array to our return value.
-      dpm($service['rules_component'], 'rules componenet');
-      dpm($price_component_type, 'price comp');
-      dpm($base_rate, 'base rate');
-      dpm($service['title'], 'title');
       $services[$name] = array(
         'title' => $service['title'],
         'display_title' => !empty($service['display_title']) ? $service['display_title'] : $service['title'],
@@ -175,7 +171,6 @@ function commerce_flat_rate_commerce_shipping_service_info() {
       );
     }
   }
-dpm($services);
   return $services;
 }
 
