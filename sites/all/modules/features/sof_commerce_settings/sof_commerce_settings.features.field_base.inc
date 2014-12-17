@@ -628,6 +628,26 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_sof_commerce_weight'
+  $field_bases['field_sof_commerce_weight'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sof_commerce_weight',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'weight' => array(
+        0 => 'weight',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'physical',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'physical_weight',
+  );
+
   // Exported field_base: 'field_sof_message_order'
   $field_bases['field_sof_message_order'] = array(
     'active' => 1,

@@ -1042,6 +1042,62 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_product-product-field_sof_commerce_weight'
+  $field_instances['commerce_product-product-field_sof_commerce_weight'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'physical',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'physical_weight_formatted',
+        'weight' => 7,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_sof_commerce_weight',
+    'label' => 'Single product weight',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'physical',
+      'settings' => array(
+        'default_unit' => 'kg',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'unit_select_list' => 0,
+      ),
+      'type' => 'physical_weight_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'message-sof_order_admin_message-field_sof_message_order'
   $field_instances['message-sof_order_admin_message-field_sof_message_order'] = array(
     'bundle' => 'sof_order_admin_message',
@@ -1164,6 +1220,7 @@ function sof_commerce_settings_field_default_field_instances() {
   t('Note');
   t('Pdf');
   t('SOF message order');
+  t('Single product weight');
   t('Telephone');
   t('Type');
 
