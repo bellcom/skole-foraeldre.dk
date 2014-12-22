@@ -1651,6 +1651,7 @@ body.node-type-slider #main-content{
   background:#fff;
   float:left;
   padding:20px 0;
+  margin:0 0 40px 0;
   overflow:hidden;
 }
 .field-name-field-we-recommend-reference,
@@ -1683,16 +1684,20 @@ body.node-type-slider #main-content{
     text-transform: uppercase;
     float:none!important;
 }
-.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
-.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a{
-  color:#000;
+.write-about-title-wrap,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title{
   height:130px;
+  float:left;
+}
+.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a {
+  color:#000;
   float:left;
   width:100%;
   overflow:hidden;
-    font-size: 31px;
-    font-weight: 400;
-    line-height: 31px;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 34px;
 }
 .field-name-field-we-recommend-reference .field-name-field-image-slider img,
 .pane-bundle-what-we-write-about-pane  .form-item img{
@@ -1705,17 +1710,17 @@ body.node-type-slider #main-content{
   float:left;
   width:100%;
 }
+
 .field-name-field-we-recommend-reference .field-item .node-title a,
 .view-we-are-writing-about-additional-displays .view-content .views-row a{
   color:#000;
-  font-size:19px;
+  font-size:18px;
   border-top: 1px solid rgba(0, 0, 0, 0.27);
-    line-height: 20px;
-    padding-bottom: 13px;
-    padding-top: 11px;
-    float:left;
+  line-height: 20px;
+  float:left;
   font-weight: normal;
   width:100%;
+  padding:11px 0 13px 0;
 }
 .view-we-are-writing-about-additional-displays .view-header .view-content .views-row a{
   border:none;
@@ -4098,7 +4103,7 @@ a.active { }
 
 a:hover,
 a:focus {
-  border:none!important;
+  /*border:none!important;*/
 }
 
 
