@@ -1935,6 +1935,9 @@ body.page-checkout h1{
   border:none;
   padding:0;
 }
+#edit-commerce-coupon{
+	margin-top:15px;
+}
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
