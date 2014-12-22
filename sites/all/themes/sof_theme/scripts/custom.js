@@ -96,7 +96,7 @@
    }
   };
   /**
-  * Wrapping General Scripts
+  *  General Scripts
   */
   Drupal.behaviors.sofGeneralScripts = {
     attach: function (context, settings) {
@@ -177,6 +177,11 @@
        //Magazine Deck               	
       $(".pane-bundle-magazine-pane", context).each(function(){
       	$(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links", this).wrapAll('<div class="mag-deck-right-group"></div>');
+      });
+      
+       //What we write about deck               	
+      $(".field-name-field-we-recommend-reference .field-item", context).each(function(){
+      	$(".node-title-werecommend", this).wrap('<div class="write-about-title-wrap"></div>');
       });
 
       //Apache Solr Search edit form

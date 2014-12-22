@@ -197,10 +197,10 @@ html, body {
  */
 #footer {
   width:100%;
-    clear:both;
-    padding:40px 0 60px 0;
-    margin:0;
-    -webkit-box-sizing: border-box;
+  clear:both;
+  padding:40px 0 30px 0;
+  margin:0;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
    box-sizing: border-box;
 }
@@ -211,7 +211,6 @@ html, body {
   width:100%;
   float:left;
   padding:0;
-  margin:20px 0 0 0;
   background:#f0f0f0;
    -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1651,6 +1650,7 @@ body.node-type-slider #main-content{
   background:#fff;
   float:left;
   padding:20px 0;
+  margin:0 0 40px 0;
   overflow:hidden;
 }
 .field-name-field-we-recommend-reference,
@@ -1683,16 +1683,20 @@ body.node-type-slider #main-content{
     text-transform: uppercase;
     float:none!important;
 }
-.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
-.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a{
-  color:#000;
+.write-about-title-wrap,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title{
   height:130px;
+  float:left;
+}
+.field-name-field-we-recommend-reference .field-item:nth-child(1) .node-title-werecommend,
+.pane-bundle-what-we-write-about-pane .form-item .view-header .views-field-title a {
+  color:#000;
   float:left;
   width:100%;
   overflow:hidden;
-    font-size: 31px;
-    font-weight: 400;
-    line-height: 31px;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 34px;
 }
 .field-name-field-we-recommend-reference .field-name-field-image-slider img,
 .pane-bundle-what-we-write-about-pane  .form-item img{
@@ -1705,17 +1709,17 @@ body.node-type-slider #main-content{
   float:left;
   width:100%;
 }
+
 .field-name-field-we-recommend-reference .field-item .node-title a,
 .view-we-are-writing-about-additional-displays .view-content .views-row a{
   color:#000;
-  font-size:19px;
+  font-size:18px;
   border-top: 1px solid rgba(0, 0, 0, 0.27);
-    line-height: 20px;
-    padding-bottom: 13px;
-    padding-top: 11px;
-    float:left;
+  line-height: 20px;
+  float:left;
   font-weight: normal;
   width:100%;
+  padding:11px 0 13px 0;
 }
 .view-we-are-writing-about-additional-displays .view-header .view-content .views-row a{
   border:none;
@@ -1934,6 +1938,9 @@ body.page-checkout h1{
 #edit-commerce-coupon{
   border:none;
   padding:0;
+}
+#edit-commerce-coupon{
+	margin-top:15px;
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
@@ -4095,7 +4102,7 @@ a.active { }
 
 a:hover,
 a:focus {
-  border:none!important;
+  /*border:none!important;*/
 }
 
 
@@ -5236,6 +5243,9 @@ ul.action-links li {}
 #footer .region-footer .block:nth-child(2){
   width:30%;
   line-height:24px;
+}
+#footer .region-footer .block:nth-child(2) p {
+	margin:0px;
 }
 #footer .region-footer .block:nth-child(2) h2{
   font-size: 24px;
