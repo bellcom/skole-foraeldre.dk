@@ -12,7 +12,7 @@
     position:absolute;
     left:10mm;
     bottom:10mm;
-    max-width:50mm;
+    max-width:230px;  
 }
 .sof-pdf-cover-vertical{
    display:table-cell;
