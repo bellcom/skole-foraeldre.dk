@@ -100,6 +100,9 @@ function propeople_install() {
   db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven')->execute();
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
+
+  // Create default flat shipping services.
+  _propeople_configure_default_shipping_services();
 }
 
 /**
@@ -293,7 +296,7 @@ function _propeople_create_menus() {
 }
 
 /**
- * Programatically update default domain
+ * Programatically update default domain.
  *
  * -Change default domain name
  *
@@ -318,7 +321,7 @@ function _propeople_set_default_domain() {
  */
 function _propeople_default_follow_link() {
 
-  //Default domain tag
+  // Default domain tag.
   $follow_domain = 'domin_1';
 
   // Add a default facebook and twitter links to the page.
@@ -532,6 +535,70 @@ function propeople_delete_fields_instances(array $params, $include_additional = 
 }
 
 /**
+ * Helper function for creating default shipping services per order weight.
+ */
+function _propeople_configure_default_shipping_services() {
+  $sof_services = array(
+    'weight_to_0_005' => array(
+      'title' => 'Weight to 0.005',
+      'amount' => 0,
+    ),
+    'weight_to_0_2' => array(
+      'title' => 'Weight to 0.2',
+      'amount' => 3125,
+    ),
+    'weight_to_0_45' => array(
+      'title' => 'Weight to 0.45',
+      'amount' => 4800,
+    ),
+    'weight_to_0_9' => array(
+      'title' => 'Weight to 0.9',
+      'amount' => 6050,
+    ),
+    'weight_to_1_9' => array(
+      'title' => 'Weight to 1.9',
+      'amount' => 7050,
+    ),
+    'weight_to_4_8' => array(
+      'title' => 'Weight to 4.8',
+      'amount' => 8500,
+    ),
+    'weight_to_9_6' => array(
+      'title' => 'Weight to 9.6',
+      'amount' => 11000,
+    ),
+    'weight_to_19' => array(
+      'title' => 'Weight to 19',
+      'amount' => 18000,
+    ),
+  );
+
+  // We need the module to be enabled before trying to insert in its table.
+  module_enable('commerce_flat_rate');
+  if (module_exists('commerce_flat_rate')) {
+
+    foreach ($sof_services as $name => $service) {
+      $data = array(
+        'name' => $name,
+        'title' => $service['title'],
+        'display_title' => t('Shipping Fee'),
+        'description' => '',
+        'rules_component' => TRUE,
+        'amount' => $service['amount'],
+        'currency_code' => 'DKK',
+        'data' => array(),
+      );
+      try {
+        drupal_write_record('commerce_flat_rate_service', $data);
+      }
+      catch (Exception $ex) {
+        watchdog('Propeople', $ex->getMessage(), array(), WATCHDOG_ERROR);
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_update_N().
  *
  * Remove some fields from commerce customer types.
@@ -587,4 +654,41 @@ function propeople_update_7002() {
   foreach ($fields as $params) {
     propeople_delete_fields_instances($params, array());
   }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove all commerce coupons record in 'field_config' and
+ * 'field_config_instance' tables.
+ * Because of problems with the Commerce coupon modules.
+ */
+function propeople_update_7003() {
+  try {
+    $field_config = db_delete('field_config')
+      ->condition('field_name', '%coupon%', 'LIKE')
+      ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', check_plain($e->getMessage()), array(), WATCHDOG_ERROR);
+  }
+
+  try {
+    $field_config_instance = db_delete('field_config_instance')
+      ->condition('field_name', '%coupon%', 'LIKE')
+      ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', check_plain($e->getMessage()), array(), WATCHDOG_ERROR);
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enables Commerce Flat Rate module and creates default shipping services.
+ */
+function propeople_update_7004() {
+  _propeople_configure_default_shipping_services();
+  cache_clear_all();
 }

@@ -237,6 +237,12 @@ function sof_publication_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'product:field_sof_commerce_weight' => array(
+          'full' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );

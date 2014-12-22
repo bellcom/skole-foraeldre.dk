@@ -40,7 +40,7 @@ function sof_commerce_settings_default_rules_configuration() {
       "LABEL" : "Sof DIBS",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "Commerce Payment" ],
+      "TAGS" : [ "SOF" ],
       "REQUIRES" : [ "rules", "commerce_payment" ],
       "ON" : { "commerce_payment_methods" : [] },
       "IF" : [
@@ -157,6 +157,276 @@ function sof_commerce_settings_default_rules_configuration() {
             "mail" : [
               "commerce-order:commerce-customer-billing:field-sof-commerce-customer-mail"
             ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_0_005'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_0_005" : {
+      "LABEL" : "Sof collecting shipping services 0.005",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003C=",
+            "value" : "0.005",
+            "unit" : "kg"
+          }
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_0_005"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_0_2'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_0_2" : {
+      "LABEL" : "Sof collecting shipping services 0.2",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "0.005",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "0.2",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_0_2"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_0_45'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_0_45" : {
+      "LABEL" : "Sof collecting shipping services 0.45",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "0.2",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "0.45",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_0_45"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_0_9'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_0_9" : {
+      "LABEL" : "Sof collecting shipping services 0.9",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "0.45",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "0.9",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_0_9"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_19'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_19" : {
+      "LABEL" : "Sof collecting shipping services 19",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "9.6",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "19",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_19"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_1_9'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_1_9" : {
+      "LABEL" : "Sof collecting shipping services 1.9",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "0.9",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "1.9",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_1_9"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_4_8'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_4_8" : {
+      "LABEL" : "Sof collecting shipping services 4.8",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "1.9",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "4.8",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_4_8"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_sof_collecting_shipping_services_9_6'] = entity_import('rules_config', '{ "rules_sof_collecting_shipping_services_9_6" : {
+      "LABEL" : "Sof collecting shipping services 9.6",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_physical", "commerce_shipping" ],
+      "ON" : { "commerce_shipping_collect_rates" : [] },
+      "IF" : [
+        { "commerce_physical_rules_order_weight_comparison" : {
+            "commerce_order" : [ "commerce_order" ],
+            "operator" : "\\u003E",
+            "value" : "4.8",
+            "unit" : "kg"
+          }
+        },
+        { "AND" : [
+            { "commerce_physical_rules_order_weight_comparison" : {
+                "commerce_order" : [ "commerce_order" ],
+                "operator" : "\\u003C=",
+                "value" : "9.6",
+                "unit" : "kg"
+              }
+            }
+          ]
+        }
+      ],
+      "DO" : [
+        { "commerce_shipping_rate_apply" : {
+            "commerce_order" : [ "commerce_order" ],
+            "shipping_service_name" : "weight_to_9_6"
           }
         }
       ]
