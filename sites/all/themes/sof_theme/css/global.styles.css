@@ -734,9 +734,10 @@ body.node-type-slider #main-content{
   width:100%;
   background:#fff;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;
-    float:left;
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  float:left;
+  margin:0 0 40px 0;
 }
 
 .news-deck-top-content{
@@ -1314,15 +1315,14 @@ body.node-type-slider #main-content{
   width:32%;
   min-height:340px;
   float:left;
-    text-align:center;
-    padding:0 10px;
+  text-align:center;
+  padding:0 10px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;
-    position:relative;
-    margin-bottom:-99999px;
-    padding-bottom:99999px;
-    margin-top:20px;
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  position:relative;
+  margin-bottom:-99999px;
+  padding-bottom:99999px;
 }
 .banner-main-wrapper:nth-child(1){
   background-color:#00a2eb;
@@ -3130,6 +3130,9 @@ body.node-type-section .pane-section-default-content-section-default-listing .bl
   width:100%;
   margin:0 auto;
   float:none;
+}
+body.node-type-section .section-header {
+  margin-bottom:20px;
 }
 body.node-type-section .section-header,
 #commerce-checkout-form-checkout #edit-buttons {
