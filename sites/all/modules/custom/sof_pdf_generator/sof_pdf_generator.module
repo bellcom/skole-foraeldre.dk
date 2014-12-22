@@ -322,7 +322,7 @@ function sof_pdf_generator_publication_pdf($node_view) {
   $sof_print_vars['page'] = theme('sof_pdf_generator_cover', array(
     'title' => $node_view['field_pdf_title']['#items'][0]['value'],
     'teaser' => $node_view['field_pdf_description']['#items'][0]['value'],
-    'logo' => theme_get_setting('logo'),
+    'logo' => file_create_url(theme_get_setting('slogo_path')),
     'color' => isset($node_view['field_pdf_cover_color']['#items'][0]['rgb']) ? $node_view['field_pdf_cover_color']['#items'][0]['rgb'] : '#ffffff',
   ));
   $cover_page = theme('sof_pdf_generator_main', $sof_print_vars);
