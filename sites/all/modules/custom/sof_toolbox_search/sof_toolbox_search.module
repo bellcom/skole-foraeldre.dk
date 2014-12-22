@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * @file
+ * SOF Toolbox search pane.
+ *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ */
+
+/**
  * Implements hook_ctools_plugin_directory().
  */
 function sof_toolbox_search_ctools_plugin_directory($owner, $plugin_type) {
@@ -14,9 +21,10 @@ function sof_toolbox_search_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_theme().
  */
 function sof_toolbox_search_theme() {
-  return array('sof_toolbox_search' => array(
-      'variables' => array('items' => NULL, ),
+  return array(
+    'sof_toolbox_search' => array(
+      'variables' => array('items' => NULL),
       'template' => 'theme/sof_toolbox_search',
-    ), );
+    ),
+  );
 }
-

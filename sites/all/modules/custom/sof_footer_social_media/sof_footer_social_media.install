@@ -4,6 +4,7 @@
  * @file
  * Install and uninstall hooks for operations on install/uninstall module.
  *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
