@@ -4288,6 +4288,10 @@ a:focus {
 .menu-block-wrapper{
   float:left;
 }
+#block-system-main-menu{
+	width:100%;
+	max-width:800px;
+}
 #block-system-main-menu li.expanded > a{
   cursor:pointer;
 }
