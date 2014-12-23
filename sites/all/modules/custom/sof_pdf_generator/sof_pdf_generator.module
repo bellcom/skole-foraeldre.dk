@@ -28,8 +28,6 @@ function sof_pdf_generator_permission() {
  */
 function sof_pdf_generator_menu() {
 
-  $items = array();
-
   // Publication download link.
   $items['sof-pdf-generate/%'] = array(
     'title' => 'Publicataion Pdf Generator',
@@ -65,7 +63,9 @@ function sof_generate_pdf_from_nodes($nid) {
     return;
   }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
+
+  if ($node_obj) {
 
     if ($node_obj->type == 'publication') {
 
@@ -120,7 +120,9 @@ function sof_generate_pdf_from_node($nid) {
     return;
   }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
+
+  if ($node_obj) {
 
     if (in_array($node_obj->type, array(
       'article',
@@ -161,7 +163,9 @@ function sof_generate_pdf_from_node($nid) {
       $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
       // Send html to print.
-      if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+      $library = libraries_load('phpwkhtmltopdf');
+
+      if ($library && !empty($library['loaded'])) {
 
         // Set global options for the pdf.
         $pdf = new WkHtmlToPdf(array(
@@ -351,7 +355,9 @@ function sof_pdf_generator_publication_pdf($node_view) {
   }
 
   // Send html to print.
-  if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+  $library = libraries_load('phpwkhtmltopdf');
+
+  if ($library && !empty($library['loaded'])) {
 
     // Set global options for the pdf.
     $pdf = new WkHtmlToPdf(array(
