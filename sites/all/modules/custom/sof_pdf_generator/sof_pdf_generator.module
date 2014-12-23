@@ -173,6 +173,7 @@ function sof_generate_pdf_from_node($nid) {
         $pdf = new WkHtmlToPdf(array(
           'no-outline',
           'disable-smart-shrinking',
+          'encoding' => 'UTF-8',
           'javascript-delay' => 1000,
           'footer-center' => '[page]',
           'footer-font-size' => 7,
@@ -367,6 +368,7 @@ function sof_pdf_generator_publication_pdf($node_view) {
     $pdf = new WkHtmlToPdf(array(
       'no-outline',
       'disable-smart-shrinking',
+      'encoding' => 'UTF-8',
       'javascript-delay' => 1000,
       'page-offset' => -1,
       'footer-center' => '[page]',
