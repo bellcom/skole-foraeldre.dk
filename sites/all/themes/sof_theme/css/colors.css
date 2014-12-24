@@ -1,5 +1,7 @@
 
 /* ---------- Color Module Styles ----------- */
+
+/* Applay color to elements  */
 .news-deck-view-content .views-field-title a,
 .news-deck-top-right-content .read-more,
 .news-deck-view-content .views-field-view-node a,
@@ -64,11 +66,14 @@ body.node-type-basic-page .author-datetime a,
 .cart-empty-page{
   color: #00a2eb;
 }
+
+/* Applay color to elements  */
 .commerce-add-to-cart-confirmation .added-product-title,
 .commerce-add-to-cart-confirmation .views-field-commerce-total .field-content{
   color: #00a2eb!important;
 }
 
+/* Applay background color to elements  */
 #footer,
 .right-article-region .right-region-top-links a,
 ul.pager li.pager-current,
@@ -126,9 +131,13 @@ body.page-node-done .links a,
 #edit-commerce-coupon legend {
   background-color: #00a2eb;
 }
+
+/* Applay background color to elements  */
 .commerce-add-to-cart-confirmation .checkout{
   background-color: #00a2eb!important;
 }
+
+/* Applay border color to elements  */
 div.messages.commerce-add-to-cart-confirmation{
 	border-color:#00a2eb;
 }
