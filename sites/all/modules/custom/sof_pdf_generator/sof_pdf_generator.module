@@ -28,8 +28,6 @@ function sof_pdf_generator_permission() {
  */
 function sof_pdf_generator_menu() {
 
-  $items = array();
-
   // Publication download link.
   $items['sof-pdf-generate/%'] = array(
     'title' => 'Publicataion Pdf Generator',
@@ -65,7 +63,9 @@ function sof_generate_pdf_from_nodes($nid) {
     return;
   }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
+
+  if ($node_obj) {
 
     if ($node_obj->type == 'publication') {
 
@@ -120,7 +120,9 @@ function sof_generate_pdf_from_node($nid) {
     return;
   }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
+
+  if ($node_obj) {
 
     if (in_array($node_obj->type, array(
       'article',
@@ -161,16 +163,24 @@ function sof_generate_pdf_from_node($nid) {
       $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
       // Send html to print.
-      if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+      $library = libraries_load('phpwkhtmltopdf');
+
+      if ($library && !empty($library['loaded'])) {
 
         // Set global options for the pdf.
+        $current_domain = domain_get_domain();
+
         $pdf = new WkHtmlToPdf(array(
           'no-outline',
           'disable-smart-shrinking',
+          'encoding' => 'UTF-8',
           'javascript-delay' => 1000,
-
-          // Footer and offset options.
           'footer-center' => '[page]',
+          'footer-font-size' => 7,
+          'header-font-size' => 5,
+          'header-spacing' => 5,
+          'header-right' => strtoupper($current_domain['sitename']),
+          'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j.F Y')),
         ));
 
         // Add a HTML file, a HTML string or a page from a URL.
@@ -306,10 +316,8 @@ function sof_pdf_generator_publication_pdf($node_view) {
   // Add Template css.
   drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
 
-  // Add Columnizer library.
-  libraries_load('columnizer');
-
   // Allow colimnizer.
+  libraries_load('columnizer');
   drupal_add_js(array('sof_pdf_generator' => array('pdfColumnize' => TRUE)), 'setting');
   drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js', 'file');
 
@@ -351,17 +359,24 @@ function sof_pdf_generator_publication_pdf($node_view) {
   }
 
   // Send html to print.
-  if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+  $library = libraries_load('phpwkhtmltopdf');
+
+  if ($library && !empty($library['loaded'])) {
 
     // Set global options for the pdf.
+    $current_domain = domain_get_domain();
     $pdf = new WkHtmlToPdf(array(
       'no-outline',
       'disable-smart-shrinking',
+      'encoding' => 'UTF-8',
       'javascript-delay' => 1000,
-
-      // Footer and offset options.
       'page-offset' => -1,
       'footer-center' => '[page]',
+      'footer-font-size' => 7,
+      'header-font-size' => 5,
+      'header-spacing' => 5,
+      'header-right' => strtoupper($current_domain['sitename']),
+      'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j.F Y')),
     ));
 
     // Add a cover.
@@ -369,9 +384,7 @@ function sof_pdf_generator_publication_pdf($node_view) {
 
     // Add table of contents.
     $pdf->addToc(array(
-      'disable-dotted-lines',
-      'toc-text-size-shrink' => 0.95,
-      'toc-header-text' => t('Content'),
+      'xsl-style-sheet' => drupal_get_path('module', 'sof_pdf_generator') . '/xml/sof_pdf_generator_toc_style.xml',
     ));
 
     // Add a HTML file, a HTML string or a page from a URL.
@@ -388,8 +401,4 @@ function sof_pdf_generator_publication_pdf($node_view) {
     $pdf->send($filename);
 
   }
-
-  // Testing purposes.
-  // print $cover_page.
-  // print $content_page.
 }
