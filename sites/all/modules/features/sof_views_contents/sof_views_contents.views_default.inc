@@ -262,6 +262,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['field'] = 'sm_thumb_publication_related_field_image';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['ui_name'] = 'Image';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['label'] = '';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['element_label_colon'] = FALSE;
   /* Field: Title */
   $handler->display->display_options['fields']['label']['id'] = 'label';
@@ -278,6 +280,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
   $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
   $handler->display->display_options['fields']['teaser']['label'] = '';
+  $handler->display->display_options['fields']['teaser']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['teaser']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
