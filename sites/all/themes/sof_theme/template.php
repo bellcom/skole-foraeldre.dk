@@ -208,7 +208,7 @@ function sof_theme_preprocess_field(&$vars) {
   global $base_path;
   $element = $vars['element'];
   if($element['#field_name']== 'field_we_recommend_reference'){
-    $nid = array_shift(array_keys($element['#items']));
+    $nid = key($element['#items']);
     $title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
     $linktonode =$element['#items'][$nid]['entity']->vid;
     $vars['nodecustomlink'] = l(t($title), '/node/' . $linktonode . '', array(
@@ -320,12 +320,12 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 function sof_theme_preprocess_node(&$variables) {
   $node = $variables['node'];
   $view_mode = $variables['view_mode'];
-  
+
   //Add theme sugestions for publication
   if ($node->type == 'publication'){
     $variables['theme_hook_suggestion'] = 'node__publication__full';
   }
-  
+
   //Add theme sugestions for news and articles
   if($node->type == 'news' || $node->type == 'article') {
     if($view_mode == 'full'){
@@ -413,28 +413,28 @@ function sof_theme_menu_link__main_menu(&$variables) {
   $description = '';
   $sub_menu    = '';
   $depth       = '';
-  
+
   //Get menu depth
   $depth = $element['#original_link']['depth'];
-  
+
   //Depth 2 submenu
   //get menu description on level 1
   if ($depth == 1) {
     if($element['#localized_options']){
       $description = isset($element['#localized_options']['attributes']['title']) ?  $element['#localized_options']['attributes']['title'] : '';
-  	}
+    }
     if ($element['#below']) {
       // Wrap in container
       unset($element['#below']['#theme_wrappers']);
       $sub_menu = '<div class="second-level-main-container">';
-	  if($description):
+    if($description):
         $sub_menu .= '<span class="menu-description">'. $description .'</span>';
-	  endif;
+    endif;
         $sub_menu .= '<ul class="second-level">' . drupal_render($element['#below']) . '</ul>';
       $sub_menu .='</div>';
     }
   }
-  
+
   //Depth 2 submenu
   if ($depth == 2) {
     if ($element['#below']) {
@@ -445,7 +445,7 @@ function sof_theme_menu_link__main_menu(&$variables) {
       $sub_menu .='</div>';
     }
   }
-  
+
   //Output of main menu
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
@@ -470,7 +470,7 @@ function sof_theme_textarea($variables) {
   if (!empty($element['#resizable'])) {
     $wrapper_attributes['class'][] = 'resizable';
   }
-  
+
   // Return output
   $output = '<div' . drupal_attributes($wrapper_attributes) . '>';
   $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';

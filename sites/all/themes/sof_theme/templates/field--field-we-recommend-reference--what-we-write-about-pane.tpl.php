@@ -37,7 +37,7 @@
  * - $image_caption_teaser: Boolean value to test for a theme setting.
  * - $image_caption_full: Boolean value to test for a theme setting.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
- *   TRUE for mobile.  Note that tablets are also considered mobile devices.  
+ *   TRUE for mobile.  Note that tablets are also considered mobile devices.
  *   Returns NULL if the feature could not be detected.
  * - $is_tablet: Mixed, requires the Mobile Detect to return TRUE for tablets.
  *   Returns NULL if the feature could not be detected.
@@ -91,17 +91,17 @@
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item) : ?>
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>>
-        <?php 
-            $nid = array_shift(array_keys($item['node']));
+        <?php
+            $nid = key($item['node']);
             //Hide images on bottom
             if($delta !== 0 ){
                 $item['node'][$nid]['field_image_slider']= FALSE;
                 $item['node'][$nid]['field_image'] = FALSE;
-				$nodecustomlink = FALSE;
-				print render($item);
+                $nodecustomlink = FALSE;
+                print render($item);
             }
-        ?>  
-        <?php print render ($item['node'][$nid]['field_image_slider']); ?> 
+        ?>
+        <?php print render ($item['node'][$nid]['field_image_slider']); ?>
         <?php print $nodecustomlink; ?>
       </div>
     <?php endforeach; ?>
