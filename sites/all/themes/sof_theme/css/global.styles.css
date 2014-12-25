@@ -311,7 +311,7 @@ html, body {
   font-size: 16px;
   font-weight: 200;
   padding: 0 0 0 10px;
-  margin-right: 11px;  
+  margin-right: 11px;
   border-radius: 0px;
   border: 1px solid #ccc;
 }
@@ -330,7 +330,7 @@ html, body {
   width: 20%;
   color: #fff;
   font-size: 14px;
-  border-radius: 2px;  
+  border-radius: 2px;
   text-transform: uppercase;
   border: none;
   -webkit-box-sizing: border-box;
@@ -522,7 +522,7 @@ body.node-type-slider #main-content {
   vertical-align: top;
   background-position: 50% 50%;
   background-size: cover;
-  text-align: left;  
+  text-align: left;
 }
 .slide-inner-content {
   width: 100%;
@@ -556,13 +556,13 @@ body.node-type-slider #main-content {
   top: 135px;
   z-index: 3;
   border-radius: 0;
-  color: #fff;  
+  color: #fff;
   font-size: 26px;
-  font-weight: 200; 
+  font-weight: 200;
   line-height: 30px;
   padding: 20px 30px 10px 30px;
   text-align: left;
-  text-shadow: 1px 1px 16px #000; 
+  text-shadow: 1px 1px 16px #000;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
@@ -602,7 +602,7 @@ body.node-type-slider #main-content {
 .toolbox-search-wrapper {
   width: 100%;
   padding: 15px 15px 10px 20px;
-  position: relative; 
+  position: relative;
   border-radius: 30px;
   border: none;
   background-color: #f0f0f0;
@@ -634,7 +634,7 @@ body.node-type-slider #main-content {
 }
 .sof_toolbox_wrapper .item-list h3 {
   margin: 28px 0 10px 0;
-  padding-top: 10px;  
+  padding-top: 10px;
   color: #000;
   font-size: 24px;
   font-weight: 200;
@@ -752,7 +752,7 @@ body.node-type-slider #main-content {
   margin:27px 0 0 0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
+  box-sizing: border-box;
   border-top: 1px solid rgba(0, 0, 0, 0.09);
   overflow:hidden;
 }
@@ -767,7 +767,7 @@ body.node-type-slider #main-content {
   margin-bottom:-99999px;
 }
 .news-deck-view-content .views-row.views-row-last {
-	border-right: none;
+  border-right: none;
 }
 .news-deck-view-content  .views-field-changed {
   margin: 0 0 6px 0;
@@ -807,7 +807,7 @@ body.node-type-slider #main-content {
   font-size: 20px;
   line-height: 30px;
   text-align: left;
-  text-transform: uppercase;  
+  text-transform: uppercase;
 }
 .news-deck-view-content .views-field-view-node a:hover {
   color: #000;
@@ -841,7 +841,7 @@ body.node-type-slider #main-content {
   text-transform: uppercase;
 }
 .news-deck-bottom-right-content h3 {
-  display:inline-block;	
+  display:inline-block;
   color: #b2b2b2;
   font-size: 25px;
   padding:8px 37px 0 0;
@@ -865,7 +865,7 @@ body.node-type-slider #main-content {
   background-image: url("images/newsleter.png");
   background-position: center center;
   background-repeat: no-repeat;
-  color: transparent;   
+  color: transparent;
 }
 .news-deck-bottom-right-content .follow-link-wrapper-facebook {
   float: left;
@@ -931,10 +931,10 @@ body.node-type-slider #main-content {
   padding: 0px 15px 20px 15px;
   width: 33.3%;
   min-height: 580px;
-  border-right: 1px solid #f0f0f0;  
+  border-right: 1px solid #f0f0f0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .pane-bundle-also-see-pane .field-name-field-related-article-news .field-item:nth-child(3) {
   border-right: none;
@@ -991,14 +991,14 @@ body.node-type-slider #main-content {
   color: #454545;
   font-size: 19px;
   font-family:"conduit_itclight";
-  line-height: 24px;  
+  line-height: 24px;
   text-align: left;
 }
 .pane-bundle-also-see-pane .read-more {
   float: left;
   width: 100%;
 }
-.pane-bundle-also-see-pane .read-more a { 
+.pane-bundle-also-see-pane .read-more a {
   line-height: 30px;
   margin: 0;
   padding-top: 10px;
@@ -1096,7 +1096,7 @@ body.node-type-slider #main-content {
   height: 190px;
 }
 .arrow-div {
-  width: 120px;	
+  width: 120px;
   height: 120px;
   position: absolute;
   left: 50%;
@@ -1177,7 +1177,7 @@ body.node-type-slider #main-content {
   padding: 0 10px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .intro-deck-group .field-type-text {
   display: inline-block;
@@ -1190,7 +1190,7 @@ body.node-type-slider #main-content {
   vertical-align: top;
   color: #fff;
   font-size: 22px;
-  font-style: normal;  
+  font-style: normal;
   text-transform:uppercase;
 }
 .intro-deck-group .field-type-link-field .field-items {
@@ -1256,8 +1256,8 @@ body.node-type-slider #main-content {
   top: 0;
   left: 0;
   height: 100%;
-  color: transparent;  
-  text-indent: -9999px;  
+  color: transparent;
+  text-indent: -9999px;
 }
 .banner-main-wrapper .field-name-field-icon {
   width: 130px;
@@ -1286,7 +1286,7 @@ body.node-type-slider #main-content {
   color: #000;
   font-size: 32px;
   font-weight: 200;
-  line-height: 31px;  
+  line-height: 31px;
   text-align: center;
 }
 .banner-main-wrapper .field-name-field-small-title .field-item {
@@ -1328,7 +1328,7 @@ body.node-type-slider #main-content {
   font-family: 'Georgia';
   font-weight: normal;
   font-size: 75px;
-  line-height: 60px; 
+  line-height: 60px;
   text-align: center;
 }
 .pane-bundle-magazine-pane .fieldable-panels-pane {
@@ -1603,7 +1603,7 @@ body.node-type-slider #main-content {
   color: #000;
   font-size: 18px;
   line-height: 20px;
-  font-weight: normal; 
+  font-weight: normal;
 }
 .view-we-are-writing-about-additional-displays .view-header .view-content .views-row a {
   border: none;
@@ -1617,11 +1617,11 @@ body.node-type-slider #main-content {
   width: 100%;
   float: left;
   margin: 0;
-  padding: 12px 20px;  
+  padding: 12px 20px;
   background-image: url("images/add-to-cart.png");
   background-repeat: no-repeat;
   background-position: 95% center;
-  background-size: 40px 32px; 
+  background-size: 40px 32px;
 }
 .publication-ecommercebutton:hover{
   opacity: 0.8;
@@ -1833,7 +1833,7 @@ body.page-checkout h1 {
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
 .entity-commerce-order .field-name-commerce-customer-shipping > h2,
 #edit-commerce-coupon legend {
-  width:100%; 
+  width:100%;
   padding:10px;
   border-radius:7px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -1886,7 +1886,7 @@ body.page-checkout #edit-buttons {
   border-radius: 0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 #commerce-checkout-form-checkout #edit-continue,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
@@ -1989,16 +1989,16 @@ table.checkout-review .pane-data-full {
   color: #fff;
 }
 #edit-customer-profile-shipping.collapsed {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 #edit-customer-profile-shipping .form-type-checkbox input {
-	float: left;
-	margin: 6px 5px 0 0;
+  float: left;
+  margin: 6px 5px 0 0;
 }
 #edit-customer-profile-shipping .form-type-checkbox label{
-	float: left;
-	margin: 0px;
-	padding: 0px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
 }
 /* =============================================================================
  *   NODE STYLING
@@ -2074,7 +2074,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   text-align: right;
   font-size: 38px;
   font-weight: 400;
-  line-height: 40px; 
+  line-height: 40px;
 }
 .publication-top-right-container .node-title a {
   float: left;
@@ -2258,7 +2258,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   line-height: 34px;
   text-transform: uppercase;
 }
-#apachesolr-panels-search-form > div { 
+#apachesolr-panels-search-form > div {
   margin:10px 0;
   padding:0 10px 0 0;
   height: 40px;
@@ -2359,7 +2359,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   float: left;
   padding-top: 20px;
   font-size: 22px;
-  line-height: 24px;  
+  line-height: 24px;
 }
 .view-publication-listing-view .views-field-label a:hover {
   color: #000;
@@ -2373,6 +2373,9 @@ article.node-publication .field-type-image.field-label-above h2 {
   font-family: 'conduit_itclight';
   font-size: 19px;
   line-height: 24px;
+}
+.view-publication-listing-view .views-field-teaser a{
+  color: #454545;
 }
 /* =============================================================================
  *   Articles, Basic Page and News
@@ -2481,7 +2484,7 @@ h3 .field-group-format-toggler {
   margin: 10px 0 0  0;
   border-radius: 0px;
   border: 0px;
-  box-shadow: none;   
+  box-shadow: none;
 }
 .flexslider ul li {
   display: block!important;
@@ -2560,7 +2563,7 @@ a.sof-pdf-generate-inline-link {
   cursor: pointer;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .article-region .field-name-body a.download-article-pdf:hover,
 a.sof-pdf-generate-inline-link:hover {
@@ -2919,7 +2922,7 @@ body.node-type-basic-page video {
 .group-bottomaregion h3 {
   margin: 0;
 }
-.group-bottomaregion .field-name-field-link h2 { 
+.group-bottomaregion .field-name-field-link h2 {
   margin: 0 0 10px 0;
   text-align: left;
   font-size: 24px;
@@ -2964,7 +2967,7 @@ body.node-type-section  .panel-3col-custom {
 body.node-type-section .pane-page-title,
 body.node-type-section .pane-node-field-teaser,
 body.node-type-section .section-header,
-body.node-type-section .pane-section-default-content-section-default-listing .block-content{ 
+body.node-type-section .pane-section-default-content-section-default-listing .block-content{
   float: none;
   max-width: 1170px;
   width: 100%;
@@ -2997,7 +3000,7 @@ body.node-type-section #page-title {
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .node-section .pane-node-title,
@@ -3057,8 +3060,8 @@ body.node-type-section #page-title {
   margin: -20px 0 -99999px 0;
   padding:20px 15px 99999px 15px;
   border-right: 1px solid #f0f0f0;
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -3121,15 +3124,15 @@ body.node-type-section #page-title {
   width: 100%;
   float: left;
   padding: 20px 15px 100px 15px;
-  -webkit-box-sizing: border-box; 
-  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .section-default-listiing .view-content {
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .section-default-listiing .views-row {
@@ -3256,12 +3259,12 @@ body.node-type-basic-page .print_html {
 .webform-component {
   width: 100%;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .webform-progressbar {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .node-webform .webform-progressbar-outer {
@@ -3347,7 +3350,7 @@ body.node-type-basic-page .print_html {
   cursor: pointer;
   font-size: 13px;
   font-weight: normal;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 body.page-node-done #content .links a {
   margin-left: 0px;
@@ -4111,7 +4114,7 @@ a:focus {
   list-style: none!important;
   text-align: left!important;
   text-decoration: none!important;
-  vertical-align: top!important;  
+  vertical-align: top!important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -4668,7 +4671,7 @@ body.page-taxonomy-term #content h2 {
   font-size: 30px;
   font-weight: 400;
 }
-.apachesolr_search-results li.search-result { 
+.apachesolr_search-results li.search-result {
   float: left;
   width: 100%;
   padding-bottom: 10px;
