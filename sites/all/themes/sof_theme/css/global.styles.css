@@ -1545,8 +1545,8 @@ body.node-type-slider #main-content {
 .pane-bundle-what-we-write-about-pane .form-item {
   float: left;
   width: 33.3%;
-  margin: -20px 0 -9999px 0px
-  padding: 20px 15px 9999px 15px;
+  margin: -20px 0 -9999px 0px;
+  padding: 20px 15px 9999px 15px;   
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
