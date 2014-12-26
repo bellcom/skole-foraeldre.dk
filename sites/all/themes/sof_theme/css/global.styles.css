@@ -925,12 +925,12 @@ body.node-type-slider #main-content {
   float: left;
   padding: 20px 0;
 }
-.pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item {
+.pane-bundle-also-see-pane .field-name-field-related-article-news .field-item {
   float: left;
   margin-bottom: 20px;
-  padding: 0px 15px 20px 15px;
+  padding: 0px 15px 5px 15px;
   width: 33.3%;
-  min-height: 580px;
+  min-height: 608px;
   border-right: 1px solid #f0f0f0;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -2430,6 +2430,9 @@ body.node-type-news #page-title {
 article.contextual-links-region {
   margin-bottom: 0;
   position: inherit!important;
+}
+article.contextual-links-region h1 {
+  margin: 0;
 }
 .contextual-links-region {
   position: inherit!important;
