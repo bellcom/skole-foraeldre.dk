@@ -1,3 +1,4 @@
+// <?php
 /**
  * @file
  * Fire callbacks for media query breakpoints
@@ -14,6 +15,7 @@
  *
  * IMPORTANT: do not rename or move this file, or change the directory name!
  */
+// ?>
 var queries = [
 
   /*

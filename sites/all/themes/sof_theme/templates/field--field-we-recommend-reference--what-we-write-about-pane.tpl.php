@@ -1,8 +1,10 @@
 <?php
 /**
+ * @file
  * This is a copy of cores field.tpl.php modified to support HTML5. The main
  * difference to Drupal core is that field labels are treated like headings. In
- * the context of HTML5 we need to account for sectioning, so this template, like
+ * the context of HTML5 we need to account for sectioning, 
+ * so this template, like
  * is counterpart adaptivetheme_field() conditionally supplies the top level
  * element as either <section> (field label is showing) or <div> (field label
  * is hidden). "Hidden labels" is a misnomer and implies they are output and
@@ -93,15 +95,15 @@
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>>
         <?php
             $nid = key($item['node']);
-            //Hide images on bottom
-            if($delta !== 0 ){
-                $item['node'][$nid]['field_image_slider']= FALSE;
+            // Hide images on bottom.
+            if($delta !== 0):
+                $item['node'][$nid]['field_image_slider'] = FALSE;
                 $item['node'][$nid]['field_image'] = FALSE;
                 $nodecustomlink = FALSE;
                 print render($item);
-            }
+            endif;
         ?>
-        <?php print render ($item['node'][$nid]['field_image_slider']); ?>
+        <?php print render($item['node'][$nid]['field_image_slider']); ?>
         <?php print $nodecustomlink; ?>
       </div>
     <?php endforeach; ?>

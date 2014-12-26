@@ -1,3 +1,11 @@
+<?php
+/**
+ * @file
+ * Default template implementation to display the value,
+ * of a fieldable panel pane. 
+ * fieldable-panels-pane.tpl.php
+ */
+?>
 <?php if($panetitle != ""):?>
 	<h2 class="fixed-pane-title"><?php print render($panetitle);?></h2>
 <?php endif; ?>

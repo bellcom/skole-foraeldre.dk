@@ -75,7 +75,7 @@ function sof_theme_process_page(&$variables) {
 }
 
 /**
- * Override related content field in article node. 
+ * Override related content field in article node.
  */
 function sof_theme_field__field_related_content__article($variables) {
   $output = '';

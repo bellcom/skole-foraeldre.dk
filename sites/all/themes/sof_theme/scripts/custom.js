@@ -1,5 +1,10 @@
+// <?php
+/**
+ * @file
+ * Java Script file for custom made scripts.
+ */
+// ?>
 (function($) {
-
   //Extend support jquery for placeholder
   $.support.placeholder = (function(){
     var i = document.createElement('input');
