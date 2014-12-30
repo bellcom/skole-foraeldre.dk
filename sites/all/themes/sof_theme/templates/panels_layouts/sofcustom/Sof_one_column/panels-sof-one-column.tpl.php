@@ -15,7 +15,7 @@
  *   - $content['bottom']: Content in the bottom column.
  */
 ?>
-<div class="panel-display panel-3col-custom clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="panel-display panel-3col-custom clearfix" <?php if (!empty($css_id)) : print "id=\"$css_id\""; endif; ?>>
   <div class="panel-panel panel-col-top">
     <div class="panel-panel panel-col-full-main">
 	<?php print $content['main']; ?>
