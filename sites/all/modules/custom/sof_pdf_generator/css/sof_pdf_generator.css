@@ -1,5 +1,5 @@
 .sof-pdf-cover {
-  height: 214mm;
+  height: 1047px;
   display: table;
   font-size: 40px;
   background-color: #b8e9f4;
@@ -10,8 +10,8 @@
 }
 .sof-pdf-cover img.sof-pdf-logo {
   position: absolute;
-  left: 10mm;
-  bottom: 10mm;
+  left: 38px;
+  bottom: 38px;
   max-width: 230px;
 }
 .sof-pdf-cover-vertical {
@@ -22,7 +22,7 @@
 .sof-pdf-cover .sof-pdf-cover-vertical p {
   box-sizing: border-box;
   width: 100%;
-  padding: 8mm;
+  padding: 30px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical h1 {
   color: #231f20;
@@ -37,13 +37,41 @@
   font-weight: normal;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical {
-  margin: 5mm;
-  padding: 0 10mm;
+  margin: 19px;
+  padding: 0px 38px;
 }
-.sof-pdf-content {
-  padding: 0 0 20px 0;
+.sof-pdf-content{
+    width: 710px;
+    height: 1047px;
+    position: relative;
 }
-.sof-pdf-content h1 {
+.sof-pdf-all-content{
+    width: 710px;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.sof-pdf-page{
+  width: 710px;
+  height: 1047px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+ }
+.sof-pdf-page-template{
+    width: 710px;
+    position: relative;
+}
+.sof-pdf-page-template .content {
+    width: 710px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.sof-pdf-all-content h1 {
   color: #231f20;
   float: left;
   font-size: 30px;
@@ -52,7 +80,7 @@
   margin: 0 0 17px 0;
   width: 100%;
 }
-.sof-pdf-content .field-name-field-teaser {
+.sof-pdf-all-content .field-name-field-teaser {
   color: #2b2e34;
   font-weight: 200;
   font-size: 15px;
@@ -60,7 +88,7 @@
   text-align: left;
   margin: 0
 }
-.sof-pdf-content  hr {
+.sof-pdf-all-content  hr {
   border-width: 1px medium medium;
   border-style: solid none none;
   border-color: #B2B2B2 -moz-use-text-color -moz-use-text-color;
@@ -86,93 +114,85 @@
   margin: 0;
   padding: 20px;
 }
+.sof-pdf-all-content .sof-pdf-page-template .content .first.column {
+  padding: 0 10px 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sof-pdf-all-content .sof-pdf-page-template .content .last.column {
+  padding: 0 0px 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-.sof-column-content {
-  padding: 0!important;
-  margin: 0!important;
-}
-.sof-column-content .first.column {
-  padding: 0 15px 0 0;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;
-}
-.sof-column-content .last {
-  padding: 0 0 0 15px;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;
-}
-.sof-column-content p {
+.sof-pdf-all-content .sof-pdf-page-template .content p {
   color: #2b2e34;
   font-family: "conduit_itclight",sans-serif;
   font-size: 10px;
   font-weight: 200;
   line-height: 13px;
-  margin-bottom: 15px;
-  margin-left: 0px;
-  padding: 10px 0 0 0!important;
+  margin: 0px!important;
+  padding: 5px 0px!important;
   text-align: left;
 }
-.sof-column-content h1 {
+.sof-pdf-all-content .sof-pdf-page-template .content h1 {
   font-size: 50px;
   line-height: 50px;
   box-sizing: border-box;
   width: 100%;
-  padding: 10px 0!important;
+  margin: 0px!important;
+  padding: 5px 0px!important;
 }
-.sof-column-content h2 {
+.sof-pdf-all-content .sof-pdf-page-template .content h2 {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  padding: 10px 0!important;
-  margin: 0;
+  margin: 0px!important;
+  padding: 5px 0px!important;
   text-decoration: none;
 }
-.sof-column-content h3 {
+.sof-pdf-all-content .sof-pdf-page-template .content h3 {
   color: #000;
   font-family: "conduit_itcregular",sans-serif;
   font-size: 15px;
   font-weight: 800;
   line-height: 17px;
-  margin-bottom: 5px;
-  margin-top: 20px;
   text-align: left;
-  padding: 0!important;
+  margin: 0px!important;
+  padding: 5px 0px!important;
 }
-.sof-column-content h4 {
+.sof-pdf-all-content .sof-pdf-page-template .content h4 {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  padding: 10px 0!important;
-  margin: 0;
+  margin: 0px!important;
+  padding: 5px 0px!important;
   text-decoration: none;
   text-transform: uppercase;
 }
-.sof-column-content h5 {
+.sof-pdf-all-content .sof-pdf-page-template .content h5 {
   color: #094974;
   font-size: 15px;
   line-height: 17px;
-  margin: 0;
-  padding: 10px 0!important;
+  margin: 0px!important;
+  padding: 5px 0px!important;
   text-decoration: none;
   font-weight: 400;
 }
-.sof-column-content blockquote {
-  margin: 0;
-  padding: 0!important;
-}
-.sof-column-content blockquote {
+.sof-pdf-all-content .sof-pdf-page-template .content blockquote {
   margin: 45px 0 0 0;
   padding: 0!important;
 }
-.sof-column-content blockquote:before {
+.sof-pdf-all-content .sof-pdf-page-template .content blockquote:before {
   content: '\e802'; /* '' */
+  color: #00a2eb;
   font-family: 'fontello';
   font-size: 15px;
   padding: 0!important;
 }
-.sof-column-content blockquote p {
+.sof-pdf-all-content .sof-pdf-page-template .content blockquote p {
   bottom: 0;
   clear: none;
   color: #00a2eb;
@@ -187,8 +207,8 @@
   position: relative;
   bottom: 20px;
   width: 88%;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0!important;
 }
@@ -199,17 +219,17 @@
   border-bottom: none;
   padding: 0!important;
 }
-.sof-pdf-content .sof-column-content  ul,
-.sof-pdf-content .sof-column-content  ol {
+.sof-pdf-all-content .sof-pdf-page-template .content  ul,
+.sof-pdf-all-content .sof-pdf-page-template .content  ol {
   padding: 0 0 0 14px!important;
   width: 100%;
   font-size: 10px!important;
   line-height: 13px!important;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.sof-pdf-content .sof-column-content  ul li {
+.sof-pdf-all-content .sof-pdf-page-template .content  ul li {
   border-radius: 0;
   color: #454545;
   font-family: "conduit_itclight";
@@ -218,7 +238,7 @@
   padding: 0!important;
   text-align: left;
 }
-.sof-pdf-content .sof-column-content  ol li {
+.sof-pdf-all-content .sof-pdf-page-template .content  ol li {
   border-radius: 0;
   color: #454545;
   font-family: "conduit_itclight";

@@ -8,11 +8,44 @@
 
         attach : function(context, settings) {
 
-            // Split the body content in two columns.
+            // Create pdf pages from content.
             if (typeof Drupal.settings.sof_pdf_generator !== 'undefined') {
-                $('.sof-column-content', context).columnize({
-                    columns : 2
-                });
+
+                // Setup global splitting rules
+                $('.sof-pdf-content').find('table, thead, tbody, tfoot, colgroup, caption, label, legend, script, style, textarea, button, object, embed, tr, th, td, li, h1, h2, h3, h4, h5, h6, form').addClass('dontsplit');
+                $('.sof-pdf-content').find('h1, h2, h3, h4, h5, h6').addClass('dontend');
+                $('.sof-pdf-content').find('br').addClass('removeiflast').addClass('removeiffirst');
+
+                $nodeObj = $('#sof-pdf-contents', context);
+
+                // Node header Image+teaser.
+                $initialContent = $('header', $nodeObj);
+
+                // Initial content height.
+                var imgTeaserHeight = $initialContent.outerHeight(true), initialContentHeight = 0;
+
+                // Image dimensins bug fix
+                if($initialContent.find('div.sof-pdf-top-image').length){
+                  imgTeaserHeight += 502;
+                }else{
+                  imgTeaserHeight += 3;
+                }
+
+                if(initialContentHeight <= imgTeaserHeight) {
+                  initialContentHeight = 1047 - imgTeaserHeight;
+                }
+                else {
+                  initialContentHeight = 1047 - ( imgTeaserHeight % 1047);
+                }
+
+                // Prevent blank page
+                if (initialContentHeight == 0) {
+                  initialContentHeight = 1047;
+                }
+
+                // Build pages.
+                buildPage($initialContent, initialContentHeight);
+
             }
 
             // Add clases to download links.
@@ -20,5 +53,58 @@
 
         }
     };
+
+    /**
+     * Add columnized pages in beteen
+     *   @param object|bool $initialContent
+     *     Header object with title, teaser and optional image, FALSE if not first page
+     *   @param int contentHeight
+     *     calculated height for content on the first page
+     *
+     */
+    function buildPage($initialContent, contentHeight){
+
+      // Check for default value.
+      contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 1047;
+
+      if($('#sof-pdf-contents').contents().length > 0){
+
+        // Initial page.
+        $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
+          display: "block",
+          height: 1047
+        });
+
+        // Set page contents height.
+        $page.find('.content').css({
+          display: "block",
+          height: contentHeight
+        });
+
+        // Add header+image.
+        if($initialContent) {
+          $page.prepend($initialContent);
+        }
+
+        $(".sof-pdf-all-content").append($page);
+
+        // Call columnizer.
+        $('#sof-pdf-contents').columnize({
+          columns: 2,
+          target: ".sof-pdf-page:last .content",
+          overflow: {
+            height: contentHeight,
+            id: '#sof-pdf-contents',
+            doneFunc: function(){
+              buildPage(false);
+            }
+         }
+        });
+
+      }else{
+          // Remove blank container from the top.
+          $(".sof-pdf-page-template:first").remove();
+      }
+    }
 
 })(jQuery);
