@@ -1,4 +1,9 @@
-
+// <?php
+/**
+ * @file
+ * Java Script file for Color module integration.
+ */
+// ?>
 (function ($) {
   Drupal.color = {
     logoChanged: false,
