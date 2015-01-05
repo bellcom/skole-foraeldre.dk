@@ -27,14 +27,14 @@
  * ========================================================================== */
 
 @font-face {
-	font-family: "conduit_itcregular";
-	src: url("fonts/condult_itc/conduititc.eot");
-	src: url("fonts/condult_itc/conduititc.eot#iefix") format("embedded-opentype"),
-	url("fonts/condult_itc/conduititc.woff") format("woff"),
-	url("fonts/condult_itc/conduititc.ttf") format("truetype"),
-	url("fonts/condult_itc/conduititc.svg") format("svg");
-	font-weight: normal;
-	font-style: normal;
+  font-family: "conduit_itcregular";
+  src: url("fonts/condult_itc/conduititc.eot");
+  src: url("fonts/condult_itc/conduititc.eot#iefix") format("embedded-opentype"),
+  url("fonts/condult_itc/conduititc.woff") format("woff"),
+  url("fonts/condult_itc/conduititc.ttf") format("truetype"),
+  url("fonts/condult_itc/conduititc.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'conduit_itcbold';
@@ -262,6 +262,13 @@ html, body {
 .footer_social_media_twitter .sof_footer_social_media_icon img {
   width: 55px;
   margin-top: 20px;
+}
+.footer_social_media_facebook .sof_footer_social_media_icon a,
+.footer_social_media_twitter .sof_footer_social_media_icon a {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  padding: 0px;
 }
 .footer_social_media_facebook h5,
 .footer_social_media_twitter h5,
@@ -1545,7 +1552,7 @@ body.node-type-slider #main-content {
   float: left;
   width: 33.3%;
   margin: -20px 0 -9999px 0px;
-  padding: 20px 15px 9999px 15px;   
+  padding: 20px 15px 9999px 15px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
