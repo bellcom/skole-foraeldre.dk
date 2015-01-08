@@ -682,7 +682,9 @@ body.node-type-slider #main-content {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-
+.pane-bundle-news-pane #block-follow-site .block-content {
+  margin-bottom:0px;
+}
 .news-deck-top-content {
   float: left;
   width: 100%;
