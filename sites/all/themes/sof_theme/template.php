@@ -31,6 +31,7 @@ function sof_theme_process_html(&$variables) {
  */
 function sof_theme_process_page(&$variables) {
   global $base_path;
+  $theme = "sof_theme";
   // Hook into color.module.
   if (module_exists('color')) {
     _color_page_alter($variables);
@@ -71,7 +72,11 @@ function sof_theme_process_page(&$variables) {
   if ($variables['theme_hook_suggestions'][0] == 'page__taxonomy') {
     $variables['theme_hook_suggestions'][] = 'page__search';
   }
-  $variables['footer_logo'] = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/footerlogo/footer_logo.png';
+  // Default footer logo image.
+  $default_footerlogo_image = $base_path . drupal_get_path('theme', $theme) . '/footer_logo.png';
+  // Footer logo image that Theme Settings.
+  $footerlogo_image = theme_get_setting('footerlogo_image', $theme);
+  $variables['footerlogo_image'] = file_create_url(!empty($footerlogo_image) ? $footerlogo_image : $default_footerlogo_image);
 }
 
 /**
