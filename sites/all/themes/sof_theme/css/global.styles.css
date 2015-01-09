@@ -2105,17 +2105,6 @@ article.node-publication .field-type-image.field-label-above h2 {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-.publication-top-right-container .field-name-field-single-link {
-  float: left;
-  width: 100%;
-  margin:40px 0 6px 0;
-  padding: 12px 20px;
-  font-size: 20px;
-  background-image:url('images/publication-read-online.png');
-  background-repeat:no-repeat;
-  background-size:35px 23px;
-  background-position:94% center;
-}
 .publication-top-right-container .field-name-field-single-link .field-item {
   color: #fff;
   font-size: 20px;
@@ -2125,6 +2114,15 @@ article.node-publication .field-type-image.field-label-above h2 {
 }
 .publication-top-right-container .field-name-field-single-link .field-item a {
   color: #fff;
+   float: left;
+  width: 100%;
+  margin:40px 0 6px 0;
+  padding: 12px 20px;
+  font-size: 20px;
+  background-image:url('images/publication-read-online.png');
+  background-repeat:no-repeat;
+  background-size:35px 23px;
+  background-position:94% center;
 }
 .publication-top-right-container .download-as-pdf{
   color: #fff;
@@ -2143,7 +2141,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   text-transform:uppercase;
 }
 .publication-top-right-container .field-name-field-single-link:hover,
-.publication-top-right-container .download-as-pdf-out:hover {
+.publication-top-right-container .download-as-pdf:hover {
   opacity: 0.8;
 }
 .back-to-all-releases-link {
