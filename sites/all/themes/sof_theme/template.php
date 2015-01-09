@@ -415,7 +415,7 @@ function sof_theme_preprocess_search_result(&$variables) {
     $variables['category'] = _sof_category_terms_links($variables['result']['fields']['im_field_category_single']);
   }
   // Add node teaser instead of snippet.
-  $variables['teaser'] = $variables['result']['fields']['teaser'];
+  $variables['teaser'] = truncate_utf8($variables['result']['fields']['teaser'], 285, TRUE, TRUE);
 }
 
 /**
@@ -502,17 +502,25 @@ function sof_theme_preprocess_block(&$vars) {
 }
 
 /**
- * Template_preprocess_search_result().
+ * Cusotm function for links to terms search page.
  *
- * taxonomy term ids of the node
+ * @param array $category_field
+ *   term refference field value for node categories
  */
 function _sof_category_terms_links($category_field) {
+
+  $term_links = array();
+
   foreach ($category_field as $key => $value) {
-    $term_links[] = array(
-      'title' => taxonomy_term_load($value)->name,
-      'href'  => 'taxonomy/term/' . $value,
-    );
+    $term_obj = taxonomy_term_load($value);
+    if ($term_obj) {
+      $term_links[] = array(
+        'title' => taxonomy_term_load($value)->name,
+        'href'  => 'taxonomy/term/' . $value,
+      );
+    }
   }
+
   return theme('links', array(
     'links'      => $term_links,
     'heading'    => array('text' => t('Categories :'), 'level' => 'label'),
