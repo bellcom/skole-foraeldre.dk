@@ -348,11 +348,13 @@ function sof_pdf_generator_publication_pdf($node_view) {
     $sof_print_vars['page'] = "";
 
     // Cover page setup.
+    $cover_color = isset($node_view['field_pdf_cover_color']['#items'][0]['rgb']) ? $node_view['field_pdf_cover_color']['#items'][0]['rgb'] : '#FFFFFF';
+    $logo_setting = in_array($cover_color, array('#FFFFFF', '#EBECEC')) ? theme_get_setting('logo') : theme_get_setting('footerlogo_image');
     $sof_print_vars['page'] = theme('sof_pdf_generator_cover', array(
       'title' => $node_view['field_pdf_title']['#items'][0]['value'],
       'teaser' => $node_view['field_pdf_description']['#items'][0]['value'],
-      'logo' => file_create_url(theme_get_setting('slogo_path')),
-      'color' => isset($node_view['field_pdf_cover_color']['#items'][0]['rgb']) ? $node_view['field_pdf_cover_color']['#items'][0]['rgb'] : '#ffffff',
+      'logo' => file_create_url($logo_setting),
+      'color' => $cover_color,
     ));
     $cover_page = theme('sof_pdf_generator_main', $sof_print_vars);
     $pdf->addCover($cover_page);
