@@ -682,7 +682,9 @@ body.node-type-slider #main-content {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-
+.pane-bundle-news-pane #block-follow-site .block-content {
+  margin-bottom:0px;
+}
 .news-deck-top-content {
   float: left;
   width: 100%;
@@ -737,8 +739,6 @@ body.node-type-slider #main-content {
   margin:0 0 15px 0;
   padding:14px 17px 0 0;
   text-align: left;
-  height: 168px;
-  overflow: hidden;
 }
 .news-deck-top-right-content .read-more {
   margin: 0;
@@ -3201,7 +3201,7 @@ ul.pager li.pager-ellipsis {
   float: none;
   display: inline-block;
   margin: 40px 10px 20px;
-  padding: 10px 14px;
+  padding: 0px;
   position: static;
   background-color: #b2b2b2;
   border-radius: 3px;
@@ -3227,6 +3227,9 @@ ul.pager li.pager-first,
 ul.pager li.pager-previous {
   background-color: #00a2eb;
 }
+ul.pager li.pager-current {
+  padding: 10px 14px;
+}
 ul.pager li.pager-current:hover,
 ul.pager li.pager-next:hover,
 ul.pager li.pager-last:hover,
@@ -3240,6 +3243,8 @@ ul.pager li.pager-last a,
 ul.pager li.pager-first a,
 ul.pager li.pager-previous a {
   color: #fff;
+  padding: 10px 14px;
+  display:inline-block;
 }
 /* =============================================================================
  *   WEBFORM

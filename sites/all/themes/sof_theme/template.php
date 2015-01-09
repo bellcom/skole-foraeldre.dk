@@ -77,6 +77,7 @@ function sof_theme_process_page(&$variables) {
   // Footer logo image that Theme Settings.
   $footerlogo_image = theme_get_setting('footerlogo_image', $theme);
   $variables['footerlogo_image'] = file_create_url(!empty($footerlogo_image) ? $footerlogo_image : $default_footerlogo_image);
+  $variables['footerlogo_image'] = file_create_url($footerlogo_image);
 }
 
 /**
@@ -293,6 +294,7 @@ function sof_theme_preprocess_node(&$variables) {
     }
     // News Deck top article display.
     elseif ($view_mode == 'primary_selected_node') {
+      $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 500, FALSE, TRUE);
       $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
       $variables['theme_hook_suggestion'] = 'node__news__newsdeck';
     }
