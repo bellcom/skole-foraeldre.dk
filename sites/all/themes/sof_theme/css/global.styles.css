@@ -3203,7 +3203,7 @@ ul.pager li.pager-ellipsis {
   float: none;
   display: inline-block;
   margin: 40px 10px 20px;
-  padding: 10px 14px;
+  padding: 0px;
   position: static;
   background-color: #b2b2b2;
   border-radius: 3px;
@@ -3229,6 +3229,9 @@ ul.pager li.pager-first,
 ul.pager li.pager-previous {
   background-color: #00a2eb;
 }
+ul.pager li.pager-current {
+  padding: 10px 14px;
+}
 ul.pager li.pager-current:hover,
 ul.pager li.pager-next:hover,
 ul.pager li.pager-last:hover,
@@ -3242,6 +3245,8 @@ ul.pager li.pager-last a,
 ul.pager li.pager-first a,
 ul.pager li.pager-previous a {
   color: #fff;
+  padding: 10px 14px;
+  display:inline-block;
 }
 /* =============================================================================
  *   WEBFORM
