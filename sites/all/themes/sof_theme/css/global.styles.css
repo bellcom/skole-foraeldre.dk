@@ -2126,7 +2126,8 @@ article.node-publication .field-type-image.field-label-above h2 {
 .publication-top-right-container .field-name-field-single-link .field-item a {
   color: #fff;
 }
-.publication-top-right-container .download-as-pdf-out {
+.publication-top-right-container .download-as-pdf{
+  color: #fff;
   margin: 0 0 6px 0;
   padding: 12px 20px;
   width: 100%;
@@ -2140,9 +2141,6 @@ article.node-publication .field-type-image.field-label-above h2 {
   font-weight: 200;
   text-decoration: none;
   text-transform:uppercase;
-}
-.publication-top-right-container .download-as-pdf-out a {
-  color: #fff;
 }
 .publication-top-right-container .field-name-field-single-link:hover,
 .publication-top-right-container .download-as-pdf-out:hover {

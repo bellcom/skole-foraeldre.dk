@@ -157,10 +157,10 @@
     attach: function (context, settings) {	
     	    
       //Download as pdf button
-      $( ".publication-top-right-container .download-as-pdf" ).wrap( "<div class='download-as-pdf-out'></div>");
+     // $( ".publication-top-right-container .download-as-pdf" ).wrap( "<div class='download-as-pdf-out'></div>");
     
       //E-commerce add to cart button
-      $( ".commerce-product-field-commerce-price , .field-name-field-sof-commerce-product" ).wrapAll( "<div class='publication-ecommercebutton'></div>" );
+     // $( ".commerce-product-field-commerce-price , .field-name-field-sof-commerce-product" ).wrapAll( "<div class='publication-ecommercebutton'></div>" );
 
       //Intro Deck wrappers
       $('.pane-bundle-intro-deck-pane', context).each(function(){
