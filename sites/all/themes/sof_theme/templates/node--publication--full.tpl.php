@@ -134,9 +134,6 @@ hide($content['field_sof_commerce_product']);
          <?php print render($content); ?>
          <!-- E-commerce part -->
          <div class="publication-ecommerce-container">
-           <?php if (count($content['field_sof_commerce_product']['#items']) === 1): ?>
-             <?php $oneproduct = 'publication-oneproduct'; ?>
-           <?php endif; ?>
            <div class="publication-ecommerce-container-inner-product-info <?php if($oneproduct) : echo $oneproduct; endif; ?>">
              <?php print render($content['field_sof_commerce_product']); ?>
            </div>
