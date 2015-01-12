@@ -123,6 +123,9 @@ function sof_theme_field__field_video($variables) {
  * Override field.
  */
 function sof_theme_preprocess_field(&$vars) {
+  if ($vars['element']['#field_name'] == 'commerce_price') {
+    $vars['label_hidden'] = TRUE;
+  }
   global $base_path;
   $element = $vars['element'];
   if ($element['#field_name'] == 'field_we_recommend_reference') {

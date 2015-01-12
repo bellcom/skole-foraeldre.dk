@@ -1619,6 +1619,15 @@ body.node-type-slider #main-content {
  *   E-COMMERCE STYLING
  * ========================================================================== */
 /* Add to cart button */
+.publication-ecommerce-container{
+	position:relative;
+	float:left;
+	width:100%;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	padding:35px 0;
+	margin-top:20px;
+}
 .publication-ecommercebutton {
   width: 100%;
   float: left;
@@ -1632,22 +1641,116 @@ body.node-type-slider #main-content {
 .publication-ecommercebutton:hover{
   opacity: 0.8;
 }
-.commerce-product-field-commerce-price {
-  display: none;
-}
 .field-name-field-sof-commerce-product {
   float: left;
-  width: 100%;
+}
+.publication-ecommerce-container-inner-product-qprice {
+  float: left;
+  width:30%;
+}
+.publication-ecommerce-container-inner-product-info{
+  float:left;
+  width:70%;
 }
 .field-name-field-sof-commerce-product .form-submit {
   float: left;
-  margin-left: -5px;
+  padding:16px 20px;
   border: none;
   background: transparent;
   font-family: "conduit_itcregular";
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;
+  background-color:#00A2EB;
+  position:absolute;
+  bottom:-72px;
+  right:0px;
+}
+.publication-oneproduct .form-submit {
+  float: left;
+  padding:16px 20px;
+  border: none;
+  background: transparent;
+  font-family: "conduit_itcregular";
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color:#00A2EB;
+  position:absolute;
+  right:0px;
+  bottom:38px;
+}
+.back-to-all-releases-link{
+	margin:20px 0 30px 0;
+}
+.publication-ecommerce-container-inner-product-qprice .commerce-product-field-commerce-price {
+  font-size:22px;
+}
+.publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity, 
+.publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity h2 {
+  padding:0;
+  margin:0;
+  font-weight:normal;
+  font-size:18px;
+  color:#747474;
+}
+.form-item-attributes-field-sof-commerce-type,
+.form-item-attributes-product-select {
+  margin:0px 10px 0 0;
+  padding:0px;
+  float:left;
+}
+.form-item-attributes-field-sof-commerce-type .form-item {
+  width:100%;
+}
+label {
+  width: 200px;
+}
+
+/* hide input */
+input[type="radio"] {
+  margin-left: -999px!important;
+}
+
+/* style label */
+input[type="radio"]  ~ label {
+  position: relative;
+  float: left;
+  line-height: 20px;
+  text-indent: 35px; 
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type="radio"] ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 20px;
+  height:20px;
+  background: #d0d0d0;
+  border-radius: 10px;
+}
+/* toggle on */
+input[type="radio"]:checked ~ label:before {
+  text-indent: .9em;
+  background-color:#00a2eb;
+}
+.form-item-attributes-field-sof-commerce-type label,
+.form-item-attributes-product-select label { 
+  color:#00A2EB;
+  font-weight:normal!important;
+  font-size:20px;
+}
+.form-item-attributes-field-sof-commerce-type label.option {
+  color:#000;
+  font-size:16px;
 }
 /* Cart Page */
 .cart-empty-page {
@@ -3394,7 +3497,7 @@ body.page-node-done .links a:hover {
 }
 .form-type-radio input {
   width: auto;
-  margin: 0 5px 0 0!important;
+  margin: 0 5px 0 0;
 }
 .form-textarea-wrapper textarea {
   border: 1px solid #bbbbbb;

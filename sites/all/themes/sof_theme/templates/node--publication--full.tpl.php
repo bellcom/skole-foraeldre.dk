@@ -14,8 +14,10 @@
  * - $last_update: last updated date/time, formatted with time element and
  *   pubdate attribute.
  * - $custom_date_and_time: date time string used in $last_update.
- * - $header_attributes: attributes such as classes to apply to the header element.
- * - $footer_attributes: attributes such as classes to apply to the footer element.
+ * - $header_attributes:
+ *   attributes such as classes to apply to the header element.
+ * - $footer_attributes: 
+ *   attributes such as classes to apply to the footer element.
  * - $links_attributes: attributes such as classes to apply to the nav element.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
  *   TRUE for mobile.  Note that tablets are also considered mobile devices.
@@ -106,6 +108,9 @@
  */
 hide($content['comments']);
 hide($content['links']);
+hide($content['product:commerce_price']);
+hide($content['product:field_sof_commerce_quantity']);
+hide($content['field_sof_commerce_product']);
 ?>
 <!-- Publication Main Container -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
@@ -127,6 +132,19 @@ hide($content['links']);
          <?php endif; ?>
          <!-- Print rest of the content -->
          <?php print render($content); ?>
+         <!-- E-commerce part -->
+         <div class="publication-ecommerce-container">
+           <?php if (count($content['field_sof_commerce_product']['#items']) === 1): ?>
+             <?php $oneproduct = 'publication-oneproduct'; ?>
+           <?php endif; ?>
+           <div class="publication-ecommerce-container-inner-product-info <?php if($oneproduct) : echo $oneproduct; endif; ?>">
+             <?php print render($content['field_sof_commerce_product']); ?>
+           </div>
+           <div class="publication-ecommerce-container-inner-product-qprice">
+             <?php print render($content['product:commerce_price']); ?>
+             <?php print render($content['product:field_sof_commerce_quantity']); ?>
+           </div>	
+         </div>
          <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
        </div>
      </div>
@@ -134,7 +152,7 @@ hide($content['links']);
   <!-- Publication Bottom Main Container(View) -->
   <div class="publication-bottom-container">
    <!-- Read Also Content -->
-      <?php if ( $blockotherelease ): ?>
+      <?php if ($blockotherelease): ?>
          <?php print render($blockotherelease); ?>
      <?php endif; ?>
       <!-- Read Also Articles -->
