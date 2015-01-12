@@ -134,7 +134,7 @@ hide($content['field_sof_commerce_product']);
          <?php print render($content); ?>
          <!-- E-commerce part -->
          <div class="publication-ecommerce-container">
-           <div class="publication-ecommerce-container-inner-product-info <?php if($oneproduct) : echo $oneproduct; endif; ?>">
+           <div class="publication-ecommerce-container-inner-product-info <?php echo $oneproduct; ?>">
              <?php print render($content['field_sof_commerce_product']); ?>
            </div>
            <div class="publication-ecommerce-container-inner-product-qprice">

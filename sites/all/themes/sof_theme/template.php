@@ -243,6 +243,9 @@ function sof_theme_preprocess_node(&$variables) {
     if (count($variables['field_sof_commerce_product']) === 1) {
       $variables['oneproduct'] = 'publication-oneproduct';
     }
+    else {
+      $variables['oneproduct'] = ' ';
+    }
   }
 
   // Add theme sugestions for news and articles.

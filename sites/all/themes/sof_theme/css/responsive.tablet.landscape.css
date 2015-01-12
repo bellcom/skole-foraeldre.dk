@@ -177,6 +177,7 @@ body {
 .news-deck-view-content .views-field-title a {
   font-size: 24px;
 }
+
 /* Banner Deck */
 .banner-main-wrapper {
   min-height: 420px;
@@ -211,6 +212,13 @@ body {
   .views-field-field-sof-commerce-description {
     max-width: 200px;	
   }	
+  .publication-ecommerce-container-inner-product-info,
+  .publication-ecommerce-container-inner-product-qprice {
+  	width:100%;
+  }
+  .publication-ecommerce-container-inner-product-qprice {
+  	margin-top:20px;
+  }
 }
 @media all and (max-width: 920px){
   .fixed-pane-title-magazine {

@@ -265,6 +265,8 @@ body {
 .publication-bottom-container .views-row {
   width: 50%;
 }
+/* Publication products */
+
 /* Publication listing page */
 body.page-releases #columns {
   padding: 0;
@@ -583,6 +585,13 @@ ul.pager li {
   .publication-bottom-container .views-row {
     width: 100%;
   }
+  .publication-ecommerce-container-inner-product-info,
+  .publication-ecommerce-container-inner-product-qprice {
+  	width:100%;
+  }
+  .publication-ecommerce-container-inner-product-qprice {
+  	margin-top:20px;
+  }
 }
 @media all and (max-width: 470px) {
   #logo img {
@@ -598,6 +607,11 @@ ul.pager li {
 	padding: 0 0 20px 0;
 	text-align: center;
   }	
+  /* Publication products */
+ .publication-ecommerce-container-inner-product-info, 
+ .publication-ecommerce-container-inner-product-qprice {
+   width:100%;
+ }
 }
 @media all and (max-width: 360px) {
   #header {
@@ -611,6 +625,16 @@ ul.pager li {
   }
   .view-related-articles-slider .flex-direction-nav {
     top: 46%;
+  }
+  .form-item-attributes-field-sof-commerce-type, 
+  .form-item-attributes-product-select{
+  	width:100%;
+  	margin-top:20px;
+  }
+  .field-name-field-sof-commerce-product .form-submit {
+  	bottom:-65px;
+  	padding:12px 10px;
+  	font-size:17px;
   }
 }
 @media all and (max-width: 350px) {
