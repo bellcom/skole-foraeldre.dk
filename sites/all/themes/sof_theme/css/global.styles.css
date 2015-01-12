@@ -1699,6 +1699,7 @@ body.node-type-slider #main-content {
   margin:0px 10px 0 0;
   padding:0px;
   float:left;
+  width:43%;
 }
 .form-item-attributes-field-sof-commerce-type .form-item {
   width:100%;
@@ -1708,12 +1709,12 @@ label {
 }
 
 /* hide input */
-input[type="radio"] {
-  margin-left: -999px!important;
+.form-item-attributes-field-sof-commerce-type input[type="radio"] {
+  display:none;
 }
 
 /* style label */
-input[type="radio"]  ~ label {
+.form-item-attributes-field-sof-commerce-type input[type="radio"]  ~ label {
   position: relative;
   float: left;
   line-height: 20px;
@@ -1725,7 +1726,7 @@ input[type="radio"]  ~ label {
   user-select: none;
 }
 
-input[type="radio"] ~ label:before {
+.form-item-attributes-field-sof-commerce-type input[type="radio"] ~ label:before {
   position: absolute;
   display: block;
   top: 0;
@@ -1738,10 +1739,56 @@ input[type="radio"] ~ label:before {
   border-radius: 10px;
 }
 /* toggle on */
-input[type="radio"]:checked ~ label:before {
+.form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before {
   text-indent: .9em;
   background-color:#00a2eb;
 }
+.form-item-attributes-product-select select,
+.form-item-attributes-product-select:after,
+.form-item-attributes-product-select::after {
+  display: block;
+  background: #fff;
+  color:#000;
+}
+.form-item-attributes-product-select select,
+.form-item-attributes-product-selectoption {
+  padding: 8px;
+} 
+.form-item-attributes-product-select {
+  position: relative;
+  display: inline-block;
+  border: 0;
+}
+ 
+.form-item-attributes-product-select::after {
+  content: "\25bc";
+  position: absolute;
+  top: 30px;
+  right: 0;
+  display: block;
+  width: 32px;
+  font-size: 12px;
+  line-height: 34px;
+  text-align: center;
+  color:#00A2EB;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none;
+}
+ 
+.form-item-attributes-product-select select {
+  height: 34px;
+  border: 0;
+  vertical-align: middle;
+  outline: 0 none;
+  width:100%;
+}
+ 
+.form-item-attributes-product-select option {
+  background: #fff;
+  color: #333;
+}
+ 
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label { 
   color:#00A2EB;
