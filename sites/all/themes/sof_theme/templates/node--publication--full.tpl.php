@@ -134,13 +134,13 @@ hide($content['field_sof_commerce_product']);
          <?php print render($content); ?>
          <!-- E-commerce part -->
          <div class="publication-ecommerce-container">
-           <div class="publication-ecommerce-container-inner-product-info <?php echo $oneproduct; ?>">
+           <div class="publication-ecommerce-container-inner-product-info <?php if ($oneproduct): echo $oneproduct; endif; ?>">
              <?php print render($content['field_sof_commerce_product']); ?>
            </div>
            <div class="publication-ecommerce-container-inner-product-qprice">
              <?php print render($content['product:commerce_price']); ?>
              <?php print render($content['product:field_sof_commerce_quantity']); ?>
-           </div>	
+           </div>
          </div>
          <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
        </div>

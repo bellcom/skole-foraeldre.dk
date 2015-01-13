@@ -156,7 +156,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.region-header nav .menu li.last.leaf:after {
+.region-header nav .menu li.last.leaf a:after {
   content: "";
 }
 .region-header nav ul.menu li a {

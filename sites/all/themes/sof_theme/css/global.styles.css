@@ -4220,13 +4220,17 @@ a:focus {
   transition: none!important;
   color: #000!important;
 }
-.region-header nav .menu  li.last.leaf:after {
+.region-header nav .menu  li.last.leaf a:after {
   content: '\e801'; /* '' */
   font-family: 'fontello';
   font-size: 22px;
+  padding-left: 10px;
 } /* '' */
 .region-header nav .menu  li.last.leaf a {
   border: none;
+}
+.region-header nav .menu  li.last.leaf a {
+  padding-right: 0px!important;	
 }
 .region-header nav .second-level  li.last.leaf:after {
   padding-left: 15px;
