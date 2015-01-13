@@ -4232,7 +4232,7 @@ a:focus {
 .region-header nav .menu  li.last.leaf a {
   padding-right: 0px!important;	
 }
-.region-header nav .second-level  li.last.leaf:after {
+.region-header nav .second-level  li.last.leaf a:after {
   padding-left: 15px;
   content: "";
   font-family: 'fontello';
