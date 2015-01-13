@@ -4331,6 +4331,9 @@ a:focus {
   border-left: 1px solid #b2b2b2;
   border: none;
 }
+.third-level li.last{
+  line-height: 0;
+}
 .third-level li a {
   margin-top: 20px;
   font-weight: 400;
