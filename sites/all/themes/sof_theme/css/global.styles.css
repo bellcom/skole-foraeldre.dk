@@ -1680,8 +1680,9 @@ body.node-type-slider #main-content {
   right:0px;
   bottom:38px;
 }
-.back-to-all-releases-link{
-	margin:20px 0 30px 0;
+.field-name-field-sof-commerce-product .form-submit:hover,
+.publication-oneproduct .form-submit:hover {
+  opacity:0.8;
 }
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-commerce-price {
   font-size:22px;
@@ -1704,7 +1705,7 @@ body.node-type-slider #main-content {
 .form-item-attributes-field-sof-commerce-type .form-item {
   width:100%;
 }
-label {
+.form-item-attributes-field-sof-commerce-type label {
   width: 200px;
 }
 
@@ -1816,6 +1817,7 @@ body.page-cart #main-content,
 body.page-checkout #main-content {
   width: 100%;
   padding: 10px;
+  margin-bottom: 30px;
   border: 2px solid #4f81bd;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -1881,7 +1883,7 @@ body.page-cart h1 {
 #commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-review #edit-continue,
 #dibs-frontend-redirect-form #edit-submit {
-  padding: 5px 10px;
+  padding: 5px 10px!important;
   margin-left: 10px;
   border: none;
   border-radius: 5px;
@@ -1955,8 +1957,9 @@ div.messages.commerce-add-to-cart-confirmation {
 /* Checkout Page */
 body.page-checkout #main-content,
 body.page-user-orders #main-content {
-   width: 100%;
+  width: 100%;
   padding: 10px;
+  margin-bottom: 30px;
   border: 2px solid #4f81bd;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -1964,6 +1967,27 @@ body.page-user-orders #main-content {
 }
 body.page-checkout h1 {
   color: #094974;
+}
+/* Action links */
+body.page-user-orders #tasks {
+  margin:0!important;
+}
+body.page-user-orders #tasks ul {
+  margin:0 0 0 5px;
+  padding:0;
+}
+body.page-user-orders #tasks ul li {
+  float:left;
+  padding:5px 10px;
+  margin:0;
+  border-radius:4px;
+}
+body.page-user-orders #tasks ul li:hover {
+  opacity:0.8;
+}
+body.page-user-orders #tasks ul li a {
+  color:#fff;
+  font-size:16px;
 }
 #commerce-checkout-form-checkout #edit-cart-contents,
 #commerce-checkout-form-checkout #edit-customer-profile-shipping,
@@ -1998,6 +2022,10 @@ body.page-checkout h1 {
   font-size:16px;
   color:#fff!important;
   text-transform:uppercase;
+}
+.checkout-review .field-items,
+.commerce-order-commerce-order .field-items {
+  margin:15px 0;
 }
 body.page-checkout #edit-cart-contents legend {
   margin-bottom: 5px;
@@ -2297,11 +2325,15 @@ article.node-publication .field-type-image.field-label-above h2 {
 .back-to-all-releases-link {
   float: left;
   padding-top: 10px;
+  margin:20px 0 30px 0;
   text-align: left;
   font-size: 20px;
   line-height: 30px;
   text-transform: uppercase;
- }
+}
+.back-to-all-releases-link:hover {
+  color:#000;
+}
 .back-to-all-releases-button {
   float: right!important;
   width: 40px;
@@ -3549,6 +3581,7 @@ body.page-node-done .links a:hover {
 .form-textarea-wrapper textarea {
   border: 1px solid #bbbbbb;
   border-radius: 0;
+  padding: 10px;
 }
 .webform-component-time .form-item {
   float: none!important;

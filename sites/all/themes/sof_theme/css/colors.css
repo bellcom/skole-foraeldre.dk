@@ -63,7 +63,10 @@ body.node-type-basic-page .author-datetime a,
 .entity-commerce-order .field-name-commerce-customer-shipping .field-item,
 .entity-commerce-order .field-name-commerce-customer-billing .field-item a,
 .entity-commerce-order .field-name-commerce-customer-shipping .field-item a,
-.cart-empty-page{
+.cart-empty-page,
+.form-item-attributes-product-select::after,
+.form-item-attributes-field-sof-commerce-type label,
+.form-item-attributes-product-select label{
   color: #00a2eb;
 }
 
@@ -128,7 +131,10 @@ body.page-user ul.primary li.active,
 #block-views-sof-shopping-cart-block-block .view-footer .links,
 #block-views-sof-shopping-cart-block-block .view-empty .links,
 body.page-node-done .links a,
-#edit-commerce-coupon legend {
+#edit-commerce-coupon legend,
+.form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before,
+.field-name-field-sof-commerce-product .form-submit,
+body.page-user-orders #tasks ul li {
   background-color: #00a2eb;
 }
 
