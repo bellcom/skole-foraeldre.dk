@@ -14,6 +14,9 @@
 body {
   font-size: 93.8%;
 }
+#page {
+  margin-top: 0px;
+}
 /* =============================================================================
  *   MENU CONTAINERS
  * ========================================================================== */
@@ -64,7 +67,7 @@ body {
   display: block;
   float: right;
   width: 100%;
-  margin: 40px 0 0 0;
+  margin: 0;
 }
 #nav-activation-link span {
   position: relative;
@@ -83,6 +86,7 @@ body {
   float: right;
   height: 23px;
   width: 0;
+  margin: 8px 0 0 0;
   background-image: url('images/nav_close_button.png');
   background-size: 26px 23px;
   background-position: right 0;
@@ -126,7 +130,8 @@ body {
 .region-header nav ul.menu li {
   float: none;
   display: block;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .region-header nav .menu li.last.leaf:after {
   content: "";
@@ -140,6 +145,9 @@ body {
 }
 .region-header nav ul.menu li a.active {
   background-image: url('images/nav-drop-dow-arrow-up.png');
+}
+.region-header nav ul.menu li.last a.active{
+  background-image: url('images/nav-drop-dow-arrow.png');
 }
 .menu li.expanded.slideul a {
   border-bottom: 0;

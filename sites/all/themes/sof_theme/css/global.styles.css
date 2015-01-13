@@ -169,7 +169,7 @@ html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  min-height: 100px!important;
+  min-height: 200px!important;
   margin: 0 auto;
 }
 
@@ -529,6 +529,7 @@ body.node-type-slider #main-content {
   background-position: 50% 50%;
   background-size: cover;
   text-align: left;
+  overflow: hidden;
 }
 .slide-inner-content {
   width: 100%;
@@ -1646,11 +1647,11 @@ body.node-type-slider #main-content {
 }
 .publication-ecommerce-container-inner-product-qprice {
   float: left;
-  width:30%;
+  width:25%;
 }
 .publication-ecommerce-container-inner-product-info{
   float:left;
-  width:70%;
+  width:75%;
 }
 .field-name-field-sof-commerce-product .form-submit {
   float: left;
@@ -1675,17 +1676,17 @@ body.node-type-slider #main-content {
   color: #fff;
   font-size: 20px;
   text-transform: uppercase;
-  background-color:#00A2EB;
-  position:absolute;
-  right:0px;
-  bottom:38px;
+  background-color: #00A2EB;
+  position: absolute;
+  right: 0px;
+  bottom: 38px;
 }
 .field-name-field-sof-commerce-product .form-submit:hover,
 .publication-oneproduct .form-submit:hover {
-  opacity:0.8;
+  opacity: 0.8;
 }
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-commerce-price {
-  font-size:22px;
+  font-size: 22px;
 }
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity, 
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity h2 {

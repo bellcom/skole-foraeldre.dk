@@ -38,6 +38,9 @@ body {
 /* =============================================================================
  *   HEADER AND MENU CONTAINERS
  * ========================================================================== */
+#page {
+  margin-top: 0px;
+}
 #header {
   margin: 0 auto;
   float: none;
@@ -92,7 +95,7 @@ body {
   display: block;
   float: right;
   width: 100%;
-  margin: 40px 0 0 0;
+  margin: 0;
 }
 #nav-activation-link span {
   float: right;
@@ -111,6 +114,7 @@ body {
   display: block;
   height: 23px;
   width: 0;
+  margin: 8px 0 0 0;
   text-indent: -9999px;
   background-image: url('images/nav_close_button.png');
   background-size: 26px 23px;
@@ -149,7 +153,8 @@ body {
 .region-header nav ul.menu li {
   float: none;
   display: block; 
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .region-header nav .menu li.last.leaf:after {
   content: "";
@@ -163,6 +168,9 @@ body {
 }
 .region-header nav ul.menu li a.active {
   background-image: url('images/nav-drop-dow-arrow-up.png');
+}
+.region-header nav ul.menu li.last a.active{
+  background-image: url('images/nav-drop-dow-arrow.png');
 }
 .menu li.expanded.slideul a {
   border-bottom: 0;

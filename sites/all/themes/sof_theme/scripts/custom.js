@@ -35,7 +35,6 @@
   */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
-    
       //Show Hide navigation script	for submenu
 	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {  	
         function close_accordion_section() {
@@ -97,6 +96,7 @@
       
       //Show / Hide navigation script on medium and small
       $('#nav-activation-link span').live('click', function(e) {
+      	$("#block-system-main-menu .menu > li a").removeClass('active');
         $('.header-inner-navigation-container').stop().toggle();
         $('#nav-activation-link span').toggleClass("active");
         $('.header-navigation-container').toggleClass("active");

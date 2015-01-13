@@ -107,7 +107,8 @@ body {
 .region-header nav ul.menu li {
   float: none;
   display: block;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .region-header nav .menu li.last.leaf:after {
   content: "";
@@ -123,6 +124,9 @@ body {
 }
 .region-header nav ul.menu li a.active {
   background-image: url('images/nav-drop-dow-arrow-up.png');
+}
+.region-header nav ul.menu li.last a.active{
+  background-image: url('images/nav-drop-dow-arrow.png');
 }
 .menu li.expanded.slideul > a {
   border-bottom: 0!important;
