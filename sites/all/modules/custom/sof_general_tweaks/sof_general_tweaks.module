@@ -228,6 +228,23 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
 
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
+
+      // Add custom validation to customer profile fields: telephone,
+      // postal_code, cvr, ean.
+      $shipping = $form['customer_profile_shipping'];
+      $billing = $form['customer_profile_billing'];
+      $form['customer_profile_billing']['field_sof_commerce_customer_tel'][$billing['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_cvr'][$billing['field_sof_commerce_customer_cvr']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_ean'][$billing['field_sof_commerce_customer_ean']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
+      $form['customer_profile_shipping']['field_sof_commerce_customer_tel'][$shipping['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
+      // Make the custom street number field required.
+      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+
       break;
 
     case 'views_form_commerce_cart_form_sof_default':
@@ -395,5 +412,58 @@ function sof_general_tweaks_form_commerce_cart_add_to_cart_form_alter(&$form, &$
 
   if (is_array($sof_quantity) && $sof_quantity[0]['value'] > 1) {
     $form['quantity']['#value'] = $sof_quantity[0]['value'];
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ *
+ * It is needed because of adding Street number field to the addressfield
+ * container.
+ */
+function sof_general_tweaks_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'addressfield') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Implements the commerce customer profile fields validation callback.
+ */
+function sof_general_tweaks_commerse_validation($element, &$form_state) {
+  $value = $element['#value'];
+
+  // Validate postal_code to be a number with exactly 4 digits.
+  if (isset($element['#title'])) {
+    if ($element['#title'] == 'Postal code') {
+      if ($value && (!is_numeric($value) || drupal_strlen($value) != 4)) {
+        form_error($element, t('Fill Postal code.'));
+      }
+    }
+  }
+  if (isset($element['#field_name'])) {
+    switch ($element['#field_name']) {
+      // Validate phone to contain only digits, spaces and +.
+      case 'field_sof_commerce_customer_tel':
+        $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
+        if ($value && !preg_match($pattern, $value)) {
+          form_error($element, t('Fill Phone.'));
+        }
+        break;
+
+      // Validate cvr to be a number with exactly 8 digits.
+      case 'field_sof_commerce_customer_cvr':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) != 8)) {
+          form_error($element, t('Fill CVR Number.'));
+        }
+        break;
+
+      // Validate ean to be a number with exactly 13 digits.
+      case 'field_sof_commerce_customer_ean':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) != 13)) {
+          form_error($element, t('Fill EAN number.'));
+        }
+        break;
+    }
   }
 }
