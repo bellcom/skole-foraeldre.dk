@@ -4213,7 +4213,7 @@ a:focus {
   vertical-align: top;
 }
 .menu li a {
-  padding: 0 20px 13px 20px;
+  padding: 0 23px 13px 23px;
 }
 .menu li.expanded.slideul > a {
   border-bottom: 5px solid #000!important;
