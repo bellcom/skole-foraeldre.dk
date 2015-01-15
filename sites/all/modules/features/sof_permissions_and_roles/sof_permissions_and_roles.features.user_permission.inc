@@ -696,13 +696,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'panelizer',
   );
 
-  // Exported permission: 'administer panelizer user user defaults'.
-  $permissions['administer panelizer user user defaults'] = array(
-    'name' => 'administer panelizer user user defaults',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
   // Exported permission: 'administer panels layouts'.
   $permissions['administer panels layouts'] = array(
     'name' => 'administer panels layouts',
@@ -1287,6 +1280,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1314,6 +1309,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1323,6 +1320,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1368,6 +1367,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1386,6 +1387,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete article content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1395,6 +1398,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete basic_page content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1404,6 +1409,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete domain content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1534,6 +1541,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete news content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1675,6 +1684,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete publication content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1695,6 +1706,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete section content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1704,6 +1717,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete slider content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1766,6 +1781,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete webform content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1883,6 +1900,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1912,6 +1931,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1921,6 +1942,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1975,6 +1998,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -2002,6 +2027,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit domain content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2609,6 +2636,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update article content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2618,6 +2647,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update basic_page content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2627,6 +2658,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update news content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2636,6 +2669,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update publication content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2645,6 +2680,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update section content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2654,6 +2691,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update slider content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2663,6 +2702,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update webform content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
