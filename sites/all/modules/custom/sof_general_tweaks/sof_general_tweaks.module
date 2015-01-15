@@ -433,6 +433,12 @@ function sof_general_tweaks_ctools_plugin_directory($module, $plugin) {
 function sof_general_tweaks_commerse_validation($element, &$form_state) {
   $value = $element['#value'];
 
+  // Skip shipping fields validattion if the information will be copied from
+  // the billing profile.
+  $copy = $form_state['input']['customer_profile_shipping']['commerce_customer_profile_copy'];
+  if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
+    return;
+  }
   // Validate postal_code to be a number with exactly 4 digits.
   if (isset($element['#title'])) {
     if ($element['#title'] == 'Postal code') {
@@ -467,3 +473,113 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
     }
   }
 }
+
+// -----------------------------------Stree Number functionality---------------.
+// Based on Address Field Phone module.
+
+/**
+ * Implements hook_field_attach_presave().
+ *
+ * Store additional address fields serialized in addressfield data column.
+ */
+function sof_general_tweaks_field_attach_presave($entity_type, $entity) {
+  $addressfields = sof_general_tweaks_addressfield_types();
+  foreach ($addressfields as $field_name) {
+    if (isset($entity->$field_name)) {
+      $default_fields = array_keys(addressfield_default_values());
+      $default_fields[] = 'element_key';
+      foreach ($entity->$field_name as $lang_code => $fields) {
+        foreach ($fields as $delta => $fieldset) {
+          $data = array();
+          foreach ($fieldset as $field_key => $field_value) {
+            // Compare fields with addressfield default fields and store any
+            // additional fields in data.
+            if (!in_array($field_key, $default_fields)) {
+              // Store additional field value.
+              $data[$field_key] = $field_value;
+            }
+          }
+          if (!empty($data)) {
+            $entity->{$field_name}[$lang_code][$delta]['data'] = serialize($data);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_attach_load().
+ *
+ * Load and set additional addressfield field values from serialized data
+ * column.
+ */
+function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $options) {
+  $addressfields = sof_general_tweaks_addressfield_types();
+  $elements = drupal_map_assoc(array(
+    'thoroughfare_street_number',
+    'premise_street_number',
+  ));
+
+  foreach ($entities as $entity) {
+    foreach ($addressfields as $field_name) {
+      if (empty($entity->{$field_name})) {
+        continue;
+      }
+
+      foreach ($entity->$field_name as $lang_code => $fields) {
+        foreach ($fields as $delta => $fieldset) {
+          if (!empty($fieldset['data'])) {
+            // Unserialize data, else skip if string.
+            if (($data = unserialize($fieldset['data'])) && is_array($data)) {
+              // Store unserialized data values in additional fields.
+              $phone_data = array_intersect_key($data, $elements);
+              $entity->{$field_name}[$lang_code][$delta] = array_merge($fieldset, $phone_data);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Returns an array of the field names of any addressfields.
+ */
+function sof_general_tweaks_addressfield_types() {
+  if (!isset($addressfields)) {
+    static $addressfields;
+    $result = db_query("SELECT field_name FROM {field_config} WHERE type = 'addressfield'");
+    $addressfields = array();
+    foreach ($result as $row) {
+      $addressfields[] = $row->field_name;
+    }
+  }
+  return $addressfields;
+}
+
+/**
+ * Implemens render callback for the street number fields.
+ */
+function addressfield_street_number_render($format) {
+  $address = $format['#address'];
+
+  $format['thoroughfare_street_number'] = array(
+    '#title' => t('Street Number'),
+    '#children' => check_plain($address['thoroughfare_street_number']),
+    '#attributes' => array('class' => array('thoroughfare-street-number')),
+    '#type' => 'addressfield_container',
+    '#tag' => 'span',
+  );
+
+  $format['premise_street_number'] = array(
+    '#title' => t('Street Number'),
+    '#children' => check_plain($address['premise_street_number']),
+    '#attributes' => array('class' => array('premise-street-number')),
+    '#type' => 'addressfield_container',
+    '#tag' => 'span',
+  );
+
+  return $format;
+}
+// --------------------------End Street Number functionality-------------------.
