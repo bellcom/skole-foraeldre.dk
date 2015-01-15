@@ -18,28 +18,33 @@ $plugin = array(
 /**
  * Implemens addressfield plugin callback.
  */
-function addressfield_street_number_format(&$format, $address) {
-  $format['street_block']['thoroughfare_street_number'] = array(
-    '#title' => t('Street Number'),
-    '#type' => 'textfield',
-    '#size' => 5,
-    '#attributes' => array(
-      'class' => array('thoroughfare-street-number'),
-    ),
-    '#default_value' => isset($address['thoroughfare_street_number']) ? $address['thoroughfare_street_number'] : '',
-    '#element_validate' => array('addressfield_street_number_validate'),
-  );
+function addressfield_street_number_format(&$format, $address, $context = array()) {
+  if ($context['mode'] == 'form') {
+    $format['street_block']['thoroughfare_street_number'] = array(
+      '#title' => t('Street Number'),
+      '#type' => 'textfield',
+      '#size' => 5,
+      '#attributes' => array(
+        'class' => array('thoroughfare-street-number'),
+      ),
+      '#default_value' => isset($address['thoroughfare_street_number']) ? $address['thoroughfare_street_number'] : '',
+      '#element_validate' => array('addressfield_street_number_validate'),
+    );
 
-  $format['street_block']['premise_street_number'] = array(
-    '#title' => t('Street Number'),
-    '#type' => 'textfield',
-    '#size' => 5,
-    '#attributes' => array(
-      'class' => array('premise-street-number'),
-    ),
-    '#default_value' => isset($address['premise_street_number']) ? $address['premise_street_number'] : '',
-    '#element_validate' => array('addressfield_street_number_validate'),
-  );
+    $format['street_block']['premise_street_number'] = array(
+      '#title' => t('Street Number'),
+      '#type' => 'textfield',
+      '#size' => 5,
+      '#attributes' => array(
+        'class' => array('premise-street-number'),
+      ),
+      '#default_value' => isset($address['premise_street_number']) ? $address['premise_street_number'] : '',
+      '#element_validate' => array('addressfield_street_number_validate'),
+    );
+  }
+  else {
+    $format['#pre_render'][] = 'addressfield_street_number_render';
+  }
 }
 
 /**
