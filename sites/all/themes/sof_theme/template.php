@@ -185,6 +185,7 @@ function sof_theme_form_alter(&$form, &$form_state, $form_id) {
  */
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
 
+  global $base_path;
   $fieldable_pane_type = $variables['elements']['#bundle'];
   // Add title on every deck.
   switch ($fieldable_pane_type) {
@@ -213,6 +214,15 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       $variables['title'] = '';
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['title'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+
+      // Add background variable.
+      if (isset($variables['field_background_image'])) {
+        $variables['magazine_background'] = image_style_url('magazine_deck_background', $variables['field_background_image'][0]['uri']);
+        hide($variables['content']['field_background_image']);
+      }
+      else {
+        $variables['magazine_background'] = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/magazine-deck-bg.jpg';
       }
       break;
 

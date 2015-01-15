@@ -87,6 +87,71 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_background_image'
+  $field_instances['fieldable_panels_pane-magazine_pane-field_background_image'] = array(
+    'bundle' => 'magazine_pane',
+    'deleted' => 0,
+    'description' => 'Select background image',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => '',
+          'image_style' => 'magazine_deck_background',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_background_image',
+    'label' => 'Background image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_image'
   $field_instances['fieldable_panels_pane-magazine_pane-field_image'] = array(
     'bundle' => 'magazine_pane',
@@ -103,7 +168,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -148,7 +213,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'media_generic',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -168,7 +233,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -185,7 +250,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'field_collection_embed',
-      'weight' => -2,
+      'weight' => 3,
     ),
   );
 
@@ -204,7 +269,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'link_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -240,7 +305,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => -1,
+      'weight' => 4,
     ),
   );
 
@@ -249,10 +314,12 @@ function sof_magazine_panel_pane_field_default_field_instances() {
   t('Add image for this magazine');
   t('Add links connected to the magazine');
   t('Add title of this category');
+  t('Background image');
   t('Category');
   t('Image');
   t('Links');
   t('Magazine category');
+  t('Select background image');
   t('Title');
   t('Will have three most important topicks and categories for this posting');
 
