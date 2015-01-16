@@ -411,9 +411,10 @@ body {
   font-size: 45px;
   padding-top: 55px;
 }
-.pane-bundle-magazine-pane .block-inner {
-  padding: 0 30px;
-  -webkit-box-sizing: border-box; 
+.pane-bundle-magazine-pane .magazine-deck-inner-block {
+  float: left;
+  padding:0 30px;
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
