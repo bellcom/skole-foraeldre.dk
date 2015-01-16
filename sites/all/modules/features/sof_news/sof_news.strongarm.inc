@@ -125,6 +125,9 @@ function sof_news_strongarm() {
         'redirect' => array(
           'weight' => '8',
         ),
+        'domain' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(
         'domain' => array(

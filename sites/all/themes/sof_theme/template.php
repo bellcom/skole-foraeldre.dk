@@ -282,9 +282,20 @@ function sof_theme_preprocess_node(&$variables) {
            'fragment' => '',
         ));
       }
+
       // Related terms block.
-      if ($get_related_block = block_load('views', 'related_content-block')) {
-        $variables['blockrelatedterms'] = _block_get_renderable_array(_block_render_blocks(array($get_related_block)));
+      if (!empty($variables['field_set_rt_manually']) && $variables['field_set_rt_manually'][LANGUAGE_NONE][0]['value'] == TRUE) {
+        $variables['content']['field_related_terms']['#title'] = t('Related content');
+      }
+      else {
+        // Hide manually set related terms.
+        $variables['content']['field_related_terms']['#access'] = FALSE;
+
+        // Related terms view block.
+        if ($get_related_block = block_load('views', 'related_content-block')) {
+          $variables['blockrelatedterms'] = _block_get_renderable_array(_block_render_blocks(array($get_related_block)));
+        }
+
       }
       // Related articles/news slideshow.
       if ($get_slider_block = block_load('views', $node->type == 'article' ? 'related_articles_slider-block' : 'related_articles_slider-block_1')) {

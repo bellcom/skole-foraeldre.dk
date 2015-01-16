@@ -54,9 +54,11 @@ function sof_article_field_group_info() {
     'weight' => '7',
     'children' => array(
       0 => 'field_banner',
-      1 => 'field_related_article',
-      2 => 'field_related_content',
-      3 => 'field_link',
+      1 => 'field_link',
+      2 => 'field_related_article',
+      3 => 'field_related_content',
+      4 => 'field_set_rt_manually',
+      5 => 'field_related_terms',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -149,7 +151,8 @@ function sof_article_field_group_info() {
     'children' => array(
       0 => 'field_banner',
       1 => 'field_related_content',
-      2 => 'download_as_pdf',
+      2 => 'field_related_terms',
+      3 => 'download_as_pdf',
     ),
     'format_type' => 'div',
     'format_settings' => array(

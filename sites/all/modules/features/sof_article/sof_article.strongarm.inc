@@ -125,6 +125,9 @@ function sof_article_strongarm() {
         'redirect' => array(
           'weight' => '9',
         ),
+        'domain' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(
         'domain' => array(
@@ -159,7 +162,7 @@ function sof_article_strongarm() {
         ),
         'download_as_pdf' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'links_to_nodes' => array(
