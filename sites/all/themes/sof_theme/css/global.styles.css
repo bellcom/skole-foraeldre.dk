@@ -1622,13 +1622,13 @@ body.node-type-slider #main-content {
  * ========================================================================== */
 /* Add to cart button */
 .publication-ecommerce-container{
-	position:relative;
-	float:left;
-	width:100%;
-	border-top:1px solid #ccc;
-	border-bottom:1px solid #ccc;
-	padding:35px 0;
-	margin-top:20px;
+  position:relative;
+  float:left;
+  width:100%;
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  padding:35px 0;
+  margin-top:20px;
 }
 .publication-ecommercebutton {
   width: 100%;
@@ -1689,7 +1689,7 @@ body.node-type-slider #main-content {
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-commerce-price {
   font-size: 22px;
 }
-.publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity, 
+.publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity,
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity h2 {
   padding:0;
   margin:0;
@@ -1721,7 +1721,7 @@ body.node-type-slider #main-content {
   position: relative;
   float: left;
   line-height: 20px;
-  text-indent: 35px; 
+  text-indent: 35px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1756,13 +1756,13 @@ body.node-type-slider #main-content {
 .form-item-attributes-product-select select,
 .form-item-attributes-product-selectoption {
   padding: 8px;
-} 
+}
 .form-item-attributes-product-select {
   position: relative;
   display: inline-block;
   border: 0;
 }
- 
+
 .form-item-attributes-product-select::after {
   content: "\25bc";
   position: absolute;
@@ -1778,7 +1778,7 @@ body.node-type-slider #main-content {
   -moz-pointer-events: none;
   pointer-events: none;
 }
- 
+
 .form-item-attributes-product-select select {
   height: 34px;
   border: 0;
@@ -1786,14 +1786,14 @@ body.node-type-slider #main-content {
   outline: 0 none;
   width:100%;
 }
- 
+
 .form-item-attributes-product-select option {
   background: #fff;
   color: #333;
 }
- 
+
 .form-item-attributes-field-sof-commerce-type label,
-.form-item-attributes-product-select label { 
+.form-item-attributes-product-select label {
   color:#00A2EB;
   font-weight:normal!important;
   font-size:20px;
@@ -2550,7 +2550,7 @@ article.node-publication .field-type-image.field-label-above h2 {
 .view-publication-listing-view .views-field-label a:hover {
   color: #000;
 }
-.view-publication-listing-view .views-field-teaser{
+.view-publication-listing-view .views-field-ts-node-teaser{
   float: left;
   margin: 0 0 15px 0;
   padding: 14px 17px 0 0;
@@ -2560,7 +2560,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   font-size: 19px;
   line-height: 24px;
 }
-.view-publication-listing-view .views-field-teaser a{
+.view-publication-listing-view .views-field-ts-node-teaser a{
   color: #454545;
 }
 /* =============================================================================
@@ -4231,7 +4231,7 @@ a:focus {
   border: none;
 }
 .region-header nav .menu  li.last.leaf a {
-  padding-right: 0px!important;	
+  padding-right: 0px!important;
 }
 .region-header nav .second-level  li.last.leaf a:after {
   padding-left: 15px;
