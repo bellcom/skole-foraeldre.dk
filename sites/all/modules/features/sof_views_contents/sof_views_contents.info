@@ -17,4 +17,4 @@ features[views_view][] = related_articles_slider
 features[views_view][] = related_content
 features[views_view][] = section_default_content
 features[views_view][] = we_are_writing_about_additional_displays
-mtime = 1419492240
+mtime = 1419496650
