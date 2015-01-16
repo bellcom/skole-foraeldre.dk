@@ -270,6 +270,13 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       );
       drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
       break;
+
+    case 'article_node_form':
+    case 'news_node_form':
+      $form['field_related_terms']['#states'] = array(
+        'visible' => array('input[id="edit-field-set-rt-manually-und"]' => array('checked' => TRUE))
+      );
+
   }
 }
 

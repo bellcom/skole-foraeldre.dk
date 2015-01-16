@@ -390,6 +390,8 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_pdf_content:publication',
     1 => 'fieldable_panels_pane:field_related_article_news:also_see_pane',
+    2 => 'node:field_related_terms:article',
+    3 => 'node:field_related_terms:news',
   );
   $export['reference_dialog_article'] = $view;
 

@@ -54,9 +54,11 @@ function sof_news_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_banner',
-      1 => 'field_related_content',
-      2 => 'field_related_news',
-      3 => 'field_link',
+      1 => 'field_link',
+      2 => 'field_related_content',
+      3 => 'field_related_news',
+      4 => 'field_set_rt_manually',
+      5 => 'field_related_terms',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -148,7 +150,8 @@ function sof_news_field_group_info() {
     'children' => array(
       0 => 'field_banner',
       1 => 'field_related_content',
-      2 => 'download_as_pdf',
+      2 => 'field_related_terms',
+      3 => 'download_as_pdf',
     ),
     'format_type' => 'div',
     'format_settings' => array(

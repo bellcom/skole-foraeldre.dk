@@ -148,7 +148,8 @@ hide($content['links']);
             <?php endif; ?>
           </div>
       <!-- Related terms block -->
-      <?php if ( $blockrelatedterms ): ?>
+      <?php print render($content['group_rightaregion']['field_related_terms']); ?>
+      <?php if ( isset($blockrelatedterms) ): ?>
         <?php print render($blockrelatedterms); ?>
       <?php endif; ?>
       <!-- Related articles/news slideshow -->
