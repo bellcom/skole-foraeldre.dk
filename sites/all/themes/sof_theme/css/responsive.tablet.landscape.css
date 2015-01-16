@@ -190,7 +190,8 @@ body {
   min-height: 420px;
 }
 /* Magazine Deck */
-.pane-bundle-magazine-pane .block-inner {
+.pane-bundle-magazine-pane .magazine-deck-inner-block {
+  float: left;
   padding:0 30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

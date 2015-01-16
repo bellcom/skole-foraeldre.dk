@@ -1311,16 +1311,17 @@ body.node-type-slider #main-content {
   text-align: center;
 }
 /* Magazine Deck */
-.pane-bundle-magazine-pane {
+.magazine-deck-background-wrapper {
+  float: left;
+  width: 100%;
   padding: 20px 0 60px 0;
-  margin: 0 0 20px 0;
-  background-image: url('images/magazine-deck-bg.jpg');
+  margin: 0;
   background-attachment: fixed;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-.pane-bundle-magazine-pane .block-content {
+.pane-bundle-magazine-pane .magazine-deck-inner-block {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
