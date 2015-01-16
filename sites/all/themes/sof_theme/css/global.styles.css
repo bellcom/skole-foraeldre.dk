@@ -4493,6 +4493,7 @@ ul.action-links {
 #footer .region-footer .block:nth-child(2) {
   width: 30%;
   line-height: 24px;
+  text-align: center;
 }
 #footer .region-footer .block:nth-child(2) p {
   margin: 0px;
@@ -4503,7 +4504,9 @@ ul.action-links {
   text-transform: uppercase;
 }
 #footer .region-footer .block:nth-child(2) .block-inner {
-  float: right;
+  float: none;
+  display: inline-block;
+  text-align: left;
 }
 #footer .region-footer .block:nth-child(2) a {
   color: #000;

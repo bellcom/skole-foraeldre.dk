@@ -118,7 +118,7 @@
       }
 
       // Position of flexslider navigation arrows call functions
-      $(document).ready(SliderNavigationposition);
+      $(window).load(SliderNavigationposition);
       $(window).resize(SliderNavigationposition);
 
       //Remove link from last navigation level
