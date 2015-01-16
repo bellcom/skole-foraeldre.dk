@@ -135,7 +135,8 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   // Render the node and strip all html tags from it.
   $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
 
-  // Add new field for drupal search.
+  // Add new fields for drupal search.
+  $document->addField('ts_node_teaser', $node->field_teaser[LANGUAGE_NONE][0]['safe_value']);
   $document->addField('ts_custom_text', $full_node_html);
 
   // Add domain info in the index.
@@ -167,13 +168,13 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $query) {
-  // Make ts_custom_text custom field searchable.
-  $query->addParam('fl', 'ts_custom_text');
 
   // Expose additional fields in the search result page.
+  $query->addParam('fl', 'ts_custom_text');
   $query->addParam('fl', 'im_field_category');
   $query->addParam('fl', 'im_field_category_publication');
   $query->addParam('fl', 'im_field_category_single');
+  $query->addParam('fl', 'ts_node_teaser');
   $query->addParam('fl', 'teaser');
 
   // Add domain key to filter all queries.
@@ -187,8 +188,9 @@ function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $q
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
-  // Add human readable name for our custom field.
+  // Add human readable name for our custom fields.
   $map['ts_custom_text'] = t('The full node object');
+  $map['ts_node_teaser'] = t('Node teaser field');
 }
 
 /**

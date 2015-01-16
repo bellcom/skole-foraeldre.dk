@@ -445,8 +445,9 @@ function sof_theme_preprocess_search_result(&$variables) {
   if (isset($variables['result']['fields']['im_field_category_single'])) {
     $variables['category'] = _sof_category_terms_links($variables['result']['fields']['im_field_category_single']);
   }
+
   // Add node teaser instead of snippet.
-  $variables['teaser'] = truncate_utf8($variables['result']['fields']['teaser'], 285, TRUE, TRUE);
+  $variables['teaser'] = truncate_utf8($variables['result']['fields']['ts_node_teaser'], 300, TRUE, TRUE);
 }
 
 /**
