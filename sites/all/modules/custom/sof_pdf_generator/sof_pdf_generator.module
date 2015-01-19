@@ -1,15 +1,23 @@
 <?php
+
+/**
+ * @file
+ * SOF pdf gerenator for publications and news/articles.
+ *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ */
+
 /**
  * Implements hook_permission().
  */
 function sof_pdf_generator_permission() {
   return array(
     'sof generate publication pdf' => array(
-      'title' => t('SOF generate publication pdf '),
+      'title' => t('SOF generate publication pdf'),
       'description' => t('Allow generating pdf from preselected nodes'),
     ),
     'sof generate single pdf' => array(
-      'title' => t('SOF generate single pdf '),
+      'title' => t('SOF generate single pdf'),
       'description' => t('Allow generating pdf from single node (article or news)'),
     ),
   );
@@ -18,10 +26,7 @@ function sof_pdf_generator_permission() {
 /**
  * Implements hook_menu().
  */
-
 function sof_pdf_generator_menu() {
-
-  $items = array();
 
   // Publication download link.
   $items['sof-pdf-generate/%'] = array(
@@ -33,7 +38,7 @@ function sof_pdf_generator_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  // Article/News download link
+  // Article/News download link.
   $items['sof-pdf-single/%'] = array(
     'title' => 'Article/News Pdf Generator',
     'description' => 'Administer Publicataion Pdf Generator',
@@ -47,27 +52,29 @@ function sof_pdf_generator_menu() {
 }
 
 /**
- * SOF pdf generator callback for publication
+ * SOF pdf generator callback for publication.
  *
- * @param $nid integer
- *  node id from wich content the pdf will be generated
- *
+ * @param int $nid
+ *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_nodes($nid) {
 
-  if (!isset($nid))
+  if (!isset($nid)) {
     return;
+  }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
 
-    if ($node_obj -> type == 'publication') {
+  if ($node_obj) {
 
-      //Get node rendering array
+    if ($node_obj->type == 'publication') {
+
+      // Get node rendering array.
       $node_view = node_view($node_obj, 'default');
 
-      switch($node_view['field_publication_file_type']['#items'][0]['value']) {
+      switch ($node_view['field_publication_file_type']['#items'][0]['value']) {
 
-        //Trigger file download
+        // Trigger file download.
         case 1:
           if ($node_view['field_file']) {
 
@@ -84,12 +91,13 @@ function sof_generate_pdf_from_nodes($nid) {
             file_transfer($file_uri, $http_headers);
 
           }
-          else
+          else {
             return drupal_access_denied();
+          }
 
           break;
 
-        //Generate pdf file from preselected nodes
+        // Generate pdf file from preselected nodes.
         case 2:
           sof_pdf_generator_publication_pdf($node_view);
           break;
@@ -101,77 +109,90 @@ function sof_generate_pdf_from_nodes($nid) {
 }
 
 /**
- * SOF pdf generator callback for articles and news
+ * SOF pdf generator callback for articles and news.
  *
- * @param $nid integer
- *  node id from wich content the pdf will be generated
- *
+ * @param int $nid
+ *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_node($nid) {
 
-  if (!isset($nid))
+  if (!isset($nid)) {
     return;
+  }
 
-  if ($node_obj = node_load($nid)) {
+  $node_obj = node_load($nid);
 
-    if (in_array($node_obj -> type, array(
+  if ($node_obj) {
+
+    if (in_array($node_obj->type, array(
       'article',
-      'news'
+      'news',
     ))) {
 
-      //Add Template css
+      // Add Template css.
       drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
 
-      //Add Columnizer library
+      // Add Columnizer library.
       libraries_load('columnizer');
 
-      //Add Columnizer js
+      // Add Columnizer js.
       drupal_add_js(array('sof_pdf_generator' => array('pdfColumnize' => TRUE)), 'setting');
       drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js', 'file');
 
-      //Main template variables
+      // Main template variables.
       $sof_print_vars['css'] = drupal_get_css();
       $sof_print_vars['js'] = drupal_get_js();
       $sof_print_vars['page'] = "";
 
-      //Setup print content
+      // Setup print content.
       $node_content = array();
 
-      //Add image on top
-      if ($node_obj -> field_image_slider) {
-        $node_content[]['image'] = theme('sof_pdf_top_image', array('image' => field_view_field('node', $node_obj, 'field_image_slider', 'default'), ));
+      // Add image on top.
+      if ($node_obj->field_image_slider) {
+        $node_content['image'] = theme('sof_pdf_top_image', array(
+          'image' => field_view_field('node', $node_obj, 'field_image_slider', 'default'),
+        ));
       }
 
-      //Add the rest of the fields
-      $node_content[]['title'] = $node_obj -> title;
-      $node_content[]['teaser'] = field_view_field('node', $node_obj, 'field_teaser', 'default');
-      $node_content[]['body'] = field_view_field('node', $node_obj, 'body', 'default');
+      // Add the rest of the fields.
+      $node_content['title'] = $node_obj->title;
+      $node_content['teaser'] = field_view_field('node', $node_obj, 'field_teaser', 'default');
+      $node_content['body'] = field_view_field('node', $node_obj, 'body', 'default');
 
-      $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content, ));
+      $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content));
       $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
-      //Send html to print
-      if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
+      // Send html to print.
+      $library = libraries_load('phpwkhtmltopdf');
+      if ($library && !empty($library['loaded'])) {
 
-        //Set global options for the pdf
-        $pdf = new WkHtmlToPdf( array(
+        // Set global options for the pdf.
+        $current_domain = domain_get_domain();
+        $pdf = new WkHtmlToPdf(array(
           'no-outline',
           'disable-smart-shrinking',
+          'no-stop-slow-scripts',
+          'dpi' => 96,
+          'encoding' => 'UTF-8',
           'javascript-delay' => 1000,
-
-          //Footer and offset options
           'footer-center' => '[page]',
+          'footer-font-size' => 7,
+          'header-font-size' => 5,
+          'header-spacing' => 5,
+          'header-right' => strtoupper($current_domain['sitename']),
+          'header-left' => strtoupper($node_obj->title . ' / ' . format_date($node_obj->changed, 'custom', 'j.F Y')),
         ));
 
-        //Add a HTML file, a HTML string or a page from a URL
-        $pdf -> addPage($content_page);
+        // Add a HTML file, a HTML string or a page from a URL.
+        $pdf->addPage($content_page);
 
-        //Create fielname from url alias
-        $url_alias = drupal_lookup_path('alias', 'node/' . $node_obj -> nid);
-        $filename = end(explode('/', $url_alias)) . '.pdf';
+        // Create fielname from url alias.
+        $url_alias = drupal_lookup_path('alias', 'node/' . $node_obj->nid);
+        $url_alias_array = explode('/', $url_alias);
+        $filename = end($url_alias_array) . '.pdf';
 
-        //Send to client as file download
-        $pdf -> send($filename);
+        // Send to client as file download.
+        $pdf->send($filename);
       }
 
     }
@@ -215,7 +236,7 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
       'template' => 'theme/sof_pdf_generator_cover',
     ),
     'sof_pdf_generator_pages' => array(
-      'variables' => array('content' => NULL, ),
+      'variables' => array('content' => NULL),
       'template' => 'theme/sof_pdf_generator_pages',
     ),
     'sof_pdf_top_image' => array(
@@ -224,7 +245,7 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
         'title' => NULL,
       ),
       'template' => 'theme/sof_pdf_top_image',
-    )
+    ),
   );
 }
 
@@ -233,7 +254,7 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
  */
 function sof_pdf_generator_field_extra_fields() {
 
-  //Additiona field for download links on article, news and publication
+  // Additiona field for download links on article, news and publication.
   foreach (array('news', 'article', 'publication') as $node_type) {
 
     $extra['node'][$node_type]['display']['download_as_pdf'] = array(
@@ -254,137 +275,131 @@ function sof_pdf_generator_field_extra_fields() {
  */
 function sof_pdf_generator_node_view($node, $view_mode, $langcode) {
 
-  $extrafields = field_extra_fields_get_display('node', $node -> type, $view_mode);
+  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
   $extrafield_name = 'download_as_pdf';
 
-  //Attach download as pdf link to articles, news and publication
+  // Attach download as pdf link to articles, news and publication.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
 
-    $node -> content['download_as_pdf'] = array('#markup' => l(t('Download as pdf'), ($node -> type == 'publication' ? 'sof-pdf-generate/' : 'sof-pdf-single/') . $node -> nid, array('attributes' => array('class' => array('download-as-pdf'), ), )), );
+    $node->content['download_as_pdf'] = array(
+      '#markup' => l(t('Download as pdf'), ($node->type == 'publication' ? 'sof-pdf-generate/' : 'sof-pdf-single/') . $node->nid, array(
+        'attributes' => array('class' => array('download-as-pdf')),
+      )),
+    );
 
   }
 }
 
 /**
- * Implements hook_preprocess_HOOK()
+ * Implements hook_preprocess_HOOK().
  */
 function sof_pdf_generator_preprocess_field(&$vars) {
 
   $element = $vars['element'];
 
   switch ($element['#field_name']) {
-    case 'body':
-      {
-        drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js');
+    case'body':{
+      drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js');
       }
-      break;
+    break;
   }
 }
 
 /**
- * Helper function for generating pdf files of the publication
+ * Helper function for generating pdf files of the publication.
  *
- * @param $node_view array
- *  Received from node_view().
- *
- * @todo limit the flexlider field
+ * @param array $node_view
+ *   Received from node_view().
  */
 function sof_pdf_generator_publication_pdf($node_view) {
 
-  //Add Template css
-  drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
+  $library = libraries_load('phpwkhtmltopdf');
+  if ($library && !empty($library['loaded'])) {
 
-  //Add Columnizer library
-  libraries_load('columnizer');
-
-  //Allow colimnizer
-  drupal_add_js(array('sof_pdf_generator' => array('pdfColumnize' => TRUE)), 'setting');
-  drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js', 'file');
-
-  //Main template variables
-  $sof_print_vars['css'] = drupal_get_css();
-  $sof_print_vars['js'] = drupal_get_js();
-  $sof_print_vars['page'] = "";
-
-  //Cover page setup
-  $sof_print_vars['page'] = theme('sof_pdf_generator_cover', array(
-    'title' => $node_view['field_pdf_title']['#items'][0]['value'],
-    'teaser' => $node_view['field_pdf_description']['#items'][0]['value'],
-    'logo' => theme_get_setting('logo'),
-    'color' => $node_view['field_pdf_cover_color']['#items'][0]['rgb'],
-  ));
-  $cover_page = theme('sof_pdf_generator_main', $sof_print_vars);
-
-  //Content page setup
-  foreach ($node_view['field_pdf_content']['#items'] as $key => $item) {
-
-    $node_content[$key] = array();
-
-    //Add image on top
-    if ($item['entity'] -> field_image_slider) {
-      $node_content[$key]['image'] = theme('sof_pdf_top_image', array('image' => field_view_field('node', $item['entity'], 'field_image_slider', 'default'), ));
-    }
-
-    //Add the rest of the fields
-    $node_content[$key]['title'] = $item['entity'] -> title;
-    $node_content[$key]['teaser'] = field_view_field('node', $item['entity'], 'field_teaser', 'default');
-    $node_content[$key]['body'] = field_view_field('node', $item['entity'], 'body', 'default');
-
-  }
-  $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content, ));
-  $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
-
-  //Send html to print
-  if (($library = libraries_load('phpwkhtmltopdf')) && !empty($library['loaded'])) {
-
-    //Set global options for the pdf
-    $pdf = new WkHtmlToPdf( array(
+    // Set global options for the pdf.
+    $current_domain = domain_get_domain();
+    $pdf = new WkHtmlToPdf(array(
       'no-outline',
       'disable-smart-shrinking',
+      'no-stop-slow-scripts',
+      'dpi' => 96,
+      'encoding' => 'UTF-8',
       'javascript-delay' => 1000,
-
-      //Footer and offset options
       'page-offset' => -1,
       'footer-center' => '[page]',
+      'footer-font-size' => 7,
+      'header-font-size' => 5,
+      'header-spacing' => 5,
+      'header-right' => strtoupper($current_domain['sitename']),
+      'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j.F Y')),
     ));
 
-    //Add a cover
-    $pdf -> addCover($cover_page);
+    // Add Template css.
+    drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
 
-    //Add table of contents
-    $pdf -> addToc(array(
-      'disable-dotted-lines',
-      'toc-text-size-shrink' => 0.95,
-      'toc-header-text' => t('Content'),
+    // Allow colimnizer.
+    libraries_load('columnizer');
+    drupal_add_js(array('sof_pdf_generator' => array('pdfColumnize' => TRUE)), 'setting');
+    drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js', 'file');
+
+    // Main template variables.
+    $sof_print_vars['css'] = drupal_get_css();
+    $sof_print_vars['js'] = drupal_get_js();
+    $sof_print_vars['page'] = "";
+
+    // Cover page setup.
+    $cover_color = isset($node_view['field_pdf_cover_color']['#items'][0]['rgb']) ? $node_view['field_pdf_cover_color']['#items'][0]['rgb'] : '#FFFFFF';
+    $logo_setting = in_array($cover_color, array('#FFFFFF', '#EBECEC')) ? theme_get_setting('logo') : theme_get_setting('footerlogo_image');
+    $sof_print_vars['page'] = theme('sof_pdf_generator_cover', array(
+      'title' => $node_view['field_pdf_title']['#items'][0]['value'],
+      'teaser' => $node_view['field_pdf_description']['#items'][0]['value'],
+      'logo' => file_create_url($logo_setting),
+      'color' => $cover_color,
+    ));
+    $cover_page = theme('sof_pdf_generator_main', $sof_print_vars);
+    $pdf->addCover($cover_page);
+
+    // Add table of contents.
+    $pdf->addToc(array(
+      'xsl-style-sheet' => drupal_get_path('module', 'sof_pdf_generator') . '/xml/sof_pdf_generator_toc_style.xml',
     ));
 
-    //Add a HTML file, a HTML string or a page from a URL
-    $pdf -> addPage($content_page);
+    // Content pages setup.
+    if (isset($node_view['field_pdf_content']['#items'])) {
+      foreach ($node_view['field_pdf_content']['#items'] as $key => $item) {
 
-    //Create fielname from url alias
-    $url_alias = drupal_lookup_path('alias', 'node/' . $node_view['#node'] -> nid);
-    $filename = end(explode('/', $url_alias)) . '.pdf';
+        $node_content[$key] = array();
 
-    //Send to client as file download
-    $pdf -> send($filename);
+        // Add image on top.
+        if ($item['entity']->field_image_slider) {
+          $node_content['image'] = theme('sof_pdf_top_image', array(
+            'image' => field_view_field('node', $item['entity'], 'field_image_slider', 'default'),
+          ));
+        }
+        else {
+          $node_content['image'] = FALSE;
+        }
 
-    /**
-     * HELPERS
-     *
-     * # Add page & cover posibilities
-     * $pdf->addPage('/home/joe/page.html');
-     * $pdf->addPage($html_var);
-     * $pdf->addPage('http://google.com');
-     *
-     * # File handle posibilities
-     * $pdf->saveAs('/tmp/new.pdf'); - Save the PDF
-     * $pdf->send(); - Send to client for inline display
-     * $pdf->send('test.pdf'); - Send to client as file download
-     */
+        // Add the rest of the fields.
+        $node_content['title'] = $item['entity']->title;
+        $node_content['teaser'] = field_view_field('node', $item['entity'], 'field_teaser', 'default');
+        $node_content['body'] = field_view_field('node', $item['entity'], 'body', 'default');
+
+        $sof_print_vars['page'] = theme('sof_pdf_generator_pages', array('content' => $node_content));
+        $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
+
+        $pdf->addPage($content_page);
+
+      }
+    }
+
+    // Create fielname from url alias.
+    $url_alias = drupal_lookup_path('alias', 'node/' . $node_view['#node']->nid);
+    $url_alias_array = explode('/', $url_alias);
+    $filename = end($url_alias_array) . '.pdf';
+
+    // Send to client as file download.
+    $pdf->send($filename);
 
   }
-
-  //Testing purposes
-  //print $cover_page;
-  //print $content_page;
 }

@@ -1,0 +1,5 @@
+The following patches has been applied:
+
+Thread:https://www.drupal.org/node/1431782
+Patch: commerce_coupon-installation_errors.patch
+Info: manually created and applied;

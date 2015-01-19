@@ -101,16 +101,6 @@ textarea {
   font-family: sans-serif;
 }
 
-/* =============================================================================
-    Links
-   ========================================================================== */
-/*
- * Addresses outline displayed oddly in Chrome
- */
-a:focus {
-  outline: none;
-}
-
 /*
  * Improves readability when focused and also mouse hovered in all browsers
  * people.opera.com/patrickl/experiments/keyboard/test
@@ -276,15 +266,6 @@ ul {
 
 dd {
   margin: 0 0 0 40px;
-}
-
-/*
- * Addresses paddings set differently in IE6/7
- */
-menu,
-ol,
-ul {
-  padding: 0 0 0 40px;
 }
 
 /*

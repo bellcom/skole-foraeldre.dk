@@ -4,6 +4,7 @@
  * @file
  * Implements hooks and globally accesible functions.
  *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
@@ -101,15 +102,22 @@ function _sof_footer_social_media_contents($delta) {
       $items = array();
 
       // Get follow social media links from follow module.
-      // @see follow.inc for more info.
+      // @see follow.inc
       $follow_uri = follow_links_load();
 
       // Facebook items.
+      $image = '<img src="' . $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png' . '"/>';
       $items['facebook'] = array(
-        'icon' => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/facebook-social-media.png',
+        'icon' => l($image, isset($follow_uri[FOLLOW_DOMAIN . '_facebook']->path) ? $follow_uri[FOLLOW_DOMAIN . '_facebook']->path : '#', array(
+          'external' => TRUE,
+          'html' => TRUE,
+          'attributes' => array(
+            'target' => '_blank',
+          ),
+        )),
         'title' => t('Facebook'),
         'description' => variable_get('sof_fsm_fb'),
-        'read_more' => l(t('Read more'), $follow_uri['facebook']->path, array(
+        'read_more' => l(t('Read more'), isset($follow_uri[FOLLOW_DOMAIN . '_facebook']->path) ? $follow_uri[FOLLOW_DOMAIN . '_facebook']->path : '#', array(
           'external' => TRUE,
           'attributes' => array(
             'target' => '_blank',
@@ -118,11 +126,18 @@ function _sof_footer_social_media_contents($delta) {
       );
 
       // Twitter items.
+      $image = '<img src="' . $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png' . '"/>';
       $items['twitter'] = array(
-        'icon' => $base_url . '/' . drupal_get_path('theme', variable_get('theme_default', NULL)) . '/css/images/twiiter-social-media.png',
+        'icon' => l($image, isset($follow_uri[FOLLOW_DOMAIN . '_twitter']->path) ? $follow_uri[FOLLOW_DOMAIN . '_twitter']->path : '#', array(
+          'external' => TRUE,
+          'html' => TRUE,
+          'attributes' => array(
+            'target' => '_blank',
+          ),
+        )),
         'title' => t('Twitter'),
         'description' => variable_get('sof_fsm_tw'),
-        'read_more' => l(t('Read more'), $follow_uri['twitter']->path, array(
+        'read_more' => l(t('Read more'), isset($follow_uri[FOLLOW_DOMAIN . '_twitter']->path) ? $follow_uri[FOLLOW_DOMAIN . '_twitter']->path : '#', array(
           'external' => TRUE,
           'attributes' => array(
             'target' => '_blank',

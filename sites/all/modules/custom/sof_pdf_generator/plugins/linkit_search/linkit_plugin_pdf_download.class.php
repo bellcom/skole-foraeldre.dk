@@ -1,22 +1,27 @@
 <?php
+
 /**
  * @file
- * Define Linkit node plugin class update for links to pdf files of the publication.
+ * Define Linkit node plugin class update.
+ * Ment for links to pdf files of the publication.
  */
- 
+
+/**
+ * Reprecents a Linkit node search plugin.
+ */
 class LinkitPluginPdfDownload extends LinkitSearchPluginNode {
-  
+
   /**
    * Overrides LinkitSearchPluginEntity::createLabel().
    */
-  function createLabel($entity) {
-    return  t('Download sample of: ') . entity_label($this->plugin['entity_type'], $entity);
+  private function createLabel($entity) {
+    return t('Download sample of:') . ' ' . entity_label($this->plugin['entity_type'], $entity);
   }
-  
+
   /**
    * Overrides LinkitSearchPluginEntity::createPath().
    */
-  function createPath($entity) {
+  public function createPath($entity) {
     // Create the URI for the entity.
     $uri = 'sof-pdf-generate/' . $entity->nid;
 
@@ -31,49 +36,50 @@ class LinkitPluginPdfDownload extends LinkitSearchPluginNode {
         $options['language'] = $languages[$entity->language];
       }
     }
-    
+
     // Process the uri with the insert pluing.
     $path = linkit_get_insert_plugin_processed_path($this->profile, $uri, $options);
-    
+
     return $path;
   }
-  
+
   /**
    * Overrides LinkitSearchPluginEntity::createGroup().
    */
-  function createGroup($entity) {
-      
+  public function createGroup($entity) {
+
     $group = t('SOF publication pdf');
-    
+
     return $group;
-    
+
   }
-  
+
   /**
    * Overrides LinkitSearchPluginEntity::getQueryInstance().
    */
-  function getQueryInstance() {
+  public function getQueryInstance() {
     // Call the parent getQueryInstance method.
     parent::getQueryInstance();
-    
-    //Specify publications only
+
+    // Specify publications only.
     $this->query->propertyCondition($this->entity_key_bundle, 'publication', '=');
-    
+
   }
-  
+
   /**
    * Overrides LinkitSearchPluginNode::buildSettingsForm().
    */
-  function buildSettingsForm() {
-      
+  public function buildSettingsForm() {
+
     // Get the parent settings form.
     $form = parent::buildSettingsForm();
-    
-    //Unset extra options for bundles since we are working with publications only
+
+    // Unset extra options for bundles.
+    // We are working with publications only.
     unset($form['sof_pdf_generator']['bundles']);
     unset($form['sof_pdf_generator']['group_by_bundle']);
-    
+
     return $form;
   }
-  
+
 }

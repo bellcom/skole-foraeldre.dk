@@ -170,7 +170,7 @@
 
           <<?php print $tag; ?> id="main-content">
 
-            <?php print render($title_prefix); // Does nothing by default in D7 core ?>
+            <?php print render($title_prefix);?>
 
             <!-- !Main Content Header -->
             <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
@@ -213,7 +213,7 @@
             <!-- !Feed Icons -->
             <?php print $feed_icons; ?>
 
-            <?php print render($title_suffix); // Prints page level contextual links ?>
+            <?php print render($title_suffix);?>
 
           </<?php print $tag; ?>><!-- /end #main-content -->
 
@@ -242,16 +242,12 @@
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">
-        	<div class="footer-logo">
-		        <?php if (theme_get_setting('slogo_path')): ?>
-	  				<img src="<?php print file_create_url(theme_get_setting('slogo_path')); ?>" />	
-				<?php else : ?>	
-					<img src="<?php print file_create_url($footer_logo); ?>" />	
-				<?php endif; ?>  
-			 </div>	
-	        <?php print render($page['footer']['block_1']); ?>
-	        <?php print render($page['footer']['block_2']); ?>
-	        <?php print $attribution; ?>
+          <div class="footer-logo">
+		    <img src="<?php print $footerlogo_image; ?>" /> 
+		  </div>	
+	      <?php print render($page['footer']['block_1']); ?>
+	      <?php print render($page['footer']['block_2']); ?>
+	      <?php print $attribution; ?>
 	     </div> 
       </footer>
     </div>

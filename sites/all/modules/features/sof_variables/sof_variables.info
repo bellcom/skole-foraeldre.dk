@@ -13,4 +13,5 @@ features[variable][] = i18n_string_source_language
 features[variable][] = jquery_update_jquery_admin_version
 features[variable][] = jquery_update_jquery_version
 features[variable][] = site_frontpage
-mtime = 1416481004
+features[variable][] = user_register
+mtime = 1418202505

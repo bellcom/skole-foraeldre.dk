@@ -1,8 +1,10 @@
 <?php
 /**
+ * @file
  * This is a copy of cores field.tpl.php modified to support HTML5. The main
  * difference to Drupal core is that field labels are treated like headings. In
- * the context of HTML5 we need to account for sectioning, so this template, like
+ * the context of HTML5 we need to account for sectioning, 
+ * so this template, like
  * is counterpart adaptivetheme_field() conditionally supplies the top level
  * element as either <section> (field label is showing) or <div> (field label
  * is hidden). "Hidden labels" is a misnomer and implies they are output and
@@ -37,7 +39,7 @@
  * - $image_caption_teaser: Boolean value to test for a theme setting.
  * - $image_caption_full: Boolean value to test for a theme setting.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
- *   TRUE for mobile.  Note that tablets are also considered mobile devices.  
+ *   TRUE for mobile.  Note that tablets are also considered mobile devices.
  *   Returns NULL if the feature could not be detected.
  * - $is_tablet: Mixed, requires the Mobile Detect to return TRUE for tablets.
  *   Returns NULL if the feature could not be detected.
@@ -91,17 +93,17 @@
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item) : ?>
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>>
-        <?php 
-            $nid = array_shift(array_keys($item['node']));
-            //Hide images on bottom
-            if($delta !== 0 ){
-                $item['node'][$nid]['field_image_slider']= FALSE;
+        <?php
+            $nid = key($item['node']);
+            // Hide images on bottom.
+            if($delta !== 0):
+                $item['node'][$nid]['field_image_slider'] = FALSE;
                 $item['node'][$nid]['field_image'] = FALSE;
-				$nodecustomlink = FALSE;
-				print render($item);
-            }
-        ?>  
-        <?php print render ($item['node'][$nid]['field_image_slider']); ?> 
+                $nodecustomlink = FALSE;
+                print render($item);
+            endif;
+        ?>
+        <?php print render($item['node'][$nid]['field_image_slider']); ?>
         <?php print $nodecustomlink; ?>
       </div>
     <?php endforeach; ?>

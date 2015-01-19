@@ -14,8 +14,10 @@
  * - $last_update: last updated date/time, formatted with time element and
  *   pubdate attribute.
  * - $custom_date_and_time: date time string used in $last_update.
- * - $header_attributes: attributes such as classes to apply to the header element.
- * - $footer_attributes: attributes such as classes to apply to the footer element.
+ * - $header_attributes:
+ *   attributes such as classes to apply to the header element.
+ * - $footer_attributes: 
+ *   attributes such as classes to apply to the footer element.
  * - $links_attributes: attributes such as classes to apply to the nav element.
  * - $is_mobile: Mixed, requires the Mobile Detect or Browscap module to return
  *   TRUE for mobile.  Note that tablets are also considered mobile devices.
@@ -106,39 +108,52 @@
  */
 hide($content['comments']);
 hide($content['links']);
+hide($content['product:commerce_price']);
+hide($content['product:field_sof_commerce_quantity']);
+hide($content['field_sof_commerce_product']);
 ?>
 <!-- Publication Main Container -->
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($title_prefix); ?>
   <!-- Publication Top Main Container -->
   <div class="publication-top-container">
-  	 <div class="publication-top-container-inner">
-  	 	 <!-- Left Content  -->
-  	 	 <div class="publication-top-left-container">
-	    	 <?php print render($content['field_image']); ?>
-	     </div>
-	     <!-- Right Content -->
-	     <div class="publication-top-right-container">
-		     <?php if ($title): ?>
-		        <h1<?php print $title_attributes; ?>>
-		          <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
-		          <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
-		        </h1>
-		     <?php endif; ?>
-		     <!-- Print rest of the content -->
-		     <?php print render($content); ?>
-		     <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
-	     </div>
+     <div class="publication-top-container-inner">
+        <!-- Left Content  -->
+        <div class="publication-top-left-container">
+         <?php print render($content['field_image']); ?>
+       </div>
+       <!-- Right Content -->
+       <div class="publication-top-right-container">
+         <?php if ($title): ?>
+            <h1<?php print $title_attributes; ?>>
+              <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
+              <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
+            </h1>
+         <?php endif; ?>
+         <!-- Print rest of the content -->
+         <?php print render($content); ?>
+         <!-- E-commerce part -->
+         <div class="publication-ecommerce-container">
+           <div class="publication-ecommerce-container-inner-product-info <?php if ($oneproduct): echo $oneproduct; endif; ?>">
+             <?php print render($content['field_sof_commerce_product']); ?>
+           </div>
+           <div class="publication-ecommerce-container-inner-product-qprice">
+             <?php print render($content['product:commerce_price']); ?>
+             <?php print render($content['product:field_sof_commerce_quantity']); ?>
+           </div>
+         </div>
+         <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
+       </div>
      </div>
   </div>
   <!-- Publication Bottom Main Container(View) -->
   <div class="publication-bottom-container">
-	 <!-- Read Also Content -->
-   	 <?php if ( $blockotherelease = block_load('views', 'other_releases-block')): ?>
-         <?php print render(_block_get_renderable_array(_block_render_blocks(array($blockotherelease)))); ?>
+   <!-- Read Also Content -->
+      <?php if ($blockotherelease): ?>
+         <?php print render($blockotherelease); ?>
      <?php endif; ?>
-      <!-- Read Also Articles --> 
-  </div> 
+      <!-- Read Also Articles -->
+  </div>
   <!-- Content Type Links -->
   <?php if ($links = render($content['links'])): ?>
     <nav<?php print $links_attributes; ?>><?php print $links; ?></nav>

@@ -41,6 +41,12 @@ function sof_general_tweaks_field_extra_fields() {
     'weight' => 4,
     'visible' => FALSE,
   );
+  $extra['node']['article']['display']['additional_bottom_nodes'] = array(
+    'label' => t('Additional bottom news'),
+    'description' => t('Renders latest 3 news'),
+    'weight' => 4,
+    'visible' => FALSE,
+  );
 
   // Recommended items deck.
   // Additional fild for additional latest news.
@@ -129,7 +135,8 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   // Render the node and strip all html tags from it.
   $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
 
-  // Add new field for drupal search.
+  // Add new fields for drupal search.
+  $document->addField('ts_node_teaser', $node->field_teaser[LANGUAGE_NONE][0]['safe_value']);
   $document->addField('ts_custom_text', $full_node_html);
 
   // Add domain info in the index.
@@ -161,13 +168,13 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $query) {
-  // Make ts_custom_text custom field searchable.
-  $query->addParam('fl', 'ts_custom_text');
 
   // Expose additional fields in the search result page.
+  $query->addParam('fl', 'ts_custom_text');
   $query->addParam('fl', 'im_field_category');
   $query->addParam('fl', 'im_field_category_publication');
   $query->addParam('fl', 'im_field_category_single');
+  $query->addParam('fl', 'ts_node_teaser');
   $query->addParam('fl', 'teaser');
 
   // Add domain key to filter all queries.
@@ -181,8 +188,9 @@ function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $q
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
-  // Add human readable name for our custom field.
+  // Add human readable name for our custom fields.
   $map['ts_custom_text'] = t('The full node object');
+  $map['ts_node_teaser'] = t('Node teaser field');
 }
 
 /**
@@ -222,7 +230,55 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
 
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
+
+      // Add custom validation to customer profile fields: telephone,
+      // postal_code, cvr, ean.
+      $shipping = $form['customer_profile_shipping'];
+      $billing = $form['customer_profile_billing'];
+      $form['customer_profile_billing']['field_sof_commerce_customer_tel'][$billing['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_cvr'][$billing['field_sof_commerce_customer_cvr']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_ean'][$billing['field_sof_commerce_customer_ean']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
+      $form['customer_profile_shipping']['field_sof_commerce_customer_tel'][$shipping['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
+      // Make the custom street number field required.
+      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+
       break;
+
+    case 'views_form_commerce_cart_form_sof_default':
+      $settings = array();
+      $commerce_line_items = field_get_items('commerce_order', $form_state['order'], 'commerce_line_items');
+
+      foreach ($commerce_line_items as $key => $item) {
+        $line_item = commerce_line_item_load($item['line_item_id']);
+
+        if (isset($line_item->commerce_product)) {
+          $commerce_product_id = field_get_items('commerce_line_item', $line_item, 'commerce_product');
+          $commerce_product = commerce_product_load($commerce_product_id[0]['product_id']);
+
+          $commerce_quantity = field_get_items('commerce_product', $commerce_product, 'field_sof_commerce_quantity');
+          if (is_array($commerce_quantity) && $commerce_quantity[0]['value'] > 1) {
+            $settings[$key] = $commerce_quantity[0]['value'];
+          }
+        }
+      }
+
+      $form['#attached']['js'] = array(
+        drupal_get_path('module', 'sof_general_tweaks') . '/js/sof_general_tweaks_commerce.js',
+      );
+      drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
+      break;
+
+    case 'article_node_form':
+    case 'news_node_form':
+      $form['field_related_terms']['#states'] = array(
+        'visible' => array('input[id="edit-field-set-rt-manually-und"]' => array('checked' => TRUE))
+      );
+
   }
 }
 
@@ -356,3 +412,183 @@ function sof_general_tweaks_cart_callback() {
 
   return $content;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sof_general_tweaks_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
+  $sof_quantity = field_get_items('commerce_product', $form_state['default_product'], 'field_sof_commerce_quantity');
+
+  if (is_array($sof_quantity) && $sof_quantity[0]['value'] > 1) {
+    $form['quantity']['#value'] = $sof_quantity[0]['value'];
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ *
+ * It is needed because of adding Street number field to the addressfield
+ * container.
+ */
+function sof_general_tweaks_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'addressfield') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Implements the commerce customer profile fields validation callback.
+ */
+function sof_general_tweaks_commerse_validation($element, &$form_state) {
+  $value = $element['#value'];
+
+  // Skip shipping fields validattion if the information will be copied from
+  // the billing profile.
+  $copy = $form_state['input']['customer_profile_shipping']['commerce_customer_profile_copy'];
+  if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
+    return;
+  }
+  // Validate postal_code to be a number with exactly 4 digits.
+  if (isset($element['#title'])) {
+    if ($element['#title'] == 'Postal code') {
+      if ($value && (!is_numeric($value) || drupal_strlen($value) != 4)) {
+        form_error($element, t('Fill Postal code.'));
+      }
+    }
+  }
+  if (isset($element['#field_name'])) {
+    switch ($element['#field_name']) {
+      // Validate phone to contain only digits, spaces and +.
+      case 'field_sof_commerce_customer_tel':
+        $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
+        if ($value && !preg_match($pattern, $value)) {
+          form_error($element, t('Fill Phone.'));
+        }
+        break;
+
+      // Validate cvr to be a number with exactly 8 digits.
+      case 'field_sof_commerce_customer_cvr':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) != 8)) {
+          form_error($element, t('Fill CVR Number.'));
+        }
+        break;
+
+      // Validate ean to be a number with exactly 13 digits.
+      case 'field_sof_commerce_customer_ean':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) != 13)) {
+          form_error($element, t('Fill EAN number.'));
+        }
+        break;
+    }
+  }
+}
+
+// -----------------------------------Stree Number functionality---------------.
+// Based on Address Field Phone module.
+
+/**
+ * Implements hook_field_attach_presave().
+ *
+ * Store additional address fields serialized in addressfield data column.
+ */
+function sof_general_tweaks_field_attach_presave($entity_type, $entity) {
+  $addressfields = sof_general_tweaks_addressfield_types();
+  foreach ($addressfields as $field_name) {
+    if (isset($entity->$field_name)) {
+      $default_fields = array_keys(addressfield_default_values());
+      $default_fields[] = 'element_key';
+      foreach ($entity->$field_name as $lang_code => $fields) {
+        foreach ($fields as $delta => $fieldset) {
+          $data = array();
+          foreach ($fieldset as $field_key => $field_value) {
+            // Compare fields with addressfield default fields and store any
+            // additional fields in data.
+            if (!in_array($field_key, $default_fields)) {
+              // Store additional field value.
+              $data[$field_key] = $field_value;
+            }
+          }
+          if (!empty($data)) {
+            $entity->{$field_name}[$lang_code][$delta]['data'] = serialize($data);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_attach_load().
+ *
+ * Load and set additional addressfield field values from serialized data
+ * column.
+ */
+function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $options) {
+  $addressfields = sof_general_tweaks_addressfield_types();
+  $elements = drupal_map_assoc(array(
+    'thoroughfare_street_number',
+    'premise_street_number',
+  ));
+
+  foreach ($entities as $entity) {
+    foreach ($addressfields as $field_name) {
+      if (empty($entity->{$field_name})) {
+        continue;
+      }
+
+      foreach ($entity->$field_name as $lang_code => $fields) {
+        foreach ($fields as $delta => $fieldset) {
+          if (!empty($fieldset['data'])) {
+            // Unserialize data, else skip if string.
+            if (($data = unserialize($fieldset['data'])) && is_array($data)) {
+              // Store unserialized data values in additional fields.
+              $phone_data = array_intersect_key($data, $elements);
+              $entity->{$field_name}[$lang_code][$delta] = array_merge($fieldset, $phone_data);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Returns an array of the field names of any addressfields.
+ */
+function sof_general_tweaks_addressfield_types() {
+  if (!isset($addressfields)) {
+    static $addressfields;
+    $result = db_query("SELECT field_name FROM {field_config} WHERE type = 'addressfield'");
+    $addressfields = array();
+    foreach ($result as $row) {
+      $addressfields[] = $row->field_name;
+    }
+  }
+  return $addressfields;
+}
+
+/**
+ * Implemens render callback for the street number fields.
+ */
+function addressfield_street_number_render($format) {
+  $address = $format['#address'];
+
+  $format['thoroughfare_street_number'] = array(
+    '#title' => t('Street Number'),
+    '#children' => check_plain($address['thoroughfare_street_number']),
+    '#attributes' => array('class' => array('thoroughfare-street-number')),
+    '#type' => 'addressfield_container',
+    '#tag' => 'span',
+  );
+
+  $format['premise_street_number'] = array(
+    '#title' => t('Street Number'),
+    '#children' => check_plain($address['premise_street_number']),
+    '#attributes' => array('class' => array('premise-street-number')),
+    '#type' => 'addressfield_container',
+    '#tag' => 'span',
+  );
+
+  return $format;
+}
+// --------------------------End Street Number functionality-------------------.

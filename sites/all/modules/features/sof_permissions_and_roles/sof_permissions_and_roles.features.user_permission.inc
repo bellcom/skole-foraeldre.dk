@@ -83,6 +83,15 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access contextual links'.
+  $permissions['access contextual links'] = array(
+    'name' => 'access contextual links',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'contextual',
+  );
+
   // Exported permission: 'access dashboard'.
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
@@ -130,6 +139,15 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'domain',
   );
 
+  // Exported permission: 'access mailchimp signup pages'.
+  $permissions['access mailchimp signup pages'] = array(
+    'name' => 'access mailchimp signup pages',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_signup',
+  );
+
   // Exported permission: 'access media browser'.
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
@@ -161,6 +179,15 @@ function sof_permissions_and_roles_user_default_permissions() {
       'site editor' => 'site editor',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'access rules debug'.
+  $permissions['access rules debug'] = array(
+    'name' => 'access rules debug',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'access site in maintenance mode'.
@@ -326,6 +353,15 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer dependencies'.
+  $permissions['administer dependencies'] = array(
+    'name' => 'administer dependencies',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'conditional_fields',
+  );
+
   // Exported permission: 'administer domains'.
   $permissions['administer domains'] = array(
     'name' => 'administer domains',
@@ -403,8 +439,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer files',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -472,6 +506,33 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'linkit',
   );
 
+  // Exported permission: 'administer mailchimp'.
+  $permissions['administer mailchimp'] = array(
+    'name' => 'administer mailchimp',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp',
+  );
+
+  // Exported permission: 'administer mailchimp signup entities'.
+  $permissions['administer mailchimp signup entities'] = array(
+    'name' => 'administer mailchimp signup entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailchimp_signup',
+  );
+
+  // Exported permission: 'administer mailsystem'.
+  $permissions['administer mailsystem'] = array(
+    'name' => 'administer mailsystem',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mailsystem',
+  );
+
   // Exported permission: 'administer media browser'.
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
@@ -490,6 +551,26 @@ function sof_permissions_and_roles_user_default_permissions() {
       'site editor' => 'site editor',
     ),
     'module' => 'menu',
+  );
+
+  // Exported permission: 'administer menus per domain'.
+  $permissions['administer menus per domain'] = array(
+    'name' => 'administer menus per domain',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'domain_menu_access',
+  );
+
+  // Exported permission: 'administer message types'.
+  $permissions['administer message types'] = array(
+    'name' => 'administer message types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'message',
   );
 
   // Exported permission: 'administer meta tags'.
@@ -524,8 +605,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -656,6 +735,15 @@ function sof_permissions_and_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'redirect',
+  );
+
+  // Exported permission: 'administer rules'.
+  $permissions['administer rules'] = array(
+    'name' => 'administer rules',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'administer scheduler'.
@@ -793,6 +881,15 @@ function sof_permissions_and_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'bypass rules access'.
+  $permissions['bypass rules access'] = array(
+    'name' => 'bypass rules access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'cancel account'.
@@ -1016,6 +1113,15 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'create messages'.
+  $permissions['create messages'] = array(
+    'name' => 'create messages',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'message',
+  );
+
   // Exported permission: 'create news content'.
   $permissions['create news content'] = array(
     'name' => 'create news content',
@@ -1161,6 +1267,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1170,6 +1278,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1188,6 +1298,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any basic_page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1197,6 +1309,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1206,6 +1320,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1215,6 +1331,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any news content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1224,6 +1342,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1233,6 +1353,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any section content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1242,6 +1364,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any slider content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1251,6 +1375,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1260,6 +1386,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1269,6 +1397,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete article content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1278,6 +1408,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete basic_page content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1287,6 +1419,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete domain content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1417,6 +1551,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete news content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1558,6 +1694,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete publication content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1578,6 +1716,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete section content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1587,6 +1727,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete slider content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1649,6 +1791,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete webform content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -1757,6 +1901,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1766,6 +1912,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1786,6 +1934,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any basic_page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1795,6 +1945,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1804,6 +1956,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1813,6 +1967,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any news content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1822,6 +1978,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1831,6 +1989,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any section content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1840,6 +2000,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any slider content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1858,6 +2020,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -1867,6 +2031,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1885,6 +2051,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit domain content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2019,6 +2187,16 @@ function sof_permissions_and_roles_user_default_permissions() {
       'site editor' => 'site editor',
     ),
     'module' => 'metatag',
+  );
+
+  // Exported permission: 'edit mimemail user settings'.
+  $permissions['edit mimemail user settings'] = array(
+    'name' => 'edit mimemail user settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'mimemail',
   );
 
   // Exported permission: 'edit own article content'.
@@ -2370,6 +2548,15 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'send arbitrary files'.
+  $permissions['send arbitrary files'] = array(
+    'name' => 'send arbitrary files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mimemail',
+  );
+
   // Exported permission: 'set domain access'.
   $permissions['set domain access'] = array(
     'name' => 'set domain access',
@@ -2473,6 +2660,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update article content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2482,6 +2671,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update basic_page content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2491,6 +2682,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update news content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2500,6 +2693,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update publication content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2509,6 +2704,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update section content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2518,6 +2715,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update slider content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2527,6 +2726,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'update webform content on assigned domains',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'domain',
   );
@@ -2605,6 +2806,13 @@ function sof_permissions_and_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'panels',
+  );
+
+  // Exported permission: 'use text format commerce_order_message'.
+  $permissions['use text format commerce_order_message'] = array(
+    'name' => 'use text format commerce_order_message',
+    'roles' => array(),
+    'module' => 'filter',
   );
 
   // Exported permission: 'use text format full_html'.

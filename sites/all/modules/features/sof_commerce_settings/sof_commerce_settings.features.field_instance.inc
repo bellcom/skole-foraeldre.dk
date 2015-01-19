@@ -18,11 +18,12 @@ function sof_commerce_settings_field_default_field_instances() {
         'element_key' => 'commerce_customer_profile|billing|commerce_customer_address|und|0',
         'thoroughfare' => '',
         'premise' => '',
+        'thoroughfare_street_number' => '',
+        'premise_street_number' => '',
         'postal_code' => '',
         'locality' => '',
         'country' => 'DK',
-        'first_name' => '',
-        'last_name' => '',
+        'name_line' => '',
       ),
     ),
     'deleted' => 0,
@@ -87,10 +88,11 @@ function sof_commerce_settings_field_default_field_instances() {
         ),
         'format_handlers' => array(
           'address' => 'address',
-          'name-oneline' => 'name-oneline',
+          'name-full' => 'name-full',
+          'addressfield_street_number' => 'addressfield_street_number',
           'address-hide-country' => 0,
           'organisation' => 0,
-          'name-full' => 0,
+          'name-oneline' => 0,
         ),
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
@@ -450,11 +452,12 @@ function sof_commerce_settings_field_default_field_instances() {
         'element_key' => 'commerce_customer_profile|shipping|commerce_customer_address|und|0',
         'thoroughfare' => '',
         'premise' => '',
+        'thoroughfare_street_number' => '',
+        'premise_street_number' => '',
         'postal_code' => '',
         'locality' => '',
         'country' => 'DK',
-        'first_name' => '',
-        'last_name' => '',
+        'name_line' => '',
       ),
     ),
     'deleted' => 0,
@@ -519,10 +522,11 @@ function sof_commerce_settings_field_default_field_instances() {
         ),
         'format_handlers' => array(
           'address' => 'address',
-          'name-oneline' => 'name-oneline',
+          'name-full' => 'name-full',
+          'addressfield_street_number' => 'addressfield_street_number',
           'address-hide-country' => 0,
           'organisation' => 0,
-          'name-full' => 0,
+          'name-oneline' => 0,
         ),
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
@@ -710,7 +714,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'commerce_price',
         'settings' => array(
           'calculation' => 0,
@@ -718,7 +722,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'diff_standard' => array(
         'label' => 'hidden',
@@ -778,15 +782,17 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_product',
     'field_name' => 'commerce_price',
-    'label' => 'Price',
-    'required' => TRUE,
+    'label' => 'Item Price',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'commerce_price',
       'settings' => array(
         'currency_code' => 'default',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'commerce_price_full',
       'weight' => 5,
@@ -814,7 +820,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -877,7 +883,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -915,6 +921,72 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_product-product-field_sof_commerce_quantity'
+  $field_instances['commerce_product-product-field_sof_commerce_quantity'] = array(
+    'bundle' => 'product',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_sof_commerce_quantity',
+    'label' => 'Min Quantity',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'commerce_product-product-field_sof_commerce_type'
   $field_instances['commerce_product-product-field_sof_commerce_type'] = array(
     'bundle' => 'product',
@@ -941,7 +1013,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -971,6 +1043,62 @@ function sof_commerce_settings_field_default_field_instances() {
       ),
       'type' => 'options_buttons',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-product-field_sof_commerce_weight'
+  $field_instances['commerce_product-product-field_sof_commerce_weight'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'physical',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'physical_weight_formatted',
+        'weight' => 7,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_sof_commerce_weight',
+    'label' => 'Single product weight',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'physical',
+      'settings' => array(
+        'default_unit' => 'kg',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'unit_select_list' => 0,
+      ),
+      'type' => 'physical_weight_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -1091,10 +1219,12 @@ function sof_commerce_settings_field_default_field_instances() {
   t('Email');
   t('Firm');
   t('Institution name');
+  t('Item Price');
+  t('Min Quantity');
   t('Note');
   t('Pdf');
-  t('Price');
   t('SOF message order');
+  t('Single product weight');
   t('Telephone');
   t('Type');
 

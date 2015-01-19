@@ -33,15 +33,15 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['ui_name'] = 'Date';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['ui_name'] = 'Date';
+  $handler->display->display_options['fields']['changed']['label'] = '';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.m.y';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'sof_custom';
   /* Field: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -69,11 +69,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -257,12 +257,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   /* Field: Image */
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['id'] = 'sm_thumb_article_top_slider_field_image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['table'] = 'apachesolr__solr';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['field'] = 'sm_thumb_article_top_slider_field_image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['ui_name'] = 'Image';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['label'] = '';
-  $handler->display->display_options['fields']['sm_thumb_article_top_slider_field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['id'] = 'sm_thumb_publication_related_field_image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['field'] = 'sm_thumb_publication_related_field_image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['ui_name'] = 'Image';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['label'] = '';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['element_label_colon'] = FALSE;
   /* Field: Title */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'apachesolr__solr';
@@ -273,14 +275,16 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
   /* Field: Teaser */
-  $handler->display->display_options['fields']['teaser']['id'] = 'teaser';
-  $handler->display->display_options['fields']['teaser']['table'] = 'apachesolr__solr';
-  $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
-  $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
-  $handler->display->display_options['fields']['teaser']['label'] = '';
-  $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
-  $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ts_node_teaser']['id'] = 'ts_node_teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ts_node_teaser']['field'] = 'ts_node_teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['ui_name'] = 'Teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['label'] = '';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['ts_node_teaser']['element_label_colon'] = FALSE;
   /* Sort criterion: Apache Solr: ds_changed */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
@@ -506,10 +510,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Global: Random */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sort criterion: Content revision: Updated date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'node_revision';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -912,11 +917,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
@@ -934,6 +939,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

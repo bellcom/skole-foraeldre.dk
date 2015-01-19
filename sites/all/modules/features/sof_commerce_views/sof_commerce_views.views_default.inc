@@ -127,6 +127,7 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['fields']['edit_quantity']['label'] = 'Quantity';
   $handler->display->display_options['fields']['edit_quantity']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['edit_quantity']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['edit_quantity']['element_class'] = 'sof-commerce-quantity';
   $handler->display->display_options['fields']['edit_quantity']['element_label_colon'] = FALSE;
   /* Field: Commerce Line Item: Delete button */
   $handler->display->display_options['fields']['edit_delete']['id'] = 'edit_delete';
@@ -469,7 +470,7 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Empty';
+  $handler->display->display_options['empty']['area']['content'] = '0 items';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* No results behavior: Commerce Line Item: Line item summary */
   $handler->display->display_options['empty']['line_item_summary']['id'] = 'line_item_summary';

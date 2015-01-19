@@ -163,9 +163,9 @@ function sof_views_references_views_default_views() {
     0 => 'node:field_related_article:article',
   );
 
-  /* Display: Reference dialog news */
-  $handler = $view->new_display('references_dialog', 'Reference dialog news', 'references_dialog_news');
-  $handler->display->display_options['display_description'] = 'This display is used for refferencing nodes of type news';
+  /* Display: Reference dialog news deck */
+  $handler = $view->new_display('references_dialog', 'Reference dialog news deck', 'references_dialog_news');
+  $handler->display->display_options['display_description'] = 'This display is used for refferencing nodes of type news/artciles on the news deck';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -200,6 +200,7 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
     'news' => 'news',
   );
   /* Filter criterion: Content: Title */
@@ -389,6 +390,8 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_pdf_content:publication',
     1 => 'fieldable_panels_pane:field_related_article_news:also_see_pane',
+    2 => 'node:field_related_terms:article',
+    3 => 'node:field_related_terms:news',
   );
   $export['reference_dialog_article'] = $view;
 
