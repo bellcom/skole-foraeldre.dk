@@ -23,7 +23,7 @@ function sof_text_formats_ckeditor_profile_defaults() {
     [\'Format\'],
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Blockquote\'],
-    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'Link\',\'Unlink\']
+    [\'-\',\'Link\',\'Unlink\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -107,9 +107,8 @@ function sof_text_formats_ckeditor_profile_defaults() {
     \'/\',
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Blockquote\'],
-    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'-\'],
+    [\'-\'],
     [\'linkit\',\'Unlink\'],
-    
     \'/\',
     [\'Format\'],
     [\'TextColor\',\'BGColor\'],
