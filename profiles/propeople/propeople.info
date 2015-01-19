@@ -121,6 +121,7 @@ dependencies[] = email
 dependencies[] = rules
 dependencies[] = inline_entity_form
 dependencies[] = physical
+dependencies[] = admin_views
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
