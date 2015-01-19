@@ -1,3 +1,155 @@
+7.x-1.8. 19-01-2015
+--------------------
+* ea57e62 - (HEAD, origin/dev, dev) SOF-224 Updated the Text formats. Committed by Lachezar Valchev at 2015-01-19 13:46:16 +0200
+* ba98bb0 - SOF-220 Added the Admin View module to the installation profile. Committed by Lachezar Valchev at 2015-01-19 13:30:00 +0200
+* b82f069 - SOF-220 Added the Admin View module. Committed by Lachezar Valchev at 2015-01-19 13:29:04 +0200
+* b3bff30 - SOF-92 - Publication listing view teaser changed to use custom teaser field Committed by Goce at 2015-01-16 15:14:39 +0100
+* a204d9b - SOF-92 - Index teaser field as custom field Committed by Goce at 2015-01-16 14:45:04 +0100
+* 79bbc7d - SOF-180  Footer design adjustments Committed by rkoteska at 2015-01-16 22:42:01 +1000
+* 9cc45f3 - SOF-29 - Section pages without categories will list all articles and news by default Committed by Goce at 2015-01-16 12:46:04 +0100
+* 4c1c5e9 - SOF-138 - Updated roles and permissions for nodes and files controll Committed by Goce at 2015-01-16 10:40:08 +0100
+* 888c0f9 - SOF-211 - Updated functionallity for manually setting the related terms on the articles/news Committed by Goce at 2015-01-16 10:14:52 +0100
+* 5eb81b7 - SOF-221 Changeable background image (Magazine deck) FE Committed by rkoteska at 2015-01-16 18:13:47 +1000
+* c022da3 - SOF-210 - Update background image to be managable Committed by Goce at 2015-01-15 13:17:46 +0100
+* f4e303b - SOF-216 - fix shipping validation and update custom street number field. Committed by martina at 2015-01-15 11:41:05 +0200
+* 30c211e - SOF-138 - Enabled file multi upload fixes actions(edit,delete,download) in Thumbnails Plus content view Committed by Goce at 2015-01-15 10:25:28 +0100
+* 48d2839 - SOF-138 - Edotor/Site Editor permissions for update/edit files and nodes Committed by Goce at 2015-01-15 09:37:58 +0100
+* 4f77bef - SOF-216 - implements street number field to addressfield container and validation for all needed fields. Committed by martina at 2015-01-14 18:10:33 +0200
+* 30e29bb - SOF-207  Top Navigation links should be aligned with main menu links in mobile menu Committed by rkoteska at 2015-01-14 19:18:55 +1000
+* c62e446 - SOF-207  Top Navigation links should be aligned with main menu links in mobile menu Committed by rkoteska at 2015-01-14 19:07:47 +1000
+* 1cbb864 - SOF-168  Make the search icon in the menu to lead to search page Committed by rkoteska at 2015-01-13 23:26:31 +1000
+* c5bfd88 - SOF-168  Make the search icon in the menu to lead to search page Committed by rkoteska at 2015-01-13 23:00:50 +1000
+* efa26b0 - SOF-168  Make the search icon in the menu to lead to search page Committed by rkoteska at 2015-01-13 22:54:27 +1000
+* 759f026 - SOF-199  Vertical line height should be aligned with the last item Committed by rkoteska at 2015-01-13 20:27:50 +1000
+* 314c22e - SOF-200  Reduce the space between items Committed by rkoteska at 2015-01-13 19:58:42 +1000
+* 402c6fd - SOF-151  FE-28: E-commerce template -styling add to cart options Committed by rkoteska at 2015-01-13 18:08:39 +1000
+* b070cde - SOF-151  FE-28: E-commerce template -styling add to cart options Committed by rkoteska at 2015-01-13 00:46:47 +1000
+* 10ca49b - SOF-151  FE-28: E-commerce template -styling add to cart options Committed by rkoteska at 2015-01-13 00:00:22 +1000
+* aaf6291 - SOF-151  FE-28: E-commerce template -styling add to cart options Committed by rkoteska at 2015-01-12 23:31:03 +1000
+* c847429 - SOF-151  FE-28: E-commerce template -styling add to cart options Committed by rkoteska at 2015-01-12 22:33:03 +1000
+* 2240b4b - SOF-183  Make the whole button a link for Publication content type Committed by rkoteska at 2015-01-09 21:17:03 +1000
+* 15289c9 - SOF-151 FE-28: E-commerce template Committed by rkoteska at 2015-01-09 20:52:32 +1000
+* 7abecfd - SOF-92 - Three dots at the end of the search page result tease Committed by Goce at 2015-01-09 11:33:18 +0100
+* 1f5e84e - SOF-159  Selected node teaser text not cut - removing height Committed by rkoteska at 2015-01-09 19:56:13 +1000
+* fd1bdfb - SOF-22  Theming setup - Adding more advanced settings for footer logo Committed by rkoteska at 2015-01-09 19:34:23 +1000
+* f9cd098 - SOF-14 - Updated logo testing for different colours on the cover page Committed by Goce at 2015-01-08 15:35:00 +0100
+* 1861e3f - SOF-159 Selected node teaser text not cut Committed by rkoteska at 2015-01-08 23:49:25 +1000
+* 0cd61a9 - SOF-160 Follow us text not centered -removing margin bottom from social icons Committed by rkoteska at 2015-01-08 23:33:38 +1000
+* b4b9f98 - SOF-22  Theming setup - Adding default footer logo if admin has not uploaded it in Theme Settings Committed by rkoteska at 2015-01-08 23:18:18 +1000
+* 5b5f4cb - SOF-88 - Update css for social media links Committed by Goce at 2015-01-05 14:37:52 +0100
+* bec7c12 - SOF-14 - Updated module logic, better columns splitting and resolution issues fixed Committed by Goce at 2015-01-05 13:49:56 +0100
+* 24438e6 - SOF-12  Scripts research and testing - changing files to Drupal coding standards Committed by rkoteska at 2014-12-30 21:23:44 +1000
+* 43ec821 - SOF-12  Scripts research and testing - making changes to files according to Drupal coding standards Committed by rkoteska at 2014-12-27 00:02:09 +1000
+* 2d1b553 - SOF-184  Some symbols are not properly displayed Committed by rkoteska at 2014-12-26 21:00:00 +1000
+* f961683 - SOF-161  Add 3 dots at the end when the teaser text is cut Committed by rkoteska at 2014-12-26 17:46:13 +1000
+* 9f5215b - SOF-71 - Strict warning fix on devbox Committed by Goce at 2014-12-25 10:39:26 +0100
+* 653b30c - SOF-11  Research on modules, functionalities & scripts - customizing css file according to Drupal coding standards Committed by rkoteska at 2014-12-25 19:10:39 +1000
+* 370157f - SOF-94 - Update links to publication page Committed by Goce at 2014-12-25 09:43:46 +0100
+* 6f27e27 - SOF-138 - Text formats reorder, commerce comment format issue on body field Committed by Goce at 2014-12-25 09:03:26 +0100
+* d126040 - SOF-11  Research on modules, functionalities & scripts - customizing pdf generator css file according to Drupal coding standards Committed by rkoteska at 2014-12-25 17:54:49 +1000
+* 7ed7719 - SOF-11  Research on modules, functionalities & scripts  - Making changes to css files according to Drupal coding standards Committed by rkoteska at 2014-12-25 00:32:02 +1000
+* 69019bf - SOF-11  Research on modules, functionalities & scripts  - Making changes to css files according to Drupal coding standards Committed by rkoteska at 2014-12-24 22:39:32 +1000
+* 9f828e2 - SOF-14 - Encoding to UTF-8 Committed by Goce at 2014-12-23 15:25:36 +0100
+* 862b4ec - SOF-14 - UTF8 Issue Committed by Goce at 2014-12-23 15:00:40 +0100
+* ac87ee8 - SOF-14 - TOC style grom external xls + header and footer options updated Committed by Goce at 2014-12-23 14:50:23 +0100
+* 97dff8c - SOF-11  Research on modules, functionalities & scripts - removing SASS folder because is not used for styling Committed by rkoteska at 2014-12-23 20:35:31 +1000
+* a0d6f0b - SOF-11  Research on modules, functionalities & scripts  - making changes to custom.js file according to Drupal coding standards Committed by rkoteska at 2014-12-23 20:32:31 +1000
+* 32ae18b - SOF-14 - Coding standards updated Committed by Goce at 2014-12-23 10:09:27 +0100
+* 33c11b5 - SOF-11  Research on modules, functionalities & scripts  - making changes to template.php file according to Drupal standards Committed by rkoteska at 2014-12-23 19:06:43 +1000
+* f5b8887 - SOF-14 - Styling update for H tags and padding to ul,ol lists Committed by Goce at 2014-12-23 09:52:47 +0100
+* c3adf3f - SOF-14 - Update font size Committed by Goce at 2014-12-23 09:48:20 +0100
+* bece534 - SOF-14 - Updated styling of the generated copy Committed by Goce at 2014-12-23 09:17:42 +0100
+* c3d412a - SOF-14 - Font issue fix + coding standards updated Committed by Goce at 2014-12-22 15:57:06 +0100
+* 0a24c79 - SOF-167 Make top and bottom whitespace of Banner deck the same Committed by rkoteska at 2014-12-22 22:46:07 +1000
+* 2652fad - SOF-88 - Icons to links Committed by Goce at 2014-12-22 12:40:34 +0100
+* 58ad13a - SOF-22  Theming setup - small changes to footer styling Committed by rkoteska at 2014-12-22 21:12:58 +1000
+* 1600af6 - SOF-186 Logo not displayed properly in Publication PDF - adding footer logo Committed by rkoteska at 2014-12-22 21:07:01 +1000
+* 44049dd - SOF-74 - Toolbox search php warning. Known array rendering issue Committed by Goce at 2014-12-22 11:57:47 +0100
+* 581636d - SOF-10 - Coder module added Committed by Goce at 2014-12-22 11:54:02 +0100
+* 003c7cd - SOF-180 Footer design adjustments Committed by rkoteska at 2014-12-22 19:49:23 +1000
+* cad646d - SOF-166 Remove top margin from footer social region Committed by rkoteska at 2014-12-22 19:43:46 +1000
+* 6cff33e - SOF-182  Styling adjustments - adding styling adjustments Committed by rkoteska at 2014-12-22 19:38:06 +1000
+* f97e825 - SOF-151  FE-28: E-commerce template - coupon styling Committed by rkoteska at 2014-12-22 19:06:24 +1000
+* 03a2ab9 - SOF-102 - creating default shipping services, exporting the shipping rules. Committed by martina at 2014-12-18 09:33:35 +0200
+* fad5f2a - SOF-102 - remove dumps from the contrib module; commited by mistake. Committed by martina at 2014-12-17 18:06:21 +0200
+* 295f9c2 - SOF-102 - adding physical modules for product weight, flat rate for shipping, exporting features. Committed by martina at 2014-12-17 11:51:06 +0200
+* 0609453 - SOF-102 - implement update hook which to clean the db from commerce coupon; adding patach to the commerce coupon module. Committed by martina at 2014-12-16 17:26:28 +0200
+* a92a569 - SOF-178  Hover effect for node titles missing Committed by rkoteska at 2014-12-17 01:02:30 +1000
+* 9d4af54 - SOF-98  Global Search - FrontEnd - changing font-size of teaser Committed by rkoteska at 2014-12-17 00:57:50 +1000
+* 2db4035 - SOF-151  E-commerce template - styling responsive Committed by rkoteska at 2014-12-16 23:49:41 +1000
+* 029d46b - SOF-151  E-commerce template - styling responsive Committed by rkoteska at 2014-12-16 23:43:59 +1000
+* 04b6595 - SOF-151  E-commerce template - styling responsive Committed by rkoteska at 2014-12-16 23:34:24 +1000
+* 2714d0b - SOF-151  E-commerce template - styling responsive Committed by rkoteska at 2014-12-16 23:21:58 +1000
+* cf8cc20 - SOF-91  Top Navigation - FrontEnd - adding new images for mobile and customizing script for Iphone Committed by rkoteska at 2014-12-16 21:55:03 +1000
+* 328b79b - SOF-91  Top Navigation - FrontEnd - adding new images for mobile and customizing script for Iphone Committed by rkoteska at 2014-12-16 21:49:43 +1000
+* 200b107 - SOF-91  Top Navigation - FrontEnd - adding new images for mobile and customizing script for Iphone Committed by rkoteska at 2014-12-16 21:34:15 +1000
+* 4260b69 - SOF-91  Top Navigation - FrontEnd - adding new images for mobile and customizing script for Iphone Committed by rkoteska at 2014-12-16 21:28:46 +1000
+* 1873a73 - SOF-24 - Update default follow links on install Committed by Goce at 2014-12-16 12:19:22 +0100
+* 328a6f7 - SOF-24 - Update default follow links on install Committed by Goce at 2014-12-16 11:51:19 +0100
+* 66dcb95 - SOF-24 - Follow module patch rebuild, bugfix for undefined site name Committed by Goce at 2014-12-16 11:47:15 +0100
+* 8f2e252 - SOF-157  Read more link not styled correctly Committed by rkoteska at 2014-12-16 20:08:56 +1000
+* fe5d769 - SOF-81  Magazine Deck - FrontEnd - wrapping script adding new options Committed by rkoteska at 2014-12-16 19:52:02 +1000
+* e951a4b - SOF-157 Read more link not styled correctly Committed by rkoteska at 2014-12-16 19:48:19 +1000
+* 1f2e4b7 - SOF-53 - Wrapping issue for bad listing Committed by Goce at 2014-12-16 10:30:25 +0100
+* b9b4603 - SOF-102 - because of problems with commerce coupon modules we do not want to enable them for now. Committed by martina at 2014-12-16 10:19:06 +0200
+* ef18666 - SOF-102 - remove coupon from commerce settings. Committed by martina at 2014-12-15 16:06:02 +0200
+* a7dc0a2 - SOF-102 - remove coupon from commerce settings. Committed by martina at 2014-12-15 16:02:00 +0200
+* f94322d - SOF-102 - removing coupon settings from the feature. Committed by martina at 2014-12-15 15:35:40 +0200
+* fba2870 - SOF-157  Read more link not styled correctly Committed by rkoteska at 2014-12-15 23:15:07 +1000
+* dbc27c5 - SOF-158  Last item should not have vertical line Committed by rkoteska at 2014-12-15 23:11:44 +1000
+* dd3fd53 - SOf-159  Selected node teaser text not cut Committed by rkoteska at 2014-12-15 23:09:42 +1000
+* de7c1fd - SOF-102 - add coupon module to the profile info. Committed by martina at 2014-12-15 15:05:24 +0200
+* 1836f56 - SOF-160 Follow us text not centered Committed by rkoteska at 2014-12-15 22:55:25 +1000
+* 95f8817 - OF-91 Top Navigation - jquery script Committed by rkoteska at 2014-12-15 22:38:59 +1000
+* cc59d0d - SOF-102 - adding coupon modules and exporting their settings. Committed by martina at 2014-12-15 14:20:50 +0200
+* 6b49d7c - SOF-57 - Update title not rendering Committed by Goce at 2014-12-15 13:09:28 +0100
+* cc53e64 - SOF-72 - Additional image formatter(reusable), deck reference article fix, article additional display Committed by Goce at 2014-12-15 12:49:03 +0100
+* 301a593 - SOF-102 - commit product quantity functionality, change vat settings. Committed by martina at 2014-12-15 13:39:25 +0200
+* 2256b47 - SOF-91 Top Navigation - FrontEnd styling e-commerce button Committed by rkoteska at 2014-12-15 20:55:04 +1000
+* 676aa6e - SOF-91 Top Navigation - FrontEnd styling e-commerce button Committed by rkoteska at 2014-12-15 20:30:33 +1000
+* a700885 - SOF-91 Top Navigation - FrontEnd styling e-commerce button Committed by rkoteska at 2014-12-15 19:31:18 +1000
+* 56fd8b7 - SOF-57 - Bottom 3 nodes updated date shown Committed by Goce at 2014-12-15 09:53:29 +0100
+* dd4d167 - SOF-67 - 2nd an 3rd column change random order to latest updated Committed by Goce at 2014-12-15 09:20:18 +0100
+* 5aa3f03 - SOf-151  FE-28: E-commerce template -styling orders page Committed by rkoteska at 2014-12-13 00:54:29 +1000
+* 606c92a - SOf-151  FE-28: E-commerce template -styling orders page Committed by rkoteska at 2014-12-13 00:47:16 +1000
+* 0c1f9f6 - SOf-151  FE-28: E-commerce template -styling review order page-responsive styling Committed by rkoteska at 2014-12-12 23:50:17 +1000
+* 1bea2e9 - SOF-24 - Update install profile for default follow links and default domain name Committed by Goce at 2014-12-12 14:41:42 +0100
+* be7ca11 - SOF-24 - Domain access menu module enable Committed by Goce at 2014-12-12 14:40:49 +0100
+* 4d6e321 - SOf-151  FE-28: E-commerce template -styling review order page Committed by rkoteska at 2014-12-12 23:36:57 +1000
+* b5f40f3 - SOf-151  FE-28: E-commerce template -styling review order page Committed by rkoteska at 2014-12-12 23:17:26 +1000
+* 37144d3 - SOF-24 - Follow module patch updated for link title issue Committed by Goce at 2014-12-12 14:06:13 +0100
+* bae9bd2 - SOF-24 - Setup global domain on istall + follow links from default domain Committed by Goce at 2014-12-12 13:49:19 +0100
+* 89dd088 - SOF-151  FE-28: E-commerce template - styling review page Committed by rkoteska at 2014-12-12 22:09:48 +1000
+* 6c726fc - SOF-151  FE-28: E-commerce template - styling review page Committed by rkoteska at 2014-12-12 21:55:27 +1000
+* a13bdcf - SOF-151  FE-28: E-commerce template - styling review page Committed by rkoteska at 2014-12-12 21:16:55 +1000
+* 7aa0b73 - SOF-151  FE-28: E-commerce template-styling shipping page Committed by rkoteska at 2014-12-12 20:52:00 +1000
+* 7a8d8bf - SOF-24 - Follow module patch for multidomain + footer social media block domain controll Committed by Goce at 2014-12-12 11:13:40 +0100
+* 5936215 - SOF-151  FE-28: E-commerce template-styling cart, popup, chechkout Committed by rkoteska at 2014-12-12 19:57:46 +1000
+* d8bb1ea - SOF-24 - Domain menu access module and permissions for it set Committed by Goce at 2014-12-12 09:40:44 +0100
+* bcc36d6 - SOF-120 - Additional permissions added Committed by Goce at 2014-12-12 09:10:36 +0100
+* 700797d - SOF-130 - Security update google analytics module Committed by Goce at 2014-12-11 13:28:30 +0100
+* c4abcb9 - SOF-29 - Ordering by updated date on default views Committed by Goce at 2014-12-11 10:31:32 +0100
+* 83e0b3c - SOF-140 Reduce text font size with 1px - reduced font-size, buttons align fixed Committed by rkoteska at 2014-12-11 17:40:49 +1000
+* ea7015a - SOF-147  Elements not aligned Committed by rkoteska at 2014-12-11 00:06:25 +1000
+* f1d15e9 - SOF-20 - Submited by message updated Committed by Goce at 2014-12-10 14:59:25 +0100
+* bd9aae8 - SOF-147  Elements not aligned Committed by rkoteska at 2014-12-10 23:59:19 +1000
+* 1b6c68f - SOF-16 - Strict warrning fix on dev Committed by Goce at 2014-12-10 13:37:51 +0100
+* 79c0e36 - SOF-16 - Additional test if no colours and content selected Committed by Goce at 2014-12-10 13:33:27 +0100
+* 9e881c7 - SOF-57 - Render block bug fix for dev Committed by Goce at 2014-12-10 12:55:29 +0100
+* 76f1737 - SOF-16 - Block typo fix Committed by Goce at 2014-12-10 12:47:58 +0100
+* 3740b88 - SOF-16 - Fix block rendering issue on dev Committed by Goce at 2014-12-10 12:36:03 +0100
+* 950a9bc - SOF-20 - Block rendering issue fix on dev Committed by Goce at 2014-12-10 12:30:42 +0100
+* 710e1ea - SOF-20 - Test block rendering issue on dev Committed by Goce at 2014-12-10 12:21:55 +0100
+* 51ef24b - SOF-147  Elements not aligned Committed by rkoteska at 2014-12-10 21:02:16 +1000
+* fc4e5e3 - SOF-29 - Category field not required + image browser updated to use MBP Committed by Goce at 2014-12-10 11:51:44 +0100
+* acae974 - SOF-94 - Update image style on the publication listing page Committed by Goce at 2014-12-10 11:38:06 +0100
+* bf0c48d - SOF-102 - updating cart block view for the case when the cart is empty. Committed by martina at 2014-12-10 12:32:48 +0200
+* f33e6e5 - SOF-94 - Add additional image styles to the index Committed by Goce at 2014-12-10 11:28:07 +0100
+* 4e952ed - SOF-22  Theming setup - Adding default footer logo Committed by rkoteska at 2014-12-10 20:02:36 +1000
+* 1da434a - SOF-140  Login and Request new password pages styling Committed by rkoteska at 2014-12-10 19:50:38 +1000
+* 0ef10a1 - SOF-138 - Remove body field from publication and section Committed by Goce at 2014-12-10 10:28:37 +0100
+* 43a8c3f - SOF-138 - Desable user register form login page Committed by Goce at 2014-12-10 10:09:40 +0100
+
 7.x-1.7. 10-12-2014
 --------------------
 * fd8cb49 - SOF-102 - make EAN number required by using conditional fields. Committed by martina at 2014-12-10 11:05:01 +0200
