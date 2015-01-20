@@ -1,3 +1,7 @@
+7.x-1.10. 20-01-2015
+--------------------
+* d5d451f - (HEAD, origin/dev, dev) SOF-208 Added the Memcache module to installation profile. Committed by Lachezar Valchev at 2015-01-20 15:58:38 +0200
+
 7.x-1.9. 20-01-2015
 --------------------
 * 2149c9f - (HEAD, origin/dev, dev) SOF-208 Added the Varnish module to installation profile. Committed by Lachezar Valchev at 2015-01-20 15:50:13 +0200
