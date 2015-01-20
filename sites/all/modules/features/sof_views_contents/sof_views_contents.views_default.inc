@@ -275,16 +275,16 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
   /* Field: Teaser */
-  $handler->display->display_options['fields']['teaser']['id'] = 'teaser';
-  $handler->display->display_options['fields']['teaser']['table'] = 'apachesolr__solr';
-  $handler->display->display_options['fields']['teaser']['field'] = 'teaser';
-  $handler->display->display_options['fields']['teaser']['ui_name'] = 'Teaser';
-  $handler->display->display_options['fields']['teaser']['label'] = '';
-  $handler->display->display_options['fields']['teaser']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['teaser']['alter']['path'] = '[url]';
-  $handler->display->display_options['fields']['teaser']['alter']['max_length'] = '200';
-  $handler->display->display_options['fields']['teaser']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['teaser']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ts_node_teaser']['id'] = 'ts_node_teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ts_node_teaser']['field'] = 'ts_node_teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['ui_name'] = 'Teaser';
+  $handler->display->display_options['fields']['ts_node_teaser']['label'] = '';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['path'] = '[url]';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['ts_node_teaser']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['ts_node_teaser']['element_label_colon'] = FALSE;
   /* Sort criterion: Apache Solr: ds_changed */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
