@@ -3761,7 +3761,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 #block-views-related-content-block,
 #block-views-related-content-block-1,
 #block-views-related-articles-slider-block,
-#block-views-related-articles-slider-block-1 {
+#block-views-related-articles-slider-block-1,
+.field-name-field-related-terms {
   float: left;
   width: 100%;
   margin: 40px 0 0 0;
@@ -3769,15 +3770,18 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 #block-views-related-content-block h2.block-title,
 #block-views-related-content-block-1 h2.block-title,
 #block-views-related-articles-slider-block h2.block-title,
-#block-views-related-articles-slider-block-1 h2.block-title {
+#block-views-related-articles-slider-block-1 h2.block-title,
+.field-name-field-related-terms h2.field-label {
   margin-bottom: 10px;
+  margin-top: 0px;
   font-family: "conduit_itcregular",sans-serif;
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
 }
 #block-views-related-content-block .field-content a,
-#block-views-related-content-block-1 .field-content a {
+#block-views-related-content-block-1 .field-content a,
+.field-name-field-related-terms .field-item a {
   float: none;
   clear: left;
   padding-left: 0;

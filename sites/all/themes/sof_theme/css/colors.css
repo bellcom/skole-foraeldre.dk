@@ -66,7 +66,8 @@ body.node-type-basic-page .author-datetime a,
 .cart-empty-page,
 .form-item-attributes-product-select::after,
 .form-item-attributes-field-sof-commerce-type label,
-.form-item-attributes-product-select label{
+.form-item-attributes-product-select label,
+.field-name-field-related-terms .field-item a {
   color: #00a2eb;
 }
 
