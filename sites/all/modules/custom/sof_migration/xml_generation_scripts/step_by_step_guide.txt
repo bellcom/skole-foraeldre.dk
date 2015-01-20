@@ -23,12 +23,25 @@ generate-tree-templates-files.php
 - file named "package-fallback-package.xml" should be generated, note the file as it will be imported later to "Files importer"
 8. Build the following file structure in the destination site public files directory and the appropriate taxonomy term in media folders vocabulary.
 public://sitecore - Copy all files from "package/blob"
-public://migrated_files
-Note: Make sure both folders have sufficient permissions to r/w files.
+public://sof_migrated_files    - for Skole og Forældre domain
+public://fr_migrated_files     - for Forældrerådgivningen domain
+public://sofkbh_migrated_files - for Skole og Forældre København domain
+public://noko_migrated_files   - for Nordisk Komite domain
+public://gidis_migrated_files  - for Good Id in Schools domain   
+public://inkl_migrated_files   - for Inklusionsklar domain
+Note: Make sure all folders have sufficient permissions to r/w files.
 9. From the Drupal site run importers:
+Note: before running the importers navigate to admin/config/media/media_browser_plus_settings - the setting 
+"Create folders in filesystem" should be unchecked in order the migrated files to be copied in 
+the migrated_files directory.
 http://skole.loc/import/articles_importer
 http://skole.loc/import/news_importer
 http://skole.loc/import/files
+http://skole.loc/import/fr_files
+http://skole.loc/import/sofkbh_files
+http://skole.loc/import/noko_files
+http://skole.loc/import/gidis_files
+http://skole.loc/import/inkl_files
 Note: Files importer may generate some warnings/errors like ("Created 125 files. Failed importing 18 files.") which is perfectly fine. 
 Propable cause can be either missing file in the imported blob, cross sub-site /media link to files from other sitecore sub-sites databases(Noko article has a link to SOF file)
  or the item is actually a foldername from the sitecore.

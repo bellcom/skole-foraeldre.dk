@@ -6,11 +6,12 @@ package = SOF Custom
 dependencies[] = uuid
 dependencies[] = node
 dependencies[] = file_entity
-dependencies[] = feeds
-dependencies[] = feeds_files
+dependencies[] = feeds 
+dependencies[] = feeds_file
 dependencies[] = feeds_tamper
 dependencies[] = feeds_tamper_php
 dependencies[] = feeds_xpathparser
 dependencies[] = field_collection_feeds
+dependencies[] = feeds_importers_migration
 
 configure = admin/config/sof-migration
