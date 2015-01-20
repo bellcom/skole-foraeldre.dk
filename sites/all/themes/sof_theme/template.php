@@ -17,7 +17,7 @@ function sof_theme_preprocess_html(&$vars) {
 }
 
 /**
- * Override or insert variables into the page template for HTML output.
+ * Override or insert variables into the page template for HTML output .
  */
 function sof_theme_process_html(&$variables) {
   // Hook into color.module.
