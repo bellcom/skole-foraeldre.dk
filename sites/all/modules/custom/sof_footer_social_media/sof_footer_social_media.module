@@ -52,6 +52,7 @@ function sof_footer_social_media_block_view($delta = '') {
  */
 function sof_footer_social_media_block_configure($delta = '') {
   $form = array();
+
   switch ($delta) {
     case 'sof_footer_social_media':
       $form['sof_fsm_fb'] = array(
@@ -70,6 +71,7 @@ function sof_footer_social_media_block_configure($delta = '') {
       );
       break;
   }
+
   return $form;
 }
 

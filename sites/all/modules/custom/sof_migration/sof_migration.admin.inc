@@ -109,12 +109,13 @@ function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
       // Load again in case there are multiple links to be fixed in a node.
       $node = node_load($nid);
       $markup = $node->body[LANGUAGE_NONE][0]['value'];
-
       $links_map_link = html_entity_decode($href_match);
+
       // Remove domain url.
       if (strpos($links_map_link, $GLOBALS['base_url'] . '/') === 0) {
         $links_map_link = substr($links_map_link, strlen($GLOBALS['base_url'] . '/'));
       }
+
       // Fix links to internal content.
       if (strpos($links_map_link, '~/link.aspx?_id=') !== FALSE) {
         $link_id = substr($links_map_link, strlen('~/link.aspx?_id='), $lenght_of_sitecore_id);
@@ -125,8 +126,8 @@ function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
           if ($fixed_markup !== $markup) {
             $node->body[LANGUAGE_NONE][0]['value'] = $fixed_markup;
             node_save($node);
-            // TODO: use t() and placeholders.
-            $message = 'Link ID is '.$link_id.'! Fixed link in node/' . $node->nid . '!';
+
+            $message = t('Link ID is @link_id! Fixed link in node/@node_nid!', array('@link_id' => $link_id, '@node_nid' => $node->nid));
             drupal_set_message($message, 'status');
           }
         }
@@ -142,8 +143,8 @@ function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
           if ($fixed_markup !== $markup) {
             $node->body[LANGUAGE_NONE][0]['value'] = $fixed_markup;
             node_save($node);
-            // TODO: use t() and placeholders.
-            $message = 'Link ID is '.$link_id.'!Fixed file link in node/' . $node->nid . '!';
+
+            $message = t('Link ID is @link_id! Fixed file link in node/@node_nid!', array('@link_id' => $link_id, '@node_nid' => $node->nid));
             drupal_set_message($message, 'status');
           }
         }
@@ -190,9 +191,11 @@ function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
  */
 function sof_migration_fix_links_batch_finished($success, array $results, array $operations) {
   $message = '';
+
   if (isset($results['count'])) {
     $message .= format_plural($results['count'], '1 nodes processed successfully. ', '@count nodes successfully processed. ');
   }
+
   if ($success) {
     $type = 'status';
   }

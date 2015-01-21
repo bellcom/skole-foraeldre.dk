@@ -5,6 +5,7 @@
  * Ctools content type for rendering the toolbox search.
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 $plugin = array(
@@ -20,10 +21,9 @@ $plugin = array(
 );
 
 /**
- *	Edit form callback function.
+ * Edit form callback function.
  */
 function sof_toolbox_search_content_type_edit_form($form, &$form_state) {
-
   $conf = $form_state['conf'];
 
   // Add max 10 terms for bottom predefined search.
@@ -41,16 +41,13 @@ function sof_toolbox_search_content_type_edit_form($form, &$form_state) {
  * Submit handler for edit form.
  */
 function sof_toolbox_search_content_type_edit_form_submit($form, &$form_state) {
-
   $form_state['conf']['terms_val'] = $form_state['values']['terms_val'];
-
 }
 
 /**
  * Run-time rendering of the body of the block (content type).
  */
 function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context) {
-
   $block = new stdClass();
 
   $items = array();
@@ -63,10 +60,8 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
   );
 
   // Deck bottom part (links).
-
   // Get only numeric array keys with the terms.
   if (!empty($conf['terms_val'])) {
-
     $data = array_map('trim', preg_split("/[\r\n,]+/", $conf['terms_val'], -1, PREG_SPLIT_NO_EMPTY));
 
     foreach ($data as $key => $value) {
@@ -79,7 +74,6 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
           ),
         ),
       ));
-
     }
 
     $items['toolbox_bottom'] = array(
@@ -91,7 +85,6 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
         'class' => array('inline'),
       ),
     );
-
   }
 
   $block->content = theme('sof_toolbox_search', array('items' => $items));
@@ -103,7 +96,6 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
  * Implements hook_form().
  */
 function sof_toolbox_search_form($form, &$form_state, $context) {
-
   // Seach field.
   $form['search_field'] = array(
     '#title' => t('Search area'),
@@ -119,7 +111,7 @@ function sof_toolbox_search_form($form, &$form_state, $context) {
 
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Submit'),
+    '#value' => t('Search'),
     '#attributes' => array('class' => array('element-invisible')),
   );
 
@@ -131,20 +123,18 @@ function sof_toolbox_search_form($form, &$form_state, $context) {
  */
 function sof_toolbox_search_form_submit($form, &$form_state) {
   if (!empty($form_state['values']['search_field'])) {
-
     // Node context in local variable.
     $context = $form_state['values']['store'];
 
     // Redirect to seach page with preset filters.
+    $field = (isset($context->data->field_category_single['und'][0]['tid'])) ? 'im_field_category:' . $context->data->field_category_single['und'][0]['tid'] : NULL;
     drupal_goto('search/site/' . $form_state['values']['search_field'], array(
       'query' => array(
         'fq' => array(
           'bundle:(article OR news)',
-          ((isset($context->data->field_category_single['und'][0]['tid'])) ? 'im_field_category:' . $context->data->field_category_single['und'][0]['tid'] : NULL),
+          $field,
         ),
       ),
-    )
-    );
-
+    ));
   }
 }

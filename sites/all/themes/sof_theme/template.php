@@ -3,13 +3,17 @@
 /**
  * @file
  * Process theme data.
+ *
+ * @author Radmila Koteska <rkoteska@propeople.dk>
+ * @author Goce Sutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 /**
  * Preprocess variables for the html template.
  */
 function sof_theme_preprocess_html(&$vars) {
-  // Add body class when page is not found  or access id denided.
+  // Add body class when page is not found or access id denided.
   $status = drupal_get_http_header("status");
   if (($status == '404 Not Found') || ($status == '403 Forbidden')) {
     $vars['classes_array'][] = 'page-404';
@@ -17,7 +21,7 @@ function sof_theme_preprocess_html(&$vars) {
 }
 
 /**
- * Override or insert variables into the page template for HTML output.
+ * Override or insert variables into the page template for HTML output .
  */
 function sof_theme_process_html(&$variables) {
   // Hook into color.module.
@@ -128,27 +132,62 @@ function sof_theme_preprocess_field(&$vars) {
   }
   global $base_path;
   $element = $vars['element'];
-  if ($element['#field_name'] == 'field_we_recommend_reference') {
-    $nid = key($element['#items']);
-    $title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
-    $linktonode = $element['#items'][$nid]['entity']->vid;
-    $vars['nodecustomlink'] = l($title, '/node/' . $linktonode . '', array(
-      'attributes' => array(
-        'class' => array('node-title-werecommend'),
-      ),
-      'fragment' => '',
-      'external' => TRUE,
-    ));
-  }
-  // Magazine Deck fields preprocess: Field Category title.
-  if ($element['#field_name'] == 'field_small_title' && $element['#bundle'] == 'field_magazine_category') {
-    $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
-    $vars['items'][0]['#suffix'] = '</a>';
-  }
-  // Magazine Deck fields preprocess: Field Image.
-  if ($element['#field_name'] == 'field_image' && $element['#bundle'] == 'magazine_pane') {
-    $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
-    $vars['items'][0]['#suffix'] = '</a>';
+
+  switch ($element['#field_name']) {
+    case 'field_we_recommend_reference':
+      $nid = key($element['#items']);
+      $title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
+      $linktonode = $element['#items'][$nid]['entity']->vid;
+      $vars['nodecustomlink'] = l($title, '/node/' . $linktonode . '', array(
+          'attributes' => array(
+            'class' => array('node-title-werecommend'),
+          ),
+        'fragment' => '',
+        'external' => TRUE,
+      ));
+      break;
+
+    case 'field_small_title':
+      // Magazine Deck fields preprocess: Field Category title.
+      if ($element['#bundle'] == 'field_magazine_category') {
+        $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
+        $vars['items'][0]['#suffix'] = '</a>';
+      }
+      break;
+
+    case 'field_image':
+      // Magazine Deck fields preprocess: Field Image.
+      if ($element['#bundle'] == 'magazine_pane') {
+        $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
+        $vars['items'][0]['#suffix'] = '</a>';
+      }
+      break;
+
+    case 'field_icon':
+      // Banner deck settings. Display banner icon as image.
+      if ($element['#entity_type'] == 'field_collection_item') {
+        $machine_value = $element['#items'][0]['value'];
+        $icon_link = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/banner_deck_images/icon_' . $machine_value . '.svg';
+        $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
+        $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';
+      }
+      break;
+
+    case 'field_publication_control_link':
+      // Show publication link checkbox as link.
+      if ($element['#entity_type'] == 'node' && $element['#items'][0]['value'] == 1) {
+        $vars['items'][0]['#markup'] = l(t('See all publications'), 'releases', array(
+            'attributes' => array(
+              'class' => array('publications-btn'),
+            ),
+             'fragment' => '',
+          ));
+      }
+      else {
+        $vars['items'][0]['#markup'] = '';
+      }
+      break;
+
   }
 
   // Block: Related Content Single Block.
@@ -160,14 +199,7 @@ function sof_theme_preprocess_field(&$vars) {
       $vars['items'] = array($item);
     }
   }
-  // Banner deck settings.
-  // Display banner icon as image.
-  if ($element['#field_name'] == 'field_icon' && $element['#entity_type'] == 'field_collection_item') {
-    $machine_value = $element['#items'][0]['value'];
-    $icon_link = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/banner_deck_images/icon_' . $machine_value . '.svg';
-    $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
-    $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';
-  }
+
 }
 
 /**
@@ -194,7 +226,8 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
 
       // Follow site block.
-      if ($get_follow_site_block = block_load('follow', 'site')) {
+      $get_follow_site_block = block_load('follow', 'site');
+      if ($get_follow_site_block) {
         $variables['followlinks'] = _block_get_renderable_array(_block_render_blocks(array($get_follow_site_block)));
       }
 
@@ -292,17 +325,21 @@ function sof_theme_preprocess_node(&$variables) {
         $variables['content']['field_related_terms']['#access'] = FALSE;
 
         // Related terms view block.
-        if ($get_related_block = block_load('views', 'related_content-block')) {
+        $get_related_block = block_load('views', 'related_content-block');
+        if ($get_related_block) {
           $variables['blockrelatedterms'] = _block_get_renderable_array(_block_render_blocks(array($get_related_block)));
         }
 
       }
       // Related articles/news slideshow.
-      if ($get_slider_block = block_load('views', $node->type == 'article' ? 'related_articles_slider-block' : 'related_articles_slider-block_1')) {
+      $node_type = ($node->type == 'article') ? 'related_articles_slider-block' : 'related_articles_slider-block_1';
+      $get_slider_block = block_load('views', $node_type);
+      if ($get_slider_block) {
         $variables['blockrelatedslider'] = _block_get_renderable_array(_block_render_blocks(array($get_slider_block)));
       }
       // Read Also Content.
-      if ($get_read_also_block = block_load('views', 'read_also-block')) {
+      $get_read_also_block = block_load('views', 'read_also-block');
+      if ($get_read_also_block) {
         $variables['blockrelatedcontent'] = _block_get_renderable_array(_block_render_blocks(array($get_read_also_block)));
       }
       // Alter submited by author.
@@ -345,7 +382,8 @@ function sof_theme_preprocess_node(&$variables) {
     }
     // Add variable with related publications block.
     if ($view_mode == 'full') {
-      if ($get_publication_block = block_load('views', 'other_releases-block')) {
+      $get_publication_block = block_load('views', 'other_releases-block');
+      if ($get_publication_block) {
         $variables['blockotherelease'] = _block_get_renderable_array(_block_render_blocks(array($get_publication_block)));
       }
     }
