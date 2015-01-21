@@ -11,9 +11,9 @@ files[] = media_browser_plus.test
 files[] = media_browser_plus.root_folder.test
 
 
-; Information added by Drupal.org packaging script on 2014-07-16
-version = "7.x-3.0-beta3+8-dev"
+; Information added by Drupal.org packaging script on 2014-12-12
+version = "7.x-3.0-beta3+17-dev"
 core = "7.x"
 project = "media_browser_plus"
-datestamp = "1405489729"
+datestamp = "1418373183"
 
