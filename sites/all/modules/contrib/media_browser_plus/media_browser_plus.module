@@ -24,7 +24,8 @@ function media_browser_plus_menu() {
     'title' => 'Load Media Entities',
     'page callback' => 'media_browser_plus_move_file_callback',
     'page arguments' => array(3, 5),
-    'access callback' => 'media_browser_plus_access',
+    'access callback' => 'file_entity_access',
+    'access arguments' => array('update', 3),
     'delivery callback' => 'drupal_json_output',
     'type' => MENU_CALLBACK,
   );
@@ -302,7 +303,6 @@ function media_browser_plus_download_action_cleanup() {
  */
 function media_browser_plus_move_file_callback($file, $folder) {
   if (empty($file->field_folder[LANGUAGE_NONE][0]['tid']) || $file->field_folder[LANGUAGE_NONE][0]['tid'] != $folder->tid) {
-    $file->field_folder[LANGUAGE_NONE] = array(array('tid' => $folder->tid));
     return media_browser_plus_move_file($folder->tid, $file);
   }
   return TRUE;
@@ -459,8 +459,15 @@ function media_browser_plus_construct_dir_path($term = NULL) {
  *   TRUE on success.
  */
 function media_browser_plus_move_file($tid, $file, $replace = FILE_EXISTS_RENAME, $save = TRUE) {
-  // No need to process the file if its location is not managed.
+
+  // Ensure the new location is stored in the file entity.
+  $file->field_folder[LANGUAGE_NONE] = array(array('tid' => $tid));
+
+  // No need to process the file path if mpb doesn't mirror to filesystem.
   if (!variable_get('media_browser_plus_filesystem_folders', TRUE)) {
+    if ($save) {
+      file_save($file);
+    }
     return TRUE;
   }
 
@@ -712,9 +719,11 @@ function media_browser_plus_taxonomy_term_delete($term) {
  * overview won't trigger any term hooks *blargh* :|
  */
 function media_browser_plus_form_taxonomy_overview_terms_alter(&$form, &$form_state, $vocabulary) {
-  if ($form['#vocabulary']->machine_name == 'media_folders') {
-    $form['#validate'][] = 'media_browser_plus_form_taxonomy_overview_terms_validate';
-    $form['#submit'][] = 'media_browser_plus_form_taxonomy_overview_terms_submit';
+  if (!isset($form_state['confirm_reset_alphabetical'])) {
+    if ($form['#vocabulary']->machine_name == 'media_folders') {
+      $form['#validate'][] = 'media_browser_plus_form_taxonomy_overview_terms_validate';
+      $form['#submit'][] = 'media_browser_plus_form_taxonomy_overview_terms_submit';
+    }
   }
 }
 
@@ -895,13 +904,46 @@ function media_browser_plus_clear_views_cache($view_name) {
  * Implements hook_uuid_entity_features_export_render_alter().
  */
 function media_browser_plus_uuid_entity_features_export_render_alter($entity_type, &$export, &$entity) {
-  if ($entity_type == 'file' && isset($export->field_folder)) {
-    $root_folder = media_browser_plus_get_media_root_folder();
-    if (isset($entity->field_folder[LANGUAGE_NONE][0]['tid']) && $entity->field_folder[LANGUAGE_NONE][0]['tid'] == $root_folder->tid) {
-      // Remove field_folder to avoid uuid clashes on the remote system.
-      // But add a tag to mark it as child of the root folder.
-      unset($export->field_folder);
-      $export->mbp_uuid_features_root_folder = TRUE;
+  $root_folder = media_browser_plus_get_media_root_folder();
+
+  // Take all reference fields in account.
+  $fields = uuid_features_get_field_items_iterator($export, $entity_type, 'taxonomy_term_reference');
+  foreach ($fields as $field_name => $field) {
+    if (isset($export->{$field_name})) {
+      foreach ($field as $language => $items) {
+        foreach ($items as $delta => $item) {
+          if ($export->{$field_name}[$language][$delta]['tid'] == $root_folder->tid || $export->{$field_name}[$language][$delta]['tid'] == $root_folder->uuid) {
+            $export->{$field_name}[$language][$delta]['tid'] = 'mbp_uuid_features_root_folder';
+            $export->{$field_name}[$language][$delta]['uuid'] = 'mbp_uuid_features_root_folder';
+            $export->mbp_uuid_features_root_folder = TRUE;
+          }
+        }
+      }
+    }
+  }
+  $fields = uuid_features_get_field_items_iterator($export, $entity_type, 'entityreference');
+  foreach ($fields as $field_name => $field) {
+    if (isset($export->{$field_name})) {
+      foreach ($field as $language => $items) {
+        foreach ($items as $delta => $item) {
+          if (in_array($root_folder->tid, $export->{$field_name}[$language][$delta]) || in_array($root_folder->uuid, $export->{$field_name}[$language][$delta])) {
+            $export->{$field_name}[$language][$delta]['target_id'] = 'mbp_uuid_features_root_folder';
+            $export->{$field_name}[$language][$delta]['uuid'] = 'mbp_uuid_features_root_folder';
+            $export->mbp_uuid_features_root_folder = TRUE;
+          }
+        }
+      }
+    }
+  }
+
+  // Ensure exported folders also have the generic media root set.
+  if ($entity_type == 'taxonomy_term' && $export->vocabulary_machine_name == 'media_folders' && !empty($export->parent)) {
+    $root_parents = array_keys($export->parent, $root_folder->uuid);
+    foreach ($root_parents as $key) {
+      $export->parent[$key] = 'mbp_uuid_features_root_folder';
+    }
+    if ($export->uuid == $root_folder->uuid) {
+      $export->uuid = 'mbp_uuid_features_root_folder';
     }
   }
 }
@@ -910,13 +952,49 @@ function media_browser_plus_uuid_entity_features_export_render_alter($entity_typ
  * Implements hook_uuid_entity_features_rebuild_alter().
  */
 function media_browser_plus_uuid_entity_features_rebuild_alter($entity_type, &$entity) {
-  if ($entity_type == 'file') {
-    // If this file is marked as child of the root folder get the current root
-    // folder and set it.
-    if (!empty($entity->mbp_uuid_features_root_folder)) {
-      $root_folder = media_browser_plus_get_media_root_folder();
-      $entity->field_folder[LANGUAGE_NONE][0]['tid'] = $root_folder->tid;
-      unset($entity->mbp_uuid_features_root_folder);
+  // If this file is marked as child of the root folder get the current root
+  // folder and set it.
+  if (!empty($entity->mbp_uuid_features_root_folder)) {
+    unset($entity->mbp_uuid_features_root_folder);
+
+    $root_folder = media_browser_plus_get_media_root_folder();
+
+    // Take all reference fields in account.
+    $fields = uuid_features_get_field_items_iterator($entity, $entity_type, 'taxonomy_term_reference');
+    foreach ($fields as $field_name => $field) {
+      if (isset($entity->{$field_name})) {
+        foreach ($field as $language => $items) {
+          foreach ($items as $delta => $item) {
+            if (in_array('mbp_uuid_features_root_folder', $entity->{$field_name}[$language][$delta])) {
+              $entity->{$field_name}[$language][$delta]['tid'] = $root_folder->tid;
+            }
+          }
+        }
+      }
+    }
+    $fields = uuid_features_get_field_items_iterator($entity, $entity_type, 'entityreference');
+    foreach ($fields as $field_name => $field) {
+      if (isset($entity->{$field_name})) {
+        foreach ($field as $language => $items) {
+          foreach ($items as $delta => $item) {
+            if (in_array('mbp_uuid_features_root_folder', $entity->{$field_name}[$language][$delta])) {
+              $entity->{$field_name}[$language][$delta]['target_id'] = $root_folder->tid;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Ensure imported folders also have the generic media root set.
+  if ($entity_type == 'taxonomy_term' && $entity->vocabulary_machine_name == 'media_folders') {
+    $root_parents = array_keys($entity->parent, 'mbp_uuid_features_root_folder');
+    foreach ($root_parents as $key) {
+      $entity->parent[$key] = $root_folder->tid;
+    }
+    if ($entity->uuid == 'mbp_uuid_features_root_folder') {
+      $entity->uuid = $root_folder->uuid;
+      $entity->tid = $root_folder->tid;
     }
   }
 }
