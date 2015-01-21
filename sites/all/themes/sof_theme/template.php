@@ -21,7 +21,7 @@ function sof_theme_preprocess_html(&$vars) {
 }
 
 /**
- * Override or insert variables into the page template for HTML output.
+ * Override or insert variables into the page template for HTML output .
  */
 function sof_theme_process_html(&$variables) {
   // Hook into color.module.
@@ -132,27 +132,62 @@ function sof_theme_preprocess_field(&$vars) {
   }
   global $base_path;
   $element = $vars['element'];
-  if ($element['#field_name'] == 'field_we_recommend_reference') {
-    $nid = key($element['#items']);
-    $title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
-    $linktonode = $element['#items'][$nid]['entity']->vid;
-    $vars['nodecustomlink'] = l($title, '/node/' . $linktonode . '', array(
-      'attributes' => array(
-        'class' => array('node-title-werecommend'),
-      ),
-      'fragment' => '',
-      'external' => TRUE,
-    ));
-  }
-  // Magazine Deck fields preprocess: Field Category title.
-  if ($element['#field_name'] == 'field_small_title' && $element['#bundle'] == 'field_magazine_category') {
-    $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
-    $vars['items'][0]['#suffix'] = '</a>';
-  }
-  // Magazine Deck fields preprocess: Field Image.
-  if ($element['#field_name'] == 'field_image' && $element['#bundle'] == 'magazine_pane') {
-    $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
-    $vars['items'][0]['#suffix'] = '</a>';
+
+  switch ($element['#field_name']) {
+    case 'field_we_recommend_reference':
+      $nid = key($element['#items']);
+      $title = $element['#object']->field_we_recommend_reference['und'][$nid]['entity']->title;
+      $linktonode = $element['#items'][$nid]['entity']->vid;
+      $vars['nodecustomlink'] = l($title, '/node/' . $linktonode . '', array(
+          'attributes' => array(
+            'class' => array('node-title-werecommend'),
+          ),
+        'fragment' => '',
+        'external' => TRUE,
+      ));
+      break;
+
+    case 'field_small_title':
+      // Magazine Deck fields preprocess: Field Category title.
+      if ($element['#bundle'] == 'field_magazine_category') {
+        $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
+        $vars['items'][0]['#suffix'] = '</a>';
+      }
+      break;
+
+    case 'field_image':
+      // Magazine Deck fields preprocess: Field Image.
+      if ($element['#bundle'] == 'magazine_pane') {
+        $vars['items'][0]['#prefix'] = '<a class="mag-deck-default" href="http://www.skoleborn.dk/" target="_blank">';
+        $vars['items'][0]['#suffix'] = '</a>';
+      }
+      break;
+
+    case 'field_icon':
+      // Banner deck settings. Display banner icon as image.
+      if ($element['#entity_type'] == 'field_collection_item') {
+        $machine_value = $element['#items'][0]['value'];
+        $icon_link = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/banner_deck_images/icon_' . $machine_value . '.svg';
+        $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
+        $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';
+      }
+      break;
+
+    case 'field_publication_control_link':
+      // Show publication link checkbox as link.
+      if ($element['#entity_type'] == 'node' && $element['#items'][0]['value'] == 1) {
+        $vars['items'][0]['#markup'] = l(t('See all publications'), 'releases', array(
+            'attributes' => array(
+              'class' => array('publications-btn'),
+            ),
+             'fragment' => '',
+          ));
+      }
+      else {
+        $vars['items'][0]['#markup'] = '';
+      }
+      break;
+
   }
 
   // Block: Related Content Single Block.
@@ -164,14 +199,7 @@ function sof_theme_preprocess_field(&$vars) {
       $vars['items'] = array($item);
     }
   }
-  // Banner deck settings.
-  // Display banner icon as image.
-  if ($element['#field_name'] == 'field_icon' && $element['#entity_type'] == 'field_collection_item') {
-    $machine_value = $element['#items'][0]['value'];
-    $icon_link = $base_path . drupal_get_path('theme', 'sof_theme') . '/css/images/banner_deck_images/icon_' . $machine_value . '.svg';
-    $vars['element'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '"  />';
-    $vars['items'][0]['#markup'] = '<img class="banner-deck-icon" alt="' . $machine_value . '" src="' . $icon_link . '" />';
-  }
+
 }
 
 /**

@@ -326,7 +326,7 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'read_also';
-  $view->description = 'Block on the bottom of the articles/news. Two random related articles/news on the left side of the bottom region';
+  $view->description = 'Adds two random related articles/news on the left side of the bottom region by "General category"';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Read also';
@@ -463,8 +463,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'read_also_pane');
   $export['read_also'] = $view;
 
   $view = new view();
@@ -591,85 +591,15 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['captionfield'] = 'title';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content entity referenced from field_related_article */
+  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_related_article_target_id']['id'] = 'field_related_article_target_id';
   $handler->display->display_options['relationships']['field_related_article_target_id']['table'] = 'field_data_field_related_article';
   $handler->display->display_options['relationships']['field_related_article_target_id']['field'] = 'field_related_article_target_id';
-  $handler->display->display_options['relationships']['field_related_article_target_id']['ui_name'] = 'Content entity referenced from field_related_article';
+  $handler->display->display_options['relationships']['field_related_article_target_id']['required'] = TRUE;
   /* Field: (not shown) Slide caption */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['ui_name'] = '(not shown) Slide caption';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Slide image */
-  $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
-  $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider_1']['relationship'] = 'field_related_news_target_id';
-  $handler->display->display_options['fields']['field_image_slider_1']['ui_name'] = 'Slide image';
-  $handler->display->display_options['fields']['field_image_slider_1']['label'] = '';
-  $handler->display->display_options['fields']['field_image_slider_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_slider_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_slider_1']['settings'] = array(
-    'image_style' => 'article_top_slider',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'news' => 'news',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Related news (field_related_news:delta) */
-  $handler->display->display_options['filters']['delta']['id'] = 'delta';
-  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_related_news';
-  $handler->display->display_options['filters']['delta']['field'] = 'delta';
-  $handler->display->display_options['filters']['delta']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['delta']['group'] = 2;
-  /* Filter criterion: Content: Related articles (field_related_article) */
-  $handler->display->display_options['filters']['field_related_article_target_id']['id'] = 'field_related_article_target_id';
-  $handler->display->display_options['filters']['field_related_article_target_id']['table'] = 'field_data_field_related_article';
-  $handler->display->display_options['filters']['field_related_article_target_id']['field'] = 'field_related_article_target_id';
-  $handler->display->display_options['filters']['field_related_article_target_id']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_related_article_target_id']['group'] = 2;
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: (not shown) Slide caption */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['relationship'] = 'field_related_article_target_id';
   $handler->display->display_options['fields']['title']['ui_name'] = '(not shown) Slide caption';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
@@ -686,18 +616,53 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider_1']['settings'] = array(
     'image_style' => 'article_top_slider',
     'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'article' => 'article',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block_1');
+  /* Display: Articles slider */
+  $handler = $view->new_display('panel_pane', 'Articles slider', 'related_articles_slider_pane');
+
+  /* Display: News slider */
+  $handler = $view->new_display('panel_pane', 'News slider', 'related_news_slider_pane');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_related_news_target_id']['id'] = 'field_related_news_target_id';
   $handler->display->display_options['relationships']['field_related_news_target_id']['table'] = 'field_data_field_related_news';
   $handler->display->display_options['relationships']['field_related_news_target_id']['field'] = 'field_related_news_target_id';
+  $handler->display->display_options['relationships']['field_related_news_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: (not shown) Slide caption */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -720,18 +685,52 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider_1']['settings'] = array(
     'image_style' => 'article_top_slider',
     'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $export['related_articles_slider'] = $view;
 
   $view = new view();
   $view->name = 'related_content';
-  $view->description = 'Block on the article/news page with links to related articles/news related by \'Global category\'';
+  $view->description = 'Shown when links are not manully specified for "related terms" field. Lists links to nodes connected by "General Category"';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Related content';
+  $view->human_name = 'Related content (Related terms)';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -823,8 +822,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Related terms */
+  $handler = $view->new_display('panel_pane', 'Related terms', 'related_terms_pane');
   $export['related_content'] = $view;
 
   $view = new view();

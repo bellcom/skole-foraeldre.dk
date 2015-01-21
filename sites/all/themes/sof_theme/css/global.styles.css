@@ -159,7 +159,6 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 /*
  * Wraps the sidebars the content column
  */
@@ -2818,12 +2817,13 @@ body.node-type-basic-page .field-name-body h3 {
 }
 .article-region .field-name-body h4,
 body.node-type-basic-page .field-name-body h4 {
-  padding:20px 0 10px 0;
+  padding: 20px 0 10px 0;
+  margin: 0;
   font-size: 24px;
   font-weight: 400;
   line-height: 28px;
   text-decoration: none;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 .article-region .field-name-body h5,
 body.node-type-basic-page h5 {
@@ -3762,7 +3762,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 #block-views-related-content-block,
 #block-views-related-content-block-1,
 #block-views-related-articles-slider-block,
-#block-views-related-articles-slider-block-1 {
+#block-views-related-articles-slider-block-1,
+.field-name-field-related-terms {
   float: left;
   width: 100%;
   margin: 40px 0 0 0;
@@ -3770,15 +3771,18 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 #block-views-related-content-block h2.block-title,
 #block-views-related-content-block-1 h2.block-title,
 #block-views-related-articles-slider-block h2.block-title,
-#block-views-related-articles-slider-block-1 h2.block-title {
+#block-views-related-articles-slider-block-1 h2.block-title,
+.field-name-field-related-terms h2.field-label {
   margin-bottom: 10px;
+  margin-top: 0px;
   font-family: "conduit_itcregular",sans-serif;
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
 }
 #block-views-related-content-block .field-content a,
-#block-views-related-content-block-1 .field-content a {
+#block-views-related-content-block-1 .field-content a,
+.field-name-field-related-terms .field-item a {
   float: none;
   clear: left;
   padding-left: 0;
