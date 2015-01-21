@@ -281,23 +281,7 @@ function sof_article_panelizer_defaults() {
     $pane->subtype = 'node:field_publication_control_link';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'entity_field_value:node:article:field_publication_control_link',
-          'settings' => array(
-            'field_publication_control_link' => array(
-              'und' => array(
-                0 => array(
-                  'value' => 1,
-                ),
-              ),
-            ),
-            'field_publication_control_link_value' => '1',
-          ),
-          'context' => 'panelizer',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'label' => 'title',
