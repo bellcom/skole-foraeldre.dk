@@ -1,3 +1,11 @@
+7.x-1.12. 21-01-2015
+--------------------
+* e275b35 - (HEAD, origin/dev, dev) SOF-208 Added the transliteration module to installation profile. Committed by Lachezar Valchev at 2015-01-21 12:59:21 +0200
+* 7952ba0 - SOF-208 Updated Media Browser Plus module. Committed by Lachezar Valchev at 2015-01-21 12:24:42 +0200
+* 0e59dc6 - SOF-208 Patched the media module with https://www.drupal.org/files/issues/media_remove_file_display_alter-2104193-91.patch Committed by Lachezar Valchev at 2015-01-21 12:23:23 +0200
+* 8576911 - SOF-208 Updated Media module. Committed by Lachezar Valchev at 2015-01-21 12:17:03 +0200
+* 4695e1e - SOF-103  Publications Listing page - FrontEnd - small changes to paggination links Committed by rkoteska at 2015-01-21 19:53:33 +1000
+
 7.x-1.11. 21-01-2015
 --------------------
 * b034f66 - SOF-208 Code review clean ups. Committed by Lachezar Valchev at 2015-01-21 11:17:18 +0200
