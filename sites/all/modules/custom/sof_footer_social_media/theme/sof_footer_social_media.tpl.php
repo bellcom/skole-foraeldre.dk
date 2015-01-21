@@ -8,6 +8,7 @@
  *  - $items : Array of content per link
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 ?>

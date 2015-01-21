@@ -5,13 +5,13 @@
  * SOF Toolbox search pane.
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 /**
  * Implements hook_ctools_plugin_directory().
  */
 function sof_toolbox_search_ctools_plugin_directory($owner, $plugin_type) {
-
   if ($owner == 'ctools' && $plugin_type == 'content_types') {
     return 'plugins/' . $plugin_type;
   }

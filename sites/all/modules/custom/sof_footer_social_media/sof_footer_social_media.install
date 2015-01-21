@@ -12,12 +12,13 @@
  * Implements hook_install().
  */
 function sof_footer_social_media_install() {
+  $t = get_t();
+
   // Set default variables.
-  variable_set('sof_fsm_fb', 'We publish articles and links. We also take discussions, where you are welcome to attend.');
-  variable_set('sof_fsm_tw', 'We are debating items links, updates, and relevant links on Twitter. Join the debate.');
+  variable_set('sof_fsm_fb', $t('We publish articles and links. We also take discussions, where you are welcome to attend.'));
+  variable_set('sof_fsm_tw', $t('We are debating items links, updates, and relevant links on Twitter. Join the debate.'));
 
   // Set message for variables creation.
-  $t = get_t();
   drupal_set_message($t('Social media variables created'));
 }
 

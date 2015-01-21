@@ -3,10 +3,11 @@ description = SOF initial site migration from Sitecore.
 core = 7.x
 package = SOF Custom
 
+; Dependencies
 dependencies[] = uuid
 dependencies[] = node
 dependencies[] = file_entity
-dependencies[] = feeds 
+dependencies[] = feeds
 dependencies[] = feeds_file
 dependencies[] = feeds_tamper
 dependencies[] = feeds_tamper_php
@@ -14,4 +15,5 @@ dependencies[] = feeds_xpathparser
 dependencies[] = field_collection_feeds
 dependencies[] = feeds_importers_migration
 
+; Config
 configure = admin/config/sof-migration

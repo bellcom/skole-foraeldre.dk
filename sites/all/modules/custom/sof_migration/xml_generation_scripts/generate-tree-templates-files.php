@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * @file
+ * Tree template files.
+ *
+ * @author Dobrin Dobrev <ddobrev@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
+ */
+
 function locate_xml_db() {
   return '/home/miro/Downloads/KKDK Export/all/ready/search-existing/locate-sitecore-xml.db';
 }
@@ -20,6 +28,7 @@ function generate_tree(array $rules) {
   $Directory = new RecursiveDirectoryIterator($cwd);
   $Iterator = new RecursiveIteratorIterator($Directory);
   $Regex = new RegexIterator($Iterator, '#^.*{[^}]+}/da/1/xml$#', RecursiveRegexIterator::GET_MATCH);
+
   foreach ($Regex as $path_match) {
     find_matches($path_match[0], $tree, $rules);
   }
@@ -28,6 +37,7 @@ function generate_tree(array $rules) {
   tree_file_save_all($tree);
 
   $total_time = number_format(microtime(TRUE) - $time, 3, '.', '') . "\n";
+
   print "TOTAL TIME: $total_time\n";
   print "Done.\n";
 }
@@ -42,6 +52,7 @@ function generate_tree_from_single_template(array $rules, $template_path) {
   tree_file_save_all($tree);
 
   $total_time = number_format(microtime(TRUE) - $time, 3, '.', '') . "\n";
+
   print "TOTAL TIME: $total_time\n";
   print "Done.\n";
 }
@@ -49,26 +60,31 @@ function generate_tree_from_single_template(array $rules, $template_path) {
 function tree_file_save_all($tree) {
   // Save final version of tree.
   tree_file_save_tree($tree);
+
   // Save final versions of guids files.
   guid_log_files_save();
+
   // Save final version of guid map file.
   map_files_save();
+
   // Save final version of XML package files.
   xml_package_files_save();
 }
 
 function tree_file_save_tree($tree) {
   $cwd = getcwd();
+
   $output_file = 'templates-tree.php';
   $export = var_export($tree, TRUE);
   $export = "<?php\n\$export = $export;\n";
+
   file_put_contents("$cwd/$output_file", $export);
 }
 
 function find_template_xml_file($template_id) {
   static $file_paths = array();
-  $locate_db = locate_xml_db();
 
+  $locate_db = locate_xml_db();
   if (!isset($file_paths[$template_id])) {
     $file_path = `locate -d "$locate_db" -n 1 "*/package/items/*/$template_id/da/1/xml"`;
     // Get first line, no line-break.
@@ -81,6 +97,7 @@ function find_template_xml_file($template_id) {
 
 function package_xml($package_key = NULL, $guid = NULL, $content = NULL) {
   static $packages = array();
+
   if (!$package_key) {
     ksort($packages);
     return $packages;
@@ -88,15 +105,18 @@ function package_xml($package_key = NULL, $guid = NULL, $content = NULL) {
   elseif ($content) {
     $packages[$package_key][$guid] = $content;
   }
+
   return FALSE;
 }
 
 function xml_package_files_save() {
   $cwd = getcwd();
+
   foreach (package_xml() as $package_key => $contents) {
     $output_file = "$package_key-package.xml";
     $log = array();
     $xml_output = "<items>\n";
+
     foreach ($contents as $content) {
       $xml_output .= "$content\n";
     }
@@ -107,11 +127,13 @@ function xml_package_files_save() {
 
 function log_guid($log_key = NULL, $guid = NULL) {
   static $guids = array();
+
   if (!$log_key) {
     ksort($guids);
     foreach ($guids as $key => $val) {
       ksort($guids[$key]);
     }
+
     return $guids;
   }
   elseif ($guid) {
@@ -120,71 +142,87 @@ function log_guid($log_key = NULL, $guid = NULL) {
   else {
     // Possibly handle some day.
   }
+
   return FALSE;
 }
 
 function guid_log_files_save_txt() {
   $cwd = getcwd();
+
   foreach (log_guid() as $log_key => $guids) {
     $output_file = "$log_key-guids-string.txt";
     $all_guids_string = '';
+
     foreach ($guids as $guid) {
       $all_guids_string .= "$guid\n";
     }
+
     file_put_contents("$cwd/$output_file", $all_guids_string);
   }
 }
 
 function guid_log_files_save() {
   $cwd = getcwd();
+
   foreach (log_guid() as $log_key => $guids) {
     $output_file = "$log_key-guids-log.php";
     $log = array();
+
     foreach ($guids as $guid) {
       $log[$guid] = $guid;
     }
+
     $export = var_export($log, TRUE);
     $export = "<?php\n\$export = $export;\n";
+
     file_put_contents("$cwd/$output_file", $export);
   }
 }
 
 function intersect_get_from_file($filepath) {
   static $intersects = array();
+
   if (!isset($intersects[$filepath])) {
     require $filepath;
     $intersects[$filepath] = $export;
   }
+
   return $intersects[$filepath];
 }
 
 function map_guid($map_key = NULL, $parent_id = NULL, $id = NULL) {
   static $map = array();
+
   if (!$map_key) {
     ksort($map);
     foreach ($map as $key => $val) {
       ksort($map[$key]);
     }
+
     return $map;
   }
   elseif ($id && $parent_id) {
     $map[$map_key][$parent_id][$id] = $id;
   }
+
   return FALSE;
 }
 
 function map_custom($map_key = NULL, $set_key = NULL, $set_value = NULL) {
   static $map = array();
+
   if (!$map_key) {
     ksort($map);
     foreach ($map as $key => $val) {
       ksort($map[$key]);
     }
+
     return $map;
   }
   elseif ($set_key && $set_value) {
     $map[$map_key][$set_key] = $set_value;
   }
+
   return FALSE;
 }
 
@@ -209,25 +247,28 @@ function map_files_save() {
 
 function premapped_get_map($map_file) {
   static $maps = array();
+
   if (!isset($maps[$map_file])) {
     require $map_file;
     $maps[$map_file] = $export;
   }
+
   return $maps[$map_file];
 }
 
 function find_matches($file_path, &$tree, $rules = array()) {
-  $recurse_rules_callback = isset($rules['recurse_rules'])? $rules['recurse_rules']: 'find_matches_rules_default';
+  $recurse_rules_callback = isset($rules['recurse_rules']) ? $rules['recurse_rules'] : 'find_matches_rules_default';
   $rules += $recurse_rules_callback();
   find_matches_recurse($file_path, $tree, $rules, 0);
 }
 
 function find_matches_recurse($file_path, &$tree, $rules = array(), $depth) {
-
   $file_contents = file_get_contents($file_path);
+
   if ($depth <= $rules['max_depth'] && $template = find_matches_template_match($file_contents, $rules)) {
     preg_match('#({[^}]+})/da/1/xml$#', $file_path, $guid_matches);
     $this_guid = $guid_matches[1];
+
     if (find_matches_template_intersect($this_guid, $file_contents, $rules)) {
       // Fill tree.
       if (isset($tree[$template])) {
@@ -243,8 +284,9 @@ function find_matches_recurse($file_path, &$tree, $rules = array(), $depth) {
 
       // Package XML.
       if ($rules['package'] === '*' || in_array($template, $rules['package'])) {
-        $log_key = isset($rules['package_key'][$template])? $rules['package_key'][$template]: $rules['package_key']['*'];
+        $log_key = isset($rules['package_key'][$template]) ? $rules['package_key'][$template] : $rules['package_key']['*'];
         $package_file_contents = $file_contents;
+
         foreach ($rules['package_preprocess'] as $callback) {
           $package_file_contents = $callback($file_path, $package_file_contents, $template, $rules);
         }
@@ -310,6 +352,7 @@ function find_matches_rules_default() {
 
 function find_matches_template_match($file_contents, array $rules) {
   $template_match = preg_match('/ template="([^"]+)"/', $file_contents, $template_matches);
+
   if ($template_match) {
     $template = $template_matches[1];
     if ($rules['match'] === '*' || in_array($template, $rules['match'])) {
@@ -323,15 +366,18 @@ function find_matches_template_intersect($guid, $template, array $rules) {
     if ($rules['intersect'] === '*' || in_array($template, $rules['intersect'])) {
       $filepath = isset($rules['intersect_file'][$template]) ? $rules['intersect_file'][$template] : $rules['intersect_file']['*'];
       $intersect = intersect_get_from_file($filepath);
+
       return in_array($guid, $intersect);
     }
   }
+
   return TRUE;
 }
 
 function find_matches_log_guid($this_guid, $template, $file_contents, array $rules) {
   if ($rules['log_guid'] === '*' || in_array($template, $rules['log_guid'])) {
     $log_guid = TRUE;
+
     foreach ($rules['log_guid_filter'] as $callback) {
       $result = $callback($this_guid, $template, $file_contents, $rules);
       if ($result === FALSE || $result === TRUE) {
@@ -339,6 +385,7 @@ function find_matches_log_guid($this_guid, $template, $file_contents, array $rul
         break;
       }
     }
+
     if ($log_guid) {
       $log_key = isset($rules['log_guid_key'][$template])? $rules['log_guid_key'][$template]: $rules['log_guid_key']['*'];
       log_guid($log_key, $this_guid);
@@ -348,19 +395,23 @@ function find_matches_log_guid($this_guid, $template, $file_contents, array $rul
 
 function find_matches_log_link($this_guid, $template, $file_contents, array $rules) {
   preg_match_all('# key="([^"]+)" type="(Rich Text|Image|File|Link List|General Link)"><content>([^<]+)</content>#', $file_contents, $log_link_matches);
+
   foreach ($log_link_matches[1] as $match_key => $field_key) {
     if ($rules['log_link'] === '*' || in_array($field_key, $rules['log_link'])) {
       $field_type = $log_link_matches[2][$match_key];
       $field_content = $log_link_matches[3][$match_key];
       $guids = array();
+
       // Fetch links.
       foreach ($rules['log_link_fetcher'] as $callback) {
         foreach ($callback($field_key, $field_type, $field_content, $rules) as $guid) {
           $guids[$guid] = $guid;
         }
       }
+
       foreach ($guids as $guid) {
         $log_link = TRUE;
+
         // Filter link.
         foreach ($rules['log_link_filter'] as $callback) {
           $result = $callback($guid, $field_key, $file_contents, $rules);
@@ -369,6 +420,7 @@ function find_matches_log_link($this_guid, $template, $file_contents, array $rul
             break;
           }
         }
+
         if ($log_link) {
           // Log link.
           $log_key = isset($rules['log_link_key'][$field_key])? $rules['log_link_key'][$field_key]: $rules['log_link_key']['*'];
@@ -410,7 +462,6 @@ function find_matches_map_custom($this_guid, $template, $file_contents, array $r
 }
 
 function find_matches_children($this_guid, $template, $file_contents, array &$tree, array $rules, $depth) {
-
   if ($rules['recurse']) {
     $recurse_rules = isset($rules['children'][$template])? $rules['children'][$template]: $rules['children']['*'];
     $recurse_rules_callback = isset($rules['recurse_rules'])? $rules['recurse_rules']: 'find_matches_rules_default';
@@ -420,6 +471,7 @@ function find_matches_children($this_guid, $template, $file_contents, array &$tr
     if ($recurse_rules['children_premapped']) {
       foreach ($recurse_rules['children_premapped'] as $map_file) {
         $map = premapped_get_map($map_file);
+
         if (isset($map[$this_guid])) {
           foreach ($map[$this_guid] as $child_guid) {
             if ($subitem_file_path = find_template_xml_file($child_guid)) {
@@ -433,8 +485,10 @@ function find_matches_children($this_guid, $template, $file_contents, array &$tr
     // Find in XML.
     if ($rules['children_tree_list']) {
       $fields_match = preg_match_all('# type="CustomTreeList"><content>({[^<]+})</content>#', $file_contents, $fields_matches);
+
       foreach ($fields_matches[1] as $children) {
         $children_match = preg_match_all('/{[^{}]+}/', $children, $children_matches);
+
         foreach ($children_matches[0] as $child_guid) {
           if ($subitem_file_path = find_template_xml_file($child_guid)) {
             // Get rules child search.
@@ -458,6 +512,7 @@ function find_matches_progress($template, array &$tree, array $rules) {
       // Save all output in files.
       tree_file_save_all($tree);
     }
+
     if ($progress['message']) {
       print "Processed {$tree[$template]['cnt']} level {$tree[$template]['level']} '$template' items.\n";
     }
@@ -502,6 +557,7 @@ function get_fields($file_contents, $field_key = NULL, $field_type = NULL) {
   }
 
   preg_match_all("#<field(?: [^>]+)? key=\"$field_key\" type=\"$field_type\"><content>([^<]*)</content></field>#", $file_contents, $fields_matches);
+
   return $fields_matches;
 }
 
@@ -509,28 +565,33 @@ function doc_extra_node(DOMDocument $doc, DOMXPath $xpath = NULL, DOMNode $item 
   if (!$xpath) {
     $xpath = new DOMXpath($doc);
   }
+
   if (!$item) {
     $item = $xpath->query('item', $doc)->item(0);
   }
 
   if ($item) {
     $extra = $xpath->query('extra', $item)->item(0);
+
     if (!$extra) {
       $extra = new DOMElement('extra');
       $item->appendChild($extra);
     }
+
     return $extra;
   }
 }
 
 function get_query_array($query) {
   $result = array();
+
   if (!empty($query)) {
     foreach (explode('&', $query) as $param) {
       $param = explode('=', $param, 2);
       $result[$param[0]] = isset($param[1]) ? rawurldecode($param[1]) : '';
     }
   }
+
   return $result;
 }
 
@@ -549,8 +610,8 @@ function utf_ucfirst($text) {
  * Edit: decided not to rewrite urls, and to build a map insted, which is much safer, and probably needed anyway.
  */
 function rewrite_kkdk_urls($file_path, $file_contents, $template, array $rules) {
-//  $file_contents = preg_replace('# (src|href)=" *https?\://www\.kk\.dk([^"]*)"#', ' ${1}="http://kk.external.kk${2}"', $file_contents);
-//  $file_contents = preg_replace('# (src|href)=" *https?\://www\.kk\.dk([^"]*)"#', ' ${1}="http://www.kk.dk${2}"', $file_contents);
+// $file_contents = preg_replace('# (src|href)=" *https?\://www\.kk\.dk([^"]*)"#', ' ${1}="http://kk.external.kk${2}"', $file_contents);
+// $file_contents = preg_replace('# (src|href)=" *https?\://www\.kk\.dk([^"]*)"#', ' ${1}="http://www.kk.dk${2}"', $file_contents);
   return $file_contents;
 }
 
@@ -594,10 +655,12 @@ function get_links_by_type_link($field_key, $field_type, $field_content, array $
     $docbody = '<body>' . html_entity_decode($field_content) . '</body>';
     @$doc->loadHTML($docbody);
     $xpath = new DOMXpath($doc);
+
     foreach ($xpath->query('//link', $doc) as $link) {
       $linktype = $link->getAttribute('linktype');
       $url = $link->getAttribute('url');
       $guid = $link->getAttribute('id');
+
       if ($linktype === 'media' && $url && $guid) {
         $guids[$guid] = $guid;
       }

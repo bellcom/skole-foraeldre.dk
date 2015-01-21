@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Custom layout for SOF One column design. 
+ * Custom layout for SOF One column design.
  */
 
 $plugin = array(

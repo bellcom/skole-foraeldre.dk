@@ -4,6 +4,8 @@
  * @file
  * Implements hooks and globally accesible functions.
  *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Martina Radeva <martina@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
@@ -34,13 +36,14 @@ function sof_general_tweaks_field_group_build_pre_render_alter(&$element) {
  */
 function sof_general_tweaks_field_extra_fields() {
   // News deck.
-  // Additional fild for additional latest news.
+  // Additional field for additional latest news.
   $extra['node']['news']['display']['additional_bottom_nodes'] = array(
     'label' => t('Additional bottom news'),
     'description' => t('Renders latest 3 news'),
     'weight' => 4,
     'visible' => FALSE,
   );
+
   $extra['node']['article']['display']['additional_bottom_nodes'] = array(
     'label' => t('Additional bottom news'),
     'description' => t('Renders latest 3 news'),
@@ -49,7 +52,7 @@ function sof_general_tweaks_field_extra_fields() {
   );
 
   // Recommended items deck.
-  // Additional fild for additional latest news.
+  // Additional field for additional latest news.
   $extra['fieldable_panels_pane']['recommended_items_pane']['display']['overview_recommended_items'] = array(
     'label' => t('Overview'),
     'description' => t('Overview of the items in this section'),
@@ -72,7 +75,6 @@ function sof_general_tweaks_field_extra_fields() {
   );
 
   return $extra;
-
 }
 
 /**
@@ -84,9 +86,7 @@ function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
 
   // Attach 'news_deck_latest_3_nodes' to the node as extra field.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
-
     $node->content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
-
   }
 }
 
@@ -129,7 +129,6 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
-
   $node = node_load($entity->vid);
 
   // Render the node and strip all html tags from it.
@@ -142,7 +141,7 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   // Add domain info in the index.
   if (isset($entity->domains)) {
     foreach ($entity->domains as $domain) {
-      // Switch default domain to 0, apache solr query issue on domain -1
+      // Switch default domain to 0, apache solr query issue on domain -1.
       if ($domain == -1) {
         $domain = 0;
       }
@@ -159,7 +158,6 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
       $document->setMultiValue($key, $domain);
     }
   }
-
 }
 
 /**
@@ -168,7 +166,6 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
  * @see apachesolr.api.php
  */
 function sof_general_tweaks_apachesolr_query_prepare(DrupalSolrQueryInterface $query) {
-
   // Expose additional fields in the search result page.
   $query->addParam('fl', 'ts_custom_text');
   $query->addParam('fl', 'im_field_category');
@@ -197,13 +194,11 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
  * Implements hook_form_alter().
  */
 function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
-
   // Alter taxonomy search form.
   switch ($form_id) {
     case 'apachesolr_search_custom_page_search_form':
       if (isset($form['#search_page']['page_id'])) {
         if ($form['#search_page']['page_id'] == 'taxonomy_search') {
-
           // Remove retain filters field.
           unset($form['basic']['retain-filters']);
 
@@ -246,7 +241,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       // Make the custom street number field required.
       $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
       $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
-
       break;
 
     case 'views_form_commerce_cart_form_sof_default':
@@ -259,8 +253,8 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
         if (isset($line_item->commerce_product)) {
           $commerce_product_id = field_get_items('commerce_line_item', $line_item, 'commerce_product');
           $commerce_product = commerce_product_load($commerce_product_id[0]['product_id']);
-
           $commerce_quantity = field_get_items('commerce_product', $commerce_product, 'field_sof_commerce_quantity');
+
           if (is_array($commerce_quantity) && $commerce_quantity[0]['value'] > 1) {
             $settings[$key] = $commerce_quantity[0]['value'];
           }
@@ -276,9 +270,9 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
     case 'article_node_form':
     case 'news_node_form':
       $form['field_related_terms']['#states'] = array(
-        'visible' => array('input[id="edit-field-set-rt-manually-und"]' => array('checked' => TRUE))
+        'visible' => array('input[id="edit-field-set-rt-manually-und"]' => array('checked' => TRUE)),
       );
-
+      break;
   }
 }
 
@@ -288,11 +282,13 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
 function sof_general_tweaks_mailchimp_ajax($form, $form_state) {
   if (!form_get_errors()) {
     $signup = reset($form_state['build_info']['args']);
+
     return $signup->settings['confirmation_message'];
   }
   else {
     unset($form['description']);
     unset($form['mailchimp_lists']);
+
     return $form;
   }
 }
@@ -326,6 +322,7 @@ function sof_order_admin_message(Message $message) {
   $view = views_get_view('sof_commerce_cart_summary_admin');
   $view->set_arguments(array($wrapper->field_sof_message_order->getIdentifier()));
   $view->hide_admin_links = TRUE;
+
   return $view->preview();
 }
 
@@ -339,6 +336,7 @@ function sof_order_user_message(Message $message) {
   $view = views_get_view('sof_commerce_cart_checkout_summary');
   $view->set_arguments(array($wrapper->field_sof_message_order->getIdentifier()));
   $view->hide_admin_links = TRUE;
+
   return $view->preview();
 }
 
@@ -393,18 +391,18 @@ function sof_general_tweaks_menu_alter(&$items) {
  * Implements custom cart menu callback.
  */
 function sof_general_tweaks_cart_callback() {
-  global $user;
+  $user = $GLOBALS['user'];
 
   // Default to displaying an empty message.
   $content = theme('commerce_cart_empty_page');
 
   // First check to make sure we have a valid order.
-  if ($order = commerce_cart_order_load($user->uid)) {
+  $order = commerce_cart_order_load($user->uid);
+  if ($order) {
     $wrapper = entity_metadata_wrapper('commerce_order', $order);
 
     // Only show the cart form if we found product line items.
     if (commerce_line_items_quantity($wrapper->commerce_line_items, commerce_product_line_item_types()) > 0) {
-
       // Add the form for editing the cart contents.
       $content = commerce_embed_view('commerce_cart_form_sof', 'default', array($order->order_id), 'cart');
     }
@@ -493,13 +491,16 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
  */
 function sof_general_tweaks_field_attach_presave($entity_type, $entity) {
   $addressfields = sof_general_tweaks_addressfield_types();
+
   foreach ($addressfields as $field_name) {
     if (isset($entity->$field_name)) {
       $default_fields = array_keys(addressfield_default_values());
       $default_fields[] = 'element_key';
+
       foreach ($entity->$field_name as $lang_code => $fields) {
         foreach ($fields as $delta => $fieldset) {
           $data = array();
+
           foreach ($fieldset as $field_key => $field_value) {
             // Compare fields with addressfield default fields and store any
             // additional fields in data.
@@ -525,6 +526,7 @@ function sof_general_tweaks_field_attach_presave($entity_type, $entity) {
  */
 function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $options) {
   $addressfields = sof_general_tweaks_addressfield_types();
+
   $elements = drupal_map_assoc(array(
     'thoroughfare_street_number',
     'premise_street_number',
@@ -540,7 +542,9 @@ function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $op
         foreach ($fields as $delta => $fieldset) {
           if (!empty($fieldset['data'])) {
             // Unserialize data, else skip if string.
-            if (($data = unserialize($fieldset['data'])) && is_array($data)) {
+            $data = unserialize($fieldset['data']);
+
+            if ($data && is_array($data)) {
               // Store unserialized data values in additional fields.
               $phone_data = array_intersect_key($data, $elements);
               $entity->{$field_name}[$lang_code][$delta] = array_merge($fieldset, $phone_data);
@@ -558,12 +562,15 @@ function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $op
 function sof_general_tweaks_addressfield_types() {
   if (!isset($addressfields)) {
     static $addressfields;
+
     $result = db_query("SELECT field_name FROM {field_config} WHERE type = 'addressfield'");
     $addressfields = array();
+
     foreach ($result as $row) {
       $addressfields[] = $row->field_name;
     }
   }
+
   return $addressfields;
 }
 

@@ -6,12 +6,16 @@
  *
  * Variables:
  *  -$image : Image renderable array
+ *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 ?>
+
 <div class="sof-pdf-top-image">
-   <?php print render($image); ?>
-   <?php if($image[0]['#item']['title']):?>
-     <p> <?php print $image[0]['#item']['title']; ?></p>
-   <?php endif; ?>
+  <?php print render($image); ?>
+  <?php if($image[0]['#item']['title']):?>
+    <p> <?php print $image[0]['#item']['title']; ?></p>
+  <?php endif; ?>
 </div>

@@ -5,11 +5,13 @@
  * Default theme implementation for the pane.
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 ?>
+
 <div class="sof_toolbox_wrapper" >
-    <?php foreach ($items as $item) : ?>
+  <?php foreach ($items as $item) : ?>
     <?php print render($item); ?>
-    <?php endforeach; ?>
+  <?php endforeach; ?>
 </div>
