@@ -5,6 +5,7 @@
  * SOF pdf gerenator for publications and news/articles.
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 /**
@@ -27,7 +28,6 @@ function sof_pdf_generator_permission() {
  * Implements hook_menu().
  */
 function sof_pdf_generator_menu() {
-
   // Publication download link.
   $items['sof-pdf-generate/%'] = array(
     'title' => 'Publicataion Pdf Generator',
@@ -58,26 +58,19 @@ function sof_pdf_generator_menu() {
  *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_nodes($nid) {
-
   if (!isset($nid)) {
     return;
   }
 
   $node_obj = node_load($nid);
-
   if ($node_obj) {
-
     if ($node_obj->type == 'publication') {
-
       // Get node rendering array.
       $node_view = node_view($node_obj, 'default');
-
       switch ($node_view['field_publication_file_type']['#items'][0]['value']) {
-
         // Trigger file download.
         case 1:
           if ($node_view['field_file']) {
-
             $file_uri = $node_view['field_file']['#items'][0]['uri'];
             $file_mime = $node_view['field_file']['#items'][0]['filemime'];
             $file_name = $node_view['field_file']['#items'][0]['filename'];
@@ -89,12 +82,10 @@ function sof_generate_pdf_from_nodes($nid) {
             );
 
             file_transfer($file_uri, $http_headers);
-
           }
           else {
             return drupal_access_denied();
           }
-
           break;
 
         // Generate pdf file from preselected nodes.
@@ -103,9 +94,7 @@ function sof_generate_pdf_from_nodes($nid) {
           break;
       }
     }
-
   }
-
 }
 
 /**
@@ -115,20 +104,17 @@ function sof_generate_pdf_from_nodes($nid) {
  *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_node($nid) {
-
   if (!isset($nid)) {
     return;
   }
 
   $node_obj = node_load($nid);
-
   if ($node_obj) {
-
-    if (in_array($node_obj->type, array(
+    $node_types = array(
       'article',
       'news',
-    ))) {
-
+    );
+    if (in_array($node_obj->type, $node_types)) {
       // Add Template css.
       drupal_add_css(drupal_get_path('module', 'sof_pdf_generator') . '/css/sof_pdf_generator.css');
 
@@ -165,7 +151,6 @@ function sof_generate_pdf_from_node($nid) {
       // Send html to print.
       $library = libraries_load('phpwkhtmltopdf');
       if ($library && !empty($library['loaded'])) {
-
         // Set global options for the pdf.
         $current_domain = domain_get_domain();
         $pdf = new WkHtmlToPdf(array(
@@ -194,22 +179,17 @@ function sof_generate_pdf_from_node($nid) {
         // Send to client as file download.
         $pdf->send($filename);
       }
-
     }
-
   }
-
 }
 
 /**
  * Implements hook_ctools_plugin_directory().
  */
 function sof_pdf_generator_ctools_plugin_directory($owner, $plugin_type) {
-
   if ($owner == 'linkit' && !empty($plugin_type)) {
     return "plugins/" . $plugin_type;
   }
-
 }
 
 /**
@@ -253,40 +233,33 @@ function sof_pdf_generator_theme($existing, $type, $theme, $path) {
  * Implements hook_field_extra_fields().
  */
 function sof_pdf_generator_field_extra_fields() {
-
   // Additiona field for download links on article, news and publication.
   foreach (array('news', 'article', 'publication') as $node_type) {
-
     $extra['node'][$node_type]['display']['download_as_pdf'] = array(
       'label' => t('Download pdf'),
       'description' => t('Provides link for pdf download'),
       'weight' => 10,
       'visible' => FALSE,
     );
-
   }
 
   return $extra;
-
 }
 
 /**
  * Implements hook_node_view().
  */
 function sof_pdf_generator_node_view($node, $view_mode, $langcode) {
-
   $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
   $extrafield_name = 'download_as_pdf';
 
   // Attach download as pdf link to articles, news and publication.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
-
     $node->content['download_as_pdf'] = array(
       '#markup' => l(t('Download as pdf'), ($node->type == 'publication' ? 'sof-pdf-generate/' : 'sof-pdf-single/') . $node->nid, array(
         'attributes' => array('class' => array('download-as-pdf')),
       )),
     );
-
   }
 }
 
@@ -294,7 +267,6 @@ function sof_pdf_generator_node_view($node, $view_mode, $langcode) {
  * Implements hook_preprocess_HOOK().
  */
 function sof_pdf_generator_preprocess_field(&$vars) {
-
   $element = $vars['element'];
 
   switch ($element['#field_name']) {
@@ -312,10 +284,8 @@ function sof_pdf_generator_preprocess_field(&$vars) {
  *   Received from node_view().
  */
 function sof_pdf_generator_publication_pdf($node_view) {
-
   $library = libraries_load('phpwkhtmltopdf');
   if ($library && !empty($library['loaded'])) {
-
     // Set global options for the pdf.
     $current_domain = domain_get_domain();
     $pdf = new WkHtmlToPdf(array(
@@ -367,7 +337,6 @@ function sof_pdf_generator_publication_pdf($node_view) {
     // Content pages setup.
     if (isset($node_view['field_pdf_content']['#items'])) {
       foreach ($node_view['field_pdf_content']['#items'] as $key => $item) {
-
         $node_content[$key] = array();
 
         // Add image on top.
@@ -389,7 +358,6 @@ function sof_pdf_generator_publication_pdf($node_view) {
         $content_page = theme('sof_pdf_generator_main', $sof_print_vars);
 
         $pdf->addPage($content_page);
-
       }
     }
 
@@ -400,6 +368,5 @@ function sof_pdf_generator_publication_pdf($node_view) {
 
     // Send to client as file download.
     $pdf->send($filename);
-
   }
 }

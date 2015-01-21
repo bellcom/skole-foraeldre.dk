@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * File for adding custom theme settings
@@ -62,7 +63,8 @@ function sof_theme_settings_submit($form, &$form_state) {
   global $base_url;
   $theme = "sof_theme";
   // Header Image.
-  if ($file = file_save_upload('footerlogo_image_upload')) {
+  $file = file_save_upload('footerlogo_image_upload');
+  if ($file) {
     $parts = pathinfo($file->filename);
     $destination = 'public://' . $parts['basename'];
     $file->status = FILE_STATUS_PERMANENT;
