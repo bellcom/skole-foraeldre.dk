@@ -124,6 +124,7 @@ dependencies[] = physical
 dependencies[] = admin_views
 dependencies[] = varnish
 dependencies[] = memcache
+dependencies[] = transliteration
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
