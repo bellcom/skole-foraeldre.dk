@@ -122,6 +122,8 @@ dependencies[] = rules
 dependencies[] = inline_entity_form
 dependencies[] = physical
 dependencies[] = admin_views
+dependencies[] = varnish
+dependencies[] = memcache
 
 ;Contrib Commerce modules
 dependencies[] = addressfield

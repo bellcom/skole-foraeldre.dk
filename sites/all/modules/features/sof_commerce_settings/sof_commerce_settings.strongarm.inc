@@ -309,16 +309,16 @@ function sof_commerce_settings_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'administrator' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'customer' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(

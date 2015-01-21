@@ -55,9 +55,37 @@ function sof_commerce_settings_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => -10,
+        'weight' => 1,
       ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
+      ),
+      'diff_standard' => array(
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
+      ),
+      'token' => array(
         'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
@@ -108,7 +136,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -152,7 +220,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -196,7 +304,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -240,7 +388,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'email_default',
+        'weight' => 3,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'email_default',
+        'weight' => 2,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'email_default',
+        'weight' => 3,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'email',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'email_default',
+        'weight' => 3,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'email',
         'settings' => array(
@@ -277,7 +465,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -321,7 +549,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -367,7 +635,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(
@@ -415,7 +723,47 @@ function sof_commerce_settings_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'administrator' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'customer' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
       'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'diff_standard' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'token' => array(
         'label' => 'inline',
         'module' => 'list',
         'settings' => array(
@@ -429,7 +777,7 @@ function sof_commerce_settings_field_default_field_instances() {
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_type',
     'label' => 'Type',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),

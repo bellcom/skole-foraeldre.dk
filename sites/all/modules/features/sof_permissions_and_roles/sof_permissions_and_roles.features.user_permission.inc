@@ -331,6 +331,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'comment',
   );
@@ -538,6 +539,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer media browser',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'media',
   );
@@ -915,6 +917,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'change layouts in place editing',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panels',
   );
@@ -1777,15 +1780,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in tags'.
-  $permissions['delete terms in tags'] = array(
-    'name' => 'delete terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete webform content on assigned domains'.
   $permissions['delete webform content on assigned domains'] = array(
     'name' => 'delete webform content on assigned domains',
@@ -2237,6 +2231,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit own comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'comment',
   );
@@ -2400,15 +2395,6 @@ function sof_permissions_and_roles_user_default_permissions() {
       'administrator' => 'administrator',
       'editor' => 'editor',
       'site editor' => 'site editor',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in tags'.
-  $permissions['edit terms in tags'] = array(
-    'name' => 'edit terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
   );
