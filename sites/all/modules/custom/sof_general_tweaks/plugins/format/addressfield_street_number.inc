@@ -3,6 +3,9 @@
 /**
  * @file
  * Extends the addressfield container with a street number field.
+ *
+ * @author Martina Radeva <martina@propeople.dk>
+ * @author Lachezar Valchev <lachezar@propeople.dk>
  */
 
 /**
@@ -16,7 +19,7 @@ $plugin = array(
 );
 
 /**
- * Implemens addressfield plugin callback.
+ * Implements addressfield plugin callback.
  */
 function addressfield_street_number_format(&$format, $address, $context = array()) {
   if ($context['mode'] == 'form') {

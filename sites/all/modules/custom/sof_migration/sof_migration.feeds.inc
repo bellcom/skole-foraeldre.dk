@@ -13,6 +13,7 @@
  */
 function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
   $info = entity_get_info($entity_type);
+
   if ($entity_type === 'node') {
     $targets['user_sitecore'] = array(
       'name' => t('User from Sitecore'),
@@ -23,6 +24,7 @@ function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $b
 
   foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
     $info = field_info_field($name);
+
     if (in_array($info['type'], array('file', 'image'))) {
       $targets["$name:sc-guid"] = array(
         'name' => t('@label: Sitecore GUID', array('@label' => $instance['label'])),
@@ -31,6 +33,7 @@ function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $b
         'real_target' => $name,
       );
     }
+
     if ($info['type'] == 'entityreference') {
       // Currently works only for nodes of type faq_qa, factbox.
       $targets["$name:sc-guid"] = array(
@@ -40,6 +43,7 @@ function sof_migration_feeds_processor_targets_alter(&$targets, $entity_type, $b
         'real_target' => $name,
       );
     }
+
     if ($info['type'] == 'link_field') {
       $targets["$name:sc-url"] = array(
         'name' => t('@name: Sitecore URL', array('@name' => $instance['label'])),
@@ -65,6 +69,7 @@ function sof_migration_user_sitecore_set_target($source, $entity, $target, array
       $query->propertyCondition('mail', "$matches[1]@", 'STARTS_WITH');
       $query->range(0, 1);
       $result = $query->execute();
+
       if ($result) {
         if (isset($result['user'])) {
           $uids = array_keys($result['user']);
@@ -95,11 +100,12 @@ function sof_migration_file_guid_set_target($source, $entity, $target, array $va
         if (!$fid) {
           // @TODO - Possibly remove later.
           // TODO: What would we do with this one?
-          drupal_set_message("Sitecore file ID ({$guid}) could not be found!", 'error');
+          drupal_set_message(t('Sitecore file ID ({@guid}) could not be found!', array('@guid' => $guid)), 'error');
           watchdog('Sitecore Migrate', "Sitecore file ID ({$guid}) could not be found!", array(), WATCHDOG_ERROR);
         }
 
-        if ($fid && $file = file_load($fid)) {
+        $file = file_load($fid);
+        if ($fid && $file) {
           $field[LANGUAGE_NONE][] = array(
             'fid' => $file->fid,
             // Required for files. Flag "whether to display".
@@ -128,12 +134,14 @@ function sof_migration_entity_guid_set_target($source, $entity, $target, array $
         $nid = $query
           ->fields('f', array('entity_id'))
           ->condition('f.entity_type', 'node')
-          ->condition('n.type', array('faq_qa', 'factbox')) // Hardcoded. May need to add form setting.
+          // Hardcoded. May need to add form setting.
+          ->condition('n.type', array('faq_qa', 'factbox'))
           ->condition('f.guid', $guid)
           ->execute()
           ->fetchField();
 
-        if ($nid && $node = node_load($nid)) {
+        $node = node_load($nid);
+        if ($nid && $node) {
           $field[LANGUAGE_NONE][] = array(
             'target_id' => $node->nid,
           );
@@ -172,18 +180,21 @@ function sof_migration_link_set_target($source, $entity, $target, array $values)
             $uuid = $link->getAttribute('id');
             $uuid = trim($uuid, '{}');
             $uuid = strtolower($uuid);
-            if ($linktype === 'internal' && $nids = entity_get_id_by_uuid('node', array($uuid))) {
+            $nids = entity_get_id_by_uuid('node', array($uuid));
+            $fids = entity_get_id_by_uuid('file', array($uuid));
+            if ($linktype === 'internal' && $nids) {
               $nid = reset($nids);
               $linkvalue['url'] = "node/$nid";
             }
-            elseif ($linktype === 'media' && $fids = entity_get_id_by_uuid('file', array($uuid))) {
+            elseif ($linktype === 'media' && $fids) {
               $fid = reset($fids);
               $linkvalue['url'] = sof_migration_file_download_url($fid);
               $linkvalue['attributes']['target'] = '_blank';
             }
             break;
+
           case 'external':
-          default :
+          default:
             // Do nothing. Link is already correctly set above.
             break;
         }

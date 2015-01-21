@@ -60,12 +60,14 @@ function sof_richtext_links_form($importer, $element_key, $settings) {
  */
 function sof_richtext_links_callback($result, $item_key, $element_key, &$field, $settings, $source) {
   preg_match_all('#<a href="(~/media/([^\.]+)\.ashx)">[^<]+</a>#', $field, $link_matches);
+
   if ($link_matches[2]) {
     foreach ($link_matches[2] as $key => $guid_no_dash) {
       $guid = preg_replace('/^(.{8})(.{4})(.{4})(.{4})(.*)$/', '{$1-$2-$3-$4-$5}', $guid_no_dash);
       $guid = trim($guid, '{}');
       $guid = strtolower($guid);
       $fids = entity_get_id_by_uuid('file', array($guid));
+
       if ($fids) {
         $fid = reset($fids);
         $file = file_load($fid);
