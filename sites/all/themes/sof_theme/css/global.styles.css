@@ -3395,7 +3395,7 @@ ul.pager li.pager-ellipsis {
 }
 ul.pager li.pager-ellipsis {
   background-color: transparent;
-  border: 1px solid #b2b2b2;
+  border: none;
   color: #b2b2b2;
   font-family: "Arial";
   cursor: auto;
