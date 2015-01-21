@@ -21,14 +21,14 @@
     </div>
     <!-- Right Content -->
     <div class="news-deck-bottom-right-content">
-  <!-- Follow site block -->
-  <?php if ($followlinks): ?>
-    <h3 class="follow-title"><?php print t('Follow Us');?></h3>
-    <div class="follow-links">
-      <a href="#mailchimp-newsletter-503817-mergefieldss" class="news-deck-newsletter">Newsletter</a>
-      <?php print render($followlinks); ?>
-    </div>
-  <?php endif; ?>
+      <!-- Follow site block -->
+      <?php if ($followlinks): ?>
+        <h3 class="follow-title"><?php print t('Follow Us');?></h3>
+        <div class="follow-links">
+          <a href="#mailchimp-newsletter-503817-mergefieldss" class="news-deck-newsletter">Newsletter</a>
+          <?php print render($followlinks); ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 
