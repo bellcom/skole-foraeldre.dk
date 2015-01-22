@@ -233,14 +233,23 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       $form['customer_profile_billing']['field_sof_commerce_customer_tel'][$billing['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
       $form['customer_profile_billing']['field_sof_commerce_customer_cvr'][$billing['field_sof_commerce_customer_cvr']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
       $form['customer_profile_billing']['field_sof_commerce_customer_ean'][$billing['field_sof_commerce_customer_ean']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_customer_post_code'][$billing['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
       $form['customer_profile_shipping']['field_sof_commerce_customer_tel'][$shipping['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_shipping']['field_sof_customer_post_code'][$shipping['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
-      // Make the custom street number field required.
-      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
-      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+      // Disable country field and add its default vaue.
+      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
+      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+
+      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
+      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+
+      // Validate required fields Firm and Institution name, because #states
+      // are not working.
+      $form['customer_profile_billing']['field_sof_commerce_customer_firm'][$billing['field_sof_commerce_customer_firm']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_name'][$billing['field_sof_commerce_customer_name']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
       break;
 
     case 'views_form_commerce_cart_form_sof_default':
@@ -423,22 +432,12 @@ function sof_general_tweaks_form_commerce_cart_add_to_cart_form_alter(&$form, &$
 }
 
 /**
- * Implements hook_ctools_plugin_directory().
- *
- * It is needed because of adding Street number field to the addressfield
- * container.
- */
-function sof_general_tweaks_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'addressfield') {
-    return 'plugins/' . $plugin;
-  }
-}
-
-/**
  * Implements the commerce customer profile fields validation callback.
  */
 function sof_general_tweaks_commerse_validation($element, &$form_state) {
   $value = $element['#value'];
+  $billing = $form_state['input']['customer_profile_billing'];
+  $lang = isset($element['#language']) ? $element['#language'] : LANGUAGE_NONE;
 
   // Skip shipping fields validattion if the information will be copied from
   // the billing profile.
@@ -446,16 +445,15 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
   if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
     return;
   }
-  // Validate postal_code to be a number with exactly 4 digits.
-  if (isset($element['#title'])) {
-    if ($element['#title'] == 'Postal code') {
-      if ($value && (!is_numeric($value) || drupal_strlen($value) != 4)) {
-        form_error($element, t('Fill Postal code.'));
-      }
-    }
-  }
+
   if (isset($element['#field_name'])) {
     switch ($element['#field_name']) {
+      case 'field_sof_customer_post_code':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 4)) {
+          form_error($element, t('Fill Post code.'));
+        }
+        break;
+
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
         $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
@@ -466,15 +464,39 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
 
       // Validate cvr to be a number with exactly 8 digits.
       case 'field_sof_commerce_customer_cvr':
-        if ($value && (!is_numeric($value) || drupal_strlen($value) != 8)) {
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 8)) {
           form_error($element, t('Fill CVR Number.'));
         }
         break;
 
       // Validate ean to be a number with exactly 13 digits.
       case 'field_sof_commerce_customer_ean':
-        if ($value && (!is_numeric($value) || drupal_strlen($value) != 13)) {
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 13)) {
           form_error($element, t('Fill EAN number.'));
+        }
+        // Validate if empty, the field is required;
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
+          if (!$value) {
+            form_error($element, t('EAN field is required.'));
+          }
+        }
+        break;
+
+      // Firm name field is required when it is visible.
+      case 'field_sof_commerce_customer_firm':
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'company') {
+          if (!$value) {
+            form_error($element, t('Firm field is required.'));
+          }
+        }
+        break;
+
+      // Institution name is required when it is visible.
+      case 'field_sof_commerce_customer_name':
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
+          if (!$value) {
+            form_error($element, t('Institution name field is required.'));
+          }
         }
         break;
     }
