@@ -207,6 +207,10 @@
         }
       }
 
+      //Read More Block changes to html structure
+      $(".bottom-article-region .pane-read-also-read-also-pane").parent().parent().addClass('read-more-inline-container');
+      $(".bottom-article-region .pane-node-field-link").parent().parent().addClass('relared-topics-inline-container');
+      $(".read-more-inline-container, .relared-topics-inline-container").wrapAll('<div class="read-more-main-container"></div>');
    }
   };
 })(jQuery);
