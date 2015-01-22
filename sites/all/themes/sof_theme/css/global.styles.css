@@ -2847,7 +2847,7 @@ body.node-type-basic-page .author-datetime {
   text-transform: lowercase;
 }
 body.node-type-basic-page .author-datetime:first-letter,
-section.pane-node-created h2:first-letter {
+section.pane-node-updated h2:first-letter {
   text-transform: capitalize;
 }
 .article-news-main-container  .author-datetime a,
@@ -2858,19 +2858,19 @@ body.node-type-basic-page .author-datetime a {
 body.node-type-basic-page .author-datetime a:hover {
   color: #000;
 }
-.pane-node-created,
-section.pane-node-created h2,
-section.pane-node-created .block-content,
+.pane-node-updated,
+section.pane-node-updated h2,
+section.pane-node-updated .block-content,
 .pane-node-author,
 section.pane-node-author h2,
 section.pane-node-author .block-content {
   float: left;
 }
-.pane-node-created,
+.pane-node-updated,
 .pane-node-author {
   width: auto;
 }
-section.pane-node-created h2,
+section.pane-node-updated h2,
 section.pane-node-author h2 {
   margin: 0px;
   color: #454545;
@@ -2879,8 +2879,8 @@ section.pane-node-author h2 {
   text-transform: lowercase;
   font-size: 14px;
 }
-section.pane-node-created h2::after,
-section.pane-node-created .block-content::after,
+section.pane-node-updated h2::after,
+section.pane-node-updated .block-content::after,
 section.pane-node-author h2::after {
   content: "\00a0";
 }

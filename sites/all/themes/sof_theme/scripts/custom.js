@@ -207,10 +207,10 @@
         }
       }
       //Submited by changes to html structure
-      $("body.logged-in .left-article-region .pane-node-created").parent().parent().addClass('pane-node-created');
+      $("body.logged-in .left-article-region .pane-node-updated").parent().parent().addClass('pane-node-updated');
       $("body.logged-in .left-article-region .pane-node-author").parent().parent().addClass('pane-node-author');
-      $("body.logged-in .panels-ipe-portlet-marker.pane-node-created, body.logged-in .panels-ipe-portlet-marker.pane-node-author").wrapAll('<div class="submitedby-main-container"></div>');
-      $("body.not-logged-in .pane-node-created, body.not-logged-in .pane-node-author").wrapAll('<div class="submitedby-main-container"></div>');
+      $("body.logged-in .panels-ipe-portlet-marker.pane-node-updated, body.logged-in .panels-ipe-portlet-marker.pane-node-author").wrapAll('<div class="submitedby-main-container"></div>');
+      $("body.not-logged-in .pane-node-updated, body.not-logged-in .pane-node-author").wrapAll('<div class="submitedby-main-container"></div>');
       //Read More Block changes to html structure
       $("body.logged-in .bottom-article-region .pane-read-also-read-also-pane").parent().parent().addClass('read-more-inline-container');
       $("body.logged-in .bottom-article-region .pane-node-field-link").parent().parent().addClass('relared-topics-inline-container');
