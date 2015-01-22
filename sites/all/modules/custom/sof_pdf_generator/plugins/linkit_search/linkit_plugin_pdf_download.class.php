@@ -17,7 +17,7 @@ class LinkitPluginPdfDownload extends LinkitSearchPluginNode {
   /**
    * Overrides LinkitSearchPluginEntity::createLabel().
    */
-  private function createLabel($entity) {
+  public function createLabel($entity) {
     return t('Download sample of:') . ' ' . entity_label($this->plugin['entity_type'], $entity);
   }
 
