@@ -285,13 +285,26 @@ function sof_linkit_profiles_default_linkit_profiles() {
     'text_formats' => array(
       'full_html' => 'full_html',
       'plain_text' => 0,
+      'commerce_order_message' => 0,
     ),
     'search_plugins' => array(
-      'entity:bean' => array(
+      'entity:commerce_product' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
+      'entity:commerce_payment_transaction' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'entity:file' => array(
+        'enabled' => 1,
+        'weight' => '-10',
+      ),
       'entity:comment' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'entity:bean' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -299,16 +312,12 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:node' => array(
-        'enabled' => 1,
-        'weight' => '-10',
-      ),
       'entity:taxonomy_term' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:file' => array(
-        'enabled' => 0,
+      'entity:node' => array(
+        'enabled' => 1,
         'weight' => '-10',
       ),
       'sof_pdf_generator' => array(
@@ -331,6 +340,12 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'comment_node_webform' => 0,
       ),
       'group_by_bundle' => 0,
+    ),
+    'entity:commerce_payment_transaction' => array(
+      'result_description' => '',
+    ),
+    'entity:commerce_product' => array(
+      'result_description' => '',
     ),
     'entity:node' => array(
       'result_description' => '[node:title] [[node:type] - nid: [node:nid]]',
@@ -384,7 +399,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
       'url_method' => '1',
     ),
     'attribute_plugins' => array(
-      'rel' => array(
+      'id' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -392,19 +407,19 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'id' => array(
-        'enabled' => 0,
-        'weight' => '-10',
-      ),
       'class' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'target' => array(
+      'title' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'title' => array(
+      'rel' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'target' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),

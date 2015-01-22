@@ -1271,7 +1271,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1302,7 +1301,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1335,7 +1333,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1346,7 +1343,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1357,7 +1353,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1368,7 +1363,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1390,7 +1384,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
