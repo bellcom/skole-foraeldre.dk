@@ -274,7 +274,7 @@ body {
   padding: 0 20px; 
   max-width: none;
 }
-.bottom-read-also-block, 
+.read-more-main-container,
 .top-article-content {
   max-width: 728px;
   padding: 0 10px;
@@ -314,19 +314,30 @@ body {
  *   Blocks
  * ========================================================================== */
 /*Banner identity */
+
 .entity-bean.bean-banner {
   max-width: none;	
 }
-#block-views-read-also-block,
-#block-views-read-also-block .views-row,
-#node_article_full_group_bottomaregion {
-  width: 100%;
+.pane-read-also-read-also-pane,
+.pane-node-field-link,
+#node_article_full_group_bottomaregion,
+.pane-read-also-read-also-pane .views-row,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link,
+.read-more-inline-container, body.not-logged-in .pane-read-also-read-also-pane {
+  width: 100%!important;
 }
 #block-views-read-also-block .views-field-view-node {
   text-align: center;
 }
-#block-views-read-also-block .views-row {
+.pane-read-also-read-also-pane .views-row {
   padding: 35px 15px;
+}
+.pane-read-also-read-also-pane .pane-title {
+  position: relative;
+}
+.pane-node-field-link ,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link{
+  margin: 0px!important;
 }
 /* =============================================================================
  *  Decks

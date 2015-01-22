@@ -267,7 +267,8 @@ body {
   }	
 }
 @media all and (max-width: 860px) {
-  .right-article-region .right-region-top-links a {
+  .right-article-region .pane-node-field-publication-control-link a,
+  .right-article-region .pane-node-download-as-pdf a {
     font-size: 18px;
     padding-left: 8px;
     padding-right: 8px;	
