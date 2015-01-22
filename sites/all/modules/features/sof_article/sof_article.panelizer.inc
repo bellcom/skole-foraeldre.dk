@@ -275,6 +275,54 @@ function sof_article_panelizer_defaults() {
     $display->content['new-d6bee8d9-4c77-4a12-8abb-ac623d568cd6'] = $pane;
     $display->panels['left'][5] = 'new-d6bee8d9-4c77-4a12-8abb-ac623d568cd6';
     $pane = new stdClass();
+    $pane->pid = 'new-096676e5-6339-4f91-8935-767166d940c3';
+    $pane->panel = 'left';
+    $pane->type = 'node_updated';
+    $pane->subtype = 'node_updated';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'format' => 'sof_custom',
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => 'Submited on',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '096676e5-6339-4f91-8935-767166d940c3';
+    $display->content['new-096676e5-6339-4f91-8935-767166d940c3'] = $pane;
+    $display->panels['left'][6] = 'new-096676e5-6339-4f91-8935-767166d940c3';
+    $pane = new stdClass();
+    $pane->pid = 'new-68fff821-658b-4ae6-b2f8-8024304fbd38';
+    $pane->panel = 'left';
+    $pane->type = 'node_author';
+    $pane->subtype = 'node_author';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 1,
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => 'b',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $pane->uuid = '68fff821-658b-4ae6-b2f8-8024304fbd38';
+    $display->content['new-68fff821-658b-4ae6-b2f8-8024304fbd38'] = $pane;
+    $display->panels['left'][7] = 'new-68fff821-658b-4ae6-b2f8-8024304fbd38';
+    $pane = new stdClass();
     $pane->pid = 'new-6b22a4d0-b0f2-4aad-98e4-c184b64ce97f';
     $pane->panel = 'right';
     $pane->type = 'entity_field';
