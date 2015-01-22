@@ -1,5 +1,3 @@
-<?php
-
 /**
  * @file
  * SOF pdf generator behaviours
@@ -7,8 +5,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
-?>
 
 (function($) {
   Drupal.behaviors.sof_pdf_generator = {
