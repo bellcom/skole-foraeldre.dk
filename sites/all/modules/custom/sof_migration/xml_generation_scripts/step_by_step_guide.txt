@@ -20,28 +20,26 @@ generate-tree-templates.php
 generate-files-xml-skole.php
 generate-tree-templates-files.php
 - run "php generate-files-xml-skole.php"
-- file named "package-fallback-package.xml" should be generated, note the file as it will be imported later to "Files importer"
+- file named "package-fallback-package.xml" should be generated, note the file as it will be imported later to "Files importers"
 8. Build the following file structure in the destination site public files directory and the appropriate taxonomy term in media folders vocabulary.
 public://sitecore - Copy all files from "package/blob"
-public://sof_migrated_files    - for Skole og Forældre domain
-public://fr_migrated_files     - for Forældrerådgivningen domain
-public://sofkbh_migrated_files - for Skole og Forældre København domain
-public://noko_migrated_files   - for Nordisk Komite domain
-public://gidis_migrated_files  - for Good Id in Schools domain
-public://inkl_migrated_files   - for Inklusionsklar domain
+For each domain create the following file structure:
+public://<domain_name>_migrated_files/files  - for all files that are imported from Files sitecore folder
+public://<domain_name>_migrated_files/images - for all files that are imported from Images sitecore folder
+
 Note: Make sure all folders have sufficient permissions to r/w files.
+
 9. From the Drupal site run importers:
 Note: before running the importers navigate to admin/config/media/media_browser_plus_settings - the setting
 "Create folders in filesystem" should be unchecked in order the migrated files to be copied in
-the migrated_files directory.
+the right migrated files folder directory.
 http://skole.loc/import/articles_importer
 http://skole.loc/import/news_importer
-http://skole.loc/import/files
-http://skole.loc/import/fr_files
-http://skole.loc/import/sofkbh_files
-http://skole.loc/import/noko_files
-http://skole.loc/import/gidis_files
-http://skole.loc/import/inkl_files
+For each domain there is three kinds of files importers that follow the patterns:
+http://skole.loc/import/files - Global files for Skole og Forældre domain only.
+http://skole.loc/import/<domain_name>_files - for Global files that goes in the main domain migrated files folder
+http://skole.loc/import/<domain_name>_files_files - for files that comes from the sitecore Files directory and goes to a files subfolder into the main domain migrated files folder
+http://skole.loc/import/<domain_name>_files_images - for files that comes from the sitecore Images directory and goes to a files subfolder into the main domain migrated files folder
 Note: Files importer may generate some warnings/errors like ("Created 125 files. Failed importing 18 files.") which is perfectly fine.
 Propable cause can be either missing file in the imported blob, cross sub-site /media link to files from other sitecore sub-sites databases(Noko article has a link to SOF file)
  or the item is actually a foldername from the sitecore.
@@ -49,3 +47,10 @@ Propable cause can be either missing file in the imported blob, cross sub-site /
 Fix links is performed on the whole node table so do it after you have imported all multisites items AND files.
 
 
+For <domain_name> states:
+ - sof    - Skole og Forældre domain
+ - fr     - Forældrerådgivningen domain
+ - sofkbh - Skole og Forældre København domain
+ - noko   - Nordisk Komite domain
+ - gidis  - Good Id in Schools
+ - inkl   - Inklusionsklar

@@ -692,3 +692,28 @@ function propeople_update_7004() {
   _propeople_configure_default_shipping_services();
   cache_clear_all();
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Delete address field from shipping and billing commerce profiles.
+ */
+function propeople_update_7005() {
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_customer_profile',
+        'field_name' => 'commerce_customer_address',
+        'bundle' => 'shipping',
+      ),
+      array()
+  );
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_customer_profile',
+        'field_name' => 'commerce_customer_address',
+        'bundle' => 'billing',
+      ),
+      array()
+  );
+}

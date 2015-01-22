@@ -10,125 +10,6 @@
 function sof_commerce_settings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_customer_profile-billing-commerce_customer_address'
-  $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
-    'bundle' => 'billing',
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'commerce_customer_profile|billing|commerce_customer_address|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'thoroughfare_street_number' => '',
-        'premise_street_number' => '',
-        'postal_code' => '',
-        'locality' => '',
-        'country' => 'DK',
-        'name_line' => '',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'administrator' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => -10,
-      ),
-      'customer' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 1,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 1,
-      ),
-      'diff_standard' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 1,
-      ),
-      'token' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'commerce_customer_profile',
-    'field_name' => 'commerce_customer_address',
-    'label' => 'Address',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'addressfield',
-      'settings' => array(
-        'available_countries' => array(
-          'DK' => 'DK',
-        ),
-        'format_handlers' => array(
-          'address' => 'address',
-          'name-full' => 'name-full',
-          'addressfield_street_number' => 'addressfield_street_number',
-          'address-hide-country' => 0,
-          'organisation' => 0,
-          'name-oneline' => 0,
-        ),
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
-      'type' => 'addressfield_standard',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_cvr'
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_cvr'] = array(
     'bundle' => 'billing',
@@ -164,7 +45,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 13,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -206,10 +87,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 13,
     ),
   );
 
@@ -248,7 +129,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 14,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -290,10 +171,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
@@ -332,7 +213,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 11,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -374,10 +255,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 11,
     ),
   );
 
@@ -416,7 +297,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'email_default',
-        'weight' => 3,
+        'weight' => 9,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -451,10 +332,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'module' => 'email',
       'settings' => array(
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'email_textfield',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
@@ -493,7 +374,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 12,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -535,10 +416,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 12,
     ),
   );
 
@@ -577,7 +458,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 15,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -624,7 +505,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 15,
     ),
   );
 
@@ -663,7 +544,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 10,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -705,10 +586,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
@@ -776,7 +657,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_type',
-    'label' => 'Type',
+    'label' => 'Customer Type',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -788,98 +669,363 @@ function sof_commerce_settings_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-commerce_customer_address'
-  $field_instances['commerce_customer_profile-shipping-commerce_customer_address'] = array(
-    'bundle' => 'shipping',
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_address_one'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_address_one'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_address_one',
+    'label' => 'Address 1',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_address_two'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_address_two'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_address_two',
+    'label' => 'Address 2',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_city'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_city'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_city',
+    'label' => 'City',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_country'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_country'] = array(
+    'bundle' => 'billing',
     'default_value' => array(
       0 => array(
-        'element_key' => 'commerce_customer_profile|shipping|commerce_customer_address|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'thoroughfare_street_number' => '',
-        'premise_street_number' => '',
-        'postal_code' => '',
-        'locality' => '',
-        'country' => 'DK',
-        'name_line' => '',
+        'value' => 'Denmark',
       ),
     ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'administrator' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => -10,
-      ),
-      'customer' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
-        'settings' => array(
-          'field_multiple_limit' => -1,
-          'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => -10,
-      ),
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'addressfield',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
         ),
-        'type' => 'addressfield_default',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
-    'field_name' => 'commerce_customer_address',
-    'label' => 'Address',
-    'required' => 1,
+    'field_name' => 'field_sof_customer_country',
+    'label' => 'Country',
+    'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'addressfield',
+      'module' => 'text',
       'settings' => array(
-        'available_countries' => array(
-          'DK' => 'DK',
-        ),
-        'format_handlers' => array(
-          'address' => 'address',
-          'name-full' => 'name-full',
-          'addressfield_street_number' => 'addressfield_street_number',
-          'address-hide-country' => 0,
-          'organisation' => 0,
-          'name-oneline' => 0,
-        ),
+        'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
       ),
-      'type' => 'addressfield_standard',
-      'weight' => 0,
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_first_name'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_first_name'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_last_name'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_last_name'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_post_code'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_post_code'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_post_code',
+    'label' => 'Post code',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 5,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_street_num'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_street_num'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_street_num',
+    'label' => 'Street number',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 5,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -891,14 +1037,14 @@ function sof_commerce_settings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'email',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'email_default',
-        'weight' => 2,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -913,10 +1059,10 @@ function sof_commerce_settings_field_default_field_instances() {
       'module' => 'email',
       'settings' => array(
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
       ),
       'type' => 'email_textfield',
-      'weight' => 2,
+      'weight' => 8,
     ),
   );
 
@@ -935,7 +1081,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -962,7 +1108,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
@@ -974,14 +1120,14 @@ function sof_commerce_settings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -1003,7 +1149,363 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_address_one'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_address_one'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_address_one',
+    'label' => 'Address 1',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_address_two'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_address_two'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_address_two',
+    'label' => 'Address 2',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_city'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_city'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_city',
+    'label' => 'City',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_country'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_country'] = array(
+    'bundle' => 'shipping',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Denmark',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_first_name'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_first_name'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_last_name'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_last_name'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 30,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_post_code'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_post_code'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_post_code',
+    'label' => 'Post code',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 5,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_street_num'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_street_num'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_street_num',
+    'label' => 'Street number',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 5,
       ),
       'type' => 'text_textfield',
       'weight' => 3,
@@ -1560,19 +2062,27 @@ function sof_commerce_settings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Address');
+  t('Address 1');
+  t('Address 2');
   t('CVR nr');
+  t('City');
+  t('Country');
+  t('Customer Type');
   t('Description');
   t('EAN number');
   t('Email');
   t('Firm');
+  t('First Name');
   t('Institution name');
   t('Item Price');
+  t('Last Name');
   t('Min Quantity');
   t('Note');
   t('Pdf');
+  t('Post code');
   t('SOF message order');
   t('Single product weight');
+  t('Street number');
   t('Telephone');
   t('Type');
 
