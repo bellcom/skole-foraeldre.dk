@@ -592,7 +592,7 @@ function _propeople_configure_default_shipping_services() {
         drupal_write_record('commerce_flat_rate_service', $data);
       }
       catch (Exception $ex) {
-        watchdog('Propeople', $ex->getMessage(), array(), WATCHDOG_ERROR);
+        watchdog('Propeople', $watchdogex->getMessage(), array(), WATCHDOG_ERROR);
       }
     }
   }
@@ -716,4 +716,50 @@ function propeople_update_7005() {
       ),
       array()
   );
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change the EAN field length. The field is locked because
+ * there are values in the database.
+ */
+function propeople_update_7006() {
+  try {
+    // Alter value field length in fields table.
+    db_update('field_data_field_sof_commerce_customer_ean')
+        ->fields(array(
+          'field_sof_commerce_customer_ean_value' => 13,
+        ))
+        ->execute();
+    // Alter value field length in fields revision table.
+    db_update('field_revision_field_sof_commerce_customer_ean')
+        ->fields(array(
+          'field_sof_commerce_customer_ean_value' => 13,
+        ))
+        ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+  }
+
+  try {
+    // Update field config with new max length.
+    $result = db_select('field_config', 'f')
+        ->fields('f', array('data'))
+        ->condition('field_name', 'field_sof_commerce_customer_ean', '=')
+        ->execute();
+
+    $config = $result->fetchField();
+    $config_array = unserialize($config);
+    $config_array['settings']['max_length'] = 13;
+    $updated_config = serialize($config_array);
+    db_update('field_config')
+        ->fields(array('data' => $updated_config))
+        ->condition('field_name', 'field_sof_commerce_customer_ean', '=')
+        ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+  }
 }
