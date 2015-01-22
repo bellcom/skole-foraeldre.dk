@@ -16,7 +16,6 @@ body.node-type-basic-page .field-name-body blockquote p,
 .sof-column-content blockquote p,
 .article-region .field-name-body blockquote:before,
 .sof-column-content blockquote:before,
-#block-views-related-content-block .field-content a,
 body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
 .node-webform .form-item label,
@@ -24,7 +23,7 @@ body.node-type-basic-page .field-name-body  h4,
 .back-to-all-releases-link,
 .publication-bottom-container  .views-field-title a,
 body.node-type-basic-page .field-name-body blockquote:before,
-#block-views-read-also-block .views-field-view-node a,
+.pane-read-also-read-also-pane .views-field-view-node a,
 .section-header .views-field-view-node a,
 .section-default-listiing .views-row a,
 .region-header nav .menu  li.last.leaf:after,
@@ -43,7 +42,7 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .item-list-facetapi-facetapi-links li a,
 #user-login label,
 #user-pass label,
-.article-region  .author-datetime a,
+.pane-node-author .username,
 body.node-type-basic-page .author-datetime a,
 #views-form-commerce-cart-form-sof-default .views-field-line-item-title a,
 .view-sof-commerce-cart-checkout-summary .views-field-line-item-title a,
@@ -67,7 +66,8 @@ body.node-type-basic-page .author-datetime a,
 .form-item-attributes-product-select::after,
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label,
-.field-name-field-related-terms .field-item a {
+.field-name-field-related-terms .field-item a,
+.view-display-id-related_terms_pane a {
   color: #00a2eb;
 }
 
@@ -135,7 +135,10 @@ body.page-node-done .links a,
 #edit-commerce-coupon legend,
 .form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before,
 .field-name-field-sof-commerce-product .form-submit,
-body.page-user-orders #tasks ul li {
+body.page-user-orders #tasks ul li,
+.right-article-region .pane-node-field-publication-control-link a,
+.right-article-region .pane-node-download-as-pdf a,
+.pane-node-field-link .field-item a {
   background-color: #00a2eb;
 }
 

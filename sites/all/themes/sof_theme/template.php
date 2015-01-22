@@ -297,7 +297,6 @@ function sof_theme_preprocess_node(&$variables) {
       $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 320, FALSE, TRUE);
     }
     if ($view_mode == 'full') {
-      $variables['theme_hook_suggestion'] = 'node__articlenews__full';
       // Add print button link.
       $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
         'attributes' => array(

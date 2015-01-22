@@ -15,21 +15,16 @@
  *   - $content['bottom']: Content in the bottom column.
  */
 ?>
-<div class="panel-display panel-3col-custom clearfix" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <div class="panel-3col-custom-top" id="panel-3col-custom-top">
-    <div class="panel-panel panel-col-first">
-      <div class="inside">
-        <div id="panels-ipe-regionid-left">
-          <?php print $content['left']; ?>
-        </div>
-      </div>
+<div class="article-news-main-container">
+  <div class="top-article-content">
+    <div class="left-article-region">
+      <?php print $content['left']; ?>
     </div>
-
-    <div class="panel-panel panel-col">
-      <div class="inside"><?php print $content['right']; ?></div>
+    <div class="right-article-region">
+      <?php print $content['right']; ?>
     </div>
   </div>
-  <div class="panel-panel panel-col-bottom">
-    <div class="inside"><?php print $content['bottom']; ?></div>
+  <div class="bottom-article-region">
+    <?php print $content['bottom']; ?>
   </div>
 </div>

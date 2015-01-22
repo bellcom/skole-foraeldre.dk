@@ -309,22 +309,22 @@ function sof_commerce_settings_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'administrator' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'customer' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'diff_standard' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'token' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
@@ -354,7 +354,7 @@ function sof_commerce_settings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
