@@ -182,6 +182,7 @@ dependencies[] = sof_footer_social_media
 dependencies[] = sof_general_tweaks
 dependencies[] = sof_pdf_generator
 dependencies[] = sof_toolbox_search
+dependencies[] = customadmincss
 
 ;Features
 dependencies[] = sof_apache_solr_configuration

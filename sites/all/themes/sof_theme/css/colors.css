@@ -138,7 +138,8 @@ body.page-node-done .links a,
 body.page-user-orders #tasks ul li,
 .right-article-region .pane-node-field-publication-control-link a,
 .right-article-region .pane-node-download-as-pdf a,
-.pane-node-field-link .field-item a {
+.pane-node-field-link .field-item a,
+.view-commerce-line-item-table tr th {
   background-color: #00a2eb;
 }
 

@@ -1844,6 +1844,7 @@ body.page-cart h1 {
 }
 #views-form-commerce-cart-form-sof-default tr th,
 .view-sof-commerce-cart-checkout-summary tr th,
+.view-commerce-line-item-table tr th,
 .view-commerce-line-item-table tr th {
   color: #fff;
   text-transform: uppercase;
@@ -2101,6 +2102,8 @@ body.page-checkout #edit-buttons {
   text-transform: uppercase;
 }
 /* Review order */
+/* Admin view - review order */
+
 #commerce-checkout-form-review .checkout-help {
   text-transform: uppercase;
   font-size: 16px;
