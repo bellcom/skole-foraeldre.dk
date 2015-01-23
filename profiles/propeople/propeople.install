@@ -103,6 +103,9 @@ function propeople_install() {
 
   // Create default flat shipping services.
   _propeople_configure_default_shipping_services();
+
+  // Disable account pane from commerce review page.
+  _propeople_disable_commerce_account_pane();
 }
 
 /**
@@ -599,6 +602,25 @@ function _propeople_configure_default_shipping_services() {
 }
 
 /**
+ * Helper function for disabling account pane from commerce review page.
+ *
+ * The setting can not be exported into feature.
+ */
+function _propeople_disable_commerce_account_pane() {
+  if (module_exists('commerce_checkout')) {
+    try {
+      $disable_account = db_update('commerce_checkout_pane')
+          ->fields(array('review' => 0))
+          ->condition('pane_id', 'account', '=')
+          ->execute();
+    }
+    catch (Exception $e) {
+      watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+    }
+  }
+}
+
+/**
  * Implements hook_update_N().
  *
  * Remove some fields from commerce customer types.
@@ -762,4 +784,14 @@ function propeople_update_7006() {
   catch (Exception $e) {
     watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
   }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Disable account pane from commerce review.
+ * Because the settings can not be exported.
+ */
+function propeople_update_7007() {
+  _propeople_disable_commerce_account_pane();
 }
