@@ -3802,7 +3802,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   font-size: 24px;
   line-height: 28px;
 }
-.pane-node-field-related-terms .pane-title {
+.pane-node-field-related-terms .pane-title,
+h2.pane-title {
   display: none;
 }
 .field-name-field-related-terms .field-item a,
@@ -4524,6 +4525,7 @@ ul.action-links {
   font-size: 24px;
   padding-bottom: 20px;
   text-transform: uppercase;
+  margin: 0px;
 }
 #footer .region-footer .block:nth-child(2) .block-inner {
   float: none;
