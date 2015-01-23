@@ -26,22 +26,22 @@
 
         // Image dimensins bug fix.
         if ($initialContent.find('div.sof-pdf-top-image').length) {
-          imgTeaserHeight += 502;
+          imgTeaserHeight += 396;
         }
         else {
-          imgTeaserHeight += 3;
+          imgTeaserHeight += 2;
         }
 
         if (initialContentHeight <= imgTeaserHeight) {
-          initialContentHeight = 1047 - imgTeaserHeight;
+          initialContentHeight = 817 - imgTeaserHeight;
         }
         else {
-          initialContentHeight = 1047 - ( imgTeaserHeight % 1047);
+          initialContentHeight = 817 - ( imgTeaserHeight % 817);
         }
 
         // Prevent blank page.
         if (initialContentHeight == 0) {
-          initialContentHeight = 1047;
+          initialContentHeight = 817;
         }
 
         // Build pages.
@@ -63,12 +63,12 @@
    */
   function buildPage($initialContent, contentHeight) {
     // Check for default value.
-    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 1047;
+    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 817;
     if ($('#sof-pdf-contents').contents().length > 0) {
       // Initial page.
       $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
         display: "block",
-        height: 1047
+        height: 817
       });
 
       // Set page contents height.
