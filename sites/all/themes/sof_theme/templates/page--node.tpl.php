@@ -206,6 +206,13 @@
             <!-- !Main Content -->
             <?php if ($content = render($page['content'])): ?>
               <div id="content" class="region">
+                <!-- Top Buttons for printing and sharing -->
+                <div class="top-sharing-printing-links">
+                  <div class="top-sharing-printing-links-inline">
+                    <?php print render($add_this_button);?>
+                    <?php print render($print_button);?>
+                   </div>
+                </div>
                 <?php print $content; ?>
               </div>
             <?php endif; ?>
@@ -243,7 +250,7 @@
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">
           <div class="footer-logo">
-		    <img src="<?php print $footerlogo_image; ?>" /> 
+		    <img src="<?php print $footerlogo_image; ?>" />
 		  </div>	
 	      <?php print render($page['footer']['block_1']); ?>
 	      <?php print render($page['footer']['block_2']); ?>
