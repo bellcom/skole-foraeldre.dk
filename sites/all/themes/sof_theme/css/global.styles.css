@@ -2876,6 +2876,9 @@ section.pane-node-author h2,
 section.pane-node-author .block-content {
   float: left;
 }
+.pane-node-author h2 {
+  display: block!important;
+}
 .pane-node-updated,
 .pane-node-author {
   width: auto;
