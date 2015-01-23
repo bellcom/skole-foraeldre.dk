@@ -67,7 +67,8 @@ body.node-type-basic-page .author-datetime a,
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label,
 .field-name-field-related-terms .field-item a,
-.view-display-id-related_terms_pane a {
+.view-display-id-related_terms_pane a,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after {
   color: #00a2eb;
 }
 
@@ -117,7 +118,7 @@ body.page-user ul.primary li.active,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
-#commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
+#commerce-checkout-form-checkout .customer_profile_shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,

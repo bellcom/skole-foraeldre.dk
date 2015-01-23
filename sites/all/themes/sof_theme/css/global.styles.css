@@ -1622,7 +1622,7 @@ body.node-type-slider #main-content {
   width:100%;
   border-top:1px solid #ccc;
   border-bottom:1px solid #ccc;
-  padding:35px 0;
+  padding:10px 0;
   margin-top:20px;
 }
 .publication-ecommercebutton {
@@ -1682,7 +1682,9 @@ body.node-type-slider #main-content {
   opacity: 0.8;
 }
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-commerce-price {
-  font-size: 22px;
+  font-size: 26px;
+  line-height: 100%;
+  margin: 15px 0 0 0;
 }
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity,
 .publication-ecommerce-container-inner-product-qprice .commerce-product-field-field-sof-commerce-quantity h2 {
@@ -1693,14 +1695,19 @@ body.node-type-slider #main-content {
   color:#747474;
 }
 .form-item-attributes-field-sof-commerce-type,
-.form-item-attributes-product-select {
+.form-item-attributes-product-select,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
   margin:0px 10px 0 0;
   padding:0px;
   float:left;
   width:43%;
 }
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
+  width: 20%;
+}
 .form-item-attributes-field-sof-commerce-type .form-item {
   width:100%;
+  margin-top: 10px;
 }
 .form-item-attributes-field-sof-commerce-type label {
   width: 200px;
@@ -1718,6 +1725,8 @@ body.node-type-slider #main-content {
   line-height: 20px;
   text-indent: 35px;
   cursor: pointer;
+  margin: 0 0 0 -10px;
+  font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1727,14 +1736,14 @@ body.node-type-slider #main-content {
 .form-item-attributes-field-sof-commerce-type input[type="radio"] ~ label:before {
   position: absolute;
   display: block;
-  top: 0;
+  top: 3px;
   bottom: 0;
-  left: 0;
+  left: 10px;
   content: '';
-  width: 20px;
-  height:20px;
+  width: 16px;
+  height:16px;
   background: #d0d0d0;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 /* toggle on */
 .form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before {
@@ -1752,16 +1761,18 @@ body.node-type-slider #main-content {
 .form-item-attributes-product-selectoption {
   padding: 8px;
 }
-.form-item-attributes-product-select {
+.form-item-attributes-product-select,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
   position: relative;
   display: inline-block;
   border: 0;
 }
 
-.form-item-attributes-product-select::after {
+.form-item-attributes-product-select::after,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after {
   content: "\25bc";
   position: absolute;
-  top: 30px;
+  top: 40px;
   right: 0;
   display: block;
   width: 32px;
@@ -1773,15 +1784,27 @@ body.node-type-slider #main-content {
   -moz-pointer-events: none;
   pointer-events: none;
 }
-
-.form-item-attributes-product-select select {
+.field-name-field-sof-commerce-customer-type {
+  float: left;
+  width: 100%;
+}
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after {
+  background: #f0f0f0;
+  top: 48px;
+}
+.form-item-attributes-product-select select,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und select {
   height: 34px;
   border: 0;
   vertical-align: middle;
   outline: 0 none;
   width:100%;
+  margin-top: 10px;
+  background: #fff;
 }
-
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und select {
+  background: #f0f0f0;
+}
 .form-item-attributes-product-select option {
   background: #fff;
   color: #333;
@@ -1988,7 +2011,7 @@ body.page-user-orders #tasks ul li a {
   font-size:16px;
 }
 #commerce-checkout-form-checkout #edit-cart-contents,
-#commerce-checkout-form-checkout #edit-customer-profile-shipping,
+#commerce-checkout-form-checkout .customer_profile_shipping,
 #commerce-checkout-form-checkout #edit-customer-profile-billing,
 #commerce-checkout-form-checkout #edit-buttons,
 #commerce-checkout-form-shipping #edit-commerce-shipping,
@@ -1999,11 +2022,14 @@ body.page-user-orders #tasks ul li a {
   border: none;
   padding: 0;
 }
+#edit-commerce-shipping label {
+  font-weight: normal!important;
+}
 #edit-commerce-coupon {
   margin-top: 15px;
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
-#commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
+#commerce-checkout-form-checkout .customer_profile_shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,
 #commerce-checkout-form-review .checkout-review .pane-title td,
@@ -2031,14 +2057,15 @@ body.page-checkout #edit-cart-contents legend {
 body.page-checkout #edit-buttons {
   margin-bottom: 10px;
 }
-#commerce-checkout-form-shipping #edit-customer-profile-shipping legend a.fieldset-title {
+#commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title {
   color: #fff;
 }
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount,
 #commerce-checkout-form-complete .checkout-completion-message {
   text-transform: uppercase;
 }
-#commerce-checkout-form-checkout #edit-customer-profile-shipping .form-type-checkbox {
+#commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox {
+  float: left;
   padding: 0 0 0 10px;
   text-align: center;
   font-size: 14px;
@@ -2053,6 +2080,13 @@ body.page-checkout #edit-buttons {
   font-size: 18px;
   font-weight: 200!important;
   line-height: 24px;
+}
+#commerce-checkout-form-checkout .form-type-checkbox {
+  float: left;
+  width: 100%;
+}
+#commerce-checkout-form-checkout .form-type-checkbox  label {
+  padding: 0;
 }
 #commerce-checkout-form-complete .checkout-completion-message {
   color: #ccc;
@@ -2123,6 +2157,10 @@ table.checkout-review .pane-data-full {
   background: #fff;
   border: none;
 }
+.customer_profile_billing .field-type-text {
+  float: left;
+  width: 100%;
+}
 #commerce-checkout-form-review  #edit-checkout-review .pane-data.even:nth-child(4n),
 .field-name-commerce-customer-billing.field-type-commerce-customer-profile-reference {
   background-color: #f0f0f0;
@@ -2169,17 +2207,17 @@ table.checkout-review .pane-data-full {
 #commerce-checkout-form-review #edit-buttons {
   padding-top: 20px;
 }
-#commerce-checkout-form-checkout #edit-customer-profile-shipping a {
+#commerce-checkout-form-checkout .customer_profile_shipping a {
   color: #fff;
 }
-#edit-customer-profile-shipping.collapsed {
+.customer_profile_shipping.collapsed {
   margin-bottom: 20px;
 }
-#edit-customer-profile-shipping .form-type-checkbox input {
+.customer_profile_shipping .form-type-checkbox input {
   float: left;
   margin: 6px 5px 0 0;
 }
-#edit-customer-profile-shipping .form-type-checkbox label{
+.customer_profile_shipping .form-type-checkbox label{
   float: left;
   margin: 0px;
   padding: 0px;

@@ -324,7 +324,7 @@ body.page-releases .pane-apachesolr-form h2 {
   display: inline-block;
 }
 
-#edit-customer-profile-shipping.collapsed {
+.customer_profile_shipping.collapsed {
   margin-bottom: 40px;
 }
 div.messages.commerce-add-to-cart-confirmation {

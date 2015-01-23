@@ -262,7 +262,7 @@ body {
   display: inline-block;
 }
 
-#edit-customer-profile-shipping.collapsed {
+.customer_profile_shipping.collapsed {
   margin-bottom: 40px;
 }
 /* =============================================================================
