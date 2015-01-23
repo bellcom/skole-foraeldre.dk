@@ -502,6 +502,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
     }
   }
 }
+
 /**
  * Adding new style for Seven admin theme.
  */
@@ -513,4 +514,22 @@ function sof_general_tweaks_preprocess_html(&$variables) {
     // Reference your own stylesheet.
     drupal_add_css(drupal_get_path('module', 'sof_general_tweaks') . '/css/sof_general_tweaks.css', array('weight' => CSS_THEME));
   }
+}
+
+/**
+ * Implements hook_commerce_payment_method_info().
+ *
+ * Defines new payment method - Invoice.
+ * It is just defined, because it is wanted only as an option.
+ */
+function sof_general_tweaks_commerce_payment_method_info() {
+  $payment_methods = array();
+
+  $payment_methods['sof_invoice_payment'] = array(
+    'title' => t('Invoice'),
+    'description' => t('Custom SOF invoice payment method.'),
+    'active' => TRUE,
+  );
+
+  return $payment_methods;
 }
