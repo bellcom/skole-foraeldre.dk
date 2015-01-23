@@ -309,7 +309,7 @@ function sof_article_panelizer_defaults() {
       'link' => 1,
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'b',
+      'override_title_text' => 'by',
     );
     $pane->cache = array();
     $pane->style = array(
