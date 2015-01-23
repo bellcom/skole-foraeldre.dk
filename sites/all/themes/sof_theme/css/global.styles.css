@@ -2876,7 +2876,8 @@ section.pane-node-author h2,
 section.pane-node-author .block-content {
   float: left;
 }
-.pane-node-author h2 {
+.pane-node-author h2,
+.pane-node-updated h2 {
   display: block!important;
 }
 .pane-node-updated,
@@ -2903,6 +2904,11 @@ body.node-type-basic-page hr {
   border-left: none;
   border-right: none;
   border-bottom: none;
+}
+.article-news-main-container .field-name-body ol,
+body.node-type-basic-page .field-name-body ol {
+  float: left;
+  width: 100%;
 }
 .article-news-main-container .field-name-body ul li,
 body.node-type-basic-page .field-name-body ul li {
