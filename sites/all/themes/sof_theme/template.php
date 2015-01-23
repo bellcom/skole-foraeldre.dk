@@ -35,17 +35,19 @@ function sof_theme_process_html(&$variables) {
  */
 function sof_theme_process_page(&$variables) {
   // Insert print button in article and news content type.
-  $contenttype = $variables['node']->type;
-  if ($contenttype == 'article' || $contenttype == 'news') {
-    $nodeid = $variables['node']->vid;
-    $variables['add_this_button'] = $variables['page']['content']['system_main']['nodes'][$nodeid]['field_add_this'];
-    $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
-      'attributes' => array(
-        'class' => array('print-btn'),
-      ),
-      'fragment' => '',
-      'external' => TRUE,
-    ));
+  if (isset($variables['node'])) {
+    $contenttype = $variables['node']->type;
+    if ($contenttype == 'article' || $contenttype == 'news') {
+      $nodeid = $variables['node']->vid;
+      $variables['add_this_button'] = $variables['page']['content']['system_main']['nodes'][$nodeid]['field_add_this'];
+      $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
+        'attributes' => array(
+          'class' => array('print-btn'),
+        ),
+        'fragment' => '',
+        'external' => TRUE,
+      ));
+    }
   }
   global $base_path;
   $theme = "sof_theme";
