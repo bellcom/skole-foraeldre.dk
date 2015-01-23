@@ -339,10 +339,14 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
  *   Articles
  * ========================================================================== */
 .left-article-region,
-.right-article-region {
+.right-article-region,
+.top-sharing-printing-links-inline {
   width: 100%;
   padding: 0 20px;
   max-width: none;
+}
+.right-article-region {
+  margin-top: 10px;
 }
 /* =============================================================================
  *   Sections
