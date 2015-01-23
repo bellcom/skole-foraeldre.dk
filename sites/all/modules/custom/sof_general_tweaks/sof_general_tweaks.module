@@ -502,3 +502,15 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
     }
   }
 }
+/**
+ * Adding new style for Seven admin theme.
+ */
+function sof_general_tweaks_preprocess_html(&$variables) {
+  // Add conditional stylesheets for admin pages on admin theme.
+  if (arg(0) == "admin") {
+    // Reference your current admin theme.
+    $theme_path = drupal_get_path('theme', 'seven');
+    // Reference your own stylesheet.
+    drupal_add_css(drupal_get_path('module', 'sof_general_tweaks') . '/css/sof_general_tweaks.css', array('weight' => CSS_THEME));
+  }
+}

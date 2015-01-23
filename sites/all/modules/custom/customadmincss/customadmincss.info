@@ -1,4 +1,0 @@
-name = Custom Admin Css
-description = Adding custom style for admin theme
-core = 7.x
-package = "SOF custom"
