@@ -41,6 +41,22 @@ function sof_commerce_settings_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "commerce_payment" ],
+      "ON" : { "commerce_payment_methods" : [] },
+      "DO" : [
+        { "commerce_payment_enable_commerce_dibs" : {
+            "commerce_order" : [ "commerce-order" ],
+            "payment_method" : "commerce_dibs"
+          }
+        }
+      ]
+    }
+  }');
+  $items['commerce_payment_sof_invoice'] = entity_import('rules_config', '{ "commerce_payment_sof_invoice" : {
+      "LABEL" : "Sof Invoice",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Commerce Payment" ],
       "REQUIRES" : [ "rules", "commerce_payment" ],
       "ON" : { "commerce_payment_methods" : [] },
       "IF" : [
@@ -50,7 +66,7 @@ function sof_commerce_settings_default_rules_configuration() {
             "field" : "field_sof_commerce_customer_type"
           }
         },
-        { "NOT data_is" : {
+        { "data_is" : {
             "data" : [
               "commerce-order:commerce-customer-billing:field-sof-commerce-customer-type"
             ],
@@ -59,9 +75,9 @@ function sof_commerce_settings_default_rules_configuration() {
         }
       ],
       "DO" : [
-        { "commerce_payment_enable_commerce_dibs" : {
+        { "commerce_payment_enable_sof_invoice_payment" : {
             "commerce_order" : [ "commerce-order" ],
-            "payment_method" : "commerce_dibs"
+            "payment_method" : "sof_invoice_payment"
           }
         }
       ]

@@ -1,13 +1,9 @@
-<?php
+/**
+ @file
 
-/*
- * @file
- *
- * @author Martina Radeva <martina@propeople.dk>
- * @author Lachezar Valchev <lachezar@propeople.dk>
+ @author Martina Radeva <martina@propeople.dk>
+ @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
-?>
 
 (function($) {
   Drupal.behaviors.sofGeneralTweaksCommerce = {
