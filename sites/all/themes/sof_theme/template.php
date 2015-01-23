@@ -34,6 +34,19 @@ function sof_theme_process_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function sof_theme_process_page(&$variables) {
+  // Insert print button in article and news content type.
+  $contenttype = $variables['node']->type;
+  if ($contenttype == 'article' || $contenttype == 'news') {
+    $nodeid = $variables['node']->vid;
+    $variables['add_this_button'] = $variables['page']['content']['system_main']['nodes'][$nodeid]['field_add_this'];
+    $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
+      'attributes' => array(
+        'class' => array('print-btn'),
+      ),
+      'fragment' => '',
+      'external' => TRUE,
+    ));
+  }
   global $base_path;
   $theme = "sof_theme";
   // Hook into color.module.
@@ -297,14 +310,6 @@ function sof_theme_preprocess_node(&$variables) {
       $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 320, FALSE, TRUE);
     }
     if ($view_mode == 'full') {
-      // Add print button link.
-      $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
-        'attributes' => array(
-          'class' => array('print-btn'),
-        ),
-        'fragment' => '',
-        'external' => TRUE,
-      ));
       // Publication link variable.
       if ($variables['field_publication_control_link'][LANGUAGE_NONE][0]['value'] == 1) {
         $variables['publication_link'] = l(t('See all publications'), 'releases', array(
