@@ -194,6 +194,21 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
  * Implements hook_form_alter().
  */
 function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
+  // Alter mailchimp subscribe block form.
+  if (strpos($form_id, 'mailchimp_signup_subscribe_block_') !== FALSE) {
+    // Wrap email field and submit button, in order to be replaced.
+    $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
+    $form['submit']['#suffix'] = '</div>';
+
+    // Add ajax to the form.
+    $form['submit']['#ajax'] = array(
+      'callback' => 'sof_general_tweaks_mailchimp_ajax',
+      'wrapper' => 'sof-general-tweaks-mailchimp',
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+  }
+
   // Alter taxonomy search form.
   switch ($form_id) {
     case 'apachesolr_search_custom_page_search_form':
@@ -206,22 +221,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
           $form['#action'] = '/search/site';
         }
       }
-      break;
-
-    // Alter mailchimp subscribe block form.
-    case 'mailchimp_signup_subscribe_block_sof_mailchimp_form_form':
-    case 'mailchimp_signup_subscribe_block_propeople_test_newsletter_form':
-      // Wrap email field and submit button, in order to be replaced.
-      $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
-      $form['submit']['#suffix'] = '</div>';
-
-      // Add ajax to the form.
-      $form['submit']['#ajax'] = array(
-        'callback' => 'sof_general_tweaks_mailchimp_ajax',
-        'wrapper' => 'sof-general-tweaks-mailchimp',
-        'method' => 'replace',
-        'effect' => 'fade',
-      );
       break;
 
     case 'commerce_checkout_form_checkout':
