@@ -1880,7 +1880,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_product',
     'field_name' => 'field_sof_commerce_type',
-    'label' => 'Type',
+    'label' => 'Variant',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2084,7 +2084,7 @@ function sof_commerce_settings_field_default_field_instances() {
   t('Single product weight');
   t('Street number');
   t('Telephone');
-  t('Type');
+  t('Variant');
 
   return $field_instances;
 }

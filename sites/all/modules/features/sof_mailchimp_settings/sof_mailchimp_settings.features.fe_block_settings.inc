@@ -34,10 +34,10 @@ function sof_mailchimp_settings_default_fe_block_settings() {
         'weight' => 0,
       ),
       'sof_theme' => array(
-        'region' => 'social_media_region',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'sof_theme',
-        'weight' => -25,
+        'weight' => -29,
       ),
     ),
     'title' => '',
