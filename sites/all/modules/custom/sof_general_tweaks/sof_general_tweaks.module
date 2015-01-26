@@ -228,28 +228,27 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
 
       // Add custom validation to customer profile fields: telephone,
       // postal_code, cvr, ean.
-      $shipping = $form['customer_profile_shipping'];
       $billing = $form['customer_profile_billing'];
-      $form['customer_profile_billing']['field_sof_commerce_customer_tel'][$billing['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['field_sof_commerce_customer_cvr'][$billing['field_sof_commerce_customer_cvr']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['field_sof_commerce_customer_ean'][$billing['field_sof_commerce_customer_ean']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['field_sof_customer_post_code'][$billing['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $shipping = $form['customer_profile_shipping'];
+      $billing['field_sof_commerce_customer_tel'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $billing['field_sof_commerce_customer_cvr'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $billing['field_sof_commerce_customer_ean'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $billing['field_sof_customer_post_code'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
-      $form['customer_profile_shipping']['field_sof_commerce_customer_tel'][$shipping['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_shipping']['field_sof_customer_post_code'][$shipping['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $shipping['field_sof_commerce_customer_tel'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $shipping['field_sof_customer_post_code'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
       // Disable country field and add its default vaue.
-      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
-      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+      $billing['field_sof_customer_country'][LANGUAGE_NONE][0]['value']['#default_value'] = t('Denmark');
+      $billing['field_sof_customer_country'][LANGUAGE_NONE][0]['value']['#disabled'] = TRUE;
 
-      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
-      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+      $shipping['field_sof_customer_country'][LANGUAGE_NONE][0]['value']['#default_value'] = t('Denmark');
+      $shipping['field_sof_customer_country'][LANGUAGE_NONE][0]['value']['#disabled'] = TRUE;
 
       // Validate required fields Firm and Institution name, because #states
       // are not working.
-      $form['customer_profile_billing']['field_sof_commerce_customer_firm'][$billing['field_sof_commerce_customer_firm']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['field_sof_commerce_customer_name'][$billing['field_sof_commerce_customer_name']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-
+      $billing['field_sof_commerce_customer_firm'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $billing['field_sof_commerce_customer_name'][LANGUAGE_NONE][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
       break;
 
     case 'views_form_commerce_cart_form_sof_default':
@@ -439,7 +438,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
   $billing = $form_state['input']['customer_profile_billing'];
   $lang = isset($element['#language']) ? $element['#language'] : LANGUAGE_NONE;
 
-  // Skip shipping fields validattion if the information will be copied from
+  // Skip shipping fields validation if the information will be copied from
   // the billing profile.
   $copy = $form_state['input']['customer_profile_shipping']['commerce_customer_profile_copy'];
   if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
