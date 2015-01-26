@@ -456,7 +456,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
 
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
-        $pattern = '/^\+?(([0-9]+\s?)+)$/';
+        $pattern = '/^\+?\s?([0-9]+\s?)+$/';
         if ($value && !preg_match($pattern, $value)) {
           form_error($element, t('Udfyld Telefonnummer.'));
         }

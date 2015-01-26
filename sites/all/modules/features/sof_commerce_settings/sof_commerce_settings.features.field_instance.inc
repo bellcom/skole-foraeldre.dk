@@ -693,7 +693,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_one',
-    'label' => 'Addresse',
+    'label' => 'Adresse',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -737,7 +737,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_two',
-    'label' => 'Addresse',
+    'label' => 'Adresse (mere plads til adresse)',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -1176,7 +1176,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_one',
-    'label' => 'Addresse',
+    'label' => 'Adresse',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1220,7 +1220,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_two',
-    'label' => 'Addresse',
+    'label' => 'Adresse (mere plads til adresse)',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -2062,7 +2062,8 @@ function sof_commerce_settings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Addresse');
+  t('Adresse');
+  t('Adresse (mere plads til adresse)');
   t('By');
   t('CVR nr');
   t('Description');
