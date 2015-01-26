@@ -1643,11 +1643,11 @@ body.node-type-slider #main-content {
 }
 .publication-ecommerce-container-inner-product-qprice {
   float: left;
-  width:25%;
+  width:30%;
 }
 .publication-ecommerce-container-inner-product-info{
   float:left;
-  width:75%;
+  width:70%;
 }
 .field-name-field-sof-commerce-product .form-submit {
   float: left;
@@ -1675,7 +1675,7 @@ body.node-type-slider #main-content {
   background-color: #00A2EB;
   position: absolute;
   right: 0px;
-  bottom: 38px;
+  bottom: 15px;
 }
 .field-name-field-sof-commerce-product .form-submit:hover,
 .publication-oneproduct .form-submit:hover {

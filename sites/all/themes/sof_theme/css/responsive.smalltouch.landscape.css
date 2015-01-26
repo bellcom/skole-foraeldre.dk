@@ -613,9 +613,6 @@ ul.pager li {
   .publication-ecommerce-container-inner-product-qprice {
   	width:100%;
   }
-  .publication-ecommerce-container-inner-product-qprice {
-  	margin-top:20px;
-  }
 }
 @media all and (max-width: 470px) {
   #logo img {
