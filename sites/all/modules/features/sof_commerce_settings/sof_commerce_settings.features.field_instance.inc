@@ -154,7 +154,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_ean',
-    'label' => 'EAN number',
+    'label' => 'EAN Number',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -238,7 +238,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_firm',
-    'label' => 'Firm',
+    'label' => 'Firma',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -322,7 +322,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_mail',
-    'label' => 'Email',
+    'label' => 'E-mail',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -399,7 +399,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_name',
-    'label' => 'Institution name',
+    'label' => 'Navn på institution',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -483,7 +483,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_note',
-    'label' => 'Note',
+    'label' => 'Notat',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -569,7 +569,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_tel',
-    'label' => 'Telephone',
+    'label' => 'Telefon',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -657,7 +657,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_type',
-    'label' => 'Customer Type',
+    'label' => 'Kundetype',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -693,7 +693,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_one',
-    'label' => 'Address 1',
+    'label' => 'Addresse',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -737,7 +737,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_two',
-    'label' => 'Address 2',
+    'label' => 'Addresse',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -757,7 +757,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -781,7 +781,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_city',
-    'label' => 'City',
+    'label' => 'By',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -829,7 +829,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_country',
-    'label' => 'Country',
+    'label' => 'Land',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -873,7 +873,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_first_name',
-    'label' => 'First Name',
+    'label' => 'Fornavn',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -917,7 +917,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_last_name',
-    'label' => 'Last Name',
+    'label' => 'Efternavn',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -961,7 +961,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_post_code',
-    'label' => 'Post code',
+    'label' => 'Postnummer',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1005,7 +1005,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_street_num',
-    'label' => 'Street number',
+    'label' => 'Gadenummer',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1025,7 +1025,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -1049,7 +1049,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_mail',
-    'label' => 'Email',
+    'label' => 'E-mail',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1086,7 +1086,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_note',
-    'label' => 'Note',
+    'label' => 'Notat',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -1132,7 +1132,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_commerce_customer_tel',
-    'label' => 'Telephone',
+    'label' => 'Telefon',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1176,7 +1176,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_one',
-    'label' => 'Address 1',
+    'label' => 'Addresse',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1220,7 +1220,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_address_two',
-    'label' => 'Address 2',
+    'label' => 'Addresse',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -1240,7 +1240,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -1264,7 +1264,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_city',
-    'label' => 'City',
+    'label' => 'By',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1312,7 +1312,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_country',
-    'label' => 'Country',
+    'label' => 'Land',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -1356,7 +1356,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_first_name',
-    'label' => 'First Name',
+    'label' => 'Fornavn',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1400,7 +1400,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_last_name',
-    'label' => 'Last Name',
+    'label' => 'Efternavn',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1444,7 +1444,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_post_code',
-    'label' => 'Post code',
+    'label' => 'Postnummer',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1488,7 +1488,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_customer_profile',
     'field_name' => 'field_sof_customer_street_num',
-    'label' => 'Street number',
+    'label' => 'Gadenummer',
     'required' => 1,
     'settings' => array(
       'linkit' => array(
@@ -1508,7 +1508,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -2062,28 +2062,27 @@ function sof_commerce_settings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Address 1');
-  t('Address 2');
+  t('Addresse');
+  t('By');
   t('CVR nr');
-  t('City');
-  t('Country');
-  t('Customer Type');
   t('Description');
-  t('EAN number');
-  t('Email');
-  t('Firm');
-  t('First Name');
-  t('Institution name');
+  t('E-mail');
+  t('EAN Number');
+  t('Efternavn');
+  t('Firma');
+  t('Fornavn');
+  t('Gadenummer');
   t('Item Price');
-  t('Last Name');
+  t('Kundetype');
+  t('Land');
   t('Min Quantity');
-  t('Note');
+  t('Navn på institution');
+  t('Notat');
   t('Pdf');
-  t('Post code');
+  t('Postnummer');
   t('SOF message order');
   t('Single product weight');
-  t('Street number');
-  t('Telephone');
+  t('Telefon');
   t('Variant');
 
   return $field_instances;

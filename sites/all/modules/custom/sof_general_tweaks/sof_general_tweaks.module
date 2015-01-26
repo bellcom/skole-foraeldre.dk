@@ -450,29 +450,29 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
     switch ($element['#field_name']) {
       case 'field_sof_customer_post_code':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 4)) {
-          form_error($element, t('Fill Post code.'));
+          form_error($element, t('Udfyld Postnummer.'));
         }
         break;
 
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
-        $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
+        $pattern = '/^\+?(([0-9]+\s?)+)$/';
         if ($value && !preg_match($pattern, $value)) {
-          form_error($element, t('Fill Phone.'));
+          form_error($element, t('Udfyld Telefonnummer.'));
         }
         break;
 
       // Validate cvr to be a number with exactly 8 digits.
       case 'field_sof_commerce_customer_cvr':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 8)) {
-          form_error($element, t('Fill CVR Number.'));
+          form_error($element, t('Udfyld CVR nr.'));
         }
         break;
 
       // Validate ean to be a number with exactly 13 digits.
       case 'field_sof_commerce_customer_ean':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 13)) {
-          form_error($element, t('Fill EAN number.'));
+          form_error($element, t('Udfyld EAN Number.'));
         }
         // Validate if empty, the field is required;
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
@@ -486,7 +486,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
       case 'field_sof_commerce_customer_firm':
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'company') {
           if (!$value) {
-            form_error($element, t('Firm field is required.'));
+            form_error($element, t('Firma felt er obligatorisk.'));
           }
         }
         break;
@@ -495,7 +495,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
       case 'field_sof_commerce_customer_name':
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
           if (!$value) {
-            form_error($element, t('Institution name field is required.'));
+            form_error($element, t('Navn på institution felt er obligatorisk.'));
           }
         }
         break;
