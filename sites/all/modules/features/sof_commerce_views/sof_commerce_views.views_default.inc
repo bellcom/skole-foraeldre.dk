@@ -398,11 +398,12 @@ function sof_commerce_views_views_default_views() {
   $handler->display->display_options['fields']['commerce_total']['settings'] = array(
     'calculation' => FALSE,
   );
-  /* Field: Commerce Product: Type */
+  /* Field: Commerce Product: Variant */
   $handler->display->display_options['fields']['field_sof_commerce_type']['id'] = 'field_sof_commerce_type';
   $handler->display->display_options['fields']['field_sof_commerce_type']['table'] = 'field_data_field_sof_commerce_type';
   $handler->display->display_options['fields']['field_sof_commerce_type']['field'] = 'field_sof_commerce_type';
   $handler->display->display_options['fields']['field_sof_commerce_type']['relationship'] = 'commerce_product_product_id';
+  $handler->display->display_options['fields']['field_sof_commerce_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_sof_commerce_type']['settings'] = array(
     'field_multiple_limit' => '1',
     'field_multiple_limit_offset' => '0',
