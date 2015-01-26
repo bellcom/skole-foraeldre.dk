@@ -106,6 +106,9 @@ function propeople_install() {
 
   // Disable account pane from commerce review page.
   _propeople_disable_commerce_account_pane();
+
+  // Creates default terms in Product Variants vocabulary.
+  _propeople_create_product_variants_terms();
 }
 
 /**
@@ -664,6 +667,39 @@ function _propeople_change_field_length($field_name, $length) {
 }
 
 /**
+ * Implements helper function that creates default terms in Product variants.
+ */
+function _propeople_create_product_variants_terms() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('product_variants');
+
+  if ($vocabulary) {
+    $terms = array(
+      'pdf' => array(
+        'name' => 'Pdf',
+        'description' => 'PDF product type.',
+      ),
+      'printed' => array(
+        'name' => 'Printed',
+        'description' => 'Printed version of the product.',
+      ),
+    );
+
+    foreach ($terms as $item) {
+      $term = new stdClass();
+      $term->vid = $vocabulary->vid;
+      $term->name = st($item['name']);
+      $term->description = $item['description'];
+
+      taxonomy_term_save($term);
+    }
+  }
+  else {
+    drupal_set_message(t('Vocabulary Product Variants cant be loaded.'), 'error', FALSE);
+    return FALSE;
+  }
+}
+
+/**
  * Implements hook_update_N().
  *
  * Remove some fields from commerce customer types.
@@ -810,4 +846,21 @@ function propeople_update_7007() {
  */
 function propeople_update_7008() {
   _propeople_change_field_length('field_sof_commerce_customer_tel', 15);
+}
+/**
+ * Implements hook_update_N().
+ *
+ * Creats default product variants and delets the old product variant field.
+ */
+function propeople_update_7009() {
+  _propeople_create_product_variants_terms();
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_product',
+        'field_name' => 'field_sof_commerce_type',
+        'bundle' => 'product',
+      ),
+      array()
+  );
 }
