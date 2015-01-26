@@ -194,6 +194,21 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
  * Implements hook_form_alter().
  */
 function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
+  // Alter mailchimp subscribe block form.
+  if (strpos($form_id, 'mailchimp_signup_subscribe_block_') !== FALSE) {
+    // Wrap email field and submit button, in order to be replaced.
+    $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
+    $form['submit']['#suffix'] = '</div>';
+
+    // Add ajax to the form.
+    $form['submit']['#ajax'] = array(
+      'callback' => 'sof_general_tweaks_mailchimp_ajax',
+      'wrapper' => 'sof-general-tweaks-mailchimp',
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+  }
+
   // Alter taxonomy search form.
   switch ($form_id) {
     case 'apachesolr_search_custom_page_search_form':
@@ -206,21 +221,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
           $form['#action'] = '/search/site';
         }
       }
-      break;
-
-    // Alter mailchimp subscribe block form.
-    case 'mailchimp_signup_subscribe_block_sof_mailchimp_form_form':
-      // Wrap email field and submit button, in order to be replaced.
-      $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
-      $form['submit']['#suffix'] = '</div>';
-
-      // Add ajax to the form.
-      $form['submit']['#ajax'] = array(
-        'callback' => 'sof_general_tweaks_mailchimp_ajax',
-        'wrapper' => 'sof-general-tweaks-mailchimp',
-        'method' => 'replace',
-        'effect' => 'fade',
-      );
       break;
 
     case 'commerce_checkout_form_checkout':
@@ -450,29 +450,29 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
     switch ($element['#field_name']) {
       case 'field_sof_customer_post_code':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 4)) {
-          form_error($element, t('Fill Post code.'));
+          form_error($element, t('Udfyld Postnummer.'));
         }
         break;
 
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
-        $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
+        $pattern = '/^\+?(([0-9]+\s?)+)$/';
         if ($value && !preg_match($pattern, $value)) {
-          form_error($element, t('Fill Phone.'));
+          form_error($element, t('Udfyld Telefonnummer.'));
         }
         break;
 
       // Validate cvr to be a number with exactly 8 digits.
       case 'field_sof_commerce_customer_cvr':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 8)) {
-          form_error($element, t('Fill CVR Number.'));
+          form_error($element, t('Udfyld CVR nr.'));
         }
         break;
 
       // Validate ean to be a number with exactly 13 digits.
       case 'field_sof_commerce_customer_ean':
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 13)) {
-          form_error($element, t('Fill EAN number.'));
+          form_error($element, t('Udfyld EAN Number.'));
         }
         // Validate if empty, the field is required;
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
@@ -486,7 +486,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
       case 'field_sof_commerce_customer_firm':
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'company') {
           if (!$value) {
-            form_error($element, t('Firm field is required.'));
+            form_error($element, t('Firma felt er obligatorisk.'));
           }
         }
         break;
@@ -495,7 +495,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
       case 'field_sof_commerce_customer_name':
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
           if (!$value) {
-            form_error($element, t('Institution name field is required.'));
+            form_error($element, t('Navn på institution felt er obligatorisk.'));
           }
         }
         break;
@@ -532,4 +532,15 @@ function sof_general_tweaks_commerce_payment_method_info() {
   );
 
   return $payment_methods;
+}
+
+/**
+ * Implements hook_commerce_price_component_type_info_alter().
+ *
+ * Alter the price component display title.
+ */
+function sof_general_tweaks_commerce_price_component_type_info_alter(&$component_types) {
+  if (isset($component_types['base_price'])) {
+    $component_types['base_price']['display_title'] = t('Total excluding VAT');
+  }
 }

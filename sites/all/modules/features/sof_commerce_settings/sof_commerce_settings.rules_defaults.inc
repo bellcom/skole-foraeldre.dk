@@ -427,16 +427,6 @@ function sof_commerce_settings_default_rules_configuration() {
             "value" : "4.8",
             "unit" : "kg"
           }
-        },
-        { "AND" : [
-            { "commerce_physical_rules_order_weight_comparison" : {
-                "commerce_order" : [ "commerce_order" ],
-                "operator" : "\\u003C=",
-                "value" : "9.6",
-                "unit" : "kg"
-              }
-            }
-          ]
         }
       ],
       "DO" : [
