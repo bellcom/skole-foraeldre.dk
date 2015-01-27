@@ -1841,8 +1841,8 @@ function sof_commerce_settings_field_default_field_instances() {
   $field_instances['commerce_product-product-field_sof_commerce_type'] = array(
     'bundle' => 'product',
     'commerce_cart_settings' => array(
-      'attribute_field' => 0,
-      'attribute_widget' => 'select',
+      'attribute_field' => 1,
+      'attribute_widget' => 'radios',
       'attribute_widget_title' => 'Variant',
     ),
     'default_value' => NULL,
@@ -1862,8 +1862,8 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
       ),
       'line_item' => array(
         'label' => 'above',
