@@ -28,11 +28,16 @@
         font-size: 18px;
         color: #000;
       }
+      table p {
+        font-size: 14px;
+        color: #5E5E5E;
+      }
       table {
         border: none;
         margin: 10px 0px;
         padding: 0px;
-        width: 100%;
+        float: left;
+        font-size: 14px;
       }
       table td th {
         border-bottom: 0px none;
@@ -46,6 +51,7 @@
         border-right: 3px solid #FFF;
         border-radius: 7px;
         font-weight: normal;
+        padding: 10px;
       }
       table td {
         background: none repeat scroll 0% 0% #F0F0F0;
@@ -53,6 +59,7 @@
         border-right: 3px solid #FFF;
         border-radius: 7px;
         color: #5E5E5E;
+        padding: 10px;
       }
     </style>
     <?php endif; ?>
