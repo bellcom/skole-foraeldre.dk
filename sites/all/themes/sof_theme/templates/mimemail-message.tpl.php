@@ -26,10 +26,33 @@
     <style type="text/css">
       p {
         font-size: 18px;
-        color: #0000AA;
+        color: #000;
       }
-      table{
-        border: 1px solid #000;
+      table {
+        border: none;
+        margin: 10px 0px;
+        padding: 0px;
+        width: 100%;
+      }
+      table td th {
+        border-bottom: 0px none;
+        margin: 0px;
+        padding: 5px 7px;
+      }
+      table th {
+        background-color: #00A2EB;
+        color: #FFF;
+        text-transform: uppercase;
+        border-right: 3px solid #FFF;
+        border-radius: 7px;
+        font-weight: normal;
+      }
+      table td {
+        background: none repeat scroll 0% 0% #F0F0F0;
+        border-top: 3px solid #FFF;
+        border-right: 3px solid #FFF;
+        border-radius: 7px;
+        color: #5E5E5E;
       }
     </style>
     <?php endif; ?>
