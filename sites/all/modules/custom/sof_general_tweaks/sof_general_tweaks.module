@@ -132,7 +132,9 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   $node = node_load($entity->vid);
 
   // Render the node and strip all html tags from it.
-  $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
+  $node_view = node_view($node);
+  $node_render = drupal_render($node_view);
+  $full_node_html = drupal_html_to_text($node_render);
 
   // Add new fields for drupal search.
   $document->addField('ts_node_teaser', $node->field_teaser[LANGUAGE_NONE][0]['safe_value']);
