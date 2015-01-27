@@ -36,7 +36,6 @@
         border: none;
         margin: 10px 0px;
         padding: 0px;
-        float: left;
         font-size: 14px;
       }
       table td th {
