@@ -28,7 +28,7 @@
         font-size: 18px;
         color: #0000AA;
       }
-      div {
+      div table{
         border: 1px solid #000;
       }
     </style>
