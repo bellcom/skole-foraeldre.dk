@@ -31,6 +31,8 @@
       table p {
         font-size: 14px;
         color: #5E5E5E;
+        margin: 0;
+        padding: 0;
       }
       table {
         border: none;
