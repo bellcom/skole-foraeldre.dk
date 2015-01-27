@@ -171,7 +171,7 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '7',
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
@@ -181,7 +181,7 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '8',
+            'weight' => '12',
             'visible' => FALSE,
           ),
         ),
@@ -191,7 +191,7 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '13',
+            'weight' => '15',
             'visible' => FALSE,
           ),
         ),
@@ -201,7 +201,7 @@ function sof_publication_strongarm() {
             'visible' => TRUE,
           ),
           'full' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => TRUE,
           ),
         ),
@@ -211,7 +211,7 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '11',
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),
@@ -221,25 +221,25 @@ function sof_publication_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '9',
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
         'product:field_sof_commerce_description' => array(
           'full' => array(
-            'weight' => '3',
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
         'product:field_sof_commerce_quantity' => array(
           'full' => array(
-            'weight' => '6',
+            'weight' => '8',
             'visible' => TRUE,
           ),
         ),
         'product:field_sof_commerce_weight' => array(
           'full' => array(
-            'weight' => '7',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),

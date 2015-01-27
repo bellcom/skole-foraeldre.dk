@@ -132,7 +132,9 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   $node = node_load($entity->vid);
 
   // Render the node and strip all html tags from it.
-  $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
+  $node_view = node_view($node);
+  $node_render = drupal_render($node_view);
+  $full_node_html = drupal_html_to_text($node_render);
 
   // Add new fields for drupal search.
   $document->addField('ts_node_teaser', $node->field_teaser[LANGUAGE_NONE][0]['safe_value']);
@@ -439,7 +441,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
   $billing = $form_state['input']['customer_profile_billing'];
   $lang = isset($element['#language']) ? $element['#language'] : LANGUAGE_NONE;
 
-  // Skip shipping fields validattion if the information will be copied from
+  // Skip shipping fields validation if the information will be copied from
   // the billing profile.
   $copy = $form_state['input']['customer_profile_shipping']['commerce_customer_profile_copy'];
   if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
@@ -456,7 +458,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
 
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
-        $pattern = '/^\+?(([0-9]+\s?)+)$/';
+        $pattern = '/^\+?\s?([0-9]+\s?)+$/';
         if ($value && !preg_match($pattern, $value)) {
           form_error($element, t('Udfyld Telefonnummer.'));
         }
