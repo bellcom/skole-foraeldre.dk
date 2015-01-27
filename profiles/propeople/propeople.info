@@ -100,6 +100,7 @@ dependencies[] = googleanalytics
 dependencies[] = mailchimp
 dependencies[] = mailsystem
 dependencies[] = mimemail
+dependencies[] = mimemail_compress
 dependencies[] = message
 dependencies[] = message_notify
 dependencies[] = metatag
