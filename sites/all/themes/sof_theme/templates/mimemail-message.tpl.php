@@ -39,6 +39,7 @@
         margin: 10px 0px;
         padding: 0px;
         font-size: 14px;
+        width: 100%;
       }
       table td th {
         border-bottom: 0px none;
