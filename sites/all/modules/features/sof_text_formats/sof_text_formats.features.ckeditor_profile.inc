@@ -110,7 +110,7 @@ function sof_text_formats_ckeditor_profile_defaults() {
     [\'-\'],
     [\'linkit\',\'Unlink\'],
     \'/\',
-    [\'Styles\',\'Format\'],
+    [\'Format\'],
     [\'TextColor\',\'BGColor\'],
     [\'Maximize\']
 ]',
@@ -139,8 +139,8 @@ function sof_text_formats_ckeditor_profile_defaults() {
             'pre_indent' => 0,
           ),
         ),
-        'css_mode' => 'self',
-        'css_path' => '%tcss/mail.css',
+        'css_mode' => 'theme',
+        'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
         'filebrowser' => 'none',
@@ -187,13 +187,6 @@ function sof_text_formats_ckeditor_profile_defaults() {
                 'icon' => 'images/icon.gif',
               ),
             ),
-            'default' => 'f',
-          ),
-          'stylesheetparser' => array(
-            'name' => 'stylesheetparser',
-            'desc' => 'Plugin file: stylesheetparser',
-            'path' => '%plugin_dir%stylesheetparser/',
-            'buttons' => FALSE,
             'default' => 'f',
           ),
           'tableresize' => array(
