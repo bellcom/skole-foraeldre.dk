@@ -2032,7 +2032,7 @@ body.page-user-orders #tasks ul li a {
   width: 100%;
   float: left;
   padding-left: 15px;
-  background: url("images/arrow-shipping-up.png") no-repeat scroll 98% center transparent;
+  background: url("images/arrow-shipping-up.png") no-repeat scroll 98% top transparent;
 }
 #customer-profile-shipping-ajax-wrapper  span.fieldset-legend a {
   float: left;
