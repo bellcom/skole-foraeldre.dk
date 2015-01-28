@@ -2022,6 +2022,25 @@ body.page-user-orders #tasks ul li a {
   border: none;
   padding: 0;
 }
+#customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  background: url("images/arrow-shipping.png") no-repeat scroll 98% center transparent;
+}
+#customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  background: url("images/arrow-shipping-up.png") no-repeat scroll 98% center transparent;
+}
+#customer-profile-shipping-ajax-wrapper  span.fieldset-legend a {
+  float: left;
+  width: 100%;
+}
+#customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary {
+  font-size: 0px;
+}
 #edit-commerce-shipping label {
   font-weight: normal!important;
 }
