@@ -220,11 +220,11 @@ html, body {
 }
 
 /* Mailchimp integration */
-.mailchimp-signup-subscribe-form {
+.block-mailchimp-signup {
   float: left;
   width: 33.3%;
 }
-.mailchimp-signup-subscribe-form  .sof_footer_social_media_icon {
+.block-mailchimp-signup  .sof_footer_social_media_icon {
   background-image: url('images/footer-newsleter.png');
   background-position: center center;
   background-repeat: no-repeat;
