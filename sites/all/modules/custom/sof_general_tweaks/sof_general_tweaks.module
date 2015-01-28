@@ -546,3 +546,53 @@ function sof_general_tweaks_commerce_price_component_type_info_alter(&$component
     $component_types['base_price']['display_title'] = t('Total excluding VAT');
   }
 }
+
+/**
+ * Implements hook_token_info().
+ *
+ * Implements custom token that will render the logo image but resized.
+ */
+function sof_general_tweaks_token_info() {
+  $info = array();
+  $info['types']['sof'] = array(
+    'name' => t('SOF'),
+    'description' => t('Custom tokens related to SOF'),
+  );
+
+  $info['tokens']['sof']['resized-logo'] = array(
+    'name' => t('Resized logo'),
+    'description' => t('Resized site logo.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function sof_general_tweaks_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $sanitize = !empty($options['sanitize']);
+  $replacements = array();
+
+  if ($type == 'sof') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'resized-logo':
+          $logo = theme_get_setting('logo', 'sof_theme');
+          $replacements[$original] = theme(
+              'image_style',
+              array(
+                'image_style' => 'mail_logo',
+                'path' => $logo,
+                'alt' => variable_get('site_name'),
+                'title' => variable_get('site_name'),
+                'width' => '',
+                'height' => '',
+              )
+            );
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}
