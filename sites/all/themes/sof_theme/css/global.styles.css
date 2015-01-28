@@ -2072,6 +2072,14 @@ fieldset.cart_contents {
   float: left;
   width: 100%;
 }
+#edit-customer-profile-billing,
+section#main-content,
+#customer-profile-shipping-ajax-wrapper,
+#commerce-checkout-coupon-ajax-wrapper,
+#commerce-checkout-form-checkout #edit-buttons {
+  float: left;
+  width: 100%;
+}
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout .customer_profile_shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
