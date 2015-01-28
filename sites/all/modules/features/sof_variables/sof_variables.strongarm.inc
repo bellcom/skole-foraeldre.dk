@@ -103,6 +103,36 @@ function sof_variables_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_allowed_types';
+  $strongarm->value = array(
+    0 => 'image',
+    1 => 'video',
+    2 => 'audio',
+    3 => 'document',
+  );
+  $export['media_wysiwyg_wysiwyg_allowed_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_browser_plugins';
+  $strongarm->value = array(
+    0 => 'upload',
+    1 => 'media_browser_plus--media_browser_thumbnails',
+    2 => 'media_browser_plus--media_browser_my_files',
+  );
+  $export['media_wysiwyg_wysiwyg_browser_plugins'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_upload_directory';
+  $strongarm->value = '';
+  $export['media_wysiwyg_wysiwyg_upload_directory'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'mimemail_engine';
   $strongarm->value = 'mimemail';
   $export['mimemail_engine'] = $strongarm;

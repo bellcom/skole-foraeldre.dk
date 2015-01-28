@@ -67,6 +67,7 @@ dependencies[] = mediafield
 dependencies[] = media_internet
 dependencies[] = media_vimeo
 dependencies[] = media_youtube
+dependencies[] = media_wysiwyg
 dependencies[] = plupload
 dependencies[] = diff
 dependencies[] = entity
