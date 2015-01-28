@@ -2044,7 +2044,7 @@ body.page-user-orders #tasks ul li a {
   padding-left: 15px;
   background: url("images/arrow-shipping.png") no-repeat scroll 98% center transparent;
 }
-.customer-profile-shipping-ajax-wrapper legend {
+#customer-profile-shipping-ajax-wrapper legend {
   float: left;
 }
 #customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend {
@@ -2069,7 +2069,8 @@ body.page-user-orders #tasks ul li a {
   width: 100%;
 }
 fieldset.cart_contents {
-
+  float: left;
+  width: 100%;
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout .customer_profile_shipping legend,
