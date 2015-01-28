@@ -2109,6 +2109,7 @@ body.page-checkout #edit-cart-contents legend {
 }
 body.page-checkout #edit-buttons {
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 #commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title {
   color: #fff;
