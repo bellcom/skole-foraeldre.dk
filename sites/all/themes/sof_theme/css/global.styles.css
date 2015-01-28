@@ -1714,12 +1714,19 @@ body.node-type-slider #main-content {
 }
 
 /* hide input */
-.form-item-attributes-field-sof-commerce-type input[type="radio"] {
+.form-item-attributes-field-sof-commerce-type input[type="radio"],
+.form-item-commerce-shipping-shipping-service input[type="radio"],
+.form-item-commerce-payment-payment-method input[type="radio"] {
   display:none;
 }
-
+#edit-commerce-payment-payment-method .form-item {
+  float: left;
+  margin-right: 10px;
+}
 /* style label */
-.form-item-attributes-field-sof-commerce-type input[type="radio"]  ~ label {
+.form-item-attributes-field-sof-commerce-type input[type="radio"]  ~ label,
+.form-item-commerce-shipping-shipping-service input[type="radio"] ~ label,
+.form-item-commerce-payment-payment-method input[type="radio"] ~ label{
   position: relative;
   float: left;
   line-height: 20px;
@@ -1732,8 +1739,13 @@ body.node-type-slider #main-content {
   -ms-user-select: none;
   user-select: none;
 }
-
-.form-item-attributes-field-sof-commerce-type input[type="radio"] ~ label:before {
+#edit-commerce-shipping-shipping-service .form-item {
+  float: left;
+  width: 100%;
+}
+.form-item-attributes-field-sof-commerce-type input[type="radio"] ~ label:before,
+.form-item-commerce-shipping-shipping-service input[type="radio"] ~ label:before,
+.form-item-commerce-payment-payment-method input[type="radio"] ~ label:before {
   position: absolute;
   display: block;
   top: 3px;
@@ -1746,7 +1758,9 @@ body.node-type-slider #main-content {
   border-radius: 8px;
 }
 /* toggle on */
-.form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before {
+.form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before,
+.form-item-commerce-shipping-shipping-service input[type="radio"]:checked ~ label:before,
+.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before {
   text-indent: .9em;
   background-color:#00a2eb;
 }
@@ -1801,6 +1815,7 @@ body.node-type-slider #main-content {
   width:100%;
   margin-top: 10px;
   background: #fff;
+  line-height: 30px;
 }
 .form-item-customer-profile-billing-field-sof-commerce-customer-type-und select {
   background: #f0f0f0;
@@ -1884,6 +1899,7 @@ body.page-cart h1 {
   border-right: 3px solid #fff;
   border-radius: 7px;
   color: #5e5e5e;
+  font-weight: normal;
 }
 .commerce-price-formatted-components tbody tr  td {
   text-transform: uppercase;
@@ -2028,6 +2044,9 @@ body.page-user-orders #tasks ul li a {
   padding-left: 15px;
   background: url("images/arrow-shipping.png") no-repeat scroll 98% center transparent;
 }
+.customer-profile-shipping-ajax-wrapper legend {
+  float: left;
+}
 #customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend {
   width: 100%;
   float: left;
@@ -2046,6 +2065,11 @@ body.page-user-orders #tasks ul li a {
 }
 #edit-commerce-coupon {
   margin-top: 15px;
+  float: left;
+  width: 100%;
+}
+fieldset.cart_contents {
+
 }
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 #commerce-checkout-form-checkout .customer_profile_shipping legend,
@@ -2065,6 +2089,7 @@ body.page-user-orders #tasks ul li a {
   font-size:16px;
   color:#fff!important;
   text-transform:uppercase;
+  font-weight: normal;
 }
 .checkout-review .field-items,
 .commerce-order-commerce-order .field-items {
