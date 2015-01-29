@@ -601,6 +601,22 @@ ul.pager li {
   max-width: 200px;
   width: 100%;
 }
+/* Publication products */
+.publication-ecommerce-container-inner-product-info,
+.publication-ecommerce-container-inner-product-qprice {
+  width:100%;
+}
+.field-name-field-sof-commerce-product .form-submit {
+  bottom:-65px;
+  padding:12px 10px;
+  font-size:17px;
+}
+.back-to-all-releases-link {
+  font-size: 16px;
+}
+.publication-top-right-container {
+  padding: 0;
+}
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
@@ -627,12 +643,7 @@ ul.pager li {
     width: 100%;
 	padding: 0 0 20px 0;
 	text-align: center;
-  }	
-  /* Publication products */
- .publication-ecommerce-container-inner-product-info, 
- .publication-ecommerce-container-inner-product-qprice {
-   width:100%;
- }
+  }
 }
 @media all and (max-width: 360px) {
   #header {
@@ -651,11 +662,6 @@ ul.pager li {
   .form-item-attributes-product-select{
   	width:100%;
   	margin-top:20px;
-  }
-  .field-name-field-sof-commerce-product .form-submit {
-  	bottom:-65px;
-  	padding:12px 10px;
-  	font-size:17px;
   }
 }
 @media all and (max-width: 350px) {

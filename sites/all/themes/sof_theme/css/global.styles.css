@@ -5147,6 +5147,13 @@ body.page-search #block-system-main > ul li {
   .pane-bundle-banner-pane .block-inner {
     padding: 0 20px;
   }
+  .publication-top-left-container {
+    padding:0 40px;
+  }
+  .publication-ecommerce-container-inner-product-info,
+  .publication-ecommerce-container-inner-product-qprice {
+    width:100%;
+  }
   .publication-top-container-inner {
     padding: 0 30px;
   }

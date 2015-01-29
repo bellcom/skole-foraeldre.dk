@@ -55,9 +55,9 @@ body {
   position: absolute;
   z-index: 9999;
   display: none;
-  width: 320px;	
+  width: 320px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .header-inner-navigation-container-hidden {
@@ -70,7 +70,7 @@ body {
   z-index: 100;
   width: 100%;
 }
-.top-navigation-main, 
+.top-navigation-main,
 .top-navigation-second{
   width: 100%;
 }
@@ -81,7 +81,7 @@ body {
   border-bottom: 0!important;
 }
 .third-level{
-	border-left:none;
+  border-left:none;
 }
 /*.top-navigation-first{
 	display:none;
@@ -152,7 +152,7 @@ body {
 }
 .region-header nav ul.menu li {
   float: none;
-  display: block; 
+  display: block;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -218,7 +218,7 @@ body {
   padding-bottom: 30px;
   padding-left: 17px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 #block-menu-menu-top-navigation .block-inner {
@@ -248,21 +248,21 @@ body {
   float: left;
   padding: 0 0 25px 35px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* =============================================================================
- *   Publications 
+ *   Publications
  * ========================================================================== */
 .publication-top-left-container,
 .publication-top-right-container {
   width: 100%;
 }
 .publication-top-left-container {
-  padding: 0 20px 20px 20px;	
+  padding: 0 20px 20px 20px;
 }
 .publication-top-left-container img {
-  width: 60%;	
+  width: 60%;
 }
 .publication-top-right-container {
   padding: 20px;
@@ -289,7 +289,7 @@ body.page-releases .pane-apachesolr-form,
   padding: 0 20px;
   text-align: center;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 body.page-releases .pane-apachesolr-form h2 {
@@ -334,7 +334,7 @@ div.messages.commerce-add-to-cart-confirmation {
 div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
   padding: 40px 10px;
 }
-/* 
+/*
 /* =============================================================================
  *   Articles
  * ========================================================================== */
@@ -350,19 +350,19 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
 }
 /* =============================================================================
  *   Sections
- * ========================================================================== */	
+ * ========================================================================== */
 .section-header .views-row {
   width: 100%;
   padding: 0;
   padding-bottom: 0;
   margin-bottom: 0;
   margin-top: 20px;
-  border: none;		
+  border: none;
 }
 .section-header .views-field-field-image-slider img {
   width: 100%;
 }
-#content .panel-display, 
+#content .panel-display,
 #content .panel-flexible {
   margin: 0px!important;
 }
@@ -423,7 +423,7 @@ ul.pager li {
 }
 .news-deck-view-content .views-row,
 .news-deck-view-content .views-field-title {
-  width: 100%;	
+  width: 100%;
   float: left;
   padding-right: 0;
 }
@@ -477,7 +477,7 @@ ul.pager li {
 .intro-deck-group {
   width: 100%;
   padding-bottom: 30px;
-  text-align: left 
+  text-align: left
 }
 .intro-deck-group-first .field-name-field-teaser {
   padding-right: 0;
@@ -502,7 +502,7 @@ ul.pager li {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.pane-bundle-magazine-pane .field-name-field-image, 
+.pane-bundle-magazine-pane .field-name-field-image,
 .mag-deck-right-group {
   width: 100%;
 }
@@ -582,7 +582,7 @@ ul.pager li {
   width: 100%!important;
   text-align:  left;
 }
-	
+
 #footer .region-footer .block:nth-child(2) .block-inner {
   float: left!important;
 }
@@ -601,6 +601,22 @@ ul.pager li {
   max-width: 200px;
   width: 100%;
 }
+/* Publication products */
+.publication-ecommerce-container-inner-product-info,
+.publication-ecommerce-container-inner-product-qprice {
+  width:100%;
+}
+.field-name-field-sof-commerce-product .form-submit {
+  bottom:-65px;
+  padding:12px 10px;
+  font-size:17px;
+}
+.back-to-all-releases-link {
+  font-size: 16px;
+}
+.publication-top-right-container {
+  padding: 0;
+}
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
@@ -611,7 +627,7 @@ ul.pager li {
   }
   .publication-ecommerce-container-inner-product-info,
   .publication-ecommerce-container-inner-product-qprice {
-  	width:100%;
+    width:100%;
   }
 }
 @media all and (max-width: 470px) {
@@ -625,14 +641,9 @@ ul.pager li {
   }
   .news-deck-bottom-right-content h3 {
     width: 100%;
-	padding: 0 0 20px 0;
-	text-align: center;
-  }	
-  /* Publication products */
- .publication-ecommerce-container-inner-product-info, 
- .publication-ecommerce-container-inner-product-qprice {
-   width:100%;
- }
+    padding: 0 0 20px 0;
+    text-align: center;
+  }
 }
 @media all and (max-width: 360px) {
   #header {
@@ -647,15 +658,10 @@ ul.pager li {
   .view-related-articles-slider .flex-direction-nav {
     top: 46%;
   }
-  .form-item-attributes-field-sof-commerce-type, 
+  .form-item-attributes-field-sof-commerce-type,
   .form-item-attributes-product-select{
-  	width:100%;
-  	margin-top:20px;
-  }
-  .field-name-field-sof-commerce-product .form-submit {
-  	bottom:-65px;
-  	padding:12px 10px;
-  	font-size:17px;
+    width:100%;
+    margin-top:20px;
   }
 }
 @media all and (max-width: 350px) {
