@@ -1806,6 +1806,10 @@ body.node-type-slider #main-content {
 .ui-selectmenu-menu ul li {
   border-top: 1px solid #00A2EB!important;
 }
+.ui-selectmenu-menu li a,
+.ui-selectmenu-status {
+  padding: 5px 10px 5px 8px;
+}
 .ui-selectmenu-menu ul li.ui-state-hover a {
   color: #00A2EB;
 }

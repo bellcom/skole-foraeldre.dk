@@ -615,6 +615,9 @@ ul.pager li {
   padding:12px 10px;
   font-size:17px;
 }
+.publication-oneproduct .form-submit {
+  bottom: 20px;
+}
 .back-to-all-releases-link {
   font-size: 16px;
 }
@@ -647,6 +650,11 @@ ul.pager li {
     width: 100%;
 	padding: 0 0 20px 0;
 	text-align: center;
+  }
+  .form-item-attributes-field-sof-commerce-type,
+  .form-item-attributes-product-select {
+    width: 100%;
+    margin-top: 20px;
   }
 }
 @media all and (max-width: 360px) {

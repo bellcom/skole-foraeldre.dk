@@ -224,8 +224,8 @@ body {
   .publication-ecommerce-container-inner-product-qprice {
   	 width:100%;
   }
-  .publication-ecommerce-container-inner-product-qprice {
-  	margin-top:20px;
+  .publication-oneproduct .publication-ecommerce-container-inner-product-qprice {
+  	margin-top:0px;
   }
 }
 @media all and (max-width: 920px){
