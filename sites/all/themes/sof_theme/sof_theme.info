@@ -74,7 +74,6 @@
   ; ie_scripts[lte IE 8][] = scripts/my-script.js
   scripts[] = scripts/custom.js
 
-
 ;----------// Regions
 
   regions[sidebar_first]            = Sidebar first

@@ -1764,16 +1764,13 @@ body.node-type-slider #main-content {
   text-indent: .9em;
   background-color:#00a2eb;
 }
-.form-item-attributes-product-select select,
-.form-item-attributes-product-select:after,
-.form-item-attributes-product-select::after {
+.commerce-add-to-cart .ui-selectmenu-status {
   display: block;
   background: #fff;
   color:#000;
 }
-.form-item-attributes-product-select select,
-.form-item-attributes-product-selectoption {
-  padding: 8px;
+.ui-selectmenu-menu-dropdown .ui-state-hover {
+  background: none;
 }
 .form-item-attributes-product-select,
 .form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
@@ -1781,22 +1778,36 @@ body.node-type-slider #main-content {
   display: inline-block;
   border: 0;
 }
-
-.form-item-attributes-product-select::after,
-.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after {
-  content: "\25bc";
-  position: absolute;
-  top: 40px;
-  right: 0;
-  display: block;
-  width: 32px;
-  font-size: 12px;
-  line-height: 34px;
-  text-align: center;
-  color:#00A2EB;
-  -webkit-pointer-events: none;
-  -moz-pointer-events: none;
-  pointer-events: none;
+.ui-state-default .ui-icon {
+  background-image: url('images/shopping-cart-dropdown.png');
+  background-position: 0 0;
+  width: 16px;
+  height: 11px;
+}
+.ui-selectmenu-icon {
+  margin-top: 0px;
+  top: 40%;
+}
+.ui-selectmenu-menu ul {
+  border: none;
+}
+.ui-selectmenu-menu ul li,
+.ui-state-hover,
+.ui-widget-content
+.ui-state-hover,
+.ui-widget-header
+.ui-state-hover,
+.ui-state-focus,
+.ui-widget-content
+.ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  border: none;
+}
+.ui-selectmenu-menu ul li {
+  border-top: 1px solid #00A2EB!important;
+}
+.ui-selectmenu-menu ul li.ui-state-hover a {
+  color: #00A2EB;
 }
 .field-name-field-sof-commerce-customer-type {
   float: left;
@@ -1806,26 +1817,31 @@ body.node-type-slider #main-content {
   background: #f0f0f0;
   top: 48px;
 }
-.form-item-attributes-product-select select,
-.form-item-customer-profile-billing-field-sof-commerce-customer-type-und select {
-  height: 34px;
-  border: 0;
-  vertical-align: middle;
-  outline: 0 none;
-  width:100%;
-  margin-top: 10px;
+.form-item-attributes-product-select .ui-selectmenu-menu li a,
+.form-item-attributes-product-select .ui-selectmenu-status {
   background: #fff;
-  line-height: 30px;
-  cursor: pointer;
 }
-.form-item-customer-profile-billing-field-sof-commerce-customer-type-und select {
+.page-checkout .ui-selectmenu-menu ul {
+  left: 2px;
+  top: -2px;
+}
+.ui-selectmenu-status {
+  background: #f0f0f0;
+  line-height: 23px;
+}
+.page-checkout .ui-selectmenu-status {
+  width: 90%;
+}
+.ui-selectmenu-menu ul li {
   background: #f0f0f0;
 }
 .form-item-attributes-product-select option {
   background: #fff;
   color: #333;
 }
-
+body.node-type-publication .ui-selectmenu-menu ul li {
+  background: #fff;
+}
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label {
   color:#00A2EB;
