@@ -1700,7 +1700,7 @@ body.node-type-slider #main-content {
   margin:0px 10px 0 0;
   padding:0px;
   float:left;
-  width:43%;
+  width:37%;
 }
 .form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
   width: 20%;
@@ -5148,7 +5148,7 @@ body.page-search #block-system-main > ul li {
     padding: 0 20px;
   }
   .publication-top-container-inner {
-    max-width: 940px;
+    padding: 0 30px;
   }
   .webform-component,
   .node-webform .field,
