@@ -1,0 +1,15 @@
+diff --git a/includes/commerce_message.message.inc b/includes/commerce_message.message.inc
+index df6e18e..26f81bc 100644
+--- a/includes/commerce_message.message.inc
++++ b/includes/commerce_message.message.inc
+@@ -214,7 +214,9 @@ function commerce_message_default_message_type_alter(&$items) {
+     $languages = locale_language_list();
+     foreach ($languages as $langcode => $langname) {
+       foreach ($items as $message_type => $item) {
+-        if ($item->module != 'commerce_message') {
++        // @todo Find another way to check for module as MessageType object
++        // doesn't store it. @see https://drupal.org/node/2171201
++        if (!isset($item->module) || $item->module != 'commerce_message') {
+           continue;
+         }
+         if (isset($items[$message_type]->message_text[LANGUAGE_NONE])) {
