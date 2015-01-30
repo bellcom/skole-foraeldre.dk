@@ -111,6 +111,9 @@ body {
 .region-top-header-navigation .follow-links {
   float: left;
 }
+.region-top-header-navigation .block-follow {
+  padding-right: 30px;
+}
 /* =============================================================================
  *   Main Navigation
  * ========================================================================== */
