@@ -77,6 +77,8 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'administer coupon settings',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_coupon',
   );
