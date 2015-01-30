@@ -255,6 +255,9 @@ body {
   margin-left: 43px;
   float: left;
 }
+.region-top-header-navigation .block-follow {
+  padding-right: 30px;
+}
 /* =============================================================================
  *   Publications
  * ========================================================================== */
