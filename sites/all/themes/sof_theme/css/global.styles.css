@@ -252,7 +252,7 @@ html, body {
   margin: 0 auto;
   border-radius: 40px;
   width: 80px;
-  height: 80px;
+  height: 80px!important;
 }
 .footer_social_media_facebook .sof_footer_social_media_icon img {
   width: 25px;
@@ -283,7 +283,7 @@ html, body {
 }
 .footer_social_media_facebook p,
 .footer_social_media_twitter p,
-#mailchimp-signup-subscribe-block-sof-mailchimp-form-form div {
+.mailchimp-signup-sof div {
   font-family: 'conduit_itclight';
   color: #454545;
   font-size: 19px;
@@ -4243,7 +4243,7 @@ a:focus {
 }
 #block-views-sof-shopping-cart-block-block .view-footer .line-item-quantity-raw,
 #block-views-sof-shopping-cart-block-block  .view-empty p {
-  padding: 3px 0 0 30px;
+  padding: 5px 0 0 30px;
   margin: 0;
   background: url('images/add-to-cart-header.png');
   background-size: 24px 19px;

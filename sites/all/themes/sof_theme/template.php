@@ -565,7 +565,7 @@ function sof_theme_facetapi_link_active($variables) {
  * Override or insert variables into the block templates.
  */
 function sof_theme_preprocess_block(&$vars) {
-  if ($vars['elements']['#block']->delta == 'sof_mailchimp_form') {
+  if ($vars['elements']['#block']->module == 'mailchimp_signup') {
     $vars['title_prefix'] = array(
       '#type' => 'markup',
       '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
@@ -574,6 +574,7 @@ function sof_theme_preprocess_block(&$vars) {
       '#type' => 'markup',
       '#markup' => '</div>',
     );
+    $vars['theme_hook_suggestions'][] = 'sof_footer_social_media';
   }
 }
 

@@ -494,11 +494,11 @@ body {
 .block-sof-footer-social-media,
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   width: 100%;
 }
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   margin-bottom: 30px;
 }
