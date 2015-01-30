@@ -627,6 +627,9 @@ ul.pager li {
 .publication-top-right-container {
   padding: 0;
 }
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
+  width: 100%;
+}
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */

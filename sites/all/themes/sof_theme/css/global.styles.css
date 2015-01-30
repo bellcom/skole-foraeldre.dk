@@ -1829,6 +1829,10 @@ body.node-type-slider #main-content {
   left: 2px;
   top: -2px;
 }
+.page-checkout a.ui-selectmenu,
+.page-checkout .ui-selectmenu-menu-dropdown {
+  width: 150px!important;
+}
 .ui-selectmenu-status {
   background: #f0f0f0;
   line-height: 23px;
