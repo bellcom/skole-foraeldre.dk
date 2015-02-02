@@ -68,16 +68,18 @@ body.node-type-basic-page .author-datetime a,
 .form-item-attributes-product-select label,
 .field-name-field-related-terms .field-item a,
 .view-display-id-related_terms_pane a,
-.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after {
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after,
+.ui-selectmenu-menu ul li.ui-state-hover a {
   color: #00a2eb;
 }
-
 /* Applay color to elements  */
 .commerce-add-to-cart-confirmation .added-product-title,
 .commerce-add-to-cart-confirmation .views-field-commerce-total .field-content{
   color: #00a2eb!important;
 }
-
+.ui-state-default .ui-icon {
+  border-top: 7px solid #00A2EB;
+}
 /* Applay background color to elements  */
 #footer,
 .right-article-region .right-region-top-links a,

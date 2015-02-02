@@ -1779,10 +1779,13 @@ body.node-type-slider #main-content {
   border: 0;
 }
 .ui-state-default .ui-icon {
-  background-image: url('images/shopping-cart-dropdown.png');
-  background-position: 0 0;
-  width: 16px;
-  height: 11px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #00A2EB;
+  right: 2px;
+  background: none;
 }
 .ui-selectmenu-icon {
   margin-top: 0px;
@@ -1791,20 +1794,8 @@ body.node-type-slider #main-content {
 .ui-selectmenu-menu ul {
   border: none;
 }
-.ui-selectmenu-menu ul li,
-.ui-state-hover,
-.ui-widget-content
-.ui-state-hover,
-.ui-widget-header
-.ui-state-hover,
-.ui-state-focus,
-.ui-widget-content
-.ui-state-focus,
-.ui-widget-header .ui-state-focus {
-  border: none;
-}
-.ui-selectmenu-menu ul li {
-  border-top: 1px solid #00A2EB!important;
+a.ui-selectmenu {
+  background: #f0f0f0;
 }
 .ui-selectmenu-menu li a,
 .ui-selectmenu-status {
