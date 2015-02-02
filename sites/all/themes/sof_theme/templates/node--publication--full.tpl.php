@@ -133,8 +133,7 @@ hide($content['field_sof_commerce_product']);
          <!-- Print rest of the content -->
          <?php print render($content); ?>
          <!-- E-commerce part -->
-         <?php if($content['field_sof_commerce_product']['#object']): ?>
-         <div class="publication-ecommerce-container">
+         <div class="publication-ecommerce-container <?php if ($borderclass): echo $borderclass; endif; ?>">
            <div class="publication-ecommerce-container-inner-product-info <?php if ($oneproduct): echo $oneproduct; endif; ?>">
              <?php print render($content['field_sof_commerce_product']); ?>
            </div>
@@ -143,7 +142,6 @@ hide($content['field_sof_commerce_product']);
              <?php print render($content['product:field_sof_commerce_quantity']); ?>
            </div>
          </div>
-         <?php endif; ?>
          <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
        </div>
      </div>

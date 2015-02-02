@@ -297,6 +297,12 @@ function sof_theme_preprocess_node(&$variables) {
   // Add theme sugestions for publication.
   if ($node->type == 'publication') {
     $variables['theme_hook_suggestion'] = 'node__publication__full';
+    if (!empty($variables['field_sof_commerce_product'])) {
+      $variables['borderclass'] = 'publicationborderclass';
+    }
+    else {
+      $variables['borderclass'] = ' ';
+    }
     // Add new variable if publication has one product .
     if (count($variables['field_sof_commerce_product']) === 1) {
       $variables['oneproduct'] = 'publication-oneproduct';

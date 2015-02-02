@@ -1620,6 +1620,8 @@ body.node-type-slider #main-content {
   position:relative;
   float:left;
   width:100%;
+}
+.publicationborderclass {
   border-top:1px solid #ccc;
   border-bottom:1px solid #ccc;
   padding:10px 0;
