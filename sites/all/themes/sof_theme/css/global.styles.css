@@ -2855,6 +2855,9 @@ body.node-type-basic-page .field-name-body p {
   font-weight: 200;
   line-height: 24px;
 }
+.left-article-region .field-name-body a:hover {
+  text-decoration: underline;
+}
 .article-news-main-container .field-name-body a.download-article-pdf,
 a.sof-pdf-generate-inline-link {
   width: 100%;
@@ -2910,7 +2913,6 @@ body.node-type-basic-page .field-name-body blockquote p {
   left: 60px;
   margin: 0;
   clear: none;
-  color: #00a2eb;
   font-family: 'Georgia';
   font-size: 24px;
   font-style: normal;
