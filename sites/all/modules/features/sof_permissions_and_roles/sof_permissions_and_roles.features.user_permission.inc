@@ -46,6 +46,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'access bean overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'bean',
   );
@@ -440,6 +442,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'file_entity',
   );
@@ -571,6 +575,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer message types',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'message',
   );
@@ -607,6 +613,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -949,6 +957,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create article content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -969,6 +979,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create basic_page content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1121,6 +1133,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create messages',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'message',
   );
@@ -1130,6 +1144,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create news content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1150,6 +1166,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1170,6 +1188,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create section content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1190,6 +1210,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create slider content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1221,6 +1243,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'create webform content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1291,6 +1315,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any banner bean',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'bean',
   );
@@ -2823,6 +2849,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'view bean page',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'bean',
   );
