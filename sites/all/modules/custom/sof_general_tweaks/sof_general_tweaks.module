@@ -278,6 +278,14 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
       break;
 
+    // Set Including VAT as default value for the shipping base rate.
+    case 'commerce_flat_rate_service_form':
+      if (isset($form['flat_rate']['include_tax'])) {
+        $form['flat_rate']['include_tax']['#default_value'] = array('test');
+        $form['flat_rate']['include_tax']['#disabled'] = TRUE;
+      }
+      break;
+
     case 'article_node_form':
     case 'news_node_form':
       $form['field_related_terms']['#states'] = array(
@@ -544,5 +552,19 @@ function sof_general_tweaks_commerce_payment_method_info() {
 function sof_general_tweaks_commerce_price_component_type_info_alter(&$component_types) {
   if (isset($component_types['base_price'])) {
     $component_types['base_price']['display_title'] = t('Total excluding VAT');
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Set Include VAT as default value for commerce price and disabled the field.
+ */
+function sof_general_tweaks_field_widget_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] == 'commerce_price' && $context['instance']['entity_type'] == 'commerce_product') {
+    if (isset($element['include_tax'])) {
+      $element['include_tax']['#default_value'] = array('test');
+      $element['include_tax']['#disabled'] = TRUE;
+    }
   }
 }
