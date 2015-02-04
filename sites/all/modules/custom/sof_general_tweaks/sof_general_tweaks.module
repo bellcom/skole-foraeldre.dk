@@ -563,8 +563,35 @@ function sof_general_tweaks_commerce_price_component_type_info_alter(&$component
 function sof_general_tweaks_field_widget_form_alter(&$element, &$form_state, $context) {
   if ($context['field']['type'] == 'commerce_price' && $context['instance']['entity_type'] == 'commerce_product') {
     if (isset($element['include_tax'])) {
-      $element['include_tax']['#default_value'] = array('test');
+      $element['include_tax']['#default_value'] = 'test';
       $element['include_tax']['#disabled'] = TRUE;
     }
   }
+}
+
+/**
+ * Implements hook_commerce_price_formatted_components_alter().
+ */
+function sof_general_tweaks_commerce_price_formatted_components_alter(&$components, &$price, $entity) {
+  // Reorder Order total components.
+  if (isset($components['tax|test'])) {
+    $components['tax|test']['weight'] = -20;
+  }
+
+  // Add new component to Order total - Total including VAT.
+  $base_pice = commerce_price_component_load($price, 'base_price');
+  $tax = commerce_price_component_load($price, 'tax|test');
+  $amount = $base_pice[0]['price']['amount'] + $tax[0]['price']['amount'];
+
+  $new_component = array(
+    'title' => t('Total including VAT'),
+    'price' => array(
+      'amount' => $amount,
+      'currency_code' => $price['currency_code'],
+      'data' => array(),
+    ),
+    'weight' => -10,
+  );
+
+  $components['base_price_with_tax'] = $new_component;
 }
