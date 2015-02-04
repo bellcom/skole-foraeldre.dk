@@ -42,19 +42,20 @@
   padding: 0px 24px;
 }
 .sof-pdf-content{
-    width: 555px;
+    width: 500px;
     height: 817px;
     position: relative;
 }
 .sof-pdf-all-content{
-    width: 555px;
+    width: 500px;
+    margin: 0px 30px;
     float: left;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 .sof-pdf-page{
-  width: 555px;
+  width: 500px;
   height: 817px;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -62,11 +63,11 @@
   box-sizing: border-box;
  }
 .sof-pdf-page-template{
-    width: 555px;
+    width: 500px;
     position: relative;
 }
 .sof-pdf-page-template .content {
-    width: 555px;
+    width: 500px;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -78,7 +79,7 @@
   font-size: 28px;
   font-weight: normal;
   line-height: 28px;
-  margin: 0 0 13px 0;
+  margin: 8px 0 13px 0;
   width: 100%;
 }
 .sof-pdf-all-content .field-name-field-teaser {
