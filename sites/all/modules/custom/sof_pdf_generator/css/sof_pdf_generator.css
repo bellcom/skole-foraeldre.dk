@@ -16,7 +16,9 @@
 }
 .sof-pdf-cover-vertical {
   display:table-cell;
+  width: 508px;
   vertical-align: middle;
+  padding: 0px 48px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical h1,
 .sof-pdf-cover .sof-pdf-cover-vertical p {
@@ -26,20 +28,16 @@
 }
 .sof-pdf-cover .sof-pdf-cover-vertical h1 {
   color: #231f20;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 42px;
+  line-height: 42px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical p {
   color: #2b2e34;
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 22px;
+  line-height: 24px;
   font-weight: lighter!important;
   padding-top: 0;
   font-weight: normal;
-}
-.sof-pdf-cover .sof-pdf-cover-vertical {
-  margin: 15px;
-  padding: 0px 24px;
 }
 .sof-pdf-content{
     width: 500px;
