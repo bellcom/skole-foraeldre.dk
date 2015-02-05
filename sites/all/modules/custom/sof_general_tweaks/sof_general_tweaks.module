@@ -228,6 +228,15 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
 
+      // The customer should see the coupon code that should use.
+      // It is set in the coupon settings.
+      if (isset($form['commerce_coupon'])) {
+        $code = variable_get('sof_commerce_coupon_code', '');
+        if ($code) {
+          $form['commerce_coupon']['coupon_code']['#description'] = t('Enter here the coupon code: @code', array('@code' => $code));
+        }
+      }
+
       // Add custom validation to customer profile fields: telephone,
       // postal_code, cvr, ean.
       $shipping = $form['customer_profile_shipping'];
@@ -284,6 +293,17 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
         $form['flat_rate']['include_tax']['#default_value'] = array('test');
         $form['flat_rate']['include_tax']['#disabled'] = TRUE;
       }
+      break;
+
+    case 'commerce_coupon_ui_settings_form':
+      // Alter form for setting the coupon code that should appear for the
+      // customers.
+      $form['sof_commerce_coupon_code'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Coupon Code'),
+        '#description' => t('Enter the code that should appear as description pf the active coupon field.'),
+        '#default_value' => variable_get('sof_commerce_coupon_code', ''),
+      );
       break;
 
     case 'article_node_form':
