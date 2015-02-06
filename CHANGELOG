@@ -1,3 +1,7 @@
+7.x-1.20. 06-02-2015
+--------------------
+* 66c9ada - (HEAD, origin/dev, dev) SOF-208 Updated the Panels module to latest stable. Committed by Lachezar Valchev at 2015-02-06 17:34:07 +0200
+
 7.x-1.19. 06-02-2015
 --------------------
 * f41df10 - (HEAD, origin/dev, dev) SOF-208 Updated ctools to latest stable Committed by Lachezar Valchev at 2015-02-06 17:27:30 +0200
