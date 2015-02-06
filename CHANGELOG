@@ -1,3 +1,7 @@
+7.x-1.21. 06-02-2015
+--------------------
+* 332ac2b - (HEAD, origin/dev, dev) SOF-208 Updated the Features module. Committed by Lachezar Valchev at 2015-02-06 17:36:35 +0200
+
 7.x-1.20. 06-02-2015
 --------------------
 * 66c9ada - (HEAD, origin/dev, dev) SOF-208 Updated the Panels module to latest stable. Committed by Lachezar Valchev at 2015-02-06 17:34:07 +0200
