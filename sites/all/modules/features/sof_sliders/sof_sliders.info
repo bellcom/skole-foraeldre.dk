@@ -1,7 +1,7 @@
 name = SOF sliders
 description = Sliders and carousels settings
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = flexslider
 features[ctools][] = flexslider:flexslider_default_preset:1

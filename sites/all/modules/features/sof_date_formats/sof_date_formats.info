@@ -1,7 +1,7 @@
 name = SOF date formats
 description = Exports custom date types and formats
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = fe_date
 dependencies[] = features

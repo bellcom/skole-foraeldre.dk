@@ -1,7 +1,7 @@
 name = Sof Commerce
 description = Export all commerce related settings.
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_commerce_settings
 dependencies[] = addressfield
