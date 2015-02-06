@@ -1,3 +1,8 @@
+7.x-1.18. 06-02-2015
+--------------------
+* ca5d5a8 - (HEAD, origin/dev, dev) SOF-208 Security update of LinkIt module. Committed by Lachezar Valchev at 2015-02-06 17:21:32 +0200
+* 2d34702 - SOF-208 Security update of the Google Analytics. Committed by Lachezar Valchev at 2015-02-06 17:20:05 +0200
+
 7.x-1.17. 06-02-2015
 --------------------
 * e71e521 - (HEAD, origin/dev, dev) SOF-208 Added the Simple Color library. Committed by Lachezar Valchev at 2015-02-06 17:13:11 +0200
