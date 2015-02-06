@@ -1,3 +1,113 @@
+7.x-1.13. 06-02-2015
+--------------------
+* f93a6b2 - (HEAD, origin/dev, dev) SOF-24 - Update publication listing view urls per domain Committed by Goce at 2015-02-05 12:54:52 +0100
+* bc1f1ed - SOF-274 - change coupon code description. Committed by martina at 2015-02-05 10:06:52 +0200
+* 590363b - SOF-265 - reorder total order components; fix error with include tax in product price; Committed by martina at 2015-02-04 18:00:44 +0200
+* c4b2f79 - SOF-138 - Font and padding update Committed by Goce Shutinoski at 2015-02-04 15:06:20 +0100
+* 2d926f5 - SOF-138 - Updated margins, font size and spacing Committed by Goce at 2015-02-04 09:07:30 +0100
+* babe5fa - SOF-271 - implementing new rule action for applying discount without changing the initial product price. Committed by martina at 2015-02-04 08:35:36 +0200
+* 1d1b59f - SOF-270 - set Including VAT as default for product price and shipping base rate. Committed by martina at 2015-02-03 18:01:08 +0200
+* 9746b03 - SOF-186  Logo not displayed properly in Publication PDF  - changing logo Committed by rkoteska at 2015-02-04 00:24:15 +1000
+* de22d67 - SOF-25  Multisite - FrontEnd  - adding new elements to color module Committed by rkoteska at 2015-02-02 23:46:19 +1000
+* a719907 - SOF-234 Billing info styling-css small fixes Committed by rkoteska at 2015-02-02 19:58:04 +1000
+* 9d288ed - SOF-234 Billing info styling-css small fixes Committed by rkoteska at 2015-02-02 19:23:43 +1000
+* 233e166 - SOF-267 - update commerce coupon permissions. Committed by martina at 2015-01-30 16:22:11 +0200
+* 9e9cba9 - SOF-267 - export commerce permission. Committed by martina at 2015-01-30 16:11:29 +0200
+* b0405ea - SOF-267 - give editor and site editor permissions. Committed by martina at 2015-01-30 14:53:15 +0200
+* c62e690 - SOF-234  Billing info styling Committed by rkoteska at 2015-01-30 20:39:48 +1000
+* f1b157c - SOF-89 Social block - FrontEnd Committed by rkoteska at 2015-01-30 19:47:38 +1000
+* 317d259 - SOF-205  Adjust the position of the cart and social icons in mobile menu Committed by rkoteska at 2015-01-30 17:55:16 +1000
+* c6a0f74 - SOF-205  Adjust the position of the cart and social icons in mobile menu Committed by rkoteska at 2015-01-30 17:52:42 +1000
+* 1f6dc81 - SOF-205  Adjust the position of the cart and social icons in mobile menu Committed by rkoteska at 2015-01-30 01:03:45 +1000
+* 2dfd205 - SOF-205  Adjust the position of the cart and social icons in mobile menu Committed by rkoteska at 2015-01-30 00:41:01 +1000
+* 1dc0e53 - SOF-232  1-st step of the shop needs more work Committed by rkoteska at 2015-01-30 00:25:09 +1000
+* 37e67bd - SOF-232  1-st step of the shop needs more work Committed by rkoteska at 2015-01-30 00:01:34 +1000
+* 51c1eb8 - SOF-232  1-st step of the shop needs more work Committed by rkoteska at 2015-01-29 23:31:24 +1000
+* f60a58a - SOF-100 - fix city tokens in cmmerce mails. Committed by martina at 2015-01-29 12:17:12 +0200
+* 8af5f9e - NOJIRA - exporting sof cart block settings. Committed by martina at 2015-01-29 10:55:50 +0200
+* fbb4afe - SOF-10 - Update features conflict with commerce_message Committed by Goce at 2015-01-29 09:43:45 +0100
+* 95910d8 - SOF-257 - revert last changes, because they do not work properly. Committed by martina at 2015-01-29 09:30:17 +0200
+* 3f3bdec - NOJIRA - trying to decrease logo in shop mails. Committed by martina at 2015-01-28 17:47:09 +0200
+* 373a62f - SOF-89  Social block - FrontEnd Committed by rkoteska at 2015-01-29 00:43:53 +1000
+* 56cc25e - SOF-89  Social block - FrontEnd Committed by rkoteska at 2015-01-29 00:37:44 +1000
+* 3520d55 - SOF-236  Shipping information title design breaks Committed by rkoteska at 2015-01-28 23:42:41 +1000
+* f5f388e - SOF-236  Shipping information title design breaks Committed by rkoteska at 2015-01-28 23:37:28 +1000
+* ccc8976 - SOF-236  Shipping information title design breaks Committed by rkoteska at 2015-01-28 23:25:06 +1000
+* c2835f9 - SOF-236  Shipping information title design breaks Committed by rkoteska at 2015-01-28 23:15:05 +1000
+* cca02ce - SOF-250 - exporting media_wysiwyg variables. Committed by martina at 2015-01-28 12:18:46 +0200
+* b4c467f - SOF-245  Styling of confirmation mail - adding inline style to sof order messages Committed by rkoteska at 2015-01-28 19:52:13 +1000
+* 87ecc31 - SOF-245  Styling of confirmation mail - adding inline style to sof order messages Committed by rkoteska at 2015-01-28 19:37:26 +1000
+* 9c413ec - SOF-245  Styling of confirmation mail - adding inline style to sof order messages Committed by rkoteska at 2015-01-28 19:07:02 +1000
+* fb2e87a - SOF-236 Shipping information title design breaks - styling arrow Committed by rkoteska at 2015-01-28 18:37:56 +1000
+* ef770f5 - SOF-245  Styling of confirmation mail - adding new styles for e-mail tables Committed by rkoteska at 2015-01-28 02:06:18 +1000
+* cf247fa - SOF-245  Styling of confirmation mail - adding new styles for e-mail tables Committed by rkoteska at 2015-01-28 02:00:24 +1000
+* 6408099 - SOF-245  Styling of confirmation mail - adding new styles for e-mail tables Committed by rkoteska at 2015-01-28 01:58:17 +1000
+* cb39ecc - SOF-245  Styling of confirmation mail - adding new styles for e-mail tables Committed by rkoteska at 2015-01-28 01:53:00 +1000
+* 1598b41 - SOF-245  Styling of confirmation mail - adding new styles for e-mail tables Committed by rkoteska at 2015-01-28 01:43:11 +1000
+* 8f45a60 - SOF-245  Styling of confirmation mail - removing mail.css from ckeditor Committed by rkoteska at 2015-01-28 01:30:25 +1000
+* f8407f6 - NOJIRA - exporting system mail settings. Committed by martina at 2015-01-27 17:26:18 +0200
+* 7e1803a - SOF-245  Styling of confirmation mail - removing mail.css Committed by rkoteska at 2015-01-28 01:21:35 +1000
+* ae0854c - SOF-245  Styling of confirmation mail - enable mimemail compress css module Committed by rkoteska at 2015-01-28 01:06:19 +1000
+* a4a3363 - SOF-245  Styling of confirmation mail - adding emogrifier module Committed by rkoteska at 2015-01-28 00:25:27 +1000
+* 8f3a44b - SOF-245  Styling of confirmation mail - adding mail.css to admin theme Committed by rkoteska at 2015-01-27 23:43:28 +1000
+* 1bacccf - SOF-245  Styling of confirmation mail - adding mail.css to admin theme Committed by rkoteska at 2015-01-27 23:23:42 +1000
+* 9876a5c - SOF-245  Styling of confirmation mail - adding new template for mimemail Committed by rkoteska at 2015-01-27 23:15:20 +1000
+* a87918f - SOF-245  Styling of confirmation mail - adding new template for mimemail Committed by rkoteska at 2015-01-27 22:50:04 +1000
+* 187b7fd - SOF-245  Styling of confirmation mail - adding mail.css Committed by rkoteska at 2015-01-27 22:15:13 +1000
+* 69fccb2 - SOF-138 - Make 2 default listing panes to be available on the section page Committed by Goce at 2015-01-27 12:53:39 +0100
+* 0ac3364 - SOF-138 - Strict warning fix for apache solr index Committed by Goce at 2015-01-27 11:54:23 +0100
+* 739a7af - SOF-245  Styling of confirmation mail - removing stylesheetparser from ckeditor plugins Committed by rkoteska at 2015-01-27 19:45:45 +1000
+* f2e3c5f - SOF-252 - fix variant product field settings. Committed by martina at 2015-01-27 10:00:02 +0200
+* b6edd6b - SOF-216 Revert Code review clean ups. Committed by Lachezar Valchev at 2015-01-26 18:45:27 +0200
+* 889c697 - SOF-216 Code review clean ups. Committed by Lachezar Valchev at 2015-01-26 18:33:35 +0200
+* 8feaa40 - SOF-216 - fix address fields labels and phone field spaces. Committed by martina at 2015-01-26 17:02:33 +0200
+* 4b05810 - SOF-245  Styling of confirmation mail - adding custom css file for mail Committed by rkoteska at 2015-01-27 00:28:15 +1000
+* a05d504 - SOF-245  Styling of confirmation mail - adding custom css file for mail Committed by rkoteska at 2015-01-27 00:01:39 +1000
+* fa7df9a - SOF-245  Styling of confirmation mail - adding custom templates for message order Committed by rkoteska at 2015-01-26 22:30:39 +1000
+* cb2cdc4 - SOF-245  Styling of confirmation mail Committed by rkoteska at 2015-01-26 22:16:21 +1000
+* d697359 - SOF-252 - fix variant format in view after the change of the field type. Committed by martina at 2015-01-26 13:18:39 +0200
+* 6cdf225 - SOF-252 - changing Product type field. Committed by martina at 2015-01-26 12:28:49 +0200
+* 16ba6b0 - SOF-216 - change field labels; fix phone field length and validation. Committed by martina at 2015-01-26 11:12:47 +0200
+* 6bfc12a - SOF-100 Updated features from dev. Committed by Lachezar Valchev at 2015-01-24 18:25:18 +0200
+* d26c664 - SOF-132 - change mailchimp form ateration. Committed by martina at 2015-01-24 15:54:28 +0200
+* ae303c9 - SOF-131 Added support for test newsletter. Committed by Lachezar Valchev at 2015-01-24 15:16:22 +0200
+* c335862 - SOF-102 - fix shipping rules. Committed by martina at 2015-01-24 11:12:07 +0200
+* f338d1b - SOF-243 - changing the price component display title. Committed by martina at 2015-01-23 17:02:31 +0200
+* 68cb728 - SOF-236  Shipping information title design breaks Committed by rkoteska at 2015-01-24 00:48:12 +1000
+* 73baecd - SOF-243 - fix logo link in order mails. Committed by martina at 2015-01-23 16:14:45 +0200
+* 91ea7ab - SOF-243 - fix syntax error after git conflict issue. Committed by martina at 2015-01-23 16:00:42 +0200
+* 481bf3f - SOF-243 - commit after merging. Committed by martina at 2015-01-23 15:35:30 +0200
+* 28619c3 - SOF-243 - change disb rule and add custom invoice payment, invoice rule. Committed by martina at 2015-01-23 15:22:41 +0200
+* ac17439 - SOF-246 Please, style the order review page - Moving hook for new custom theme css into general_tweaks_module Committed by rkoteska at 2015-01-23 23:09:25 +1000
+* 6e50605 - SOF-246 Please, style the order review page - Making module for custom css in admin theme and styling order review Committed by rkoteska at 2015-01-23 22:32:16 +1000
+* 09b1eb5 - SOF-244 - move logo and add the new commerce profile fields in the mail template. Committed by martina at 2015-01-23 13:07:07 +0200
+* 829ed6c - SOF-231 Styling panelized Article and News pages - changes to preprocess function in template file Committed by rkoteska at 2015-01-23 20:58:07 +1000
+* 269985a - SOF-14 - Improve styling coresponding to the DPI Committed by Goce at 2015-01-23 11:45:34 +0100
+* a2ee782 - SOF-231 Styling panelized Article and News pages - css changes Committed by rkoteska at 2015-01-23 20:35:28 +1000
+* aadc601 - SOF-231 Styling panelized Article and News pages - css changes Committed by rkoteska at 2015-01-23 20:20:59 +1000
+* de7d7a9 - SOF-231 Styling panelized Article and News pages - added printint and sharing button Committed by rkoteska at 2015-01-23 20:14:43 +1000
+* dda6d71 - SOF-231 Styling panelized Article and News pages - css changes Committed by rkoteska at 2015-01-23 18:09:04 +1000
+* d2e710a - SOF-241 - disable account pane from commerce review page; it cannot be exported in feature; Committed by martina at 2015-01-23 09:51:04 +0200
+* 5c12920 - SOF-231 Styling panelized Article and News pages - css changes Committed by rkoteska at 2015-01-23 17:19:04 +1000
+* 3a8fe19 - SOF-231 Styling panelized Article and News pages - changes to feature Committed by rkoteska at 2015-01-23 00:57:59 +1000
+* 9d6b78f - SOF-233 - changing EAN field max length. Committed by martina at 2015-01-22 16:55:43 +0200
+* 82f55ee - SOF-233 - changing EAN field max length. Committed by martina at 2015-01-22 16:50:50 +0200
+* cb1f7ec - SOF-231 Styling panelized Article and News pages- style changes Committed by rkoteska at 2015-01-23 00:43:37 +1000
+* fba56a3 - SOF-231 Styling panelized Article and News pages - changing features for article and news content type Committed by rkoteska at 2015-01-23 00:34:34 +1000
+* 744202f - SOF-231 Styling panelized Article and News pages - styling bottom content and responsive layout Committed by rkoteska at 2015-01-23 00:10:42 +1000
+* 991cca4 - SOF-231 Styling panelized Article and News pages - styling bottom content and responsive layout Committed by rkoteska at 2015-01-22 23:55:59 +1000
+* 53a1616 - SOF-233 - error fix. Committed by martina at 2015-01-22 15:51:33 +0200
+* 767ec9d - SOF-13 - Updated toc font style Committed by Goce at 2015-01-22 14:37:05 +0100
+* e94b111 - SOF-233 - remove street number functionality implementations. Committed by martina at 2015-01-22 15:28:21 +0200
+* 78bd111 - SOF-233 - removing address field from shipping and billing profiles; adding new fields; validate fields; remove the implementation of the custom street number field. Committed by martina at 2015-01-22 15:26:54 +0200
+* 1b25a94 - SOF-249 - exporting new file feeds importers for the domains in order to save the sitecore file structure. Committed by martina at 2015-01-22 12:16:09 +0200
+* 33d1cef - SOF-231 Styling panelized Article and News pages - styling bottom content Committed by rkoteska at 2015-01-22 19:59:40 +1000
+* 2379baf - SOF-208 Updated latest features from dev. Committed by Lachezar Valchev at 2015-01-22 09:54:19 +0200
+* 4d7ddf2 - SOF-231 Styling panelized Article and News pages - styling top left and right content Committed by rkoteska at 2015-01-22 00:27:19 +1000
+* cb56d30 - SOF-231 Styling panelized Article and News pages - styling top left and right content Committed by rkoteska at 2015-01-21 23:30:13 +1000
+* 9b9bfad - SOF-14 - TOC Style and H1-H6 tabing Committed by Goce at 2015-01-21 14:26:31 +0100
+* 41d0764 - SOF-208 Fixed fatal error. Committed by Lachezar Valchev at 2015-01-21 14:18:17 +0200
+
 7.x-1.12. 21-01-2015
 --------------------
 * e275b35 - (HEAD, origin/dev, dev) SOF-208 Added the transliteration module to installation profile. Committed by Lachezar Valchev at 2015-01-21 12:59:21 +0200
