@@ -14,41 +14,66 @@
       <style>
         body{
           color: #2b2e34;
+          padding: 70px 30px 20px 30px;
           font-family: "conduit_itclight",sans-serif!important;
         }
         h1 {
           text-align: left;
-          font-size: 19px!important;
-          line-height: 19px!important;
-          font-weight: 200;
+          font-size: 30px!important;
+          line-height: 30px!important;
+          font-weight: lighter!important;
         }
         div {
           width: 100%;
-          padding-bottom: 2px;
+          padding-bottom: 5px;
         }
         span {
           float: left;
           text-align: left;
-          width: 25px;
+          width: 40px;
         }
         li {
           list-style: none;
         }
         ul {
-          font-size: 10px;
-          line-height: 12px;
-          font-family: arial;
+          font-size: 14px;
+          line-height: 17px;
           margin: 0px;
           padding: 0px;
+        }
+        ul ul span{
+          width: 50px;
+        }
+        ul ul a{
+          font-size: 13px;
+        }
+        ul ul ul span{
+          width: 60px;
+        }
+        ul ul ul a{
+          font-size: 12px;
+        }
+        ul ul ul ul span{
+          width: 70px;
+        }
+        ul ul ul ul a{
+          font-size: 11px;
+        }
+        ul ul ul ul ul span{
+          width: 80px;
+        }
+        ul ul ul ul ul a{
+          font-size: 10px;
         }
         a {
           text-decoration:none;
           color: #2b2e34;
+          font-weight: lighter!important;
         }
       </style>
     </head>
     <body>
-      <h1>Contents</h1>
+      <h1>Indhold</h1>
       <ul><xsl:apply-templates select="outline:item/outline:item"/></ul>
     </body>
   </html>

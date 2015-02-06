@@ -1,0 +1,74 @@
+/*
+* @file
+* customadmincss.css
+*
+* Styles you add here will reflect on admin theme Seven
+*/
+.view-commerce-line-item-table table,
+.view-commerce-line-item-table table tbody tr,
+.view-commerce-line-item-table table *,
+.commerce-price-formatted-components,
+.commerce-price-formatted-components tr.even,
+.commerce-price-formatted-components tr.odd,
+.commerce-price-formatted-components tr td:last-child{
+  border: none;
+}
+.view-commerce-line-item-table table th {
+  color: #FFF;
+  background-color: #00a2eb;
+  text-transform: uppercase;
+  border-right: 3px solid #FFF;
+  border-radius: 7px;
+  font-weight: normal;
+}
+.view-commerce-line-item-table table tbody td {
+  background: none repeat scroll 0% 0% #F0F0F0;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid #FFF;
+  border-radius: 7px;
+  color: #5E5E5E;
+}
+.field-name-commerce-order-total .commerce-price-formatted-components {
+  width: 33%;
+  margin-left: auto;
+  margin-top: 20px;
+}
+.field-name-commerce-order-total .commerce-price-formatted-components td{
+  background: none repeat scroll 0% 0% #F0F0F0;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid #FFF;
+  border-radius: 7px;
+  color: #5E5E5E;
+}
+.field-name-commerce-order-total .commerce-price-formatted-components td.component-total{
+  border-bottom: 3px solid #fff!important;
+}
+.field-name-commerce-customer-billing .field-label,
+.field-name-commerce-customer-shipping .field-label {
+    font-size: 14px;
+    color: #808080;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.field-name-commerce-customer-billing > .field-label,
+.field-name-commerce-customer-shipping > .field-label {
+  width: 100%;
+  background-color: #00A2EB;
+  padding: 10px;
+  border-radius: 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  color: #FFF !important;
+  text-transform: uppercase;
+}
+.field-name-commerce-customer-billing .field,
+.field-name-commerce-customer-shipping .field {
+  padding: 10px 0;
+}
+.field-name-commerce-customer-billing .field .field-items,
+.field-name-commerce-customer-shipping .field .field-items{
+  float: left;
+  color: #00A2EB;
+  width: 100%;
+}

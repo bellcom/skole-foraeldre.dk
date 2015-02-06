@@ -222,10 +222,10 @@ body {
   }	
   .publication-ecommerce-container-inner-product-info,
   .publication-ecommerce-container-inner-product-qprice {
-  	width:100%;
+  	 width:100%;
   }
-  .publication-ecommerce-container-inner-product-qprice {
-  	margin-top:20px;
+  .publication-oneproduct .publication-ecommerce-container-inner-product-qprice {
+  	margin-top:0px;
   }
 }
 @media all and (max-width: 920px){
@@ -258,16 +258,14 @@ body {
   }
 }
 @media all and (max-width: 900px) {
-  .pane-bundle-also-see-pane  .field-name-field-related-article-news .field-item {
-    min-height: 620px;
-  }
   .pane-bundle-also-see-pane .field-name-field-image-slider .field-item,
   .pane-bundle-also-see-pane  .field-name-field-teaser .field-item {
     min-height: 0%;
   }	
 }
 @media all and (max-width: 860px) {
-  .right-article-region .right-region-top-links a {
+  .right-article-region .pane-node-field-publication-control-link a,
+  .right-article-region .pane-node-download-as-pdf a {
     font-size: 18px;
     padding-left: 8px;
     padding-right: 8px;	

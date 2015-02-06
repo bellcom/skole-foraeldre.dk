@@ -1,5 +1,5 @@
 .sof-pdf-cover {
-  height: 1047px;
+  height: 817px;
   display: table;
   font-size: 40px;
   background-color: #b8e9f4;
@@ -10,62 +10,62 @@
 }
 .sof-pdf-cover img.sof-pdf-logo {
   position: absolute;
-  left: 38px;
-  bottom: 38px;
-  max-width: 230px;
+  left: 24px;
+  bottom: 24px;
+  max-width: 180px;
 }
 .sof-pdf-cover-vertical {
   display:table-cell;
+  width: 508px;
   vertical-align: middle;
+  padding: 0px 48px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical h1,
 .sof-pdf-cover .sof-pdf-cover-vertical p {
   box-sizing: border-box;
   width: 100%;
-  padding: 30px;
+  padding: 22px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical h1 {
   color: #231f20;
-  font-size: 41px;
-  line-height: 41px;
+  font-size: 42px;
+  line-height: 42px;
 }
 .sof-pdf-cover .sof-pdf-cover-vertical p {
   color: #2b2e34;
-  font-size: 21px;
-  line-height: 21px;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: lighter!important;
   padding-top: 0;
   font-weight: normal;
 }
-.sof-pdf-cover .sof-pdf-cover-vertical {
-  margin: 19px;
-  padding: 0px 38px;
-}
 .sof-pdf-content{
-    width: 710px;
-    height: 1047px;
+    width: 500px;
+    height: 817px;
     position: relative;
 }
 .sof-pdf-all-content{
-    width: 710px;
+    width: 500px;
+    margin: 0px 30px;
     float: left;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 .sof-pdf-page{
-  width: 710px;
-  height: 1047px;
+  width: 500px;
+  height: 817px;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
  }
 .sof-pdf-page-template{
-    width: 710px;
+    width: 500px;
     position: relative;
 }
 .sof-pdf-page-template .content {
-    width: 710px;
+    width: 500px;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -74,16 +74,16 @@
 .sof-pdf-all-content h1 {
   color: #231f20;
   float: left;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: normal;
-  line-height: 30px;
-  margin: 0 0 17px 0;
+  line-height: 28px;
+  margin: 8px 0 13px 0;
   width: 100%;
 }
 .sof-pdf-all-content .field-name-field-teaser {
   color: #2b2e34;
   font-weight: 200;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 17px;
   text-align: left;
   margin: 0
@@ -100,6 +100,7 @@
 }
 .sof-pdf-top-image {
   width: 100%;
+  margin-bottom: 13px;
 }
 .sof-pdf-top-image img {
   margin: 0;
@@ -109,10 +110,10 @@
 .sof-pdf-top-image p {
   background-color: #f0f0f0;
   color: #6c6c6c;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 400;
   margin: 0;
-  padding: 20px;
+  padding: 14px;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content .first.column {
   padding: 0 10px 0 0;
@@ -130,25 +131,25 @@
 .sof-pdf-all-content .sof-pdf-page-template .content p {
   color: #2b2e34;
   font-family: "conduit_itclight",sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 200;
-  line-height: 13px;
+  line-height: 14px;
   margin: 0px!important;
   padding: 5px 0px!important;
   text-align: left;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content h1 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 40px;
+  line-height: 40px;
   box-sizing: border-box;
   width: 100%;
   margin: 0px!important;
-  padding: 5px 0px!important;
+  padding: 10px 0px!important;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content h2 {
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 17px;
   margin: 0px!important;
   padding: 5px 0px!important;
   text-decoration: none;
@@ -158,7 +159,7 @@
   font-family: "conduit_itcregular",sans-serif;
   font-size: 15px;
   font-weight: 800;
-  line-height: 17px;
+  line-height: 16px;
   text-align: left;
   margin: 0px!important;
   padding: 5px 0px!important;
@@ -166,7 +167,7 @@
 .sof-pdf-all-content .sof-pdf-page-template .content h4 {
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 17px;
   margin: 0px!important;
   padding: 5px 0px!important;
   text-decoration: none;
@@ -175,21 +176,21 @@
 .sof-pdf-all-content .sof-pdf-page-template .content h5 {
   color: #094974;
   font-size: 15px;
-  line-height: 17px;
+  line-height: 16px;
   margin: 0px!important;
   padding: 5px 0px!important;
   text-decoration: none;
   font-weight: 400;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content blockquote {
-  margin: 45px 0 0 0;
+  margin: 35px 0 0 0;
   padding: 0!important;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content blockquote:before {
   content: '\e802'; /* '' */
   color: #00a2eb;
   font-family: 'fontello';
-  font-size: 15px;
+  font-size: 12px;
   padding: 0!important;
 }
 .sof-pdf-all-content .sof-pdf-page-template .content blockquote p {
@@ -201,11 +202,10 @@
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
-  left: 30px;
-  line-height: 16px;
-  margin: 0;
+  left: 22px;
+  line-height: 16px
   position: relative;
-  bottom: 20px;
+  bottom: 16px;
   width: 88%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -221,9 +221,9 @@
 }
 .sof-pdf-all-content .sof-pdf-page-template .content  ul,
 .sof-pdf-all-content .sof-pdf-page-template .content  ol {
-  padding: 0 0 0 14px!important;
+  padding: 0 0 0 11px!important;
   width: 100%;
-  font-size: 10px!important;
+  font-size: 11px!important;
   line-height: 13px!important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -233,7 +233,7 @@
   border-radius: 0;
   color: #454545;
   font-family: "conduit_itclight";
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   margin-left: 0;
   padding: 0!important;
   text-align: left;

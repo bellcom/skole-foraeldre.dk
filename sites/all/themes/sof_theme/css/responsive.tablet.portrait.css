@@ -97,15 +97,22 @@ body {
   text-decoration: none;
 }
 #block-follow-site {
-  width: 40%;
-  float: left;
-  padding: 0 0 25px 35px;
+  float: right;
+  padding: 0px 23px 5px 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; 
   box-sizing: border-box;
 }
+#block-views-sof-shopping-cart-block-block {
+  margin-right: 10px;
+  margin-left: 43px;
+  float: left;
+}
 .region-top-header-navigation .follow-links {
   float: left;
+}
+.region-top-header-navigation .block-follow {
+  padding-right: 30px;
 }
 /* =============================================================================
  *   Main Navigation
@@ -262,19 +269,23 @@ body {
   display: inline-block;
 }
 
-#edit-customer-profile-shipping.collapsed {
+.customer_profile_shipping.collapsed {
   margin-bottom: 40px;
 }
 /* =============================================================================
  *   Articles
  * ========================================================================== */
 .left-article-region,
-.right-article-region {
+.right-article-region,
+.top-sharing-printing-links-inline {
   width: 100%;
   padding: 0 20px; 
   max-width: none;
 }
-.bottom-read-also-block, 
+.right-article-region {
+  margin-top: 10px;
+}
+.read-more-main-container,
 .top-article-content {
   max-width: 728px;
   padding: 0 10px;
@@ -314,19 +325,30 @@ body {
  *   Blocks
  * ========================================================================== */
 /*Banner identity */
+
 .entity-bean.bean-banner {
   max-width: none;	
 }
-#block-views-read-also-block,
-#block-views-read-also-block .views-row,
-#node_article_full_group_bottomaregion {
-  width: 100%;
+.pane-read-also-read-also-pane,
+.pane-node-field-link,
+#node_article_full_group_bottomaregion,
+.pane-read-also-read-also-pane .views-row,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link,
+.read-more-inline-container, body.not-logged-in .pane-read-also-read-also-pane {
+  width: 100%!important;
 }
 #block-views-read-also-block .views-field-view-node {
   text-align: center;
 }
-#block-views-read-also-block .views-row {
+.pane-read-also-read-also-pane .views-row {
   padding: 35px 15px;
+}
+.pane-read-also-read-also-pane .pane-title {
+  position: relative;
+}
+.pane-node-field-link ,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link{
+  margin: 0px!important;
 }
 /* =============================================================================
  *  Decks
@@ -472,11 +494,11 @@ body {
 .block-sof-footer-social-media,
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   width: 100%;
 }
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   margin-bottom: 30px;
 }

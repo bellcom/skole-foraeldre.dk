@@ -244,12 +244,19 @@ body {
   padding-left: 20px;
 }
 #block-follow-site {
-  width: 40%;
-  float: left;
-  padding: 0 0 25px 35px;
+  float: right;
+  padding: 0px 23px 5px 5px;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+#block-views-sof-shopping-cart-block-block {
+  margin-right: 10px;
+  margin-left: 43px;
+  float: left;
+}
+.region-top-header-navigation .block-follow {
+  padding-right: 30px;
 }
 /* =============================================================================
  *   Publications 
@@ -324,7 +331,7 @@ body.page-releases .pane-apachesolr-form h2 {
   display: inline-block;
 }
 
-#edit-customer-profile-shipping.collapsed {
+.customer_profile_shipping.collapsed {
   margin-bottom: 40px;
 }
 div.messages.commerce-add-to-cart-confirmation {
@@ -339,10 +346,14 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
  *   Articles
  * ========================================================================== */
 .left-article-region,
-.right-article-region {
+.right-article-region,
+.top-sharing-printing-links-inline {
   width: 100%;
   padding: 0 20px;
   max-width: none;
+}
+.right-article-region {
+  margin-top: 10px;
 }
 /* =============================================================================
  *   Sections
@@ -374,26 +385,34 @@ ul.pager li {
  *   Blocks
  * ========================================================================== */
 /*Banner identity */
-.entity-bean.bean-banner {
-  max-width: none;	
+.read-more-main-container,
+.top-article-content {
+  max-width: 728px;
+  padding: 0 10px;
 }
-#block-views-read-also-block,
-#block-views-read-also-block .views-row,
-#node_article_full_group_bottomaregion {
-  width: 100%;
+.entity-bean.bean-banner {
+  max-width: none;
+}
+.pane-read-also-read-also-pane,
+.pane-node-field-link,
+#node_article_full_group_bottomaregion,
+.pane-read-also-read-also-pane .views-row,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link,
+.read-more-inline-container, body.not-logged-in .pane-read-also-read-also-pane {
+  width: 100%!important;
 }
 #block-views-read-also-block .views-field-view-node {
   text-align: center;
 }
-#block-views-read-also-block .views-row {
+.pane-read-also-read-also-pane .views-row {
   padding: 35px 15px;
 }
-.article-region .field-name-body blockquote p {
-  width: 81%;
+.pane-read-also-read-also-pane .pane-title {
+  position: relative;
 }
-.bottom-read-also-block, 
-.top-article-content {
-  padding: 0 10px;
+.pane-node-field-link ,
+.relared-topics-inline-container, body.not-logged-in .pane-node-field-link{
+  margin: 0px!important;
 }
 /* =============================================================================
  *  Decks
@@ -577,16 +596,38 @@ ul.pager li {
 .block-sof-footer-social-media,
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   width: 100%;
 }
 .footer_social_media_facebook,
 .footer_social_media_twitter,
-#block-mailchimp-signup-sof-mailchimp-form {
+.block-mailchimp-signup {
   margin-bottom: 30px;
 }
 #footer .region-footer .footer-logo img {
   max-width: 200px;
+  width: 100%;
+}
+/* Publication products */
+.publication-ecommerce-container-inner-product-info,
+.publication-ecommerce-container-inner-product-qprice {
+  width:100%;
+}
+.field-name-field-sof-commerce-product .form-submit {
+  bottom:-65px;
+  padding:12px 10px;
+  font-size:17px;
+}
+.publication-oneproduct .form-submit {
+  bottom: 20px;
+}
+.back-to-all-releases-link {
+  font-size: 16px;
+}
+.publication-top-right-container {
+  padding: 0;
+}
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
   width: 100%;
 }
 /* =============================================================================
@@ -600,9 +641,6 @@ ul.pager li {
   .publication-ecommerce-container-inner-product-info,
   .publication-ecommerce-container-inner-product-qprice {
   	width:100%;
-  }
-  .publication-ecommerce-container-inner-product-qprice {
-  	margin-top:20px;
   }
 }
 @media all and (max-width: 470px) {
@@ -618,12 +656,12 @@ ul.pager li {
     width: 100%;
 	padding: 0 0 20px 0;
 	text-align: center;
-  }	
-  /* Publication products */
- .publication-ecommerce-container-inner-product-info, 
- .publication-ecommerce-container-inner-product-qprice {
-   width:100%;
- }
+  }
+  .form-item-attributes-field-sof-commerce-type,
+  .form-item-attributes-product-select {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 @media all and (max-width: 360px) {
   #header {
@@ -642,11 +680,6 @@ ul.pager li {
   .form-item-attributes-product-select{
   	width:100%;
   	margin-top:20px;
-  }
-  .field-name-field-sof-commerce-product .form-submit {
-  	bottom:-65px;
-  	padding:12px 10px;
-  	font-size:17px;
   }
 }
 @media all and (max-width: 350px) {

@@ -177,7 +177,7 @@ function commerce_flat_rate_commerce_shipping_service_info() {
 /**
  * Shipping service callback: returns the base rate for a flat rate service.
  */
-function commerce_flat_rate_service_rate_order($shipping_service, $order) {dpm('callback');
+function commerce_flat_rate_service_rate_order($shipping_service, $order) {
   // The base rate is simply defined in the service, so we return it directly.
   return $shipping_service['base_rate'];
 }

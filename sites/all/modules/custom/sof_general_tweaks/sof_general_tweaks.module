@@ -132,7 +132,9 @@ function sof_general_tweaks_apachesolr_index_document_build_node(ApacheSolrDocum
   $node = node_load($entity->vid);
 
   // Render the node and strip all html tags from it.
-  $full_node_html = drupal_html_to_text(drupal_render(node_view($node)));
+  $node_view = node_view($node);
+  $node_render = drupal_render($node_view);
+  $full_node_html = drupal_html_to_text($node_render);
 
   // Add new fields for drupal search.
   $document->addField('ts_node_teaser', $node->field_teaser[LANGUAGE_NONE][0]['safe_value']);
@@ -194,6 +196,21 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
  * Implements hook_form_alter().
  */
 function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
+  // Alter mailchimp subscribe block form.
+  if (strpos($form_id, 'mailchimp_signup_subscribe_block_') !== FALSE) {
+    // Wrap email field and submit button, in order to be replaced.
+    $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
+    $form['submit']['#suffix'] = '</div>';
+
+    // Add ajax to the form.
+    $form['submit']['#ajax'] = array(
+      'callback' => 'sof_general_tweaks_mailchimp_ajax',
+      'wrapper' => 'sof-general-tweaks-mailchimp',
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+  }
+
   // Alter taxonomy search form.
   switch ($form_id) {
     case 'apachesolr_search_custom_page_search_form':
@@ -208,23 +225,17 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       }
       break;
 
-    // Alter mailchimp subscribe block form.
-    case 'mailchimp_signup_subscribe_block_sof_mailchimp_form_form':
-      // Wrap email field and submit button, in order to be replaced.
-      $form['mergevars']['#prefix'] = '<div id="sof-general-tweaks-mailchimp"> ' . $form['mergevars']['#prefix'];
-      $form['submit']['#suffix'] = '</div>';
-
-      // Add ajax to the form.
-      $form['submit']['#ajax'] = array(
-        'callback' => 'sof_general_tweaks_mailchimp_ajax',
-        'wrapper' => 'sof-general-tweaks-mailchimp',
-        'method' => 'replace',
-        'effect' => 'fade',
-      );
-      break;
-
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
+
+      // The customer should see the coupon code that should use.
+      // It is set in the coupon settings.
+      if (isset($form['commerce_coupon'])) {
+        $code = variable_get('sof_commerce_coupon_code', '');
+        if ($code) {
+          $form['commerce_coupon']['coupon_code']['#description'] = t('Enter here the coupon code: @code', array('@code' => $code));
+        }
+      }
 
       // Add custom validation to customer profile fields: telephone,
       // postal_code, cvr, ean.
@@ -233,14 +244,23 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       $form['customer_profile_billing']['field_sof_commerce_customer_tel'][$billing['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
       $form['customer_profile_billing']['field_sof_commerce_customer_cvr'][$billing['field_sof_commerce_customer_cvr']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
       $form['customer_profile_billing']['field_sof_commerce_customer_ean'][$billing['field_sof_commerce_customer_ean']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_customer_post_code'][$billing['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
       $form['customer_profile_shipping']['field_sof_commerce_customer_tel'][$shipping['field_sof_commerce_customer_tel']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
-      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['locality_block']['postal_code']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_shipping']['field_sof_customer_post_code'][$shipping['field_sof_customer_post_code']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
 
-      // Make the custom street number field required.
-      $form['customer_profile_billing']['commerce_customer_address'][$billing['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
-      $form['customer_profile_shipping']['commerce_customer_address'][$shipping['commerce_customer_address']['#language']][0]['street_block']['thoroughfare_street_number']['#required'] = TRUE;
+      // Disable country field and add its default vaue.
+      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
+      $form['customer_profile_billing']['field_sof_customer_country'][$billing['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+
+      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#default_value'] = t('Denmark');
+      $form['customer_profile_shipping']['field_sof_customer_country'][$shipping['field_sof_customer_country']['#language']][0]['value']['#disabled'] = TRUE;
+
+      // Validate required fields Firm and Institution name, because #states
+      // are not working.
+      $form['customer_profile_billing']['field_sof_commerce_customer_firm'][$billing['field_sof_commerce_customer_firm']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+      $form['customer_profile_billing']['field_sof_commerce_customer_name'][$billing['field_sof_commerce_customer_name']['#language']][0]['value']['#element_validate'] = array('sof_general_tweaks_commerse_validation');
+
       break;
 
     case 'views_form_commerce_cart_form_sof_default':
@@ -265,6 +285,25 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
         drupal_get_path('module', 'sof_general_tweaks') . '/js/sof_general_tweaks_commerce.js',
       );
       drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
+      break;
+
+    // Set Including VAT as default value for the shipping base rate.
+    case 'commerce_flat_rate_service_form':
+      if (isset($form['flat_rate']['include_tax'])) {
+        $form['flat_rate']['include_tax']['#default_value'] = array('test');
+        $form['flat_rate']['include_tax']['#disabled'] = TRUE;
+      }
+      break;
+
+    case 'commerce_coupon_ui_settings_form':
+      // Alter form for setting the coupon code that should appear for the
+      // customers.
+      $form['sof_commerce_coupon_code'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Coupon Code'),
+        '#description' => t('Enter the code that should appear as description pf the active coupon field.'),
+        '#default_value' => variable_get('sof_commerce_coupon_code', ''),
+      );
       break;
 
     case 'article_node_form':
@@ -423,179 +462,170 @@ function sof_general_tweaks_form_commerce_cart_add_to_cart_form_alter(&$form, &$
 }
 
 /**
- * Implements hook_ctools_plugin_directory().
- *
- * It is needed because of adding Street number field to the addressfield
- * container.
- */
-function sof_general_tweaks_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'addressfield') {
-    return 'plugins/' . $plugin;
-  }
-}
-
-/**
  * Implements the commerce customer profile fields validation callback.
  */
 function sof_general_tweaks_commerse_validation($element, &$form_state) {
   $value = $element['#value'];
+  $billing = $form_state['input']['customer_profile_billing'];
+  $lang = isset($element['#language']) ? $element['#language'] : LANGUAGE_NONE;
 
-  // Skip shipping fields validattion if the information will be copied from
+  // Skip shipping fields validation if the information will be copied from
   // the billing profile.
   $copy = $form_state['input']['customer_profile_shipping']['commerce_customer_profile_copy'];
   if ($copy && $element['#parents'][0] == 'customer_profile_shipping') {
     return;
   }
-  // Validate postal_code to be a number with exactly 4 digits.
-  if (isset($element['#title'])) {
-    if ($element['#title'] == 'Postal code') {
-      if ($value && (!is_numeric($value) || drupal_strlen($value) != 4)) {
-        form_error($element, t('Fill Postal code.'));
-      }
-    }
-  }
+
   if (isset($element['#field_name'])) {
     switch ($element['#field_name']) {
+      case 'field_sof_customer_post_code':
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 4)) {
+          form_error($element, t('Udfyld Postnummer.'));
+        }
+        break;
+
       // Validate phone to contain only digits, spaces and +.
       case 'field_sof_commerce_customer_tel':
-        $pattern = '/(^\+)?(([0-9]+\s?)+)$/';
+        $pattern = '/^\+?\s?([0-9]+\s?)+$/';
         if ($value && !preg_match($pattern, $value)) {
-          form_error($element, t('Fill Phone.'));
+          form_error($element, t('Udfyld Telefonnummer.'));
         }
         break;
 
       // Validate cvr to be a number with exactly 8 digits.
       case 'field_sof_commerce_customer_cvr':
-        if ($value && (!is_numeric($value) || drupal_strlen($value) != 8)) {
-          form_error($element, t('Fill CVR Number.'));
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 8)) {
+          form_error($element, t('Udfyld CVR nr.'));
         }
         break;
 
       // Validate ean to be a number with exactly 13 digits.
       case 'field_sof_commerce_customer_ean':
-        if ($value && (!is_numeric($value) || drupal_strlen($value) != 13)) {
-          form_error($element, t('Fill EAN number.'));
+        if ($value && (!is_numeric($value) || drupal_strlen($value) < 13)) {
+          form_error($element, t('Udfyld EAN Number.'));
+        }
+        // Validate if empty, the field is required;
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
+          if (!$value) {
+            form_error($element, t('EAN field is required.'));
+          }
+        }
+        break;
+
+      // Firm name field is required when it is visible.
+      case 'field_sof_commerce_customer_firm':
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'company') {
+          if (!$value) {
+            form_error($element, t('Firma felt er obligatorisk.'));
+          }
+        }
+        break;
+
+      // Institution name is required when it is visible.
+      case 'field_sof_commerce_customer_name':
+        if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
+          if (!$value) {
+            form_error($element, t('Navn på institution felt er obligatorisk.'));
+          }
         }
         break;
     }
   }
 }
 
-// -----------------------------------Stree Number functionality---------------.
-// Based on Address Field Phone module.
+/**
+ * Adding new style for Seven admin theme.
+ */
+function sof_general_tweaks_preprocess_html(&$variables) {
+  // Add conditional stylesheets for admin pages on admin theme.
+  if (arg(0) == "admin") {
+    // Reference your current admin theme.
+    $theme_path = drupal_get_path('theme', 'seven');
+    // Reference your own stylesheet.
+    drupal_add_css(drupal_get_path('module', 'sof_general_tweaks') . '/css/sof_general_tweaks.css', array('weight' => CSS_THEME));
+  }
+}
 
 /**
- * Implements hook_field_attach_presave().
+ * Implements hook_commerce_payment_method_info().
  *
- * Store additional address fields serialized in addressfield data column.
+ * Defines new payment method - Invoice.
+ * It is just defined, because it is wanted only as an option.
  */
-function sof_general_tweaks_field_attach_presave($entity_type, $entity) {
-  $addressfields = sof_general_tweaks_addressfield_types();
+function sof_general_tweaks_commerce_payment_method_info() {
+  $payment_methods = array();
 
-  foreach ($addressfields as $field_name) {
-    if (isset($entity->$field_name)) {
-      $default_fields = array_keys(addressfield_default_values());
-      $default_fields[] = 'element_key';
-
-      foreach ($entity->$field_name as $lang_code => $fields) {
-        foreach ($fields as $delta => $fieldset) {
-          $data = array();
-
-          foreach ($fieldset as $field_key => $field_value) {
-            // Compare fields with addressfield default fields and store any
-            // additional fields in data.
-            if (!in_array($field_key, $default_fields)) {
-              // Store additional field value.
-              $data[$field_key] = $field_value;
-            }
-          }
-          if (!empty($data)) {
-            $entity->{$field_name}[$lang_code][$delta]['data'] = serialize($data);
-          }
-        }
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_field_attach_load().
- *
- * Load and set additional addressfield field values from serialized data
- * column.
- */
-function sof_general_tweaks_field_attach_load($entity_type, $entities, $age, $options) {
-  $addressfields = sof_general_tweaks_addressfield_types();
-
-  $elements = drupal_map_assoc(array(
-    'thoroughfare_street_number',
-    'premise_street_number',
-  ));
-
-  foreach ($entities as $entity) {
-    foreach ($addressfields as $field_name) {
-      if (empty($entity->{$field_name})) {
-        continue;
-      }
-
-      foreach ($entity->$field_name as $lang_code => $fields) {
-        foreach ($fields as $delta => $fieldset) {
-          if (!empty($fieldset['data'])) {
-            // Unserialize data, else skip if string.
-            $data = unserialize($fieldset['data']);
-
-            if ($data && is_array($data)) {
-              // Store unserialized data values in additional fields.
-              $phone_data = array_intersect_key($data, $elements);
-              $entity->{$field_name}[$lang_code][$delta] = array_merge($fieldset, $phone_data);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-/**
- * Returns an array of the field names of any addressfields.
- */
-function sof_general_tweaks_addressfield_types() {
-  if (!isset($addressfields)) {
-    static $addressfields;
-
-    $result = db_query("SELECT field_name FROM {field_config} WHERE type = 'addressfield'");
-    $addressfields = array();
-
-    foreach ($result as $row) {
-      $addressfields[] = $row->field_name;
-    }
-  }
-
-  return $addressfields;
-}
-
-/**
- * Implemens render callback for the street number fields.
- */
-function addressfield_street_number_render($format) {
-  $address = $format['#address'];
-
-  $format['thoroughfare_street_number'] = array(
-    '#title' => t('Street Number'),
-    '#children' => check_plain($address['thoroughfare_street_number']),
-    '#attributes' => array('class' => array('thoroughfare-street-number')),
-    '#type' => 'addressfield_container',
-    '#tag' => 'span',
+  $payment_methods['sof_invoice_payment'] = array(
+    'title' => t('Invoice'),
+    'description' => t('Custom SOF invoice payment method.'),
+    'active' => TRUE,
   );
 
-  $format['premise_street_number'] = array(
-    '#title' => t('Street Number'),
-    '#children' => check_plain($address['premise_street_number']),
-    '#attributes' => array('class' => array('premise-street-number')),
-    '#type' => 'addressfield_container',
-    '#tag' => 'span',
+  return $payment_methods;
+}
+
+/**
+ * Implements hook_commerce_price_component_type_info_alter().
+ *
+ * Alter the price component display title.
+ */
+function sof_general_tweaks_commerce_price_component_type_info_alter(&$component_types) {
+  if (isset($component_types['base_price'])) {
+    $component_types['base_price']['display_title'] = t('Total excluding VAT');
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Set Include VAT as default value for commerce price and disabled the field.
+ */
+function sof_general_tweaks_field_widget_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] == 'commerce_price' && $context['instance']['entity_type'] == 'commerce_product') {
+    if (isset($element['include_tax'])) {
+      $element['include_tax']['#default_value'] = 'test';
+      $element['include_tax']['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_commerce_price_formatted_components_alter().
+ */
+function sof_general_tweaks_commerce_price_formatted_components_alter(&$components, &$price, $entity) {
+  // Reorder Order total components.
+  if (isset($components['tax|test'])) {
+    $components['tax|test']['weight'] = -20;
+  }
+
+  // Add new component to Order total - Total including VAT.
+  $base_pice = commerce_price_component_load($price, 'base_price');
+  $tax = commerce_price_component_load($price, 'tax|test');
+  $amount = $base_pice[0]['price']['amount'] + $tax[0]['price']['amount'];
+
+  $new_component = array(
+    'title' => t('Total including VAT'),
+    'price' => array(
+      'amount' => $amount,
+      'currency_code' => $price['currency_code'],
+      'data' => array(),
+    ),
+    'weight' => -10,
   );
 
-  return $format;
+  $components['base_price_with_tax'] = $new_component;
 }
-// --------------------------End Street Number functionality-------------------.
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function sof_general_tweaks_views_pre_render(&$view){
+  switch ($view->name) {
+    case 'publication_listing_view':
+      foreach($view->result as $k => $result) {
+        $nid = $result->entity_id;
+        $view->result[$k]->url = check_plain(url('node/' . $nid, array('absolute' => TRUE)));
+      }
+      break;
+  }
+}

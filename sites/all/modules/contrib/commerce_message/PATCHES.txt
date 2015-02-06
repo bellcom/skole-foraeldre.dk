@@ -1,0 +1,5 @@
+The following patches has been applied:
+______________________________________________________________
+  Thread: https://www.drupal.org/node/2171201
+  Patch: 2171201-undefined-property-module-MessageType-6.patch
+______________________________________________________________

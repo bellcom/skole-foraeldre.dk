@@ -6,3 +6,5 @@ package = "SOF custom"
 ; Dependencies
 dependencies[] = ctools
 dependencies[] = addressfield
+dependencies[] = commerce
+dependencies[] = commerce_price

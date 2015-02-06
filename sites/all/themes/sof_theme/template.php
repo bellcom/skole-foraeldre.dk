@@ -34,6 +34,21 @@ function sof_theme_process_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function sof_theme_process_page(&$variables) {
+  // Insert print button in article and news content type.
+  if (isset($variables['node'])) {
+    $contenttype = $variables['node']->type;
+    if ($contenttype == 'article' || $contenttype == 'news') {
+      $nodeid = $variables['node']->vid;
+      $variables['add_this_button'] = $variables['page']['content']['system_main']['nodes'][$nodeid]['field_add_this'];
+      $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
+        'attributes' => array(
+          'class' => array('print-btn'),
+        ),
+        'fragment' => '',
+        'external' => TRUE,
+      ));
+    }
+  }
   global $base_path;
   $theme = "sof_theme";
   // Hook into color.module.
@@ -282,6 +297,12 @@ function sof_theme_preprocess_node(&$variables) {
   // Add theme sugestions for publication.
   if ($node->type == 'publication') {
     $variables['theme_hook_suggestion'] = 'node__publication__full';
+    if (!empty($variables['field_sof_commerce_product'])) {
+      $variables['borderclass'] = 'publicationborderclass';
+    }
+    else {
+      $variables['borderclass'] = ' ';
+    }
     // Add new variable if publication has one product .
     if (count($variables['field_sof_commerce_product']) === 1) {
       $variables['oneproduct'] = 'publication-oneproduct';
@@ -297,15 +318,6 @@ function sof_theme_preprocess_node(&$variables) {
       $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 320, FALSE, TRUE);
     }
     if ($view_mode == 'full') {
-      $variables['theme_hook_suggestion'] = 'node__articlenews__full';
-      // Add print button link.
-      $variables['print_button'] = l(t('Print'), 'javascript:window.print()', array(
-        'attributes' => array(
-          'class' => array('print-btn'),
-        ),
-        'fragment' => '',
-        'external' => TRUE,
-      ));
       // Publication link variable.
       if ($variables['field_publication_control_link'][LANGUAGE_NONE][0]['value'] == 1) {
         $variables['publication_link'] = l(t('See all publications'), 'releases', array(
@@ -559,7 +571,7 @@ function sof_theme_facetapi_link_active($variables) {
  * Override or insert variables into the block templates.
  */
 function sof_theme_preprocess_block(&$vars) {
-  if ($vars['elements']['#block']->delta == 'sof_mailchimp_form') {
+  if ($vars['elements']['#block']->module == 'mailchimp_signup') {
     $vars['title_prefix'] = array(
       '#type' => 'markup',
       '#markup' => '<div class="mailchimp-signup-sof"><div class="sof_footer_social_media_icon"></div>',
@@ -568,6 +580,7 @@ function sof_theme_preprocess_block(&$vars) {
       '#type' => 'markup',
       '#markup' => '</div>',
     );
+    $vars['theme_hook_suggestions'][] = 'sof_footer_social_media';
   }
 }
 

@@ -103,6 +103,12 @@ function propeople_install() {
 
   // Create default flat shipping services.
   _propeople_configure_default_shipping_services();
+
+  // Disable account pane from commerce review page.
+  _propeople_disable_commerce_account_pane();
+
+  // Creates default terms in Product Variants vocabulary.
+  _propeople_create_product_variants_terms();
 }
 
 /**
@@ -592,9 +598,104 @@ function _propeople_configure_default_shipping_services() {
         drupal_write_record('commerce_flat_rate_service', $data);
       }
       catch (Exception $ex) {
-        watchdog('Propeople', $ex->getMessage(), array(), WATCHDOG_ERROR);
+        watchdog('Propeople', $watchdogex->getMessage(), array(), WATCHDOG_ERROR);
       }
     }
+  }
+}
+
+/**
+ * Helper function for disabling account pane from commerce review page.
+ *
+ * The setting can not be exported into feature.
+ */
+function _propeople_disable_commerce_account_pane() {
+  if (module_exists('commerce_checkout')) {
+    try {
+      $disable_account = db_update('commerce_checkout_pane')
+          ->fields(array('review' => 0))
+          ->condition('pane_id', 'account', '=')
+          ->execute();
+    }
+    catch (Exception $e) {
+      watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+    }
+  }
+}
+
+/**
+ * Implements helper function for changing length of fields with existing data.
+ */
+function _propeople_change_field_length($field_name, $length) {
+  try {
+    // Alter value field length in fields table.
+    db_update('field_data_' . $field_name)
+        ->fields(array(
+          $field_name . '_value' => $length,
+        ))
+        ->execute();
+    // Alter value field length in fields revision table.
+    db_update('field_revision_' . $field_name)
+        ->fields(array(
+          $field_name . '_value' => $length,
+        ))
+        ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+  }
+
+  try {
+    // Update field config with new max length.
+    $result = db_select('field_config', 'f')
+        ->fields('f', array('data'))
+        ->condition('field_name', $field_name, '=')
+        ->execute();
+
+    $config = $result->fetchField();
+    $config_array = unserialize($config);
+    $config_array['settings']['max_length'] = $length;
+    $updated_config = serialize($config_array);
+    db_update('field_config')
+        ->fields(array('data' => $updated_config))
+        ->condition('field_name', $field_name, '=')
+        ->execute();
+  }
+  catch (Exception $e) {
+    watchdog('Propeople', $e->getMessage(), array(), WATCHDOG_ERROR);
+  }
+}
+
+/**
+ * Implements helper function that creates default terms in Product variants.
+ */
+function _propeople_create_product_variants_terms() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('product_variants');
+
+  if ($vocabulary) {
+    $terms = array(
+      'pdf' => array(
+        'name' => 'Pdf',
+        'description' => 'PDF product type.',
+      ),
+      'printed' => array(
+        'name' => 'Printed',
+        'description' => 'Printed version of the product.',
+      ),
+    );
+
+    foreach ($terms as $item) {
+      $term = new stdClass();
+      $term->vid = $vocabulary->vid;
+      $term->name = st($item['name']);
+      $term->description = $item['description'];
+
+      taxonomy_term_save($term);
+    }
+  }
+  else {
+    drupal_set_message(t('Vocabulary Product Variants cant be loaded.'), 'error', FALSE);
+    return FALSE;
   }
 }
 
@@ -691,4 +792,75 @@ function propeople_update_7003() {
 function propeople_update_7004() {
   _propeople_configure_default_shipping_services();
   cache_clear_all();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Delete address field from shipping and billing commerce profiles.
+ */
+function propeople_update_7005() {
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_customer_profile',
+        'field_name' => 'commerce_customer_address',
+        'bundle' => 'shipping',
+      ),
+      array()
+  );
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_customer_profile',
+        'field_name' => 'commerce_customer_address',
+        'bundle' => 'billing',
+      ),
+      array()
+  );
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change the EAN field length. The field is locked because
+ * there are values in the database.
+ */
+function propeople_update_7006() {
+  _propeople_change_field_length('field_sof_commerce_customer_ean', 13);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Disable account pane from commerce review.
+ * Because the settings can not be exported.
+ */
+function propeople_update_7007() {
+  _propeople_disable_commerce_account_pane();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change the customer Telephone field length.
+ */
+function propeople_update_7008() {
+  _propeople_change_field_length('field_sof_commerce_customer_tel', 15);
+}
+/**
+ * Implements hook_update_N().
+ *
+ * Creats default product variants and delets the old product variant field.
+ */
+function propeople_update_7009() {
+  _propeople_create_product_variants_terms();
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'commerce_product',
+        'field_name' => 'field_sof_commerce_type',
+        'bundle' => 'product',
+      ),
+      array()
+  );
 }

@@ -16,7 +16,6 @@ body.node-type-basic-page .field-name-body blockquote p,
 .sof-column-content blockquote p,
 .article-region .field-name-body blockquote:before,
 .sof-column-content blockquote:before,
-#block-views-related-content-block .field-content a,
 body.node-type-basic-page .field-name-body  h2,
 body.node-type-basic-page .field-name-body  h4,
 .node-webform .form-item label,
@@ -24,7 +23,7 @@ body.node-type-basic-page .field-name-body  h4,
 .back-to-all-releases-link,
 .publication-bottom-container  .views-field-title a,
 body.node-type-basic-page .field-name-body blockquote:before,
-#block-views-read-also-block .views-field-view-node a,
+.pane-read-also-read-also-pane .views-field-view-node a,
 .section-header .views-field-view-node a,
 .section-default-listiing .views-row a,
 .region-header nav .menu  li.last.leaf:after,
@@ -43,7 +42,7 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .item-list-facetapi-facetapi-links li a,
 #user-login label,
 #user-pass label,
-.article-region  .author-datetime a,
+.pane-node-author .username,
 body.node-type-basic-page .author-datetime a,
 #views-form-commerce-cart-form-sof-default .views-field-line-item-title a,
 .view-sof-commerce-cart-checkout-summary .views-field-line-item-title a,
@@ -67,16 +66,25 @@ body.node-type-basic-page .author-datetime a,
 .form-item-attributes-product-select::after,
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label,
-.field-name-field-related-terms .field-item a {
+.field-name-field-related-terms .field-item a,
+.view-display-id-related_terms_pane a,
+.form-item-customer-profile-billing-field-sof-commerce-customer-type-und::after,
+.ui-selectmenu-menu ul li.ui-state-hover a,
+.article-news-main-container .field-name-body blockquote:before,
+body.node-type-basic-page .field-name-body blockquote:before,
+.article-news-main-container .field-name-body blockquote p,
+body.node-type-basic-page blockquote p,
+.left-article-region .field-name-body a {
   color: #00a2eb;
 }
-
 /* Applay color to elements  */
 .commerce-add-to-cart-confirmation .added-product-title,
 .commerce-add-to-cart-confirmation .views-field-commerce-total .field-content{
   color: #00a2eb!important;
 }
-
+.ui-state-default .ui-icon {
+  border-top: 7px solid #00A2EB;
+}
 /* Applay background color to elements  */
 #footer,
 .right-article-region .right-region-top-links a,
@@ -117,7 +125,7 @@ body.page-user ul.primary li.active,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-sof-commerce-cart-checkout-summary  #edit-actions input,
-#commerce-checkout-form-checkout #edit-customer-profile-shipping legend,
+#commerce-checkout-form-checkout .customer_profile_shipping legend,
 #commerce-checkout-form-checkout #edit-customer-profile-billing legend,
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-commerce-shipping legend,
@@ -135,7 +143,13 @@ body.page-node-done .links a,
 #edit-commerce-coupon legend,
 .form-item-attributes-field-sof-commerce-type input[type="radio"]:checked ~ label:before,
 .field-name-field-sof-commerce-product .form-submit,
-body.page-user-orders #tasks ul li {
+body.page-user-orders #tasks ul li,
+.right-article-region .pane-node-field-publication-control-link a,
+.right-article-region .pane-node-download-as-pdf a,
+.pane-node-field-link .field-item a,
+.view-commerce-line-item-table tr th,
+.form-item-commerce-shipping-shipping-service input[type="radio"]:checked ~ label:before,
+.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before {
   background-color: #00a2eb;
 }
 

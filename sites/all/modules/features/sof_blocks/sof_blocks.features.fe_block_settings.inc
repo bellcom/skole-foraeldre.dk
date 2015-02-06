@@ -236,5 +236,37 @@ function sof_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-sof_shopping_cart_block-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'sof_shopping_cart_block-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'adaptivetheme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => 'top_header_navigation',
+        'status' => 1,
+        'theme' => 'sof_theme',
+        'weight' => -22,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   return $export;
 }

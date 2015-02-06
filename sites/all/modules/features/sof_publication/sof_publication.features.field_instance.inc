@@ -31,7 +31,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -92,7 +92,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -289,7 +289,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -362,7 +362,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -416,7 +416,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -480,7 +480,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -554,7 +554,7 @@ function sof_publication_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
       'related_content_reference' => array(
         'label' => 'above',
@@ -712,7 +712,7 @@ function sof_publication_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'related_content_reference' => array(
         'label' => 'above',

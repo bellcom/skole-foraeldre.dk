@@ -26,8 +26,21 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'administer checkout',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_checkout',
+  );
+
+  // Exported permission: 'administer commerce_coupon entities'.
+  $permissions['administer commerce_coupon entities'] = array(
+    'name' => 'administer commerce_coupon entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
   );
 
   // Exported permission: 'administer commerce_customer_profile entities'.
@@ -53,8 +66,30 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'administer commerce_product entities',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'administer coupon settings'.
+  $permissions['administer coupon settings'] = array(
+    'name' => 'administer coupon settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'administer coupon types'.
+  $permissions['administer coupon types'] = array(
+    'name' => 'administer coupon types',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_coupon',
   );
 
   // Exported permission: 'administer customer profile types'.
@@ -82,6 +117,17 @@ function sof_commerce_settings_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'dibs',
+  );
+
+  // Exported permission: 'administer flat rate services'.
+  $permissions['administer flat rate services'] = array(
+    'name' => 'administer flat rate services',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_flat_rate',
   );
 
   // Exported permission: 'administer line item types'.
@@ -143,6 +189,8 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'administer shipping',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_shipping',
   );
@@ -152,6 +200,8 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'administer taxes',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_tax_ui',
   );
@@ -170,8 +220,30 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'configure store',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce',
+  );
+
+  // Exported permission: 'create commerce_coupon entities'.
+  $permissions['create commerce_coupon entities'] = array(
+    'name' => 'create commerce_coupon entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'create commerce_coupon entities of bundle commerce_coupon_pct'.
+  $permissions['create commerce_coupon entities of bundle commerce_coupon_pct'] = array(
+    'name' => 'create commerce_coupon entities of bundle commerce_coupon_pct',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
   );
 
   // Exported permission: 'create commerce_customer_profile entities'.
@@ -253,6 +325,26 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_payment',
   );
 
+  // Exported permission: 'edit any commerce_coupon entity'.
+  $permissions['edit any commerce_coupon entity'] = array(
+    'name' => 'edit any commerce_coupon entity',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'edit any commerce_coupon entity of bundle commerce_coupon_pct'.
+  $permissions['edit any commerce_coupon entity of bundle commerce_coupon_pct'] = array(
+    'name' => 'edit any commerce_coupon entity of bundle commerce_coupon_pct',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
   // Exported permission: 'edit any commerce_customer_profile entity'.
   $permissions['edit any commerce_customer_profile entity'] = array(
     'name' => 'edit any commerce_customer_profile entity',
@@ -310,8 +402,30 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'edit any commerce_product entity of bundle product',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'edit own commerce_coupon entities'.
+  $permissions['edit own commerce_coupon entities'] = array(
+    'name' => 'edit own commerce_coupon entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'edit own commerce_coupon entities of bundle commerce_coupon_pct'.
+  $permissions['edit own commerce_coupon entities of bundle commerce_coupon_pct'] = array(
+    'name' => 'edit own commerce_coupon entities of bundle commerce_coupon_pct',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
   );
 
   // Exported permission: 'edit own commerce_customer_profile entities'.
@@ -395,11 +509,35 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_payment',
   );
 
+  // Exported permission: 'view any commerce_coupon entity'.
+  $permissions['view any commerce_coupon entity'] = array(
+    'name' => 'view any commerce_coupon entity',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'view any commerce_coupon entity of bundle commerce_coupon_pct'.
+  $permissions['view any commerce_coupon entity of bundle commerce_coupon_pct'] = array(
+    'name' => 'view any commerce_coupon entity of bundle commerce_coupon_pct',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
   // Exported permission: 'view any commerce_customer_profile entity'.
   $permissions['view any commerce_customer_profile entity'] = array(
     'name' => 'view any commerce_customer_profile entity',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_customer',
   );
@@ -425,6 +563,8 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view any commerce_order entity',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_order',
   );
@@ -434,6 +574,8 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view any commerce_order entity of bundle commerce_order',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_order',
   );
@@ -444,6 +586,8 @@ function sof_commerce_settings_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_product',
   );
@@ -454,8 +598,30 @@ function sof_commerce_settings_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'commerce_product',
+  );
+
+  // Exported permission: 'view own commerce_coupon entities'.
+  $permissions['view own commerce_coupon entities'] = array(
+    'name' => 'view own commerce_coupon entities',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_coupon',
+  );
+
+  // Exported permission: 'view own commerce_coupon entities of bundle commerce_coupon_pct'.
+  $permissions['view own commerce_coupon entities of bundle commerce_coupon_pct'] = array(
+    'name' => 'view own commerce_coupon entities of bundle commerce_coupon_pct',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'commerce_coupon',
   );
 
   // Exported permission: 'view own commerce_customer_profile entities'.

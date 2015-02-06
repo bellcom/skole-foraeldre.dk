@@ -157,15 +157,15 @@ function sof_generate_pdf_from_node($nid) {
           'no-outline',
           'disable-smart-shrinking',
           'no-stop-slow-scripts',
-          'dpi' => 96,
+          'dpi' => 75,
           'encoding' => 'UTF-8',
           'javascript-delay' => 1000,
           'footer-center' => '[page]',
-          'footer-font-size' => 7,
-          'header-font-size' => 5,
+          'footer-font-size' => 9,
+          'header-font-size' => 7,
           'header-spacing' => 5,
           'header-right' => strtoupper($current_domain['sitename']),
-          'header-left' => strtoupper($node_obj->title . ' / ' . format_date($node_obj->changed, 'custom', 'j.F Y')),
+          'header-left' => strtoupper($node_obj->title . ' / ' . format_date($node_obj->changed, 'custom', 'j. F Y')),
         ));
 
         // Add a HTML file, a HTML string or a page from a URL.
@@ -286,22 +286,24 @@ function sof_pdf_generator_preprocess_field(&$vars) {
 function sof_pdf_generator_publication_pdf($node_view) {
   $library = libraries_load('phpwkhtmltopdf');
   if ($library && !empty($library['loaded'])) {
+
     // Set global options for the pdf.
     $current_domain = domain_get_domain();
     $pdf = new WkHtmlToPdf(array(
       'no-outline',
       'disable-smart-shrinking',
       'no-stop-slow-scripts',
-      'dpi' => 96,
+      'dpi' => 75,
       'encoding' => 'UTF-8',
       'javascript-delay' => 1000,
+      'user-style-sheet' => drupal_get_path('theme', 'sof_theme') . '/css/global.styles.css',
       'page-offset' => -1,
       'footer-center' => '[page]',
-      'footer-font-size' => 7,
-      'header-font-size' => 5,
+      'footer-font-size' => 9,
+      'header-font-size' => 7,
       'header-spacing' => 5,
       'header-right' => strtoupper($current_domain['sitename']),
-      'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j.F Y')),
+      'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j. F Y')),
     ));
 
     // Add Template css.
