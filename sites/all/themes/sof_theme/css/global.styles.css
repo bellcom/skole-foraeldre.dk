@@ -1774,6 +1774,14 @@ body.node-type-slider #main-content {
 .ui-selectmenu-menu-dropdown .ui-state-hover {
   background: none;
 }
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  border-radius: 0px!important;
+}
 .form-item-attributes-product-select,
 .form-item-customer-profile-billing-field-sof-commerce-customer-type-und {
   position: relative;
@@ -1784,9 +1792,9 @@ body.node-type-slider #main-content {
   width: 0;
   height: 0;
   border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
+  border-right: 8px solid transparent;
   border-top: 7px solid #00A2EB;
-  right: 2px;
+  right: 5px;
   background: none;
 }
 .ui-selectmenu-icon {
@@ -1801,7 +1809,7 @@ a.ui-selectmenu {
 }
 .ui-selectmenu-menu li a,
 .ui-selectmenu-status {
-  padding: 5px 10px 5px 8px;
+  padding: 5px 20px 5px 8px;
 }
 .ui-selectmenu-menu ul li.ui-state-hover a {
   color: #00A2EB;
@@ -1819,29 +1827,47 @@ a.ui-selectmenu {
   background: #fff;
 }
 .page-checkout .ui-selectmenu-menu ul {
-  left: 2px;
-  top: -2px;
+  left: 0px;
+  top: 0px;
+  border-top: 0px;
 }
 .page-checkout a.ui-selectmenu,
 .page-checkout .ui-selectmenu-menu-dropdown {
   width: 150px!important;
+  border-radius: 0px!important;
+  border: 1px solid #BBB;
 }
 .ui-selectmenu-status {
-  background: #f0f0f0;
+  background: #fff;
   line-height: 23px;
 }
 .page-checkout .ui-selectmenu-status {
   width: 90%;
 }
 .ui-selectmenu-menu ul li {
-  background: #f0f0f0;
+  background: #fff;
+}
+.ui-corner-bottom.ui-selectmenu-item-selected,
+.ui-corner-bottom.ui-state-hover {
+  border-bottom: 1px solid transparent;
 }
 .form-item-attributes-product-select option {
   background: #fff;
   color: #333;
 }
-body.node-type-publication .ui-selectmenu-menu ul li {
-  background: #fff;
+.ui-selectmenu-menu ul li:first-child {
+  border-top: 1px solid transparent!important;
+}
+body.node-type-publication ul .ui-state-hover,
+body.node-type-publication ul .ui-widget-content .ui-state-hover,
+body.node-type-publication ul .ui-widget-header .ui-state-hover,
+body.node-type-publication ul .ui-state-focus,
+body.node-type-publication ul .ui-widget-content .ui-state-focus,
+body.node-type-publication ul .ui-widget-header .ui-state-focus {
+  border-bottom:1px solid #bbb!important;
+}
+body.node-type-publication  .ui-selectmenu-menu ul li:first-child {
+  border-top: 1px solid #bbb!important
 }
 .form-item-attributes-field-sof-commerce-type label,
 .form-item-attributes-product-select label {
