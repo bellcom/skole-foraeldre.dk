@@ -1,3 +1,7 @@
+7.x-1.15. 06-02-2015
+--------------------
+* 2241be0 - (HEAD, origin/dev, dev) SOF-208 Patched varnish module with patch https://www.drupal.org/files/issues/varnish-2371907-24.patch. Committed by Lachezar Valchev at 2015-02-06 16:42:38 +0200
+
 7.x-1.14. 06-02-2015
 --------------------
 * d6c25ad - SOF-234  Billing info styling Committed by rkoteska at 2015-02-06 21:52:18 +1000
