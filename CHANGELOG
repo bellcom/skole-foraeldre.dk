@@ -1,3 +1,7 @@
+7.x-1.23. 06-02-2015
+--------------------
+* 6b508ef - (HEAD, origin/dev, dev) SOF-208 Added the Context module. Committed by Lachezar Valchev at 2015-02-06 19:11:25 +0200
+
 7.x-1.22. 06-02-2015
 --------------------
 * de9112d - (HEAD, origin/dev, dev) SOF-208 Improved initial setup. Committed by Lachezar Valchev at 2015-02-06 18:04:28 +0200
