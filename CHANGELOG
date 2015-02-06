@@ -1,3 +1,7 @@
+7.x-1.17. 06-02-2015
+--------------------
+* e71e521 - (HEAD, origin/dev, dev) SOF-208 Added the Simple Color library. Committed by Lachezar Valchev at 2015-02-06 17:13:11 +0200
+
 7.x-1.16. 06-02-2015
 --------------------
 * fd65e59 - (HEAD, origin/dev, dev) SOF-208 Updated the Color Field module to latest stable. Committed by Lachezar Valchev at 2015-02-06 16:57:43 +0200
