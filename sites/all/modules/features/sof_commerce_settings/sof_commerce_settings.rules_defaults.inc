@@ -36,6 +36,39 @@ function sof_commerce_settings_default_rules_configuration() {
       ]
     }
   }');
+  $items['commerce_coupon_pct_add_percentage_coupon_as_component'] = entity_import('rules_config', '{ "commerce_coupon_pct_add_percentage_coupon_as_component" : {
+      "LABEL" : "Add percentage coupon as component",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "SOF" ],
+      "REQUIRES" : [ "rules", "sof_general_tweaks", "commerce_product_reference" ],
+      "ON" : { "commerce_product_calculate_sell_price" : [] },
+      "IF" : [
+        { "NOT data_is_empty" : { "data" : [ "commerce-line-item:line-item-id" ] } },
+        { "entity_has_field" : {
+            "entity" : [ "commerce-line-item:order" ],
+            "field" : "commerce_coupon_order_reference"
+          }
+        }
+      ],
+      "DO" : [
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-line-item:order:commerce-coupon-order-reference" ] },
+            "ITEM" : { "list_coupon" : "Current coupon" },
+            "DO" : [
+              { "sof_general_commerce_coupon_apply_to_product_line_item" : {
+                  "line_item" : [ "commerce-line-item" ],
+                  "coupon" : [ "list-coupon" ],
+                  "component_name" : [ "list-coupon:price-component-name" ],
+                  "round_mode" : "1"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['commerce_payment_sof_dibs'] = entity_import('rules_config', '{ "commerce_payment_sof_dibs" : {
       "LABEL" : "Sof DIBS",
       "PLUGIN" : "reaction rule",

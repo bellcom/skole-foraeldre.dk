@@ -228,6 +228,15 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
     case 'commerce_checkout_form_checkout':
       unset($form['account']);
 
+      // The customer should see the coupon code that should use.
+      // It is set in the coupon settings.
+      if (isset($form['commerce_coupon'])) {
+        $code = variable_get('sof_commerce_coupon_code', '');
+        if ($code) {
+          $form['commerce_coupon']['coupon_code']['#description'] = t('Enter here the coupon code: @code', array('@code' => $code));
+        }
+      }
+
       // Add custom validation to customer profile fields: telephone,
       // postal_code, cvr, ean.
       $shipping = $form['customer_profile_shipping'];
@@ -276,6 +285,25 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
         drupal_get_path('module', 'sof_general_tweaks') . '/js/sof_general_tweaks_commerce.js',
       );
       drupal_add_js(array('sofGeneralTweaksCommerce' => $settings), 'setting');
+      break;
+
+    // Set Including VAT as default value for the shipping base rate.
+    case 'commerce_flat_rate_service_form':
+      if (isset($form['flat_rate']['include_tax'])) {
+        $form['flat_rate']['include_tax']['#default_value'] = array('test');
+        $form['flat_rate']['include_tax']['#disabled'] = TRUE;
+      }
+      break;
+
+    case 'commerce_coupon_ui_settings_form':
+      // Alter form for setting the coupon code that should appear for the
+      // customers.
+      $form['sof_commerce_coupon_code'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Coupon Code'),
+        '#description' => t('Enter the code that should appear as description pf the active coupon field.'),
+        '#default_value' => variable_get('sof_commerce_coupon_code', ''),
+      );
       break;
 
     case 'article_node_form':
@@ -544,5 +572,60 @@ function sof_general_tweaks_commerce_payment_method_info() {
 function sof_general_tweaks_commerce_price_component_type_info_alter(&$component_types) {
   if (isset($component_types['base_price'])) {
     $component_types['base_price']['display_title'] = t('Total excluding VAT');
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ *
+ * Set Include VAT as default value for commerce price and disabled the field.
+ */
+function sof_general_tweaks_field_widget_form_alter(&$element, &$form_state, $context) {
+  if ($context['field']['type'] == 'commerce_price' && $context['instance']['entity_type'] == 'commerce_product') {
+    if (isset($element['include_tax'])) {
+      $element['include_tax']['#default_value'] = 'test';
+      $element['include_tax']['#disabled'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_commerce_price_formatted_components_alter().
+ */
+function sof_general_tweaks_commerce_price_formatted_components_alter(&$components, &$price, $entity) {
+  // Reorder Order total components.
+  if (isset($components['tax|test'])) {
+    $components['tax|test']['weight'] = -20;
+  }
+
+  // Add new component to Order total - Total including VAT.
+  $base_pice = commerce_price_component_load($price, 'base_price');
+  $tax = commerce_price_component_load($price, 'tax|test');
+  $amount = $base_pice[0]['price']['amount'] + $tax[0]['price']['amount'];
+
+  $new_component = array(
+    'title' => t('Total including VAT'),
+    'price' => array(
+      'amount' => $amount,
+      'currency_code' => $price['currency_code'],
+      'data' => array(),
+    ),
+    'weight' => -10,
+  );
+
+  $components['base_price_with_tax'] = $new_component;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function sof_general_tweaks_views_pre_render(&$view){
+  switch ($view->name) {
+    case 'publication_listing_view':
+      foreach($view->result as $k => $result) {
+        $nid = $result->entity_id;
+        $view->result[$k]->url = check_plain(url('node/' . $nid, array('absolute' => TRUE)));
+      }
+      break;
   }
 }
