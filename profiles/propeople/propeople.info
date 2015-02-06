@@ -129,6 +129,7 @@ dependencies[] = memcache
 dependencies[] = transliteration
 dependencies[] = selectmenu
 dependencies[] = mailchimp_lists
+dependencies[] = context
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
