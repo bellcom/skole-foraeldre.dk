@@ -1,3 +1,7 @@
+7.x-1.24. 06-02-2015
+--------------------
+* a1fd8a6 - (HEAD, origin/dev, dev) SOF-208 Added the context settings. Updated features with SOF Configurations group. Committed by Lachezar Valchev at 2015-02-06 19:21:13 +0200
+
 7.x-1.23. 06-02-2015
 --------------------
 * 6b508ef - (HEAD, origin/dev, dev) SOF-208 Added the Context module. Committed by Lachezar Valchev at 2015-02-06 19:11:25 +0200
