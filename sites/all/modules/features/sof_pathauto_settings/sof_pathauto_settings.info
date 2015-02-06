@@ -1,7 +1,7 @@
 name = SOF pathauto settings
 description = Exports pathauto module settings.
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1

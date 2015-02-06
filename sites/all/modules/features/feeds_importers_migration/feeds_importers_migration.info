@@ -1,7 +1,7 @@
 name = Feeds Importers Migration
 description = Feeds Importers Migration
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = feeds_importers_migration
 dependencies[] = ctools

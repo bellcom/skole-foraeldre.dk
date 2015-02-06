@@ -1,7 +1,7 @@
 name = SOF linkit profiles
 description = Exports linkit profiles and settings
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_linkit_profiles
 dependencies[] = ctools

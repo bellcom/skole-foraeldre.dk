@@ -1,7 +1,7 @@
 name = SOF variables
 description = Exports variables that do not warrant a separate feature.
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = media_wysiwyg
 dependencies[] = strongarm

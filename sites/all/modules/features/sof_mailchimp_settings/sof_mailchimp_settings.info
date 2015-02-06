@@ -1,7 +1,7 @@
 name = SOF Mailchimp settings
 description = Exports all mailchimp settings.
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_mailchimp_settings
 dependencies[] = ctools

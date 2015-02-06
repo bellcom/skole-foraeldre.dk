@@ -1,7 +1,7 @@
 name = SOF permissions and roles
 description = Exports all permissions and specific roles (defaults excluded)
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_permissions_and_roles
 dependencies[] = addthis

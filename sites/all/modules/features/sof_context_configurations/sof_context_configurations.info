@@ -1,0 +1,13 @@
+name = SOF Context configurations
+description = The feature exports different contexts created with the context module.
+core = 7.x
+package = SOF Configuration
+version = 7.x-1.0
+project = sof_context_configurations
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = mailchimp_signup
+dependencies[] = sof_footer_social_media
+features[context][] = footer_mailchimp
+features[ctools][] = context:context:3
+features[features_api][] = api:2

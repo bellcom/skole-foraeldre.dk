@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF Context configurations feature.
+ */
+
+include_once 'sof_context_configurations.features.inc';
