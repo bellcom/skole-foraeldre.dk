@@ -1,3 +1,8 @@
+7.x-1.14. 06-02-2015
+--------------------
+* d6c25ad - SOF-234  Billing info styling Committed by rkoteska at 2015-02-06 21:52:18 +1000
+* 8319c44 - SOF-234  Billing info styling Committed by rkoteska at 2015-02-06 21:45:31 +1000
+
 7.x-1.13. 06-02-2015
 --------------------
 * f93a6b2 - (HEAD, origin/dev, dev) SOF-24 - Update publication listing view urls per domain Committed by Goce at 2015-02-05 12:54:52 +0100
