@@ -1,3 +1,7 @@
+7.x-1.19. 06-02-2015
+--------------------
+* f41df10 - (HEAD, origin/dev, dev) SOF-208 Updated ctools to latest stable Committed by Lachezar Valchev at 2015-02-06 17:27:30 +0200
+
 7.x-1.18. 06-02-2015
 --------------------
 * ca5d5a8 - (HEAD, origin/dev, dev) SOF-208 Security update of LinkIt module. Committed by Lachezar Valchev at 2015-02-06 17:21:32 +0200
