@@ -3971,6 +3971,7 @@ h2.pane-title {
 .field-name-field-related-terms .field-item a,
 .view-display-id-related_terms_pane a {
   float: left;
+  width: 100%;
   position: relative;
   padding: 0 0 10px 0;
   color: #00a2eb;
