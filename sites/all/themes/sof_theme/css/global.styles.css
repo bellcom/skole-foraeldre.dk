@@ -3971,7 +3971,8 @@ h2.pane-title {
   display: none;
 }
 .pane-related-articles-slider-related-news-slider-pane h2,
-.pane-related-articles-slider-related-articles-slider-pane h2 {
+.pane-related-articles-slider-related-articles-slider-pane h2,
+.pane-related-content-related-terms-pane h2{
   display: block;
 }
 .field-name-field-related-terms .field-item a,
