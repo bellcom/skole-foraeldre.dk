@@ -1,7 +1,7 @@
 name = SOF Apache Solr Configuration
 description = Facet blocks, search blocks and variables regarding the search configurations
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = current_search
 dependencies[] = facetapi

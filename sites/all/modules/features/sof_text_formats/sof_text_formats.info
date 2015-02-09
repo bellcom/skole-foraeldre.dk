@@ -1,7 +1,7 @@
 name = SOF text formats
 description = Exports text formats, cKeditor profiles and all related settings
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_text_formats
 dependencies[] = ckeditor

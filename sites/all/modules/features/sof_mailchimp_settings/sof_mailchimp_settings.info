@@ -1,7 +1,7 @@
 name = SOF Mailchimp settings
 description = Exports all mailchimp settings.
 core = 7.x
-package = Configuration
+package = SOF Configuration
 version = 7.x-1.0
 project = sof_mailchimp_settings
 dependencies[] = ctools
@@ -16,4 +16,4 @@ features[mailchimp_signup][] = sof_mailchimp_form
 features[variable][] = mailchimp_api_key
 features[variable][] = mailchimp_batch_limit
 features[variable][] = mailchimp_cron
-mtime = 1417617358
+mtime = 1423223195

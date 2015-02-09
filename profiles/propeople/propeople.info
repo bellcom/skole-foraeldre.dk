@@ -21,7 +21,6 @@ dependencies[] = toolbar
 ;dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
-dependencies[] = rdf
 dependencies[] = locale
 
 ; Contrib
@@ -129,6 +128,8 @@ dependencies[] = varnish
 dependencies[] = memcache
 dependencies[] = transliteration
 dependencies[] = selectmenu
+dependencies[] = mailchimp_lists
+dependencies[] = context
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
@@ -225,4 +226,4 @@ dependencies[] = sof_mailchimp_settings
 dependencies[] = sof_commerce_settings
 dependencies[] = sof_commerce_views
 dependencies[] = sof_date_formats
-
+dependencies[] = sof_context_configurations

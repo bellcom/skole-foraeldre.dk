@@ -51,8 +51,7 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
       "doublein" : 0,
       "send_welcome" : 0,
       "include_interest_groups" : 0
-    },
-    "rdf_mapping" : []
+    }
   }');
   return $items;
 }

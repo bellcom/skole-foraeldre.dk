@@ -1,7 +1,7 @@
 name = SOF Blocks
 description = Exports block settings and placement
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = current_search
 dependencies[] = fe_block

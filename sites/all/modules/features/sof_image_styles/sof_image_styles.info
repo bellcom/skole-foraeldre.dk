@@ -1,7 +1,7 @@
 name = SOF image styles
 description = Image styles and all related configuration
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = image
 features[features_api][] = api:2
 features[image][] = article_top_slider

@@ -1,7 +1,7 @@
 name = SOF file types
 description = Exports all file types settings
 core = 7.x
-package = Configuration
+package = SOF Configuration
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = file_entity
