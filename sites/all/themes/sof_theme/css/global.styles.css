@@ -3948,6 +3948,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   margin: 0;
 }
 .pane-related-articles-slider-related-articles-slider-pane,
+.pane-related-articles-slider-related-news-slider-pane,
 .field-name-field-related-terms,
 .pane-related-content-related-terms-pane {
   float: left;
@@ -3956,7 +3957,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 }
 .pane-related-articles-slider-related-articles-slider-pane h2.block-title,
 .field-name-field-related-terms h2.field-label,
-.pane-related-content-related-terms-pane h2 {
+.pane-related-content-related-terms-pane h2,
+.pane-related-articles-slider-related-news-slider-pane h2 {
   margin-bottom: 10px;
   margin-top: 0px;
   font-family: "conduit_itcregular",sans-serif;
@@ -3967,6 +3969,10 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 .pane-node-field-related-terms .pane-title,
 h2.pane-title {
   display: none;
+}
+.pane-related-articles-slider-related-news-slider-pane h2,
+.pane-related-articles-slider-related-articles-slider-pane h2 {
+  display: block;
 }
 .field-name-field-related-terms .field-item a,
 .view-display-id-related_terms_pane a {
@@ -3992,14 +3998,19 @@ h2.pane-title {
 
 .pane-related-articles-slider-related-articles-slider-pane .slides,
 .pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul,
-.pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul li {
+.pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul li,
+.pane-related-articles-slider-related-news-slider-pane .slides,
+.pane-related-articles-slider-related-news-slider-pane .slides .item-list ul,
+.pane-related-articles-slider-related-news-slider-pane .slides .item-list ul li{
   padding: 0;
   margin: 0;
 }
-.pane-related-articles-slider-related-articles-slider-pane .flex-control-nav {
+.pane-related-articles-slider-related-articles-slider-pane .flex-control-nav,
+.pane-related-articles-slider-related-news-slider-pane .flex-control-nav {
   display: none;
 }
-.pane-related-articles-slider-related-articles-slider-pane .slides .flex-caption a {
+.pane-related-articles-slider-related-articles-slider-pane .slides .flex-caption a,
+.pane-related-articles-slider-related-news-slider-pane .slides .flex-caption a {
   margin-bottom: 0;
   color: rgba(69, 69, 69, 0.8);
   font-family: "conduit_itcregular",sans-serif;
