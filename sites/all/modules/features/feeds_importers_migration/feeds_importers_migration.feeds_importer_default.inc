@@ -362,7 +362,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'fr_migrated_files\'',
+          'xpathparser:4' => '\'fr_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -393,7 +393,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://fr_migrated_files/files',
+        'copy_destination' => 'public://fr_migrated_files/fr_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -468,7 +468,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'fr_migrated_files\'',
+          'xpathparser:4' => '\'fr_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -499,7 +499,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://fr_migrated_files/images',
+        'copy_destination' => 'public://fr_migrated_files/fr_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -680,7 +680,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'gidis_migrated_files\'',
+          'xpathparser:4' => '\'gidis_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -711,7 +711,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://gidis_migrated_files/files',
+        'copy_destination' => 'public://gidis_migrated_files/gidis_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -786,7 +786,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'gidis_migrated_files\'',
+          'xpathparser:4' => '\'gidis_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -817,7 +817,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://gidis_migrated_files/images',
+        'copy_destination' => 'public://gidis_migrated_files/gidis_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -998,7 +998,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'inkl_migrated_files\'',
+          'xpathparser:4' => '\'inkl_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1029,7 +1029,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://inkl_migrated_files/files',
+        'copy_destination' => 'public://inkl_migrated_files/inkl_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1104,7 +1104,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'inkl_migrated_files\'',
+          'xpathparser:4' => '\'inkl_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1135,7 +1135,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://inkl_migrated_files/images',
+        'copy_destination' => 'public://inkl_migrated_files/inkl_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1430,7 +1430,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'noko_migrated_files\'',
+          'xpathparser:4' => '\'noko_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1461,7 +1461,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://noko_migrated_files/files',
+        'copy_destination' => 'public://noko_migrated_files/noko_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1536,7 +1536,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'noko_migrated_files\'',
+          'xpathparser:4' => '\'noko_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1567,7 +1567,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://noko_migrated_files/images',
+        'copy_destination' => 'public://noko_migrated_files/noko_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1642,7 +1642,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'sof_migrated_files\'',
+          'xpathparser:4' => '\'sof_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1673,7 +1673,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://sof_migrated_files/files',
+        'copy_destination' => 'public://sof_migrated_files/sof_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1748,7 +1748,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'sof_migrated_files\'',
+          'xpathparser:4' => '\'sof_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1779,7 +1779,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://sof_migrated_files/images',
+        'copy_destination' => 'public://sof_migrated_files/sof_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -1960,7 +1960,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'sofkbh_migrated_files\'',
+          'xpathparser:4' => '\'sofkbh_files\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -1991,7 +1991,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://sofkbh_migrated_files/files',
+        'copy_destination' => 'public://sofkbh_migrated_files/sofkbh_files',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
@@ -2066,7 +2066,7 @@ function feeds_importers_migration_feeds_importer_default() {
           'xpathparser:1' => 'string(@id)',
           'xpathparser:2' => 'concat(string(@name), \'.\', fields/field[@key=\'extension\']/content/text())',
           'xpathparser:0' => 'fields/field[@key=\'blob\']/content/text()',
-          'xpathparser:4' => '\'sofkbh_migrated_files\'',
+          'xpathparser:4' => '\'sofkbh_images\'',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -2097,7 +2097,7 @@ function feeds_importers_migration_feeds_importer_default() {
         'author' => 0,
         'authorize' => 1,
         'copy_source' => 'public://sitecore',
-        'copy_destination' => 'public://sofkbh_migrated_files/images',
+        'copy_destination' => 'public://sofkbh_migrated_files/sofkbh_images',
         'debug' => array(
           'newEntity' => 0,
           'entityLoad' => 0,
