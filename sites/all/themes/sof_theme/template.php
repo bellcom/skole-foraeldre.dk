@@ -234,7 +234,6 @@ function sof_theme_form_alter(&$form, &$form_state, $form_id) {
  * Preprocess function for fieldable-panels-pane.tpl.php.
  */
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
-
   global $base_path;
   $fieldable_pane_type = $variables['elements']['#bundle'];
   // Add title on every deck.
