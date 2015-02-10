@@ -373,15 +373,18 @@ function sof_news_panelizer_defaults() {
     $pane->configuration = array(
       'label' => 'above',
       'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
+      'delta_limit' => '0',
       'delta_offset' => '0',
-      'delta_reversed' => FALSE,
+      'delta_reversed' => 0,
       'formatter_settings' => array(
         'link' => 1,
         'field_multiple_limit' => '-1',
         'field_multiple_limit_offset' => '0',
       ),
       'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => 'Related topics',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(

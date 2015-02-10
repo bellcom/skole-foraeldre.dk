@@ -383,7 +383,7 @@ function sof_article_panelizer_defaults() {
       ),
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'Related terms',
+      'override_title_text' => 'Related topics',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
