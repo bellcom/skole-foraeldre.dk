@@ -78,4 +78,3 @@ features[variable][] = scheduler_unpublish_enable_article
 features[variable][] = scheduler_unpublish_required_article
 features[variable][] = scheduler_unpublish_revision_article
 features[variable][] = scheduler_use_vertical_tabs_article
-mtime = 1421938679
