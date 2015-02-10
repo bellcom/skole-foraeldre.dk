@@ -739,7 +739,7 @@ function sof_views_contents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Related terms';
+  $handler->display->display_options['title'] = 'Related topics';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -824,8 +824,8 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
 
-  /* Display: Related terms */
-  $handler = $view->new_display('panel_pane', 'Related terms', 'related_terms_pane');
+  /* Display: Related topics */
+  $handler = $view->new_display('panel_pane', 'Related topics', 'related_terms_pane');
   $export['related_content'] = $view;
 
   $view = new view();
