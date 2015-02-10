@@ -72,3 +72,11 @@
   color: #00A2EB;
   width: 100%;
 }
+.media-list-thumbnails li {
+  position: relative;
+}
+.media-list-thumbnails .form-type-checkbox {
+  position: absolute;
+  bottom: unset;
+  top: 0px;
+}
