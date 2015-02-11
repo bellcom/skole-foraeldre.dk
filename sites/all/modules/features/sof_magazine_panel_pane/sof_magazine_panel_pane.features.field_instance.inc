@@ -103,7 +103,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'image_style' => 'magazine_deck_background',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -148,7 +148,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -168,7 +168,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -213,7 +213,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -233,7 +233,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -250,7 +250,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'field_collection_embed',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -269,7 +269,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'fieldable_panels_pane',
@@ -305,7 +305,51 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_small_title'
+  $field_instances['fieldable_panels_pane-magazine_pane-field_small_title'] = array(
+    'bundle' => 'magazine_pane',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_small_title',
+    'label' => 'Subtitle',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 150,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -320,6 +364,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
   t('Links');
   t('Magazine category');
   t('Select background image');
+  t('Subtitle');
   t('Title');
   t('Will have three most important topicks and categories for this posting');
 

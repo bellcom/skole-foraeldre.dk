@@ -20,5 +20,5 @@ features[field_instance][] = fieldable_panels_pane-magazine_pane-field_backgroun
 features[field_instance][] = fieldable_panels_pane-magazine_pane-field_image
 features[field_instance][] = fieldable_panels_pane-magazine_pane-field_magazine_category
 features[field_instance][] = fieldable_panels_pane-magazine_pane-field_magazine_links
+features[field_instance][] = fieldable_panels_pane-magazine_pane-field_small_title
 features[fieldable_panels_pane_type][] = magazine_pane
-mtime = 1419492240

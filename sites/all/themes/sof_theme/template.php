@@ -252,19 +252,35 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
     break;
 
     case 'video_pane':
-      $variables['panetitle'] = t('Video deck');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('Video deck');
+      }
       break;
 
     case 'also_see_pane':
-      $variables['panetitle'] = t('Also see');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('Also see');
+      }
       break;
 
     case 'magazine_pane':
-      $variables['panetitle'] = t('Magazine');
-      $variables['title'] = '';
+      // Pane title.
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
-        $variables['title'] = $variables['elements']['#fieldable_panels_pane']->title;
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
+      else {
+        $variables['panetitle'] = t('Magazine');
+      }
+
+      // Subtitle.
+      $variables['subtitle'] = $variables['field_small_title'][0]['value'];
+      hide($variables['content']['field_small_title']);
 
       // Add background variable.
       if (isset($variables['field_background_image'])) {
@@ -277,11 +293,21 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       break;
 
     case 'recommended_items_pane':
-      $variables['panetitle'] = t('School board - overview');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('School board - overview');
+      }
       break;
 
     case 'what_we_write_about_pane':
-      $variables['panetitle'] = t('School and parents write about');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('School and parents write about');
+      }
       break;
 
     default:
