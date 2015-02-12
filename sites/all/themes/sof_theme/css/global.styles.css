@@ -3344,11 +3344,15 @@ body.node-type-section  .panel-3col-custom {
 body.node-type-section .pane-page-title,
 body.node-type-section .pane-node-field-teaser,
 body.node-type-section .section-header,
-body.node-type-section .pane-section-default-content-section-default-listing .block-content{
+body.node-type-section .pane-section-default-content-section-default-listing .block-content,
+.pane-section-default-content-section-listing-manually-set {
   float: none;
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+}
+.pane-section-default-content-section-listing-manually-set {
+  float: none!important;
 }
 body.node-type-section .section-header {
   margin-bottom: 20px;
