@@ -149,7 +149,9 @@ body.page-user-orders #tasks ul li,
 .pane-node-field-link .field-item a,
 .view-commerce-line-item-table tr th,
 .form-item-commerce-shipping-shipping-service input[type="radio"]:checked ~ label:before,
-.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before {
+.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before,
+.right-article-region .pane-node-field-publication-control-link a,
+.right-article-region .pane-node-download-as-pdf a{
   background-color: #00a2eb;
 }
 
