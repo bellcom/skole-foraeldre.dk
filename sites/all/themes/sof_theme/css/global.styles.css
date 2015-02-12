@@ -3351,6 +3351,9 @@ body.node-type-section .pane-section-default-content-section-default-listing .bl
   width: 100%;
   margin: 0 auto;
 }
+.pane-section-default-content-section-listing-manually-set {
+  float: none!important;
+}
 body.node-type-section .section-header {
   margin-bottom: 20px;
 }
