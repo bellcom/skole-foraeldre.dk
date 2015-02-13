@@ -1064,10 +1064,11 @@ body.node-type-slider #main-content {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-.pane-bundle-video-pane  .field-name-field-three-videos .node-title {
+.pane-bundle-video-pane .field-name-field-three-videos .node-title {
   float: left;
   width: 100%;
   padding: 10px 15px;
+  margin: 0px;
   min-height: 83px;
   background-color: rgba(255, 255, 255, 0.84);
   border-bottom-style: none;
