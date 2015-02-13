@@ -312,6 +312,16 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
         'visible' => array('input[id="edit-field-set-rt-manually-und"]' => array('checked' => TRUE)),
       );
       break;
+
+    case 'views_content_views_panes_content_type_edit_form':
+      if (isset($form_state['pane'])) {
+        if (in_array($form_state['pane']->subtype, array('section_default_content-section_listing_manually_set', 'section_default_content-section_header_manually_set'))) {
+          $form["arguments"]["tid"]["#type"] = "select";
+          $form["arguments"]["tid"]["#options"] = _sof_general_tweaks_taxonomy_select();
+        }
+
+      }
+      break;
   }
 }
 
@@ -619,13 +629,27 @@ function sof_general_tweaks_commerce_price_formatted_components_alter(&$componen
 /**
  * Implements hook_views_pre_render().
  */
-function sof_general_tweaks_views_pre_render(&$view){
+function sof_general_tweaks_views_pre_render(&$view) {
   switch ($view->name) {
     case 'publication_listing_view':
-      foreach($view->result as $k => $result) {
+      foreach ($view->result as $k => $result) {
         $nid = $result->entity_id;
         $view->result[$k]->url = check_plain(url('node/' . $nid, array('absolute' => TRUE)));
       }
       break;
   }
+}
+
+/**
+ * Helper function for getting array of general_category taxonomy terms.
+ */
+function _sof_general_tweaks_taxonomy_select() {
+  $voc = taxonomy_vocabulary_machine_name_load('general_category');
+  $terms = taxonomy_get_tree($voc->vid, 0, 1);
+
+  foreach ($terms as $data) {
+    $output[$data->tid] = $data->name;
+  }
+
+  return $output;
 }

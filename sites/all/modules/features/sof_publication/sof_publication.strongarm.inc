@@ -139,7 +139,7 @@ function sof_publication_strongarm() {
             'visible' => TRUE,
           ),
           'related_content_reference' => array(
-            'weight' => '10',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -164,6 +164,10 @@ function sof_publication_strongarm() {
             'weight' => '2',
             'visible' => TRUE,
           ),
+          'related_content_reference' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
         ),
         'product:sku' => array(
           'default' => array(
@@ -172,6 +176,10 @@ function sof_publication_strongarm() {
           ),
           'full' => array(
             'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '8',
             'visible' => FALSE,
           ),
         ),
@@ -184,6 +192,10 @@ function sof_publication_strongarm() {
             'weight' => '12',
             'visible' => FALSE,
           ),
+          'related_content_reference' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
         ),
         'product:status' => array(
           'default' => array(
@@ -192,6 +204,10 @@ function sof_publication_strongarm() {
           ),
           'full' => array(
             'weight' => '15',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '19',
             'visible' => FALSE,
           ),
         ),
@@ -204,6 +220,10 @@ function sof_publication_strongarm() {
             'weight' => '6',
             'visible' => TRUE,
           ),
+          'related_content_reference' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
         ),
         'product:field_sof_commerce_pdf' => array(
           'default' => array(
@@ -212,6 +232,10 @@ function sof_publication_strongarm() {
           ),
           'full' => array(
             'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
@@ -224,10 +248,18 @@ function sof_publication_strongarm() {
             'weight' => '5',
             'visible' => FALSE,
           ),
+          'related_content_reference' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
         ),
         'product:field_sof_commerce_description' => array(
           'full' => array(
             'weight' => '9',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '3',
             'visible' => FALSE,
           ),
         ),
@@ -236,10 +268,18 @@ function sof_publication_strongarm() {
             'weight' => '8',
             'visible' => TRUE,
           ),
+          'related_content_reference' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
         ),
         'product:field_sof_commerce_weight' => array(
           'full' => array(
             'weight' => '11',
+            'visible' => FALSE,
+          ),
+          'related_content_reference' => array(
+            'weight' => '7',
             'visible' => FALSE,
           ),
         ),

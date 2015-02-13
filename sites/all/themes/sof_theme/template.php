@@ -98,26 +98,29 @@ function sof_theme_process_page(&$variables) {
   $variables['footerlogo_image'] = file_create_url(!empty($footerlogo_image) ? $footerlogo_image : $default_footerlogo_image);
   $variables['footerlogo_image'] = file_create_url($footerlogo_image);
 }
-
 /**
- * Override related content field in article node.
+ * Override related content field in article node and in news node.
  */
-function sof_theme_field__field_related_content__article($variables) {
-  $output = '';
-  // Render the label, if it's not hidden.
-  if (!$variables['label_hidden']) {
-    $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . '&nbsp;</div>';
+function sof_theme_field__field_related_content($variables) {
+  if ($variables['element']['#bundle'] == 'news' || $variables['element']['#bundle'] == 'article') {
+    if ($variables['element']['#field_name'] == 'field_related_content') {
+      $output = '';
+      // Render the label, if it's not hidden.
+      if (!$variables['label_hidden']) {
+        $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . '&nbsp;</div>';
+      }
+      // Render the items.
+      $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+      foreach ($variables['items'] as $delta => $item) {
+        $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+        $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+      }
+      $output .= '</div>';
+      // Render the top-level DIV.
+      $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+      return $output;
+    }
   }
-  // Render the items.
-  $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
-  foreach ($variables['items'] as $delta => $item) {
-    $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-    $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
-  }
-  $output .= '</div>';
-  // Render the top-level DIV.
-  $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
-  return $output;
 }
 
 /**
@@ -231,7 +234,6 @@ function sof_theme_form_alter(&$form, &$form_state, $form_id) {
  * Preprocess function for fieldable-panels-pane.tpl.php.
  */
 function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
-
   global $base_path;
   $fieldable_pane_type = $variables['elements']['#bundle'];
   // Add title on every deck.
@@ -250,19 +252,35 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
     break;
 
     case 'video_pane':
-      $variables['panetitle'] = t('Video deck');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('Video deck');
+      }
       break;
 
     case 'also_see_pane':
-      $variables['panetitle'] = t('Also see');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('Also see');
+      }
       break;
 
     case 'magazine_pane':
-      $variables['panetitle'] = t('Magazine');
-      $variables['title'] = '';
+      // Pane title.
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
-        $variables['title'] = $variables['elements']['#fieldable_panels_pane']->title;
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
+      else {
+        $variables['panetitle'] = t('Magazine');
+      }
+
+      // Subtitle.
+      $variables['subtitle'] = $variables['field_small_title'][0]['value'];
+      hide($variables['content']['field_small_title']);
 
       // Add background variable.
       if (isset($variables['field_background_image'])) {
@@ -275,11 +293,21 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       break;
 
     case 'recommended_items_pane':
-      $variables['panetitle'] = t('School board - overview');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('School board - overview');
+      }
       break;
 
     case 'what_we_write_about_pane':
-      $variables['panetitle'] = t('School and parents write about');
+      if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
+        $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
+      }
+      else {
+        $variables['panetitle'] = t('School and parents write about');
+      }
       break;
 
     default:

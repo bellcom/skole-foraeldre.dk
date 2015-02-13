@@ -1064,10 +1064,11 @@ body.node-type-slider #main-content {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
 }
-.pane-bundle-video-pane  .field-name-field-three-videos .node-title {
+.pane-bundle-video-pane .field-name-field-three-videos .node-title {
   float: left;
   width: 100%;
   padding: 10px 15px;
+  margin: 0px;
   min-height: 83px;
   background-color: rgba(255, 255, 255, 0.84);
   border-bottom-style: none;
@@ -3344,11 +3345,15 @@ body.node-type-section  .panel-3col-custom {
 body.node-type-section .pane-page-title,
 body.node-type-section .pane-node-field-teaser,
 body.node-type-section .section-header,
-body.node-type-section .pane-section-default-content-section-default-listing .block-content{
+body.node-type-section .pane-section-default-content-section-default-listing .block-content,
+.pane-section-default-content-section-listing-manually-set {
   float: none;
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+}
+.pane-section-default-content-section-listing-manually-set {
+  float: none!important;
 }
 body.node-type-section .section-header {
   margin-bottom: 20px;
@@ -3948,6 +3953,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   margin: 0;
 }
 .pane-related-articles-slider-related-articles-slider-pane,
+.pane-related-articles-slider-related-news-slider-pane,
 .field-name-field-related-terms,
 .pane-related-content-related-terms-pane {
   float: left;
@@ -3956,7 +3962,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 }
 .pane-related-articles-slider-related-articles-slider-pane h2.block-title,
 .field-name-field-related-terms h2.field-label,
-.pane-related-content-related-terms-pane h2 {
+.pane-related-content-related-terms-pane h2,
+.pane-related-articles-slider-related-news-slider-pane h2 {
   margin-bottom: 10px;
   margin-top: 0px;
   font-family: "conduit_itcregular",sans-serif;
@@ -3968,9 +3975,15 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 h2.pane-title {
   display: none;
 }
+.pane-related-articles-slider-related-news-slider-pane h2,
+.pane-related-articles-slider-related-articles-slider-pane h2,
+.pane-related-content-related-terms-pane h2{
+  display: block;
+}
 .field-name-field-related-terms .field-item a,
 .view-display-id-related_terms_pane a {
   float: left;
+  width: 100%;
   position: relative;
   padding: 0 0 10px 0;
   color: #00a2eb;
@@ -3991,14 +4004,19 @@ h2.pane-title {
 
 .pane-related-articles-slider-related-articles-slider-pane .slides,
 .pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul,
-.pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul li {
+.pane-related-articles-slider-related-articles-slider-pane .slides .item-list ul li,
+.pane-related-articles-slider-related-news-slider-pane .slides,
+.pane-related-articles-slider-related-news-slider-pane .slides .item-list ul,
+.pane-related-articles-slider-related-news-slider-pane .slides .item-list ul li{
   padding: 0;
   margin: 0;
 }
-.pane-related-articles-slider-related-articles-slider-pane .flex-control-nav {
+.pane-related-articles-slider-related-articles-slider-pane .flex-control-nav,
+.pane-related-articles-slider-related-news-slider-pane .flex-control-nav {
   display: none;
 }
-.pane-related-articles-slider-related-articles-slider-pane .slides .flex-caption a {
+.pane-related-articles-slider-related-articles-slider-pane .slides .flex-caption a,
+.pane-related-articles-slider-related-news-slider-pane .slides .flex-caption a {
   margin-bottom: 0;
   color: rgba(69, 69, 69, 0.8);
   font-family: "conduit_itcregular",sans-serif;

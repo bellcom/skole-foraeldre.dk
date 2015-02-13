@@ -141,7 +141,7 @@
       }
 
       //Remove colons from field label
-      $('.field-name-field-we-recommend .field-label, #node_article_full_group_bottomaregion .field-name-field-link h2').each(
+      $('.field-name-field-we-recommend .field-label, .field-name-field-related-terms h2, #node_article_full_group_bottomaregion .field-name-field-link h2, ').each(
         function() {
           var myText = $(this);
           myText.text( myText.text().replace(':','') );

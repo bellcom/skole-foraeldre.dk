@@ -26,6 +26,13 @@ $plugin = array(
 function sof_toolbox_search_content_type_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
 
+  // Pane title.
+  $form['toolbox_pane_title'] = array(
+    '#title' => t('Title'),
+    '#type' => 'textfield',
+    '#default_value' => $conf['toolbox_pane_title'] ? $conf['toolbox_pane_title'] : '',
+  );
+
   // Add max 10 terms for bottom predefined search.
   $form['terms_val'] = array(
     '#title' => t('Terms'),
@@ -41,6 +48,7 @@ function sof_toolbox_search_content_type_edit_form($form, &$form_state) {
  * Submit handler for edit form.
  */
 function sof_toolbox_search_content_type_edit_form_submit($form, &$form_state) {
+  $form_state['conf']['toolbox_pane_title'] = $form_state['values']['toolbox_pane_title'];
   $form_state['conf']['terms_val'] = $form_state['values']['terms_val'];
 }
 
@@ -53,7 +61,7 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
   $items = array();
 
   // Deck upper part(search field).
-  $sof_tsf = drupal_get_form('sof_toolbox_search_form', $context);
+  $sof_tsf = drupal_get_form('sof_toolbox_search_form', $context, $conf);
   $items['toolbox_upper'] = array(
     '#type' => 'item',
     '#markup' => drupal_render($sof_tsf),
@@ -95,10 +103,10 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
 /**
  * Implements hook_form().
  */
-function sof_toolbox_search_form($form, &$form_state, $context) {
+function sof_toolbox_search_form($form, &$form_state, $context, $conf) {
   // Seach field.
   $form['search_field'] = array(
-    '#title' => t('Search area'),
+    '#title' => check_plain($conf['toolbox_pane_title']) ? $conf['toolbox_pane_title'] : t('Search area'),
     '#type' => 'textfield',
     '#attributes' => array('placeholder' => t('Search in all items in the toolbox')),
   );

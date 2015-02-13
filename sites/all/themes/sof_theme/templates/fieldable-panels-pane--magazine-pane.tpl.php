@@ -11,7 +11,7 @@
     <?php if($panetitle != ""):?>
       <h2 class="fixed-pane-title"><?php print render($panetitle);?></h2>
     <?php endif; ?>
-    <h3 class="fixed-pane-title-magazine"><?php print render($title);?></h2>
+    <h3 class="fixed-pane-title-magazine"><?php print render($subtitle);?></h2>
     <div class="<?php print $classes; ?>" <?php print $attributes; ?>>
       <?php print render($title_suffix); ?>
       <?php print render($content); ?>

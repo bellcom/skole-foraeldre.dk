@@ -74,4 +74,3 @@ features[taxonomy][] = magazine_categories
 features[taxonomy][] = media_folders
 features[taxonomy][] = publication_category
 features[taxonomy][] = tags
-mtime = 1423223195

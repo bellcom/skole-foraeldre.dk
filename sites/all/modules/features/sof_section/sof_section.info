@@ -43,4 +43,3 @@ features[variable][] = panelizer_node:section_allowed_layouts_default
 features[variable][] = panelizer_node:section_allowed_types
 features[variable][] = panelizer_node:section_allowed_types_default
 features[variable][] = panelizer_node:section_default
-mtime = 1419492240
