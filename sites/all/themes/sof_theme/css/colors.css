@@ -74,7 +74,8 @@ body.node-type-basic-page .author-datetime a,
 body.node-type-basic-page .field-name-body blockquote:before,
 .article-news-main-container .field-name-body blockquote p,
 body.node-type-basic-page blockquote p,
-.left-article-region .field-name-body a {
+.left-article-region .field-name-body a,
+body.node-type-basic-page a {
   color: #00a2eb;
 }
 /* Applay color to elements  */
