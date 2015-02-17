@@ -1,3 +1,7 @@
+7.x-1.28. 17-02-2015
+--------------------
+* 1547a9c - (HEAD, origin/dev, dev) SOF-208 Fixed simplepie library. Committed by Lachezar Valchev at 2015-02-17 12:39:02 +0200
+
 7.x-1.27. 17-02-2015
 --------------------
 * ad5c3f8 - (HEAD, origin/dev, dev) SOF-208 Upload the SimplePie library Committed by Lachezar Valchev at 2015-02-17 12:32:17 +0200
