@@ -4682,7 +4682,7 @@ ul.action-links {
 /* =============================================================================
  *   Footer
  * ========================================================================== */
-#footer .block,
+#footer .region-footer-left-long,
 #footer .region-footer .footer-logo {
   float: left;
   width: 70%;
@@ -4693,29 +4693,29 @@ ul.action-links {
 #footer .region-footer .footer-logo img {
   max-width: 230px;
 }
-#footer .region-footer .block:nth-child(2) {
+#footer .region-footer-right-short {
+  float: left;
   width: 30%;
   line-height: 24px;
   text-align: center;
 }
-#footer .region-footer .block:nth-child(2) p {
+#footer .region-footer-right-short p {
   margin: 0px;
 }
-#footer .region-footer .block:nth-child(2) h2 {
+#footer .region-footer-right-short h2 {
   font-size: 24px;
   padding-bottom: 20px;
   text-transform: uppercase;
   margin: 0px;
 }
-#footer .region-footer .block:nth-child(2) .block-inner {
+#footer .region-footer-right-short .block-inner {
   float: none;
   display: inline-block;
   text-align: left;
 }
-#footer .region-footer .block:nth-child(2) a {
+#footer .region-footer-right-short a {
   color: #000;
 }
-
 
 /* =============================================================================
  *   Forms
@@ -5201,7 +5201,8 @@ body.page-search #block-system-main > ul li {
   .publication-ecommerce-container-inner-product-qprice {
     width:100%;
   }
-  .publication-top-container-inner {
+  .publication-top-container-inner,
+  #footer .region-footer {
     padding: 0 30px;
   }
   .webform-component,

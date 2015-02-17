@@ -480,15 +480,16 @@ body {
   padding-right: 30px;
   padding-left: 30px;
 }
-#footer .block,
-#footer .region-footer .footer-logo {
+#footer .region-footer-left-long,
+#footer .region-footer .footer-logo,
+#footer .region-footer-right-short {
   float: left;
   margin: 0 0 20px 0;
   padding: 0;
   width: 100%!important;
   text-align: left;
 }	
-#footer .region-footer .block:nth-child(2) .block-inner {
+#footer .region-footer-right-short .block-inner {
   float: left!important;
 }
 .block-sof-footer-social-media,

@@ -84,6 +84,8 @@
   regions[secondary_content]        = Secondary
   regions[tertiary_content]         = Tertiary
   regions[footer]                   = Footer
+  regions[footer_left_long]         = Footer left region
+  regions[footer_right_short]       = Footer right region
   regions[leaderboard]              = Leaderboard
   regions[top_header_navigation]    = Top Header Navigation
   regions[header]                   = Header
