@@ -11,4 +11,3 @@ features[views_view][] = reference_dialog_article
 features[views_view][] = reference_dialog_banner
 features[views_view][] = reference_dialog_content
 features[views_view][] = reference_dialog_slider
-mtime = 1419492240
