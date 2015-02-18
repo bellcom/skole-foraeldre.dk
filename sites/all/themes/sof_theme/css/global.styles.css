@@ -4436,7 +4436,7 @@ a:focus {
 .region-header nav .menu  li.last a {
   border: none;
 }
-.region-header nav .menu li.last.leaf a {
+.region-header nav .menu li.last a {
   padding-right: 0px!important;
 }
 .region-header nav .second-level  li.last.leaf a:after {
