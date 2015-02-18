@@ -83,7 +83,6 @@
   regions[content_aside]            = Aside
   regions[secondary_content]        = Secondary
   regions[tertiary_content]         = Tertiary
-  regions[footer]                   = Footer
   regions[footer_left_long]         = Footer left region
   regions[footer_right_short]       = Footer right region
   regions[leaderboard]              = Leaderboard
