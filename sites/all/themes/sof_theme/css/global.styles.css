@@ -1597,7 +1597,9 @@ body.node-type-slider #main-content {
   float: left;
   width: 100%;
 }
-
+.field-name-field-we-recommend-reference .field-item .node-title {
+  margin: 0px;
+}
 .field-name-field-we-recommend-reference .field-item .node-title a,
 .view-we-are-writing-about-additional-displays .view-content .views-row a {
   width: 100%;
@@ -4431,10 +4433,10 @@ a:focus {
   font-size: 22px;
   padding-left: 10px;
 } /* '' */
-.region-header nav .menu  li.last.leaf a {
+.region-header nav .menu  li.last a {
   border: none;
 }
-.region-header nav .menu  li.last.leaf a {
+.region-header nav .menu li.last.leaf a {
   padding-right: 0px!important;
 }
 .region-header nav .second-level  li.last.leaf a:after {
@@ -4512,7 +4514,7 @@ a:focus {
   display: inline-block!important;
   width: 33%;
   margin: 0!important;
-  padding: 0 10px!important;
+  padding: 0!important;
   position: relative!important;
   list-style: none!important;
   text-align: left!important;
