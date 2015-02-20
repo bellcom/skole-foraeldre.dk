@@ -40,6 +40,7 @@ dependencies[] = domain
 dependencies[] = domain_alias
 dependencies[] = domain_blocks
 dependencies[] = domain_conf
+dependencies[] = domain_ctools
 dependencies[] = domain_menu_access
 dependencies[] = domain_nav
 dependencies[] = domain_settings
