@@ -1,3 +1,7 @@
+7.x-1.32. 25-02-2015
+--------------------
+* 6d20bf7 - SOF-138 - Update linkit profile for download link + download permissions on files for anonimous users Committed by Goce at 2015-02-25 14:14:12 +0100
+
 7.x-1.31. 25-02-2015
 --------------------
 * a1f81a5 - (HEAD, origin/dev, dev) SOF-208 Updated features from live. Committed by Lachezar Valchev at 2015-02-25 14:13:10 +0200
