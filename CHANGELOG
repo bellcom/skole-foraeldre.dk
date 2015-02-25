@@ -1,3 +1,16 @@
+7.x-1.29. 25-02-2015
+--------------------
+* 839bf1c - (HEAD, origin/dev, dev) SOF-24 - domain_ctools module for domain specific page variants added Committed by Goce at 2015-02-20 09:57:23 +0100
+* f13c66a - SOF-24 - Domain block module added, block features reorganization Committed by Goce at 2015-02-18 12:29:13 +0100
+* 9b12e9d - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:28:26 +1000
+* 87c5649 - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:20:04 +1000
+* 69732b7 - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:16:12 +1000
+* 5958498 - SOF-301  Read also deck - mobile issues Committed by rkoteska at 2015-02-18 18:11:33 +1000
+* 3d6a658 - SOF-303  Link in body not styled correctly for Basic page content type Committed by rkoteska at 2015-02-17 23:56:14 +1000
+* 1606b00 - SOF-22  Theming setup - removing footer region Committed by rkoteska at 2015-02-17 23:51:45 +1000
+* a5e147e - SOF-22  Theming setup - adding new regions for footer blocks display Committed by rkoteska at 2015-02-17 21:43:22 +1000
+* dcf02b3 - SOF-22  Theming setup - adding new regions for footer blocks display Committed by rkoteska at 2015-02-17 21:41:46 +1000
+
 7.x-1.28. 17-02-2015
 --------------------
 * 1547a9c - (HEAD, origin/dev, dev) SOF-208 Fixed simplepie library. Committed by Lachezar Valchev at 2015-02-17 12:39:02 +0200
