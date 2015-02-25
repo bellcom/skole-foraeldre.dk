@@ -254,15 +254,15 @@ function sof_linkit_profiles_default_linkit_profiles() {
   $linkit_profile->data = array(
     'text_formats' => array(
       'full_html' => 'full_html',
-      'plain_text' => 0,
       'commerce_order_message' => 0,
+      'plain_text' => 0,
     ),
     'search_plugins' => array(
-      'entity:commerce_product' => array(
+      'entity:user' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:commerce_payment_transaction' => array(
+      'entity:comment' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -270,7 +270,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'enabled' => 1,
         'weight' => '-10',
       ),
-      'entity:comment' => array(
+      'entity:commerce_payment_transaction' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -278,7 +278,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'entity:user' => array(
+      'entity:commerce_product' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -313,6 +313,11 @@ function sof_linkit_profiles_default_linkit_profiles() {
     ),
     'entity:commerce_payment_transaction' => array(
       'result_description' => '',
+      'bundles' => array(
+        'commerce_dibs' => 0,
+        'sof_invoice_payment' => 0,
+      ),
+      'group_by_bundle' => 0,
     ),
     'entity:commerce_product' => array(
       'result_description' => '',
@@ -331,7 +336,23 @@ function sof_linkit_profiles_default_linkit_profiles() {
       'group_by_bundle' => 1,
       'include_unpublished' => 0,
     ),
-    'entity:file' => 'entity',
+    'entity:file' => array(
+      'result_description' => '[file:name] [[file:type] - [file:size]]',
+      'bundles' => array(
+        'image' => 0,
+        'video' => 0,
+        'audio' => 0,
+        'document' => 0,
+      ),
+      'group_by_bundle' => 1,
+      'show_scheme' => 0,
+      'group_by_scheme' => 0,
+      'url_type' => 'download',
+      'image_extra_info' => array(
+        'thumbnail' => 0,
+        'dimensions' => 0,
+      ),
+    ),
     'entity:taxonomy_term' => array(
       'result_description' => '',
       'bundles' => array(
@@ -340,6 +361,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'magazine_categories' => 0,
         'publication_category' => 0,
         'tags' => 0,
+        'product_variants' => 0,
       ),
       'group_by_bundle' => 0,
     ),
@@ -354,7 +376,7 @@ function sof_linkit_profiles_default_linkit_profiles() {
       'url_method' => '1',
     ),
     'attribute_plugins' => array(
-      'id' => array(
+      'rel' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
@@ -362,19 +384,19 @@ function sof_linkit_profiles_default_linkit_profiles() {
         'enabled' => 0,
         'weight' => '-10',
       ),
+      'id' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
       'class' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
-      'title' => array(
-        'enabled' => 0,
-        'weight' => '-10',
-      ),
-      'rel' => array(
-        'enabled' => 0,
-        'weight' => '-10',
-      ),
       'target' => array(
+        'enabled' => 0,
+        'weight' => '-10',
+      ),
+      'title' => array(
         'enabled' => 0,
         'weight' => '-10',
       ),
