@@ -1,3 +1,7 @@
+7.x-1.30. 25-02-2015
+--------------------
+* 7a1ec4b - (HEAD, origin/dev, dev) SOF-303 Updated features from live. Committed by Lachezar Valchev at 2015-02-25 11:31:46 +0200
+
 7.x-1.29. 25-02-2015
 --------------------
 * 839bf1c - (HEAD, origin/dev, dev) SOF-24 - domain_ctools module for domain specific page variants added Committed by Goce at 2015-02-20 09:57:23 +0100
