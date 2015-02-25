@@ -235,17 +235,6 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_coupon',
   );
 
-  // Exported permission: 'create commerce_coupon entities of bundle commerce_coupon_pct'.
-  $permissions['create commerce_coupon entities of bundle commerce_coupon_pct'] = array(
-    'name' => 'create commerce_coupon entities of bundle commerce_coupon_pct',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
-    ),
-    'module' => 'commerce_coupon',
-  );
-
   // Exported permission: 'create commerce_customer_profile entities'.
   $permissions['create commerce_customer_profile entities'] = array(
     'name' => 'create commerce_customer_profile entities',
@@ -334,17 +323,6 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_coupon',
   );
 
-  // Exported permission: 'edit any commerce_coupon entity of bundle commerce_coupon_pct'.
-  $permissions['edit any commerce_coupon entity of bundle commerce_coupon_pct'] = array(
-    'name' => 'edit any commerce_coupon entity of bundle commerce_coupon_pct',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
-    ),
-    'module' => 'commerce_coupon',
-  );
-
   // Exported permission: 'edit any commerce_customer_profile entity'.
   $permissions['edit any commerce_customer_profile entity'] = array(
     'name' => 'edit any commerce_customer_profile entity',
@@ -413,17 +391,6 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'edit own commerce_coupon entities',
     'roles' => array(
       'administrator' => 'administrator',
-    ),
-    'module' => 'commerce_coupon',
-  );
-
-  // Exported permission: 'edit own commerce_coupon entities of bundle commerce_coupon_pct'.
-  $permissions['edit own commerce_coupon entities of bundle commerce_coupon_pct'] = array(
-    'name' => 'edit own commerce_coupon entities of bundle commerce_coupon_pct',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'commerce_coupon',
   );
@@ -520,17 +487,6 @@ function sof_commerce_settings_user_default_permissions() {
     'module' => 'commerce_coupon',
   );
 
-  // Exported permission: 'view any commerce_coupon entity of bundle commerce_coupon_pct'.
-  $permissions['view any commerce_coupon entity of bundle commerce_coupon_pct'] = array(
-    'name' => 'view any commerce_coupon entity of bundle commerce_coupon_pct',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
-    ),
-    'module' => 'commerce_coupon',
-  );
-
   // Exported permission: 'view any commerce_customer_profile entity'.
   $permissions['view any commerce_customer_profile entity'] = array(
     'name' => 'view any commerce_customer_profile entity',
@@ -609,17 +565,6 @@ function sof_commerce_settings_user_default_permissions() {
     'name' => 'view own commerce_coupon entities',
     'roles' => array(
       'administrator' => 'administrator',
-    ),
-    'module' => 'commerce_coupon',
-  );
-
-  // Exported permission: 'view own commerce_coupon entities of bundle commerce_coupon_pct'.
-  $permissions['view own commerce_coupon entities of bundle commerce_coupon_pct'] = array(
-    'name' => 'view own commerce_coupon entities of bundle commerce_coupon_pct',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-      'site editor' => 'site editor',
     ),
     'module' => 'commerce_coupon',
   );
