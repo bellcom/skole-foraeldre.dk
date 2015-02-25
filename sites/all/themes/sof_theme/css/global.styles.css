@@ -1597,7 +1597,9 @@ body.node-type-slider #main-content {
   float: left;
   width: 100%;
 }
-
+.field-name-field-we-recommend-reference .field-item .node-title {
+  margin: 0px;
+}
 .field-name-field-we-recommend-reference .field-item .node-title a,
 .view-we-are-writing-about-additional-displays .view-content .views-row a {
   width: 100%;
@@ -2882,7 +2884,8 @@ body.node-type-basic-page .field-name-body p {
   font-weight: 200;
   line-height: 24px;
 }
-.left-article-region .field-name-body a:hover {
+.left-article-region .field-name-body a:hover,
+body.node-type-basic-page a:hover {
   text-decoration: underline;
 }
 .article-news-main-container .field-name-body a.download-article-pdf,
@@ -4430,10 +4433,10 @@ a:focus {
   font-size: 22px;
   padding-left: 10px;
 } /* '' */
-.region-header nav .menu  li.last.leaf a {
+.region-header nav .menu  li.last a {
   border: none;
 }
-.region-header nav .menu  li.last.leaf a {
+.region-header nav .menu li.last a {
   padding-right: 0px!important;
 }
 .region-header nav .second-level  li.last.leaf a:after {
@@ -4511,7 +4514,7 @@ a:focus {
   display: inline-block!important;
   width: 33%;
   margin: 0!important;
-  padding: 0 10px!important;
+  padding: 0!important;
   position: relative!important;
   list-style: none!important;
   text-align: left!important;
@@ -4682,7 +4685,7 @@ ul.action-links {
 /* =============================================================================
  *   Footer
  * ========================================================================== */
-#footer .block,
+#footer .region-footer-left-long,
 #footer .region-footer .footer-logo {
   float: left;
   width: 70%;
@@ -4693,29 +4696,29 @@ ul.action-links {
 #footer .region-footer .footer-logo img {
   max-width: 230px;
 }
-#footer .region-footer .block:nth-child(2) {
+#footer .region-footer-right-short {
+  float: left;
   width: 30%;
   line-height: 24px;
   text-align: center;
 }
-#footer .region-footer .block:nth-child(2) p {
+#footer .region-footer-right-short p {
   margin: 0px;
 }
-#footer .region-footer .block:nth-child(2) h2 {
+#footer .region-footer-right-short h2 {
   font-size: 24px;
   padding-bottom: 20px;
   text-transform: uppercase;
   margin: 0px;
 }
-#footer .region-footer .block:nth-child(2) .block-inner {
+#footer .region-footer-right-short .block-inner {
   float: none;
   display: inline-block;
   text-align: left;
 }
-#footer .region-footer .block:nth-child(2) a {
+#footer .region-footer-right-short a {
   color: #000;
 }
-
 
 /* =============================================================================
  *   Forms
@@ -5201,7 +5204,8 @@ body.page-search #block-system-main > ul li {
   .publication-ecommerce-container-inner-product-qprice {
     width:100%;
   }
-  .publication-top-container-inner {
+  .publication-top-container-inner,
+  #footer .region-footer {
     padding: 0 30px;
   }
   .webform-component,
@@ -5244,7 +5248,7 @@ body.page-search #block-system-main > ul li {
     box-sizing: border-box;
   }
   .read-more-main-container-inline {
-    min-width: unset;
+    min-width: inherit;
   }
 }
 

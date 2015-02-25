@@ -243,10 +243,10 @@
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">
           <div class="footer-logo">
-		    <img src="<?php print $footerlogo_image; ?>" /> 
-		  </div>	
-	      <?php print render($page['footer']['block_1']); ?>
-	      <?php print render($page['footer']['block_2']); ?>
+		        <img src="<?php print $footerlogo_image; ?>" />
+		      </div>
+          <?php print render($page['footer_right_short']); ?>
+	        <?php print render($page['footer_left_long']); ?>
 	      <?php print $attribution; ?>
 	     </div> 
       </footer>
