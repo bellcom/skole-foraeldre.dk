@@ -37,7 +37,7 @@ function sof_field_bases_taxonomy_default_vocabularies() {
       'name' => 'Publication category',
       'machine_name' => 'publication_category',
       'description' => 'Use this categroy to group publications on similar topics.',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

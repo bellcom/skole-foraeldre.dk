@@ -1809,6 +1809,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download any audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1820,6 +1821,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download any document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1831,6 +1833,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download any image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1842,6 +1845,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download any video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1853,6 +1857,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download own audio files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1864,6 +1869,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download own document files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1875,6 +1881,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download own image files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
@@ -1886,6 +1893,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'download own video files',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),

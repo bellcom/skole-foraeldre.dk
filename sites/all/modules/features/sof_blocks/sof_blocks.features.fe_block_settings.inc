@@ -34,7 +34,7 @@ function sof_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
       'sof_theme' => array(
-        'region' => 'footer',
+        'region' => 'footer_right_short',
         'status' => 1,
         'theme' => 'sof_theme',
         'weight' => -16,
@@ -66,7 +66,7 @@ function sof_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
       'sof_theme' => array(
-        'region' => 'footer',
+        'region' => 'footer_left_long',
         'status' => 1,
         'theme' => 'sof_theme',
         'weight' => -17,
