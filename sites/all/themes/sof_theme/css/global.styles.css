@@ -2538,7 +2538,8 @@ article.node-publication .field-type-image.field-label-above h2 {
   width: 100%;
 }
 .publication-bottom-container .views-field-field-image img {
-  width: 100%
+  width: 100%;
+  max-width: 393px;
   padding: 0;
   margin: 0 auto;
   display: block;
