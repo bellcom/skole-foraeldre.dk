@@ -382,7 +382,11 @@ function sof_commerce_settings_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '4',
+        ),
+      ),
       'display' => array(),
     ),
   );
