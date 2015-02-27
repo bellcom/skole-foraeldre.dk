@@ -1,3 +1,7 @@
+7.x-1.36. 27-02-2015
+--------------------
+* f585173 - (HEAD, origin/dev, dev) SOF-208 Security update of the views module. Committed by Lachezar Valchev at 2015-02-27 19:06:07 +0200
+
 7.x-1.35. 27-02-2015
 --------------------
 * 9e866a6 - (HEAD, origin/dev, dev) SOF-208 Update features from live. Committed by Lachezar Valchev at 2015-02-27 17:39:10 +0200
