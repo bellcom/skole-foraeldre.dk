@@ -1,3 +1,9 @@
+7.x-1.33. 27-02-2015
+--------------------
+* e0ffff3 - (HEAD, origin/dev, dev) SOF-208 Added the robotstxt and domain_robotstxt modules. Committed by Lachezar Valchev at 2015-02-27 10:19:16 +0200
+* 705550d - SOF-103  Publications Listing page - FrontEnd - changes to publication responsive display Committed by rkoteska at 2015-02-26 20:10:53 +1000
+* 1b0153f - SOF-103  Publications Listing page - FrontEnd - changes to publication responsive display Committed by rkoteska at 2015-02-26 20:03:20 +1000
+
 7.x-1.32. 25-02-2015
 --------------------
 * 6d20bf7 - SOF-138 - Update linkit profile for download link + download permissions on files for anonimous users Committed by Goce at 2015-02-25 14:14:12 +0100
