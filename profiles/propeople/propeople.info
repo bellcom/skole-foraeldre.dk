@@ -170,7 +170,6 @@ dependencies[] = commerce_coupon_ui
 dependencies[] = commerce_coupon_pct
 ;dependencies[] = commerce_coupon
 
-
 ;Contrib language modules
 dependencies[] = i18n_field
 dependencies[] = i18n
