@@ -166,9 +166,10 @@ dependencies[] = commerce_dibs
 dependencies[] = commerce_message
 dependencies[] = commerce_physical
 dependencies[] = commerce_flat_rate
+dependencies[] = commerce_coupon_ui
+dependencies[] = commerce_coupon_pct
 ;dependencies[] = commerce_coupon
-;dependencies[] = commerce_coupon_ui
-;dependencies[] = commerce_coupon_pct
+
 
 ;Contrib language modules
 dependencies[] = i18n_field
