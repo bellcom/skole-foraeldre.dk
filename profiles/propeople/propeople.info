@@ -132,6 +132,8 @@ dependencies[] = transliteration
 dependencies[] = selectmenu
 dependencies[] = mailchimp_lists
 dependencies[] = context
+dependencies[] = robotstxt
+dependencies[] = domain_robotstxt
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
