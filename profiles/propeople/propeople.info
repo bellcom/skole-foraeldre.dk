@@ -133,6 +133,8 @@ dependencies[] = transliteration
 dependencies[] = selectmenu
 dependencies[] = mailchimp_lists
 dependencies[] = context
+dependencies[] = robotstxt
+dependencies[] = domain_robotstxt
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
@@ -165,9 +167,9 @@ dependencies[] = commerce_dibs
 dependencies[] = commerce_message
 dependencies[] = commerce_physical
 dependencies[] = commerce_flat_rate
+dependencies[] = commerce_coupon_ui
+dependencies[] = commerce_coupon_pct
 ;dependencies[] = commerce_coupon
-;dependencies[] = commerce_coupon_ui
-;dependencies[] = commerce_coupon_pct
 
 ;Contrib language modules
 dependencies[] = i18n_field

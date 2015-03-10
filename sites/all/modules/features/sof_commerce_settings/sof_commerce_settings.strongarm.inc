@@ -22,7 +22,7 @@ function sof_commerce_settings_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'commerce_checkout_completion_message';
   $strongarm->value = array(
-    'value' => '<p>Your order number is [commerce-order:order-number]. You can <a href="[commerce-order:customer-url]">view your order</a> on your account page when logged in.</p>
+    'value' => '<p>Your order number is [commerce-order:order-number]. You have received an confirmation e-mail with your order details.</p>
 ',
     'format' => 'full_html',
   );
@@ -382,7 +382,11 @@ function sof_commerce_settings_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'redirect' => array(
+          'weight' => '4',
+        ),
+      ),
       'display' => array(),
     ),
   );
