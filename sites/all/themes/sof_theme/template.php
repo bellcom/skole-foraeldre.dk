@@ -639,7 +639,14 @@ function sof_theme_preprocess_entity(&$variables, $hook) {
  */
 function sof_theme_preprocess_field_collection_item(&$variables) {
   if ($variables['elements']['#bundle'] == 'field_slides_content') {
-    $variables['linkurl'] = $variables['field_single_link'][0]['url'];
+    if (isset($variables['field_single_link'])) {
+      $variables['linkurl'] = $variables['field_single_link'][0]['url'];
+      $variables['linkexist'] = 1;
+    }
+    else {
+      $variables['linkurl'] = " ";
+      $variables['linkexist'] = 0;
+    }
     $variables['slider_background'] = file_create_url($variables['field_image'][0]['uri']);
   }
 }
