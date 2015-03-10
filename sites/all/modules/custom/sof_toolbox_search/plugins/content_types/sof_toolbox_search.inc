@@ -106,7 +106,7 @@ function sof_toolbox_search_content_type_render($subtype, $conf, $args, $context
 function sof_toolbox_search_form($form, &$form_state, $context, $conf) {
   // Seach field.
   $form['search_field'] = array(
-    '#title' => check_plain($conf['toolbox_pane_title']) ? $conf['toolbox_pane_title'] : t('Search area'),
+    '#title' => check_plain($conf['toolbox_pane_title']) ? $conf['toolbox_pane_title'] : '',
     '#type' => 'textfield',
     '#attributes' => array('placeholder' => t('Search in all items in the toolbox')),
   );

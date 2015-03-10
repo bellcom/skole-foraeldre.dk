@@ -255,17 +255,11 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
-      else {
-        $variables['panetitle'] = t('Video deck');
-      }
       break;
 
     case 'also_see_pane':
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('Also see');
       }
       break;
 
@@ -273,9 +267,6 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       // Pane title.
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('Magazine');
       }
 
       // Subtitle.
@@ -296,17 +287,11 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
-      else {
-        $variables['panetitle'] = t('School board - overview');
-      }
       break;
 
     case 'what_we_write_about_pane':
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('School and parents write about');
       }
       break;
 

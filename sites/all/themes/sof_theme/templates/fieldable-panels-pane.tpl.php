@@ -6,7 +6,7 @@
  * fieldable-panels-pane.tpl.php
  */
 ?>
-<?php if($panetitle != ""):?>
+<?php if(!empty($panetitle)):?>
   <h2 class="fixed-pane-title"><?php print render($panetitle);?></h2>
 <?php endif; ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
