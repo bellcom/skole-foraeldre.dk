@@ -8,7 +8,7 @@
 ?>
 <div class="magazine-deck-background-wrapper" style="background-image: url(<?php print $magazine_background; ?>);" >
   <div class="magazine-deck-inner-block">
-    <?php if($panetitle != ""):?>
+    <?php if(!empty($panetitle)):?>
       <h2 class="fixed-pane-title"><?php print render($panetitle);?></h2>
     <?php endif; ?>
     <h3 class="fixed-pane-title-magazine"><?php print render($subtitle);?></h2>
