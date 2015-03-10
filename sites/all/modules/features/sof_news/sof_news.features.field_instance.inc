@@ -650,7 +650,7 @@ function sof_news_field_default_field_instances() {
     'bundle' => 'news',
     'default_value' => array(
       0 => array(
-        'value' => 1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
