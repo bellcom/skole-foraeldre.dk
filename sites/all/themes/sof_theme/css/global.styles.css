@@ -593,7 +593,7 @@ body.node-type-slider #main-content {
   box-sizing: border-box;
 }
 .sof_toolbox_wrapper .form-item label {
-  margin: 23px 0 25px 0;
+  margin: 0px 0 25px 0;
   padding: 18px 0 0 0;
   line-height: 50px;
   color: #fff;
@@ -601,6 +601,9 @@ body.node-type-slider #main-content {
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+.sof_toolbox_wrapper .form-item-search-field {
+  margin-top: 23px;
 }
 .toolbox-search-wrapper {
   width: 100%;
@@ -1530,8 +1533,11 @@ body.node-type-slider #main-content {
   width: 100%;
   float: left;
   margin: 0;
-  padding: 0;
+  padding: 25px 0 0 0;
   background: #f0f0f0;
+}
+.pane-bundle-what-we-write-about-pane .fixed-pane-title {
+  padding-top: 0px!important;
 }
 .pane-bundle-what-we-write-about-pane .block-inner {
   margin: 0 auto;
