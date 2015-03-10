@@ -641,6 +641,67 @@ function sof_general_tweaks_views_pre_render(&$view) {
 }
 
 /**
+ * Implements hook_views_default_views_alter().
+ *
+ * Add additioanl view filters for admin_views_node view.
+ * @see views.api.php for help.
+ */
+function sof_general_tweaks_views_default_views_alter(&$views) {
+
+  if(isset($views['admin_views_node'])){
+
+    //Pick default display handler
+    $handler =& $views['admin_views_node']->display['default']->handler;
+
+    // Add taxonomy general catregory filter.
+    $handler->display->display_options['filters']['tid']['id'] = 'tid';
+    $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
+    $handler->display->display_options['filters']['tid']['field'] = 'tid';
+    $handler->display->display_options['filters']['tid']['relationship'] = 'term_node_tid';
+    $handler->display->display_options['filters']['tid']['group'] = 1;
+    $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
+    $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
+    $handler->display->display_options['filters']['tid']['expose']['label'] = 'General Category';
+    $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
+    $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
+    $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
+    $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
+      2 => '2',
+      1 => 0,
+      5 => 0,
+      3 => 0,
+      4 => 0,
+    );
+    $handler->display->display_options['filters']['tid']['type'] = 'select';
+    $handler->display->display_options['filters']['tid']['vocabulary'] = 'general_category';
+    $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
+
+    // Add taxonomy publication catregory filter.
+    $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
+    $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
+    $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
+    $handler->display->display_options['filters']['tid_1']['relationship'] = 'term_node_tid';
+    $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
+    $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
+    $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Publication category';
+    $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
+    $handler->display->display_options['filters']['tid_1']['expose']['identifier'] = 'tid_1';
+    $handler->display->display_options['filters']['tid_1']['expose']['multiple'] = TRUE;
+    $handler->display->display_options['filters']['tid_1']['expose']['remember_roles'] = array(
+      2 => '2',
+      1 => 0,
+      5 => 0,
+      3 => 0,
+      4 => 0,
+    );
+    $handler->display->display_options['filters']['tid_1']['type'] = 'select';
+    $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'publication_category';
+    $handler->display->display_options['filters']['tid_1']['hierarchy'] = 1;
+  }
+
+}
+
+/**
  * Helper function for getting array of general_category taxonomy terms.
  */
 function _sof_general_tweaks_taxonomy_select() {

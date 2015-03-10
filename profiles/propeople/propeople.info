@@ -24,6 +24,7 @@ dependencies[] = file
 dependencies[] = locale
 
 ; Contrib
+dependencies[] = admin_views
 dependencies[] = module_filter
 dependencies[] = bean
 dependencies[] = bean_admin_ui
