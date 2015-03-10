@@ -611,7 +611,7 @@ function _sof_category_terms_links($category_field) {
     $term_obj = taxonomy_term_load($value);
     if ($term_obj) {
       $term_links[] = array(
-        'title' => taxonomy_term_load($value)->name,
+        'title' => !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name,
         'href'  => 'taxonomy/term/' . $value,
       );
     }
