@@ -193,6 +193,22 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
 }
 
 /**
+ * Implements hook_facet_items_alter().
+ *
+ */
+function sof_general_tweaks_facet_items_alter(&$build, &$settings) {
+
+  if ($settings->facet == "im_field_category_publication") {
+    foreach($build as $key => $item) {
+      $term_obj = taxonomy_term_load($item['#indexed_value']);
+      if ($term_obj) {
+        $build[$key]["#markup"] =  !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name;
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {

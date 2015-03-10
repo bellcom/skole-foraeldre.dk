@@ -1,0 +1,16 @@
+name = SOF taxonomy
+description = Taxonomy related instances and settings
+core = 7.x
+package = Content Types
+dependencies[] = features
+dependencies[] = sof_field_bases
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = taxonomy_term-general_category-field_taxonomy_font_title
+features[field_instance][] = taxonomy_term-publication_category-field_taxonomy_font_title
+features[taxonomy][] = general_category
+features[taxonomy][] = magazine_categories
+features[taxonomy][] = media_folders
+features[taxonomy][] = publication_category
+features[taxonomy][] = tags
