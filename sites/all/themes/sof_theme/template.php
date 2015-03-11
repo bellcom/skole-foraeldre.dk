@@ -623,3 +623,30 @@ function _sof_category_terms_links($category_field) {
     'attributes' => array('class' => array('links', 'inline')),
   ));
 }
+
+/**
+ * Implements template_preprocess_entity().
+ */
+function sof_theme_preprocess_entity(&$variables, $hook) {
+  $function = 'sof_theme_preprocess_' . $variables['entity_type'];
+  if (function_exists($function)) {
+    $function($variables, $hook);
+  }
+}
+
+/**
+ * Field Collection-specific implementation of template_preprocess_entity().
+ */
+function sof_theme_preprocess_field_collection_item(&$variables) {
+  if ($variables['elements']['#bundle'] == 'field_slides_content') {
+    if (isset($variables['field_single_link'])) {
+      $variables['linkurl'] = $variables['field_single_link'][0]['url'];
+      $variables['linkexist'] = 1;
+    }
+    else {
+      $variables['linkurl'] = " ";
+      $variables['linkexist'] = 0;
+    }
+    $variables['slider_background'] = file_create_url($variables['field_image'][0]['uri']);
+  }
+}

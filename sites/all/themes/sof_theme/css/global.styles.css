@@ -25,53 +25,27 @@
 /* =============================================================================
  *   Font faces
  * ========================================================================== */
-
-@font-face {
-  font-family: "conduit_itcregular";
-  src: url("fonts/condult_itc/conduititc.eot");
-  src: url("fonts/condult_itc/conduititc.eot#iefix") format("embedded-opentype"),
-  url("fonts/condult_itc/conduititc.woff") format("woff"),
-  url("fonts/condult_itc/conduititc.ttf") format("truetype"),
-  url("fonts/condult_itc/conduititc.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
+/**
+**/
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=47f98cb8-2a61-42a5-8a44-e8946b659c61");
+@font-face{
+  font-family:"conduit_itclight";
+  src:url("fonts/condult_itc/45fa0132-0858-4e18-9594-5a070788a059.eot?#iefix");
+  src:url("fonts/condult_itc/45fa0132-0858-4e18-9594-5a070788a059.eot?#iefix") format("eot"),
+      url("fonts/condult_itc/0f250d3b-13fd-469c-a4ec-9f9984165dea.woff2") format("woff2"),
+      url("fonts/condult_itc/e924c59f-bc21-471f-ad1b-cefd0c1a6315.woff") format("woff"),
+      url("fonts/condult_itc/13b88c12-e5f0-46c4-932a-57fe881b7c46.ttf") format("truetype"),
+      url("fonts/condult_itc/cf39e66c-fff7-43d5-b865-0a45543d590a.svg#cf39e66c-fff7-43d5-b865-0a45543d590a") format("svg");
 }
-@font-face {
-  font-family: 'conduit_itcbold';
-  src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot');
-  src: url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff2') format('woff2'),
-       url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.woff') format('woff'),
-       url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.ttf') format('truetype'),
-       url('fonts/conduit_itc_bold/conduit_itc_bold1-webfont.svg#conduit_itcbold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@font-face{
+  font-family:"conduit_itcregular";
+  src:url("fonts/condult_itc/367b2d50-c71b-4348-b8e2-d364f82386ea.eot?#iefix");
+  src:url("fonts/condult_itc/367b2d50-c71b-4348-b8e2-d364f82386ea.eot?#iefix") format("eot"),
+      url("fonts/condult_itc/8846bd5f-2288-474a-9e36-1f6a456687e8.woff2") format("woff2"),
+      url("fonts/condult_itc/e328f17d-e8e5-424f-92e8-31af32b2ebac.woff") format("woff"),
+      url("fonts/condult_itc/97556a76-3d0b-4ad7-ae17-02b5d97e928b.ttf") format("truetype"),
+      url("fonts/condult_itc/407529ad-dcaa-4637-ac62-6cf9265d4f52.svg#407529ad-dcaa-4637-ac62-6cf9265d4f52") format("svg");
 }
-
-@font-face {
-  font-family: 'conduit_itclight';
-  src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot');
-  src: url('fonts/conduit_itc_light/conduit_itc_light1-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff2') format('woff2'),
-       url('fonts/conduit_itc_light/conduit_itc_light1-webfont.woff') format('woff'),
-       url('fonts/conduit_itc_light/conduit_itc_light1-webfont.ttf') format('truetype'),
-       url('fonts/conduit_itc_light/conduit_itc_light1-webfont.svg#conduit_itclight') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'conduit_itcmedium_italic';
-  src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot');
-  src: url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff2') format('woff2'),
-       url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.woff') format('woff'),
-       url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.ttf') format('truetype'),
-       url('fonts/conduit_itc_medium/conduit_itc_medium_italic1-webfont.svg#conduit_itcmedium_italic') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'fontello';
   src: url('fonts/fontello/fontello.eot?82788797');
@@ -88,7 +62,7 @@
   src: url('fonts/fontelloslide/fontelloslide.eot?72003881');
   src: url('fonts/fontelloslide/fontelloslide.eot?72003881#iefix') format('embedded-opentype'),
        url('fonts/fontelloslide/fontelloslide.woff?72003881') format('woff'),
-       url('fonts/fontelloslide/fontelloslide.ttf?72003881') format('truetype'),
+       url('fo nts/fontelloslide/fontelloslide.ttf?72003881') format('truetype'),
        url('fonts/fontelloslide/fontelloslide.svg?72003881#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
