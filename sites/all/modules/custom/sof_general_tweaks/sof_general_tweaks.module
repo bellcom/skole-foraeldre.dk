@@ -37,17 +37,16 @@ function sof_general_tweaks_field_group_build_pre_render_alter(&$element) {
 function sof_general_tweaks_field_extra_fields() {
   // News deck.
   // Additional field for additional latest news.
-  $extra['node']['news']['display']['additional_bottom_nodes'] = array(
-    'label' => t('Additional bottom news'),
-    'description' => t('Renders latest 3 news'),
-    'weight' => 4,
+  $extra['fieldable_panels_pane']['news_pane']['display']['top_highlighted_news'] = array(
+    'label' => t('Top highlighted news'),
+    'description' => t('The letest news for the top section'),
+    'weight' => 2,
     'visible' => FALSE,
   );
-
-  $extra['node']['article']['display']['additional_bottom_nodes'] = array(
-    'label' => t('Additional bottom news'),
-    'description' => t('Renders latest 3 news'),
-    'weight' => 4,
+  $extra['fieldable_panels_pane']['news_pane']['display']['bottom_latest_news'] = array(
+    'label' => t('Bottom latest news'),
+    'description' => t('Three latest news'),
+    'weight' => 3,
     'visible' => FALSE,
   );
 
@@ -78,19 +77,6 @@ function sof_general_tweaks_field_extra_fields() {
 }
 
 /**
- * Implements hook_node_view().
- */
-function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
-  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
-  $extrafield_name = 'additional_bottom_nodes';
-
-  // Attach 'news_deck_latest_3_nodes' to the node as extra field.
-  if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
-    $node->content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
-  }
-}
-
-/**
  * Implements hook_entity_view().
  */
 function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
@@ -117,6 +103,20 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
           '#type' => 'item',
           '#title' => t('Latest updated'),
           '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'latest_updated'),
+        );
+      }
+      // Attach 'news_deck_latest_3_nodes' view displays to the panel
+      // pane as extra fields.
+      elseif ($entity->bundle == 'news_pane') {
+        $entity->content['top_highlighted_news'] = array(
+          '#type' => 'item',
+          '#title' => '',
+          '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_header'),
+        );
+        $entity->content['bottom_latest_news'] = array(
+          '#type' => 'item',
+          '#title' => '',
+          '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'),
         );
       }
       break;
@@ -194,15 +194,14 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
 
 /**
  * Implements hook_facet_items_alter().
- *
  */
 function sof_general_tweaks_facet_items_alter(&$build, &$settings) {
 
   if ($settings->facet == "im_field_category_publication") {
-    foreach($build as $key => $item) {
+    foreach ($build as $key => $item) {
       $term_obj = taxonomy_term_load($item['#indexed_value']);
       if ($term_obj) {
-        $build[$key]["#markup"] =  !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name;
+        $build[$key]["#markup"] = !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name;
       }
     }
   }
@@ -660,13 +659,13 @@ function sof_general_tweaks_views_pre_render(&$view) {
  * Implements hook_views_default_views_alter().
  *
  * Add additioanl view filters for admin_views_node view.
- * @see views.api.php for help.
+ * @see views.api.php
  */
 function sof_general_tweaks_views_default_views_alter(&$views) {
 
-  if(isset($views['admin_views_node'])){
+  if (isset($views['admin_views_node'])) {
 
-    //Pick default display handler
+    // Pick default display handler.
     $handler =& $views['admin_views_node']->display['default']->handler;
 
     // Add taxonomy general catregory filter.

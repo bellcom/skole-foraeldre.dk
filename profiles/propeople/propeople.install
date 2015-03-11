@@ -864,3 +864,19 @@ function propeople_update_7009() {
       array()
   );
 }
+/**
+ * Implements hook_update_N().
+ *
+ * Delete entity reference field on the news deck for the highlighted news.
+ */
+function propeople_update_7010() {
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'fieldable_panels_pane',
+        'field_name' => 'field_primary_referenced_node',
+        'bundle' => 'news_pane',
+      ),
+      array()
+  );
+}

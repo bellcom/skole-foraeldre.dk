@@ -2,7 +2,7 @@
 /**
  * @file
  * Default template implementation to display the value,
- * of a fieldable panel pane. 
+ * of a fieldable panel pane.
  * fieldable-panels-pane.tpl.php
  */
 ?>
@@ -11,7 +11,8 @@
   <?php print render($title_suffix); ?>
   <!-- Top Content -->
   <div class="news-deck-top-content">
-       <?php print render($content['field_primary_referenced_node']);?>
+       <?php print render($content['top_highlighted_news']);?>
+       <?php print render($content['bottom_latest_news']);?>
   </div>
      <!-- Bottom News Deck -->
   <div class="news-deck-bottom-content">

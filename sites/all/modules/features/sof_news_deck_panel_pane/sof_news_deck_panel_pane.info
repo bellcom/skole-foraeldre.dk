@@ -10,6 +10,5 @@ dependencies[] = link
 dependencies[] = sof_field_bases
 features[ctools][] = fieldable_panels_panes:fieldable_panels_pane_type:1
 features[features_api][] = api:2
-features[field_instance][] = fieldable_panels_pane-news_pane-field_primary_referenced_node
 features[field_instance][] = fieldable_panels_pane-news_pane-field_single_link
 features[fieldable_panels_pane_type][] = news_pane
