@@ -1048,6 +1048,7 @@ function sof_field_bases_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        0 => 'None',
         1 => 'Upload file',
         2 => 'Generate from content',
       ),

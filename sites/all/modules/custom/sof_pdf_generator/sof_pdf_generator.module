@@ -255,11 +255,22 @@ function sof_pdf_generator_node_view($node, $view_mode, $langcode) {
 
   // Attach download as pdf link to articles, news and publication.
   if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
-    $node->content['download_as_pdf'] = array(
-      '#markup' => l(t('Download as pdf'), ($node->type == 'publication' ? 'sof-pdf-generate/' : 'sof-pdf-single/') . $node->nid, array(
-        'attributes' => array('class' => array('download-as-pdf')),
-      )),
-    );
+    if ($node->type == 'publication') {
+      if ($node->field_publication_file_type[LANGUAGE_NONE][0]['value'] != 0) {
+        $node->content['download_as_pdf'] = array(
+          '#markup' => l(t('Download as pdf'), 'sof-pdf-generate/' . $node->nid, array(
+            'attributes' => array('class' => array('download-as-pdf')),
+          )),
+        );
+      }
+    }
+    else {
+      $node->content['download_as_pdf'] = array(
+        '#markup' => l(t('Download as pdf'), 'sof-pdf-single/' . $node->nid, array(
+          'attributes' => array('class' => array('download-as-pdf')),
+        )),
+      );
+    }
   }
 }
 
