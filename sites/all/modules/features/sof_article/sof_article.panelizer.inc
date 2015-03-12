@@ -253,7 +253,8 @@ function sof_article_panelizer_defaults() {
       'format' => 'sof_custom',
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'Submited on',
+      'override_title_text' => 'Updated on',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
