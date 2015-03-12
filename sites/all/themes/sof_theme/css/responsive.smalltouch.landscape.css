@@ -429,6 +429,7 @@ ul.pager li {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;
+  border: 0px;
 }
 .news-deck-top-right-content .read-more {
   display: block;
