@@ -415,23 +415,34 @@ ul.pager li {
  *  Decks
  * ========================================================================== */
 /* News Deck */
-.news-deck-top-left-content,
-.news-deck-top-right-content {
+.news-deck-top-content .view-display-id-news_deck_header {
+  padding: 0;
+}
+.news-deck-top-content .views-field-field-image-slider,
+.news-deck-top-content .views-field-changed,
+.news-deck-top-content .views-field-title,
+.news-deck-top-content .views-field-field-teaser,
+.news-deck-top-content .views-field-view-node {
   width: 100%;
   padding: 0 20px;
+  float: left;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 .news-deck-top-right-content .read-more {
   display: block;
   width: 100%;
   text-align: center;
 }
-.news-deck-view-content .views-row,
-.news-deck-view-content .views-field-title {
-  width: 100%;
+.view-display-id-news_deck_latest_three_news .views-row {
+  border-right: 0 none;
   float: left;
-  padding-right: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-.news-deck-view-content .views-field-view-node {
+.view-display-id-news_deck_latest_three_news .views-field-view-node {
   display: block;
   width: 100%;
   text-align: center;
