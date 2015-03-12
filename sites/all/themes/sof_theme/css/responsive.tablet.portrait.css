@@ -350,23 +350,39 @@ body {
  *  Decks
  * ========================================================================== */
 /* News Deck */
-.news-deck-top-left-content,
-.news-deck-top-right-content {
+.news-deck-top-content .view-display-id-news_deck_header {
+  padding: 0 ;
+}
+.news-deck-top-content .views-field-field-image-slider,
+.news-deck-top-content .views-field-changed,
+.news-deck-top-content .views-field-title,
+.news-deck-top-content .views-field-field-teaser {
   width: 100%;
   padding: 0 20px;
+  float: left;
+  border: 0px;
 }
-.news-deck-top-right-content .read-more {
+.news-deck-top-content .views-field-view-node {
   display: block;
   width: 100%;
   text-align: center;
+  padding: 0 20px;
 }
-.news-deck-view-content .views-row,
-.news-deck-view-content .views-field-title {
+.news-deck-top-content .views-field {
+  float: left;
+  width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+.view-display-id-news_deck_latest_three_news .views-row {
   width: 100%;	
   float: left;
-  padding-right: 0;
+  padding: 0px;
+  margin: 0px;
+  border-right: 0px;
 }
-.news-deck-view-content .views-field-view-node {
+.view-display-id-news_deck_latest_three_news .views-field-view-node {
   display: block;
   width: 100%;
   text-align: center;

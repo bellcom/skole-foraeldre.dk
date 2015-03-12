@@ -3,8 +3,8 @@
 
 /* Applay color to elements  */
 .news-deck-view-content .views-field-title a,
-.news-deck-top-right-content .read-more,
-.news-deck-view-content .views-field-view-node a,
+.news-deck-top-content .views-field-view-node,
+.news-deck-top-content .views-field-view-node span a,
 .region-header nav ul.first-level li a,
 .first-level li.slideul .third-level a,
 #block-system-main-menu ul li a,
