@@ -702,7 +702,8 @@ select.form-select {
   background: #fff;
   color: #333;
 }
-.form-type-select.form-item-field-category-und select {
+.form-type-select.form-item-field-category-und select,
+.field-name-field-category-publication select {
   height: 300px;
 }
 input.form-text:focus,
