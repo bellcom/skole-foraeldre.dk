@@ -260,7 +260,10 @@ function sof_news_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-node-updated',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
@@ -284,7 +287,10 @@ function sof_news_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-node-author',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
