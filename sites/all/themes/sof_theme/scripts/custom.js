@@ -156,11 +156,11 @@
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {	
       //Intro Deck wrappers
-      $('.pane-bundle-intro-deck-pane', context).each(function(){
-        $('.field-name-field-teaser', this).next('.field-name-field-single-link').andSelf().wrapAll('<div class="intro-deck-group-first"></div>');
-        $('.field-name-field-link-group-title-first', this).next('.field-name-field-five-links-first').andSelf().wrapAll('<div class="intro-deck-group"></div>');
-        $('.field-name-field-link-group-title-second', this).next('.field-name-field-five-links-second').andSelf().wrapAll('<div class="intro-deck-group"></div>');
-      });
+      //$('.pane-bundle-intro-deck-pane', context).each(function(){
+        //$('.field-name-field-teaser', this).next('.field-name-field-single-link').andSelf().wrapAll('<div class="intro-deck-group-first"></div>');
+        //$('.field-name-field-link-group-title-first', this).next('.field-name-field-five-links-first').andSelf().wrapAll('<div class="intro-deck-group"></div>');
+        //$('.field-name-field-link-group-title-second', this).next('.field-name-field-five-links-second').andSelf().wrapAll('<div class="intro-deck-group"></div>');
+     // });
 		
       //Magazine Deck               	
       $(".pane-bundle-magazine-pane", context).each(function(){
