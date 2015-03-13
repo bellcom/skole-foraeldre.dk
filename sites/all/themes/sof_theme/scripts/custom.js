@@ -154,19 +154,7 @@
   * Wrapping Scripts
   */
   Drupal.behaviors.sofWrapping = {
-    attach: function (context, settings) {	
-      //Intro Deck wrappers
-      $('.pane-bundle-intro-deck-pane', context).each(function(){
-        $('.field-name-field-teaser', this).next('.field-name-field-single-link').andSelf().wrapAll('<div class="intro-deck-group-first"></div>');
-        $('.field-name-field-link-group-title-first', this).next('.field-name-field-five-links-first').andSelf().wrapAll('<div class="intro-deck-group"></div>');
-        $('.field-name-field-link-group-title-second', this).next('.field-name-field-five-links-second').andSelf().wrapAll('<div class="intro-deck-group"></div>');
-      });
-		
-      //Magazine Deck               	
-      $(".pane-bundle-magazine-pane", context).each(function(){
-      	$(".fieldable-panels-pane .field-name-field-magazine-category, .fieldable-panels-pane .field-name-field-magazine-links", this).wrapAll('<div class="mag-deck-right-group"></div>');
-      });
-      
+    attach: function (context, settings) {
       //What we write about deck               	
       $(".field-name-field-we-recommend-reference .field-item", context).each(function(){
       	$(".node-title-werecommend", this).wrap('<div class="write-about-title-wrap"></div>');
