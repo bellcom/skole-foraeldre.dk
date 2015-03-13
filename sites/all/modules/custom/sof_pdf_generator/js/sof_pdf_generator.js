@@ -33,15 +33,15 @@
         }
 
         if (initialContentHeight <= imgTeaserHeight) {
-          initialContentHeight = 817 - imgTeaserHeight;
+          initialContentHeight = 815 - imgTeaserHeight;
         }
         else {
-          initialContentHeight = 817 - ( imgTeaserHeight % 817);
+          initialContentHeight = 815 - ( imgTeaserHeight % 815);
         }
 
         // Prevent blank page.
         if (initialContentHeight == 0) {
-          initialContentHeight = 817;
+          initialContentHeight = 815;
         }
 
         // Build pages.
@@ -63,12 +63,12 @@
    */
   function buildPage($initialContent, contentHeight) {
     // Check for default value.
-    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 817;
+    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 815;
     if ($('#sof-pdf-contents').contents().length > 0) {
       // Initial page.
       $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
         display: "block",
-        height: 817
+        height: 815
       });
 
       // Set page contents height.
