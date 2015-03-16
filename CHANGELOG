@@ -1,3 +1,35 @@
+7.x-1.37. 16-03-2015
+--------------------
+* f593180 - SOF-306  Publishing date to be displayed on News node view - adding style to publication also Committed by rkoteska at 2015-03-13 21:33:14 +1000
+* f81a9bf - SOF-138 - Update sorting criteria in 'News deck views' Committed by Goce at 2015-03-13 12:18:33 +0100
+* 6fa5b25 - SOF-206 - Multiple select taxonomy term in 'Section default listing' views + date fix on news deck views Committed by Goce at 2015-03-13 12:07:30 +0100
+* d1c3a30 - SOF-138 - Teaser field on publication with CKEditor Committed by Goce at 2015-03-13 09:33:37 +0100
+* 7f38889 - SOF-306  Publishing date to be displayed on News node view , and adding some changes to magazine deck tpl file Committed by rkoteska at 2015-03-13 18:10:38 +1000
+* 5423312 - SOF-317  Intro deck - change in logic Committed by rkoteska at 2015-03-13 17:37:24 +1000
+* 1487d31 - SOF-309  Make category field wider & higher on node add page - adding images folder to subtheme Committed by rkoteska at 2015-03-13 17:11:49 +1000
+* fffc9a5 - SOF-138 - Update admin theme update hook Committed by Goce at 2015-03-12 15:54:11 +0100
+* 326a046 - SOF-138 - PDF extra page css and js dimensions tweak Committed by Goce at 2015-03-12 15:27:52 +0100
+* 7acb9e4 - SOF-309  Make category field wider & higher on node add page Committed by rkoteska at 2015-03-12 23:44:02 +1000
+* d30d4b7 - SOF-304 - Publication download link not mandatory update Committed by Goce at 2015-03-12 14:00:51 +0100
+* f4e9343 - SOF-304 - Publication download as pdf not mandatory Committed by Goce at 2015-03-12 13:55:36 +0100
+* 4f03e09 - SOF-138 - Update infodeck fields cardinality and requirement Committed by Goce at 2015-03-12 12:58:42 +0100
+* 3443638 - SOF-316 Newsdeck - change in logic - css changes Committed by rkoteska at 2015-03-12 19:53:51 +1000
+* 7f72177 - SOF-316 Newsdeck - change in logic - css changes Committed by rkoteska at 2015-03-12 19:41:36 +1000
+* fc4e291 - SOF-138 - Update author information date and title on news and article Committed by Goce at 2015-03-12 10:03:45 +0100
+* 2163073 - SOF-138 - Update log in news deck Committed by Goce at 2015-03-11 15:32:47 +0100
+* d39d86d - SOF-320  Slider -to be possible to have an URL on each slide  - making url as link around all slider content Committed by rkoteska at 2015-03-11 00:58:52 +1000
+* 87b3d45 - SOF-320  Slider -to be possible to have an URL on each slide  - making url as link around all slider content Committed by rkoteska at 2015-03-11 00:43:23 +1000
+* 5de8338 - SOF-322  Fonts update - removing fonts that we are not using in the site, adding original fonts Committed by rkoteska at 2015-03-11 00:40:58 +1000
+* dcdf5f2 - SOF 138 - Update publication cardinality to unlimited Committed by Goce at 2015-03-10 15:17:48 +0100
+* b92a00b - SOF-138 - Fielded taxonomy vocabulars genral_category, publication_category to use front end name for listing Committed by Goce at 2015-03-10 14:02:48 +0100
+* 2075d60 - SOF-138 - 'Show publication link' checkbox not selected by default Committed by Goce at 2015-03-10 13:44:48 +0100
+* c4077bb - SOF-319  Decks should not have default title - changes to toolbox search, what we write about decks Committed by rkoteska at 2015-03-10 22:22:54 +1000
+* c10ecbb - SOF-319  Decks should not have default title - changes to toolbox search, what we write about decks Committed by rkoteska at 2015-03-10 21:48:31 +1000
+* b7ba4de - SOF-130 - Add one more url field in slider field collection Committed by Goce at 2015-03-10 10:23:55 +0100
+* 62687fd - SOF-138 - Deck titles no default values Committed by Goce at 2015-03-10 10:00:41 +0100
+* ce103a9 - SOF-138 - Additional taxonomy filters on node list page Committed by Goce at 2015-03-10 09:14:06 +0100
+* be918bc - SOF-315  Search toolbox deck not styled correctly when no terms are listed Committed by rkoteska at 2015-03-10 17:51:54 +1000
+
 7.x-1.36. 27-02-2015
 --------------------
 * f585173 - (HEAD, origin/dev, dev) SOF-208 Security update of the views module. Committed by Lachezar Valchev at 2015-02-27 19:06:07 +0200
