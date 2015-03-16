@@ -255,17 +255,11 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
-      else {
-        $variables['panetitle'] = t('Video deck');
-      }
       break;
 
     case 'also_see_pane':
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('Also see');
       }
       break;
 
@@ -273,9 +267,6 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       // Pane title.
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('Magazine');
       }
 
       // Subtitle.
@@ -296,17 +287,11 @@ function sof_theme_preprocess_fieldable_panels_pane(&$variables) {
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
       }
-      else {
-        $variables['panetitle'] = t('School board - overview');
-      }
       break;
 
     case 'what_we_write_about_pane':
       if (!empty($variables['elements']['#fieldable_panels_pane']->title)) {
         $variables['panetitle'] = $variables['elements']['#fieldable_panels_pane']->title;
-      }
-      else {
-        $variables['panetitle'] = t('School and parents write about');
       }
       break;
 
@@ -626,7 +611,7 @@ function _sof_category_terms_links($category_field) {
     $term_obj = taxonomy_term_load($value);
     if ($term_obj) {
       $term_links[] = array(
-        'title' => taxonomy_term_load($value)->name,
+        'title' => !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name,
         'href'  => 'taxonomy/term/' . $value,
       );
     }
@@ -637,4 +622,31 @@ function _sof_category_terms_links($category_field) {
     'heading'    => array('text' => t('Categories :'), 'level' => 'label'),
     'attributes' => array('class' => array('links', 'inline')),
   ));
+}
+
+/**
+ * Implements template_preprocess_entity().
+ */
+function sof_theme_preprocess_entity(&$variables, $hook) {
+  $function = 'sof_theme_preprocess_' . $variables['entity_type'];
+  if (function_exists($function)) {
+    $function($variables, $hook);
+  }
+}
+
+/**
+ * Field Collection-specific implementation of template_preprocess_entity().
+ */
+function sof_theme_preprocess_field_collection_item(&$variables) {
+  if ($variables['elements']['#bundle'] == 'field_slides_content') {
+    if (isset($variables['field_single_link'])) {
+      $variables['linkurl'] = $variables['field_single_link'][0]['url'];
+      $variables['linkexist'] = 1;
+    }
+    else {
+      $variables['linkurl'] = " ";
+      $variables['linkexist'] = 0;
+    }
+    $variables['slider_background'] = file_create_url($variables['field_image'][0]['uri']);
+  }
 }

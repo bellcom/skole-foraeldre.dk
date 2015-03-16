@@ -243,29 +243,33 @@ function sof_news_panelizer_defaults() {
     $display->content['new-37313fd2-c6a6-4976-9909-0da21bd95096'] = $pane;
     $display->panels['left'][4] = 'new-37313fd2-c6a6-4976-9909-0da21bd95096';
     $pane = new stdClass();
-    $pane->pid = 'new-503ff815-b244-4d3f-9d85-8537bd06490d';
+    $pane->pid = 'new-a6c76b9e-cea6-464a-a133-d6b82b5d5e8f';
     $pane->panel = 'left';
-    $pane->type = 'node_updated';
-    $pane->subtype = 'node_updated';
+    $pane->type = 'node_created';
+    $pane->subtype = 'node_created';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'format' => 'sof_custom',
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => 'Submited on',
+      'override_title_text' => 'Submitted on',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-node-updated',
+    );
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $pane->uuid = '503ff815-b244-4d3f-9d85-8537bd06490d';
-    $display->content['new-503ff815-b244-4d3f-9d85-8537bd06490d'] = $pane;
-    $display->panels['left'][5] = 'new-503ff815-b244-4d3f-9d85-8537bd06490d';
+    $pane->uuid = 'a6c76b9e-cea6-464a-a133-d6b82b5d5e8f';
+    $display->content['new-a6c76b9e-cea6-464a-a133-d6b82b5d5e8f'] = $pane;
+    $display->panels['left'][5] = 'new-a6c76b9e-cea6-464a-a133-d6b82b5d5e8f';
     $pane = new stdClass();
     $pane->pid = 'new-fb578095-9fe7-4be0-bda5-8c0aa3d04b42';
     $pane->panel = 'left';
@@ -283,7 +287,10 @@ function sof_news_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'pane-node-author',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();

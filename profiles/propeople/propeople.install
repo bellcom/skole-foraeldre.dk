@@ -97,8 +97,8 @@ function propeople_install() {
   variable_set('theme_default', 'sof_theme');
 
   // Enable the admin theme.
-  db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven')->execute();
-  variable_set('admin_theme', 'seven');
+  db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven_subtheme')->execute();
+  variable_set('admin_theme', 'seven_subtheme');
   variable_set('node_admin_theme', '1');
 
   // Create default flat shipping services.
@@ -150,7 +150,7 @@ function _propeople_create_menus() {
       'title' => 'Top navigation',
       'description' => 'Used for the links in the upper right corner of the page',
     ));
-
+db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven_subtheme')->execute();
   // Look the table first if the data does exist.
   foreach ($menus as $menu) {
     $exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", array(':menu_name' => $menu['menu_name']))->fetchField();
@@ -863,4 +863,33 @@ function propeople_update_7009() {
       ),
       array()
   );
+}
+/**
+ * Implements hook_update_N().
+ *
+ * Delete entity reference field on the news deck for the highlighted news.
+ */
+function propeople_update_7010() {
+
+  propeople_delete_fields_instances(
+      array(
+        'entity_type' => 'fieldable_panels_pane',
+        'field_name' => 'field_primary_referenced_node',
+        'bundle' => 'news_pane',
+      ),
+      array()
+  );
+}
+
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update default admin theme
+ */
+function propeople_update_7011() {
+
+  db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven_subtheme')->execute();
+  variable_set('admin_theme', 'seven_subtheme');
+
 }

@@ -1,5 +1,5 @@
 .sof-pdf-cover {
-  height: 817px;
+  height: 815px;
   display: table;
   font-size: 40px;
   background-color: #b8e9f4;
@@ -41,7 +41,7 @@
 }
 .sof-pdf-content{
     width: 500px;
-    height: 817px;
+    height: 815px;
     position: relative;
 }
 .sof-pdf-all-content{
@@ -54,7 +54,7 @@
 }
 .sof-pdf-page{
   width: 500px;
-  height: 817px;
+  height: 815px;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

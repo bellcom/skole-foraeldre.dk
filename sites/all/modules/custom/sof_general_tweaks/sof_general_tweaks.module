@@ -37,17 +37,16 @@ function sof_general_tweaks_field_group_build_pre_render_alter(&$element) {
 function sof_general_tweaks_field_extra_fields() {
   // News deck.
   // Additional field for additional latest news.
-  $extra['node']['news']['display']['additional_bottom_nodes'] = array(
-    'label' => t('Additional bottom news'),
-    'description' => t('Renders latest 3 news'),
-    'weight' => 4,
+  $extra['fieldable_panels_pane']['news_pane']['display']['top_highlighted_news'] = array(
+    'label' => t('Top highlighted news'),
+    'description' => t('The letest news for the top section'),
+    'weight' => 2,
     'visible' => FALSE,
   );
-
-  $extra['node']['article']['display']['additional_bottom_nodes'] = array(
-    'label' => t('Additional bottom news'),
-    'description' => t('Renders latest 3 news'),
-    'weight' => 4,
+  $extra['fieldable_panels_pane']['news_pane']['display']['bottom_latest_news'] = array(
+    'label' => t('Bottom latest news'),
+    'description' => t('Three latest news'),
+    'weight' => 3,
     'visible' => FALSE,
   );
 
@@ -78,19 +77,6 @@ function sof_general_tweaks_field_extra_fields() {
 }
 
 /**
- * Implements hook_node_view().
- */
-function sof_general_tweaks_node_view($node, $view_mode, $langcode) {
-  $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
-  $extrafield_name = 'additional_bottom_nodes';
-
-  // Attach 'news_deck_latest_3_nodes' to the node as extra field.
-  if (isset($extrafields[$extrafield_name]) && isset($extrafields[$extrafield_name]['visible']) && $extrafields[$extrafield_name]['visible']) {
-    $node->content['additional_bottom_nodes'] = array('#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'));
-  }
-}
-
-/**
  * Implements hook_entity_view().
  */
 function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
@@ -117,6 +103,20 @@ function sof_general_tweaks_entity_view($entity, $type, $view_mode, $langcode) {
           '#type' => 'item',
           '#title' => t('Latest updated'),
           '#markup' => views_embed_view('we_are_writing_about_additional_displays', 'latest_updated'),
+        );
+      }
+      // Attach 'news_deck_latest_3_nodes' view displays to the panel
+      // pane as extra fields.
+      elseif ($entity->bundle == 'news_pane') {
+        $entity->content['top_highlighted_news'] = array(
+          '#type' => 'item',
+          '#title' => '',
+          '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_header'),
+        );
+        $entity->content['bottom_latest_news'] = array(
+          '#type' => 'item',
+          '#title' => '',
+          '#markup' => views_embed_view('news_deck_latest_3_nodes', 'news_deck_latest_three_news'),
         );
       }
       break;
@@ -190,6 +190,21 @@ function sof_general_tweaks_apachesolr_field_name_map_alter(array &$map) {
   // Add human readable name for our custom fields.
   $map['ts_custom_text'] = t('The full node object');
   $map['ts_node_teaser'] = t('Node teaser field');
+}
+
+/**
+ * Implements hook_facet_items_alter().
+ */
+function sof_general_tweaks_facet_items_alter(&$build, &$settings) {
+
+  if ($settings->facet == "im_field_category_publication") {
+    foreach ($build as $key => $item) {
+      $term_obj = taxonomy_term_load($item['#indexed_value']);
+      if ($term_obj) {
+        $build[$key]["#markup"] = !empty($term_obj->field_taxonomy_font_title) ? $term_obj->field_taxonomy_font_title['und'][0]['value'] : $term_obj->name;
+      }
+    }
+  }
 }
 
 /**
@@ -313,15 +328,6 @@ function sof_general_tweaks_form_alter(&$form, &$form_state, $form_id) {
       );
       break;
 
-    case 'views_content_views_panes_content_type_edit_form':
-      if (isset($form_state['pane'])) {
-        if (in_array($form_state['pane']->subtype, array('section_default_content-section_listing_manually_set', 'section_default_content-section_header_manually_set'))) {
-          $form["arguments"]["tid"]["#type"] = "select";
-          $form["arguments"]["tid"]["#options"] = _sof_general_tweaks_taxonomy_select();
-        }
-
-      }
-      break;
   }
 }
 
@@ -641,15 +647,62 @@ function sof_general_tweaks_views_pre_render(&$view) {
 }
 
 /**
- * Helper function for getting array of general_category taxonomy terms.
+ * Implements hook_views_default_views_alter().
+ *
+ * Add additioanl view filters for admin_views_node view.
+ * @see views.api.php
  */
-function _sof_general_tweaks_taxonomy_select() {
-  $voc = taxonomy_vocabulary_machine_name_load('general_category');
-  $terms = taxonomy_get_tree($voc->vid, 0, 1);
+function sof_general_tweaks_views_default_views_alter(&$views) {
 
-  foreach ($terms as $data) {
-    $output[$data->tid] = $data->name;
+  if (isset($views['admin_views_node'])) {
+
+    // Pick default display handler.
+    $handler =& $views['admin_views_node']->display['default']->handler;
+
+    // Add taxonomy general catregory filter.
+    $handler->display->display_options['filters']['tid']['id'] = 'tid';
+    $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
+    $handler->display->display_options['filters']['tid']['field'] = 'tid';
+    $handler->display->display_options['filters']['tid']['relationship'] = 'term_node_tid';
+    $handler->display->display_options['filters']['tid']['group'] = 1;
+    $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
+    $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
+    $handler->display->display_options['filters']['tid']['expose']['label'] = 'General Category';
+    $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
+    $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
+    $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
+    $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
+      2 => '2',
+      1 => 0,
+      5 => 0,
+      3 => 0,
+      4 => 0,
+    );
+    $handler->display->display_options['filters']['tid']['type'] = 'select';
+    $handler->display->display_options['filters']['tid']['vocabulary'] = 'general_category';
+    $handler->display->display_options['filters']['tid']['hierarchy'] = 1;
+
+    // Add taxonomy publication catregory filter.
+    $handler->display->display_options['filters']['tid_1']['id'] = 'tid_1';
+    $handler->display->display_options['filters']['tid_1']['table'] = 'taxonomy_term_data';
+    $handler->display->display_options['filters']['tid_1']['field'] = 'tid';
+    $handler->display->display_options['filters']['tid_1']['relationship'] = 'term_node_tid';
+    $handler->display->display_options['filters']['tid_1']['exposed'] = TRUE;
+    $handler->display->display_options['filters']['tid_1']['expose']['operator_id'] = 'tid_1_op';
+    $handler->display->display_options['filters']['tid_1']['expose']['label'] = 'Publication category';
+    $handler->display->display_options['filters']['tid_1']['expose']['operator'] = 'tid_1_op';
+    $handler->display->display_options['filters']['tid_1']['expose']['identifier'] = 'tid_1';
+    $handler->display->display_options['filters']['tid_1']['expose']['multiple'] = TRUE;
+    $handler->display->display_options['filters']['tid_1']['expose']['remember_roles'] = array(
+      2 => '2',
+      1 => 0,
+      5 => 0,
+      3 => 0,
+      4 => 0,
+    );
+    $handler->display->display_options['filters']['tid_1']['type'] = 'select';
+    $handler->display->display_options['filters']['tid_1']['vocabulary'] = 'publication_category';
+    $handler->display->display_options['filters']['tid_1']['hierarchy'] = 1;
   }
 
-  return $output;
 }
