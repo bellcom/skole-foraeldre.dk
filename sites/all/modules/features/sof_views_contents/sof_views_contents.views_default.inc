@@ -12,10 +12,10 @@ function sof_views_contents_views_default_views() {
 
   $view = new view();
   $view->name = 'news_deck_latest_3_nodes';
-  $view->description = 'Latest 4 news. The latest one is highlighted at the top';
+  $view->description = 'Lists latest 3 news for the bottom part of the news deck';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'News deck';
+  $view->human_name = 'News deck latest 3 news';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -38,17 +38,17 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['ui_name'] = 'Date';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'sof_custom';
-  /* Field: Title */
+  /* Felt: Date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['ui_name'] = 'Date';
+  $handler->display->display_options['fields']['changed']['label'] = '';
+  $handler->display->display_options['fields']['changed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['changed']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['changed']['custom_date_format'] = 'd.m.y';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'sof_custom';
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -57,7 +57,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -67,7 +67,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
+  /* Felt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -75,100 +75,34 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Sorteringskriterie: Indhold: Opdateringsdato */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
 
-  /* Display: News deck latest 3 news  */
-  $handler = $view->new_display('panel_pane', 'News deck latest 3 news ', 'news_deck_latest_three_news');
-  $handler->display->display_options['display_description'] = 'Will show latest 3 news for the news deck skipping the latest one';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
-
-  /* Display: News deck header */
-  $handler = $view->new_display('panel_pane', 'News deck header', 'news_deck_header');
-  $handler->display->display_options['display_description'] = 'Will show the lates news for this deck.';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Image */
-  $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
-  $handler->display->display_options['fields']['field_image_slider']['ui_name'] = 'Image';
-  $handler->display->display_options['fields']['field_image_slider']['label'] = '';
-  $handler->display->display_options['fields']['field_image_slider']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
-    'image_style' => 'article_top_slider',
-    'image_link' => 'content',
-    'field_multiple_limit' => '1',
-    'field_multiple_limit_offset' => '0',
-  );
-  $handler->display->display_options['fields']['field_image_slider']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['ui_name'] = 'Date';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'sof_custom';
-  /* Field: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
-  $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
-  $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
-  $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
-  $handler->display->display_options['fields']['field_teaser']['ui_name'] = 'Teaser';
-  $handler->display->display_options['fields']['field_teaser']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser']['alter']['max_length'] = '200';
-  $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['ui_name'] = 'Link';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
+  /* Display: News deck latest 3 news */
+  $handler = $view->new_display('panel_pane', 'News deck latest 3 news', 'news_deck_latest_three_news');
+  $handler->display->display_options['display_description'] = 'Will show latest 3 news for the news deck';
   $export['news_deck_latest_3_nodes'] = $view;
 
   $view = new view();
@@ -183,7 +117,7 @@ function sof_views_contents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Other releases';
+  $handler->display->display_options['title'] = 'Andre udgivelser';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -201,7 +135,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Publication category relationship */
+  /* Forbindelse: Publication category relationship */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -214,7 +148,7 @@ function sof_views_contents_views_default_views() {
     'media_folders' => 0,
     'tags' => 0,
   );
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -226,14 +160,14 @@ function sof_views_contents_views_default_views() {
     'image_style' => 'publication_related',
     'image_link' => '',
   );
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -243,12 +177,12 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Sort criterion: Content revision: Updated date */
+  /* Sorteringskriterie: Indholdsversion: Opdateringsdato */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'node_revision';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -259,7 +193,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['not'] = TRUE;
-  /* Contextual filter: Taxonomy term: Term ID */
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -278,21 +212,21 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'publication' => 'publication',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
@@ -340,7 +274,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Url(not shown) */
+  /* Felt: Url(not shown) */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['url']['field'] = 'url';
@@ -348,7 +282,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['url']['label'] = '';
   $handler->display->display_options['fields']['url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['id'] = 'sm_thumb_publication_related_field_image';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['field'] = 'sm_thumb_publication_related_field_image';
@@ -357,7 +291,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['element_label_colon'] = FALSE;
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['label']['field'] = 'label';
@@ -366,7 +300,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['ts_node_teaser']['id'] = 'ts_node_teaser';
   $handler->display->display_options['fields']['ts_node_teaser']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ts_node_teaser']['field'] = 'ts_node_teaser';
@@ -377,12 +311,12 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['ts_node_teaser']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['ts_node_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['ts_node_teaser']['element_label_colon'] = FALSE;
-  /* Sort criterion: Apache Solr: ds_changed */
+  /* Sorteringskriterie: Apache Solr: ds_changed */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
-  /* Contextual filter: Apache Solr: content */
+  /* Kontekstuelt filter: Apache Solr: content */
   $handler->display->display_options['arguments']['content']['id'] = 'content';
   $handler->display->display_options['arguments']['content']['table'] = 'apachesolr__solr';
   $handler->display->display_options['arguments']['content']['field'] = 'content';
@@ -395,7 +329,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['content']['validate']['type'] = 'php';
   $handler->display->display_options['arguments']['content']['validate_options']['code'] = 'return $argument ? true : false;';
   $handler->display->display_options['arguments']['content']['validate']['fail'] = 'ignore';
-  /* Filter criterion: Apache Solr: bundle */
+  /* Filterkriterie: Apache Solr: bundle */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
@@ -447,7 +381,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: General category relationship */
+  /* Forbindelse: General category relationship */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -459,7 +393,7 @@ function sof_views_contents_views_default_views() {
     'publication_category' => 0,
     'tags' => 0,
   );
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -474,7 +408,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Date */
+  /* Felt: Date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -484,7 +418,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -492,7 +426,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -502,7 +436,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
+  /* Felt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -510,11 +444,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
-  /* Sort criterion: Global: Random */
+  /* Sorteringskriterie: Global: Tilfældig */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -525,7 +459,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['not'] = TRUE;
-  /* Contextual filter: Taxonomy term: Term ID */
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -544,14 +478,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -559,7 +493,7 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
@@ -599,7 +533,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: General category relationship */
+  /* Forbindelse: General category relationship */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -611,19 +545,19 @@ function sof_views_contents_views_default_views() {
     'publication_category' => 0,
     'tags' => 0,
   );
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content revision: Updated date */
+  /* Sorteringskriterie: Indholdsversion: Opdateringsdato */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'node_revision';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -634,7 +568,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['not'] = TRUE;
-  /* Contextual filter: Taxonomy term: Term ID */
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -653,14 +587,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -668,7 +602,7 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
@@ -707,12 +641,12 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['captionfield'] = 'title';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_related_article_target_id']['id'] = 'field_related_article_target_id';
   $handler->display->display_options['relationships']['field_related_article_target_id']['table'] = 'field_data_field_related_article';
   $handler->display->display_options['relationships']['field_related_article_target_id']['field'] = 'field_related_article_target_id';
   $handler->display->display_options['relationships']['field_related_article_target_id']['required'] = TRUE;
-  /* Field: (not shown) Slide caption */
+  /* Felt: (not shown) Slide caption */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -721,7 +655,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Slide image */
+  /* Felt: Slide image */
   $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
   $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
@@ -739,7 +673,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider_1']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -754,14 +688,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'article' => 'article',
   );
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -776,13 +710,13 @@ function sof_views_contents_views_default_views() {
   /* Display: News slider */
   $handler = $view->new_display('panel_pane', 'News slider', 'related_news_slider_pane');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Forbindelse: Entity Reference: Refereret entity */
   $handler->display->display_options['relationships']['field_related_news_target_id']['id'] = 'field_related_news_target_id';
   $handler->display->display_options['relationships']['field_related_news_target_id']['table'] = 'field_data_field_related_news';
   $handler->display->display_options['relationships']['field_related_news_target_id']['field'] = 'field_related_news_target_id';
   $handler->display->display_options['relationships']['field_related_news_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: (not shown) Slide caption */
+  /* Felt: (not shown) Slide caption */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -791,7 +725,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Slide image */
+  /* Felt: Slide image */
   $handler->display->display_options['fields']['field_image_slider_1']['id'] = 'field_image_slider_1';
   $handler->display->display_options['fields']['field_image_slider_1']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider_1']['field'] = 'field_image_slider';
@@ -810,7 +744,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_image_slider_1']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -827,14 +761,14 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -873,7 +807,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: General category relationship */
+  /* Forbindelse: General category relationship */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -886,7 +820,7 @@ function sof_views_contents_views_default_views() {
     'publication_category' => 0,
     'tags' => 0,
   );
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -894,11 +828,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['ui_name'] = 'Title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Global: Random */
+  /* Sorteringskriterie: Global: Tilfældig */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -909,7 +843,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['not'] = TRUE;
-  /* Contextual filter: Taxonomy term: Term ID */
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -927,14 +861,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -943,7 +877,7 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
@@ -982,7 +916,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: General category relationship */
+  /* Forbindelse: General category relationship */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
@@ -994,7 +928,7 @@ function sof_views_contents_views_default_views() {
     'publication_category' => 0,
     'tags' => 0,
   );
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -1008,7 +942,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Date */
+  /* Felt: Date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1018,7 +952,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1027,7 +961,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -1036,7 +970,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
+  /* Felt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -1044,17 +978,17 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
-  /* Sort criterion: Content: Sticky */
+  /* Sorteringskriterie: Indhold: Klæbrig */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Updated date */
+  /* Sorteringskriterie: Indhold: Opdateringsdato */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  /* Contextual filter: Taxonomy term: Term ID */
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -1074,14 +1008,14 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1089,31 +1023,11 @@ function sof_views_contents_views_default_views() {
     'article' => 'article',
     'news' => 'news',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
-  /* Filter criterion: Content: Categories (field_category) */
-  $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
-  $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
-  $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
-  $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
-  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Categories';
-  $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
-  $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
-  $handler->display->display_options['filters']['field_category_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_category_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    5 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'general_category';
-  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
 
   /* Display: Section header */
   $handler = $view->new_display('panel_pane', 'Section header', 'section_default_header');
@@ -1121,7 +1035,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['css_class'] = 'section-header';
   $handler->display->display_options['display_description'] = 'Highlighted latest 3 published nodes';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -1135,7 +1049,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Date */
+  /* Felt: Date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1145,7 +1059,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1154,7 +1068,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -1165,7 +1079,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
+  /* Felt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -1173,30 +1087,6 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'news' => 'news',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Domain Access: Available on current domain */
-  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
-  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
-  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
-  $handler->display->display_options['filters']['current_all']['value'] = '1';
-  $handler->display->display_options['filters']['current_all']['group'] = 1;
 
   /* Display: Section default listings */
   $handler = $view->new_display('panel_pane', 'Section default listings', 'section_default_listing');
@@ -1217,7 +1107,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1226,7 +1116,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -1236,30 +1126,6 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'news' => 'news',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Domain Access: Available on current domain */
-  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
-  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
-  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
-  $handler->display->display_options['filters']['current_all']['value'] = '1';
-  $handler->display->display_options['filters']['current_all']['group'] = 1;
 
   /* Display: Section header manually set */
   $handler = $view->new_display('panel_pane', 'Section header manually set', 'section_header_manually_set');
@@ -1267,7 +1133,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['css_class'] = 'section-header';
   $handler->display->display_options['display_description'] = 'Highlighted latest 3 published nodes. Taxonomy term from pane argument.';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Image */
+  /* Felt: Image */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -1281,7 +1147,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Date */
+  /* Felt: Date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1291,7 +1157,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'd.m.y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1300,7 +1166,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -1311,7 +1177,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
-  /* Field: Link */
+  /* Felt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -1320,15 +1186,32 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Read more';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['fields_override'] = 0;
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['vocabularies'] = array(
+    'general_category' => 'general_category',
+  );
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'general_category' => 'general_category',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'user',
@@ -1359,7 +1242,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1368,7 +1251,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Felt: Teaser */
   $handler->display->display_options['fields']['field_teaser']['id'] = 'field_teaser';
   $handler->display->display_options['fields']['field_teaser']['table'] = 'field_data_field_teaser';
   $handler->display->display_options['fields']['field_teaser']['field'] = 'field_teaser';
@@ -1379,15 +1262,32 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_teaser']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 0;
-  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['fields_override'] = 0;
+  /* Kontekstuelt filter: Ord i ordforråd: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['vocabularies'] = array(
+    'general_category' => 'general_category',
+  );
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'general_category' => 'general_category',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'user',
@@ -1428,7 +1328,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1437,19 +1337,19 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content revision: Updated date */
+  /* Sorteringskriterie: Indholdsversion: Opdateringsdato */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'node_revision';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filterkriterie: Indhold: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1458,7 +1358,7 @@ function sof_views_contents_views_default_views() {
     'news' => 'news',
     'section' => 'section',
   );
-  /* Filter criterion: Domain Access: Available on current domain */
+  /* Filterkriterie: Domain Access: Available on current domain */
   $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
@@ -1468,7 +1368,7 @@ function sof_views_contents_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Latest updated', 'latest_updated');
   $handler->display->display_options['display_description'] = 'Links to latest 4 last updated nodes';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Header latest updated display */
+  /* Overskrift: Header latest updated display */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
@@ -1483,7 +1383,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Image (article, news) */
+  /* Felt: Image (article, news) */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -1499,7 +1399,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Image (section) */
+  /* Felt: Image (section) */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1511,7 +1411,7 @@ function sof_views_contents_views_default_views() {
     'image_style' => 'article_top_slider',
     'image_link' => 'content',
   );
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1525,14 +1425,14 @@ function sof_views_contents_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Most popular', 'most_popular');
   $handler->display->display_options['display_description'] = 'Links to latest 4 most popular nodes (ga_stats)';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Header most popular display */
+  /* Overskrift: Header most popular display */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['ui_name'] = 'Header most popular display';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'we_are_writing_about_additional_displays:header_most_popular';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Statistics: Page Views in the past 31 days */
+  /* Sorteringskriterie: Statistik: Page Views in the past 31 days */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_month';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
@@ -1547,7 +1447,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Image (section) */
+  /* Felt: Image (section) */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -1559,7 +1459,7 @@ function sof_views_contents_views_default_views() {
     'image_style' => 'article_top_slider',
     'image_link' => 'content',
   );
-  /* Field: Image (article, news) */
+  /* Felt: Image (article, news) */
   $handler->display->display_options['fields']['field_image_slider']['id'] = 'field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['table'] = 'field_data_field_image_slider';
   $handler->display->display_options['fields']['field_image_slider']['field'] = 'field_image_slider';
@@ -1575,7 +1475,7 @@ function sof_views_contents_views_default_views() {
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
-  /* Field: Title */
+  /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1585,7 +1485,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Statistics: Page Views in the past 31 days */
+  /* Sorteringskriterie: Statistik: Page Views in the past 31 days */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'ga_stats_count_pageviews_month';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
