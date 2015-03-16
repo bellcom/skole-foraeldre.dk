@@ -1,3 +1,7 @@
+7.x-1.38. 16-03-2015
+--------------------
+* 3bc820d - (HEAD, origin/dev, dev) NOJIRA Updated a few module + features from live. Committed by Lachezar Valchev at 2015-03-16 10:37:51 +0200
+
 7.x-1.37. 16-03-2015
 --------------------
 * f593180 - SOF-306  Publishing date to be displayed on News node view - adding style to publication also Committed by rkoteska at 2015-03-13 21:33:14 +1000
