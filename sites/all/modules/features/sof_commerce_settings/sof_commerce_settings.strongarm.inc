@@ -22,7 +22,7 @@ function sof_commerce_settings_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'commerce_checkout_completion_message';
   $strongarm->value = array(
-    'value' => '<p>Tak for din bestilling! Dit ordrenr. er [commerce-order:order-number]. Du vil modtage en bekræftelse pr. e-mail med ordreinformation.</p>
+    'value' => '<p>Your order number is [commerce-order:order-number]. You have received an confirmation e-mail with your order details.</p>
 ',
     'format' => 'full_html',
   );
