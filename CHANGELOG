@@ -1,3 +1,13 @@
+7.x-1.39. 17-03-2015
+--------------------
+* f16b1d2 - (HEAD, origin/dev, dev) SOF-138 - Features recreated to match dev Committed by Goce at 2015-03-17 14:20:22 +0100
+* db4660e - SOF-138 - Missing views re-exported Committed by Goce at 2015-03-17 12:48:49 +0100
+* ac205be - SOF-138 - Taxonomy and Field bases feature rebuild Committed by Goce at 2015-03-17 12:46:11 +0100
+* 9476c07 - SOF-138 - Cnflict resolved Committed by Goce at 2015-03-17 12:37:20 +0100
+* f5d8139 - SOF-138 - Features conflict solve for taxonomy and field bases Committed by Goce at 2015-03-17 12:21:45 +0100
+* 880b96c - SOF-25  Multisite - FrontEnd-slider arrows not showing on subdomains fixs Committed by rkoteska at 2015-03-17 00:44:52 +1000
+* c8a0ee5 - SOF-25  Multisite - FrontEnd-slider arrows not showing on subdomains fixs Committed by rkoteska at 2015-03-16 23:19:51 +1000
+
 7.x-1.38. 16-03-2015
 --------------------
 * 3bc820d - (HEAD, origin/dev, dev) NOJIRA Updated a few module + features from live. Committed by Lachezar Valchev at 2015-03-16 10:37:51 +0200
