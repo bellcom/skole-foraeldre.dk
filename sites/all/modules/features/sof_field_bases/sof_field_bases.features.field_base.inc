@@ -249,7 +249,7 @@ function sof_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_category_publication'
   $field_bases['field_category_publication'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_category_publication',
@@ -433,7 +433,7 @@ function sof_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_five_links_first'
   $field_bases['field_five_links_first'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 5,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_five_links_first',
@@ -463,7 +463,7 @@ function sof_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_five_links_second'
   $field_bases['field_five_links_second'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 5,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_five_links_second',

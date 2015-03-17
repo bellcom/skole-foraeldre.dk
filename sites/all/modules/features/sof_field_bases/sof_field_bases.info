@@ -70,7 +70,6 @@ features[field_base][] = field_three_videos
 features[field_base][] = field_video
 features[field_base][] = field_we_recommend
 features[field_base][] = field_we_recommend_reference
-features_exclude[field_instance][taxonomy_term-general_category-field_taxonomy_font_title] = taxonomy_term-general_category-field_taxonomy_font_title
 features_exclude[taxonomy][general_category] = general_category
 features_exclude[taxonomy][magazine_categories] = magazine_categories
 features_exclude[taxonomy][media_folders] = media_folders
