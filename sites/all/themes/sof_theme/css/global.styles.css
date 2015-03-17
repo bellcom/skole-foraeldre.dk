@@ -62,7 +62,7 @@
   src: url('fonts/fontelloslide/fontelloslide.eot?72003881');
   src: url('fonts/fontelloslide/fontelloslide.eot?72003881#iefix') format('embedded-opentype'),
        url('fonts/fontelloslide/fontelloslide.woff?72003881') format('woff'),
-       url('fo nts/fontelloslide/fontelloslide.ttf?72003881') format('truetype'),
+       url('fonts/fontelloslide/fontelloslide.ttf?72003881') format('truetype'),
        url('fonts/fontelloslide/fontelloslide.svg?72003881#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -3926,21 +3926,27 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 }
 
 .flex-direction-nav .flex-next {
-  right: 10px!important;
+  right: 0!important;
 }
-.flex-direction-nav a:before {
-  width: 40px;
-  display: inline-block;
-  color: #fff;
-  content: '\e800'; /* '' */
-  font-family: "fontelloslide";
-  font-size: 40px;
-  font-weight: lighter;
-  line-height: 1;
+.flex-direction-nav a {
   text-shadow: none;
 }
-.flex-direction-nav a.flex-next:before {
-  content: '\e801';  /* '' */
+.flex-direction-nav a,
+.flex-direction-nav a.flex-next::before,
+.flex-direction-nav a.flex-next::after {
+  text-indent: -9999px!important;
+  color: transparent!important;
+  content:none!important;
+}
+.flex-prev {
+  background-image: url('images/left-arrow.png');
+  background-size: 62%;
+  background-repeat: no-repeat;
+}
+.flex-next {
+  background-image: url('images/right-arrow.png');
+  background-size: 62%;
+  background-repeat: no-repeat;
 }
 .right-article-region .block-views .block-inner {
   margin: 0;
