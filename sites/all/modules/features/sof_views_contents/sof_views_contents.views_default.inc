@@ -1205,7 +1205,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['display_description'] = 'List of all nodes(exept last 3 from the header) conected to the section by "Genral category" term';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '3';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '3';
@@ -1347,7 +1347,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['display_description'] = 'List of all nodes(exept last 3 from the header) conected to the section by "Genral category" term. Term from pane argum';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '3';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '3';
