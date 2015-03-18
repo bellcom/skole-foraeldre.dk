@@ -1282,14 +1282,14 @@ body.node-type-slider #main-content {
   padding: 0 10px;
 }
 .banner-main-wrapper .field-name-field-teaser {
-  margin: 10px 0 0;
-  padding: 0 10px;
-  border-radius: 0;
-  color: #000;
-  font-family: 'conduit_itclight';
-  font-size: 17px;
-  line-height: 19px;
-  text-align: center;
+  margin: 10px 0 0!important;
+  padding: 0 10px!important;
+  border-radius: 0!important;
+  color: #000!important;
+  font-family: 'conduit_itclight'!important;
+  font-size: 17px!important;
+  line-height: 19px!important;
+  text-align: center!important;
 }
 /* Magazine Deck */
 .magazine-deck-background-wrapper {
