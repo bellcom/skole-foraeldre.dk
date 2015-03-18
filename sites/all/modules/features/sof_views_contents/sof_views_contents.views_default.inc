@@ -1131,7 +1131,9 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
     'image_style' => 'related_content_reference_image',
-    'image_link' => '',
+    'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
@@ -1277,7 +1279,9 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
     'image_style' => 'related_content_reference_image',
-    'image_link' => '',
+    'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
