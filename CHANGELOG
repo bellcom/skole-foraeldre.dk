@@ -1,3 +1,7 @@
+7.x-1.40. 18-03-2015
+--------------------
+* 176cc7d - (HEAD, origin/dev, dev) SOF-138 - Updated missing cardinallity form publication category and introdeck links Committed by Goce at 2015-03-17 15:36:59 +0100
+
 7.x-1.39. 17-03-2015
 --------------------
 * f16b1d2 - (HEAD, origin/dev, dev) SOF-138 - Features recreated to match dev Committed by Goce at 2015-03-17 14:20:22 +0100
