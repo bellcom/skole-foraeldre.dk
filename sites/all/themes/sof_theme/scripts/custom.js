@@ -139,12 +139,23 @@
 
       // Position of flexslider navigation arrows
       function SliderNavigationposition() {
-        var heightSlideimg = $('.flexslider .slides img').height();
-        $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);
+        var heightSlideimg = $('.flexslider li img').height();
+        var MainheightSlideimg = $('.flexslider li a').height();
+        if($('.slide-background:visible').length != 0) {
+          $('.flex-direction-nav').css("display", "block").css('top',MainheightSlideimg/2);
+        }else
+        $('.flex-direction-nav').css("display", "block").css('top',heightSlideimg/2);
       }
 
       // Position of flexslider navigation arrows call functions
-      $(window).load(SliderNavigationposition);
+      window.onload = function() {
+        var heightSlideimg = $('.flexslider li img').height();
+        var MainheightSlideimg = $('.flexslider li a').height();
+        if($('.slide-background:visible').length != 0) {
+          $('.flex-direction-nav').css("display", "block").css('top',MainheightSlideimg/2);
+        }else
+        $('.flex-direction-nav').css("display", "block").css('top',heightSlideimg/2);
+      }
       $(window).resize(SliderNavigationposition);
 
       //Remove link from last navigation level
