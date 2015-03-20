@@ -60,24 +60,50 @@
 	    var navTimers = [];
 	    $("#block-system-main-menu .menu > li").live('mouseenter',function() {
 	      var id = jQuery.data( this );
-	      var $this=$(this);
+          pointer = $(this);
 	      navTimers[id] = setTimeout( function() {
-	        $this.addClass("slideul");  
-	        $this.find('a').addClass('active');
-	        $this.find('.second-level-main-container').stop(true, true).addClass("active");
+            $("#block-system-main-menu .menu > li").removeClass('slideul');
+            $("#block-system-main-menu .menu > li a").removeClass('active');
+            $('.second-level-main-container').removeClass("active");
+            pointer.addClass("slideul");
+            pointer.find('a').addClass('active');
+            pointer.find('.second-level-main-container').stop(true, true).addClass("active");
 	          navTimers[id] = "";
 	        }, 500 );
 	     }).live('mouseleave',function() {
+          pointer = $(this);
+          console.log(pointer);
 	       var id = jQuery.data( this );
 	       if ( navTimers[id] != "" ) {
 	         clearTimeout( navTimers[id] );
 	       }
 	       else {
-	         $(this).find('.second-level-main-container').removeClass("active");
-	         $(this).removeClass("slideul");
-	         $(this).find('a').removeClass('active');
+             setTimeout(function(){
+               if(!$('.second-level-main-container').hasClass('over')) {
+                 pointer.find('.second-level-main-container').removeClass("active");
+                 pointer.removeClass("slideul");
+                 pointer.find('a').removeClass('active');
+               }else {
+                 NavigationMenu();
+               }
+             },500);
 	       }
 	    });
+
+        $('.second-level-main-container').live('mouseenter',function() {
+          $(this).addClass('over');
+        }).live('mouseleave',function() {
+          $(this).removeClass('over');
+        });
+
+        function NavigationMenu () {
+          $('.second-level-main-container').live('mouseleave',function() {
+            pointer = $(this);
+              setTimeout(function(){
+                pointer.removeClass('active');
+              },1000);
+          });
+        }
       }
       
       //Hide navigation on click on body if naviagation container is visible
