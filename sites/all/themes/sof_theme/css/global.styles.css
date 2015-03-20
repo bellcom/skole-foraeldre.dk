@@ -4251,6 +4251,9 @@ a:focus {
 /* =============================================================================
  *   MENU CONTAINERS
  * ========================================================================== */
+.header-inner-navigation-container {
+  min-width: 320px;
+}
 .header-right-main-container,
 .header-navigation-container {
   float: right;
