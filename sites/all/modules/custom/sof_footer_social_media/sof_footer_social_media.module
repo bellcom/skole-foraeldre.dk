@@ -81,6 +81,7 @@ function sof_footer_social_media_block_configure($delta = '') {
 function sof_footer_social_media_block_save($delta = '', $edit = array()) {
   switch ($delta) {
     case 'sof_footer_social_media':
+      watchdog('sof_footer_social_media', '<pre>'. print_r($edit, TRUE) .'</pre>', array(), WATCHDOG_INFO, NULL);
       variable_set('sof_fsm_fb', $edit['sof_fsm_fb']);
       variable_set('sof_fsm_tw', $edit['sof_fsm_tw']);
       break;
