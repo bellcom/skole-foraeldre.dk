@@ -3376,7 +3376,8 @@ body.node-type-section #page-title {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.node-section .panel-pane {
+.node-section .panel-pane,
+.panel-col-full-main .panel-pane {
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -5239,7 +5240,7 @@ body.page-search #block-system-main > ul li {
 }
 @media all and (max-width: 1170px) {
   #header {
-    padding: 0 30px 30px 30px;
+    padding: 0 25px 30px 25px;
   }
   .top-article-content {
     padding: 0 30px;

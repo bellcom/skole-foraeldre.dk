@@ -231,6 +231,14 @@
           $span.slice(i, i + 2).wrapAll($div);
         }
       }
+      //Also see deck wrap every three elements in one
+      var $span = $(".field-name-field-related-article-news .field-item").not('article .field-item');
+      for (var i = 0; i < $span.length; i += 3) {
+        var $div = $("<div/>", {
+          class: 'recomendation-public'
+        });
+        $span.slice(i, i + 3).wrapAll($div);
+      }
       //Submited by changes to html structure
       $("body.logged-in .left-article-region .pane-node-updated").parent().parent().addClass('pane-node-updated');
       $("body.logged-in .left-article-region .pane-node-author").parent().parent().addClass('pane-node-author');
