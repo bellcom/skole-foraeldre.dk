@@ -169,6 +169,12 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#footer a {
+  color: #000;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
 /**
  * Footer region
 **/
