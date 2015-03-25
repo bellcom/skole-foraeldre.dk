@@ -80,9 +80,9 @@
 	       else {
              setTimeout(function(){
                if(!$('.second-level-main-container').hasClass('over')) {
-                 pointer.find('.second-level-main-container').removeClass("active");
-                 pointer.removeClass("slideul");
-                 pointer.find('a').removeClass('active');
+                 $('.second-level-main-container').removeClass("active");
+                 $('#block-system-main-menu .menu > li').removeClass("slideul");
+                 $('#block-system-main-menu .menu > li').find('a').removeClass('active');
                }else {
                  NavigationMenu();
                }
