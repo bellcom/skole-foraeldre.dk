@@ -224,7 +224,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'publication_related',
-    'image_link' => '',
+    'image_link' => 'content',
   );
   /* Field: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1131,7 +1131,9 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
     'image_style' => 'related_content_reference_image',
-    'image_link' => '',
+    'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
@@ -1205,7 +1207,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['display_description'] = 'List of all nodes(exept last 3 from the header) conected to the section by "Genral category" term';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '3';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '3';
@@ -1277,7 +1279,9 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['field_image_slider']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_slider']['settings'] = array(
     'image_style' => 'related_content_reference_image',
-    'image_link' => '',
+    'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
   );
   $handler->display->display_options['fields']['field_image_slider']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_image_slider']['delta_offset'] = '0';
@@ -1347,7 +1351,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['display_description'] = 'List of all nodes(exept last 3 from the header) conected to the section by "Genral category" term. Term from pane argum';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '3';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '3';

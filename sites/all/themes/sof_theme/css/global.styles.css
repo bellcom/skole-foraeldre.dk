@@ -169,6 +169,12 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#footer a {
+  color: #000;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
 /**
  * Footer region
 **/
@@ -479,6 +485,11 @@ body.node-type-slider #main-content {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+.node-slider .slides li a {
+  float: left;
+  width: 100%;
+  height: 100%;
 }
 .node-slider  .node-title,
 .node-slider ul.links {
@@ -1140,7 +1151,7 @@ body.node-type-slider #main-content {
   padding: 20px 60px 40px 0;
   color: #fff;
   font-size: 36px;
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   line-height: 36px;
   text-align: left;
@@ -1282,14 +1293,14 @@ body.node-type-slider #main-content {
   padding: 0 10px;
 }
 .banner-main-wrapper .field-name-field-teaser {
-  margin: 10px 0 0;
-  padding: 0 10px;
-  border-radius: 0;
-  color: #000;
-  font-family: 'conduit_itclight';
-  font-size: 17px;
-  line-height: 19px;
-  text-align: center;
+  margin: 10px 0 0!important;
+  padding: 0 10px!important;
+  border-radius: 0!important;
+  color: #000!important;
+  font-family: 'conduit_itclight'!important;
+  font-size: 17px!important;
+  line-height: 19px!important;
+  text-align: center!important;
 }
 /* Magazine Deck */
 .magazine-deck-background-wrapper {
@@ -3371,7 +3382,8 @@ body.node-type-section #page-title {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.node-section .panel-pane {
+.node-section .panel-pane,
+.panel-col-full-main .panel-pane {
   float: left;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -3905,11 +3917,12 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
  *   BLOCKS
  * ========================================================================== */
 /* Related Terms and Related Articles Slideshow */
-.left-article-region .flex-direction-nav {
+.flex-direction-nav {
   width: 100%;
   float: left;
   position: absolute;
   left: 0px;
+  display: none;
 }
 .view-related-articles-slider .flex-direction-nav {
   width: 100%;
@@ -4251,6 +4264,9 @@ a:focus {
 /* =============================================================================
  *   MENU CONTAINERS
  * ========================================================================== */
+.header-inner-navigation-container {
+  min-width: 320px;
+}
 .header-right-main-container,
 .header-navigation-container {
   float: right;
@@ -5230,7 +5246,7 @@ body.page-search #block-system-main > ul li {
 }
 @media all and (max-width: 1170px) {
   #header {
-    padding: 0 30px 30px 30px;
+    padding: 0 25px 30px 25px;
   }
   .top-article-content {
     padding: 0 30px;

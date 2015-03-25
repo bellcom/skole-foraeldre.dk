@@ -60,24 +60,50 @@
 	    var navTimers = [];
 	    $("#block-system-main-menu .menu > li").live('mouseenter',function() {
 	      var id = jQuery.data( this );
-	      var $this=$(this);
+          pointer = $(this);
 	      navTimers[id] = setTimeout( function() {
-	        $this.addClass("slideul");  
-	        $this.find('a').addClass('active');
-	        $this.find('.second-level-main-container').stop(true, true).addClass("active");
+            $("#block-system-main-menu .menu > li").removeClass('slideul');
+            $("#block-system-main-menu .menu > li a").removeClass('active');
+            $('.second-level-main-container').removeClass("active");
+            pointer.addClass("slideul");
+            pointer.find('a').addClass('active');
+            pointer.find('.second-level-main-container').stop(true, true).addClass("active");
 	          navTimers[id] = "";
 	        }, 500 );
 	     }).live('mouseleave',function() {
+          pointer = $(this);
+          console.log(pointer);
 	       var id = jQuery.data( this );
 	       if ( navTimers[id] != "" ) {
 	         clearTimeout( navTimers[id] );
 	       }
 	       else {
-	         $(this).find('.second-level-main-container').removeClass("active");
-	         $(this).removeClass("slideul");
-	         $(this).find('a').removeClass('active');
+             setTimeout(function(){
+               if(!$('.second-level-main-container').hasClass('over')) {
+                 pointer.find('.second-level-main-container').removeClass("active");
+                 pointer.removeClass("slideul");
+                 pointer.find('a').removeClass('active');
+               }else {
+                 NavigationMenu();
+               }
+             },500);
 	       }
 	    });
+
+        $('.second-level-main-container').live('mouseenter',function() {
+          $(this).addClass('over');
+        }).live('mouseleave',function() {
+          $(this).removeClass('over');
+        });
+
+        function NavigationMenu () {
+          $('.second-level-main-container').live('mouseleave',function() {
+            pointer = $(this);
+              setTimeout(function(){
+                pointer.removeClass('active');
+              },1000);
+          });
+        }
       }
       
       //Hide navigation on click on body if naviagation container is visible
@@ -113,12 +139,23 @@
 
       // Position of flexslider navigation arrows
       function SliderNavigationposition() {
-        var heightSlideimg = $('.flexslider .slides img').height();
-        $('.left-article-region .flex-direction-nav').css('top',heightSlideimg/2);
+        var heightSlideimg = $('.flexslider li img').height();
+        var MainheightSlideimg = $('.flexslider li a').height();
+        if($('.slide-background:visible').length != 0) {
+          $('.flex-direction-nav').css("display", "block").css('top',MainheightSlideimg/2);
+        }else
+        $('.flex-direction-nav').css("display", "block").css('top',heightSlideimg/2);
       }
 
       // Position of flexslider navigation arrows call functions
-      $(window).load(SliderNavigationposition);
+      window.onload = function() {
+        var heightSlideimg = $('.flexslider li img').height();
+        var MainheightSlideimg = $('.flexslider li a').height();
+        if($('.slide-background:visible').length != 0) {
+          $('.flex-direction-nav').css("display", "block").css('top',MainheightSlideimg/2);
+        }else
+        $('.flex-direction-nav').css("display", "block").css('top',heightSlideimg/2);
+      }
       $(window).resize(SliderNavigationposition);
 
       //Remove link from last navigation level
@@ -194,6 +231,17 @@
           $span.slice(i, i + 2).wrapAll($div);
         }
       }
+      //Also see deck wrap every three elements in one
+      $(".field-name-field-related-article-news .field-item").not('article .field-item').addClass( "first-level-recom-fields");
+      $(".field-name-field-related-article-news", context).not('article .field-item').each(function() {
+        var span = $(".first-level-recom-fields", this);
+        for (var i = 0; i < span.length; i += 3) {
+          var $div = $("<div/>", {
+            class: 'recomendation-public'
+          });
+          span.slice(i, i + 3).wrapAll($div);
+        }
+      });
       //Submited by changes to html structure
       $("body.logged-in .left-article-region .pane-node-updated").parent().parent().addClass('pane-node-updated');
       $("body.logged-in .left-article-region .pane-node-author").parent().parent().addClass('pane-node-author');

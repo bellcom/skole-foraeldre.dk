@@ -27,6 +27,18 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -16,
+      ),
       'sof_theme' => array(
         'region' => 'footer_right_short',
         'status' => 1,
@@ -52,6 +64,18 @@ function sof_blocks_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'adaptivetheme',
         'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -17,
       ),
       'sof_theme' => array(
         'region' => 'footer_left_long',
@@ -79,6 +103,18 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -18,
+      ),
       'sof_theme' => array(
         'region' => 'global_search_top_region',
         'status' => 1,
@@ -104,6 +140,18 @@ function sof_blocks_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'adaptivetheme',
         'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -22,
       ),
       'sof_theme' => array(
         'region' => 'top_header_navigation',
@@ -131,6 +179,18 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -23,
+      ),
       'sof_theme' => array(
         'region' => 'top_header_navigation',
         'status' => 1,
@@ -155,6 +215,18 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
         'weight' => 0,
       ),
       'sof_theme' => array(
@@ -183,6 +255,18 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -11,
+      ),
       'sof_theme' => array(
         'region' => 'header',
         'status' => 1,
@@ -208,6 +292,18 @@ function sof_blocks_default_fe_block_settings() {
         'status' => 0,
         'theme' => 'adaptivetheme',
         'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'seven_subtheme' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'seven_subtheme',
+        'weight' => -22,
       ),
       'sof_theme' => array(
         'region' => 'top_header_navigation',

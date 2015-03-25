@@ -33,7 +33,7 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
     <?php if ($linkexist == 1): ?>
-      <a href="<?php print $linkurl;?>" target="_blank">
+      <a href="<?php print $linkurl;?>">
     <?php endif;?>
   	  <div class="slide-background" style="background-image:url('<?php print $slider_background;?>');">
   		  <div class="slide-inner-content">
