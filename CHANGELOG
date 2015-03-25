@@ -1,3 +1,22 @@
+7.x-1.41. 25-03-2015
+--------------------
+* f1bff7f - (HEAD, origin/dev, dev) SOF-341 Intro deck - description to not be in italic Committed by rkoteska at 2015-03-25 17:40:13 +1000
+* 6cd1d1f - SOF-342 Links in the footer Committed by rkoteska at 2015-03-24 20:20:56 +1000
+* 02658c3 - SOF-69  Also see deck - FrontEnd - adding wrapping around every third element Committed by rkoteska at 2015-03-24 18:40:29 +1000
+* 6fbfa4a - SOF-22  Theming setup - fixing mirror style issues Committed by rkoteska at 2015-03-23 23:27:01 +1000
+* ea8c672 - SOF-337 Slider on articles & news - arrows and links to be fixed Committed by rkoteska at 2015-03-20 23:47:04 +1000
+* 29098c6 - SOF-138 - Remove watchdog for sof_footer_social_media_blocks Committed by Goce at 2015-03-20 14:47:03 +0100
+* 4e42bd3 - SOF-138 - Check visibillity settings on social media block after save Committed by Goce at 2015-03-20 14:38:55 +0100
+* 7c4473b - SOF-331  Main menu issues Committed by rkoteska at 2015-03-20 22:32:39 +1000
+* b23707d - SOF-138 - Panels module patch Committed by Goce at 2015-03-19 13:50:54 +0100
+* 2e126a0 - SOF-138 - Banner deck css fix on node page Committed by Goce at 2015-03-18 14:43:51 +0100
+* 9dc8e0c - SOF-138 - Images on Section default content view link wrapper Committed by Goce at 2015-03-18 14:32:29 +0100
+* d4b384d - SOF-138 - Related publication deck image link to node Committed by Goce at 2015-03-18 14:23:53 +0100
+* 5e6925a - SOF-138 - Publication teaser on releases page without tags Committed by Goce at 2015-03-18 14:13:29 +0100
+* 4ed03b1 - SOF-138 - Updated section views to list 30 nodes Committed by Goce at 2015-03-18 12:27:04 +0100
+* ac72289 - SOF-138 - Update banner deck link to open in the same tab Committed by Goce at 2015-03-18 11:33:37 +0100
+* 0aa28c5 - SOF18 - Block feature updated for new admin theme regions Committed by Goce at 2015-03-18 11:33:11 +0100
+
 7.x-1.40. 18-03-2015
 --------------------
 * 176cc7d - (HEAD, origin/dev, dev) SOF-138 - Updated missing cardinallity form publication category and introdeck links Committed by Goce at 2015-03-17 15:36:59 +0100
