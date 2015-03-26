@@ -72,7 +72,6 @@
 	        }, 500 );
 	     }).live('mouseleave',function() {
           pointer = $(this);
-          console.log(pointer);
 	       var id = jQuery.data( this );
 	       if ( navTimers[id] != "" ) {
 	         clearTimeout( navTimers[id] );
