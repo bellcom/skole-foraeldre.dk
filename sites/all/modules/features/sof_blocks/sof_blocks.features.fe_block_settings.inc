@@ -12,10 +12,10 @@ function sof_blocks_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-publication_teaser'] = array(
+  $export['block-releases_page_teaser'] = array(
     'cache' => -1,
     'custom' => 0,
-    'machine_name' => 'publication_teaser',
+    'machine_name' => 'releases_page_teaser',
     'module' => 'block',
     'node_types' => array(),
     'pages' => '',
