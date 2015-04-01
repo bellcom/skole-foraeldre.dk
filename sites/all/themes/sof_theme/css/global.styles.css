@@ -1952,6 +1952,10 @@ body.page-cart h1 {
   color: #5e5e5e;
   font-weight: normal;
 }
+.checkout-review .view-commerce-coupon-review-pane td {
+  background: #fff!important;
+  border-right: #f0f0f0!important;
+}
 .commerce-price-formatted-components tbody tr  td {
   text-transform: uppercase;
 }
