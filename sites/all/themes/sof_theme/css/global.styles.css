@@ -1954,7 +1954,8 @@ body.page-cart h1 {
 }
 .checkout-review .view-commerce-coupon-review-pane td {
   background: #fff!important;
-  border-right: #f0f0f0!important;
+  border-top: 3px solid #f0f0f0!important;
+  border-right: 3px solid #f0f0f0!important;
 }
 .commerce-price-formatted-components tbody tr  td {
   text-transform: uppercase;
