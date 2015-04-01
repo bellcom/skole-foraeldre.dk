@@ -1917,7 +1917,8 @@ body.page-cart h1 {
 .view-commerce-line-item-table tbody,
 .view-commerce-coupon-review-pane table,
 .view-commerce-coupon-review-pane thead,
-.view-commerce-coupon-review-pane tbody {
+.view-commerce-coupon-review-pane tbody,
+.view-commerce-coupon-review-pane tbody tr {
   border: none;
 }
 #views-form-commerce-cart-form-sof-default thead tr,
@@ -1932,7 +1933,7 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tr th,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-commerce-line-item-table tr th,
-.view-commerce-line-item-table tr th {
+.view-sof-commerce-cart-checkout-summary tr th {
   color: #fff;
   text-transform: uppercase;
   border-right: 3px solid #fff;
@@ -1942,7 +1943,8 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tbody tr td,
 .view-sof-commerce-cart-checkout-summary tbody tr td,
 .view-commerce-line-item-table tbody tr td,
-.commerce-price-formatted-components tbody tr  td {
+.commerce-price-formatted-components tbody tr  td,
+.view-commerce-coupon-review-pane td {
   background: #f0f0f0;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
