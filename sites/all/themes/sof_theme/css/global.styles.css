@@ -1914,7 +1914,10 @@ body.page-cart h1 {
 .view-commerce-line-item-table table,
 .view-commerce-line-item-table tr ,
 .view-commerce-line-item-table  thead tr,
-.view-commerce-line-item-table tbody {
+.view-commerce-line-item-table tbody,
+.view-commerce-coupon-review-pane table,
+.view-commerce-coupon-review-pane thead,
+.view-commerce-coupon-review-pane tbody {
   border: none;
 }
 #views-form-commerce-cart-form-sof-default thead tr,
@@ -1965,7 +1968,8 @@ body.page-cart h1 {
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-review #edit-continue,
-#dibs-frontend-redirect-form #edit-submit {
+#dibs-frontend-redirect-form #edit-submit,
+.view-commerce-coupon-review-pane .views-field-remove-from-order a{
   padding: 5px 10px!important;
   margin-left: 10px;
   border: none;
