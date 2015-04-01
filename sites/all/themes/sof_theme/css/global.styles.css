@@ -1933,7 +1933,7 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tr th,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-commerce-line-item-table tr th,
-.view-sof-commerce-cart-checkout-summary tr th {
+.view-commerce-coupon-review-pane tr th {
   color: #fff;
   text-transform: uppercase;
   border-right: 3px solid #fff;
