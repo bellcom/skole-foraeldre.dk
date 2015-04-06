@@ -1914,7 +1914,11 @@ body.page-cart h1 {
 .view-commerce-line-item-table table,
 .view-commerce-line-item-table tr ,
 .view-commerce-line-item-table  thead tr,
-.view-commerce-line-item-table tbody {
+.view-commerce-line-item-table tbody,
+.view-commerce-coupon-review-pane table,
+.view-commerce-coupon-review-pane thead,
+.view-commerce-coupon-review-pane tbody,
+.view-commerce-coupon-review-pane tbody tr {
   border: none;
 }
 #views-form-commerce-cart-form-sof-default thead tr,
@@ -1929,7 +1933,7 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tr th,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-commerce-line-item-table tr th,
-.view-commerce-line-item-table tr th {
+.view-commerce-coupon-review-pane tr th {
   color: #fff;
   text-transform: uppercase;
   border-right: 3px solid #fff;
@@ -1939,13 +1943,19 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tbody tr td,
 .view-sof-commerce-cart-checkout-summary tbody tr td,
 .view-commerce-line-item-table tbody tr td,
-.commerce-price-formatted-components tbody tr  td {
+.commerce-price-formatted-components tbody tr  td,
+.view-commerce-coupon-review-pane td {
   background: #f0f0f0;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   border-radius: 7px;
   color: #5e5e5e;
   font-weight: normal;
+}
+.checkout-review .view-commerce-coupon-review-pane td {
+  background: #fff!important;
+  border-top: 3px solid #f0f0f0!important;
+  border-right: 3px solid #f0f0f0!important;
 }
 .commerce-price-formatted-components tbody tr  td {
   text-transform: uppercase;
@@ -1965,7 +1975,8 @@ body.page-cart h1 {
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-review #edit-continue,
-#dibs-frontend-redirect-form #edit-submit {
+#dibs-frontend-redirect-form #edit-submit,
+.view-commerce-coupon-review-pane .views-field-remove-from-order a{
   padding: 5px 10px!important;
   margin-left: 10px;
   border: none;
