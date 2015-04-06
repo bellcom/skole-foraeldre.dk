@@ -48,7 +48,7 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
-        'target' => '_blank',
+        'target' => 'default',
         'title' => '',
       ),
       'display' => array(
@@ -301,7 +301,7 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
         'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
-        'target' => '_blank',
+        'target' => 'default',
         'title' => '',
       ),
       'display' => array(
