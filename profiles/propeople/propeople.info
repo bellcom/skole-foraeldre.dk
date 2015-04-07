@@ -170,6 +170,7 @@ dependencies[] = commerce_physical
 dependencies[] = commerce_flat_rate
 dependencies[] = commerce_coupon_ui
 dependencies[] = commerce_coupon_pct
+dependencies[] = commerce_fieldgroup_panes
 ;dependencies[] = commerce_coupon
 
 ;Contrib language modules

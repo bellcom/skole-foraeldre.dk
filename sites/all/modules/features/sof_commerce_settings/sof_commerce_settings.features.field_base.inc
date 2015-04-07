@@ -19,14 +19,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_order',
     ),
     'field_name' => 'commerce_customer_billing',
-    'foreign keys' => array(
-      'profile_id' => array(
-        'columns' => array(
-          'profile_id' => 'profile_id',
-        ),
-        'table' => 'commerce_customer_profile',
-      ),
-    ),
     'indexes' => array(
       'profile_id' => array(
         0 => 'profile_id',
@@ -51,14 +43,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_order',
     ),
     'field_name' => 'commerce_customer_shipping',
-    'foreign keys' => array(
-      'profile_id' => array(
-        'columns' => array(
-          'profile_id' => 'profile_id',
-        ),
-        'table' => 'commerce_customer_profile',
-      ),
-    ),
     'indexes' => array(
       'profile_id' => array(
         0 => 'profile_id',
@@ -83,14 +67,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_line_item',
     ),
     'field_name' => 'commerce_display_path',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -114,14 +90,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_order',
     ),
     'field_name' => 'commerce_line_items',
-    'foreign keys' => array(
-      'line_item_id' => array(
-        'columns' => array(
-          'line_item_id' => 'line_item_id',
-        ),
-        'table' => 'commerce_line_item',
-      ),
-    ),
     'indexes' => array(
       'line_item_id' => array(
         0 => 'line_item_id',
@@ -143,7 +111,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_order',
     ),
     'field_name' => 'commerce_order_total',
-    'foreign keys' => array(),
     'indexes' => array(
       'currency_price' => array(
         0 => 'amount',
@@ -166,7 +133,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_product',
     ),
     'field_name' => 'commerce_price',
-    'foreign keys' => array(),
     'indexes' => array(
       'currency_price' => array(
         0 => 'amount',
@@ -189,14 +155,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_line_item',
     ),
     'field_name' => 'commerce_product',
-    'foreign keys' => array(
-      'product_id' => array(
-        'columns' => array(
-          'product_id' => 'product_id',
-        ),
-        'table' => 'commerce_product',
-      ),
-    ),
     'indexes' => array(
       'product_id' => array(
         0 => 'product_id',
@@ -220,7 +178,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_line_item',
     ),
     'field_name' => 'commerce_shipping_service',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -245,7 +202,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_line_item',
     ),
     'field_name' => 'commerce_total',
-    'foreign keys' => array(),
     'indexes' => array(
       'currency_price' => array(
         0 => 'amount',
@@ -268,7 +224,6 @@ function sof_commerce_settings_field_default_field_bases() {
       0 => 'commerce_line_item',
     ),
     'field_name' => 'commerce_unit_price',
-    'foreign keys' => array(),
     'indexes' => array(
       'currency_price' => array(
         0 => 'amount',
@@ -282,6 +237,31 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
+  // Exported field_base: 'field_accept_terms_and_condition'
+  $field_bases['field_accept_terms_and_condition'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_accept_terms_and_condition',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_sof_commerce_customer_cvr'
   $field_bases['field_sof_commerce_customer_cvr'] = array(
     'active' => 1,
@@ -289,14 +269,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_cvr',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -318,14 +290,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_ean',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -347,14 +311,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_firm',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -376,7 +332,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_mail',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'email',
@@ -392,14 +347,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -421,14 +368,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_note',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -448,14 +387,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_tel',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -477,7 +408,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_customer_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -504,14 +434,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -531,14 +453,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_pdf',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -562,14 +476,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_quantity',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -591,14 +497,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_type',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -625,7 +523,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_commerce_weight',
-    'foreign keys' => array(),
     'indexes' => array(
       'weight' => array(
         0 => 'weight',
@@ -645,14 +542,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_address_one',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -674,14 +563,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_address_two',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -703,14 +584,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_city',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -732,14 +605,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_country',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -761,14 +626,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_first_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -790,14 +647,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -819,14 +668,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_post_code',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -848,14 +689,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_customer_street_num',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -877,14 +710,6 @@ function sof_commerce_settings_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sof_message_order',
-    'foreign keys' => array(
-      'commerce_order' => array(
-        'columns' => array(
-          'target_id' => 'order_id',
-        ),
-        'table' => 'commerce_order',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
