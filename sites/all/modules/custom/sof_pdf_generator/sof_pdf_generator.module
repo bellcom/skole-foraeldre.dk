@@ -306,6 +306,11 @@ function sof_pdf_generator_publication_pdf($node_view) {
       'header-spacing' => 5,
       'header-right' => strtoupper($current_domain['sitename']),
       'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j. F Y')),
+
+      // the following two lines work around a bug in wkhtmltopdf when loading the same css/font resource multiple times
+      // https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1865
+      'run-script' => 'setInterval(function(){if(document.readyState=="complete") window.status="done";},100)',
+      'window-status' => 'done',
     ));
 
     // Add Template css.
