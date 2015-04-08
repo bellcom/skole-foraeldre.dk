@@ -2197,13 +2197,16 @@ body.page-checkout #edit-buttons {
 #commerce-checkout-form-checkout .form-item  label,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #dibs-frontend-redirect-form .checkout-help,
-#commerce-checkout-form-complete .checkout-completion-message
+#commerce-checkout-form-complete .checkout-completion-message,
 .field-name-field-accept-terms-and-condition .description {
   padding: 14px 17px 0 0;
   text-align: left;
   font-size: 18px;
   font-weight: 200!important;
   line-height: 24px;
+}
+.field-name-field-accept-terms-and-condition .description {
+  padding-top: 2px;
 }
 #commerce-checkout-form-checkout .form-type-checkbox ,
 .field-name-field-accept-terms-and-condition .form-type-checkbox {
