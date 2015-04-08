@@ -1940,6 +1940,9 @@ body.page-cart h1 {
   border-radius: 7px;
   font-weight: normal;
 }
+.view-commerce-coupon-review-pane tr th {
+  border-right: 3px solid #f0f0f0;
+}
 #views-form-commerce-cart-form-sof-default tbody tr td,
 .view-sof-commerce-cart-checkout-summary tbody tr td,
 .view-commerce-line-item-table tbody tr td,
