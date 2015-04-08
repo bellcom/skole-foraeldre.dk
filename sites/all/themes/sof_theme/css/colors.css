@@ -33,7 +33,6 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .sof-column-content h4,
 .recomendation-overview .views-row a,
 .pane-bundle-also-see-pane .read-more a,
-.mag-deck-right-group .field-name-field-magazine-links .field-item a,
 .new-search-wrapper:before,
 .apachesolr_search-results li h3 a,
 .search-category .links li a,
@@ -81,6 +80,9 @@ body.node-type-basic-page a,
 .field-name-field-accept-terms-and-condition .description a {
   color: #00a2eb;
 }
+.mag-deck-right-group .field-name-field-magazine-links .field-item a:hover {
+  color: #00a2eb;
+}
 /* Applay color to elements  */
 .commerce-add-to-cart-confirmation .added-product-title,
 .commerce-add-to-cart-confirmation .views-field-commerce-total .field-content{
@@ -117,7 +119,7 @@ ul.pager li.pager-previous,
 .article-region .field-name-body a.download-article-pdf,
 a.sof-pdf-generate-inline-link,
 #sof-general-tweaks-mailchimp .form-submit,
-body.page-user ul.primary li:hover, 
+body.page-user ul.primary li:hover,
 body.page-user ul.primary li.active,
 #user-login .form-submit,
 #user-pass .form-submit,

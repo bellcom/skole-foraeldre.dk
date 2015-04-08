@@ -1393,6 +1393,7 @@ body.node-type-slider #main-content {
 }
 .mag-deck-right-group .field-name-field-magazine-links .field-item a {
   float: left;
+  color: #000;
 }
 .mag-deck-right-group .field-name-field-magazine-links .field-item.even a:after {
   position: relative;
@@ -3966,7 +3967,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   float: left;
   position: absolute;
   left: 0px;
-  top: 55%;
+  top: 55%!important;
 }
 .flex-direction-nav li a {
   display: block!important;
