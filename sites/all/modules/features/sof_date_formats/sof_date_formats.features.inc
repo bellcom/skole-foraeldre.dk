@@ -19,6 +19,7 @@ function sof_date_formats_ctools_plugin_api($module = NULL, $api = NULL) {
 function sof_date_formats_fe_date_custom_date_formats() {
   $custom_date_formats = array();
   $custom_date_formats['d F Y'] = 'd F Y';
+  $custom_date_formats['j. F Y'] = 'j. F Y';
   return $custom_date_formats;
 }
 
@@ -29,5 +30,7 @@ function sof_date_formats_date_format_types() {
   $format_types = array();
   // Exported date format type: sof_custom
   $format_types['sof_custom'] = 'SOF custom';
+  // Exported date format type: sof_custom_for_article_and_news
+  $format_types['sof_custom_for_article_and_news'] = 'SOF custom for article and news';
   return $format_types;
 }
