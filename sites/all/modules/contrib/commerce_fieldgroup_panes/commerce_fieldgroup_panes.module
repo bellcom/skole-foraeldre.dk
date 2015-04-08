@@ -11,7 +11,7 @@
  */
 function commerce_fieldgroup_panes_commerce_checkout_pane_info() {
   $checkout_panes = array();
-  $groups = field_group_info_groups('commerce_order', 'commerce_order', 'form', TRUE);
+  $groups = field_group_info_groups('commerce_order', 'commerce_order', 'form', FALSE);
 
   // Check if the $groups is an array and if it contains
   // at least one element. If not return no new

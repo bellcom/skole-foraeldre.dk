@@ -19,7 +19,22 @@ function sof_commerce_settings_field_group_info() {
   $field_group->bundle = 'commerce_order';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
-  $field_group->data = '';
+  $field_group->data = array(
+    'label' => 'Terms and Conditions',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_accept_terms_and_condition',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
   $export['group_terms_and_conditions|commerce_order|commerce_order|form'] = $field_group;
 
   return $export;

@@ -1549,7 +1549,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 7,
     ),
   );
 
