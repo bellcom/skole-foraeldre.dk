@@ -2096,6 +2096,9 @@ body.page-user-orders #tasks ul li a {
   border: none;
   padding: 0;
 }
+.commerce_fieldgroup_pane__group_terms_and_conditions {
+  padding-top: 10px;
+}
 #customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend ,
 .commerce_fieldgroup_pane__group_terms_and_conditions .collapse-processed span.fieldset-legend {
   width: 100%;
@@ -2195,7 +2198,7 @@ body.page-checkout #edit-buttons {
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #dibs-frontend-redirect-form .checkout-help,
 #commerce-checkout-form-complete .checkout-completion-message
-.field-name-field-accept-terms-and-condition label {
+.field-name-field-accept-terms-and-condition .description {
   padding: 14px 17px 0 0;
   text-align: left;
   font-size: 18px;
@@ -2208,7 +2211,8 @@ body.page-checkout #edit-buttons {
   width: 100%;
 }
 #commerce-checkout-form-checkout .form-type-checkbox  label,
-.field-name-field-accept-terms-and-condition .form-type-checkbox  label {
+.field-name-field-accept-terms-and-condition .form-type-checkbox  label ,
+.field-name-field-accept-terms-and-condition .form-type-checkbox  .description {
   padding: 0;
 }
 #commerce-checkout-form-complete .checkout-completion-message {
@@ -2343,7 +2347,8 @@ table.checkout-review .pane-data-full {
   margin: 6px 5px 0 0;
 }
 .customer_profile_shipping .form-type-checkbox label,
-.field-name-field-accept-terms-and-condition .form-type-checkbox label{
+.field-name-field-accept-terms-and-condition .form-type-checkbox label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox .description {
   float: left;
   margin: 0px;
   padding: 0px;
