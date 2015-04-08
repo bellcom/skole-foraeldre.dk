@@ -3967,7 +3967,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   float: left;
   position: absolute;
   left: 0px;
-  top: 55%;
+  top: 55%!important;
 }
 .flex-direction-nav li a {
   display: block!important;
