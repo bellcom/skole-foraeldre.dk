@@ -2119,7 +2119,7 @@ body.page-user-orders #tasks ul li a {
   float: left;
   width: 100%;
 }
-#customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary {
+#customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary,
 .commerce_fieldgroup_pane__group_terms_and_conditions .fieldset-legend span.summary {
   font-size: 0px;
 }
@@ -2183,7 +2183,7 @@ body.page-checkout #edit-buttons {
 #commerce-checkout-form-complete .checkout-completion-message {
   text-transform: uppercase;
 }
-#commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox {
+#commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox,
 .field-name-field-accept-terms-and-condition .form-type-checkbox {
   float: left;
   padding: 0 0 0 10px;
