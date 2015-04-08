@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall hooks for operations on install/uninstall module.
+ *
+ * @author Goce Shutinoski <gsutinoski@propeople.dk>
+ */
+
+/**
+ * Implements hook_install().
+ */
+function sof_releases_page_teaser_install() {
+  $t = get_t();
+
+  // Set default variables.
+  variable_set('sof_rpb', array('value' => 'Releases', 'format' => NULL));
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function sof_releases_page_teaser_uninstall() {
+  // Delete variables.
+  variable_del('sof_rpb');
+
+}

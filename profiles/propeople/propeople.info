@@ -193,6 +193,7 @@ dependencies[] = columnizer
 dependencies[] = sof_footer_social_media
 dependencies[] = sof_general_tweaks
 dependencies[] = sof_pdf_generator
+dependencies[] = sof_releases_page_teaser
 dependencies[] = sof_toolbox_search
 
 ;Features

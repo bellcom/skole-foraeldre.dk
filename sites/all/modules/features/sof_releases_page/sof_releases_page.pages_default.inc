@@ -93,10 +93,10 @@ function sof_releases_page_default_page_manager_pages() {
     $display->content['new-7ebbedef-a725-4e90-8117-0e5b327eb552'] = $pane;
     $display->panels['one_main'][0] = 'new-7ebbedef-a725-4e90-8117-0e5b327eb552';
     $pane = new stdClass();
-    $pane->pid = 'new-309abcb3-2cf0-403a-8cba-ec12db130466';
+    $pane->pid = 'new-d2db26ae-376f-4092-9183-33b9a2ee9b03';
     $pane->panel = 'one_main';
     $pane->type = 'block';
-    $pane->subtype = 'block-4';
+    $pane->subtype = 'sof_releases_page_teaser-sof_releases_page_teaser';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -112,9 +112,9 @@ function sof_releases_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '309abcb3-2cf0-403a-8cba-ec12db130466';
-    $display->content['new-309abcb3-2cf0-403a-8cba-ec12db130466'] = $pane;
-    $display->panels['one_main'][1] = 'new-309abcb3-2cf0-403a-8cba-ec12db130466';
+    $pane->uuid = 'd2db26ae-376f-4092-9183-33b9a2ee9b03';
+    $display->content['new-d2db26ae-376f-4092-9183-33b9a2ee9b03'] = $pane;
+    $display->panels['one_main'][1] = 'new-d2db26ae-376f-4092-9183-33b9a2ee9b03';
     $pane = new stdClass();
     $pane->pid = 'new-2296a5b7-0e46-48e9-95e6-52243aee424d';
     $pane->panel = 'one_main';
