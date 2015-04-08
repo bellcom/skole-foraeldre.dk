@@ -33,7 +33,6 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .sof-column-content h4,
 .recomendation-overview .views-row a,
 .pane-bundle-also-see-pane .read-more a,
-.mag-deck-right-group .field-name-field-magazine-links .field-item a:hover,
 .new-search-wrapper:before,
 .apachesolr_search-results li h3 a,
 .search-category .links li a,
@@ -79,6 +78,9 @@ body.node-type-basic-page a,
 .field-name-field-accept-terms-and-condition label,
 .field-name-field-accept-terms-and-condition .description,
 .field-name-field-accept-terms-and-condition .description a {
+  color: #00a2eb;
+}
+.mag-deck-right-group .field-name-field-magazine-links .field-item a:hover {
   color: #00a2eb;
 }
 /* Applay color to elements  */
