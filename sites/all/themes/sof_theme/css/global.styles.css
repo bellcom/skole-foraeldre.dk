@@ -2091,30 +2091,36 @@ body.page-user-orders #tasks ul li a {
 #commerce-checkout-form-shipping #edit-buttons,
 #commerce-checkout-form-review #edit-buttons,
 #commerce-checkout-form-review #edit-commerce-payment,
-#edit-commerce-coupon {
+#edit-commerce-coupon,
+.commerce_fieldgroup_pane__group_terms_and_conditions {
   border: none;
   padding: 0;
 }
-#customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend {
+#customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend ,
+.commerce_fieldgroup_pane__group_terms_and_conditions .collapse-processed span.fieldset-legend {
   width: 100%;
   float: left;
   padding-left: 15px;
   background: url("images/arrow-shipping.png") no-repeat scroll 98% center transparent;
 }
-#customer-profile-shipping-ajax-wrapper legend {
+#customer-profile-shipping-ajax-wrapper legend ,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend {
   float: left;
 }
-#customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend {
+#customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend,
+.commerce_fieldgroup_pane__group_terms_and_conditions .collapsed span.fieldset-legend {
   width: 100%;
   float: left;
   padding-left: 15px;
   background: url("images/arrow-shipping-up.png") no-repeat scroll 98% top transparent;
 }
-#customer-profile-shipping-ajax-wrapper  span.fieldset-legend a {
+#customer-profile-shipping-ajax-wrapper  span.fieldset-legend a ,
+.commerce_fieldgroup_pane__group_terms_and_conditions span.fieldset-legend a {
   float: left;
   width: 100%;
 }
 #customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary {
+.commerce_fieldgroup_pane__group_terms_and_conditions .fieldset-legend span.summary {
   font-size: 0px;
 }
 #edit-commerce-shipping label {
@@ -2145,7 +2151,8 @@ section#main-content,
 #commerce-checkout-form-review #edit-commerce-payment legend,
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
 .entity-commerce-order .field-name-commerce-customer-shipping > h2,
-#edit-commerce-coupon legend {
+#edit-commerce-coupon legend,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend{
   width:100%;
   padding:10px;
   border-radius:7px;
@@ -2168,7 +2175,8 @@ body.page-checkout #edit-buttons {
   margin-bottom: 10px;
   margin-top: 20px;
 }
-#commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title {
+#commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title ,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend a.fieldset-title {
   color: #fff;
 }
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount,
@@ -2176,6 +2184,7 @@ body.page-checkout #edit-buttons {
   text-transform: uppercase;
 }
 #commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox {
+.field-name-field-accept-terms-and-condition .form-type-checkbox {
   float: left;
   padding: 0 0 0 10px;
   text-align: center;
@@ -2185,18 +2194,21 @@ body.page-checkout #edit-buttons {
 #commerce-checkout-form-checkout .form-item  label,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #dibs-frontend-redirect-form .checkout-help,
-#commerce-checkout-form-complete .checkout-completion-message {
+#commerce-checkout-form-complete .checkout-completion-message
+.field-name-field-accept-terms-and-condition label {
   padding: 14px 17px 0 0;
   text-align: left;
   font-size: 18px;
   font-weight: 200!important;
   line-height: 24px;
 }
-#commerce-checkout-form-checkout .form-type-checkbox {
+#commerce-checkout-form-checkout .form-type-checkbox ,
+.field-name-field-accept-terms-and-condition .form-type-checkbox {
   float: left;
   width: 100%;
 }
-#commerce-checkout-form-checkout .form-type-checkbox  label {
+#commerce-checkout-form-checkout .form-type-checkbox  label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox  label {
   padding: 0;
 }
 #commerce-checkout-form-complete .checkout-completion-message {
@@ -2207,7 +2219,8 @@ body.page-checkout #edit-buttons {
   padding-bottom: 20px;
   text-transform: uppercase;
 }
-#commerce-checkout-form-checkout .form-item input {
+#commerce-checkout-form-checkout .form-item input,
+.field-name-field-accept-terms-and-condition.form-item input {
   padding: 10px;
   border: 1px solid #bbbbbb;
   border-radius: 0;
@@ -2324,11 +2337,13 @@ table.checkout-review .pane-data-full {
 .customer_profile_shipping.collapsed {
   margin-bottom: 20px;
 }
-.customer_profile_shipping .form-type-checkbox input {
+.customer_profile_shipping .form-type-checkbox input,
+.field-name-field-accept-terms-and-condition .form-type-checkbox input {
   float: left;
   margin: 6px 5px 0 0;
 }
-.customer_profile_shipping .form-type-checkbox label{
+.customer_profile_shipping .form-type-checkbox label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox label{
   float: left;
   margin: 0px;
   padding: 0px;
