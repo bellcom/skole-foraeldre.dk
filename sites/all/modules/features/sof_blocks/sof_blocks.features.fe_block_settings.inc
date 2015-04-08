@@ -12,38 +12,6 @@ function sof_blocks_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-releases_page_teaser'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'releases_page_teaser',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven_subtheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven_subtheme',
-        'weight' => 0,
-      ),
-      'sof_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'sof_theme',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Releases page teaser',
-    'visibility' => 0,
-  );
-
   $export['current_search-search_results'] = array(
     'cache' => -1,
     'custom' => 0,

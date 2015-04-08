@@ -885,11 +885,43 @@ function propeople_update_7010() {
 /**
  * Implements hook_update_N().
  *
- * Update default admin theme
+ * Update default admin theme.
  */
 function propeople_update_7011() {
 
   db_update('system')->fields(array('status' => 1))->condition('type', 'theme')->condition('name', 'seven_subtheme')->execute();
   variable_set('admin_theme', 'seven_subtheme');
+
+}
+
+
+/**
+ * Implements hook_update_N().
+ *
+ * Create releases block programatically.
+ */
+function propeople_update_7012() {
+
+  form_load_include($form_state, 'inc', 'block', 'block.admin');
+
+  $form_state = array();
+  $form_state['values'] = array(
+    'title' => '<none>',
+    'info' => 'Releases page teaser block',
+    'visibility' => '0',
+    'pages' => NULL,
+    'custom' => '0',
+    'regions' => array(
+        'sof_theme' => '-1',
+        'seven_subtheme' => '-1',
+        'adaptivetheme' => '-1',
+      ),
+    'body' => array(
+        'value' => 'Releases teaser',
+        'format' => 'plain_text',
+      ),
+  );
+  // Submit the form programmatically.
+  drupal_form_submit('block_add_block_form', $form_state);
 
 }
