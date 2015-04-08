@@ -841,6 +841,72 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-publication-field_weight_sort'
+  $field_instances['node-publication-field_weight_sort'] = array(
+    'bundle' => 'publication',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'This field is used for sorting on releases page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 15,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'related_content_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_weight_sort',
+    'label' => 'Weight sort',
+    'required' => 1,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'number',
+      'weight' => 22,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Category');
@@ -862,8 +928,10 @@ function sof_publication_field_default_field_instances() {
   t('Select cover color for the generated pdf file');
   t('Select nodes that will be printed as pdf content');
   t('Teaser');
+  t('This field is used for sorting on releases page.');
   t('Upload an image to go with this posting.');
   t('Upload the PDF publication that you wish to provide as a download.');
+  t('Weight sort');
 
   return $field_instances;
 }
