@@ -40,7 +40,7 @@ function sof_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Releases page teaser',
     'visibility' => 0,
   );
 
