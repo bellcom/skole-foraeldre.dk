@@ -2634,19 +2634,22 @@ article.node-publication .field-type-image.field-label-above h2 {
 }
 .page-releases-category-listing h2 {
   display: block!important;
-  width: 22%;
+  width: 18%;
   float: left;
-  padding: 10px 0 15px 0;
+  padding: 10px 10px 15px 0;
   text-align: left;
   color: rgba(69, 69, 69, 0.52);
   font-size: 22px;
   font-weight: normal;
   line-height: 34px;
   margin: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 .page-releases-category-listing .block-content {
   float: left;
-  width: 78%;
+  width: 82%;
 }
 #apachesolr-panels-search-form > div {
   margin:10px 0;
