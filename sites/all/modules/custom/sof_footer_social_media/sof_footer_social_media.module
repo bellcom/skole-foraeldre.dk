@@ -165,28 +165,3 @@ function sof_footer_social_media_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-
-/**
- * Implements hook_page_alter().
- *
- * Hide block by domain_block rule.
- */
-function sof_footer_social_media_page_alter(&$page) {
-  if (isset($page['social_media_region'])) {
-    $domain = domain_get_domain();
-    $domains_on_block = array();
-    $domain_blocks = domain_blocks_get_domain_blocks($domain['domain_id']);
-    foreach ($domain_blocks as $value) {
-      $domains_on_block[$value['module']][$value['delta']] = TRUE;
-    }
-
-    if (isset($page['social_media_region']['sof_footer_social_media_sof_footer_social_media'])) {
-      $footer_smb = $page['social_media_region']['sof_footer_social_media_sof_footer_social_media'];
-
-      // Unset block from region.
-      if (!isset($domains_on_block[$footer_smb['#block']->module][$footer_smb['#block']->delta])) {
-        unset($page['social_media_region']['sof_footer_social_media_sof_footer_social_media']);
-      }
-    }
-  }
-}

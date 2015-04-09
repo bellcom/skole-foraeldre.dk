@@ -720,3 +720,30 @@ function sof_general_tweaks_views_default_views_alter(&$views) {
   }
 
 }
+
+/**
+ * Implements hook_page_alter().
+ *
+ * Hide block by domain_block rule.
+ */
+function sof_general_tweaks_page_alter(&$page) {
+  if (isset($page['social_media_region'])) {
+    $domain = domain_get_domain();
+    $domains_on_block = array();
+    $domain_blocks = domain_blocks_get_domain_blocks($domain['domain_id']);
+    foreach ($domain_blocks as $value) {
+      $domains_on_block[$value['module']][$value['delta']] = TRUE;
+    }
+
+    foreach ($page['social_media_region'] as $key => $content) {
+      if (is_array($content)) {
+        // Unset block from region.
+        if (!isset($domains_on_block[$content['#block']->module][$content['#block']->delta])) {
+          unset($page['social_media_region'][$key]);
+        }
+      }
+    }
+
+  }
+}
+
