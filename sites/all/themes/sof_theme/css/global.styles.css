@@ -2360,6 +2360,9 @@ table.checkout-review .pane-data-full {
   margin: 0px;
   padding: 0px;
 }
+.field-name-field-accept-terms-and-condition .form-required {
+  float: left;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
@@ -2614,6 +2617,9 @@ article.node-publication .field-type-image.field-label-above h2 {
   float: left;
   width: 100%;
   padding: 20px 0;
+}
+.page-releases-teaser-block a {
+  color: #454545;
 }
 .page-releases .pane-apachesolr-form {
   width: 100%;
