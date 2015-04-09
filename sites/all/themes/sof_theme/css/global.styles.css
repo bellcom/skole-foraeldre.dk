@@ -2605,20 +2605,42 @@ article.node-publication .field-type-image.field-label-above h2 {
   font-weight: 400;
   line-height: 44px;
 }
+.page-releases-teaser-block {
+  font-family: "conduit_itcregular",sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 30px;
+  color: #454545;
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+}
 .page-releases .pane-apachesolr-form {
   width: 100%;
   float: left;
 }
 .page-releases .pane-apachesolr-form .block-title {
-  width: 50%;
+  display: none!important;
+}
+.page-releases-category-listing {
+  float: left;
+  width: 100%;
+}
+.page-releases-category-listing h2 {
+  display: block!important;
+  width: 22%;
   float: left;
   padding: 10px 0 15px 0;
   text-align: left;
   color: rgba(69, 69, 69, 0.52);
-  font-size: 32px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: normal;
   line-height: 34px;
-  text-transform: uppercase;
+  margin: 0;
+}
+.page-releases-category-listing .block-content {
+  float: left;
+  width: 78%;
 }
 #apachesolr-panels-search-form > div {
   margin:10px 0;
@@ -2652,7 +2674,7 @@ article.node-publication .field-type-image.field-label-above h2 {
 }
 
 .page-releases .pane-apachesolr-form .block-content {
-  float: left;
+  float: right;
   width: 50%;
 }
 .pane-apachesolr-form h2 {
@@ -2662,7 +2684,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   float: left;
   width: 100%;
   margin: 0;
-  padding: 20px 0 10px 0;
+  padding: 10px 0 10px 0;
 }
 #facetapi-facet-apachesolrsolr-block-im-field-category-publication li {
   float: left;
