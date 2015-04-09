@@ -2634,7 +2634,7 @@ article.node-publication .field-type-image.field-label-above h2 {
 }
 .page-releases-category-listing h2 {
   display: block!important;
-  width: 18%;
+  width: 200px;
   float: left;
   padding: 10px 10px 15px 0;
   text-align: left;
@@ -2648,8 +2648,11 @@ article.node-publication .field-type-image.field-label-above h2 {
   box-sizing: border-box;
 }
 .page-releases-category-listing .block-content {
-  float: left;
-  width: 82%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: 200px;
 }
 #apachesolr-panels-search-form > div {
   margin:10px 0;

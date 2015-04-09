@@ -308,11 +308,15 @@ body.page-releases .pane-apachesolr-form h2 {
 .page-releases .pane-apachesolr-form .block-content,
 .page-releases-category-listing h2 ,
 .page-releases-category-listing .block-content {
-    width: 100%;
+   width: 100%;
 }
 .page-releases-category-listing h2 ,
 .page-releases-category-listing .block-content {
-    text-align: center;
+   text-align: center;
+}
+.page-releases-category-listing .block-content {
+  margin-left: 0px;
+  float: left;
 }
 .page-releases-teaser-block {
     padding:20px;

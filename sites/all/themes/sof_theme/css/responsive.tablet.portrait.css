@@ -262,6 +262,10 @@ body {
 .page-releases-category-listing .block-content {
   text-align: center;
 }
+.page-releases-category-listing .block-content {
+  margin-left: 0px;
+  float: left;
+}
 /* E-commerce */
 .table-main-container {
   overflow-x: scroll;
