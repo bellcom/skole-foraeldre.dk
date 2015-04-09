@@ -24,9 +24,6 @@
         });
       }
 
-      // Move the asterix on the terms and conditions to after the description.
-      $("[id$='field-accept-terms-and-condition']").find('.form-required').remove().insertAfter($("[id$='field-accept-terms-and-condition']").find(".description"));
-
     }
   };
 })(jQuery)

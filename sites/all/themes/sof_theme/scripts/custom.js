@@ -29,20 +29,20 @@
       });
     }
   });
-  
+
   /**
   * Header Scripts
   */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
       //Show Hide navigation script	for submenu
-	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {  	
+	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         function close_accordion_section() {
 	      $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		  $('#block-system-main-menu .menu > li').removeClass('slideul');
 		  $('#block-system-main-menu .menu > li').find('.second-level-main-container').stop(true, true).removeClass("active");
         }
-        //Remove class by default 
+        //Remove class by default
 	    $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 	      //Run script on click
 		  $('#block-system-main-menu .menu > li').click(function(e) {
@@ -104,7 +104,7 @@
           });
         }
       }
-      
+
       //Hide navigation on click on body if naviagation container is visible
       if($('.header-inner-navigation-container:visible').length == 0) {
         $('html').live('click touchstart', function() {
@@ -113,12 +113,12 @@
           $('.header-navigation-container').removeClass("active");
         });
       }
-      
+
       //Stop propagating for links of the navigation
       $('.header-right-main-container').live('click touchstart', function(e) {
         e.stopPropagation();
       });
-      
+
       //Show / Hide navigation script on medium and small
       $('#nav-activation-link span').live('click', function(e) {
       	$("#block-system-main-menu .menu > li a").removeClass('active');
@@ -126,10 +126,10 @@
         $('#nav-activation-link span').toggleClass("active");
         $('.header-navigation-container').toggleClass("active");
       });
-    
+
     }
   };
-  
+
   /**
   *  General Scripts
   */
@@ -183,6 +183,10 @@
           myText.text( myText.text().replace(':','') );
         }
       );
+
+      // Move the asterix on the terms and conditions to after the description.
+      $("[id$='field-accept-terms-and-condition']").find('.form-required').remove().insertAfter($("[id$='field-accept-terms-and-condition']").find(".description"));
+
     }
   };
 
@@ -191,7 +195,7 @@
   */
   Drupal.behaviors.sofWrapping = {
     attach: function (context, settings) {
-      //What we write about deck               	
+      //What we write about deck
       $(".field-name-field-we-recommend-reference .field-item", context).each(function(){
       	$(".node-title-werecommend", this).wrap('<div class="write-about-title-wrap"></div>');
       });
@@ -202,7 +206,7 @@
 
       //Ecommerce tables
       $( "#views-form-commerce-cart-form-sof-default table, #edit-cart-contents,#commerce-checkout-form-review #edit-checkout-review" ).wrap( "<div class='table-main-container'></div>" );
-      
+
       //Recomended item deck, wrapp 10 elements in one
       var $span = $(".view-id-recommended_items_overview .views-row");
       for (var i = 0; i < $span.length; i += 10) {
