@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Sof Default Allowed File Extensions feature.
+ */
+
+include_once 'sof_default_allowed_file_extensions.features.inc';
