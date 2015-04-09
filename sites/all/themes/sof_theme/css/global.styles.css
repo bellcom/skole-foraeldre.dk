@@ -2360,6 +2360,9 @@ table.checkout-review .pane-data-full {
   margin: 0px;
   padding: 0px;
 }
+.field-name-field-accept-terms-and-condition .form-required {
+  float: left;
+}
 /* =============================================================================
  *   NODE STYLING
  * ========================================================================== */
