@@ -4122,8 +4122,8 @@ h2.pane-title {
   opacity: 0.9;
 }
 .entity-bean.bean-banner .field-name-field-image .field-item {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -4150,7 +4150,9 @@ h2.pane-title {
 .entity-bean.bean-banner .field-name-field-image img {
   max-width: 80px;
   max-height: 80px;
-  padding-top: 15px;
+  padding-top: 25px;
+  position: relative;
+  left: 1px;
 }
 /* =============================================================================
  *   Branding
