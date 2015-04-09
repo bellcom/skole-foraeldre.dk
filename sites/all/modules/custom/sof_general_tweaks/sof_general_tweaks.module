@@ -648,6 +648,19 @@ function sof_general_tweaks_views_pre_render(&$view) {
 }
 
 /**
+ * Implements hook_panels_pane_content_alter().
+ */
+function sof_general_tweaks_panels_pane_content_alter($content, $pane, $args, $contexts) {
+  switch ($pane->type) {
+    case 'node_author':
+      $user = user_load($contexts['panelizer']->data->uid);
+      $content->content = l($user->name, 'mailto:' . $user->mail, array('absolute' => TRUE, 'attributes' => array('class' => 'username')));
+      break;
+
+  }
+}
+
+/**
  * Implements hook_views_default_views_alter().
  *
  * Add additioanl view filters for admin_views_node view.
