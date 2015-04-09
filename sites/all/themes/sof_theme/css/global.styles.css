@@ -2618,6 +2618,9 @@ article.node-publication .field-type-image.field-label-above h2 {
   width: 100%;
   padding: 20px 0;
 }
+.page-releases-teaser-block a:hover {
+  color: #000;
+}
 .page-releases .pane-apachesolr-form {
   width: 100%;
   float: left;
