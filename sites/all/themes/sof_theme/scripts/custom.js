@@ -185,10 +185,7 @@
       );
 
       // Move the asterix on the terms and conditions to after the description.
-      if(document.getElementById("[id$='field-accept-terms-and-condition']") !== null)
-      {
-        $("[id$='field-accept-terms-and-condition']").find('.form-required').remove().insertAfter($("[id$='field-accept-terms-and-condition']").find(".description"));
-      }
+      $("[id$='field-accept-terms-and-condition']").find('.form-required').remove().insertAfter($("[id$='field-accept-terms-and-condition']").find(".description"));
 
     }
   };
