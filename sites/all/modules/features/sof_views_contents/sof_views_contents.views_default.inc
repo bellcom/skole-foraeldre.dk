@@ -405,6 +405,17 @@ function sof_views_contents_views_default_views() {
   /* Display: Grid listing publication page */
   $handler = $view->new_display('panel_pane', 'Grid listing publication page', 'grid_listing_publication');
   $handler->display->display_options['display_description'] = 'List of publications as greed 2x4. Image, title and teaser';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Apache Solr: its_field_weight_sort */
+  $handler->display->display_options['sorts']['its_field_weight_sort']['id'] = 'its_field_weight_sort';
+  $handler->display->display_options['sorts']['its_field_weight_sort']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['sorts']['its_field_weight_sort']['field'] = 'its_field_weight_sort';
+  $handler->display->display_options['sorts']['its_field_weight_sort']['order'] = 'DESC';
+  /* Sort criterion: Apache Solr: ds_changed */
+  $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
   $handler->display->display_options['argument_input'] = array(
     'content' => array(
       'type' => 'panel',
@@ -971,6 +982,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';

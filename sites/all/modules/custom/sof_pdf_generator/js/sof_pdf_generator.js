@@ -12,7 +12,7 @@
       // Create pdf pages from content.
       if (typeof Drupal.settings.sof_pdf_generator !== 'undefined') {
         // Setup global splitting rules.
-        $('.sof-pdf-content').find('table, thead, tbody, tfoot, colgroup, caption, label, legend, script, style, textarea, button, object, embed, tr, th, td, li, h1, h2, h3, h4, h5, h6, form').addClass('dontsplit');
+        $('.sof-pdf-content').find('table, thead, tbody, tfoot, colgroup, caption, label, legend, script, style, textarea, button, object, embed, tr, th, td, li, h1, h2, h3, h4, h5, h6, form, blockquote').addClass('dontsplit');
         $('.sof-pdf-content').find('h1, h2, h3, h4, h5, h6').addClass('dontend');
         $('.sof-pdf-content').find('br').addClass('removeiflast').addClass('removeiffirst');
 

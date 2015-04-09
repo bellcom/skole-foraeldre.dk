@@ -885,7 +885,7 @@ function propeople_update_7010() {
 /**
  * Implements hook_update_N().
  *
- * Update default admin theme
+ * Update default admin theme.
  */
 function propeople_update_7011() {
 

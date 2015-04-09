@@ -1512,6 +1512,47 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_order-commerce_order-field_accept_terms_and_condition'
+  $field_instances['commerce_order-commerce_order-field_accept_terms_and_condition'] = array(
+    'bundle' => 'commerce_order',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Accept <a href="/" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'list_default',
+        'weight' => -3,
+      ),
+    ),
+    'entity_type' => 'commerce_order',
+    'field_name' => 'field_accept_terms_and_condition',
+    'label' => 'Accept terms and conditions',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'commerce_product-product-commerce_price'
   $field_instances['commerce_product-product-commerce_price'] = array(
     'bundle' => 'product',
@@ -2062,6 +2103,8 @@ function sof_commerce_settings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Accept <a href="/" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.');
+  t('Accept terms and conditions');
   t('Adresse');
   t('Adresse (mere plads til adresse)');
   t('By');

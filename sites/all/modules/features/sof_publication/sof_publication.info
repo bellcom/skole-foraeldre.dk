@@ -36,6 +36,7 @@ features[field_instance][] = node-publication-field_publication_file_type
 features[field_instance][] = node-publication-field_single_link
 features[field_instance][] = node-publication-field_sof_commerce_product
 features[field_instance][] = node-publication-field_teaser
+features[field_instance][] = node-publication-field_weight_sort
 features[node][] = publication
 features[variable][] = comment_anonymous_publication
 features[variable][] = comment_default_mode_publication

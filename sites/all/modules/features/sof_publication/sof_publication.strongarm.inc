@@ -131,6 +131,9 @@ function sof_publication_strongarm() {
         'redirect' => array(
           'weight' => '9',
         ),
+        'domain' => array(
+          'weight' => '1',
+        ),
       ),
       'display' => array(
         'download_as_pdf' => array(

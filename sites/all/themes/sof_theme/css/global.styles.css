@@ -1393,6 +1393,7 @@ body.node-type-slider #main-content {
 }
 .mag-deck-right-group .field-name-field-magazine-links .field-item a {
   float: left;
+  color: #000;
 }
 .mag-deck-right-group .field-name-field-magazine-links .field-item.even a:after {
   position: relative;
@@ -1914,7 +1915,11 @@ body.page-cart h1 {
 .view-commerce-line-item-table table,
 .view-commerce-line-item-table tr ,
 .view-commerce-line-item-table  thead tr,
-.view-commerce-line-item-table tbody {
+.view-commerce-line-item-table tbody,
+.view-commerce-coupon-review-pane table,
+.view-commerce-coupon-review-pane thead,
+.view-commerce-coupon-review-pane tbody,
+.view-commerce-coupon-review-pane tbody tr {
   border: none;
 }
 #views-form-commerce-cart-form-sof-default thead tr,
@@ -1929,23 +1934,32 @@ body.page-cart h1 {
 #views-form-commerce-cart-form-sof-default tr th,
 .view-sof-commerce-cart-checkout-summary tr th,
 .view-commerce-line-item-table tr th,
-.view-commerce-line-item-table tr th {
+.view-commerce-coupon-review-pane tr th {
   color: #fff;
   text-transform: uppercase;
   border-right: 3px solid #fff;
   border-radius: 7px;
   font-weight: normal;
 }
+.view-commerce-coupon-review-pane tr th {
+  border-right: 3px solid #f0f0f0;
+}
 #views-form-commerce-cart-form-sof-default tbody tr td,
 .view-sof-commerce-cart-checkout-summary tbody tr td,
 .view-commerce-line-item-table tbody tr td,
-.commerce-price-formatted-components tbody tr  td {
+.commerce-price-formatted-components tbody tr  td,
+.view-commerce-coupon-review-pane td {
   background: #f0f0f0;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
   border-radius: 7px;
   color: #5e5e5e;
   font-weight: normal;
+}
+.checkout-review .view-commerce-coupon-review-pane td {
+  background: #fff!important;
+  border-top: 3px solid #f0f0f0!important;
+  border-right: 3px solid #f0f0f0!important;
 }
 .commerce-price-formatted-components tbody tr  td {
   text-transform: uppercase;
@@ -1965,7 +1979,8 @@ body.page-cart h1 {
 #commerce-checkout-form-checkout #edit-continue,
 #commerce-checkout-form-shipping #edit-continue,
 #commerce-checkout-form-review #edit-continue,
-#dibs-frontend-redirect-form #edit-submit {
+#dibs-frontend-redirect-form #edit-submit,
+.view-commerce-coupon-review-pane .views-field-remove-from-order a{
   padding: 5px 10px!important;
   margin-left: 10px;
   border: none;
@@ -2080,30 +2095,39 @@ body.page-user-orders #tasks ul li a {
 #commerce-checkout-form-shipping #edit-buttons,
 #commerce-checkout-form-review #edit-buttons,
 #commerce-checkout-form-review #edit-commerce-payment,
-#edit-commerce-coupon {
+#edit-commerce-coupon,
+.commerce_fieldgroup_pane__group_terms_and_conditions {
   border: none;
   padding: 0;
 }
-#customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend {
+.commerce_fieldgroup_pane__group_terms_and_conditions {
+  padding-top: 10px;
+}
+#customer-profile-shipping-ajax-wrapper .collapse-processed span.fieldset-legend ,
+.commerce_fieldgroup_pane__group_terms_and_conditions .collapse-processed span.fieldset-legend {
   width: 100%;
   float: left;
   padding-left: 15px;
   background: url("images/arrow-shipping.png") no-repeat scroll 98% center transparent;
 }
-#customer-profile-shipping-ajax-wrapper legend {
+#customer-profile-shipping-ajax-wrapper legend ,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend {
   float: left;
 }
-#customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend {
+#customer-profile-shipping-ajax-wrapper .collapsed span.fieldset-legend,
+.commerce_fieldgroup_pane__group_terms_and_conditions .collapsed span.fieldset-legend {
   width: 100%;
   float: left;
   padding-left: 15px;
   background: url("images/arrow-shipping-up.png") no-repeat scroll 98% top transparent;
 }
-#customer-profile-shipping-ajax-wrapper  span.fieldset-legend a {
+#customer-profile-shipping-ajax-wrapper  span.fieldset-legend a ,
+.commerce_fieldgroup_pane__group_terms_and_conditions span.fieldset-legend a {
   float: left;
   width: 100%;
 }
-#customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary {
+#customer-profile-shipping-ajax-wrapper .fieldset-legend span.summary,
+.commerce_fieldgroup_pane__group_terms_and_conditions .fieldset-legend span.summary {
   font-size: 0px;
 }
 #edit-commerce-shipping label {
@@ -2134,7 +2158,8 @@ section#main-content,
 #commerce-checkout-form-review #edit-commerce-payment legend,
 .entity-commerce-order .field-name-commerce-customer-billing > h2,
 .entity-commerce-order .field-name-commerce-customer-shipping > h2,
-#edit-commerce-coupon legend {
+#edit-commerce-coupon legend,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend{
   width:100%;
   padding:10px;
   border-radius:7px;
@@ -2157,14 +2182,16 @@ body.page-checkout #edit-buttons {
   margin-bottom: 10px;
   margin-top: 20px;
 }
-#commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title {
+#commerce-checkout-form-shipping .customer_profile_shipping legend a.fieldset-title ,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend a.fieldset-title {
   color: #fff;
 }
 #commerce-checkout-form-checkout .component-type-commerce-price-formatted-amount,
 #commerce-checkout-form-complete .checkout-completion-message {
   text-transform: uppercase;
 }
-#commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox {
+#commerce-checkout-form-checkout .customer_profile_shipping .form-type-checkbox,
+.field-name-field-accept-terms-and-condition .form-type-checkbox {
   float: left;
   padding: 0 0 0 10px;
   text-align: center;
@@ -2174,18 +2201,25 @@ body.page-checkout #edit-buttons {
 #commerce-checkout-form-checkout .form-item  label,
 #commerce-checkout-form-shipping #edit-commerce-shipping .fieldset-wrapper,
 #dibs-frontend-redirect-form .checkout-help,
-#commerce-checkout-form-complete .checkout-completion-message {
+#commerce-checkout-form-complete .checkout-completion-message,
+.field-name-field-accept-terms-and-condition .description {
   padding: 14px 17px 0 0;
   text-align: left;
   font-size: 18px;
   font-weight: 200!important;
   line-height: 24px;
 }
-#commerce-checkout-form-checkout .form-type-checkbox {
+.field-name-field-accept-terms-and-condition .description {
+  padding-top: 2px;
+}
+#commerce-checkout-form-checkout .form-type-checkbox ,
+.field-name-field-accept-terms-and-condition .form-type-checkbox {
   float: left;
   width: 100%;
 }
-#commerce-checkout-form-checkout .form-type-checkbox  label {
+#commerce-checkout-form-checkout .form-type-checkbox  label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox  label ,
+.field-name-field-accept-terms-and-condition .form-type-checkbox  .description {
   padding: 0;
 }
 #commerce-checkout-form-complete .checkout-completion-message {
@@ -2196,7 +2230,8 @@ body.page-checkout #edit-buttons {
   padding-bottom: 20px;
   text-transform: uppercase;
 }
-#commerce-checkout-form-checkout .form-item input {
+#commerce-checkout-form-checkout .form-item input,
+.field-name-field-accept-terms-and-condition.form-item input {
   padding: 10px;
   border: 1px solid #bbbbbb;
   border-radius: 0;
@@ -2313,14 +2348,20 @@ table.checkout-review .pane-data-full {
 .customer_profile_shipping.collapsed {
   margin-bottom: 20px;
 }
-.customer_profile_shipping .form-type-checkbox input {
+.customer_profile_shipping .form-type-checkbox input,
+.field-name-field-accept-terms-and-condition .form-type-checkbox input {
   float: left;
   margin: 6px 5px 0 0;
 }
-.customer_profile_shipping .form-type-checkbox label{
+.customer_profile_shipping .form-type-checkbox label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox label,
+.field-name-field-accept-terms-and-condition .form-type-checkbox .description {
   float: left;
   margin: 0px;
   padding: 0px;
+}
+.field-name-field-accept-terms-and-condition .form-required {
+  float: left;
 }
 /* =============================================================================
  *   NODE STYLING
@@ -2567,20 +2608,51 @@ article.node-publication .field-type-image.field-label-above h2 {
   font-weight: 400;
   line-height: 44px;
 }
+.page-releases-teaser-block {
+  font-family: "conduit_itcregular",sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 30px;
+  color: #454545;
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+}
+.page-releases-teaser-block a:hover  {
+  text-decoration: underline;
+}
 .page-releases .pane-apachesolr-form {
   width: 100%;
   float: left;
 }
 .page-releases .pane-apachesolr-form .block-title {
-  width: 50%;
+  display: none!important;
+}
+.page-releases-category-listing {
   float: left;
-  padding: 10px 0 15px 0;
+  width: 100%;
+}
+.page-releases-category-listing h2 {
+  display: block!important;
+  width: 200px;
+  float: left;
+  padding: 10px 10px 15px 0;
   text-align: left;
   color: rgba(69, 69, 69, 0.52);
-  font-size: 32px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: normal;
   line-height: 34px;
-  text-transform: uppercase;
+  margin: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+.page-releases-category-listing .block-content {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-left: 200px;
 }
 #apachesolr-panels-search-form > div {
   margin:10px 0;
@@ -2614,7 +2686,7 @@ article.node-publication .field-type-image.field-label-above h2 {
 }
 
 .page-releases .pane-apachesolr-form .block-content {
-  float: left;
+  float: right;
   width: 50%;
 }
 .pane-apachesolr-form h2 {
@@ -2624,7 +2696,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   float: left;
   width: 100%;
   margin: 0;
-  padding: 20px 0 10px 0;
+  padding: 10px 0 10px 0;
 }
 #facetapi-facet-apachesolrsolr-block-im-field-category-publication li {
   float: left;
@@ -3929,7 +4001,7 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
   float: left;
   position: absolute;
   left: 0px;
-  top: 55%;
+  top: 55%!important;
 }
 .flex-direction-nav li a {
   display: block!important;
@@ -4062,8 +4134,8 @@ h2.pane-title {
   opacity: 0.9;
 }
 .entity-bean.bean-banner .field-name-field-image .field-item {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -4090,7 +4162,9 @@ h2.pane-title {
 .entity-bean.bean-banner .field-name-field-image img {
   max-width: 80px;
   max-height: 80px;
-  padding-top: 15px;
+  padding-top: 25px;
+  position: relative;
+  left: 1px;
 }
 /* =============================================================================
  *   Branding
@@ -4752,10 +4826,6 @@ ul.action-links {
 .marker,
 .form-required {
   color: #c00;
-}
-
-.form-item .description {
-  font-size: 0.85em;
 }
 
 /*

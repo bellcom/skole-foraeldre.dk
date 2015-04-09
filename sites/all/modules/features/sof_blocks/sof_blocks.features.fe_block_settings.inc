@@ -12,82 +12,6 @@ function sof_blocks_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['block-footer_contact_block'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'footer_contact_block',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'seven_subtheme' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'seven_subtheme',
-        'weight' => -16,
-      ),
-      'sof_theme' => array(
-        'region' => 'footer_right_short',
-        'status' => 1,
-        'theme' => 'sof_theme',
-        'weight' => -16,
-      ),
-    ),
-    'title' => 'Contact',
-    'visibility' => 0,
-  );
-
-  $export['block-footer_desc_block'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'machine_name' => 'footer_desc_block',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adaptivetheme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'seven_subtheme' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'seven_subtheme',
-        'weight' => -17,
-      ),
-      'sof_theme' => array(
-        'region' => 'footer_left_long',
-        'status' => 1,
-        'theme' => 'sof_theme',
-        'weight' => -17,
-      ),
-    ),
-    'title' => '<none>',
-    'visibility' => 0,
-  );
-
   $export['current_search-search_results'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -101,12 +25,6 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(
@@ -141,12 +59,6 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'seven_subtheme' => array(
         'region' => 'sidebar_first',
         'status' => 1,
@@ -177,12 +89,6 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(
@@ -217,12 +123,6 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'seven_subtheme' => array(
         'region' => 'sidebar_first',
         'status' => 1,
@@ -255,12 +155,6 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
       'seven_subtheme' => array(
         'region' => 'header',
         'status' => 1,
@@ -291,12 +185,6 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(

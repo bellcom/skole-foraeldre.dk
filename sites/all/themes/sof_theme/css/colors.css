@@ -33,7 +33,6 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .sof-column-content h4,
 .recomendation-overview .views-row a,
 .pane-bundle-also-see-pane .read-more a,
-.mag-deck-right-group .field-name-field-magazine-links .field-item a,
 .new-search-wrapper:before,
 .apachesolr_search-results li h3 a,
 .search-category .links li a,
@@ -75,7 +74,14 @@ body.node-type-basic-page .field-name-body blockquote:before,
 .article-news-main-container .field-name-body blockquote p,
 body.node-type-basic-page blockquote p,
 .left-article-region .field-name-body a,
-body.node-type-basic-page a {
+body.node-type-basic-page a,
+.field-name-field-accept-terms-and-condition label,
+.field-name-field-accept-terms-and-condition .description,
+.field-name-field-accept-terms-and-condition .description a,
+.page-releases-teaser-block a {
+  color: #00a2eb;
+}
+.mag-deck-right-group .field-name-field-magazine-links .field-item a:hover {
   color: #00a2eb;
 }
 /* Applay color to elements  */
@@ -114,13 +120,15 @@ ul.pager li.pager-previous,
 .article-region .field-name-body a.download-article-pdf,
 a.sof-pdf-generate-inline-link,
 #sof-general-tweaks-mailchimp .form-submit,
-body.page-user ul.primary li:hover, 
+body.page-user ul.primary li:hover,
 body.page-user ul.primary li.active,
 #user-login .form-submit,
 #user-pass .form-submit,
 .publication-top-right-container .download-as-pdf,
 #views-form-commerce-cart-form-sof-default .views-field-edit-delete input,
 #views-form-commerce-cart-form-sof-default tr th,
+.view-commerce-coupon-review-pane tr th,
+.view-commerce-coupon-review-pane .views-field-remove-from-order a,
 #views-form-commerce-cart-form-sof-default  #edit-actions input,
 #commerce-checkout-form-checkout #edit-cart-contents legend,
 .view-sof-commerce-cart-checkout-summary .views-field-edit-delete input,
@@ -150,7 +158,8 @@ body.page-user-orders #tasks ul li,
 .pane-node-field-link .field-item a,
 .view-commerce-line-item-table tr th,
 .form-item-commerce-shipping-shipping-service input[type="radio"]:checked ~ label:before,
-.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before {
+.form-item-commerce-payment-payment-method input[type="radio"]:checked ~ label:before,
+.commerce_fieldgroup_pane__group_terms_and_conditions legend {
   background-color: #00a2eb;
 }
 

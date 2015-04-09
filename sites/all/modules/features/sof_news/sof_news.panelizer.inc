@@ -250,7 +250,7 @@ function sof_news_panelizer_defaults() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'format' => 'sof_custom',
+      'format' => 'sof_custom_for_article_and_news',
       'context' => 'panelizer',
       'override_title' => 1,
       'override_title_text' => 'Submitted on',

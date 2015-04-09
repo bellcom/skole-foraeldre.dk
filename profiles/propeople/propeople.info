@@ -170,6 +170,7 @@ dependencies[] = commerce_physical
 dependencies[] = commerce_flat_rate
 dependencies[] = commerce_coupon_ui
 dependencies[] = commerce_coupon_pct
+dependencies[] = commerce_fieldgroup_panes
 ;dependencies[] = commerce_coupon
 
 ;Contrib language modules
@@ -192,6 +193,7 @@ dependencies[] = columnizer
 dependencies[] = sof_footer_social_media
 dependencies[] = sof_general_tweaks
 dependencies[] = sof_pdf_generator
+dependencies[] = sof_releases_page_teaser
 dependencies[] = sof_toolbox_search
 
 ;Features
@@ -234,3 +236,4 @@ dependencies[] = sof_commerce_settings
 dependencies[] = sof_commerce_views
 dependencies[] = sof_date_formats
 dependencies[] = sof_context_configurations
+dependencies[] = sof_default_allowed_file_extensions
