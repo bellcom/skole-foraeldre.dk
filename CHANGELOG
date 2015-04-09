@@ -1,3 +1,61 @@
+7.x-1.42. 09-04-2015
+--------------------
+* 1696add - SOF-332 - Extend domain_block alter to affect the default newsletter subscribe block Committed by Goce at 2015-04-09 16:05:46 +0200
+* 358834f - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 23:53:27 +1000
+* 59b7e1b - SOF-348 - exporting default allowed file extensions Committed by Aleksandar Risteski at 2015-04-09 15:50:34 +0200
+* c50ffd2 - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 23:27:57 +1000
+* 34ea3c1 - SOF-340 - applying patch to the contrib module mailchimp to make it translatable Committed by Aleksandar Risteski at 2015-04-09 15:15:32 +0200
+* 53075af - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 22:33:34 +1000
+* 447c56e - SOF-351 - Username changed to mailto link Committed by Goce at 2015-04-09 14:24:36 +0200
+* 58585ee - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 13:32:27 +0200
+* 45f45ba - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 13:20:35 +0200
+* 8bb8f7d - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 21:17:01 +1000
+* ebaf703 - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 21:08:42 +1000
+* 91340ed - SOF-334  E-shop - add terms and conditions checkbox on the last step Committed by rkoteska at 2015-04-09 20:47:26 +1000
+* a4dab13 - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 12:42:45 +0200
+* 93c2010 - SOF-346 - Update missing 'Distinct' Query Setting on view pane Committed by Goce at 2015-04-09 12:27:52 +0200
+* 75dce9c - SOF-348 Banner icons on Article/News nodes- styling circles Committed by rkoteska at 2015-04-09 19:08:24 +1000
+* 6a25620 - SOF-335 - Making the order of the publications to be manageable on the releases page Committed by Aleksandar Risteski at 2015-04-09 11:02:01 +0200
+* 7a5c25d - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 18:28:28 +1000
+* b3b74bf - SOF-332 - Page alter for domain visibility rule Committed by Goce at 2015-04-09 10:25:57 +0200
+* a5b0db7 - SOF-348 - Adding svg file format as available for the banner icon field Committed by Aleksandar Risteski at 2015-04-09 09:36:02 +0200
+* a9f59d2 - SOF-335 - New publication weight field for sorting in releases page Committed by Goce at 2015-04-08 18:20:03 +0200
+* bbbb762 - SOF-338 - Custom releases block, releases page feature update Committed by Goce at 2015-04-08 18:06:31 +0200
+* c438e87 - SOF-338 - Block removed from instalation profile Committed by Goce at 2015-04-08 17:13:08 +0200
+* 021c286 - SOF-338 - Releases block programatically added Committed by Goce at 2015-04-08 17:04:14 +0200
+* 169c86c - SOF-233  PDF styling adjustments - soling issues with color Committed by rkoteska at 2015-04-09 00:39:30 +1000
+* a1cfde3 - SOF-233  PDF styling adjustments - soling issues with color Committed by rkoteska at 2015-04-09 00:29:37 +1000
+* cc4d2aa - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 23:03:38 +1000
+* b7beb8f - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 22:59:44 +1000
+* 93dfc83 - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 22:28:03 +1000
+* 4c9f651 - SOF-138 - Block feature revert issue Committed by Goce at 2015-04-08 14:17:56 +0200
+* df3d576 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:17:46 +1000
+* b3d15c4 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:10:56 +1000
+* 0f922d7 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:05:55 +1000
+* 76e7f43 - SOF-343 workaround wkhtmltopdf bug when css/font is requested multiple times Committed by Georgi R at 2015-04-08 15:03:46 +0300
+* 931476c - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:00:10 +1000
+* 8bda18d - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 21:46:41 +1000
+* ba6ecbc - SOF-344 - Fix for the previous commit reason missing links in the intro deck Committed by Aleksandar Risteski at 2015-04-08 13:45:23 +0200
+* a1704f0 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 21:43:30 +1000
+* ccc91b1 - SOF-347 - Changing the date format of the article and news Committed by Aleksandar Risteski at 2015-04-08 12:02:16 +0200
+* d093b4c - SOF-334 - Adding terms and conditions to the checkout Committed by Aleksandar Risteski at 2015-04-08 09:21:24 +0200
+* 607fd89 - SOF-334 - fixing the errors thrown by the field group module Committed by Aleksandar Risteski at 2015-04-07 16:30:24 +0200
+* 20fff40 - SOF-334 - Adding terms and conditions checkbox on the checkout page Committed by Aleksandar Risteski at 2015-04-07 13:23:47 +0200
+* 663b36a - SOF-340 - Including the translations inside the installation profile Committed by Aleksandar Risteski at 2015-04-07 08:25:24 +0200
+* 1096392 - SOF-347 - Changing the date format on the Articles and News content types Committed by Aleksandar Risteski at 2015-04-06 16:15:14 +0200
+* 776246f - SOF-344 - Making the links of the introdeck to open in the same tab Committed by Aleksandar Risteski at 2015-04-06 14:20:59 +0200
+* d8743ec - SOF-345 - Changing the favicon Committed by Aleksandar Risteski at 2015-04-06 13:36:55 +0200
+* b9ad3c9 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:22:31 +1000
+* b43c1fc - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:20:21 +1000
+* a2acba3 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:13:50 +1000
+* 21128e3 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:09:09 +1000
+* 9816897 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 16:41:19 +1000
+* 991f299 - SOF-338 - Adding teaser block to the releases page Committed by Aleksandar Risteski at 2015-03-31 14:26:10 +0200
+* 242ebbb - SOF-338 - Adding teaser block to the releases page Committed by Aleksandar Risteski at 2015-03-31 11:20:35 +0200
+* f41dca8 - SOF-331  Main menu issues Committed by rkoteska at 2015-03-26 20:32:13 +1000
+* 026324f - SOF-331 Main menu issues Committed by rkoteska at 2015-03-25 21:34:38 +1000
+* a1d5ee5 - SOF-339 - Fixing E-Shop coupons Committed by Aleksandar Risteski at 2015-03-25 11:46:49 +0100
+
 7.x-1.41. 25-03-2015
 --------------------
 * f1bff7f - (HEAD, origin/dev, dev) SOF-341 Intro deck - description to not be in italic Committed by rkoteska at 2015-03-25 17:40:13 +1000
