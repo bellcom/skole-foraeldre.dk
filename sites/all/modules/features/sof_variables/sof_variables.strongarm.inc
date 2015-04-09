@@ -169,7 +169,7 @@ function sof_variables_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mimemail_mail';
-  $strongarm->value = 'martina@propeople.dk';
+  $strongarm->value = 'post@skole-foraeldre.dk';
   $export['mimemail_mail'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -268,7 +268,7 @@ Disallow: /
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'lachezar@propeople.dk';
+  $strongarm->value = 'lej@skole-foraeldre.dk';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
