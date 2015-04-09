@@ -77,7 +77,8 @@ body.node-type-basic-page blockquote p,
 body.node-type-basic-page a,
 .field-name-field-accept-terms-and-condition label,
 .field-name-field-accept-terms-and-condition .description,
-.field-name-field-accept-terms-and-condition .description a {
+.field-name-field-accept-terms-and-condition .description a,
+.page-releases-teaser-block a:hover {
   color: #00a2eb;
 }
 .mag-deck-right-group .field-name-field-magazine-links .field-item a:hover {
