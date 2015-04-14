@@ -31,7 +31,7 @@
 
           $(window).resize(function(){
               var footerHeight = $('#footer').outerHeight();
-              var newFooterHeight =  footerHeight+160;
+              var newFooterHeight =  footerHeight+200git ;
               var stickFooterPush = $('#columns').height(newFooterHeight);
 
               $('#page').css({'marginBottom':'-' + newFooterHeight + 'px'});
