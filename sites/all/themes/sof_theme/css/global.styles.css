@@ -2089,6 +2089,12 @@ body.page-user-orders #tasks ul li a {
   color:#fff;
   font-size:16px;
 }
+.page-checkout.commerce_payment .warning {
+  display: none;
+}
+.commerce_fieldgroup_pane__group_terms_and_conditions #messages {
+  float: left;
+}
 #commerce-checkout-form-checkout #edit-cart-contents,
 #commerce-checkout-form-checkout .customer_profile_shipping,
 #commerce-checkout-form-checkout #edit-customer-profile-billing,
