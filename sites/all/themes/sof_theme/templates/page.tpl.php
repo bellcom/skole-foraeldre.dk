@@ -234,11 +234,13 @@
 
     <!-- !Footer -->
     <div class="footer-main-container">
-      <!-- Social media region -->	
+      <!-- Social media region -->
+	    <?php  if (count($page['social_media_region']) > 3) : ?>
       <div class="footer-social-region">
       	<h2><?php print t('follow with'); ?></h2>
       	<?php print render($page['social_media_region']); ?>
-      </div>	
+      </div>
+	    <?php endif; ?>
       <!-- Footer region -->
       <footer<?php print $footer_attributes; ?>>
         <div class="region-footer">
