@@ -1,3 +1,15 @@
+7.x-1.44. 14-04-2015
+--------------------
+* b83619b - SOF-354 Newsdeck - issue with dated below 768 px width Committed by rkoteska at 2015-04-14 22:55:59 +1000
+* 4cd35de - SOF-353 - Sorting criteria changed from updated DESC to Published on DESC in Section default listing views Committed by Goce at 2015-04-14 13:10:52 +0200
+* 9268a26 - SOF-352 - TOC title changed from 'Inhold' to 'Side' Committed by Goce at 2015-04-14 12:46:02 +0200
+* 9a10a0f - SOF-334  E-shop - add terms and conditions checkbox on the last step Committed by rkoteska at 2015-04-14 19:09:24 +1000
+* 88571bd - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 19:06:19 +1000
+* 4456832 - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:49:56 +1000
+* 48d65ad - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:48:11 +1000
+* 411e77e - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:42:49 +1000
+* 2185244 - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:03:17 +1000
+
 7.x-1.43. 09-04-2015
 --------------------
 * 97fd2f1 - (HEAD, origin/dev, dev) NOJIRA Updated the mails. Committed by Lachezar Valchev at 2015-04-09 17:39:18 +0300
