@@ -250,7 +250,7 @@
           <?php print render($page['footer_right_short']); ?>
 	        <?php print render($page['footer_left_long']); ?>
 	      <?php print $attribution; ?>
-	     </div> 
+	     </div>
       </footer>
     </div>
   </div>
