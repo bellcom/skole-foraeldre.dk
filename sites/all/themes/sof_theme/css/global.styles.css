@@ -2089,7 +2089,7 @@ body.page-user-orders #tasks ul li a {
   color:#fff;
   font-size:16px;
 }
-.page-checkout.commerce_payment .warning {
+.page-checkout .commerce_payment .warning {
   display: none;
 }
 .commerce_fieldgroup_pane__group_terms_and_conditions #messages {
