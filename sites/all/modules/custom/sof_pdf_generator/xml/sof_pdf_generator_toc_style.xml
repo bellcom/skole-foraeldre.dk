@@ -73,7 +73,7 @@
       </style>
     </head>
     <body>
-      <h1>Indhold</h1>
+      <h1>Side</h1>
       <ul><xsl:apply-templates select="outline:item/outline:item"/></ul>
     </body>
   </html>
