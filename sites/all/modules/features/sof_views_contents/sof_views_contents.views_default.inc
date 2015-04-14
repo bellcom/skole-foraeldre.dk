@@ -1061,11 +1061,11 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Scheduler: Publish on */
+  $handler->display->display_options['sorts']['publish_on']['id'] = 'publish_on';
+  $handler->display->display_options['sorts']['publish_on']['table'] = 'scheduler';
+  $handler->display->display_options['sorts']['publish_on']['field'] = 'publish_on';
+  $handler->display->display_options['sorts']['publish_on']['order'] = 'DESC';
   /* Contextual filter: Taxonomy term: Term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
