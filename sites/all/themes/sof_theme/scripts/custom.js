@@ -28,6 +28,16 @@
          }
       });
     }
+
+          $(window).resize(function(){
+              var footerHeight = $('#footer').outerHeight();
+              var newFooterHeight =  footerHeight+200;
+              var stickFooterPush = $('#columns').height(newFooterHeight);
+
+              $('#page').css({'marginBottom':'-' + newFooterHeight + 'px'});
+          });
+
+          $(window).resize();
   });
 
   /**
