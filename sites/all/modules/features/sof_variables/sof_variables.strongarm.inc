@@ -224,9 +224,7 @@ function sof_variables_strongarm() {
 
 User-agent: *
 Crawl-delay: 10
-# Directories
-Disallow: /
-';
+# Directories';
   $export['robotstxt'] = $strongarm;
 
   $strongarm = new stdClass();

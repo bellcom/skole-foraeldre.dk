@@ -16,4 +16,3 @@ features[mailchimp_signup][] = sof_mailchimp_form
 features[variable][] = mailchimp_api_key
 features[variable][] = mailchimp_batch_limit
 features[variable][] = mailchimp_cron
-mtime = 1423223195
