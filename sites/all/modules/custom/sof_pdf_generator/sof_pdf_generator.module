@@ -164,7 +164,7 @@ function sof_generate_pdf_from_node($nid) {
           'footer-font-size' => 9,
           'header-font-size' => 7,
           'header-spacing' => 5,
-          'header-right' => strtoupper($current_domain['sitename']),
+          'header-right' => $current_domain['path'],
           'header-left' => strtoupper($node_obj->title . ' / ' . format_date($node_obj->changed, 'custom', 'j. F Y')),
         ));
 
@@ -304,7 +304,7 @@ function sof_pdf_generator_publication_pdf($node_view) {
       'footer-font-size' => 9,
       'header-font-size' => 7,
       'header-spacing' => 5,
-      'header-right' => strtoupper($current_domain['sitename']),
+      'header-right' => $current_domain['path'],
       'header-left' => strtoupper($node_view['#node']->title . ' / ' . format_date($node_view['#node']->changed, 'custom', 'j. F Y')),
 
       // the following two lines work around a bug in wkhtmltopdf when loading the same css/font resource multiple times
