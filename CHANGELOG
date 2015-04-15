@@ -1,3 +1,7 @@
+7.x-1.47. 15-04-2015
+--------------------
+* 8e5c511 - (HEAD, origin/dev, dev) NOJIRA Update from prelive. Committed by Lachezar Valchev at 2015-04-15 17:36:39 +0300
+
 7.x-1.46. 15-04-2015
 --------------------
 * 1b5523c - SOF-352 - Show domain instead of website name on the header right region on the generated pdf Committed by Goce at 2015-04-15 14:04:06 +0200
