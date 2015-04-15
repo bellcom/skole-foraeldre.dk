@@ -366,7 +366,8 @@ body {
 .news-deck-top-content .views-field-field-image-slider,
 .news-deck-top-content .views-field-changed,
 .news-deck-top-content .views-field-title,
-.news-deck-top-content .views-field-field-teaser {
+.news-deck-top-content .views-field-field-teaser,
+.news-deck-top-content .views-field-created {
   width: 100%;
   padding: 0 20px;
   float: left;
