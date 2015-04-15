@@ -1,3 +1,10 @@
+7.x-1.46. 15-04-2015
+--------------------
+* 1b5523c - SOF-352 - Show domain instead of website name on the header right region on the generated pdf Committed by Goce at 2015-04-15 14:04:06 +0200
+* d8bbf2b - NOJIRA Renamed the robots.txt file so that the RobotsTXT module one to work as designed. Committed by Lachezar Valchev at 2015-04-15 13:25:11 +0300
+* 3f0d768 - SOF-340 - Translations for missing strings Committed by Aleksandar Risteski at 2015-04-15 09:45:53 +0200
+* 365aa63 - SOF-353 - Updated ordering chriteria by 'Created date' DESC Committed by Goce at 2015-04-15 09:14:20 +0200
+
 7.x-1.45. 15-04-2015
 --------------------
 * 1a58c2f - (HEAD, origin/dev, dev) SOF-355 Front page - issue with content not using the full width Committed by rkoteska at 2015-04-15 16:17:04 +1000
