@@ -27,7 +27,7 @@ function sof_commerce_settings_commerce_tax_default_rates() {
   $items = array(
     'test' => array(
       'name' => 'test',
-      'display_title' => 'VAT',
+      'display_title' => 'Moms',
       'description' => '',
       'rate' => 0.25,
       'type' => 'vat',

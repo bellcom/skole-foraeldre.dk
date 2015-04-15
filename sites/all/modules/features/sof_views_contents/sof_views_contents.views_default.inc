@@ -783,9 +783,13 @@ function sof_views_contents_views_default_views() {
 
   /* Display: Articles slider */
   $handler = $view->new_display('panel_pane', 'Articles slider', 'related_articles_slider_pane');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Se også';
 
   /* Display: News slider */
   $handler = $view->new_display('panel_pane', 'News slider', 'related_news_slider_pane');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Se også';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_related_news_target_id']['id'] = 'field_related_news_target_id';
