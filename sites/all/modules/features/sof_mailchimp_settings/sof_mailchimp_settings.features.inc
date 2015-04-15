@@ -47,7 +47,7 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
         "MMERGE3" : 0,
         "MMERGE4" : 0
       },
-      "description" : "Tilmeld dig Skole og Forældres nyhedsbrev.",
+      "description" : "Tilmeld dig Skole og For\\u00e6ldres nyhedsbrev.",
       "doublein" : 0,
       "send_welcome" : 0,
       "include_interest_groups" : 0

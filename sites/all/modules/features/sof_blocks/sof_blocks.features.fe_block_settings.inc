@@ -27,6 +27,12 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
       'seven_subtheme' => array(
         'region' => 'sidebar_first',
         'status' => 1,
@@ -57,6 +63,12 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(
@@ -91,6 +103,12 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
       'seven_subtheme' => array(
         'region' => 'sidebar_first',
         'status' => 1,
@@ -121,6 +139,12 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(
@@ -155,6 +179,12 @@ function sof_blocks_default_fe_block_settings() {
         'theme' => 'adaptivetheme',
         'weight' => 0,
       ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
       'seven_subtheme' => array(
         'region' => 'header',
         'status' => 1,
@@ -185,6 +215,12 @@ function sof_blocks_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'adaptivetheme',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
         'weight' => 0,
       ),
       'seven_subtheme' => array(

@@ -261,7 +261,7 @@ function sof_commerce_settings_strongarm() {
     'general' => array(
       'merchant' => '90195774',
       'account' => '',
-      'test_mode' => '1',
+      'test_mode' => '0',
       'type' => 'flex',
       'retry_handling' => 'new_order_id',
       'md5' => '0',
@@ -384,7 +384,7 @@ function sof_commerce_settings_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

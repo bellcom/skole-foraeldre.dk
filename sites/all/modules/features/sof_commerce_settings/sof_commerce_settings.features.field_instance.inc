@@ -1521,7 +1521,7 @@ function sof_commerce_settings_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Accept <a href="/" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.',
+    'description' => 'Accept <a href="/node/5334" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2103,7 +2103,7 @@ function sof_commerce_settings_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Accept <a href="/" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.');
+  t('Accept <a href="/node/5334" target="_blank" title="Read our Terms and Conditions">Terms and Conditions</a>.');
   t('Accept terms and conditions');
   t('Adresse');
   t('Adresse (mere plads til adresse)');

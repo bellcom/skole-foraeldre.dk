@@ -33,9 +33,15 @@ function sof_mailchimp_settings_default_fe_block_settings() {
         'theme' => 'seven',
         'weight' => 0,
       ),
-      'sof_theme' => array(
+      'seven_subtheme' => array(
         'region' => '',
         'status' => 0,
+        'theme' => 'seven_subtheme',
+        'weight' => 0,
+      ),
+      'sof_theme' => array(
+        'region' => 'social_media_region',
+        'status' => 1,
         'theme' => 'sof_theme',
         'weight' => -29,
       ),
