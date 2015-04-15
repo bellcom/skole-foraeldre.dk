@@ -137,6 +137,7 @@ dependencies[] = context
 dependencies[] = robotstxt
 dependencies[] = domain_robotstxt
 dependencies[] = domain_analytics
+dependencies[] = security_review
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
