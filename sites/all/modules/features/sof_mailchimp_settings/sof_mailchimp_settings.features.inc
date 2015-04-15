@@ -22,7 +22,7 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
     "name" : "sof_mailchimp_form",
     "mc_lists" : { "54dd9a130a" : "54dd9a130a" },
     "mode" : "1",
-    "title" : "Newsletter",
+    "title" : "Nyhedsbrev",
     "settings" : {
       "path" : "",
       "submit_button" : "Send",
@@ -47,7 +47,7 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
         "MMERGE3" : 0,
         "MMERGE4" : 0
       },
-      "description" : "The newsletter is published 1-2 times a month. Sign up below. You can always sign out\\u00a0 it again.",
+      "description" : "Tilmeld dig Skole og Forældres nyhedsbrev.",
       "doublein" : 0,
       "send_welcome" : 0,
       "include_interest_groups" : 0
