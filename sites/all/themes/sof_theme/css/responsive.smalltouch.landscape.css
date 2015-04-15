@@ -435,7 +435,8 @@ ul.pager li {
 .news-deck-top-content .views-field-changed,
 .news-deck-top-content .views-field-title,
 .news-deck-top-content .views-field-field-teaser,
-.news-deck-top-content .views-field-view-node {
+.news-deck-top-content .views-field-view-node,
+.news-deck-top-content .views-field-created {
   width: 100%;
   padding: 0 20px;
   float: left;
