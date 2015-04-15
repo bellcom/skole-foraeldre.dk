@@ -427,6 +427,7 @@ body {
  *   Home Page
  * ========================================================================== */
 body.page-home #main-content,
+body.page-home #columns,
 #home-page-panel,
 body.page-home .panel-col-full-main {
   -webkit-box-sizing: border-box;
