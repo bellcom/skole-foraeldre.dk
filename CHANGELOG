@@ -1,3 +1,7 @@
+7.x-1.50. 15-04-2015
+--------------------
+* 54b232e - (HEAD, origin/dev, dev) NOJIRA Added the Security review. Committed by Lachezar Valchev at 2015-04-15 18:52:40 +0300
+
 7.x-1.49. 15-04-2015
 --------------------
 * c256d08 - (HEAD, origin/dev, dev) NOJIRA Update from prelive. Committed by Lachezar Valchev at 2015-04-15 18:28:11 +0300
