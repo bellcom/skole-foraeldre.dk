@@ -1,3 +1,7 @@
+7.x-1.45. 15-04-2015
+--------------------
+* 1a58c2f - (HEAD, origin/dev, dev) SOF-355 Front page - issue with content not using the full width Committed by rkoteska at 2015-04-15 16:17:04 +1000
+
 7.x-1.44. 14-04-2015
 --------------------
 * b83619b - SOF-354 Newsdeck - issue with dated below 768 px width Committed by rkoteska at 2015-04-14 22:55:59 +1000
