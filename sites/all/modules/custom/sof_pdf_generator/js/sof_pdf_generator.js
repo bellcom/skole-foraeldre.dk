@@ -8,7 +8,12 @@
 
 (function($) {
   // available page height in pixels
-  var page_height_px = 815;
+  var page_height_px = 790;
+  
+  // top padding for page elements to act as additional margin
+  // because changing --margin-top parameter also affects 
+  // the cover page and we do not want that
+  var page_top_padding_px = 30;
 
   Drupal.behaviors.sof_pdf_generator = {
     attach : function(context, settings) {
@@ -62,6 +67,7 @@
       var $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
         display: "block",
         height: page_height_px,
+        paddingTop: page_top_padding_px + 'px',
         
         // uncomment for debugging purposes, to see page element sizes
         //border:'1px solid black', boxSizing:'border-box', background:'#eeeeee',
