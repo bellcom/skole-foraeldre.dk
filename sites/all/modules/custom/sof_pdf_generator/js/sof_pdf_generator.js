@@ -7,6 +7,9 @@
  */
 
 (function($) {
+  // available page height in pixels
+  var page_height_px = 815;
+
   Drupal.behaviors.sof_pdf_generator = {
     attach : function(context, settings) {
       // Create pdf pages from content.
@@ -33,15 +36,15 @@
         }
 
         if (initialContentHeight <= imgTeaserHeight) {
-          initialContentHeight = 815 - imgTeaserHeight;
+          initialContentHeight = page_height_px - imgTeaserHeight;
         }
         else {
-          initialContentHeight = 815 - ( imgTeaserHeight % 815);
+          initialContentHeight = page_height_px - ( imgTeaserHeight % page_height_px);
         }
 
         // Prevent blank page.
         if (initialContentHeight == 0) {
-          initialContentHeight = 815;
+          initialContentHeight = page_height_px;
         }
 
         // Build pages.
@@ -63,12 +66,12 @@
    */
   function buildPage($initialContent, contentHeight) {
     // Check for default value.
-    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 815;
+    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : page_height_px;
     if ($('#sof-pdf-contents').contents().length > 0) {
       // Initial page.
       $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
         display: "block",
-        height: 815
+        height: page_height_px
       });
 
       // Set page contents height.
