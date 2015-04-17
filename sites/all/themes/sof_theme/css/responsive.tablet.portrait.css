@@ -400,6 +400,10 @@ body {
   display: block;
   width: 100%;
   text-align: center;
+  margin-bottom: 15px;
+}
+.news-deck-top-content .views-field-field-teaser {
+  margin: 0;
 }
 .news-deck-bottom-right-content {
   margin-top: 20px;

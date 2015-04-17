@@ -445,6 +445,9 @@ ul.pager li {
   box-sizing: border-box;
   border: 0px;
 }
+.news-deck-top-content .views-field-field-teaser {
+  margin: 0;
+}
 .news-deck-top-right-content .read-more {
   display: block;
   width: 100%;
@@ -464,6 +467,7 @@ ul.pager li {
   display: block;
   width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 .news-deck-bottom-right-content {
   margin-top: 20px;
