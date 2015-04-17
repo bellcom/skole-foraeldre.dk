@@ -146,7 +146,7 @@
         attach: function (context, settings) {
             //Show Hide navigation script	for submenu
             if( /iPad|iPhone|iPod.test(navigator.userAgent) ) {
-              $('.magazine-deck-background-wrapper').css("background-attachment", "unset");
+              //$('.magazine-deck-background-wrapper').css("background-attachment", "unset");
             }
 
         }
