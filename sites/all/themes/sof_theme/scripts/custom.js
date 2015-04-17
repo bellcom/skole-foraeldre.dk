@@ -47,6 +47,9 @@
     attach: function (context, settings) {
       //Show Hide navigation script	for submenu
 	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        //Magazine deck changes
+        $('.magazine-deck-background-wrapper').css("background-attachment", "none");
+
         function close_accordion_section() {
 	      $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		  $('#block-system-main-menu .menu > li').removeClass('slideul');
@@ -138,17 +141,6 @@
       });
 
     }
-  };
-  /**
-   * Magazine Deck Ipad
-   */
-  Drupal.behaviors.sofIpodmagazine = {
-      attach: function (context, settings) {
-          //Show Hide navigation script	for submenu
-          if( /iPad|iPhone|iPod.test(navigator.userAgent) ) {
-            $('.magazine-deck-background-wrapper').css("background-attachment", "none");
-          }
-       }
   };
 
   /**
