@@ -6,7 +6,7 @@
  * fieldable-panels-pane--magazine-pane.tpl.php
  */
 ?>
-<div class="magazine-deck-background-wrapper" style="background-image: url(<?php print $magazine_background; ?>) no-repeat;" >
+<div class="magazine-deck-background-wrapper" style="background: url(<?php print $magazine_background; ?>) fixed no-repeat;" >
   <div class="magazine-deck-inner-block">
     <?php if(!empty($panetitle)):?>
       <h2 class="fixed-pane-title"><?php print render($panetitle);?></h2>
