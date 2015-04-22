@@ -696,10 +696,10 @@ function sof_home_page_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-41310420-3d0a-4743-b6c5-04c0a4e0d6f8';
+    $pane->pid = 'new-fab5cb4c-9a2a-4abd-b57b-d0b5b6c48ab3';
     $pane->panel = 'main';
     $pane->type = 'fieldable_panels_pane';
-    $pane->subtype = 'uuid:3f5dc4d5-353b-42d3-bcda-6d47b0cef2f6';
+    $pane->subtype = 'uuid:a8ef746c-d1e7-4b9a-a988-3f74b28bfaac';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -711,9 +711,9 @@ function sof_home_page_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '41310420-3d0a-4743-b6c5-04c0a4e0d6f8';
-    $display->content['new-41310420-3d0a-4743-b6c5-04c0a4e0d6f8'] = $pane;
-    $display->panels['main'][0] = 'new-41310420-3d0a-4743-b6c5-04c0a4e0d6f8';
+    $pane->uuid = 'fab5cb4c-9a2a-4abd-b57b-d0b5b6c48ab3';
+    $display->content['new-fab5cb4c-9a2a-4abd-b57b-d0b5b6c48ab3'] = $pane;
+    $display->panels['main'][0] = 'new-fab5cb4c-9a2a-4abd-b57b-d0b5b6c48ab3';
     $pane = new stdClass();
     $pane->pid = 'new-3de51900-0704-4ae1-bd88-f8f3f4dc5614';
     $pane->panel = 'main';
