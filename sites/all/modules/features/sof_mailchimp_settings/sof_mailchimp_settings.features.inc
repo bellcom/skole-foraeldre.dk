@@ -26,10 +26,9 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
     "settings" : {
       "path" : "",
       "submit_button" : "Send",
-      "confirmation_message" : "Thank you! Your submission has been received!",
+      "confirmation_message" : "Tak for din tilmelding til nyhedsbrevet.",
       "destination" : "",
-      "mergefields" : {
-        "EMAIL" : {
+      "mergefields" : { "EMAIL" : {
           "name" : "Email Address",
           "req" : true,
           "field_type" : "email",
@@ -41,11 +40,7 @@ function sof_mailchimp_settings_default_mailchimp_signup() {
           "size" : "25",
           "tag" : "EMAIL",
           "id" : 0
-        },
-        "FNAME" : 0,
-        "LNAME" : 0,
-        "MMERGE3" : 0,
-        "MMERGE4" : 0
+        }
       },
       "description" : "Tilmeld dig Skole og For\\u00e6ldres nyhedsbrev.",
       "doublein" : 0,
