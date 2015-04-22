@@ -1,3 +1,29 @@
+7.x-1.51. 22-04-2015
+--------------------
+* 0471be4 - (HEAD, origin/dev, dev) SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 22:54:23 +1000
+* b7db8bd - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:59:28 +1000
+* d80440c - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:43:55 +1000
+* e8a00ea - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:13:37 +1000
+* b08a3de - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:07:29 +1000
+* 3e9b4fc - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:01:01 +1000
+* 33ad3cf - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:56:50 +1000
+* 8108dde - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:53:59 +1000
+* c848bb7 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:51:10 +1000
+* d4ec7a8 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:41:11 +1000
+* f6e558f - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:38:08 +1000
+* 76d28fc - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:24:03 +1000
+* b71ce9b - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:21:13 +1000
+* 630c178 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:18:20 +1000
+* 861fda0 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:13:05 +1000
+* 708e9ed - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:08:14 +1000
+* 8dee0f7 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 19:56:23 +1000
+* 326dec7 - SOF-357  Styling adjustments of News deck Committed by rkoteska at 2015-04-17 19:31:38 +1000
+* 0e89a54 - SOF-357  Styling adjustments of News deck Committed by rkoteska at 2015-04-17 19:21:43 +1000
+* d8e00c8 - SOF-352 adjust top margin and page height Committed by Georgi R at 2015-04-16 18:48:52 +0300
+* 8810e2d - SOF-352 wait until all images are loaded before comnizing content, so image size can be checked correctly; remove one extra html element and some css styles Committed by Georgi R at 2015-04-16 18:36:50 +0300
+* d9a8ea4 - SOF-352 replace page height magic number with js variable for easier adjusting in the future Committed by Georgi R at 2015-04-16 18:24:55 +0300
+* 8209d83 - SOF-352 replace the header parameters with header-html, for better unicode support and custom font support as a bonus Committed by Georgi R at 2015-04-16 18:03:41 +0300
+
 7.x-1.50. 15-04-2015
 --------------------
 * 54b232e - (HEAD, origin/dev, dev) NOJIRA Added the Security review. Committed by Lachezar Valchev at 2015-04-15 18:52:40 +0300
