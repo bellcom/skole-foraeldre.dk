@@ -1,3 +1,7 @@
+7.x-1.52. 22-04-2015
+--------------------
+* 7cd3f30 - (HEAD, origin/dev, dev) NOJIRA Update features from live. Committed by Lachezar Valchev at 2015-04-22 10:18:22 +0300
+
 7.x-1.51. 22-04-2015
 --------------------
 * 0471be4 - (HEAD, origin/dev, dev) SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 22:54:23 +1000
