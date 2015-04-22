@@ -46,7 +46,10 @@
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
       //Show Hide navigation script	for submenu
-	  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	  if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        //Magazine deck changes
+        $('.magazine-deck-background-wrapper').css("background-attachment", "scroll");
+
         function close_accordion_section() {
 	      $('#block-system-main-menu .menu > li').find('a').removeClass('active');
 		  $('#block-system-main-menu .menu > li').removeClass('slideul');

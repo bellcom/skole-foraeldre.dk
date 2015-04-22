@@ -7,6 +7,14 @@
  */
 
 (function($) {
+  // available page height in pixels
+  var page_height_px = 790;
+  
+  // top padding for page elements to act as additional margin
+  // because changing --margin-top parameter also affects 
+  // the cover page and we do not want that
+  var page_top_padding_px = 30;
+
   Drupal.behaviors.sof_pdf_generator = {
     attach : function(context, settings) {
       // Create pdf pages from content.
@@ -16,36 +24,26 @@
         $('.sof-pdf-content').find('h1, h2, h3, h4, h5, h6').addClass('dontend');
         $('.sof-pdf-content').find('br').addClass('removeiflast').addClass('removeiffirst');
 
-        $nodeObj = $('#sof-pdf-contents', context);
+        var $nodeObj = $('#sof-pdf-contents', context);
 
         // Node header Image+teaser.
-        $initialContent = $('header', $nodeObj);
+        var $initialContent = $('header', $nodeObj);
 
-        // Initial content height.
-        var imgTeaserHeight = $initialContent.outerHeight(true), initialContentHeight = 0;
+        // remove weird css rules // TODO: fix in css files directly
+        $(".sof-pdf-all-content").css('float', 'none');
+        $("body,html").css('height', 'auto');
+        $("body,html").css('min-height', 'auto');
 
-        // Image dimensins bug fix.
-        if ($initialContent.find('div.sof-pdf-top-image').length) {
-          imgTeaserHeight += 396;
-        }
-        else {
-          imgTeaserHeight += 2;
-        }
-
-        if (initialContentHeight <= imgTeaserHeight) {
-          initialContentHeight = 815 - imgTeaserHeight;
-        }
-        else {
-          initialContentHeight = 815 - ( imgTeaserHeight % 815);
-        }
-
-        // Prevent blank page.
-        if (initialContentHeight == 0) {
-          initialContentHeight = 815;
-        }
-
-        // Build pages.
-        buildPage($initialContent, initialContentHeight);
+        // Wait for the document to fully load before building pages, so image dimensions can be checked.
+        // Code is not cross-browser compatible, but it needs to work only in wkhtmltopdf (Webkit).
+        var loaded=false, timer=setInterval(function() {
+          if(!loaded && document.readyState=="complete") {
+            loaded = true;
+            clearInterval(timer);
+            // Build pages.
+            buildPage($initialContent, page_height_px);
+          }
+        }, 100);
       }
 
       // Add clases to download links.
@@ -63,26 +61,39 @@
    */
   function buildPage($initialContent, contentHeight) {
     // Check for default value.
-    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : 815;
+    contentHeight = typeof contentHeight !== 'undefined' ? contentHeight : page_height_px;
     if ($('#sof-pdf-contents').contents().length > 0) {
       // Initial page.
-      $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
+      var $page = $(".sof-pdf-page-template:first").clone().addClass("sof-pdf-page").css({
         display: "block",
-        height: 815
+        height: page_height_px,
+        paddingTop: page_top_padding_px + 'px',
+        
+        // uncomment for debugging purposes, to see page element sizes
+        //border:'1px solid black', boxSizing:'border-box', background:'#eeeeee',
+        
+        // the following makes each page div really start a separate page,
+        // so setting a slightly lower than actual value for page_height_px is not a problem,
+        // and setting a slightly higher than actual value will be more obvious
+        'page-break-inside': 'avoid'
       });
-
-      // Set page contents height.
-      $page.find('.content').css({
-        display: "block",
-        height: contentHeight
-      });
-
+      
       // Add header+image.
       if ($initialContent) {
         $page.prepend($initialContent);
       }
 
       $(".sof-pdf-all-content").append($page);
+      
+      // If given some initial content, we have less height remaining to work with
+      contentHeight -= $page.find('.content').get(0).offsetTop;
+
+      // Set page contents height.
+      $page.find('.content').css({
+        display: "block",
+        height: contentHeight
+      });
+      
       // Call columnizer.
       $('#sof-pdf-contents').columnize({
         columns: 2,
@@ -99,6 +110,8 @@
     else {
       // Remove blank container from the top.
       $(".sof-pdf-page-template:first").remove();
+      // Remove the container where the content was before columnizing it.
+      $('.sof-pdf-content').remove();
     }
   }
 })(jQuery);
