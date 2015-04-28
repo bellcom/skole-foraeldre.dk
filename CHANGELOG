@@ -1,3 +1,10 @@
+7.x-1.53. 28-04-2015
+--------------------
+* 6ad6b1b - (HEAD, origin/dev, dev) NOJIRA Updated home page from live. Committed by Lachezar Valchev at 2015-04-28 17:16:18 +0300
+* 35c1f2c - SOF-361 - Disabling the taxonomy translate module in the installation profile to remove the taxonomy terms page access issue Committed by Aleksandar Risteski at 2015-04-27 10:05:24 +0200
+* 85ff049 - SOF-332  Social block - to be displayed on certain domains Committed by rkoteska at 2015-04-24 23:19:02 +1000
+* 6b6e2ff - SOF-360 CKEditor - issue with bullets and numbers Committed by rkoteska at 2015-04-23 17:26:30 +1000
+
 7.x-1.52. 22-04-2015
 --------------------
 * 7cd3f30 - (HEAD, origin/dev, dev) NOJIRA Update features from live. Committed by Lachezar Valchev at 2015-04-22 10:18:22 +0300
