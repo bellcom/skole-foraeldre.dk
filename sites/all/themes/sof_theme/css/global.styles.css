@@ -3277,7 +3277,7 @@ body.node-type-basic-page video {
 .bottom-article-region {
   width: 100%;
   float: left;
-  padding: 0 0 50px 0;
+  padding: 0;
   margin: 50px 0 0 0;
   background-color: #f0f0f0;
 }
@@ -3292,6 +3292,7 @@ body.node-type-basic-page video {
   background: #fff;
   min-width: 1170px;
   position: relative;
+  margin-bottom: 50px;
 }
 .pane-read-also-read-also-pane .pane-title {
   display: block;
