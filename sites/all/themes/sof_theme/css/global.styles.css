@@ -1335,6 +1335,12 @@ body.node-type-slider #main-content {
   line-height: 60px;
   text-align: center;
 }
+.fixed-pane-title-magazine a {
+  color: #000;
+}
+.fixed-pane-title-magazine a:hover {
+  color: rgba(51, 51, 51, 0.6);
+}
 .pane-bundle-magazine-pane .fieldable-panels-pane {
   width: 100%;
 }
