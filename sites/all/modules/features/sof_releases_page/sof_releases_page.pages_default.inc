@@ -15,7 +15,7 @@ function sof_releases_page_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Releases';
   $page->admin_description = 'Publication listing page';
-  $page->path = 'releases/!query';
+  $page->path = 'udgivelser/!query';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array(
