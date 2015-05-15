@@ -3143,9 +3143,14 @@ body.node-type-basic-page hr {
   border-bottom: none;
 }
 .article-news-main-container .field-name-body ol,
-body.node-type-basic-page .field-name-body ol {
+body.node-type-basic-page .field-name-body ol,
+.article-news-main-container .field-name-body ul,
+body.node-type-basic-page .field-name-body ul {
   float: left;
   width: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
 }
 .article-news-main-container .field-name-body ul li,
 body.node-type-basic-page .field-name-body ul li {
