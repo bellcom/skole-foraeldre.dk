@@ -194,7 +194,7 @@ function sof_theme_preprocess_field(&$vars) {
     case 'field_publication_control_link':
       // Show publication link checkbox as link.
       if ($element['#entity_type'] == 'node' && $element['#items'][0]['value'] == 1) {
-        $vars['items'][0]['#markup'] = l(t('See all publications'), 'releases', array(
+        $vars['items'][0]['#markup'] = l(t('See all publications'), 'udgivelser', array(
             'attributes' => array(
               'class' => array('publications-btn'),
             ),
