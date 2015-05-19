@@ -216,8 +216,8 @@
       $(".search-form #edit-submit, #apachesolr-panels-search-form #edit-actions" ).wrap( "<div class='new-search-wrapper'></div>");
       $(".sof_toolbox_wrapper #edit-search-field" ).wrap( "<div class='toolbox-search-wrapper'></div>");
 
-      //Magazine deck add link around
-      $(".magazine-deck-background-wrapper", context).wrap( "<a href='http://www.skoleborn.dk'></a>");
+      ////Magazine deck add link around
+      //$(".magazine-deck-background-wrapper", context).wrap( "<a href='http://www.skoleborn.dk' target='_blank'></a>");
 
       //Ecommerce tables
       $( "#views-form-commerce-cart-form-sof-default table, #edit-cart-contents,#commerce-checkout-form-review #edit-checkout-review" ).wrap( "<div class='table-main-container'></div>" );
