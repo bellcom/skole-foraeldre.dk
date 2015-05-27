@@ -127,7 +127,7 @@ hide($content['field_sof_commerce_product']);
          <?php if ($title): ?>
             <h1<?php print $title_attributes; ?>>
               <a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a>
-              <a class="back-to-all-releases-button" href="/releases">&nbsp;</a>
+              <a class="back-to-all-releases-button" href="/udgivelser">&nbsp;</a>
             </h1>
          <?php endif; ?>
          <!-- Print rest of the content -->
@@ -142,7 +142,7 @@ hide($content['field_sof_commerce_product']);
              <?php print render($content['product:field_sof_commerce_quantity']); ?>
            </div>
          </div>
-         <a class="back-to-all-releases-link" href="/releases"><?php print t('Back to all releases');?></a>
+         <a class="back-to-all-releases-link" href="/udgivelser"><?php print t('Back to all releases');?></a>
        </div>
      </div>
   </div>

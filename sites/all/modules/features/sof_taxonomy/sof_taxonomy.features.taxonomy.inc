@@ -16,8 +16,6 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
     ),
     'magazine_categories' => array(
       'name' => 'Magazine categories',
@@ -26,8 +24,6 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
     ),
     'media_folders' => array(
       'name' => 'Media Folders',
@@ -36,8 +32,6 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
     ),
     'publication_category' => array(
       'name' => 'Publication category',
@@ -46,8 +40,6 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
     ),
     'tags' => array(
       'name' => 'Tags',
@@ -56,8 +48,6 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 0,
     ),
   );
 }

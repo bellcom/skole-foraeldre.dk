@@ -540,7 +540,6 @@ function sof_views_references_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['ui_name'] = '(not shown) Node id';
   $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Felt: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
