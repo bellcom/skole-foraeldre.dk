@@ -417,9 +417,9 @@ function sof_commerce_settings_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'private' => 'Private',
-        'company' => 'Company',
-        'public' => 'Public',
+        'private' => 'Privat',
+        'company' => 'Firma',
+        'public' => 'Offentlig',
       ),
       'allowed_values_function' => '',
     ),

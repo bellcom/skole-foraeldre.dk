@@ -355,6 +355,12 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
 /* =============================================================================
  *   Articles
  * ========================================================================== */
+
+.node-type-article .pane-page-title h1 ,
+.node-type-news .pane-page-title h1 ,
+.node-type-section .pane-page-title h1 {
+  font-size: 36px;
+}
 .left-article-region,
 .right-article-region,
 .top-sharing-printing-links-inline {
