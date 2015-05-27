@@ -1,3 +1,16 @@
+7.x-1.54. 27-05-2015
+--------------------
+* e2c22e8 - (origin/dev, dev) SOF-367 - update the url path of the Back to all releases button (23 hours ago) <Aleksandar Risteski>
+* 263e226 - SOF-81  Magazine Deck - FrontEnd - adding link around while deck (8 days ago) <rkoteska>
+* 5f29d43 - SOF-81  Magazine Deck - FrontEnd - adding link around while deck (8 days ago) <rkoteska>
+* 1cdd819 - SOF-371 - fixing the problem with node edit/add of some content types (8 days ago) <Aleksandar Risteski>
+* 3a421a1 - SOF-367 - change the releases page url to danish (12 days ago) <Aleksandar Risteski>
+* a9ce015 - SOF-368 Reduce title font size for mobile devices (12 days ago) <rkoteska>
+* f882c6a - SOF-368 Reduce title font size for mobile devices (12 days ago) <rkoteska>
+* da90452 - SOF-365 - fixing the issue with the magazine deck title as link (3 weeks ago) <Aleksandar Risteski>
+* 4af3126 - SOF-138 - translating the customer type select box (3 weeks ago) <Aleksandar Risteski>
+* 241f521 - SOF-362 Releases page - horizontal scroll to be removed (4 weeks ago) <rkoteska>
+
 7.x-1.53. 28-04-2015
 --------------------
 * 6ad6b1b - (HEAD, origin/dev, dev) NOJIRA Updated home page from live. Committed by Lachezar Valchev at 2015-04-28 17:16:18 +0300
