@@ -127,7 +127,7 @@ function sof_releases_page_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'Sort in publications :',
+      'override_title_text' => 'Sortér efter kategori :',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
