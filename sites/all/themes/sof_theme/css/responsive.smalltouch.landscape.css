@@ -283,20 +283,20 @@ body {
 /* Publication products */
 
 /* Publication listing page */
-body.page-releases #columns {
+body.page-udgivelser  #columns {
   padding: 0;
   margin-top: 40px;
 }
-body.page-releases .pane-facetapi-afmhlrorvv0j1iq3m2zhtioj00gibodg,
-body.page-releases .pane-apachesolr-form,
-.page-releases h1 {
+body.page-udgivelser  .pane-facetapi-afmhlrorvv0j1iq3m2zhtioj00gibodg,
+body.page-udgivelser  .pane-apachesolr-form,
+.page-udgivelser  h1 {
   padding: 0 20px;
   text-align: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box; 
   box-sizing: border-box;
 }
-body.page-releases .pane-apachesolr-form h2 {
+body.page-udgivelser  .pane-apachesolr-form h2 {
   text-align: center!important;
 }
 .view-publication-listing-view .views-row {
@@ -304,8 +304,8 @@ body.page-releases .pane-apachesolr-form h2 {
   padding: 20px;
   margin-bottom: 0;
 }
-.page-releases .pane-apachesolr-form .block-title,
-.page-releases .pane-apachesolr-form .block-content,
+.page-udgivelser  .pane-apachesolr-form .block-title,
+.page-udgivelser  .pane-apachesolr-form .block-content,
 .page-releases-category-listing h2 ,
 .page-releases-category-listing .block-content {
    width: 100%;

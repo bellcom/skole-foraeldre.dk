@@ -252,8 +252,8 @@ body {
   padding: 20px;
   margin-bottom: 0;
 }
-.page-releases .pane-apachesolr-form .block-title,
-.page-releases .pane-apachesolr-form .block-content,
+.page-udgivelser .pane-apachesolr-form .block-title,
+.page-udgivelser .pane-apachesolr-form .block-content,
 .page-releases-category-listing h2 ,
 .page-releases-category-listing .block-content {
   width: 100%;
