@@ -290,7 +290,7 @@ function sof_pdf_generator_set_header($node, $pdf) {
   // As a bonus that also lets us use fancier formatting and custom fonts.
 
   $current_domain = domain_get_domain();
-  $current_domain = parse_url($current_domain['path'], PHP_URL_HOST);
+  $current_domain['path'] = parse_url($current_domain['path'], PHP_URL_HOST);
 
   // TODO we can even try to bold the node title as in the sample PDF but that'll require @font-face definitions for bold, without them wkhtmltopdf does a weird 'faux-bold' by doubling the text.
   $header_left = check_plain(drupal_strtoupper($node->title)) . ' / ' . check_plain(drupal_strtoupper(format_date($node->changed, 'custom', 'j. F Y')));
