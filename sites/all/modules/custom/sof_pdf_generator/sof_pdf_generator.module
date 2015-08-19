@@ -286,10 +286,12 @@ function sof_pdf_generator_preprocess_field(&$vars) {
  */
 function sof_pdf_generator_set_header($node, $pdf) {
   // The header-left/header-right options have trouble with Unicode characters
-  // So we will use header-html instead. 
+  // So we will use header-html instead.
   // As a bonus that also lets us use fancier formatting and custom fonts.
-  
+
   $current_domain = domain_get_domain();
+  $current_domain = parse_url($current_domain['path'], PHP_URL_HOST);
+
   // TODO we can even try to bold the node title as in the sample PDF but that'll require @font-face definitions for bold, without them wkhtmltopdf does a weird 'faux-bold' by doubling the text.
   $header_left = check_plain(drupal_strtoupper($node->title)) . ' / ' . check_plain(drupal_strtoupper(format_date($node->changed, 'custom', 'j. F Y')));
   $header_right = check_plain(drupal_strtoupper($current_domain['path']));
@@ -299,16 +301,16 @@ function sof_pdf_generator_set_header($node, $pdf) {
   $header_html .= "<html style='height:auto;margin:0;padding:0'><body style='width:500px;height:auto;margin:0 auto;padding:0;font:6pt conduit_itcregular,sans-serif'>\n";
   $header_html .= "<div style='float:left;white-space:nowrap;'>" . $header_left . "</div><div style='float:right;white-space:nowrap'>" . $header_right . "</div>";
   $header_html .= "</body></html>";
-  
+
   $pdf->setOptions(array(
     'header-html' => $header_html,
     // adding a header-html changes the implicit margin-top from 10mm to 0, we bring it back.
-    // we add additional top margin by applying padding-top to the page divs, 
+    // we add additional top margin by applying padding-top to the page divs,
     // because if we added it here it would affect the cover page too.
-    'margin-top' => '10mm', 
-    // the meaning of header-spacing also changes slightly, it is the distance 
+    'margin-top' => '10mm',
+    // the meaning of header-spacing also changes slightly, it is the distance
     // from the top of the content to the top of the header now, instead of to the bottom.
-    'header-spacing' => 0, 
+    'header-spacing' => 0,
   ));
 }
 
