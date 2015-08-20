@@ -90,7 +90,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -174,7 +174,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -258,7 +258,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -335,7 +335,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -419,7 +419,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -505,7 +505,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -589,7 +589,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -801,7 +801,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -849,7 +849,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -894,6 +894,50 @@ function sof_commerce_settings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_floor_side'
+  $field_instances['commerce_customer_profile-billing-field_sof_customer_floor_side'] = array(
+    'bundle' => 'billing',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_floor_side',
+    'label' => 'Floor/Side',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 10,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -981,7 +1025,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1062,7 +1106,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1108,7 +1152,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1152,7 +1196,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1284,7 +1328,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -1332,7 +1376,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 30,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1377,6 +1421,50 @@ function sof_commerce_settings_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_floor_side'
+  $field_instances['commerce_customer_profile-shipping-field_sof_customer_floor_side'] = array(
+    'bundle' => 'shipping',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(
+          'field_multiple_limit' => -1,
+          'field_multiple_limit_offset' => 0,
+        ),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_customer_profile',
+    'field_name' => 'field_sof_customer_floor_side',
+    'label' => 'Floor/Side',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 10,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
     ),
   );
 
@@ -1464,7 +1552,7 @@ function sof_commerce_settings_field_default_field_instances() {
         'size' => 5,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1505,7 +1593,7 @@ function sof_commerce_settings_field_default_field_instances() {
       'settings' => array(
         'maxlength_js' => 0,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 5,
+        'size' => 10,
       ),
       'type' => 'text_textfield',
       'weight' => 4,
@@ -2113,6 +2201,7 @@ function sof_commerce_settings_field_default_field_instances() {
   t('EAN Number');
   t('Efternavn');
   t('Firma');
+  t('Floor/Side');
   t('Fornavn');
   t('Gadenummer');
   t('Item Price');

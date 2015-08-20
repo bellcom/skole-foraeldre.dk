@@ -511,7 +511,7 @@ function sof_commerce_settings_field_default_field_bases() {
           'parent' => 0,
         ),
       ),
-      'options_list_callback' => NULL,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
@@ -641,6 +641,27 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_sof_customer_floor_side'
+  $field_bases['field_sof_customer_floor_side'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sof_customer_floor_side',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 10,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_sof_customer_last_name'
   $field_bases['field_sof_customer_last_name'] = array(
     'active' => 1,
@@ -698,7 +719,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
-      'max_length' => 4,
+      'max_length' => 10,
     ),
     'translatable' => 0,
     'type' => 'text',
