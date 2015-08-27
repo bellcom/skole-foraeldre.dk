@@ -893,3 +893,42 @@ function propeople_update_7011() {
   variable_set('admin_theme', 'seven_subtheme');
 
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Fixing the problem of changes to a field that contains data.
+ */
+function propeople_update_7012() {
+  $items = array();
+  _field_maxlength_fix('field_sof_customer_street_num');
+  return $items;
+}
+
+function _field_maxlength_fix($field_name, $maxlength = 10) {
+  _alter_field_table($field_name, $maxlength);
+  $data = _get_field_data($field_name);
+  $data = _fix_field_data($data, $maxlength);
+  _update_field_config($data, $field_name);
+}
+
+function _alter_field_table($field_name, $maxlength) {
+  db_query("ALTER TABLE field_data_".$field_name." CHANGE ".$field_name."_value ".$field_name."_value VARCHAR( ".$maxlength." ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL");
+  db_query("ALTER TABLE field_revision_".$field_name." CHANGE ".$field_name."_value ".$field_name."_value VARCHAR( ".$maxlength." ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL");
+}
+
+function _get_field_data($field_name) {
+  $qry = "SELECT data FROM field_config WHERE field_name = :field_name";
+  $result = db_query($qry, array(':field_name' => $field_name))->fetchObject();
+  return unserialize($result->data);
+}
+
+function _fix_field_data($data, $maxlength) {
+  $data['settings']['max_length'] = (string)$maxlength;
+  return serialize($data);
+}
+
+function _update_field_config($data, $field_name) {
+  $qry = "UPDATE field_config SET data = :data WHERE field_name = :field_name";
+  db_query($qry, array(':data' => $data, ':field_name' => $field_name));
+}
