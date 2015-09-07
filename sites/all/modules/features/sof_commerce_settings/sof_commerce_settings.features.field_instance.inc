@@ -45,7 +45,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -129,7 +129,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -213,7 +213,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -297,7 +297,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'email_default',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -374,7 +374,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -458,7 +458,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -544,7 +544,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'diff_standard' => array(
         'label' => 'inline',
@@ -776,7 +776,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -824,7 +824,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -905,14 +905,14 @@ function sof_commerce_settings_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'text',
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
@@ -1000,7 +1000,7 @@ function sof_commerce_settings_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'commerce_customer_profile',
