@@ -74,7 +74,17 @@
     </head>
     <body>
       <h1>Indholdsfortegnelse</h1>
-      <ul><xsl:apply-templates select="outline:item/outline:item"/></ul>
+      <!--
+           Because we have a H1 in the TOC, we will have an item for it. Yes, wkhtmltopdf is recursive like that.
+           (And guess what would happen if we had H1 in the item template too...)
+           We exclude it with a change to the xpath below.
+           But if a future version of wkhtmltopdf stops this madness we may have a broken TOC.
+           To protect from that, we also add a check for the item title.
+           Now if a future version changes the default title, or if it turns out to be locale dependent,
+           or if someone uses toc-header-text option, we may get problems again.
+           But we can't code against every "what-if" anyway...
+      -->
+      <ul><xsl:apply-templates select="outline:item[not(@page=0 and @title='Table of Contents')]/outline:item"/></ul>
     </body>
   </html>
 </xsl:template>
