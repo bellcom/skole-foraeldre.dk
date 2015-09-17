@@ -292,3 +292,13 @@ form {
   margin: 0;
   padding: 0;
 }
+
+/* Print Article Styling */
+.header-navigation-container,
+.region-top-header-navigation,
+.top-sharing-printing-links,
+.pane-bundle-banner-pane,
+.page-title
+ {
+  display: none;
+}
