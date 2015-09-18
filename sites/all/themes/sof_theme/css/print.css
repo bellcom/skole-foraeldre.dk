@@ -178,7 +178,7 @@ blockquote {
   padding: 10px;
   background: white;
   font-family: 'Georgia';
-  font-size: 20pt;
+  font-size: 18pt;
   font-style: normal;
   font-weight: normal;
   line-height: 100%;
@@ -190,7 +190,7 @@ blockquote p {
 blockquote:before {
   content: '\e802';
   font-family: 'fontello';
-  font-size: 35px;
+  font-size: 30px;
   display: block;
   height: 100%;
   float: left;
@@ -326,7 +326,7 @@ form {
   display: none;
 }
 #logo {
-  width: 15%;
+  width: 25%;
 }
 #logo img {
   width: 100%;
