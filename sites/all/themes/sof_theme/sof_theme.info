@@ -16,6 +16,8 @@
   stylesheets[screen][] = css/global.base.css
   stylesheets[screen][] = css/global.styles.css
   stylesheets[all][]    = css/colors.css
+  stylesheets[all][]    = css/global.font.css
+
 
   ; Print - uncomment to load basic print styles.
   stylesheets[print][] = css/print.css
