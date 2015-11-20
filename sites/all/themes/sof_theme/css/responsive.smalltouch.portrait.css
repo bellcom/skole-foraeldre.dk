@@ -393,7 +393,8 @@ ul.pager li {
   margin: 40px 5px 20px!important;
   padding: 2px 5px!important;
 }
-.node-section .pane-section-default-content-section-default-listing{
+.node-section .pane-section-default-content-section-default-listing,
+.node-section .pane-section-default-content-section-listing-manually-set{
   padding: 0 15px;
 }
 /* =============================================================================
