@@ -373,6 +373,10 @@ div.messages.commerce-add-to-cart-confirmation .message-inner .button-wrapper {
 /* =============================================================================
  *   Sections
  * ========================================================================== */
+body.page-home .section-header {
+	margin-top: 0px;
+}
+
 .section-header .views-row {
   width: 100%;
   padding: 0;
@@ -394,7 +398,9 @@ ul.pager li {
   padding: 2px 5px!important;
 }
 .node-section .pane-section-default-content-section-default-listing,
-.node-section .pane-section-default-content-section-listing-manually-set{
+body.page-home .pane-section-default-content-section-default-listing,
+.node-section .pane-section-default-content-section-listing-manually-set,
+body.page-home .pane-section-default-content-section-listing-manually-set {
   padding: 0 15px;
 }
 /* =============================================================================

@@ -3392,7 +3392,11 @@ body.node-type-section .pane-page-title,
 body.node-type-section .pane-node-field-teaser,
 body.node-type-section .section-header,
 body.node-type-section .pane-section-default-content-section-default-listing .block-content,
-.pane-section-default-content-section-listing-manually-set {
+.pane-section-default-content-section-listing-manually-set,
+body.page-home .pane-section-default-content-section-default-header,
+body.page-home .pane-section-default-content-section-default-listing,
+body.page-home .pane-section-default-content-section-header-manually-set,
+body.page-home .pane-section-default-content-section-listing-manually-set {
   float: none;
   max-width: 1170px;
   width: 100%;
@@ -3404,6 +3408,11 @@ body.node-type-section .pane-section-default-content-section-default-listing .bl
 body.node-type-section .section-header {
   margin-bottom: 20px;
 }
+
+body.page-home .section-header {
+  margin-top: 20px;
+}
+
 body.node-type-section .section-header,
 #commerce-checkout-form-checkout #edit-buttons {
   margin-top: 10px;
@@ -5231,7 +5240,9 @@ body.page-search #block-system-main > ul li {
   }
   .node-section .panel-pane.pane-bundle-recommended-items-pane,
   .node-section .pane-section-default-content-section-default-listing,
-  .node-section .pane-section-default-content-section-listing-manually-set {
+  body.page-home .pane-section-default-content-section-default-listing,
+  .node-section .pane-section-default-content-section-listing-manually-set,
+  body.page-home .pane-section-default-content-section-listing-manually-set {
     padding: 0 30px;
   }
   .node-section .pane-page-title,
@@ -5245,7 +5256,9 @@ body.page-search #block-system-main > ul li {
     padding-left: 5px;
     padding-right: 5px;
   }
-  .node-section .pane-section-default-content-section-default-header {
+  .node-section .pane-section-default-content-section-default-header,
+  body.page-home .pane-section-default-content-section-default-header,
+  body.page-home .pane-section-default-content-section-header-manually-set {
     padding: 0 20px;
   }
   .slide-inner-content .field-name-field-teaser .field-item,
