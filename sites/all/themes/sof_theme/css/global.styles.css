@@ -5257,6 +5257,7 @@ body.page-search #block-system-main > ul li {
     padding-right: 5px;
   }
   .node-section .pane-section-default-content-section-default-header,
+  .node-section .pane-section-default-content-section-header-manually-set,
   body.page-home .pane-section-default-content-section-default-header,
   body.page-home .pane-section-default-content-section-header-manually-set {
     padding: 0 20px;
