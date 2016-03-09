@@ -328,7 +328,7 @@ function sof_theme_preprocess_node(&$variables) {
   }
 
   // Add theme sugestions for news and articles.
-  if ($node->type == 'news' || $node->type == 'article' || $node->type == 'external_article') {
+  if ($node->type == 'news' || $node->type == 'article') {
     if ($view_mode == 'teaser') {
       $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 320, FALSE, TRUE);
     }
