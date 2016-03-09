@@ -558,7 +558,7 @@ body.node-type-slider #main-content {
   background: #f0f0f0;
 }
 .toolbox-search-wrapper:after {
-   content: "";
+   content: "î ";
    font-family: "fontello";
    font-size: 30px;
    text-align: center;
@@ -927,7 +927,8 @@ body.node-type-slider #main-content {
 .pane-bundle-also-see-pane .field-name-field-teaser {
   float:left;
 }
-.pane-bundle-also-see-pane  .field-name-field-teaser .field-item {
+.pane-bundle-also-see-pane  .field-name-field-teaser .field-item,
+.pane-bundle-also-see-pane  .field-name-body .field-item {
   width: 100%;
   border: none;
   padding: 14px 17px 0 0;
@@ -2642,7 +2643,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   position: absolute;
   left: 0;
   padding: 0px 0 0 2%;
-  content: "";
+  content: "î ";
   font-family: "fontello";
   font-size: 22px;
   text-align: center;
@@ -2966,7 +2967,7 @@ body.node-type-basic-page blockquote {
 }
 .article-news-main-container .field-name-body blockquote:before,
 body.node-type-basic-page .field-name-body blockquote:before {
-  content: '\e802'; /* '' */
+  content: '\e802'; /* 'î ‚' */
   font-family: 'fontello';
   font-size: 35px;
 }
@@ -4497,11 +4498,11 @@ a:focus {
   color: #000!important;
 }
 .region-header nav .menu  li.last.leaf a:after {
-  content: '\e801'; /* '' */
+  content: '\e801'; /* 'î ' */
   font-family: 'fontello';
   font-size: 22px;
   padding-left: 10px;
-} /* '' */
+} /* 'î ' */
 .region-header nav .menu  li.last a {
   border: none;
 }
@@ -4514,7 +4515,7 @@ a:focus {
   font-family: 'fontello';
   color: #00a2eb;
   font-size: 22px;
-} /* '' */
+} /* 'î ' */
 .region-header nav  ul.menu li a {
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
@@ -5075,7 +5076,7 @@ body.page-taxonomy-term #content h2 {
   position: absolute;
   left: 0;
   padding:5px 0 0 2%;
-  content: "";
+  content: "î ";
   font-family: "fontello";
   font-size: 30px;
   text-align: center;

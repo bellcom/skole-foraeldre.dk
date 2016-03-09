@@ -120,11 +120,11 @@ hide($content['links']);
     <?php endif; ?>
     <!-- Teaser -->
     <?php print render($content['field_teaser']); ?>
+    <!-- Reast of the content-->
+    <?php print render($content); ?>
     <!-- Read More -->
      <?php if ($links = render($content['links'])): ?>
     <nav class="read-more"<?php print $links_attributes; ?>><?php print $links; ?></nav>
     <?php endif; ?>
-    <!-- Reast of the content-->
-    <?php print render($content); ?>
 </article>
 
