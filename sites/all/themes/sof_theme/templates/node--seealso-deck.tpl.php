@@ -127,4 +127,3 @@ hide($content['links']);
     <nav class="read-more"<?php print $links_attributes; ?>><?php print $links; ?></nav>
     <?php endif; ?>
 </article>
-

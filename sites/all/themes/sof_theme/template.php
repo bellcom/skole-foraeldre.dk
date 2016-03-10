@@ -327,8 +327,17 @@ function sof_theme_preprocess_node(&$variables) {
     }
   }
 
+  if ($node->type == 'external_article') {
+    // See also external deck display.
+    if ($view_mode == 'teaser') {
+      $variables['submitted'] = format_date($variables['changed'], 'custom', 'd.m.y');
+      $variables['theme_hook_suggestion'] = 'node__ea_seealso_deck';
+      $variables['content']['body'][0]['#markup'] = truncate_utf8($variables['content']['body'][0]['#markup'], 320, FALSE, TRUE);
+    }
+  }
+
   // Add theme sugestions for news and articles.
-  if ($node->type == 'news' || $node->type == 'article' || $node->type == 'external_article') {
+  if ($node->type == 'news' || $node->type == 'article' ) {
     if ($view_mode == 'teaser') {
       $variables['content']['field_teaser'][0]['#markup'] = truncate_utf8($variables['content']['field_teaser'][0]['#markup'], 320, FALSE, TRUE);
     }
