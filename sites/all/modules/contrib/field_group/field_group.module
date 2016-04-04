@@ -1468,8 +1468,9 @@ function field_group_exists($group_name, $entity_type, $bundle, $mode) {
 function field_group_unpack($group) {
 
   // Extract unserialized data.
-  if (!empty($group->data)) {
+  if (isset($group->data)) {
     $data = $group->data;
+    unset($group->data);
     $group->label = $data['label'];
     $group->weight = $data['weight'];
     $group->children = $data['children'];
@@ -1477,11 +1478,6 @@ function field_group_unpack($group) {
     if (isset($data['format_settings'])) {
       $group->format_settings = $data['format_settings'];
     }
-  }
-  else {
-    $group->label = $group->weight = NULL;
-    $group->children = array();
-    $group->format_type = 'fieldset';
   }
 
   return $group;
