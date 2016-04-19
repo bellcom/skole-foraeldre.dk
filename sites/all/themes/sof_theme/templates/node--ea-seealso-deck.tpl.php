@@ -129,6 +129,3 @@ hide($content['links']);
     <a href="<?php print $node->field_external_link['und'][0]['url']; ?>" rel="bookmark"><?php print t('Read more'); ?></a>
   </nav>
 </article>
-
-<?php dpm($node) ?>
-
