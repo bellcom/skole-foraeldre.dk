@@ -11,10 +11,10 @@ function MYMODULE_entity_info_alter(&$entity_info) {
     'pane top level' => FALSE, // set to true to make this show as a top level icon
     'pane icon' => '/path/to/custom/icon/for/this/pane.png',
     'admin' => array(
-      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_pane_type',
-      'bundle argument' => 4,
+      'path' => 'admin/structure/fieldable-panels-panes/%fieldable_panels_pane_type',
+      'bundle argument' => 3,
       // Note that this has all _ replaced with - from the bundle name.
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/my-bundle-name',
+      'real path' => 'admin/structure/fieldable-panels-panes/my-bundle-name',
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );
@@ -28,3 +28,31 @@ doing so will break any content currently using that bundle. If you do this
 be sure to also fix any content already using it. It is recommended that you
 use the bundle management UI in admin/structure/fieldable-panels-panes so you
 don't have to maintain this yourself.
+
+
+Installation notes
+------------------
+By default a Fieldable Panels Pane type called "Panels pane" will be created. To
+skip this, set the variable "fieldable_panels_panes_skip_default_type" to TRUE
+prior to installing the module.
+
+
+A note about view modes
+-----------------------
+When viewing an FPP object on its own page, e.g.
+admin/structure/fieldable-panels-panes/view/1, the 'preview' view mode will be
+used if it has been customized, otherwise it defaults to 'default'.
+
+
+Related modules
+--------------------------------------------------------------------------------
+* Organic Groups Fieldable Panels Panes
+  https://www.drupal.org/project/og_fpp
+  This is a bridge module to ease simultaneous usage of Organic Groups,
+  Fieldable Panels Panes and Panelizer.
+* Entity cache
+  https://www.drupal.org/project/entitycache
+  FPP provides support for using the entity cache module.
+* Panels Cache Expiration
+  https://www.drupal.org/project/expire_panels
+  Trigger cache expiration of other objects when FPPs are changed.
