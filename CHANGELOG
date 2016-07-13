@@ -1,3 +1,319 @@
+7.x-1.56. 29-05-2015
+--------------------
+* f9670ea - SOF-375 Releases page - title,sort text,search field issues Committed by rkoteska at 2015-05-27 21:42:47 +1000
+
+7.x-1.55. 27-05-2015
+--------------------
+* 63f1dd2 - (origin/dev, dev) NOJIRA Update features from live. (40 seconds ago) <Lachezar Valchev>
+
+7.x-1.54. 27-05-2015
+--------------------
+* e2c22e8 - (origin/dev, dev) SOF-367 - update the url path of the Back to all releases button (23 hours ago) <Aleksandar Risteski>
+* 263e226 - SOF-81  Magazine Deck - FrontEnd - adding link around while deck (8 days ago) <rkoteska>
+* 5f29d43 - SOF-81  Magazine Deck - FrontEnd - adding link around while deck (8 days ago) <rkoteska>
+* 1cdd819 - SOF-371 - fixing the problem with node edit/add of some content types (8 days ago) <Aleksandar Risteski>
+* 3a421a1 - SOF-367 - change the releases page url to danish (12 days ago) <Aleksandar Risteski>
+* a9ce015 - SOF-368 Reduce title font size for mobile devices (12 days ago) <rkoteska>
+* f882c6a - SOF-368 Reduce title font size for mobile devices (12 days ago) <rkoteska>
+* da90452 - SOF-365 - fixing the issue with the magazine deck title as link (3 weeks ago) <Aleksandar Risteski>
+* 4af3126 - SOF-138 - translating the customer type select box (3 weeks ago) <Aleksandar Risteski>
+* 241f521 - SOF-362 Releases page - horizontal scroll to be removed (4 weeks ago) <rkoteska>
+
+7.x-1.53. 28-04-2015
+--------------------
+* 6ad6b1b - (HEAD, origin/dev, dev) NOJIRA Updated home page from live. Committed by Lachezar Valchev at 2015-04-28 17:16:18 +0300
+* 35c1f2c - SOF-361 - Disabling the taxonomy translate module in the installation profile to remove the taxonomy terms page access issue Committed by Aleksandar Risteski at 2015-04-27 10:05:24 +0200
+* 85ff049 - SOF-332  Social block - to be displayed on certain domains Committed by rkoteska at 2015-04-24 23:19:02 +1000
+* 6b6e2ff - SOF-360 CKEditor - issue with bullets and numbers Committed by rkoteska at 2015-04-23 17:26:30 +1000
+
+7.x-1.52. 22-04-2015
+--------------------
+* 7cd3f30 - (HEAD, origin/dev, dev) NOJIRA Update features from live. Committed by Lachezar Valchev at 2015-04-22 10:18:22 +0300
+
+7.x-1.51. 22-04-2015
+--------------------
+* 0471be4 - (HEAD, origin/dev, dev) SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 22:54:23 +1000
+* b7db8bd - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:59:28 +1000
+* d80440c - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:43:55 +1000
+* e8a00ea - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:13:37 +1000
+* b08a3de - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:07:29 +1000
+* 3e9b4fc - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 21:01:01 +1000
+* 33ad3cf - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:56:50 +1000
+* 8108dde - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:53:59 +1000
+* c848bb7 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:51:10 +1000
+* d4ec7a8 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:41:11 +1000
+* f6e558f - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:38:08 +1000
+* 76d28fc - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:24:03 +1000
+* b71ce9b - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:21:13 +1000
+* 630c178 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:18:20 +1000
+* 861fda0 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:13:05 +1000
+* 708e9ed - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 20:08:14 +1000
+* 8dee0f7 - SOF-359 Magazine deck background image not displayed properly on iPad Committed by rkoteska at 2015-04-17 19:56:23 +1000
+* 326dec7 - SOF-357  Styling adjustments of News deck Committed by rkoteska at 2015-04-17 19:31:38 +1000
+* 0e89a54 - SOF-357  Styling adjustments of News deck Committed by rkoteska at 2015-04-17 19:21:43 +1000
+* d8e00c8 - SOF-352 adjust top margin and page height Committed by Georgi R at 2015-04-16 18:48:52 +0300
+* 8810e2d - SOF-352 wait until all images are loaded before comnizing content, so image size can be checked correctly; remove one extra html element and some css styles Committed by Georgi R at 2015-04-16 18:36:50 +0300
+* d9a8ea4 - SOF-352 replace page height magic number with js variable for easier adjusting in the future Committed by Georgi R at 2015-04-16 18:24:55 +0300
+* 8209d83 - SOF-352 replace the header parameters with header-html, for better unicode support and custom font support as a bonus Committed by Georgi R at 2015-04-16 18:03:41 +0300
+
+7.x-1.50. 15-04-2015
+--------------------
+* 54b232e - (HEAD, origin/dev, dev) NOJIRA Added the Security review. Committed by Lachezar Valchev at 2015-04-15 18:52:40 +0300
+
+7.x-1.49. 15-04-2015
+--------------------
+* c256d08 - (HEAD, origin/dev, dev) NOJIRA Update from prelive. Committed by Lachezar Valchev at 2015-04-15 18:28:11 +0300
+
+7.x-1.48. 15-04-2015
+--------------------
+* 1c6402f - (HEAD, origin/dev, dev) NOJIRA Added the domain_analytics module. Committed by Lachezar Valchev at 2015-04-15 18:09:06 +0300
+
+7.x-1.47. 15-04-2015
+--------------------
+* 8e5c511 - (HEAD, origin/dev, dev) NOJIRA Update from prelive. Committed by Lachezar Valchev at 2015-04-15 17:36:39 +0300
+
+7.x-1.46. 15-04-2015
+--------------------
+* 1b5523c - SOF-352 - Show domain instead of website name on the header right region on the generated pdf Committed by Goce at 2015-04-15 14:04:06 +0200
+* d8bbf2b - NOJIRA Renamed the robots.txt file so that the RobotsTXT module one to work as designed. Committed by Lachezar Valchev at 2015-04-15 13:25:11 +0300
+* 3f0d768 - SOF-340 - Translations for missing strings Committed by Aleksandar Risteski at 2015-04-15 09:45:53 +0200
+* 365aa63 - SOF-353 - Updated ordering chriteria by 'Created date' DESC Committed by Goce at 2015-04-15 09:14:20 +0200
+
+7.x-1.45. 15-04-2015
+--------------------
+* 1a58c2f - (HEAD, origin/dev, dev) SOF-355 Front page - issue with content not using the full width Committed by rkoteska at 2015-04-15 16:17:04 +1000
+
+7.x-1.44. 14-04-2015
+--------------------
+* b83619b - SOF-354 Newsdeck - issue with dated below 768 px width Committed by rkoteska at 2015-04-14 22:55:59 +1000
+* 4cd35de - SOF-353 - Sorting criteria changed from updated DESC to Published on DESC in Section default listing views Committed by Goce at 2015-04-14 13:10:52 +0200
+* 9268a26 - SOF-352 - TOC title changed from 'Inhold' to 'Side' Committed by Goce at 2015-04-14 12:46:02 +0200
+* 9a10a0f - SOF-334  E-shop - add terms and conditions checkbox on the last step Committed by rkoteska at 2015-04-14 19:09:24 +1000
+* 88571bd - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 19:06:19 +1000
+* 4456832 - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:49:56 +1000
+* 48d65ad - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:48:11 +1000
+* 411e77e - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:42:49 +1000
+* 2185244 - SOF-332 Social block - to be displayed on certain domains - removing title when there is no blocks in social media region Committed by rkoteska at 2015-04-14 18:03:17 +1000
+
+7.x-1.43. 09-04-2015
+--------------------
+* 97fd2f1 - (HEAD, origin/dev, dev) NOJIRA Updated the mails. Committed by Lachezar Valchev at 2015-04-09 17:39:18 +0300
+
+7.x-1.42. 09-04-2015
+--------------------
+* 1696add - SOF-332 - Extend domain_block alter to affect the default newsletter subscribe block Committed by Goce at 2015-04-09 16:05:46 +0200
+* 358834f - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 23:53:27 +1000
+* 59b7e1b - SOF-348 - exporting default allowed file extensions Committed by Aleksandar Risteski at 2015-04-09 15:50:34 +0200
+* c50ffd2 - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 23:27:57 +1000
+* 34ea3c1 - SOF-340 - applying patch to the contrib module mailchimp to make it translatable Committed by Aleksandar Risteski at 2015-04-09 15:15:32 +0200
+* 53075af - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 22:33:34 +1000
+* 447c56e - SOF-351 - Username changed to mailto link Committed by Goce at 2015-04-09 14:24:36 +0200
+* 58585ee - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 13:32:27 +0200
+* 45f45ba - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 13:20:35 +0200
+* 8bb8f7d - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 21:17:01 +1000
+* ebaf703 - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 21:08:42 +1000
+* 91340ed - SOF-334  E-shop - add terms and conditions checkbox on the last step Committed by rkoteska at 2015-04-09 20:47:26 +1000
+* a4dab13 - SOF-334 - Terms and conditions required asterix moved to the back of the description Committed by Aleksandar Risteski at 2015-04-09 12:42:45 +0200
+* 93c2010 - SOF-346 - Update missing 'Distinct' Query Setting on view pane Committed by Goce at 2015-04-09 12:27:52 +0200
+* 75dce9c - SOF-348 Banner icons on Article/News nodes- styling circles Committed by rkoteska at 2015-04-09 19:08:24 +1000
+* 6a25620 - SOF-335 - Making the order of the publications to be manageable on the releases page Committed by Aleksandar Risteski at 2015-04-09 11:02:01 +0200
+* 7a5c25d - SOF-338 Releases page - teaser field to be added Committed by rkoteska at 2015-04-09 18:28:28 +1000
+* b3b74bf - SOF-332 - Page alter for domain visibility rule Committed by Goce at 2015-04-09 10:25:57 +0200
+* a5b0db7 - SOF-348 - Adding svg file format as available for the banner icon field Committed by Aleksandar Risteski at 2015-04-09 09:36:02 +0200
+* a9f59d2 - SOF-335 - New publication weight field for sorting in releases page Committed by Goce at 2015-04-08 18:20:03 +0200
+* bbbb762 - SOF-338 - Custom releases block, releases page feature update Committed by Goce at 2015-04-08 18:06:31 +0200
+* c438e87 - SOF-338 - Block removed from instalation profile Committed by Goce at 2015-04-08 17:13:08 +0200
+* 021c286 - SOF-338 - Releases block programatically added Committed by Goce at 2015-04-08 17:04:14 +0200
+* 169c86c - SOF-233  PDF styling adjustments - soling issues with color Committed by rkoteska at 2015-04-09 00:39:30 +1000
+* a1cfde3 - SOF-233  PDF styling adjustments - soling issues with color Committed by rkoteska at 2015-04-09 00:29:37 +1000
+* cc4d2aa - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 23:03:38 +1000
+* b7beb8f - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 22:59:44 +1000
+* 93dfc83 - SOF-350 Magazine deck - change default link color to black Committed by rkoteska at 2015-04-08 22:28:03 +1000
+* 4c9f651 - SOF-138 - Block feature revert issue Committed by Goce at 2015-04-08 14:17:56 +0200
+* df3d576 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:17:46 +1000
+* b3d15c4 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:10:56 +1000
+* 0f922d7 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:05:55 +1000
+* 76e7f43 - SOF-343 workaround wkhtmltopdf bug when css/font is requested multiple times Committed by Georgi R at 2015-04-08 15:03:46 +0300
+* 931476c - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 22:00:10 +1000
+* 8bda18d - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 21:46:41 +1000
+* ba6ecbc - SOF-344 - Fix for the previous commit reason missing links in the intro deck Committed by Aleksandar Risteski at 2015-04-08 13:45:23 +0200
+* a1704f0 - SOF-334  E-shop - add terms and conditions link on the last step Committed by rkoteska at 2015-04-08 21:43:30 +1000
+* ccc91b1 - SOF-347 - Changing the date format of the article and news Committed by Aleksandar Risteski at 2015-04-08 12:02:16 +0200
+* d093b4c - SOF-334 - Adding terms and conditions to the checkout Committed by Aleksandar Risteski at 2015-04-08 09:21:24 +0200
+* 607fd89 - SOF-334 - fixing the errors thrown by the field group module Committed by Aleksandar Risteski at 2015-04-07 16:30:24 +0200
+* 20fff40 - SOF-334 - Adding terms and conditions checkbox on the checkout page Committed by Aleksandar Risteski at 2015-04-07 13:23:47 +0200
+* 663b36a - SOF-340 - Including the translations inside the installation profile Committed by Aleksandar Risteski at 2015-04-07 08:25:24 +0200
+* 1096392 - SOF-347 - Changing the date format on the Articles and News content types Committed by Aleksandar Risteski at 2015-04-06 16:15:14 +0200
+* 776246f - SOF-344 - Making the links of the introdeck to open in the same tab Committed by Aleksandar Risteski at 2015-04-06 14:20:59 +0200
+* d8743ec - SOF-345 - Changing the favicon Committed by Aleksandar Risteski at 2015-04-06 13:36:55 +0200
+* b9ad3c9 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:22:31 +1000
+* b43c1fc - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:20:21 +1000
+* a2acba3 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:13:50 +1000
+* 21128e3 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 17:09:09 +1000
+* 9816897 - SOF-339 E-shop - coupons not working Committed by rkoteska at 2015-04-01 16:41:19 +1000
+* 991f299 - SOF-338 - Adding teaser block to the releases page Committed by Aleksandar Risteski at 2015-03-31 14:26:10 +0200
+* 242ebbb - SOF-338 - Adding teaser block to the releases page Committed by Aleksandar Risteski at 2015-03-31 11:20:35 +0200
+* f41dca8 - SOF-331  Main menu issues Committed by rkoteska at 2015-03-26 20:32:13 +1000
+* 026324f - SOF-331 Main menu issues Committed by rkoteska at 2015-03-25 21:34:38 +1000
+* a1d5ee5 - SOF-339 - Fixing E-Shop coupons Committed by Aleksandar Risteski at 2015-03-25 11:46:49 +0100
+
+7.x-1.41. 25-03-2015
+--------------------
+* f1bff7f - (HEAD, origin/dev, dev) SOF-341 Intro deck - description to not be in italic Committed by rkoteska at 2015-03-25 17:40:13 +1000
+* 6cd1d1f - SOF-342 Links in the footer Committed by rkoteska at 2015-03-24 20:20:56 +1000
+* 02658c3 - SOF-69  Also see deck - FrontEnd - adding wrapping around every third element Committed by rkoteska at 2015-03-24 18:40:29 +1000
+* 6fbfa4a - SOF-22  Theming setup - fixing mirror style issues Committed by rkoteska at 2015-03-23 23:27:01 +1000
+* ea8c672 - SOF-337 Slider on articles & news - arrows and links to be fixed Committed by rkoteska at 2015-03-20 23:47:04 +1000
+* 29098c6 - SOF-138 - Remove watchdog for sof_footer_social_media_blocks Committed by Goce at 2015-03-20 14:47:03 +0100
+* 4e42bd3 - SOF-138 - Check visibillity settings on social media block after save Committed by Goce at 2015-03-20 14:38:55 +0100
+* 7c4473b - SOF-331  Main menu issues Committed by rkoteska at 2015-03-20 22:32:39 +1000
+* b23707d - SOF-138 - Panels module patch Committed by Goce at 2015-03-19 13:50:54 +0100
+* 2e126a0 - SOF-138 - Banner deck css fix on node page Committed by Goce at 2015-03-18 14:43:51 +0100
+* 9dc8e0c - SOF-138 - Images on Section default content view link wrapper Committed by Goce at 2015-03-18 14:32:29 +0100
+* d4b384d - SOF-138 - Related publication deck image link to node Committed by Goce at 2015-03-18 14:23:53 +0100
+* 5e6925a - SOF-138 - Publication teaser on releases page without tags Committed by Goce at 2015-03-18 14:13:29 +0100
+* 4ed03b1 - SOF-138 - Updated section views to list 30 nodes Committed by Goce at 2015-03-18 12:27:04 +0100
+* ac72289 - SOF-138 - Update banner deck link to open in the same tab Committed by Goce at 2015-03-18 11:33:37 +0100
+* 0aa28c5 - SOF18 - Block feature updated for new admin theme regions Committed by Goce at 2015-03-18 11:33:11 +0100
+
+7.x-1.40. 18-03-2015
+--------------------
+* 176cc7d - (HEAD, origin/dev, dev) SOF-138 - Updated missing cardinallity form publication category and introdeck links Committed by Goce at 2015-03-17 15:36:59 +0100
+
+7.x-1.39. 17-03-2015
+--------------------
+* f16b1d2 - (HEAD, origin/dev, dev) SOF-138 - Features recreated to match dev Committed by Goce at 2015-03-17 14:20:22 +0100
+* db4660e - SOF-138 - Missing views re-exported Committed by Goce at 2015-03-17 12:48:49 +0100
+* ac205be - SOF-138 - Taxonomy and Field bases feature rebuild Committed by Goce at 2015-03-17 12:46:11 +0100
+* 9476c07 - SOF-138 - Cnflict resolved Committed by Goce at 2015-03-17 12:37:20 +0100
+* f5d8139 - SOF-138 - Features conflict solve for taxonomy and field bases Committed by Goce at 2015-03-17 12:21:45 +0100
+* 880b96c - SOF-25  Multisite - FrontEnd-slider arrows not showing on subdomains fixs Committed by rkoteska at 2015-03-17 00:44:52 +1000
+* c8a0ee5 - SOF-25  Multisite - FrontEnd-slider arrows not showing on subdomains fixs Committed by rkoteska at 2015-03-16 23:19:51 +1000
+
+7.x-1.38. 16-03-2015
+--------------------
+* 3bc820d - (HEAD, origin/dev, dev) NOJIRA Updated a few module + features from live. Committed by Lachezar Valchev at 2015-03-16 10:37:51 +0200
+
+7.x-1.37. 16-03-2015
+--------------------
+* f593180 - SOF-306  Publishing date to be displayed on News node view - adding style to publication also Committed by rkoteska at 2015-03-13 21:33:14 +1000
+* f81a9bf - SOF-138 - Update sorting criteria in 'News deck views' Committed by Goce at 2015-03-13 12:18:33 +0100
+* 6fa5b25 - SOF-206 - Multiple select taxonomy term in 'Section default listing' views + date fix on news deck views Committed by Goce at 2015-03-13 12:07:30 +0100
+* d1c3a30 - SOF-138 - Teaser field on publication with CKEditor Committed by Goce at 2015-03-13 09:33:37 +0100
+* 7f38889 - SOF-306  Publishing date to be displayed on News node view , and adding some changes to magazine deck tpl file Committed by rkoteska at 2015-03-13 18:10:38 +1000
+* 5423312 - SOF-317  Intro deck - change in logic Committed by rkoteska at 2015-03-13 17:37:24 +1000
+* 1487d31 - SOF-309  Make category field wider & higher on node add page - adding images folder to subtheme Committed by rkoteska at 2015-03-13 17:11:49 +1000
+* fffc9a5 - SOF-138 - Update admin theme update hook Committed by Goce at 2015-03-12 15:54:11 +0100
+* 326a046 - SOF-138 - PDF extra page css and js dimensions tweak Committed by Goce at 2015-03-12 15:27:52 +0100
+* 7acb9e4 - SOF-309  Make category field wider & higher on node add page Committed by rkoteska at 2015-03-12 23:44:02 +1000
+* d30d4b7 - SOF-304 - Publication download link not mandatory update Committed by Goce at 2015-03-12 14:00:51 +0100
+* f4e9343 - SOF-304 - Publication download as pdf not mandatory Committed by Goce at 2015-03-12 13:55:36 +0100
+* 4f03e09 - SOF-138 - Update infodeck fields cardinality and requirement Committed by Goce at 2015-03-12 12:58:42 +0100
+* 3443638 - SOF-316 Newsdeck - change in logic - css changes Committed by rkoteska at 2015-03-12 19:53:51 +1000
+* 7f72177 - SOF-316 Newsdeck - change in logic - css changes Committed by rkoteska at 2015-03-12 19:41:36 +1000
+* fc4e291 - SOF-138 - Update author information date and title on news and article Committed by Goce at 2015-03-12 10:03:45 +0100
+* 2163073 - SOF-138 - Update log in news deck Committed by Goce at 2015-03-11 15:32:47 +0100
+* d39d86d - SOF-320  Slider -to be possible to have an URL on each slide  - making url as link around all slider content Committed by rkoteska at 2015-03-11 00:58:52 +1000
+* 87b3d45 - SOF-320  Slider -to be possible to have an URL on each slide  - making url as link around all slider content Committed by rkoteska at 2015-03-11 00:43:23 +1000
+* 5de8338 - SOF-322  Fonts update - removing fonts that we are not using in the site, adding original fonts Committed by rkoteska at 2015-03-11 00:40:58 +1000
+* dcdf5f2 - SOF 138 - Update publication cardinality to unlimited Committed by Goce at 2015-03-10 15:17:48 +0100
+* b92a00b - SOF-138 - Fielded taxonomy vocabulars genral_category, publication_category to use front end name for listing Committed by Goce at 2015-03-10 14:02:48 +0100
+* 2075d60 - SOF-138 - 'Show publication link' checkbox not selected by default Committed by Goce at 2015-03-10 13:44:48 +0100
+* c4077bb - SOF-319  Decks should not have default title - changes to toolbox search, what we write about decks Committed by rkoteska at 2015-03-10 22:22:54 +1000
+* c10ecbb - SOF-319  Decks should not have default title - changes to toolbox search, what we write about decks Committed by rkoteska at 2015-03-10 21:48:31 +1000
+* b7ba4de - SOF-130 - Add one more url field in slider field collection Committed by Goce at 2015-03-10 10:23:55 +0100
+* 62687fd - SOF-138 - Deck titles no default values Committed by Goce at 2015-03-10 10:00:41 +0100
+* ce103a9 - SOF-138 - Additional taxonomy filters on node list page Committed by Goce at 2015-03-10 09:14:06 +0100
+* be918bc - SOF-315  Search toolbox deck not styled correctly when no terms are listed Committed by rkoteska at 2015-03-10 17:51:54 +1000
+
+7.x-1.36. 27-02-2015
+--------------------
+* f585173 - (HEAD, origin/dev, dev) SOF-208 Security update of the views module. Committed by Lachezar Valchev at 2015-02-27 19:06:07 +0200
+
+7.x-1.35. 27-02-2015
+--------------------
+* 9e866a6 - (HEAD, origin/dev, dev) SOF-208 Update features from live. Committed by Lachezar Valchev at 2015-02-27 17:39:10 +0200
+
+7.x-1.34. 27-02-2015
+--------------------
+* d1bb482 - (HEAD, origin/dev, dev) SOF-208 Security update of the Entity API module. Committed by Lachezar Valchev at 2015-02-27 15:37:47 +0200
+* 208fa3f - SOF-208 Update features from live. Committed by Lachezar Valchev at 2015-02-27 15:34:56 +0200
+* 5859db3 - SOF-314 - added new script to handle xml generation for blog items from Sitecore. Committed by ddobrev at 2015-02-27 11:52:32 +0200
+* 0d5d1ec - SOF-208 Update features from live. Committed by Lachezar Valchev at 2015-02-27 10:26:21 +0200
+
+7.x-1.33. 27-02-2015
+--------------------
+* e0ffff3 - (HEAD, origin/dev, dev) SOF-208 Added the robotstxt and domain_robotstxt modules. Committed by Lachezar Valchev at 2015-02-27 10:19:16 +0200
+* 705550d - SOF-103  Publications Listing page - FrontEnd - changes to publication responsive display Committed by rkoteska at 2015-02-26 20:10:53 +1000
+* 1b0153f - SOF-103  Publications Listing page - FrontEnd - changes to publication responsive display Committed by rkoteska at 2015-02-26 20:03:20 +1000
+
+7.x-1.32. 25-02-2015
+--------------------
+* 6d20bf7 - SOF-138 - Update linkit profile for download link + download permissions on files for anonimous users Committed by Goce at 2015-02-25 14:14:12 +0100
+
+7.x-1.31. 25-02-2015
+--------------------
+* a1f81a5 - (HEAD, origin/dev, dev) SOF-208 Updated features from live. Committed by Lachezar Valchev at 2015-02-25 14:13:10 +0200
+
+7.x-1.30. 25-02-2015
+--------------------
+* 7a1ec4b - (HEAD, origin/dev, dev) SOF-303 Updated features from live. Committed by Lachezar Valchev at 2015-02-25 11:31:46 +0200
+
+7.x-1.29. 25-02-2015
+--------------------
+* 839bf1c - (HEAD, origin/dev, dev) SOF-24 - domain_ctools module for domain specific page variants added Committed by Goce at 2015-02-20 09:57:23 +0100
+* f13c66a - SOF-24 - Domain block module added, block features reorganization Committed by Goce at 2015-02-18 12:29:13 +0100
+* 9b12e9d - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:28:26 +1000
+* 87c5649 - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:20:04 +1000
+* 69732b7 - SOF-22  Theming setup - making changes to css files Committed by rkoteska at 2015-02-18 20:16:12 +1000
+* 5958498 - SOF-301  Read also deck - mobile issues Committed by rkoteska at 2015-02-18 18:11:33 +1000
+* 3d6a658 - SOF-303  Link in body not styled correctly for Basic page content type Committed by rkoteska at 2015-02-17 23:56:14 +1000
+* 1606b00 - SOF-22  Theming setup - removing footer region Committed by rkoteska at 2015-02-17 23:51:45 +1000
+* a5e147e - SOF-22  Theming setup - adding new regions for footer blocks display Committed by rkoteska at 2015-02-17 21:43:22 +1000
+* dcf02b3 - SOF-22  Theming setup - adding new regions for footer blocks display Committed by rkoteska at 2015-02-17 21:41:46 +1000
+
+7.x-1.28. 17-02-2015
+--------------------
+* 1547a9c - (HEAD, origin/dev, dev) SOF-208 Fixed simplepie library. Committed by Lachezar Valchev at 2015-02-17 12:39:02 +0200
+
+7.x-1.27. 17-02-2015
+--------------------
+* ad5c3f8 - (HEAD, origin/dev, dev) SOF-208 Upload the SimplePie library Committed by Lachezar Valchev at 2015-02-17 12:32:17 +0200
+* 162cb29 - SOF-299 Updated features from live. Committed by Lachezar Valchev at 2015-02-17 12:23:28 +0200
+
+7.x-1.24. 06-02-2015
+--------------------
+* a1fd8a6 - (HEAD, origin/dev, dev) SOF-208 Added the context settings. Updated features with SOF Configurations group. Committed by Lachezar Valchev at 2015-02-06 19:21:13 +0200
+
+7.x-1.23. 06-02-2015
+--------------------
+* 6b508ef - (HEAD, origin/dev, dev) SOF-208 Added the Context module. Committed by Lachezar Valchev at 2015-02-06 19:11:25 +0200
+
+7.x-1.22. 06-02-2015
+--------------------
+* de9112d - (HEAD, origin/dev, dev) SOF-208 Improved initial setup. Committed by Lachezar Valchev at 2015-02-06 18:04:28 +0200
+
+7.x-1.21. 06-02-2015
+--------------------
+* 332ac2b - (HEAD, origin/dev, dev) SOF-208 Updated the Features module. Committed by Lachezar Valchev at 2015-02-06 17:36:35 +0200
+
+7.x-1.20. 06-02-2015
+--------------------
+* 66c9ada - (HEAD, origin/dev, dev) SOF-208 Updated the Panels module to latest stable. Committed by Lachezar Valchev at 2015-02-06 17:34:07 +0200
+
+7.x-1.19. 06-02-2015
+--------------------
+* f41df10 - (HEAD, origin/dev, dev) SOF-208 Updated ctools to latest stable Committed by Lachezar Valchev at 2015-02-06 17:27:30 +0200
+
+7.x-1.18. 06-02-2015
+--------------------
+* ca5d5a8 - (HEAD, origin/dev, dev) SOF-208 Security update of LinkIt module. Committed by Lachezar Valchev at 2015-02-06 17:21:32 +0200
+* 2d34702 - SOF-208 Security update of the Google Analytics. Committed by Lachezar Valchev at 2015-02-06 17:20:05 +0200
+
+7.x-1.17. 06-02-2015
+--------------------
+* e71e521 - (HEAD, origin/dev, dev) SOF-208 Added the Simple Color library. Committed by Lachezar Valchev at 2015-02-06 17:13:11 +0200
+
 7.x-1.16. 06-02-2015
 --------------------
 * fd65e59 - (HEAD, origin/dev, dev) SOF-208 Updated the Color Field module to latest stable. Committed by Lachezar Valchev at 2015-02-06 16:57:43 +0200
