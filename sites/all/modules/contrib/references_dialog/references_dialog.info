@@ -5,9 +5,9 @@ core = 7.x
 dependencies[] = field
 dependencies[] = views
 files[] = views/references_dialog_plugin_display.inc
-; Information added by drupal.org packaging script on 2013-10-01
-version = "7.x-1.0-alpha4+11-dev"
+; Information added by Drupal.org packaging script on 2016-07-12
+version = "7.x-1.0-beta2"
 core = "7.x"
 project = "references_dialog"
-datestamp = "1380625194"
+datestamp = "1468341540"
 
