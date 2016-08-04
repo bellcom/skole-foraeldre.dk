@@ -1,3 +1,10 @@
+7.x-1.69. 04-08-2016
+--------------------
+cb31198 (HEAD -> master) Merge branch 'dev'
+feca69c (origin/dev, dev) SOF-25 - security update, contrib, fix for FPP issue
+ea1f118 SOF-25 - secutiry updates, core to 7.50
+62f66fe SOF-25 - secutiry updates, contrib
+
 7.x-1.68. 13-07-2016
 --------------------
 * 3cf5010 - (HEAD -> master, origin/master, origin/dev, origin/HEAD, dev) Removed Coder module mainly because of https://www.drupal.org/node/2765575, but also as it should not be deployed to live ever. Committed by Lachezar Valchev at 2016-07-13 20:16:32 +0300
