@@ -1,5 +1,0 @@
-The following patches has been applied:
-______________________________________________________________
-  Thread: https://www.drupal.org/node/1520492
-  Patch: panels-ipe-refresh-display-1520492-7.patch
-______________________________________________________________

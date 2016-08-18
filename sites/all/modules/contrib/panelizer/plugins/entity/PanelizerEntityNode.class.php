@@ -10,14 +10,11 @@
  * Handles node specific functionality for Panelizer.
  */
 class PanelizerEntityNode extends PanelizerEntityDefault {
-  /**
-   * True if the entity supports revisions.
-   */
-  public $supports_revisions = TRUE;
   public $entity_admin_root = 'admin/structure/types/manage/%panelizer_node_type';
   public $entity_admin_bundle = 4;
   public $views_table = 'node';
   public $uses_page_manager = TRUE;
+  public $supports_revisions = TRUE;
 
   public function entity_access($op, $entity) {
     // This must be implemented by the extending clas.
@@ -48,37 +45,22 @@ class PanelizerEntityNode extends PanelizerEntityDefault {
     list($entity_id, $revision_id, $bundle) = entity_extract_ids($this->entity_type, $entity);
 
     $node_options = variable_get('node_options_' . $bundle, array('status', 'promote'));
+
+    // Whether or not the entity supports revisions.
     $retval[0] = TRUE;
+
+    // Whether or not the user can control if a revision is created.
     $retval[1] = user_access('administer nodes');
+
+    // Whether or not the revision is created by default.
     $retval[2] = in_array('revision', $node_options);
 
     return $retval;
   }
 
-  public function settings_form(&$form, &$form_state) {
-    parent::settings_form($form, $form_state);
-
-    $warn = FALSE;
-    foreach ($this->plugin['bundles'] as $info) {
-      if (!empty($info['status']) && !empty($info['view modes']['page_manager']['status'])) {
-        $warn = TRUE;
-        break;
-      }
-    }
-
-    if ($warn) {
-      $task = page_manager_get_task('node_view');
-      if (!empty($task['disabled'])) {
-        drupal_set_message('The node template page is currently not enabled in page manager. You must enable this for Panelizer to be able to panelize nodes using the "Full page override" view mode.', 'warning');
-      }
-
-      $handler = page_manager_load_task_handler($task, '', 'node_view_panelizer');
-      if (!empty($handler->disabled)) {
-        drupal_set_message('The panelizer variant on the node template page is currently not enabled in page manager. You must enable this for Panelizer to be able to panelize nodes using the "Full page override" view mode.', 'warning');
-      }
-    }
-  }
-
+  /**
+   * {@inheritdoc}
+   */
   function get_default_display($bundle, $view_mode) {
     $display = parent::get_default_display($bundle, $view_mode);
     // Add the node title to the display since we can't get that automatically.
@@ -92,6 +74,33 @@ class PanelizerEntityNode extends PanelizerEntityDefault {
 
     // @todo -- submitted by does not exist as a pane! That's v. sad.
     $display->add_pane($pane, 'center');
+
+    unset($pane);
+
+    // If the content type is enabled for use with Webform, add the custom
+    // submission pane.
+    if (module_exists('webform')) {
+      if ($view_mode == 'page_manager') {
+        if (variable_get('webform_node_' . $bundle)) {
+          $pane = panels_new_pane('entity_field_extra', 'node:webform', TRUE);
+          $pane->configuration['context'] = 'panelizer';
+          $pane->configuration['view_mode'] = 'full';
+          $display->add_pane($pane, 'center');
+          unset($pane);
+        }
+      }
+    }
+
+    // Add a custom pane for the book navigation block for the Page Manager
+    // display.
+    if (module_exists('book')) {
+      if ($view_mode == 'page_manager') {
+        $pane = panels_new_pane('node_book_nav', 'node_book_nav', TRUE);
+        $pane->configuration['context'] = 'panelizer';
+        $display->add_pane($pane, 'center');
+        unset($pane);
+      }
+    }
 
     return $display;
   }
@@ -188,8 +197,8 @@ class PanelizerEntityNode extends PanelizerEntityDefault {
     }
   }
 
-  function render_entity($entity, $view_mode, $langcode = NULL, $args = array(), $address = NULL) {
-    $info = parent::render_entity($entity, $view_mode, $langcode, $args, $address);
+  function render_entity($entity, $view_mode, $langcode = NULL, $args = array(), $address = NULL, $extra_contexts = array()) {
+    $info = parent::render_entity($entity, $view_mode, $langcode, $args, $address, $extra_contexts);
     if (!empty($entity->promote)) {
       $info['classes_array'][] = 'node-promoted';
     }
@@ -219,6 +228,7 @@ class PanelizerEntityNode extends PanelizerEntityDefault {
       'base' => array('node'),
       'path' => $path,
       'uses options' => TRUE,
+      'module' => 'panelizer',
       'type' => 'normal',
       'register theme' => FALSE,
       'name' => 'panelizer_node_view',
