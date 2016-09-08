@@ -1,3 +1,10 @@
+7.x-1.68. 13-07-2016
+--------------------
+* 3cf5010 - (HEAD -> master, origin/master, origin/dev, origin/HEAD, dev) Removed Coder module mainly because of https://www.drupal.org/node/2765575, but also as it should not be deployed to live ever. Committed by Lachezar Valchev at 2016-07-13 20:16:32 +0300
+* 8144388 - Revert "SOF-10 External article style in 'See also' deck" Committed by Svetlin Marinov at 2016-03-09 16:50:42 +0200
+* 9925815 - SOF-10 External article style in 'See also' deck Committed by Svetlin Marinov at 2016-03-09 15:48:21 +0200
+* 322bdff - (tag: 7.x-1.25) SOF-287 - change feeds media folder matching. Committed by martina at 2015-02-10 14:08:36 +0200
+
 7.x-1.56. 29-05-2015
 --------------------
 * f9670ea - SOF-375 Releases page - title,sort text,search field issues Committed by rkoteska at 2015-05-27 21:42:47 +1000
