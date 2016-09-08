@@ -1,3 +1,7 @@
+7.x-1.74. 08-09-2016
+--------------------
+* 4d7eff6 - (origin/feature/SOF-31, origin/dev, feature/SOF-31, dev) SOF-31 Patched Panelizer with https://www.drupal.org/files/issues/panelizer-n2785945-63.patch from https://www.drupal.org/node/2785945 (59 seconds ago) <Lachezar Valchev>
+
 7.x-1.73. 08-09-2016
 --------------------
 * 6ecd119 - (origin/feature/SOF-31, origin/dev, feature/SOF-31, dev) SOF-31 Upgrade Panelizer to latest stable version to fix issue with permissions. (60 seconds ago) <Lachezar Valchev>
