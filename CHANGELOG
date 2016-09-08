@@ -1,3 +1,8 @@
+7.x-1.72. 08-09-2016
+--------------------
+* da2d671 - (HEAD -> master, origin/master, origin/feature/SOF-31, origin/dev, origin/HEAD, feature/SOF-31, dev) SOF-31 Patched Panels with https://www.drupal.org/files/issues/panels-storage-alt-task-2787637-6.patch from https://www.drupal.org/node/2787637 to fix permissions issue. (2 minutes ago) <Lachezar Valchev>
+* 2502e36 - (tag: 7.x-1.68) NOJIRA Updated the CHANGELOG file. (8 weeks ago) <Lachezar Valchev>
+
 7.x-1.68. 13-07-2016
 --------------------
 * 3cf5010 - (HEAD -> master, origin/master, origin/dev, origin/HEAD, dev) Removed Coder module mainly because of https://www.drupal.org/node/2765575, but also as it should not be deployed to live ever. Committed by Lachezar Valchev at 2016-07-13 20:16:32 +0300
