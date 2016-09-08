@@ -1,0 +1,2 @@
+The following patches from the following thread: https://www.drupal.org/node/2785945 have been applied to this project:
+- https://www.drupal.org/files/issues/panelizer-n2785945-63.patch
