@@ -905,6 +905,21 @@ function propeople_update_7012() {
   return $items;
 }
 
+/**
+ * Implements hook_update_N().
+ *
+ * Disable module facebook_tracking_pixel. 
+ * Add variables facebook_pixel_id, facebook_pixel_exclude_admin_paths
+ */
+function propeople_update_7013() {
+  if (module_exists('facebook_tracking_pixel')) {
+    module_disable(array('facebook_tracking_pixel'));
+    drupal_uninstall_modules(array('facebook_tracking_pixel'));
+  }
+  variable_set('facebook_pixel_id', '211876592503010');
+  variable_set('facebook_pixel_exclude_admin_paths', 1);
+}
+
 function _field_maxlength_fix($field_name, $maxlength = 10) {
   _alter_field_table($field_name, $maxlength);
   $data = _get_field_data($field_name);

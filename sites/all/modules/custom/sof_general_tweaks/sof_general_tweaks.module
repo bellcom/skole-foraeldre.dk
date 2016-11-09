@@ -746,4 +746,9 @@ function sof_general_tweaks_page_alter(&$page) {
 
   }
 }
-
+/**
+ * Implements hook_facebook_pixel_data_ACTION_alter()
+*/
+function sof_general_tweaks_facebook_pixel_data_ViewContent_alter(&$data, $order_id) {
+  $data = array();
+}
