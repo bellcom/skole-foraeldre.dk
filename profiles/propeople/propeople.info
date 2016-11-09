@@ -191,6 +191,9 @@ dependencies[] = i18n_variable
 dependencies[] = i18nviews
 dependencies[] = i18n_taxonomy
 
+;Contrib facebook modules
+dependencies[] = facebook_pixel
+
 ;Custom
 dependencies[] = columnizer
 dependencies[] = sof_footer_social_media
