@@ -908,7 +908,8 @@ function propeople_update_7012() {
 /**
  * Implements hook_update_N().
  *
- * Fixing the problem of changes to a field that contains data.
+ * Disable module facebook_tracking_pixel. 
+ * Add variables facebook_pixel_id, facebook_pixel_exclude_admin_paths
  */
 function propeople_update_7013() {
   if (module_exists('facebook_tracking_pixel')) {
