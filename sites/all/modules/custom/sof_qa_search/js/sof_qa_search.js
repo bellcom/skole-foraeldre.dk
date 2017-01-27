@@ -32,7 +32,7 @@
                 }
             });
             function collapsAllFieldets() {
-                $('fieldset.views-row').each(function () {
+                $('.view-qa-taxonomy-view fieldset.views-row').each(function () {
                     if(!$(this).hasClass('collapsed'))
                         $(this).addClass('collapsed');
                 });
@@ -43,7 +43,7 @@
             if (link.includes("#")) {
                 var hash = link.substring(link.indexOf("#")+1);
 
-                $('.field-content').each(function(index) {
+                $('.view-qa-taxonomy-view .field-content').each(function(index) {
                    if ($(this).hasClass('qa-answer-'+hash)) {
                        var field = $(this);
                        field.parents('fieldset').removeClass('collapsed');
@@ -52,14 +52,6 @@
                        }, 1000);
                    }
                 });
-                //this worked with [title] as URL
-                // $('.block .view-qa-taxonomy-view .fieldset-legend').each(function(index) {
-                //     if ($(this).text() == hash) {
-                //         var span = $(this);
-                //         span.parents('fieldset').removeClass('collapsed');
-                //         //$('html, body').animate({ scrollTop: span.offset().top}, 1000);
-                //     }
-                // });
             }
         }
     }
