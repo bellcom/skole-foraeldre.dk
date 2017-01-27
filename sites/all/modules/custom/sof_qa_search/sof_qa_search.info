@@ -1,0 +1,12 @@
+name = SOF Q&A Search
+description = "Allows search in the Q&A Page"
+core = 7.x
+package = "SOF Custom"
+
+; Dependencies
+dependencies[] = ctools
+dependencies[] = panels
+dependencies[] = views
+dependencies[] = views_tree
+dependencies[] = views_field_view
+dependencies[] = views_fieldset

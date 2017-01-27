@@ -10,7 +10,7 @@
 function sof_article_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-article-body'
+  // Exported field_instance: 'node-article-body'.
   $field_instances['node-article-body'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_add_this'
+  // Exported field_instance: 'node-article-field_add_this'.
   $field_instances['node-article-field_add_this'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -173,7 +173,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_banner'
+  // Exported field_instance: 'node-article-field_banner'.
   $field_instances['node-article-field_banner'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -259,7 +259,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_category'
+  // Exported field_instance: 'node-article-field_category'.
   $field_instances['node-article-field_category'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -331,7 +331,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_image_slider'
+  // Exported field_instance: 'node-article-field_image_slider'.
   $field_instances['node-article-field_image_slider'] = array(
     'bundle' => 'article',
     'deleted' => 0,
@@ -469,7 +469,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_link'
+  // Exported field_instance: 'node-article-field_link'.
   $field_instances['node-article-field_link'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -569,7 +569,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_old_url_article'
+  // Exported field_instance: 'node-article-field_old_url_article'.
   $field_instances['node-article-field_old_url_article'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -645,7 +645,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_publication_control_link'
+  // Exported field_instance: 'node-article-field_publication_control_link'.
   $field_instances['node-article-field_publication_control_link'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -722,7 +722,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_related_article'
+  // Exported field_instance: 'node-article-field_related_article'.
   $field_instances['node-article-field_related_article'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -806,7 +806,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_related_content'
+  // Exported field_instance: 'node-article-field_related_content'.
   $field_instances['node-article-field_related_content'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -897,7 +897,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_related_terms'
+  // Exported field_instance: 'node-article-field_related_terms'.
   $field_instances['node-article-field_related_terms'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -982,7 +982,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_set_rt_manually'
+  // Exported field_instance: 'node-article-field_set_rt_manually'.
   $field_instances['node-article-field_set_rt_manually'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -1059,7 +1059,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_teaser'
+  // Exported field_instance: 'node-article-field_teaser'.
   $field_instances['node-article-field_teaser'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -1144,7 +1144,7 @@ function sof_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_video'
+  // Exported field_instance: 'node-article-field_video'.
   $field_instances['node-article-field_video'] = array(
     'bundle' => 'article',
     'deleted' => 0,
