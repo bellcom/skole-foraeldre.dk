@@ -6,10 +6,18 @@
 (function($) {
     Drupal.behaviors.sof_qa_search = {
         attach: function (context, settings) {
+            //ignore enter key
+            $('#live-search').keypress(function(e) {
+               if (e.which ==  13) {
+                   e.preventDefault();
+               }
+            });
+            //search function
             $('#live-search').on('input', function () {
 
                 var searchInput = $(this);
                 if(searchInput.val().length === 0){
+
                     collapsAllFieldets();
                 } else {
                     collapsAllFieldets();
