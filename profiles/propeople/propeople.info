@@ -122,6 +122,8 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_tree
 dependencies[] = views_ui
+dependencies[] = views_fieldset
+dependencies[] = views_field_view
 dependencies[] = webform
 dependencies[] = email
 dependencies[] = rules
@@ -138,6 +140,7 @@ dependencies[] = robotstxt
 dependencies[] = domain_robotstxt
 dependencies[] = domain_analytics
 dependencies[] = security_review
+
 
 ;Contrib Commerce modules
 dependencies[] = addressfield
@@ -201,6 +204,7 @@ dependencies[] = sof_general_tweaks
 dependencies[] = sof_pdf_generator
 dependencies[] = sof_releases_page_teaser
 dependencies[] = sof_toolbox_search
+dependencies[] = sof_qa_search
 
 ;Features
 dependencies[] = sof_apache_solr_configuration
@@ -244,3 +248,4 @@ dependencies[] = sof_date_formats
 dependencies[] = sof_context_configurations
 dependencies[] = sof_default_allowed_file_extensions
 dependencies[] = sof_external_article
+dependencies[] = sof_question_and_answers
