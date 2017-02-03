@@ -47,6 +47,9 @@ function sof_qa_search_form($form, &$form_state) {
       '#id' => 'live-search',
       '#cols' => 1,
       '#rows' => 1,
+      '#attributes' => array (
+        'placeholder' => t('Keyword'),
+        )
   );
 
 
