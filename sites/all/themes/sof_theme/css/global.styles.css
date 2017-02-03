@@ -5266,6 +5266,10 @@ body.page-search #block-system-main > ul li {
   border: 0;
 }
 
+html.js .view-qa-taxonomy-view > .view-content > fieldset {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
 .view-qa-taxonomy-view fieldset a {
   color: #000;
 }
