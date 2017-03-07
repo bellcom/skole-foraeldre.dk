@@ -22,14 +22,14 @@ function sof_qa_search_block_info() {
  */
 
 function sof_qa_search_block_view($delta = "") {
-  $block = array();
+  $blocks = array();
   switch($delta) {
     case 'sof_qa_search':
-      $block['content'] = drupal_get_form('sof_qa_search_form');
+      $blocks['content'] = drupal_get_form('sof_qa_search_form');
       drupal_add_js(drupal_get_path('module', 'sof_qa_search') . '/js/sof_qa_search.js', 'file');
       break;
   }
-  return $block;
+  return $blocks;
 }
 
 function sof_qa_search_form($form, &$form_state) {
@@ -42,7 +42,6 @@ function sof_qa_search_form($form, &$form_state) {
   $form['container']['search'] = array (
       '#type' => 'textfield',
       '#title' => t('Search the Q&A page'),
-      '#description' => t('This form searches through the Q&A page'),
       '#maxlength' => 60,
       '#id' => 'live-search',
       '#cols' => 1,
@@ -51,9 +50,6 @@ function sof_qa_search_form($form, &$form_state) {
         'placeholder' => t('Keyword'),
         )
   );
-
-
-
   return $form;
 }
 

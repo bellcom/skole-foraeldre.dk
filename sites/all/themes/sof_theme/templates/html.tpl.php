@@ -66,8 +66,8 @@
 <!--[if IE 7]><html class="lt-ie9 lt-ie8"<?php print $html_attributes; ?>><![endif]-->
 <!--[if IE 8]><html class="lt-ie9"<?php print $html_attributes; ?>><![endif]-->
 <!--[if gt IE 8]><!--><html<?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
