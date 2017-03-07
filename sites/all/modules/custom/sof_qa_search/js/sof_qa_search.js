@@ -48,9 +48,8 @@
 
             //expand specific content based on url#
             var link = window.location.href;
-            if (link.includes("#")) {
+            if (link.indexOf('#') > -1) {
                 var hash = link.substring(link.indexOf("#")+1);
-
                 $('.view-qa-taxonomy-view .field-content').each(function(index) {
                    if ($(this).hasClass('qa-answer-'+hash)) {
                        var field = $(this);

@@ -53,7 +53,7 @@ function sof_question_and_answers_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Q&A';
+  $display->title = 'Spørgsmål og svar';
   $display->uuid = 'fd5280fd-7a65-4493-8311-bf60cb3acaad';
   $display->storage_type = 'page_manager';
   $display->storage_id = 'page_qna_page__panel';
