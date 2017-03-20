@@ -1,5 +1,0 @@
-The following patches has been applied:
-______________________________________________________________
-  Thread: https://www.drupal.org/node/1649464
-  Patch: ckeditor-hook_into_media_admin-1649464-9.patch
-______________________________________________________________

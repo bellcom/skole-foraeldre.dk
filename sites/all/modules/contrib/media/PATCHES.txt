@@ -1,2 +1,0 @@
-The following patches from the following thread: https://www.drupal.org/node/2104193 have been applied to this project:
-- https://www.drupal.org/files/issues/media_remove_file_display_alter-2104193-91.patch
