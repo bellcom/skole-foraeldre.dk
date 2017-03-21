@@ -21,12 +21,14 @@
                     collapsAllFieldets();
                 } else {
                     collapsAllFieldets();
-
-                    var serchedItem = new RegExp($(this).val(), 'igm');
+                    //var serchedItem = new RegExp($(this).val(), 'igm');
+                    var serchedItem = $(this).context.value;
+									  serchedItem = serchedItem.toLowerCase();
                     var matchArr = [];
                     $('.view-question-view .field-content').each(function () {
                         var question = $(this);
                         var questionText = question.text();
+                        questionText = questionText.toLowerCase();
                         if (questionText.match(serchedItem)) {
                            matchArr.push(question);
                         }
