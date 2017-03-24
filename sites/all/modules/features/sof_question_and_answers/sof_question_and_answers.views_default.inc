@@ -285,6 +285,8 @@ function sof_question_and_answers_views_default_views() {
   $handler->display->display_options['fields']['field_answer']['table'] = 'field_data_field_answer';
   $handler->display->display_options['fields']['field_answer']['field'] = 'field_answer';
   $handler->display->display_options['fields']['field_answer']['label'] = '';
+  $handler->display->display_options['fields']['field_answer']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_answer']['alter']['path'] = 'qa#[nid]';
   $handler->display->display_options['fields']['field_answer']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_answer']['element_class'] = 'qa-answer-[nid]';
   $handler->display->display_options['fields']['field_answer']['element_label_colon'] = FALSE;
