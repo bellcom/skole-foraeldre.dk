@@ -222,10 +222,10 @@ body {
   height: 64px;
 }
 .mailchimp-newsletter-wrapper,
-#sof-general-tweaks-mailchimp label {
+.mailchimp-signup-subscribe-form label {
   display: none;
 }
-#sof-general-tweaks-mailchimp {
+.mailchimp-signup-subscribe-form {
   margin: 20px 0 0 0;
 }
 .mailchimp-newsletter-mergefields {
@@ -255,12 +255,15 @@ body {
 .mailchimp-newsletter-mergefields input.focus {
   border: 1px solid rgba(82, 168, 236, 0.8);
 }
-#sof-general-tweaks-mailchimp .form-submit {
+.mailchimp-signup-subscribe-form .form-actions {
   float: right;
-  padding: 10px;
   margin-top: 2px;
-  height: 41px;
   width: 20%;
+}
+.mailchimp-signup-subscribe-form .form-submit { 
+  padding: 10px;
+  width: 100%;
+  height: 41px;
   color: #fff;
   font-size: 14px;
   border-radius: 2px;
@@ -270,13 +273,13 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#sof-general-tweaks-mailchimp .form-submit:hover {
+.mailchimp-signup-subscribe-form .form-submit:hover {
   opacity: 0.8;
 }
-#sof-general-tweaks-mailchimp #messages {
+.mailchimp-signup-subscribe-form #messages {
   height: 30px;
 }
-#sof-general-tweaks-mailchimp .messages.error:before {
+.mailchimp-signup-subscribe-form.messages.error:before {
   content: '*';
   font-size: 18px;
 }
@@ -306,7 +309,7 @@ body {
 .ajax-progress-throbber {
   display: none;
 }
-#sof-general-tweaks-mailchimp .messages.error {
+.mailchimp-signup-subscribe-form .messages.error {
   color: #d40000;
   font-size: 18px;
   font-style: italic;
