@@ -192,6 +192,7 @@ dependencies[] = i18n_translation
 dependencies[] = i18n_user
 dependencies[] = i18n_variable
 dependencies[] = i18nviews
+dependencies[] = i18n_taxonomy
 
 ;Contrib facebook modules
 dependencies[] = facebook_pixel
