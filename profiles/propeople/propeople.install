@@ -947,14 +947,3 @@ function _update_field_config($data, $field_name) {
   $qry = "UPDATE field_config SET data = :data WHERE field_name = :field_name";
   db_query($qry, array(':data' => $data, ':field_name' => $field_name));
 }
-
-/**
- * Remove unneeded module i18n_taxonomy
- */
-function propeople_update_7014() {
-  $module = 'i18n_taxonomy';
-  if(module_exists($module)){
-    module_disable(array($module));
-    drupal_uninstall_modules(array($module));
-  }
-}
