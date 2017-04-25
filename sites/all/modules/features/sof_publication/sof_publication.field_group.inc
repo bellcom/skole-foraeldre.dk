@@ -35,6 +35,7 @@ function sof_publication_field_group_info() {
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
+        'id' => 'publication-group-generate-from-content',
       ),
     ),
   );
@@ -62,6 +63,7 @@ function sof_publication_field_group_info() {
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
+        'id' => 'publication_group_upload',
       ),
     ),
   );
