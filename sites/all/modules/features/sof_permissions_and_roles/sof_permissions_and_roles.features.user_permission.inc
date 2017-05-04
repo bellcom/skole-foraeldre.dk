@@ -1184,6 +1184,24 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'domain',
   );
 
+  // Exported permission: 'create question_and_answer content'.
+  $permissions['create question_and_answer content'] = array(
+    'name' => 'create question_and_answer content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create question_and_answer content on assigned domains'.
+  $permissions['create question_and_answer content on assigned domains'] = array(
+    'name' => 'create question_and_answer content on assigned domains',
+    'roles' => array(),
+    'module' => 'domain',
+  );
+
   // Exported permission: 'create section content'.
   $permissions['create section content'] = array(
     'name' => 'create section content',
@@ -1366,6 +1384,17 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any publication content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any question_and_answer content'.
+  $permissions['delete any question_and_answer content'] = array(
+    'name' => 'delete any question_and_answer content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -1650,6 +1679,17 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own question_and_answer content'.
+  $permissions['delete own question_and_answer content'] = array(
+    'name' => 'delete own question_and_answer content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own section content'.
   $permissions['delete own section content'] = array(
     'name' => 'delete own section content',
@@ -1713,6 +1753,13 @@ function sof_permissions_and_roles_user_default_permissions() {
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
+    'module' => 'domain',
+  );
+
+  // Exported permission: 'delete question_and_answer content on assigned domains'.
+  $permissions['delete question_and_answer content on assigned domains'] = array(
+    'name' => 'delete question_and_answer content on assigned domains',
+    'roles' => array(),
     'module' => 'domain',
   );
 
@@ -1987,6 +2034,17 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any publication content',
     'roles' => array(
       'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any question_and_answer content'.
+  $permissions['edit any question_and_answer content'] = array(
+    'name' => 'edit any question_and_answer content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -2290,6 +2348,17 @@ function sof_permissions_and_roles_user_default_permissions() {
   // Exported permission: 'edit own publication content'.
   $permissions['edit own publication content'] = array(
     'name' => 'edit own publication content',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own question_and_answer content'.
+  $permissions['edit own question_and_answer content'] = array(
+    'name' => 'edit own question_and_answer content',
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
@@ -2690,6 +2759,13 @@ function sof_permissions_and_roles_user_default_permissions() {
       'editor' => 'editor',
       'site editor' => 'site editor',
     ),
+    'module' => 'domain',
+  );
+
+  // Exported permission: 'update question_and_answer content on assigned domains'.
+  $permissions['update question_and_answer content on assigned domains'] = array(
+    'name' => 'update question_and_answer content on assigned domains',
+    'roles' => array(),
     'module' => 'domain',
   );
 
