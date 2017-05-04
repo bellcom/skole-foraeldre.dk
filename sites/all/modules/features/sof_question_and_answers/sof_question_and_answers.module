@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SOF Question and Answers feature.
+ */
+
+include_once 'sof_question_and_answers.features.inc';

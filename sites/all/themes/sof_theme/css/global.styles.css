@@ -222,13 +222,13 @@ body {
   height: 64px;
 }
 .mailchimp-newsletter-wrapper,
-#sof-general-tweaks-mailchimp label {
+.mailchimp-signup-subscribe-form label {
   display: none;
 }
-#sof-general-tweaks-mailchimp {
+.mailchimp-signup-subscribe-form {
   margin: 20px 0 0 0;
 }
-.mailchimp-newsletter-mergefields {
+#sof-general-tweaks-mailchimp {
   float: left;
   width: 73%;
   height: 45px!important;
@@ -255,12 +255,15 @@ body {
 .mailchimp-newsletter-mergefields input.focus {
   border: 1px solid rgba(82, 168, 236, 0.8);
 }
-#sof-general-tweaks-mailchimp .form-submit {
+.mailchimp-signup-subscribe-form .form-actions {
   float: right;
-  padding: 10px;
   margin-top: 2px;
-  height: 41px;
   width: 20%;
+}
+.mailchimp-signup-subscribe-form .form-submit { 
+  padding: 10px;
+  width: 100%;
+  height: 41px;
   color: #fff;
   font-size: 14px;
   border-radius: 2px;
@@ -270,13 +273,13 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#sof-general-tweaks-mailchimp .form-submit:hover {
+.mailchimp-signup-subscribe-form .form-submit:hover {
   opacity: 0.8;
 }
-#sof-general-tweaks-mailchimp #messages {
+.mailchimp-signup-subscribe-form #messages {
   height: 30px;
 }
-#sof-general-tweaks-mailchimp .messages.error:before {
+.mailchimp-signup-subscribe-form.messages.error:before {
   content: '*';
   font-size: 18px;
 }
@@ -306,7 +309,7 @@ body {
 .ajax-progress-throbber {
   display: none;
 }
-#sof-general-tweaks-mailchimp .messages.error {
+.mailchimp-signup-subscribe-form .messages.error {
   color: #d40000;
   font-size: 18px;
   font-style: italic;
@@ -4031,7 +4034,8 @@ body.page-user ul.primary li:hover, body.page-user ul.primary li.active {
 .pane-related-articles-slider-related-articles-slider-pane h2.block-title,
 .field-name-field-related-terms h2.field-label,
 .pane-related-content-related-terms-pane h2,
-.pane-related-articles-slider-related-news-slider-pane h2 {
+.pane-related-articles-slider-related-news-slider-pane h2,
+.pane-qa-related-questions .view-qa-related-questions .view-header {
   margin-bottom: 10px;
   margin-top: 0px;
   font-family: "conduit_itcregular",sans-serif;
@@ -4049,7 +4053,8 @@ h2.pane-title {
   display: block;
 }
 .field-name-field-related-terms .field-item a,
-.view-display-id-related_terms_pane a {
+.view-display-id-related_terms_pane a,
+.view-qa-related-questions a {
   float: left;
   width: 100%;
   position: relative;
@@ -5217,6 +5222,84 @@ body.page-search #block-system-main > ul li {
 .search-category .links li a:hover {
   color: #000;
 }
+
+
+/* =============================================================================
+ *   Q&A Page
+ * ========================================================================== */
+.pane-sof-qa-search-sof-qa-search {
+  padding: 20px 10px;
+  background-color: #00A2EB;
+}
+
+.pane-sof-qa-search-sof-qa-search .form-item {
+  margin: 0;
+}
+
+.pane-sof-qa-search-sof-qa-search .form-item label {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.pane-sof-qa-search-sof-qa-search .form-item input {
+  border: 0;
+  border-radius: 12px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  height: 22px;
+  background-color: #F0F0F0;
+  font-family: "conduit_itcregular",sans-serif;
+  font-size: 18px;
+  width: 100%;
+}
+
+.pane-sof-qa-search-sof-qa-search .form-item .description {
+  color: #FFF;
+}
+
+.view-qa-taxonomy-view {
+  margin-top: 20px;
+}
+
+.view-qa-taxonomy-view fieldset {
+  border: 0;
+}
+
+html.js .view-qa-taxonomy-view > .view-content > fieldset {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.view-qa-taxonomy-view fieldset a {
+  color: #000;
+}
+
+.view-qa-taxonomy-view .fieldset-legend {
+  font-size: 22px;
+}
+
+.view-question-view .fieldset-legend {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.view-question-view .views-field-field-answer {
+  padding: 5px 40px 20px 40px;
+  font-size: 16px;
+}
+
+/*Related questions block*/
+.view-qa-related-questions {
+  margin-top: 20px;
+}
+
+.view-qa-related-questions p {
+  margin: 0;
+}
+
 /* =============================================================================
  *   Media Queries
  * ========================================================================== */
@@ -5250,7 +5333,8 @@ body.page-search #block-system-main > ul li {
   .node-section .pane-node-field-teaser,
   body.page-cart #columns,
   body.page-checkout #columns,
-  body.page-user-orders #columns {
+  body.page-user-orders #columns,
+  body.page-qa #columns {
     padding: 0 20px;
   }
   .section-default-listiing {

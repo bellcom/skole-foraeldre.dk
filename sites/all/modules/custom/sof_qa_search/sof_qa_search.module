@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ */
+
+
+/**
+ * Implements hook_block_info().
+ */
+
+function sof_qa_search_block_info() {
+  $blocks['sof_qa_search'] = array(
+      'info' => t('Questions and Answers Search'),
+      'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+
+function sof_qa_search_block_view($delta = "") {
+  $blocks = array();
+  switch($delta) {
+    case 'sof_qa_search':
+      $blocks['content'] = drupal_get_form('sof_qa_search_form');
+      drupal_add_js(drupal_get_path('module', 'sof_qa_search') . '/js/sof_qa_search.js', 'file');
+      break;
+  }
+  return $blocks;
+}
+
+function sof_qa_search_form($form, &$form_state) {
+  $form['container'] = array(
+      '#type' => 'container',
+      '#attributes' => array(
+          'id' => 'input-container',
+      )
+  );
+  $form['container']['search'] = array (
+      '#type' => 'textfield',
+      '#title' => t('Search the Q&A page'),
+      '#maxlength' => 60,
+      '#id' => 'live-search',
+      '#cols' => 1,
+      '#rows' => 1,
+      '#attributes' => array (
+        'placeholder' => t('Keyword'),
+        )
+  );
+  return $form;
+}
+
+

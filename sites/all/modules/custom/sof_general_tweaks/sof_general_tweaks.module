@@ -752,3 +752,12 @@ function sof_general_tweaks_page_alter(&$page) {
 function sof_general_tweaks_facebook_pixel_data_ViewContent_alter(&$data, $order_id) {
   $data = array();
 }
+
+/**
+ * Implements hook_module_implements_alter
+ */
+function sof_general_tweaks_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'menu_alter') {
+    unset($implementations['i18n_taxonomy']);
+  }
+}
