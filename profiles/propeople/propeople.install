@@ -947,3 +947,24 @@ function _update_field_config($data, $field_name) {
   $qry = "UPDATE field_config SET data = :data WHERE field_name = :field_name";
   db_query($qry, array(':data' => $data, ':field_name' => $field_name));
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove 'External Article' content type from solr indexing
+ */
+function propeople_update_7014() {
+  $env_id = apachesolr_default_environment();
+  $environment = apachesolr_environment_load($env_id);
+  $environment['index_bundles']['node'] = array(
+    0 => 'article',
+    1 => 'basic_page',
+    2 => 'news',
+    3 => 'publication',
+    4 => 'question_and_answer',
+    5 => 'section',
+    6 => 'webform',
+  );
+  apachesolr_environment_save($environment);
+  cache_clear_all('apachesolr:environments', 'cache_apachesolr');
+}
