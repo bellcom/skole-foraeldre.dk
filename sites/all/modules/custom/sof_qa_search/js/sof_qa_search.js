@@ -13,7 +13,7 @@
         }
       });
       //search function
-      $('#live-search').on('input', function () {
+      $('#live-search').bind('keypress', function () {
 
         var searchInput = $(this);
         if(searchInput.val().length === 0){
