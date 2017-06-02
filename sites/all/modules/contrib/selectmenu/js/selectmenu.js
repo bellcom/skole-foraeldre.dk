@@ -23,6 +23,9 @@ Drupal.behaviors.selectmenu = {
                       && (form.attr('id'))
                       && (form.attr('id').indexOf('system-') === 0
                             || $(this).parents('body.page-admin').length > 0
+                            /* SOF-54 | because of very outdated, module is incompatible with jquery 1.7 fix - disable this module from modal content wrappers */
+                            || $(this).parents('#modalContent').length > 0
+
                 )
             ) {
             apply_selectmenu = false;
