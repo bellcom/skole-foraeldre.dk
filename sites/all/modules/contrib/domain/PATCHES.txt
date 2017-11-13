@@ -1,5 +1,2 @@
 The following patches has been applied:
-______________________________________________________________
-  Thread: https://www.drupal.org/node/2004434
-  Patch: 2004434-domain-conf-apachesolr-site-hash-setting.patch
-______________________________________________________________
+- https://www.drupal.org/files/2004434-domain-conf-apachesolr-site-hash-setting.patch

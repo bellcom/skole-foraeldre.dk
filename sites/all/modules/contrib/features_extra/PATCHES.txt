@@ -1,5 +1,2 @@
 The following patches has been applied:
-______________________________________________________________
-  Thread: https://www.drupal.org/node/1279928
-  Patch: features_extra-add-date-format-support-1279928-49.patch
-______________________________________________________________
+- https://www.drupal.org/files/issues/features_extra-add-date-format-support-1279928-49.patch
