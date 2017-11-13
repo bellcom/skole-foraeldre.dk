@@ -5,11 +5,6 @@
  * Follow module API and helper functions.
  */
 
-/* DOMAIN ACCESS */
-$current_domain_info = domain_get_domain();
-$domain_slg = 'domin_' . $current_domain_info['domain_id'];
-define('FOLLOW_DOMAIN', $domain_slg);
-
 define('FOLLOW_NAME', 0);
 define('FOLLOW_ME', 1);
 define('FOLLOW_US', 2);
@@ -85,7 +80,7 @@ function follow_save_css($reset = FALSE) {
 function follow_link_title($uid = 0) {
   // Check to see if we have a valid username.
   if ($uid) {
-    $setting = variable_get(FOLLOW_DOMAIN . '_follow_user_block_title', FOLLOW_NAME);
+    $setting = variable_get('follow_user_block_title', FOLLOW_NAME);
     // Special handling for usernames.
     if ($setting == FOLLOW_NAME) {
       $account = user_load($uid);
@@ -95,9 +90,9 @@ function follow_link_title($uid = 0) {
     return t('Follow me on');
   }
 
-  switch(variable_get(FOLLOW_DOMAIN . '_follow_site_block_title', FOLLOW_NAME)) {
+  switch(variable_get('follow_site_block_title', FOLLOW_NAME)) {
     case FOLLOW_NAME:
-      return t('Follow @name on', array('@name' => variable_get(FOLLOW_DOMAIN . '_site_name', 'Drupal')));
+      return t('Follow @name on', array('@name' => variable_get('site_name', 'Drupal')));
 
     case FOLLOW_ME:
       return t('Follow me on');
@@ -132,13 +127,10 @@ function _follow_links_element(array $links, array $networks, $type, $alignment 
   $wrapper = $alignment == 'horizontal' ? 'span' : 'div';
 
   foreach ($links as $link) {
-    $title = !empty($link->title) ? $link->title : isset($networks[$link->name]['title']) ? $networks[$link->name]['title'] : '';
-
-    //Remove domain from the name to use regular css rules
-    $link_name = str_replace(FOLLOW_DOMAIN . '_', '', $link->name);
+    $title = !empty($link->title) ? $link->title : $networks[$link->name]['title'];
 
     $element['follow-links'][$link->name] = array(
-      '#prefix' => "<{$wrapper} class='follow-link-wrapper follow-link-wrapper-{$link_name}'>",
+      '#prefix' => "<{$wrapper} class='follow-link-wrapper follow-link-wrapper-{$link->name}'>",
       '#theme' => 'follow_link',
       '#link' => $link,
       '#title' => $title,
@@ -241,7 +233,6 @@ function follow_build_url_regex($network_info) {
 
   if (!empty($network_info['domain'])) {
     // An external link.
-    $network_info['domain'] = str_replace(FOLLOW_DOMAIN . '_', '', $network_info['domain']);
     return '@^https?://([a-z0-9\-_.]+\\.|)' . str_replace('.', '\\.', $network_info['domain']) . '/@i';
   }
   // An internal link should not have ':'.
@@ -259,8 +250,8 @@ function follow_build_url_regex($network_info) {
 function follow_links_load($uid = 0) {
   $links = array();
 
-  $sql = "SELECT * FROM {follow_links} WHERE uid = :uid AND name LIKE :name ORDER BY weight ASC";
-  $result = db_query($sql, array(':uid' => $uid, ':name' => FOLLOW_DOMAIN . '%'));
+  $sql = "SELECT * FROM {follow_links} WHERE uid = :uid ORDER BY weight ASC";
+  $result = db_query($sql, array(':uid' => $uid));
 
   foreach ($result as $link) {
     $link->options = unserialize($link->options);
@@ -300,7 +291,6 @@ function follow_link_save($link) {
 function follow_link_delete($lid) {
   db_delete('follow_links')
     ->condition('lid', $lid)
-    ->condition('name', FOLLOW_DOMAIN .'%', 'LIKE')
     ->execute();
 }
 
@@ -343,81 +333,81 @@ function follow_networks_load($uid = 0, $reset = FALSE) {
  */
 function follow_default_networks($uid) {
   $networks = array(
-    FOLLOW_DOMAIN . '_facebook'  => array(
+    'facebook'  => array(
       'title' => t('Facebook'),
       'domain' => 'facebook.com',
     ),
-    FOLLOW_DOMAIN . '_googleplus'    => array(
+    'googleplus'    => array(
       'title' => t('Google+'),
       'domain' => 'plus.google.com',
     ),
-    FOLLOW_DOMAIN . '_virb'      => array(
+    'virb'      => array(
       'title' => t('Virb'),
       'domain' => 'virb.com',
     ),
-    FOLLOW_DOMAIN . '_myspace'   => array(
+    'myspace'   => array(
       'title' => t('MySpace'),
       'domain' => 'myspace.com',
     ),
-    FOLLOW_DOMAIN . '_twitter'   => array(
+    'twitter'   => array(
       'title' => t('Twitter'),
       'domain' => 'twitter.com',
     ),
-    FOLLOW_DOMAIN . '_picasa'    => array(
+    'picasa'    => array(
       'title' => t('Picasa'),
       'domain' => 'picasaweb.google.com',
     ),
-    FOLLOW_DOMAIN . '_flickr'    => array(
+    'flickr'    => array(
       'title' => t('Flickr'),
       'domain' => 'flickr.com',
     ),
-    FOLLOW_DOMAIN . '_youtube'   => array(
+    'youtube'   => array(
       'title' => t('YouTube'),
       'domain' => 'youtube.com',
     ),
-    FOLLOW_DOMAIN . '_vimeo'     => array(
+    'vimeo'     => array(
       'title' => t('Vimeo'),
       'domain' => 'vimeo.com',
     ),
-    FOLLOW_DOMAIN . '_bliptv'    => array(
+    'bliptv'    => array(
       'title' => t('blip.tv'),
       'domain' => 'blip.tv',
     ),
-    FOLLOW_DOMAIN . '_lastfm'    => array(
+    'lastfm'    => array(
       'title' => t('last.fm'),
       'domain' => 'last.fm',
     ),
-    FOLLOW_DOMAIN . '_linkedin'  => array(
+    'linkedin'  => array(
       'title' => t('LinkedIn'),
       'domain' => 'linkedin.com',
     ),
-    FOLLOW_DOMAIN . '_delicious' => array(
+    'delicious' => array(
       'title' => t('Delicious'),
       'domain' => 'delicious.com',
     ),
-    FOLLOW_DOMAIN . '_tumblr'    => array(
+    'tumblr'    => array(
       'title' => t('Tumblr'),
       'domain' => 'tumblr.com',
     ),
-    FOLLOW_DOMAIN . '_viadeo'    => array(
+    'viadeo'    => array(
       'title' => t('Viadeo'),
       'domain' => 'viadeo.com',
     ),
-    FOLLOW_DOMAIN . '_xing'    => array(
+    'xing'    => array(
       'title' => t('Xing'),
       'domain' => 'xing.com',
     ),
-    FOLLOW_DOMAIN . '_spiceworks'    => array(
+    'spiceworks'    => array(
       'title' => t('Spiceworks'),
       'domain' => 'spiceworks.com',
     ),
   );
   if ($uid == 0) {
-    $networks[FOLLOW_DOMAIN . '_this-site'] = array(
+    $networks['this-site'] = array(
       'title' => t('This site (RSS)'),
       'domain' => '',
     );
-    $networks[FOLLOW_DOMAIN . '_newsletter'] = array(
+    $networks['newsletter'] = array(
       'title' => t('Newsletter'),
       'domain' => '',
     );
