@@ -214,9 +214,7 @@ function commerce_message_default_message_type_alter(&$items) {
     $languages = locale_language_list();
     foreach ($languages as $langcode => $langname) {
       foreach ($items as $message_type => $item) {
-        // @todo Find another way to check for module as MessageType object
-        // doesn't store it. @see https://drupal.org/node/2171201
-        if (!isset($item->module) || $item->module != 'commerce_message') {
+        if ($item->module != 'commerce_message') {
           continue;
         }
         if (isset($items[$message_type]->message_text[LANGUAGE_NONE])) {
