@@ -9,9 +9,9 @@ dependencies[] = rules
 stylesheets[all][] = css/commerce_add_to_cart_confirmation.css
 scripts[] = js/commerce_add_to_cart_confirmation.js
 
-; Information added by drupal.org packaging script on 2013-02-14
-version = "7.x-1.0-rc2"
+; Information added by Drupal.org packaging script on 2017-08-22
+version = "7.x-1.0-rc3"
 core = "7.x"
 project = "commerce_add_to_cart_confirmation"
-datestamp = "1360857057"
+datestamp = "1503410653"
 
