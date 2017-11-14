@@ -4,9 +4,9 @@ name = "Google Analytics Statistics"
 package = "Statistics"
 configure = admin/config/services/ga_stats
 
-; Information added by drupal.org packaging script on 2013-10-29
-version = "7.x-1.0-beta2+18-dev"
+; Information added by Drupal.org packaging script on 2017-11-10
+version = "7.x-1.0-beta3"
 core = "7.x"
 project = "ga_stats"
-datestamp = "1383030137"
+datestamp = "1510315992"
 
