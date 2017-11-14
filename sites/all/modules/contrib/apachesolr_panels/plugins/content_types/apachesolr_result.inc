@@ -124,7 +124,7 @@ function apachesolr_panels_apachesolr_result_content_type_render($subtype, $conf
     }
     $block->content = $results;
   }
-  else {
+  elseif (!empty($search['keys'])) {
     // Show empty text, either overridden or the default.
     if (!empty($conf['empty_override'])) {
       if (!empty($conf['substitute']) && !empty($display->context)) {
@@ -136,7 +136,7 @@ function apachesolr_panels_apachesolr_result_content_type_render($subtype, $conf
     }
     else {
       $block->title = t('Your search yielded no results');
-      $block->content = theme('apachesolr_search_noresults');
+      $block->content = search_help('search#noresults', drupal_help_arg());
     }
   }
 
@@ -194,11 +194,6 @@ function apachesolr_panels_apachesolr_result_content_type_edit_form($form, &$for
     '#process' => array('ctools_dependent_process'),
     '#dependency' => array('edit-filters-action' => array('fallback', 'override', 'append')),
     '#suffix' => '</div>',
-    '#maxlength' => 1024,
-    '#description' => t('To use multiple filters, values must be wrapped in quotations.
-      A space between filters will perform and AND operation,
-      while the string "OR" will perform an OR operation. For example, bundle:"news" OR bundle:"page"'
-    ),
   );
 
   $form['sort_action'] = array(
