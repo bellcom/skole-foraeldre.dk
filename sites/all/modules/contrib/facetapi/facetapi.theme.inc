@@ -43,39 +43,28 @@ function theme_facetapi_title($variables) {
  * @ingroup themeable
  */
 function theme_facetapi_link_inactive($variables) {
+  // Builds accessible markup.
+  // @see http://drupal.org/node/1316580
+  $accessible_vars = array(
+    'text' => $variables['text'],
+    'active' => FALSE,
+  );
+  $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
+
   // Sanitizes the link text if necessary.
   $sanitize = empty($variables['options']['html']);
-  $text = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+  $variables['text'] = ($sanitize) ? check_plain($variables['text']) : $variables['text'];
+
   // Adds count to link if one was passed.
   if (isset($variables['count'])) {
-    $text .= ' ' . theme('facetapi_count', $variables);
+    $variables['text'] .= ' ' . theme('facetapi_count', $variables);
   }
 
-  // Zero elements. Make non-clickable element.
-  if (isset($variables['count']) && $variables['count'] == 0) {
-    $variables['element'] = array(
-      '#value' => $text,
-      '#tag' => 'span',
-      '#attributes' => $variables['options']['attributes']
-    );
-    return theme_html_tag($variables);
-  }
-  // More than zero elements.
-  else {
-    // Builds accessible markup.
-    // @see http://drupal.org/node/1316580
-    $accessible_vars = array(
-      'text' => $variables['text'],
-      'active' => FALSE,
-    );
-    $accessible_markup = theme('facetapi_accessible_markup', $accessible_vars);
-
-    // Resets link text, sets to options to HTML since we already sanitized the
-    // link text and are providing additional markup for accessibility.
-    $variables['text'] = $text . $accessible_markup;
-    $variables['options']['html'] = TRUE;
-    return theme_link($variables);
-  }
+  // Resets link text, sets to options to HTML since we already sanitized the
+  // link text and are providing additional markup for accessibility.
+  $variables['text'] .= $accessible_markup;
+  $variables['options']['html'] = TRUE;
+  return theme_link($variables);
 }
 
 /**
