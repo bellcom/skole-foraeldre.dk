@@ -277,6 +277,17 @@ function facebook_tracking_pixel_page_build(&$page) {
             // Delete session variable.
             unset($_SESSION['facebook_tracking_pixel']['ftpdcpurchase']);
             break;
+
+          // If an alter hook has been created. Allow it to be displayed.
+          default:
+            $context = array(
+              'fb_script_src' => $fb_script_src,
+              'fb_noscript_src' => $fb_noscript_src
+            );
+            drupal_alter('facebook_tracking_pixel_event_' . $key, $value, $page, $context);
+            // Delete session variable for the custom tracking code.
+            unset($_SESSION['facebook_tracking_pixel'][$key]);
+            break;
         }
       }
     }

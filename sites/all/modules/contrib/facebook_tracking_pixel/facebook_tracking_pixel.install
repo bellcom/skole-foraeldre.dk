@@ -2,7 +2,8 @@
 
 /**
  * @file
- * Install, update, and uninstall functions for the Facebook Tracking Pixel module.
+ * Install, update, and uninstall functions for the Facebook Tracking Pixel
+ *   module.
  *
  * @author Brady Owens <info@fastglass.net>
  */
@@ -145,4 +146,20 @@ function facebook_tracking_pixel_uninstall() {
   }
 
 
+}
+
+/**
+ * Implements hook_requirements.
+ */
+function facebook_requirements($phase) {
+  if ($phase === 'install') {
+    $t = get_t();
+    // Check the version of PHP and set errors if less than 5.4.
+    $version = explode('.', PHP_VERSION);
+    if ($version[0] == 5 && $version[1] < 4) {
+      $requirements['facebook_tracking_pixel_phpversion']['title'] = $t('Incompatible PHP Version');
+      $requirements['facebook_tracking_pixel_phpversion']['value'] = $t('The Facebook Tracking Pixel module requires a minimum of PHP 5.4');
+      $requirements['facebook_tracking_pixel_phpversion']['severity'] = REQUIREMENT_ERROR;
+    }
+  }
 }
