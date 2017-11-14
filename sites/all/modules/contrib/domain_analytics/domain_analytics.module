@@ -241,7 +241,7 @@ function domain_analytics_domain_batch() {
       '#title_display' => 'invisible',
       '#type' => 'textfield',
       '#description' => t('A file extension list separated by the | character that will be tracked as download when clicked. Regular expressions are supported. For example: !extensions', array('!extensions' => GOOGLEANALYTICS_TRACKFILES_EXTENSIONS)),
-      '#maxlength' => 255,
+      '#maxlength' => 500,
     ),
     '#domain_action' => 'domain_conf',
     '#system_default' => variable_get('googleanalytics_trackfiles_extensions', GOOGLEANALYTICS_TRACKFILES_EXTENSIONS),
