@@ -4,22 +4,24 @@
  * Implements hook_requirements().
  */
 function phpwkhtmltopdf_requirements($phase) {
+  $results = array();
   // We only care to run our requirements validation on the "runtime" phase.
   switch ($phase) {
     case 'runtime':
-      $results = array();
 
       module_load_include('module', 'phpwkhtmltopdf');
       // Get our own libraries to loop over and verify.
       $libraries = phpwkhtmltopdf_libraries_info();
+      // Loop over the libraries this module defines and need to be verified.
       foreach($libraries as $name => $details) {
         $lib_results = phpwkhtmltopdf_requirements_validate_library($name, 'phpwkhtmltopdf_failed_generic');
+        // Merge the results of this library with the previous results, we'll be returned all of them at the end.
         $results = array_merge($results, $lib_results);
       }
       // Return the validation results to Drupal.
-      return $results;
       break;
   }
+  return $results;
 }
 
 
@@ -38,10 +40,14 @@ function phpwkhtmltopdf_requirements($phase) {
  * returns the result fo the $failed_callback function.
  */
 function phpwkhtmltopdf_requirements_validate_library($library_name, $failed_callback) {
+  // Call the Libraries module's detect function to verify the library is loaded and parsed correctly.
   $lib = libraries_detect($library_name);
+  // If the library wasn't found at all or the parsing process found errors, trigger the failed callback.
   if (!$lib || !empty($lib['error'])) {
+    // Return the results of the failed callback. It should be a suitable format for the hook_requirements function.
     return $failed_callback($library_name, $lib);
   }
+  // Everything checks out okay, return a requirement array for this library containing a REQUIREMENT_OK severity.
   return array(
     $library_name => array(
       'title' => $lib['name'],
@@ -83,7 +89,7 @@ function phpwkhtmltopdf_failed_generic($lib_name, $lib = NULL) {
     $lib['error message'] = $message;
   }
 
-  $results = array(
+  return array(
     $lib_name => array(
       'title' => $libraries[$lib_name]['name'],
       'value' => $lib['error'],
@@ -91,5 +97,17 @@ function phpwkhtmltopdf_failed_generic($lib_name, $lib = NULL) {
       'description' => $lib['error message'],
     ),
   );
-  return $results;
+}
+
+/**
+ * Implements hook_enable();
+ */
+function phpwkhtmltopdf_enable() {
+  // Send message to user reminding them that WkHtmlToPdf is required on the OS.
+  drupal_set_message(t("phpwkhtmltopdf assumes you have already installed the OS specific packages located at: @url",
+    array('@url' => 'http://wkhtmltopdf.org/downloads.html')));
+
+  drupal_set_message(t("Now run 'drush make --no-core -y @path/phpwkhtmltopdf.make' to install all dependencies.", array(
+    '@path' => drupal_get_path('module', 'phpwkhtmltopdf')
+  )));
 }

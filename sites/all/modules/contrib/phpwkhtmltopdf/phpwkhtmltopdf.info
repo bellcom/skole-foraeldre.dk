@@ -7,9 +7,9 @@ files[] = lib/phpwkhtmltopdf.php
 
 dependencies[] = 'libraries'
 
-; Information added by Drupal.org packaging script on 2014-10-22
-version = "7.x-2.x-dev"
+; Information added by Drupal.org packaging script on 2015-05-12
+version = "7.x-2.1"
 core = "7.x"
 project = "phpwkhtmltopdf"
-datestamp = "1413987858"
+datestamp = "1431435184"
 

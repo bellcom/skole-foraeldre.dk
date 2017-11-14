@@ -5,6 +5,7 @@
  */
 function phpwkhtmltopdf_libraries_info() {
   return array(
+    // Define the phpwkhtmltopdf library details.
     'phpwkhtmltopdf' => array(
       'name' => 'PHPWkHtmlToPdf',
       'vendor url' => 'https://github.com/mikehaertl/phpwkhtmltopdf',
@@ -31,6 +32,7 @@ function phpwkhtmltopdf_libraries_info() {
         'php-tmpfile (>=1.0.0)',
       ),
     ),
+    // Define the php-shellcommand' library details.
     'php-shellcommand' => array(
       'name' => 'php-shellcommand',
       'vendor url' => 'https://github.com/mikehaertl/php-shellcommand',
@@ -45,6 +47,7 @@ function phpwkhtmltopdf_libraries_info() {
         ),
       ),
     ),
+    // Define the php-tmpfile library details.
     'php-tmpfile' => array(
       'name' => 'php-tmpfile',
       'vendor url' => 'https://github.com/mikehaertl/php-tmpfile',
@@ -60,12 +63,4 @@ function phpwkhtmltopdf_libraries_info() {
       ),
     ),
   );
-}
-
-
-/**
- * Loads the PHPWkHtmlToPdf library files and its dependencies.
- */
-function phpwkhtmltopdf_libraries_load() {
-
 }
