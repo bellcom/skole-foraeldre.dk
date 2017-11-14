@@ -15,14 +15,14 @@ function dibs_frontend_redirect_page($transaction) {
   $transaction['payment_price'] = (float) $transaction['payment_price'];
 
   // Making some checks to check if the transaction is valid
-  if (!empty($transaction['api_module']) && !empty($transaction['api_delta'])) {
+  if (isset($transaction['api_module'], $transaction['api_delta'])) {
     $info = module_invoke($transaction['api_module'], 'dibsapi', 'info', $transaction['api_delta']);
     if (empty($info) || !is_array($info)) {
       drupal_set_message(t('Error redirecting to DIBS: api_module and/or api_delta is not valid!'), 'error');
       return '';
     }
   }
-  elseif (!empty($transaction['api_module']) || !empty($transaction['api_delta'])) {
+  elseif (!empty($transaction['api_module']) || isset($transaction['api_delta'])) {
     drupal_set_message(t('Error redirecting to DIBS: api_module or api_delta is missing!'), 'error');
     return '';
   }
@@ -221,7 +221,7 @@ function dibs_frontend_redirect_form($form, &$form_state = array(), $settings, $
     unset($form['accepturl']);
     $form['cancelreturnurl'] = $form['cancelurl'];
     unset($form['cancelurl']);
-    if ($form['calcfee']) {
+    if (!empty($form['calcfee'])) {
       $form['addfee'] = $form['calcfee'];
       unset($form['calcfee']);
     }
@@ -337,14 +337,14 @@ function dibs_frontend_cancel_page($transaction) {
   $transaction['payment_price'] = (float)$transaction['payment_price'];
 
   // Making some checks to check if the transaction is valid
-  if (!empty($transaction['api_module']) && !empty($transaction['api_delta'])) {
+  if (isset($data['api_module'], $data['api_delta'])) {
     $info = module_invoke($transaction['api_module'], 'dibsapi', 'info', $transaction['api_delta']);
     if (empty($info) || !is_array($info)) {
       drupal_set_message(t('Error redirecting to DIBS: api_module and/or api_delta is not valid!'), 'error');
       return '';
     }
   }
-  elseif (!empty($transaction['api_module']) || !empty($transaction['api_delta'])) {
+  elseif (!empty($data['api_module']) || isset($data['api_delta'])) {
     drupal_set_message(t('Error redirecting to DIBS: api_module or api_delta is missing!'), 'error');
     return '';
   }
@@ -399,7 +399,7 @@ function dibs_frontend_cancel_form_submit($form, &$form_state) {
   $hash = $form_state['values']['hash'];
 
   // Loading the transaction
-  $data = dibs_load_transaction($hash, 'hash');
+  $data = dibs_transaction_load($hash, 'hash');
   $settings = dibs_load_settings($data['api_module'], $data['api_delta'], TRUE);
 
   // Make changes to order id if dictated by retry policy
@@ -521,8 +521,10 @@ function dibs_frontend_dibs_callback_ok($transaction) {
         $update = array(
           'payment_status' => 1,
           'payment_type' => $paytype,
-          'payment_fee' => $_REQUEST['fee'],
         );
+        if (isset($_REQUEST['fee'])) {
+            $update['payment_fee'] = $_REQUEST['fee'];
+          }
         if ($split == 1) {
           $update['payment_transaction_id'] = $transact;
         }
