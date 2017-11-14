@@ -230,7 +230,6 @@ function scheduler_get_date_only_format($format) {
  * @see scheduler_form_node_type_form_alter()
  */
 function _scheduler_form_node_type_form_alter(&$form, $form_state) {
-  drupal_add_css(drupal_get_path('module', 'scheduler') . '/scheduler.css');
   $form['scheduler'] = array(
     '#type' => 'fieldset',
     '#title' => t('Scheduler'),
@@ -402,7 +401,13 @@ function _scheduler_lightweight_cron($form, &$form_state) {
     '#type' => 'checkbox',
     '#title' => t('Log every activation and completion message.'),
     '#default_value' => variable_get('scheduler_lightweight_log', 1),
-    '#description' => t("When this option is checked, Scheduler will write an entry to the dblog every time the lightweight cron process is started and completed. This is useful during set up and testing, but can result in a large number of log entries. Any actions performed during the lightweight cron run will always be logged regardless of this setting."),
+    '#description' => t("When this option is checked, Scheduler will write an entry to the log every time the lightweight cron process is started and completed. This is useful during set up and testing, but can result in a large number of log entries. Any actions performed during the lightweight cron run will always be logged regardless of this setting."),
+  );
+  $form['scheduler_cron_settings']['scheduler_cache_clear_all'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Clear all expired block and page caches after publishing or unpublishing via cron.'),
+    '#default_value' => variable_get('scheduler_cache_clear_all', 0),
+    '#description' => t('If a node has been published or unpublished by Scheduler during a cron run, this option will clear the caches instead of relying on the Drupal core system cron task. Warning: This may have a detrimental effect on performance for large sites.'),
   );
   $form['scheduler_cron_settings']['scheduler_lightweight_access_key'] = array(
     '#type' => 'textfield',
@@ -502,9 +507,16 @@ function theme_scheduler_timecheck($variables) {
 /**
  * Page callback: Displays a list of nodes scheduled for (un)publication.
  *
- * This will appear as a tab on the content admin page ('admin/content'). It is
- * also shown as a tab on the 'My account' page if the user has permission to
- * schedule content.
+ * This will appear as a tab on the Scheduler admin page at
+ * admin/config/content/scheduler/list and the content admin page at
+ * admin/content/scheduler. It is also shown on the 'My account' page
+ * user/{uid}/scheduler if the user has permission to schedule content.
+ *
+ * @param string
+ *   'user_only' if viewing a user page, NULL otherwise.
+ *
+ * @param int
+ *   The uid when viewing a user page, NULL otherwise.
  *
  * @return array
  *   A render array for a page containing a list of nodes.
@@ -561,6 +573,8 @@ function scheduler_list() {
   $args = func_get_args();
   if ($args[0] == 'user_only') {
     $query->condition('n.uid', $args[1], '=');
+    // Get user account for use later.
+    $user = user_load($args[1]);
   }
   $query = $query->extend('TableSort')->orderByHeader($header);
   $result = $query->execute();
@@ -568,19 +582,27 @@ function scheduler_list() {
   $rows = array();
 
   foreach ($result as $node) {
+    // Check the access allowed on this node.
+    $can_edit = node_access('update', $node);
+    $can_delete = node_access('delete', $node);
     // Set the operations depending on whether the node is valid or corrupt.
+    $ops = array();
     if ($node->type) {
       // Node type is present so this indicates a valid join with the node
       // table. Provide regular operations to edit and delete the node.
-      $ops = array(
-        l(t('edit'), 'node/' . $node->nid . '/edit', array('query' => $destination)),
-        l(t('delete'), 'node/' . $node->nid . '/delete', array('query' => $destination)),
-      );
+      if ($can_edit) {
+        $ops[] = l(t('edit'), 'node/' . $node->nid . '/edit', array('query' => $destination));
+      }
+      if ($can_delete) {
+        $ops[] = l(t('delete'), 'node/' . $node->nid . '/delete', array('query' => $destination));
+      }
     }
     else {
       // There was no matching row in the node table. Provide a special link to
       // delete the row from the Scheduler table.
-      $ops = array(l(t('delete'), 'admin/content/scheduler/delete/' . $node->nid, array('query' => $destination)));
+      if ($can_delete) {
+        $ops[] = l(t('delete'), 'admin/content/scheduler/delete/' . $node->nid, array('query' => $destination));
+      }
     }
 
     $rows[] = array(
@@ -601,7 +623,6 @@ function scheduler_list() {
       ),
     );
   }
-  global $user;
   $build['scheduler_list'] = array(
     '#theme' => 'table',
     '#header' => $header,
