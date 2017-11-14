@@ -127,7 +127,13 @@ class apachesolr_views_query extends views_plugin_query {
       }
 
       $solr = apachesolr_get_solr($env_id);
-      $query = new ApachesolrViewsSolrBaseQuery('apachesolr', $solr, $this->query_params, '', current_path());
+      $context = array(
+        'search_type' => 'apachesolr_views_query',
+        'view_name' => $view->name,
+        'current_display' => $view->current_display,
+      );
+
+      $query = new ApachesolrViewsSolrBaseQuery('apachesolr', $solr, $this->query_params, '', current_path(), $context, $view);
 
       // Add sorting. The setSolrsort method can't be used, because it doesn't support multiple sorting criteria.
       $query->replaceParam('sort', $this->orderby);
@@ -202,12 +208,15 @@ class apachesolr_views_query extends views_plugin_query {
     else {
       $condition_strings = array();
       foreach ($where['conditions'] as $condition) {
-        if ($condition = $this->build_where_string($condition)) {
-          // Wrap each condition in parenthesis.
-          $condition_strings[] = "($condition)";
-        }
+        $condition_strings[] = $this->build_where_string($condition);
       }
-      return implode(' ' . $where['type'] . ' ', $condition_strings);
+      $condition_strings = array_filter($condition_strings);
+      $condition_string = implode(' ' . $where['type'] . ' ', $condition_strings);
+      // Respect grouping by wrapping multiple conditions with parenthesis.
+      if (count($condition_strings) > 1) {
+        $condition_string = '(' . $condition_string . ')';
+      }
+      return $condition_string;
     }
   }
 
