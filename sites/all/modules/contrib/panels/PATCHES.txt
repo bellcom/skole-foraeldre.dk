@@ -1,2 +1,0 @@
-The following patches from the following thread: https://www.drupal.org/node/2787637 have been applied to this project:
-- https://www.drupal.org/files/issues/panels-storage-alt-task-2787637-6.patch
