@@ -24,6 +24,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
@@ -63,6 +64,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -102,6 +104,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'magazine_deck_background',
         ),
@@ -167,6 +170,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -234,6 +238,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
@@ -272,6 +277,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_default',
         'weight' => 4,
@@ -328,6 +334,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,

@@ -10,7 +10,7 @@
 function sof_commerce_settings_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:0"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_cvr',
@@ -105,7 +105,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:1"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_ean',
@@ -200,7 +200,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:2"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_ean',
@@ -295,7 +295,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:3"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_firm',
@@ -390,7 +390,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:4"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_firm',
@@ -485,7 +485,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:5"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_name',
@@ -580,7 +580,7 @@ function sof_commerce_settings_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["commerce_customer_profile:billing:6"] = array(
     'entity' => 'commerce_customer_profile',
     'bundle' => 'billing',
     'dependent' => 'field_sof_commerce_customer_name',

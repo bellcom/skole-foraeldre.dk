@@ -24,7 +24,9 @@ function sof_video_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'video_reference_listing',
         ),
         'type' => 'entityreference_entity_view',

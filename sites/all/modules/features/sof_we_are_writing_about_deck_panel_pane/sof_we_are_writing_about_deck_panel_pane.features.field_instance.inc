@@ -24,7 +24,9 @@ function sof_we_are_writing_about_deck_panel_pane_field_default_field_instances(
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'links_to_nodes',
         ),
         'type' => 'entityreference_entity_view',

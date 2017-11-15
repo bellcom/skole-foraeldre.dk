@@ -8,6 +8,7 @@ dependencies[] = image
 dependencies[] = media
 dependencies[] = panelizer
 dependencies[] = sof_field_bases
+dependencies[] = sof_pathauto_settings
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text

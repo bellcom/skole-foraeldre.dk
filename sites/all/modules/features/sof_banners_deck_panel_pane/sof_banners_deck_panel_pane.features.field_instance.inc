@@ -24,6 +24,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_url',
         'weight' => 3,
@@ -85,6 +86,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'list_key',
         'weight' => 0,
@@ -122,6 +124,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -162,6 +165,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -208,6 +212,7 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
           'edit' => '',
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
