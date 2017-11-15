@@ -10,7 +10,7 @@
 function sof_webform_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-webform-body'
+  // Exported field_instance: 'node-webform-body'.
   $field_instances['node-webform-body'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function sof_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-field_image'
+  // Exported field_instance: 'node-webform-field_image'.
   $field_instances['node-webform-field_image'] = array(
     'bundle' => 'webform',
     'deleted' => 0,
@@ -132,7 +132,7 @@ function sof_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-field_teaser'
+  // Exported field_instance: 'node-webform-field_teaser'.
   $field_instances['node-webform-field_teaser'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,

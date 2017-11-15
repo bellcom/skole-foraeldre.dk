@@ -15,4 +15,3 @@ features[variable][] = pathauto_node_section_pattern
 features[variable][] = pathauto_node_slider_pattern
 features[variable][] = pathauto_node_webform_pattern
 features[variable][] = pathauto_taxonomy_term_pattern
-mtime = 1414674305

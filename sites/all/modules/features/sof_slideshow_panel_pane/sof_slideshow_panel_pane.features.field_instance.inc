@@ -10,7 +10,8 @@
 function sof_slideshow_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-slideshow_pane-field_slider_reference'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-slideshow_pane-field_slider_reference'.
   $field_instances['fieldable_panels_pane-slideshow_pane-field_slider_reference'] = array(
     'bundle' => 'slideshow_pane',
     'default_value' => NULL,

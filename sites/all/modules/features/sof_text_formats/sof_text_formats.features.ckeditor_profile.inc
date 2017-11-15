@@ -177,18 +177,6 @@ function sof_text_formats_ckeditor_profile_defaults() {
               ),
             ),
           ),
-          'media' => array(
-            'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%plugin_dir%media/',
-            'buttons' => array(
-              'Media' => array(
-                'label' => 'Media',
-                'icon' => 'images/icon.gif',
-              ),
-            ),
-            'default' => 'f',
-          ),
           'tableresize' => array(
             'name' => 'tableresize',
             'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',

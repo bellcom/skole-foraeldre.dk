@@ -10,7 +10,8 @@
 function sof_taxonomy_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'taxonomy_term-general_category-field_taxonomy_font_title'
+  // Exported field_instance:
+  // 'taxonomy_term-general_category-field_taxonomy_font_title'.
   $field_instances['taxonomy_term-general_category-field_taxonomy_font_title'] = array(
     'bundle' => 'general_category',
     'default_value' => NULL,
@@ -54,7 +55,8 @@ function sof_taxonomy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-publication_category-field_taxonomy_font_title'
+  // Exported field_instance:
+  // 'taxonomy_term-publication_category-field_taxonomy_font_title'.
   $field_instances['taxonomy_term-publication_category-field_taxonomy_font_title'] = array(
     'bundle' => 'publication_category',
     'default_value' => NULL,

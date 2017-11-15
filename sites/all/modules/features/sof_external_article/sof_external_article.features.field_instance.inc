@@ -10,7 +10,7 @@
 function sof_external_article_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-external_article-body'
+  // Exported field_instance: 'node-external_article-body'.
   $field_instances['node-external_article-body'] = array(
     'bundle' => 'external_article',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function sof_external_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-external_article-field_external_link'
+  // Exported field_instance: 'node-external_article-field_external_link'.
   $field_instances['node-external_article-field_external_link'] = array(
     'bundle' => 'external_article',
     'default_value' => NULL,
@@ -189,7 +189,7 @@ function sof_external_article_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-external_article-field_image_slider'
+  // Exported field_instance: 'node-external_article-field_image_slider'.
   $field_instances['node-external_article-field_image_slider'] = array(
     'bundle' => 'external_article',
     'deleted' => 0,

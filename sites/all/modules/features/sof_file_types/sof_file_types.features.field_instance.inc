@@ -10,7 +10,7 @@
 function sof_file_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'file-audio-field_folder'
+  // Exported field_instance: 'file-audio-field_folder'.
   $field_instances['file-audio-field_folder'] = array(
     'bundle' => 'audio',
     'cardinality' => 1,
@@ -36,6 +36,12 @@ function sof_file_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_folder',
@@ -59,7 +65,7 @@ function sof_file_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_folder'
+  // Exported field_instance: 'file-document-field_folder'.
   $field_instances['file-document-field_folder'] = array(
     'bundle' => 'document',
     'cardinality' => 1,
@@ -85,6 +91,12 @@ function sof_file_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_folder',
@@ -108,7 +120,7 @@ function sof_file_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_alt_text'
+  // Exported field_instance: 'file-image-field_file_image_alt_text'.
   $field_instances['file-image-field_file_image_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -139,6 +151,12 @@ function sof_file_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_image_alt_text',
@@ -147,6 +165,7 @@ function sof_file_types_field_default_field_instances() {
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -159,7 +178,7 @@ function sof_file_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -190,6 +209,12 @@ function sof_file_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_image_title_text',
@@ -198,6 +223,7 @@ function sof_file_types_field_default_field_instances() {
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -210,7 +236,7 @@ function sof_file_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_folder'
+  // Exported field_instance: 'file-image-field_folder'.
   $field_instances['file-image-field_folder'] = array(
     'bundle' => 'image',
     'cardinality' => 1,
@@ -231,6 +257,12 @@ function sof_file_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -259,7 +291,7 @@ function sof_file_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_folder'
+  // Exported field_instance: 'file-video-field_folder'.
   $field_instances['file-video-field_folder'] = array(
     'bundle' => 'video',
     'cardinality' => 1,
@@ -280,6 +312,12 @@ function sof_file_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

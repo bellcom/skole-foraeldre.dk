@@ -10,7 +10,8 @@
 function sof_slider_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_image'.
   $field_instances['field_collection_item-field_slides_content-field_image'] = array(
     'bundle' => 'field_slides_content',
     'deleted' => 0,
@@ -75,7 +76,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_single_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_single_link'.
   $field_instances['field_collection_item-field_slides_content-field_single_link'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -135,7 +137,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_small_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_small_title'.
   $field_instances['field_collection_item-field_slides_content-field_small_title'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -174,7 +177,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_teaser'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_teaser'.
   $field_instances['field_collection_item-field_slides_content-field_teaser'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -215,7 +219,7 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slider-field_slides_content'
+  // Exported field_instance: 'node-slider-field_slides_content'.
   $field_instances['node-slider-field_slides_content'] = array(
     'bundle' => 'slider',
     'default_value' => NULL,

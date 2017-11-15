@@ -10,7 +10,8 @@
 function sof_magazine_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_magazine_category-field_magazine_category_term'
+  // Exported field_instance:
+  // 'field_collection_item-field_magazine_category-field_magazine_category_term'.
   $field_instances['field_collection_item-field_magazine_category-field_magazine_category_term'] = array(
     'bundle' => 'field_magazine_category',
     'default_value' => NULL,
@@ -48,7 +49,8 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_magazine_category-field_small_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_magazine_category-field_small_title'.
   $field_instances['field_collection_item-field_magazine_category-field_small_title'] = array(
     'bundle' => 'field_magazine_category',
     'default_value' => NULL,
@@ -87,7 +89,8 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_background_image'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-magazine_pane-field_background_image'.
   $field_instances['fieldable_panels_pane-magazine_pane-field_background_image'] = array(
     'bundle' => 'magazine_pane',
     'deleted' => 0,
@@ -152,7 +155,7 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_image'
+  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_image'.
   $field_instances['fieldable_panels_pane-magazine_pane-field_image'] = array(
     'bundle' => 'magazine_pane',
     'deleted' => 0,
@@ -217,7 +220,8 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_magazine_category'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-magazine_pane-field_magazine_category'.
   $field_instances['fieldable_panels_pane-magazine_pane-field_magazine_category'] = array(
     'bundle' => 'magazine_pane',
     'default_value' => NULL,
@@ -254,7 +258,8 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_magazine_links'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-magazine_pane-field_magazine_links'.
   $field_instances['fieldable_panels_pane-magazine_pane-field_magazine_links'] = array(
     'bundle' => 'magazine_pane',
     'default_value' => NULL,
@@ -309,7 +314,8 @@ function sof_magazine_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-magazine_pane-field_small_title'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-magazine_pane-field_small_title'.
   $field_instances['fieldable_panels_pane-magazine_pane-field_small_title'] = array(
     'bundle' => 'magazine_pane',
     'default_value' => NULL,

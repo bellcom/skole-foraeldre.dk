@@ -18,6 +18,7 @@ function sof_apache_solr_configuration_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'im_field_category_publication';
   $facet->enabled = FALSE;
+  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'or',
     'hard_limit' => '50',
@@ -39,6 +40,7 @@ function sof_apache_solr_configuration_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'im_field_category_publication';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',

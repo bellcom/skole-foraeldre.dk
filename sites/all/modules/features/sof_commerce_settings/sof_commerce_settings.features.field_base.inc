@@ -10,7 +10,7 @@
 function sof_commerce_settings_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'commerce_customer_billing'
+  // Exported field_base: 'commerce_customer_billing'.
   $field_bases['commerce_customer_billing'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -34,7 +34,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_customer_profile_reference',
   );
 
-  // Exported field_base: 'commerce_customer_shipping'
+  // Exported field_base: 'commerce_customer_shipping'.
   $field_bases['commerce_customer_shipping'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -58,7 +58,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_customer_profile_reference',
   );
 
-  // Exported field_base: 'commerce_display_path'
+  // Exported field_base: 'commerce_display_path'.
   $field_bases['commerce_display_path'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -81,7 +81,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'commerce_line_items'
+  // Exported field_base: 'commerce_line_items'.
   $field_bases['commerce_line_items'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -102,7 +102,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_line_item_reference',
   );
 
-  // Exported field_base: 'commerce_order_total'
+  // Exported field_base: 'commerce_order_total'.
   $field_bases['commerce_order_total'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -124,7 +124,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'commerce_price'
+  // Exported field_base: 'commerce_price'.
   $field_bases['commerce_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -146,7 +146,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'commerce_product'
+  // Exported field_base: 'commerce_product'.
   $field_bases['commerce_product'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -169,7 +169,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_product_reference',
   );
 
-  // Exported field_base: 'commerce_shipping_service'
+  // Exported field_base: 'commerce_shipping_service'.
   $field_bases['commerce_shipping_service'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -193,7 +193,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'commerce_total'
+  // Exported field_base: 'commerce_total'.
   $field_bases['commerce_total'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -215,7 +215,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'commerce_unit_price'
+  // Exported field_base: 'commerce_unit_price'.
   $field_bases['commerce_unit_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -237,7 +237,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'commerce_price',
   );
 
-  // Exported field_base: 'field_accept_terms_and_condition'
+  // Exported field_base: 'field_accept_terms_and_condition'.
   $field_bases['field_accept_terms_and_condition'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -262,7 +262,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_cvr'
+  // Exported field_base: 'field_sof_commerce_customer_cvr'.
   $field_bases['field_sof_commerce_customer_cvr'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -283,7 +283,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_ean'
+  // Exported field_base: 'field_sof_commerce_customer_ean'.
   $field_bases['field_sof_commerce_customer_ean'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -304,7 +304,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_firm'
+  // Exported field_base: 'field_sof_commerce_customer_firm'.
   $field_bases['field_sof_commerce_customer_firm'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -325,7 +325,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_mail'
+  // Exported field_base: 'field_sof_commerce_customer_mail'.
   $field_bases['field_sof_commerce_customer_mail'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -340,7 +340,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_name'
+  // Exported field_base: 'field_sof_commerce_customer_name'.
   $field_bases['field_sof_commerce_customer_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -361,7 +361,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_note'
+  // Exported field_base: 'field_sof_commerce_customer_note'.
   $field_bases['field_sof_commerce_customer_note'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -380,7 +380,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_tel'
+  // Exported field_base: 'field_sof_commerce_customer_tel'.
   $field_bases['field_sof_commerce_customer_tel'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -401,7 +401,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_customer_type'
+  // Exported field_base: 'field_sof_commerce_customer_type'.
   $field_bases['field_sof_commerce_customer_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -427,7 +427,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_sof_commerce_description'
+  // Exported field_base: 'field_sof_commerce_description'.
   $field_bases['field_sof_commerce_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -446,7 +446,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sof_commerce_pdf'
+  // Exported field_base: 'field_sof_commerce_pdf'.
   $field_bases['field_sof_commerce_pdf'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -469,7 +469,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_sof_commerce_quantity'
+  // Exported field_base: 'field_sof_commerce_quantity'.
   $field_bases['field_sof_commerce_quantity'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -490,7 +490,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_commerce_type'
+  // Exported field_base: 'field_sof_commerce_type'.
   $field_bases['field_sof_commerce_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -517,7 +517,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_sof_commerce_weight'
+  // Exported field_base: 'field_sof_commerce_weight'.
   $field_bases['field_sof_commerce_weight'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -536,7 +536,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'physical_weight',
   );
 
-  // Exported field_base: 'field_sof_customer_address_one'
+  // Exported field_base: 'field_sof_customer_address_one'.
   $field_bases['field_sof_customer_address_one'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -557,7 +557,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_address_two'
+  // Exported field_base: 'field_sof_customer_address_two'.
   $field_bases['field_sof_customer_address_two'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -578,7 +578,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_city'
+  // Exported field_base: 'field_sof_customer_city'.
   $field_bases['field_sof_customer_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -599,7 +599,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_country'
+  // Exported field_base: 'field_sof_customer_country'.
   $field_bases['field_sof_customer_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -620,7 +620,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_first_name'
+  // Exported field_base: 'field_sof_customer_first_name'.
   $field_bases['field_sof_customer_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -641,7 +641,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_floor_side'
+  // Exported field_base: 'field_sof_customer_floor_side'.
   $field_bases['field_sof_customer_floor_side'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -662,7 +662,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_last_name'
+  // Exported field_base: 'field_sof_customer_last_name'.
   $field_bases['field_sof_customer_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -683,7 +683,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_post_code'
+  // Exported field_base: 'field_sof_customer_post_code'.
   $field_bases['field_sof_customer_post_code'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -704,7 +704,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_customer_street_num'
+  // Exported field_base: 'field_sof_customer_street_num'.
   $field_bases['field_sof_customer_street_num'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -725,7 +725,7 @@ function sof_commerce_settings_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_sof_message_order'
+  // Exported field_base: 'field_sof_message_order'.
   $field_bases['field_sof_message_order'] = array(
     'active' => 1,
     'cardinality' => 1,

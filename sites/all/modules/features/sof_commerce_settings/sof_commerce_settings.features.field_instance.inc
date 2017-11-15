@@ -10,7 +10,8 @@
 function sof_commerce_settings_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_cvr'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_cvr'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_cvr'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -94,7 +95,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_ean'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_ean'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_ean'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -178,7 +180,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_firm'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_firm'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_firm'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -262,7 +265,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_mail'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_mail'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_mail'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -339,7 +343,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_name'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_name'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_name'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -423,7 +428,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_note'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_note'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_note'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -509,7 +515,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_tel'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_tel'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_tel'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -593,7 +600,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_commerce_customer_type'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_commerce_customer_type'.
   $field_instances['commerce_customer_profile-billing-field_sof_commerce_customer_type'] = array(
     'bundle' => 'billing',
     'default_value' => array(
@@ -673,7 +681,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_address_one'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_address_one'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_address_one'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -717,7 +726,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_address_two'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_address_two'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_address_two'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -761,7 +771,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_city'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_city'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_city'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -805,7 +816,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_country'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_country'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_country'] = array(
     'bundle' => 'billing',
     'default_value' => array(
@@ -853,7 +865,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_first_name'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_first_name'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_first_name'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -897,7 +910,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_floor_side'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_floor_side'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_floor_side'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -941,7 +955,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_last_name'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_last_name'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_last_name'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -985,7 +1000,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_post_code'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_post_code'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_post_code'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -1029,7 +1045,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_sof_customer_street_num'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_sof_customer_street_num'.
   $field_instances['commerce_customer_profile-billing-field_sof_customer_street_num'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -1073,7 +1090,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_mail'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_commerce_customer_mail'.
   $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_mail'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1110,7 +1128,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_note'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_commerce_customer_note'.
   $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_note'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1156,7 +1175,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_commerce_customer_tel'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_commerce_customer_tel'.
   $field_instances['commerce_customer_profile-shipping-field_sof_commerce_customer_tel'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1200,7 +1220,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_address_one'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_address_one'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_address_one'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1244,7 +1265,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_address_two'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_address_two'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_address_two'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1288,7 +1310,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_city'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_city'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_city'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1332,7 +1355,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_country'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_country'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_country'] = array(
     'bundle' => 'shipping',
     'default_value' => array(
@@ -1380,7 +1404,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_first_name'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_first_name'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_first_name'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1424,7 +1449,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_floor_side'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_floor_side'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_floor_side'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1468,7 +1494,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_last_name'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_last_name'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_last_name'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1512,7 +1539,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_post_code'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_post_code'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_post_code'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1556,7 +1584,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-shipping-field_sof_customer_street_num'
+  // Exported field_instance:
+  // 'commerce_customer_profile-shipping-field_sof_customer_street_num'.
   $field_instances['commerce_customer_profile-shipping-field_sof_customer_street_num'] = array(
     'bundle' => 'shipping',
     'default_value' => NULL,
@@ -1600,7 +1629,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_order-commerce_order-field_accept_terms_and_condition'
+  // Exported field_instance:
+  // 'commerce_order-commerce_order-field_accept_terms_and_condition'.
   $field_instances['commerce_order-commerce_order-field_accept_terms_and_condition'] = array(
     'bundle' => 'commerce_order',
     'default_value' => array(
@@ -1641,7 +1671,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-commerce_price'
+  // Exported field_instance: 'commerce_product-product-commerce_price'.
   $field_instances['commerce_product-product-commerce_price'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -1778,7 +1808,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-field_sof_commerce_description'
+  // Exported field_instance:
+  // 'commerce_product-product-field_sof_commerce_description'.
   $field_instances['commerce_product-product-field_sof_commerce_description'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -1842,7 +1873,7 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-field_sof_commerce_pdf'
+  // Exported field_instance: 'commerce_product-product-field_sof_commerce_pdf'.
   $field_instances['commerce_product-product-field_sof_commerce_pdf'] = array(
     'bundle' => 'product',
     'deleted' => 0,
@@ -1900,7 +1931,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-field_sof_commerce_quantity'
+  // Exported field_instance:
+  // 'commerce_product-product-field_sof_commerce_quantity'.
   $field_instances['commerce_product-product-field_sof_commerce_quantity'] = array(
     'bundle' => 'product',
     'default_value' => array(
@@ -1966,7 +1998,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-field_sof_commerce_type'
+  // Exported field_instance:
+  // 'commerce_product-product-field_sof_commerce_type'.
   $field_instances['commerce_product-product-field_sof_commerce_type'] = array(
     'bundle' => 'product',
     'commerce_cart_settings' => array(
@@ -2025,7 +2058,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-product-field_sof_commerce_weight'
+  // Exported field_instance:
+  // 'commerce_product-product-field_sof_commerce_weight'.
   $field_instances['commerce_product-product-field_sof_commerce_weight'] = array(
     'bundle' => 'product',
     'default_value' => NULL,
@@ -2081,7 +2115,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-sof_order_admin_message-field_sof_message_order'
+  // Exported field_instance:
+  // 'message-sof_order_admin_message-field_sof_message_order'.
   $field_instances['message-sof_order_admin_message-field_sof_message_order'] = array(
     'bundle' => 'sof_order_admin_message',
     'default_value' => NULL,
@@ -2135,7 +2170,8 @@ function sof_commerce_settings_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-sof_order_user_message-field_sof_message_order'
+  // Exported field_instance:
+  // 'message-sof_order_user_message-field_sof_message_order'.
   $field_instances['message-sof_order_user_message-field_sof_message_order'] = array(
     'bundle' => 'sof_order_user_message',
     'default_value' => NULL,

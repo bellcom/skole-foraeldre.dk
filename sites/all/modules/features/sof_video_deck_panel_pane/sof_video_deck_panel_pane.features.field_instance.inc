@@ -10,7 +10,8 @@
 function sof_video_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-video_pane-field_three_videos'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-video_pane-field_three_videos'.
   $field_instances['fieldable_panels_pane-video_pane-field_three_videos'] = array(
     'bundle' => 'video_pane',
     'default_value' => NULL,

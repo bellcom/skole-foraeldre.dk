@@ -10,7 +10,8 @@
 function sof_also_see_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_related_article_news'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-also_see_pane-field_related_article_news'.
   $field_instances['fieldable_panels_pane-also_see_pane-field_related_article_news'] = array(
     'bundle' => 'also_see_pane',
     'default_value' => NULL,
@@ -55,7 +56,8 @@ function sof_also_see_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_single_link'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-also_see_pane-field_single_link'.
   $field_instances['fieldable_panels_pane-also_see_pane-field_single_link'] = array(
     'bundle' => 'also_see_pane',
     'default_value' => array(

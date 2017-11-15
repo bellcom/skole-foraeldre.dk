@@ -14,7 +14,7 @@ function sof_mailchimp_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mailchimp_api_key';
-  $strongarm->value = '1d0329a325068888b0fd8e91f54b4fd0-us9';
+  $strongarm->value = '97eacb6705fa2816b12c5fa75f18501d-us9';
   $export['mailchimp_api_key'] = $strongarm;
 
   $strongarm = new stdClass();

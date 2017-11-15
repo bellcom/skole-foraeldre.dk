@@ -10,7 +10,8 @@
 function sof_intro_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_five_links_first'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_five_links_first'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_five_links_first'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => NULL,
@@ -80,7 +81,8 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_five_links_second'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_five_links_second'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_five_links_second'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => NULL,
@@ -150,7 +152,8 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_link_group_title_first'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_link_group_title_first'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_link_group_title_first'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => NULL,
@@ -204,7 +207,8 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_link_group_title_second'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_link_group_title_second'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_link_group_title_second'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => NULL,
@@ -258,7 +262,8 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_single_link'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_single_link'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_single_link'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => array(
@@ -333,7 +338,8 @@ function sof_intro_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-intro_deck_pane-field_teaser'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-intro_deck_pane-field_teaser'.
   $field_instances['fieldable_panels_pane-intro_deck_pane-field_teaser'] = array(
     'bundle' => 'intro_deck_pane',
     'default_value' => NULL,

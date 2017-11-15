@@ -10,7 +10,7 @@
 function sof_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_add_this'
+  // Exported field_instance: 'node-news-field_add_this'.
   $field_instances['node-news-field_add_this'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -173,7 +173,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_banner'
+  // Exported field_instance: 'node-news-field_banner'.
   $field_instances['node-news-field_banner'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -259,7 +259,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_category'
+  // Exported field_instance: 'node-news-field_category'.
   $field_instances['node-news-field_category'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -331,7 +331,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_image_slider'
+  // Exported field_instance: 'node-news-field_image_slider'.
   $field_instances['node-news-field_image_slider'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -469,7 +469,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_link'
+  // Exported field_instance: 'node-news-field_link'.
   $field_instances['node-news-field_link'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -569,7 +569,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_old_url'
+  // Exported field_instance: 'node-news-field_old_url'.
   $field_instances['node-news-field_old_url'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -645,7 +645,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_publication_control_link'
+  // Exported field_instance: 'node-news-field_publication_control_link'.
   $field_instances['node-news-field_publication_control_link'] = array(
     'bundle' => 'news',
     'default_value' => array(
@@ -722,7 +722,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_content'
+  // Exported field_instance: 'node-news-field_related_content'.
   $field_instances['node-news-field_related_content'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -808,7 +808,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_news'
+  // Exported field_instance: 'node-news-field_related_news'.
   $field_instances['node-news-field_related_news'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -888,7 +888,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_related_terms'
+  // Exported field_instance: 'node-news-field_related_terms'.
   $field_instances['node-news-field_related_terms'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -973,7 +973,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_set_rt_manually'
+  // Exported field_instance: 'node-news-field_set_rt_manually'.
   $field_instances['node-news-field_set_rt_manually'] = array(
     'bundle' => 'news',
     'default_value' => array(
@@ -1050,7 +1050,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_teaser'
+  // Exported field_instance: 'node-news-field_teaser'.
   $field_instances['node-news-field_teaser'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -1139,7 +1139,7 @@ function sof_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_video'
+  // Exported field_instance: 'node-news-field_video'.
   $field_instances['node-news-field_video'] = array(
     'bundle' => 'news',
     'deleted' => 0,

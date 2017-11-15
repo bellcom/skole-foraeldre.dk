@@ -10,7 +10,8 @@
 function sof_banners_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_banner_collection-field_banner_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_banner_collection-field_banner_link'.
   $field_instances['field_collection_item-field_banner_collection-field_banner_link'] = array(
     'bundle' => 'field_banner_collection',
     'default_value' => NULL,
@@ -70,7 +71,8 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_banner_collection-field_icon'
+  // Exported field_instance:
+  // 'field_collection_item-field_banner_collection-field_icon'.
   $field_instances['field_collection_item-field_banner_collection-field_icon'] = array(
     'bundle' => 'field_banner_collection',
     'default_value' => NULL,
@@ -106,7 +108,8 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_banner_collection-field_small_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_banner_collection-field_small_title'.
   $field_instances['field_collection_item-field_banner_collection-field_small_title'] = array(
     'bundle' => 'field_banner_collection',
     'default_value' => NULL,
@@ -145,7 +148,8 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_banner_collection-field_teaser'
+  // Exported field_instance:
+  // 'field_collection_item-field_banner_collection-field_teaser'.
   $field_instances['field_collection_item-field_banner_collection-field_teaser'] = array(
     'bundle' => 'field_banner_collection',
     'default_value' => NULL,
@@ -186,7 +190,8 @@ function sof_banners_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-banner_pane-field_banner_collection'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-banner_pane-field_banner_collection'.
   $field_instances['fieldable_panels_pane-banner_pane-field_banner_collection'] = array(
     'bundle' => 'banner_pane',
     'default_value' => NULL,

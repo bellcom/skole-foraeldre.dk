@@ -10,7 +10,7 @@
 function sof_section_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-section-field_category_single'
+  // Exported field_instance: 'node-section-field_category_single'.
   $field_instances['node-section-field_category_single'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -76,7 +76,7 @@ function sof_section_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_image'
+  // Exported field_instance: 'node-section-field_image'.
   $field_instances['node-section-field_image'] = array(
     'bundle' => 'section',
     'deleted' => 0,
@@ -183,7 +183,7 @@ function sof_section_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_teaser'
+  // Exported field_instance: 'node-section-field_teaser'.
   $field_instances['node-section-field_teaser'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
