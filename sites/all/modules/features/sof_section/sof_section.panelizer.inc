@@ -100,25 +100,6 @@ function sof_section_panelizer_defaults() {
   $pane->uuid = '3efad32b-9378-4a85-9b73-f72db200416b';
   $display->content['new-3efad32b-9378-4a85-9b73-f72db200416b'] = $pane;
   $display->panels['main'][1] = 'new-3efad32b-9378-4a85-9b73-f72db200416b';
-  $pane = new stdClass();
-  $pane->pid = 'new-460c09d1-f745-48d0-a5bc-351beb48c773';
-  $pane->panel = 'main';
-  $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'current:283';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'view_mode' => 'full',
-  );
-  $pane->cache = array();
-  $pane->style = array();
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '460c09d1-f745-48d0-a5bc-351beb48c773';
-  $display->content['new-460c09d1-f745-48d0-a5bc-351beb48c773'] = $pane;
-  $display->panels['main'][2] = 'new-460c09d1-f745-48d0-a5bc-351beb48c773';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $panelizer->display = $display;

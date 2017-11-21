@@ -13,7 +13,7 @@ function sof_mailchimp_settings_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['mailchimp_signup-sof_mailchimp_form'] = array(
-    'cache' => 5,
+    'cache' => 2,
     'custom' => 0,
     'delta' => 'sof_mailchimp_form',
     'module' => 'mailchimp_signup',

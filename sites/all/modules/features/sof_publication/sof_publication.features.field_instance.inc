@@ -23,7 +23,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 5,
@@ -46,7 +45,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 4,
@@ -88,7 +86,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'file_default',
         'weight' => 1,
@@ -111,7 +108,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'file_url_plain',
         'weight' => 2,
@@ -177,7 +173,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -190,7 +185,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'publication_default_image_393x522_',
         ),
@@ -203,7 +197,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'related_content_reference_image',
         ),
@@ -216,7 +209,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -289,9 +281,7 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'links' => 0,
-          'use_content_language' => TRUE,
           'view_mode' => 'sof_pdf_reference',
         ),
         'type' => 'entityreference_entity_view',
@@ -315,9 +305,7 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'links' => 0,
-          'use_content_language' => TRUE,
           'view_mode' => 'sof_pdf_reference',
         ),
         'type' => 'entityreference_entity_view',
@@ -368,7 +356,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'color_field_default_formatter',
         'weight' => 9,
@@ -423,7 +410,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 10,
@@ -488,7 +474,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 6,
@@ -511,7 +496,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 5,
@@ -564,7 +548,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'list_default',
         'weight' => 8,
@@ -630,7 +613,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_default',
         'weight' => 11,
@@ -641,7 +623,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_default',
         'weight' => 3,
@@ -715,7 +696,6 @@ function sof_publication_field_default_field_instances() {
           'default_quantity' => 1,
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'line_item_type' => 'product',
           'show_quantity' => FALSE,
           'show_single_product_attributes' => FALSE,
@@ -731,7 +711,6 @@ function sof_publication_field_default_field_instances() {
           'default_quantity' => 1,
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'line_item_type' => 'product',
           'show_quantity' => FALSE,
           'show_single_product_attributes' => FALSE,
@@ -797,7 +776,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -808,7 +786,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -825,7 +802,6 @@ function sof_publication_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -883,7 +859,6 @@ function sof_publication_field_default_field_instances() {
           'decimal_separator' => '.',
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'prefix_suffix' => TRUE,
           'scale' => 0,
           'thousand_separator' => ' ',

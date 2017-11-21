@@ -23,7 +23,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
@@ -34,7 +33,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
@@ -90,7 +88,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -103,7 +100,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -116,7 +112,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => 'content',
           'image_style' => 'article_top_slider',
         ),
@@ -129,7 +124,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'related_content_reference_image',
         ),
@@ -202,7 +196,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -213,7 +206,6 @@ function sof_section_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,
