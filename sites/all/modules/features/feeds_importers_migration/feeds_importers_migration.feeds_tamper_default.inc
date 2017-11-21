@@ -70,7 +70,7 @@ function feeds_importers_migration_feeds_tamper_default() {
   $feeds_tamper->importer = 'articles_importer';
   $feeds_tamper->source = 'xpathparser:3';
   $feeds_tamper->plugin_id = '';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'String to Unix timestamp';
   $export['articles_importer-xpathparser_3-strtotime'] = $feeds_tamper;

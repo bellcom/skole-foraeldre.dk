@@ -8,9 +8,9 @@ files[] = domain_blocks.install
 files[] = domain_blocks.module
 
 
-; Information added by Drupal.org packaging script on 2014-01-03
-version = "7.x-3.0-beta1+3-dev"
+; Information added by Drupal.org packaging script on 2015-10-20
+version = "7.x-3.0"
 core = "7.x"
 project = "domain_blocks"
-datestamp = "1388793213"
+datestamp = "1445361540"
 

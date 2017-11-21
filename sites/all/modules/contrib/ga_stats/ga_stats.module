@@ -11,7 +11,7 @@ function ga_stats_menu() {
     'description' => 'Configuration for Google Analytics Statistics',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ga_stats_admin_settings'),
-    'access arguments' => array('administer site config'),
+    'access arguments' => array('administer site configuration'),
     'file' => 'ga_stats.admin.inc',
   );
 
@@ -20,7 +20,7 @@ function ga_stats_menu() {
     'description' => 'Submit API credentials for Google Analytics Statistics',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ga_stats_auth_settings'),
-    'access arguments' => array('administer site config'),
+    'access arguments' => array('administer site configuration'),
     'file' => 'ga_stats.admin.inc',
     'type' => MENU_LOCAL_TASK,
   );

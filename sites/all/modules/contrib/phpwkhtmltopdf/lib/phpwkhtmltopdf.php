@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class WkHtmlToPdf used as a wrapper class tp \mikehaertl\wkhtmlto\Pdf for backward compatibility.
+ * Class WkHtmlToPdf used as a wrapper class to \mikehaertl\wkhtmlto\Pdf for backward compatibility.
  */
 class WkHtmlToPdf extends \mikehaertl\wkhtmlto\Pdf {
 

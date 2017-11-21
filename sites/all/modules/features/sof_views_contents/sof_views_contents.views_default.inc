@@ -340,7 +340,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Url(not shown) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['url']['field'] = 'url';
@@ -348,7 +348,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['url']['label'] = '';
   $handler->display->display_options['fields']['url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
-  /* Field: Image */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['id'] = 'sm_thumb_publication_related_field_image';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['field'] = 'sm_thumb_publication_related_field_image';
@@ -357,7 +357,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['sm_thumb_publication_related_field_image']['element_label_colon'] = FALSE;
-  /* Field: Title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['label']['id'] = 'label';
   $handler->display->display_options['fields']['label']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['label']['field'] = 'label';
@@ -366,7 +366,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['label']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['label']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['label']['element_label_colon'] = FALSE;
-  /* Field: Teaser */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['ts_node_teaser']['id'] = 'ts_node_teaser';
   $handler->display->display_options['fields']['ts_node_teaser']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ts_node_teaser']['field'] = 'ts_node_teaser';
@@ -377,12 +377,12 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['fields']['ts_node_teaser']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['ts_node_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['ts_node_teaser']['element_label_colon'] = FALSE;
-  /* Sort criterion: Apache Solr: ds_changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
-  /* Contextual filter: Apache Solr: content */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['content']['id'] = 'content';
   $handler->display->display_options['arguments']['content']['table'] = 'apachesolr__solr';
   $handler->display->display_options['arguments']['content']['field'] = 'content';
@@ -395,7 +395,7 @@ function sof_views_contents_views_default_views() {
   $handler->display->display_options['arguments']['content']['validate']['type'] = 'php';
   $handler->display->display_options['arguments']['content']['validate_options']['code'] = 'return $argument ? true : false;';
   $handler->display->display_options['arguments']['content']['validate']['fail'] = 'ignore';
-  /* Filter criterion: Apache Solr: bundle */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
@@ -406,12 +406,12 @@ function sof_views_contents_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Grid listing publication page', 'grid_listing_publication');
   $handler->display->display_options['display_description'] = 'List of publications as greed 2x4. Image, title and teaser';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Apache Solr: its_field_weight_sort */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['its_field_weight_sort']['id'] = 'its_field_weight_sort';
   $handler->display->display_options['sorts']['its_field_weight_sort']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['its_field_weight_sort']['field'] = 'its_field_weight_sort';
   $handler->display->display_options['sorts']['its_field_weight_sort']['order'] = 'DESC';
-  /* Sort criterion: Apache Solr: ds_changed */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';

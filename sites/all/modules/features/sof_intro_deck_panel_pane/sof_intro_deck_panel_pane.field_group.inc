@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function sof_intro_deck_panel_pane_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -30,17 +30,18 @@ function sof_intro_deck_panel_pane_field_group_info() {
     'format_settings' => array(
       'label' => 'First links group',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-first-link-group field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'fieldable_panels_pane_intro_deck_pane_full_group_first_link_group',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_first_link_group|fieldable_panels_pane|intro_deck_pane|default'] = $field_group;
+  $field_groups['group_first_link_group|fieldable_panels_pane|intro_deck_pane|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -63,13 +64,14 @@ function sof_intro_deck_panel_pane_field_group_info() {
       'label' => 'First links group',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-first-link-group field-group-fieldset',
         'description' => '',
+        'id' => 'fieldable_panels_pane_intro_deck_pane_form_group_first_link_group',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_first_link_group|fieldable_panels_pane|intro_deck_pane|form'] = $field_group;
+  $field_groups['group_first_link_group|fieldable_panels_pane|intro_deck_pane|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -91,17 +93,18 @@ function sof_intro_deck_panel_pane_field_group_info() {
     'format_settings' => array(
       'label' => 'Second links group',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-second-links-group field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'none',
+        'id' => 'fieldable_panels_pane_intro_deck_pane_full_group_second_links_group',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_second_links_group|fieldable_panels_pane|intro_deck_pane|default'] = $field_group;
+  $field_groups['group_second_links_group|fieldable_panels_pane|intro_deck_pane|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -124,12 +127,18 @@ function sof_intro_deck_panel_pane_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-second-links-group field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'fieldable_panels_pane_intro_deck_pane_form_group_second_links_group',
       ),
     ),
   );
-  $export['group_second_links_group|fieldable_panels_pane|intro_deck_pane|form'] = $field_group;
+  $field_groups['group_second_links_group|fieldable_panels_pane|intro_deck_pane|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('First links group');
+  t('Second links group');
+
+  return $field_groups;
 }

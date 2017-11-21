@@ -30,14 +30,7 @@ function commerce_add_to_cart_confirmation_rules_action_info() {
  * Rules action: displays a custom Add to Cart message.
  */
 function commerce_add_to_cart_confirmation_rules_add_to_cart_message($line_item, $continue) {
-
-  $message = '<div class="added-product-title clearfix">' . t('Item successfully added to your cart') . '</div>';
-  $message .= '<div class="button-wrapper">';
-  $message .= '<div class="button checkout">' . l(t('Go to checkout'), 'cart') . '</div>';
-  $message .= '<div class="button continue"><span class="commerce-add-to-cart-confirmation-close">' . t('Continue shopping') . '</span></div>';
-  $message .= '</div>';
-  $message .= views_embed_view('confirm_message_product_display', 'default', $line_item->line_item_id);
-  $close = t('Close');
-
-  drupal_set_message('<div class="message-inner">' . $message . '<a class="commerce-add-to-cart-confirmation-close" href="#"><span class="element-invisible">' . $close . '</span></a></div>', 'commerce-add-to-cart-confirmation');
+  $view = views_embed_view('confirm_message_product_display', 'default', $line_item->line_item_id);
+  $message = theme('commerce_add_to_cart_confirmation_message', array('view' => $view));
+  drupal_set_message($message, 'commerce-add-to-cart-confirmation');
 }

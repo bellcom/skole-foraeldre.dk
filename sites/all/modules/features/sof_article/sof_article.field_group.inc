@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function sof_article_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -38,7 +38,7 @@ function sof_article_field_group_info() {
       ),
     ),
   );
-  $export['group_bottomaregion|node|article|full'] = $field_group;
+  $field_groups['group_bottomaregion|node|article|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -71,7 +71,7 @@ function sof_article_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_content_references|node|article|form'] = $field_group;
+  $field_groups['group_content_references|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -106,7 +106,7 @@ function sof_article_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_leftaregion|node|article|full'] = $field_group;
+  $field_groups['group_leftaregion|node|article|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -134,7 +134,7 @@ function sof_article_field_group_info() {
       ),
     ),
   );
-  $export['group_media_group|node|article|form'] = $field_group;
+  $field_groups['group_media_group|node|article|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -167,7 +167,15 @@ function sof_article_field_group_info() {
       ),
     ),
   );
-  $export['group_rightaregion|node|article|full'] = $field_group;
+  $field_groups['group_rightaregion|node|article|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Bottom Article Region');
+  t('Content references');
+  t('Left Article Region');
+  t('Media');
+  t('Right Article Region');
+
+  return $field_groups;
 }

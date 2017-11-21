@@ -10,7 +10,8 @@
 function sof_news_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-news_pane-field_single_link'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-news_pane-field_single_link'.
   $field_instances['fieldable_panels_pane-news_pane-field_single_link'] = array(
     'bundle' => 'news_pane',
     'default_value' => array(
@@ -28,6 +29,7 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_default',
         'weight' => 3,

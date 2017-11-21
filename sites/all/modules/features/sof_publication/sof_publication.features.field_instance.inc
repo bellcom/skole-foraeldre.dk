@@ -10,7 +10,7 @@
 function sof_publication_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-publication-field_category_publication'
+  // Exported field_instance: 'node-publication-field_category_publication'.
   $field_instances['node-publication-field_category_publication'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -74,7 +74,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_file'
+  // Exported field_instance: 'node-publication-field_file'.
   $field_instances['node-publication-field_file'] = array(
     'bundle' => 'publication',
     'deleted' => 0,
@@ -161,7 +161,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_image'
+  // Exported field_instance: 'node-publication-field_image'.
   $field_instances['node-publication-field_image'] = array(
     'bundle' => 'publication',
     'deleted' => 0,
@@ -268,7 +268,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_pdf_content'
+  // Exported field_instance: 'node-publication-field_pdf_content'.
   $field_instances['node-publication-field_pdf_content'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -343,7 +343,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_pdf_cover_color'
+  // Exported field_instance: 'node-publication-field_pdf_cover_color'.
   $field_instances['node-publication-field_pdf_cover_color'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -397,7 +397,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_pdf_description'
+  // Exported field_instance: 'node-publication-field_pdf_description'.
   $field_instances['node-publication-field_pdf_description'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -461,7 +461,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_pdf_title'
+  // Exported field_instance: 'node-publication-field_pdf_title'.
   $field_instances['node-publication-field_pdf_title'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -535,7 +535,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_publication_file_type'
+  // Exported field_instance: 'node-publication-field_publication_file_type'.
   $field_instances['node-publication-field_publication_file_type'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -595,7 +595,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_single_link'
+  // Exported field_instance: 'node-publication-field_single_link'.
   $field_instances['node-publication-field_single_link'] = array(
     'bundle' => 'publication',
     'default_value' => array(
@@ -682,7 +682,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_sof_commerce_product'
+  // Exported field_instance: 'node-publication-field_sof_commerce_product'.
   $field_instances['node-publication-field_sof_commerce_product'] = array(
     'bundle' => 'publication',
     'deleted' => 0,
@@ -763,7 +763,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_teaser'
+  // Exported field_instance: 'node-publication-field_teaser'.
   $field_instances['node-publication-field_teaser'] = array(
     'bundle' => 'publication',
     'default_value' => NULL,
@@ -841,7 +841,7 @@ function sof_publication_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_weight_sort'
+  // Exported field_instance: 'node-publication-field_weight_sort'.
   $field_instances['node-publication-field_weight_sort'] = array(
     'bundle' => 'publication',
     'default_value' => array(

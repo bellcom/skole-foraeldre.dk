@@ -16,7 +16,10 @@ function sof_question_and_answers_default_page_manager_pages() {
   $page->admin_title = 'QnA Page';
   $page->admin_description = 'This is the page, containing Questions and Answers';
   $page->path = 'qa';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

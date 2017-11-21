@@ -202,6 +202,31 @@ function commerce_message_default_message_type() {
     "rdf_mapping" : []
   }');
 
+  $items['commerce_order_admin_order_confirmation'] = entity_import('message_type', '{
+    "name" : "commerce_order_admin_order_confirmation",
+    "description" : "Commerce Order: admin order confirmation",
+    "argument_keys" : [],
+    "argument" : [],
+    "category" : "message_type",
+    "data" : { "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" } },
+    "language" : "",
+    "arguments" : null,
+    "message_text" : { "und" : [
+        {
+          "value" : "Order @{message:message-commerce-order:order-number} at [site:name]",
+          "format" : null,
+          "safe_value" : "Order @{message:message-commerce-order:order-number} at [site:name]"
+        },
+        {
+          "value" : "A new order (@{message:message-commerce-order:order-number}) has been placed at [site:name].\r\nHere is a link to the order:\r\n\r\n[message:message-commerce-order:view-url]",
+          "format" : "commerce_order_message",
+          "safe_value" : "A new order (@{message:message-commerce-order:order-number}) has been placed at [site:name].\r\nHere is a link to the order:\r\n\r\n[message:message-commerce-order:view-url]"
+        }
+      ]
+    },
+    "rdf_mapping" : []
+  }');
+
   return $items;
 }
 
@@ -212,11 +237,10 @@ function commerce_message_default_message_type() {
 function commerce_message_default_message_type_alter(&$items) {
   if (module_exists('locale')) {
     $languages = locale_language_list();
+    $default_messages = array_keys(commerce_message_default_message_type());
     foreach ($languages as $langcode => $langname) {
       foreach ($items as $message_type => $item) {
-        // @todo Find another way to check for module as MessageType object
-        // doesn't store it. @see https://drupal.org/node/2171201
-        if (!isset($item->module) || $item->module != 'commerce_message') {
+        if (!in_array($message_type, $default_messages)) {
           continue;
         }
         if (isset($items[$message_type]->message_text[LANGUAGE_NONE])) {
@@ -263,6 +287,7 @@ function commerce_message_message_field_refresh() {
     'commerce_order_user_comment',
     'commerce_order_admin_comment',
     'commerce_order_order_confirmation',
+    'commerce_order_admin_order_confirmation',
   );
   $fields['message_commerce_order']['instances'][] = array(
     'entity_type' => 'message',
@@ -565,6 +590,8 @@ function commerce_message_message_form_validate($form, &$form_state) {
  * Submit callback for commerce_message_message_form().
  */
 function commerce_message_message_form_submit($form, &$form_state) {
+  // Update date to current one
+  $form['#entity']->timestamp = REQUEST_TIME;
   // Notify field widgets.
   field_attach_submit('message', $form['#entity'], $form['content'], $form_state);
   entity_save('message', $form['#entity']);

@@ -82,7 +82,7 @@ function ga_stats_schema() {
       ),
       'url' => array(
         'type' => 'varchar',
-        'length' => 128,
+        'length' => 255,
         'not null' => FALSE,
         'description' => 'URL of page',
       ),
@@ -137,4 +137,16 @@ function ga_stats_update_7101(&$sandbox) {
   catch (FieldException $e) {
     throw new DrupalUpdateException($e->getMessage());
   }
+}
+
+/**
+ * Change the url field to accept longer urls.
+ */
+function ga_stats_update_7102(&$sandbox) {
+  db_change_field('ga_stats_count', 'url', 'url', array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => FALSE,
+    'description' => 'url of page',
+  ));
 }

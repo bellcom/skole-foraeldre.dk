@@ -10,7 +10,8 @@
 function sof_full_html_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-html_embed_pane-field_full_html_field'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-html_embed_pane-field_full_html_field'.
   $field_instances['fieldable_panels_pane-html_embed_pane-field_full_html_field'] = array(
     'bundle' => 'html_embed_pane',
     'default_value' => NULL,
@@ -23,6 +24,7 @@ function sof_full_html_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 0,

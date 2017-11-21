@@ -7,6 +7,7 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = media
 dependencies[] = sof_field_bases
+dependencies[] = sof_pathauto_settings
 dependencies[] = strongarm
 dependencies[] = text
 features[ctools][] = strongarm:strongarm:1

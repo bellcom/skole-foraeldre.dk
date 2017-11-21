@@ -1,2 +1,0 @@
-The following patches from the following thread: https://www.drupal.org/node/2371907 have been applied to this project:
-- https://www.drupal.org/files/issues/varnish-2371907-24.patch

@@ -10,7 +10,7 @@
 function sof_basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-basic_page-body'
+  // Exported field_instance: 'node-basic_page-body'.
   $field_instances['node-basic_page-body'] = array(
     'bundle' => 'basic_page',
     'default_value' => NULL,
@@ -23,6 +23,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 0,
@@ -33,6 +34,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -43,6 +45,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -76,7 +79,7 @@ function sof_basic_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-basic_page-field_image'
+  // Exported field_instance: 'node-basic_page-field_image'.
   $field_instances['node-basic_page-field_image'] = array(
     'bundle' => 'basic_page',
     'deleted' => 0,
@@ -88,6 +91,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -100,6 +104,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => 'article_top_slider',
         ),
@@ -159,7 +164,7 @@ function sof_basic_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-basic_page-field_teaser'
+  // Exported field_instance: 'node-basic_page-field_teaser'.
   $field_instances['node-basic_page-field_teaser'] = array(
     'bundle' => 'basic_page',
     'default_value' => NULL,
@@ -172,6 +177,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 2,
@@ -182,6 +188,7 @@ function sof_basic_page_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 1,

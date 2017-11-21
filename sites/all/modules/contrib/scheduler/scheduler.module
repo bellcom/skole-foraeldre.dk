@@ -29,7 +29,7 @@ function scheduler_permission() {
       'title' => t('Administer scheduler'),
       'description' => t('Configure scheduler date formats, pop-up calendar, default times, lightweight cron'),
     ),
-    'schedule (un)publishing of nodes' => array(
+    'schedule publishing of nodes' => array(
       'title' => t('Schedule content publication'),
       'description' => t('Allows users to set a start and end time for content publication'),
     ),
@@ -152,7 +152,7 @@ function scheduler_list_access_callback($uid = NULL) {
   // All Scheduler users can see their own scheduled content via their user
   // page. In addition, if they have 'view scheduled content' permission they
   // will be able to see all scheduled content by all authors.
-  return user_access('view scheduled content') || ($uid == $user->uid && user_access('schedule (un)publishing of nodes'));
+  return user_access('view scheduled content') || ($uid == $user->uid && user_access('schedule publishing of nodes'));
 }
 
 /**
@@ -214,7 +214,7 @@ function scheduler_form_node_type_form_alter(&$form, $form_state) {
 function scheduler_form_alter(&$form, $form_state) {
   // Load the real code only when needed. First check if this a node form and
   // that the user has permission to use Scheduler.
-  if (!empty($form['#node_edit_form']) && user_access('schedule (un)publishing of nodes')) {
+  if (!empty($form['#node_edit_form']) && user_access('schedule publishing of nodes')) {
     // Check if scheduling has been enabled for this node type.
     $publishing_enabled = variable_get('scheduler_publish_enable_' . $form['type']['#value'], 0) == 1;
     $unpublishing_enabled = variable_get('scheduler_unpublish_enable_' . $form['type']['#value'], 0) == 1;
@@ -468,27 +468,34 @@ function scheduler_node_load($nodes, $types) {
  * Implements hook_node_view().
  */
 function scheduler_node_view($node, $view_mode = 'full', $langcode) {
-  // If the node is going to be unpublished then add this information to the
-  // header for googlebot. Only do this when viewing the full node (not teaser)
-  // on its own page and not in edit mode.
-  // @todo Replace $node->scheduler with $node->unpublish_on.
-  if ($view_mode == 'full' && !empty($node->scheduler['unpublish_on']) && node_is_page($node) && arg(2) != 'edit') {
-    $unavailable_after = date("d-M-Y H:i:s T", $node->scheduler['unpublish_on']);
-    $element = array(
-      '#tag' => 'meta',
-      '#attributes' => array(
-        'name' => 'googlebot',
-        'content' => 'unavailable_after: ' . $unavailable_after,
-      ),
-    );
-    drupal_add_html_head($element, 'scheduler_unavailable');
+  // If the node is going to be unpublished, then add this information to the
+  // header for search engines. Only do this when the current page is the
+  // full-page view of the node.
+  // @see https://googleblog.blogspot.be/2007/07/robots-exclusion-protocol-now-with-even.html
+  if ($view_mode == 'full' && !empty($node->unpublish_on) && node_is_page($node) && arg(2) != 'edit') {
+    drupal_add_http_header('X-Robots-Tag', 'unavailable_after: ' . date(DATE_RFC850, $node->unpublish_on));
   }
 }
 
 /**
  * Implements hook_node_validate().
  */
-function scheduler_node_validate($node, $form) {
+function scheduler_node_validate($node, $form, &$form_state) {
+  // Skip all validation when deleting the node. To check if the delete button
+  // was clicked search for 'node_form_delete_submit' in the triggering_element
+  // #submit array. This is better than checking for the text 'Delete'.
+  // Use !== FALSE because the key returned will be 0.
+  // @see https://www.drupal.org/node/2723929
+  if (!empty($form_state['triggering_element']['#submit']) && array_search('node_form_delete_submit', $form_state['triggering_element']['#submit']) !== FALSE) {
+    if ($errors = form_get_errors()) {
+      // If there are already errors (from date_popup) remove them to allow
+      // deletion to proceed.
+      form_clear_error();
+      unset($_SESSION['messages']['error']);
+    };
+    return;
+  }
+
   // Adjust the entered times for timezone consideration. Note, we must check
   // to see if the value is numeric. If it is, assume we have already done the
   // strtotime conversion. This prevents us running strtotime on a value we have
@@ -524,10 +531,17 @@ function scheduler_node_validate($node, $form) {
     form_set_error('unpublish_on', t("The 'unpublish on' date must be later than the 'publish on' date."));
   }
 
-  // The unpublish-on 'required' form attribute may not be set in some cases,
-  // but a value must be entered if also setting a publish-on date.
-  if (variable_get('scheduler_unpublish_required_' . $node->type) && !empty($node->publish_on) && empty($node->unpublish_on)) {
-    form_set_error('unpublish_on', t("If you set a 'publish-on' date then you must also set an 'unpublish-on' date."));
+  // The unpublish-on 'required' form attribute may not be set, but in some
+  // cases a value must still be entered.
+  if (variable_get('scheduler_unpublish_required_' . $node->type) && empty($node->unpublish_on)) {
+    // ... when also setting a publish-on date.
+    if (!empty($node->publish_on)) {
+      form_set_error('unpublish_on', t("If you set a 'publish-on' date then you must also set an 'unpublish-on' date."));
+    }
+    // ... or when publishing by directly ticking the published checkbox.
+    if ($form_state['values']['status']) {
+      form_set_error('unpublish_on', t("To publish this node you must also set an 'unpublish-on' date."));
+    }
   }
 }
 
@@ -682,8 +696,15 @@ function scheduler_cron() {
   $scheduler_cron = &drupal_static(__FUNCTION__, FALSE);
   $scheduler_cron = TRUE;
 
-  _scheduler_publish();
-  _scheduler_unpublish();
+  // If the option is enabled clear caches if a node was published or
+  // unpublished, just like it would have been done if system_cron ran or the
+  // nodes were edited through the node edit form.
+  $nodes_published = _scheduler_publish();
+  $nodes_unpublished = _scheduler_unpublish();
+  if (variable_get('scheduler_cache_clear_all', 0) && ($nodes_published || $nodes_unpublished)) {
+    // Clear the page and block caches.
+    cache_clear_all();
+  }
 
   // Reset the static scheduler_cron flag.
   drupal_static_reset(__FUNCTION__);
@@ -779,11 +800,13 @@ function scheduler_field_extra_fields() {
 }
 
 /**
- * Implements hook_preprocess_node().
+ * Prepares variables for node templates.
  *
  * Makes the publish_on and unpublish_on data available as theme variables.
+ *
+ * @see template_preprocess_node()
  */
-function scheduler_preprocess_node(&$variables, $hook) {
+function scheduler_preprocess_node(&$variables) {
   $node = $variables['node'];
   $date_format = variable_get('scheduler_date_format', SCHEDULER_DATE_FORMAT);
   if (!empty($node->publish_on) && $node->publish_on && is_numeric($node->publish_on)) {
@@ -912,7 +935,7 @@ function scheduler_field_attach_prepare_translation_alter($entity, $context) {
  */
 function scheduler_date_popup_pre_validate_alter($element, $form_state, &$input) {
   // Provide a default time if this is enabled and the time field is empty.
-  if (variable_get('scheduler_allow_date_only', FALSE) && $element['#array_parents'][0] == 'scheduler_settings' && $input['date'] != '' && $input['time'] == '') {
+  if (variable_get('scheduler_allow_date_only', FALSE) && $element['#array_parents'][0] == 'scheduler_settings' && !empty($input['date']) && empty($input['time'])) {
     // Get the default time as a timestamp number.
     $default_time = strtotime(variable_get('scheduler_default_time', SCHEDULER_DEFAULT_TIME));
     // Set the time in the required format just as if the user had typed it.

@@ -10,7 +10,8 @@
 function sof_slider_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_image'.
   $field_instances['field_collection_item-field_slides_content-field_image'] = array(
     'bundle' => 'field_slides_content',
     'deleted' => 0,
@@ -22,6 +23,7 @@ function sof_slider_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -75,7 +77,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_single_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_single_link'.
   $field_instances['field_collection_item-field_slides_content-field_single_link'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -88,6 +91,7 @@ function sof_slider_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_plain',
         'weight' => 3,
@@ -135,7 +139,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_small_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_small_title'.
   $field_instances['field_collection_item-field_slides_content-field_small_title'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -148,6 +153,7 @@ function sof_slider_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_plain',
         'weight' => 1,
@@ -174,7 +180,8 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_slides_content-field_teaser'
+  // Exported field_instance:
+  // 'field_collection_item-field_slides_content-field_teaser'.
   $field_instances['field_collection_item-field_slides_content-field_teaser'] = array(
     'bundle' => 'field_slides_content',
     'default_value' => NULL,
@@ -187,6 +194,7 @@ function sof_slider_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_plain',
         'weight' => 2,
@@ -215,7 +223,7 @@ function sof_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slider-field_slides_content'
+  // Exported field_instance: 'node-slider-field_slides_content'.
   $field_instances['node-slider-field_slides_content'] = array(
     'bundle' => 'slider',
     'default_value' => NULL,
@@ -232,6 +240,7 @@ function sof_slider_field_default_field_instances() {
           'edit' => 'Edit',
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -243,6 +252,7 @@ function sof_slider_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'optionset' => 'sof_field',
           'view_mode' => 'full',
         ),

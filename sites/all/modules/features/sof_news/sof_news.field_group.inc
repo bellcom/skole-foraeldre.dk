@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function sof_news_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -34,11 +34,12 @@ function sof_news_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => '',
+        'classes' => ' group-bottomaregion field-group-div',
+        'id' => 'node_news_full_group_bottomaregion',
       ),
     ),
   );
-  $export['group_bottomaregion|node|news|full'] = $field_group;
+  $field_groups['group_bottomaregion|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,12 +66,13 @@ function sof_news_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-content-references field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_news_form_group_content_references',
       ),
     ),
   );
-  $export['group_content_references|node|news|form'] = $field_group;
+  $field_groups['group_content_references|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -95,17 +97,18 @@ function sof_news_field_group_info() {
     'format_settings' => array(
       'label' => 'Left Article Region',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-leftaregion field-group-div',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_news_full_group_leftaregion',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_leftaregion|node|news|full'] = $field_group;
+  $field_groups['group_leftaregion|node|news|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -128,12 +131,13 @@ function sof_news_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-media-group field-group-fieldset',
         'required_fields' => 1,
+        'id' => 'node_news_form_group_media_group',
       ),
     ),
   );
-  $export['group_media_group|node|news|form'] = $field_group;
+  $field_groups['group_media_group|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -162,11 +166,20 @@ function sof_news_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => '',
+        'classes' => ' group-rightaregion field-group-div',
+        'id' => 'node_news_full_group_rightaregion',
       ),
     ),
   );
-  $export['group_rightaregion|node|news|full'] = $field_group;
+  $field_groups['group_rightaregion|node|news|full'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Bottom Article Region');
+  t('Content references');
+  t('Left Article Region');
+  t('Media');
+  t('Right Article Region');
+
+  return $field_groups;
 }

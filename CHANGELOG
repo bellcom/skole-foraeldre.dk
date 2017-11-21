@@ -1,3 +1,7 @@
+7.x-1.76 06-10-2016
+-------------------
+* ac72efa - (HEAD -> master, origin/dev, dev) SOF-32 Added the Facebook Tracking Pixel configurations to the Variables feature. (41 seconds ago) <Lachezar Valchev>
+
 7.x-1.75 06-10-2016
 -------------------
 * 204c8d3 - (origin/feature/SOF-32, feature/SOF-32) SOF-32 Added the Facebook Tracking Pixel module to project. (19 hours ago) <Lachezar Valchev>

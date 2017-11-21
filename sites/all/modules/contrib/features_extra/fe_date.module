@@ -3,20 +3,12 @@
  * @file
  * Features export for date components.
  *
- *  - date_format_types
- *
- *    Hooks
- *    date_format_types_features_revert()
- *    and
- *    date_format_types_features_rebuild()
- *    should be managed by hook_date_format_types().
- *
- *  - locale_date_format
- *    Localized date formats.
- *
- *  - custom_date_formats
- *    These formats can be deleted via gui and can be used in all date format
- *    types.
+ *  - 'date_format_types': Hooks 'date_format_types_features_revert()' and
+ *    'date_format_types_features_rebuild()' should be managed by
+ *    'hook_date_format_types()'.
+ *  - 'locale_date_format': Localized date formats.
+ *  - 'custom_date_formats': These formats can be deleted via gui and can be
+ *    used in all date format types.
  */
 
 /**
@@ -261,7 +253,7 @@ function _fe_date_get_locale_date_format($type, $langcode) {
   if (empty($format)) {
     $format = _fe_date_get_default_format($type);
   }
-  return ($format) ? $format : NULL;
+  return $format ? $format : NULL;
 }
 
 /**
@@ -271,7 +263,7 @@ function _fe_date_get_default_format($type) {
   // Do not use variable_get() as this may fetch an already localized variable.
   $format = db_query('SELECT value FROM {variable} WHERE name = :name', array(':name' => 'date_format_' . $type))->fetchField();
 
-  return ($format !== FALSE) ? unserialize($format) : NULL;
+  return $format !== FALSE ? unserialize($format) : NULL;
 }
 
 /**

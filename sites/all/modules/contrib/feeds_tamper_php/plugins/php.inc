@@ -26,7 +26,7 @@ function feeds_tamper_php_form($importer, $element_key, $settings) {
     '#type' => 'textarea',
     '#title' => t('PHP code'),
     '#default_value' => isset($settings['php']) ? $settings['php'] : '',
-    '#description' => t('This code will be executed. Use $field as value of this field. Do not use < ?php and ? >. <br />For example, use:      return substr($field, 0, 10);'),
+    '#description' => t('This code will be executed. Use $field as value of this field, $item as keyed array of the item being imported. Do not use < ?php and ? >. <br />For example, use:      return substr($field, 0, 10); <br />or:      return substr($item[\'field\'], 0, 10);'),
   );
   return $form;
 }

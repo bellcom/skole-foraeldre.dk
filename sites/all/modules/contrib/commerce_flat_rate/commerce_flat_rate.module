@@ -171,6 +171,7 @@ function commerce_flat_rate_commerce_shipping_service_info() {
       );
     }
   }
+
   return $services;
 }
 
@@ -220,7 +221,7 @@ function commerce_flat_rate_service_new() {
  *   service; either FALSE on failure or SAVED_NEW or SAVED_UPDATED indicating
  *   the type of query performed to save the flat rate service.
  */
-function commerce_flat_rate_service_save($shipping_service, $skip_reset = FALSE) {dpm('SAVE');
+function commerce_flat_rate_service_save($shipping_service, $skip_reset = FALSE) {
   // Move the amount and currency code up a level in the service array.
   if (!empty($shipping_service['base_rate'])) {
     $shipping_service['amount'] = $shipping_service['base_rate']['amount'];

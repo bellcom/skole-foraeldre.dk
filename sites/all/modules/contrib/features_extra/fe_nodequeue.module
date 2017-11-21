@@ -183,7 +183,13 @@ function _fe_nodequeue_save_queue(array $settings) {
     if (is_int($role)) {
       continue;
     }
-    $settings['roles'][$index] = $roles[$role];
+    if (isset($roles[$role])) {
+      $settings['roles'][$index] = $roles[$role];
+    }
+    else {
+      // Do not attempt to assign a role which does not exist.
+      unset($settings['roles'][$index]);
+    }
   }
 
   // Simulate checkboxes.

@@ -10,7 +10,7 @@
 function sof_banner_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'bean-banner-field_color'
+  // Exported field_instance: 'bean-banner-field_color'.
   $field_instances['bean-banner-field_color'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -23,6 +23,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'color_field_default_formatter',
         'weight' => 3,
@@ -44,7 +45,7 @@ function sof_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_image'
+  // Exported field_instance: 'bean-banner-field_image'.
   $field_instances['bean-banner-field_image'] = array(
     'bundle' => 'banner',
     'deleted' => 0,
@@ -56,6 +57,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'image_link' => '',
           'image_style' => '',
         ),
@@ -109,7 +111,7 @@ function sof_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_single_link'
+  // Exported field_instance: 'bean-banner-field_single_link'.
   $field_instances['bean-banner-field_single_link'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -122,6 +124,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_absolute',
         'weight' => 0,
@@ -164,7 +167,7 @@ function sof_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_small_title'
+  // Exported field_instance: 'bean-banner-field_small_title'.
   $field_instances['bean-banner-field_small_title'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -177,6 +180,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 4,
@@ -203,7 +207,7 @@ function sof_banner_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-banner-field_teaser'
+  // Exported field_instance: 'bean-banner-field_teaser'.
   $field_instances['bean-banner-field_teaser'] = array(
     'bundle' => 'banner',
     'default_value' => NULL,
@@ -216,6 +220,7 @@ function sof_banner_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'text_default',
         'weight' => 5,

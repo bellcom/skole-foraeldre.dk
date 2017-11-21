@@ -663,6 +663,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer panelizer node section context',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -672,6 +673,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer panelizer node section defaults',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -681,6 +683,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer panelizer node section layout',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -690,6 +693,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer panelizer node section overview',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -699,6 +703,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'administer panelizer node section settings',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'panelizer',
   );
@@ -1384,6 +1389,8 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'delete any publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'site editor' => 'site editor',
     ),
     'module' => 'node',
   );
@@ -2054,6 +2061,7 @@ function sof_permissions_and_roles_user_default_permissions() {
     'name' => 'edit any section content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'node',
   );

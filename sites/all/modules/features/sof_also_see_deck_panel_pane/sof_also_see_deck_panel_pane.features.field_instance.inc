@@ -10,7 +10,8 @@
 function sof_also_see_deck_panel_pane_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_related_article_news'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-also_see_pane-field_related_article_news'.
   $field_instances['fieldable_panels_pane-also_see_pane-field_related_article_news'] = array(
     'bundle' => 'also_see_pane',
     'default_value' => NULL,
@@ -23,7 +24,9 @@ function sof_also_see_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -55,7 +58,8 @@ function sof_also_see_deck_panel_pane_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-also_see_pane-field_single_link'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-also_see_pane-field_single_link'.
   $field_instances['fieldable_panels_pane-also_see_pane-field_single_link'] = array(
     'bundle' => 'also_see_pane',
     'default_value' => array(
@@ -73,6 +77,7 @@ function sof_also_see_deck_panel_pane_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
+          'field_multiple_limit_order' => 0,
         ),
         'type' => 'link_default',
         'weight' => 1,
