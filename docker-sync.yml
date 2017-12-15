@@ -1,7 +1,7 @@
 version: "2"
 
 syncs:
-  docker-greve-sync:
+  docker-sof-sync:
     src: './'
     sync_userid: '82'
     sync_excludes: ['.gitignore', '.git/', '.idea/']

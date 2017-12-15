@@ -3,34 +3,34 @@ version: "2"
 services:
   mariadb:
     image: wodby/mariadb:10.1-2.3.5
-    container_name: greve_mariadb
+    container_name: sof_mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: greve
+      MYSQL_DATABASE: sof
       MYSQL_USER: drupal
       MYSQL_PASSWORD: drupal
     volumes:
-      - ~/mariadb-init/greve:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
-      - ~/docker-runtime/greve:/var/lib/mysql # I want to manage volumes manually.
+      - ~/mariadb-init/sof:/docker-entrypoint-initdb.d # Place init .sql file(s) here.
+      - ~/docker-runtime/sof:/var/lib/mysql # I want to manage volumes manually.
 
   php:
     image: 185836940016.dkr.ecr.eu-west-1.amazonaws.com/php_5.6_main_drupal:latest
-    container_name: greve_php
+    container_name: sof_php
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
       PHP_FPM_CLEAR_ENV: "no"
       DB_HOST: mariadb
       DB_USER: drupal
       DB_PASSWORD: drupal
-      DB_NAME: greve
+      DB_NAME: sof
       DB_DRIVER: mysql
     volumes:
       # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-      - docker-greve-sync:/var/www/html # Docker-sync
+      - docker-sof-sync:/var/www/html # Docker-sync
 
   apache:
     image: wodby/php-apache:2.4-2.0.0
-    container_name: greve_apache
+    container_name: sof_apache
     depends_on:
       - php
     environment:
@@ -39,15 +39,15 @@ services:
       APACHE_SERVER_ROOT: /var/www/html
     volumes:
       # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-      - docker-greve-sync:/var/www/html # Docker-sync
+      - docker-sof-sync:/var/www/html # Docker-sync
     labels:
       - 'traefik.backend=apache'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:greve.dev'
+      - 'traefik.frontend.rule=Host:sof.dev'
 
   varnish:
     image: wodby/drupal-varnish:4.1-2.2.0
-    container_name: greve_varnish
+    container_name: sof_varnish
     depends_on:
       - apache
     environment:
@@ -61,7 +61,7 @@ services:
 
   solr:
     image: wodby/drupal-solr:7-5.4-2.2.0
-    container_name: greve_solr
+    container_name: sof_solr
     environment:
       SOLR_HEAP: 1024m
     labels:
@@ -71,7 +71,7 @@ services:
 
   mailhog:
     image: mailhog/mailhog
-    container_name: greve_mailhog
+    container_name: sof_mailhog
     labels:
       - 'traefik.backend=mailhog'
       - 'traefik.port=8025'
@@ -79,11 +79,11 @@ services:
 
   memcached:
     image: wodby/memcached:1.4-2.0.0
-    container_name: greve_memcached
+    container_name: sof_memcached
 
   traefik:
     image: traefik
-    container_name: greve_traefik
+    container_name: sof_traefik
     command: -c /dev/null --web --docker --logLevel=INFO
     ports:
       - '8000:80'
@@ -93,5 +93,5 @@ services:
 volumes:
   codebase:
   # Docker-sync for macOS users
-  docker-greve-sync:
+  docker-sof-sync:
     external: true
