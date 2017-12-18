@@ -9,9 +9,9 @@ files[] = menu_block_export.admin.inc
 
 configure = admin/config/user-interface/menu-block/export
 
-; Information added by  packaging script on 2013-11-07
+; Information added by Drupal.org packaging script on 2015-10-12
 version = "7.x-3.x-dev"
 core = "7.x"
 project = "menu_block"
-datestamp = "1383840839"
+datestamp = "1444680241"
 

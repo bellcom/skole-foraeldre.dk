@@ -6,7 +6,7 @@ Drupal.plupload.filesAddedCallback = function (up, files) {
   setTimeout(function(){up.start()}, 100);
 };
 Drupal.plupload.uploadCompleteCallback = function(up, files) {
-  var $this = $("#"+up.settings.container);
+  var $this = $(up.settings.container);
   // If there is submit_element trigger it.
   var submit_element = window.Drupal.settings.plupload[$this.attr('id')].submit_element;
   if (submit_element) {
@@ -115,6 +115,10 @@ Drupal.behaviors.pluploadform = {
                     for (var attr in originalFormAttributes) {
                       $form.attr(attr, originalFormAttributes[attr]);
                     }
+                    // We're going to automatically submit the form.
+                    // Disable the button until we do it.
+                    $("[type=submit]", $form).attr("disabled", true);
+
                     // Click a specific element if one is specified.
                     if (settings.plupload[id].submit_element) {
                       $(settings.plupload[id].submit_element).click();
