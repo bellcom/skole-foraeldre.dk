@@ -1,0 +1,2 @@
+The following patches from the following thread: https://www.drupal.org/project/commerce_coupon/issues/1431782 have been applied to this project:
+- https://www.drupal.org/files/issues/commerce_coupon-uninstall_error-1431782-6.patch

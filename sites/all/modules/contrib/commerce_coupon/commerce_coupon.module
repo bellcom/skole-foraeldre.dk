@@ -373,7 +373,10 @@ function commerce_coupon_type_delete_multiple(array $coupon_type_names) {
  */
 function commerce_coupon_type_disable($coupon_type_name) {
   $coupon_type = commerce_coupon_type_load($coupon_type_name);
-  if (!empty($coupon_type)) {
+  $coupons = commerce_coupon_load_multiple(array(), array('type' => $coupon_type->type));
+  
+  // We need to be sure there are existing coupons which to save as inactive.
+  if (!empty($coupon_type) && !empty($coupons)) {
     // Disable the coupon type.
     $coupon_type->status = 0;
     commerce_coupon_type_save($coupon_type, TRUE);
