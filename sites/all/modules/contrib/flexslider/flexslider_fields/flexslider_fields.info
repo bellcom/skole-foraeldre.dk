@@ -4,9 +4,9 @@ core = 7.x
 package = FlexSlider
 
 dependencies[] = flexslider
-; Information added by Drupal.org packaging script on 2014-01-28
-version = "7.x-2.0-alpha3+5-dev"
+; Information added by Drupal.org packaging script on 2017-02-13
+version = "7.x-2.0-rc2"
 core = "7.x"
 project = "flexslider"
-datestamp = "1390924285"
+datestamp = "1487028488"
 

@@ -6,14 +6,9 @@ version = 7.x-1.0
 dependencies[] = commerce
 dependencies[] = field_group
 
-
-files[] = commerce_fieldgroup_panes.module
-
-
-
-; Information added by drupal.org packaging script on 2013-09-30
-version = "7.x-1.0+0-dev"
+; Information added by Drupal.org packaging script on 2016-07-21
+version = "7.x-1.1"
 core = "7.x"
 project = "commerce_fieldgroup_panes"
-datestamp = "1380560242"
+datestamp = "1469122444"
 

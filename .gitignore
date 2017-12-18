@@ -1,10 +1,15 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
-sites/settings/settings_php/*
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
 
-# Ignore hacked module
-sites/all/modules/contrib/hacked
+# Hidden files and folders
+#.*
+.DS_Store
+.idea
+
+# Hide env.settings.php
+sites/*/env.settings.php
+!sites/*/settings.php

@@ -1,3 +1,2 @@
 The following patches have been applied to this project:
-- http://www.drupal.org/files/uuid-feeds-mapper-1800730-10_1.patch
-
+- https://www.drupal.org/files/issues/include_uuid_mapper_for-1800730-23.patch
