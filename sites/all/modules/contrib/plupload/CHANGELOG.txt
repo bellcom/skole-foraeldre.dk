@@ -1,6 +1,12 @@
 CHANGELOG for Plupload integration for Drupal 7
 
-Plupload integration 7.x-2.x-dev
+Plupload integration 7.x-1.x-dev
+=================================
+- #2454333 by pcho: Make file includes bad patch
+- #2361151 by msound, dtarc, ericduran: Disable next button when upload starts
+- #2088143 by garphy | pvhee: Rename .make file to .make.example. 
+
+Plupload integration 7.x-1.7
 =================================
 - #2370889 by znerol: Fixed Extra margin on file list due to insufficient specificity of CSS selector.
 - #2190007 by slashrsm | hswong3i: Kill Firefox 3.6 check and entire _requirements checks section. 
