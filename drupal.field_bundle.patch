@@ -1,0 +1,29 @@
+From ba926140978219ab15176f2e9e78102556fab7cf Mon Sep 17 00:00:00 2001
+From: Marek Mechura <marysmech@gmail.com>
+Date: Thu, 22 Jun 2017 18:33:45 +0200
+Subject: [PATCH] fix core field fatal error: PHP Catchable fatal error: 
+ Argument 2 passed to SelectQuery::fields() must be of the type array, null
+ given
+
+---
+ modules/field/field.info.inc | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/modules/field/field.info.inc b/modules/field/field.info.inc
+index dea2fd4..4fe08e0 100644
+--- a/modules/field/field.info.inc
++++ b/modules/field/field.info.inc
+@@ -438,7 +438,9 @@ function field_info_bundles($entity_type = NULL) {
+ 
+   $bundles = array();
+   foreach ($info as $type => $entity_info) {
+-    $bundles[$type] = $entity_info['bundles'];
++    if (isset($entity_info['bundles'])) {
++      $bundles[$type] = $entity_info['bundles'];
++    }
+   }
+   return $bundles;
+ }
+-- 
+2.10.1 (Apple Git-78)
+
