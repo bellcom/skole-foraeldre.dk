@@ -1,0 +1,3 @@
+- include_tasks: db.yml
+- include_tasks: drupal.yml
+- include_tasks: action.yml

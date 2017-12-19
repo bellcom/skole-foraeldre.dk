@@ -1,0 +1,29 @@
+{
+  "name": "ffwcs/sof-build",
+  "description": "Build environment and scripts for skole-foraeldre.dk",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Michał Hepner",
+      "email": "michal.hepner@ffwagency.com"
+    }
+  ],
+  "require": {
+    "ffwcs/spin-up": "0.1.1"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@gitlab.workingpropeople.com:FFW-CSO/INFRASTRUCTURE/spin-up.git"
+    }
+  ],
+  "scripts": {
+    "ffwcs-spin-up-setup": "([ -f ./install ] || cp ./vendor/ffwcs/spin-up/install ./install) && ./install",
+    "post-install-cmd": [
+      "@ffwcs-spin-up-setup"
+    ],
+    "post-update-cmd": [
+      "@ffwcs-spin-up-setup"
+    ]
+  }
+}

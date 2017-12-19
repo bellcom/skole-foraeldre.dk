@@ -1,0 +1,39 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f240e160fdbbd99f44aa5073cda96853",
+    "packages": [
+        {
+            "name": "ffwcs/spin-up",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.workingpropeople.com:FFW-CSO/INFRASTRUCTURE/spin-up.git",
+                "reference": "a7b5872ce3405be3009fb4925d644306410235cc"
+            },
+            "type": "library",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Hepner",
+                    "email": "michal.hepner@ffwagency.com"
+                }
+            ],
+            "description": "Holds common utilities used in site build scripts",
+            "time": "2017-12-19T05:37:24+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

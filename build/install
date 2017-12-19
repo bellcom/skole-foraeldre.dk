@@ -1,0 +1,139 @@
+#!/usr/bin/env php
+<?php
+
+namespace FFWCS\SpinUp;
+
+use CallbackFilterIterator;
+use FilesystemIterator;
+use SplFileInfo;
+
+/**
+ * WARNING!
+ *
+ * This script is supposed to be used only inside a site build directory
+ * to help maintaining its structure when `composer install` is called.
+ * Please DO NOT use this in any other case.
+ */
+class Installer
+{
+    /**
+     * Defines the logic of the installer.
+     */
+    public function run()
+    {
+        $libPath = 'vendor/ffwcs/spin-up';
+        $projectRolesPath = __DIR__.'/roles';
+        $projectVarsPath = __DIR__.'/vars';
+
+        file_exists($projectRolesPath) ?: mkdir($projectRolesPath);
+        file_exists($projectVarsPath) ?: mkdir($projectVarsPath);
+
+        $this->cleanDeadLinks($projectRolesPath);
+        $this->cleanDeadLinks($projectVarsPath);
+
+        $this->copyDir($libPath.'/skeleton/copy/vars', $projectVarsPath);
+        $this->copyFile($libPath.'/skeleton/copy/_.gitignore', '.gitignore');
+        $this->copyFile($libPath.'/skeleton/copy/.htaccess', '.htaccess');
+        $this->relativeSymlinkFile(__DIR__, $libPath.'/skeleton/link/ec2.py', 'ec2.py');
+        $this->relativeSymlinkFile(__DIR__, $libPath.'/skeleton/link/build-deploy.yml', 'build-deploy.yml');
+        $this->relativeSymlinkFile(__DIR__, $libPath.'/skeleton/link/build-test.yml', 'build-test.yml');
+        $this->relativeSymlinkFile(__DIR__, $libPath.'/skeleton/link/build-test-deploy.yml', 'build-test-deploy.yml');
+        $this->relativeSymlinkDir($projectRolesPath, '../'.$libPath.'/skeleton/link/roles', $projectRolesPath);
+        $this->relativeSymlinkDir($projectVarsPath, '../'.$libPath.'/skeleton/link/vars', $projectVarsPath);
+    }
+
+    /**
+     * @param string $src
+     * @param string $target
+     */
+    protected function copyFile($src, $target)
+    {
+        if (!file_exists($target)) {
+            copy($src, $target);
+            echo sprintf("Copied %s to %s\n", $src, $target);
+        }
+    }
+
+    /**
+     * @param string $srcDir
+     * @param string $targetDir
+     */
+    protected function copyDir($srcDir, $targetDir)
+    {
+        foreach (new FilesystemIterator($srcDir) as $sourceFile) {
+            $this->copyFile($sourceFile->getPathname(), $targetDir.'/'.$sourceFile->getFilename());
+        }
+    }
+
+    /**
+     * @param string $chdir
+     * @param string $src
+     * @param string $target
+     */
+    protected function relativeSymlinkFile($chdir, $src, $target)
+    {
+        $cwd = getcwd();
+        chdir($chdir);
+        if (!file_exists($target)) {
+            symlink($src, $target);
+            echo sprintf("Symlinked %s to %s\n", $src, $target);
+        }
+        chdir($cwd);
+    }
+
+    /**
+     * @param string $chdir
+     * @param string $srcDir$cwd
+     * @param string $targetDir
+     */
+    protected function relativeSymlinkDir($chdir, $srcDir, $targetDir)
+    {
+        $cwd = getcwd();
+        chdir($chdir);
+        $iterator = new FilesystemIterator($srcDir);
+        chdir($cwd);
+
+        foreach ($iterator as $sourceFile) {
+            $this->relativeSymlinkFile($chdir, $srcDir.'/'.$sourceFile->getFilename(), $targetDir.'/'.$sourceFile->getFilename());
+        }
+    }
+
+    /**
+     * @param string $dir
+     *
+     * @return CallbackFilterIterator
+     */
+    protected function listDeadLinks($dir)
+    {
+        return new CallbackFilterIterator(
+            new FilesystemIterator($dir),
+            [$this, 'isDeadLink']
+        );
+    }
+
+    /**
+     * @param string $dir
+     */
+    protected function cleanDeadLinks($dir)
+    {
+        foreach ($this->listDeadLinks($dir) as $fileInfo) {
+            unlink($fileInfo->getPathname());
+            echo sprintf("Removed dead link in %s\n", $fileInfo->getPathname());
+        }
+    }
+
+    /**
+     * @param SplFileInfo $fileInfo
+     *
+     * @return bool
+     */
+    public function isDeadLink(SplFileInfo $fileInfo)
+    {
+        return $fileInfo->isLink()
+            && ($fileInfo->getRealPath() === false || !file_exists($fileInfo->getRealPath()))
+        ;
+    }
+}
+
+$install = new Installer();
+$install->run();

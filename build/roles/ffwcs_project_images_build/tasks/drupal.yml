@@ -1,0 +1,48 @@
+- fail: msg="Required variable '{{ item }}' is not defined in role '{{role_path | basename}}'"
+  when: item not in vars
+  with_items:
+    - project_name
+    - project_path
+    - project_image_drupal_name
+    - project_image_drupal_tag
+
+- name: Create tmp Drupal image build directory
+  tempfile: state=directory
+  register: build_dir
+
+- name: Copy Drupal files to tmp Drupal image build directory
+  synchronize:
+    src: "{{ project_path }}/"
+    dest: "{{ build_dir.path }}"
+
+- name: Copy Dockerfile to tmp Drupal image build directory
+  copy: src={{ role_path }}/files/drupal/Dockerfile dest={{ build_dir.path }}/Dockerfile
+
+- name: Copy .dockerignore to tmp Drupal image build directory
+  copy: src={{ role_path }}/files/drupal/.dockerignore dest={{ build_dir.path }}/.dockerignore
+
+- name: Copy docker-entrypoint.sh to tmp Drupal image build directory
+  copy: src={{ role_path }}/files/drupal/docker-entrypoint.sh dest={{ build_dir.path }}/docker-entrypoint.sh
+
+- name: Make sites/default writable
+  file: path={{ build_dir.path }}/sites/default mode=0755
+
+- name: Remove sites/default/settings.php
+  file: path={{ build_dir.path }}/sites/default/settings.php state=absent
+
+- name: Copy settings.php to tmp Drupal image build directory
+  copy: src={{ role_path }}/files/drupal/sites.default.settings.php dest={{ build_dir.path }}/sites/default/settings.php
+
+- name: Make sites/default non-writable
+  file: path={{ build_dir.path }}/sites/default mode=0555
+
+- name: Build database docker image
+  shell: "docker build -t {{ project_image_drupal_name }}:{{ project_image_drupal_tag }} ."
+  args:
+    chdir: "{{ build_dir.path }}"
+
+- name: Make sites/default writable
+  file: path={{ build_dir.path }}/sites/default mode=0755
+
+- name: Remove tmp Drupal image build directory
+  file: path={{ build_dir.path }} state=absent

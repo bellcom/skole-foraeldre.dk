@@ -1,0 +1,25 @@
+[
+    {
+        "name": "ffwcs/spin-up",
+        "version": "0.1.1",
+        "version_normalized": "0.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "git@gitlab.workingpropeople.com:FFW-CSO/INFRASTRUCTURE/spin-up.git",
+            "reference": "a7b5872ce3405be3009fb4925d644306410235cc"
+        },
+        "time": "2017-12-19T05:37:24+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Michał Hepner",
+                "email": "michal.hepner@ffwagency.com"
+            }
+        ],
+        "description": "Holds common utilities used in site build scripts"
+    }
+]

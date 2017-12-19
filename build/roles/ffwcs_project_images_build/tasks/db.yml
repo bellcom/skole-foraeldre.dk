@@ -1,0 +1,62 @@
+#######################################################################
+# Allows to build a docker image for the Drupal database.
+#######################################################################
+
+- fail: msg="Required variable '{{ item }}' is not defined in role '{{role_path | basename}}'"
+  when: item not in vars
+  with_items:
+    - project_name
+    - project_db_host
+    - project_db_user
+    - project_db_dump_path
+    - project_image_db_name
+    - project_image_db_tag
+
+- name: Create DB image build directory
+  tempfile: state=directory
+  register: tmp_build_dir
+
+- name: Create DB image build directory
+  file: path={{ tmp_build_dir.path }} state=directory
+
+- name: Fetch database dump to tmp image build dir
+  delegate_to: "{{ project_db_host }}"
+  remote_user: "{{ project_db_user }}"
+  fetch:
+    src: "{{ project_db_dump_path }}"
+    dest: "{{ tmp_build_dir.path }}/db.sql.gz"
+    flat: "yes"
+
+- name: Prepare optimized import file header
+  shell: "echo 'SET FOREIGN_KEY_CHECKS=0;' > {{ tmp_build_dir.path }}/db.sql"
+- shell: "echo 'SET UNIQUE_CHECKS=0;' >> {{ tmp_build_dir.path }}/db.sql"
+- shell: "echo 'SET AUTOCOMMIT=0;' >> {{ tmp_build_dir.path }}/db.sql"
+
+- set_fact: tmp_grep_expression=\/\*!40.*\(FOREIGN_KEY_CHECKS\|UNIQUE_CHECKS\)\=.**/;
+- name: Unpack db.sql.gz (and remove key checks on fly)
+  shell: "zcat {{ tmp_build_dir.path }}/db.sql.gz | grep -v '{{ tmp_grep_expression }}' >> {{ tmp_build_dir.path }}/db.sql"
+
+- name: Prepare optimized import file footer
+  shell: "echo 'COMMIT;' >> {{ tmp_build_dir.path }}/db.sql"
+- shell: "echo 'SET AUTOCOMMIT=1;' >> {{ tmp_build_dir.path }}/db.sql"
+- shell: "echo 'SET UNIQUE_CHECKS=1;' >> {{ tmp_build_dir.path }}/db.sql"
+- shell: "echo 'SET FOREIGN_KEY_CHECKS=1;' >> {{ tmp_build_dir.path }}/db.sql"
+
+- name: Remove db.sql.gz file
+  file:
+    path: "{{ tmp_build_dir.path }}/db.sql.gz"
+    state: absent
+
+- name: Pack db.sql file without storing the filename and timestamps
+  shell: "gzip -n {{ tmp_build_dir.path }}/db.sql"
+
+- name: Copy Dockerfile to tmp Drupal image build directory
+  copy: src={{ role_path }}/files/db/Dockerfile dest={{ tmp_build_dir.path }}/Dockerfile
+
+- name: Build database docker image
+  shell: "docker build -t {{ project_image_db_name }}:{{ project_image_db_tag }} ."
+  args:
+    chdir: "{{ tmp_build_dir.path }}"
+
+- name: Removing build directory
+  file: path={{ tmp_build_dir.path }} state=absent

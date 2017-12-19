@@ -1,0 +1,20 @@
+- name: Push {{ project_image_action_name }}:{{ project_image_action_tag }} to ECR registry
+  docker_image:
+    name: "{{ project_image_action_name }}"
+    tag: "{{ project_image_action_tag }}"
+    pull: "no"
+    push: "yes"
+
+- name: Push {{ project_image_db_name }}:{{ project_image_db_tag }} to ECR registry
+  docker_image:
+    name: "{{ project_image_db_name }}"
+    tag: "{{ project_image_db_tag }}"
+    pull: "no"
+    push: "yes"
+
+- name: Push {{ project_image_drupal_name }}:{{ project_image_drupal_tag }} to ECR registry
+  docker_image:
+    name: "{{ project_image_drupal_name }}"
+    tag: "{{ project_image_drupal_tag }}"
+    pull: "no"
+    push: "yes"
