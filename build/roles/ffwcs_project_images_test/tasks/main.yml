@@ -1,0 +1,58 @@
+- name: Remove current containers
+  shell: "docker rm -fv {{ project_name }}_{{ item }}_1 || :"
+  with_items:
+    - mysql
+    - data_drupal
+    - php
+    - php_apache
+    - data_action
+    - solr
+
+- name: Build containers
+  docker_service:
+    build: yes
+    nocache: yes
+    project_name: "{{ project_name }}"
+    definition:
+      version: "2"
+      services:
+        mysql:
+          image: "{{ project_image_db_name }}:{{ project_image_db_tag }}"
+        data_drupal:
+          image: "{{ project_image_drupal_name }}:{{ project_image_drupal_tag }}"
+        php:
+          image: "{{ project_image_php_name }}:{{ project_image_php_tag }}"
+          links:
+            - mysql
+            - solr
+          volumes_from:
+            - data_drupal
+          environment:
+            PHP_FPM_LOG_LEVEL: "debug"
+        php_apache:
+          image: "{{ project_image_php_apache_name }}:{{ project_image_php_apache_tag }}"
+          ports:
+            - 80
+          links:
+            - mysql
+            - php
+          volumes_from:
+            - data_drupal
+          environment:
+            APACHE_BACKEND_HOST: "php"
+            APACHE_LOG_LEVEL: "debug"
+        solr:
+          image: "{{ project_image_solr_name }}:{{ project_image_solr_tag }}"
+          entrypoint:
+            - docker-entrypoint.sh
+            - solr-precreate
+            - core1
+        data_action:
+          image: "{{ project_image_action_name }}:{{ project_image_action_tag }}"
+          links:
+            - php_apache
+            - php
+            - mysql
+            - solr
+          volumes_from:
+            - data_drupal

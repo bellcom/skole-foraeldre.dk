@@ -1,0 +1,98 @@
+- fail: msg="Required variable '{{ item }}' is not defined in role '{{role_path | basename}}'"
+  when: item not in vars
+  with_items:
+    - aws_region
+    - project_aws_ecs_task_definition_name
+    - project_aws_ecs_http_container_name
+    - project_image_drupal_name
+    - project_image_drupal_tag
+    - project_image_db_name
+    - project_image_db_tag
+    - project_image_php_name
+    - project_image_php_tag
+    - project_image_action_name
+    - project_image_action_tag
+
+- name: Setup task definition
+  ecs_taskdefinition:
+    region: "{{ aws_region }}"
+    containers:
+    - name: data_drupal
+      image: "{{ project_image_drupal_name }}:{{ project_image_drupal_tag }}"
+      memory: 128
+      essential: false
+    - name: mysql
+      image: "{{ project_image_db_name }}:{{ project_image_db_tag }}"
+      essential: true
+      cpu: 64
+      memory: 512
+      environment:
+        - name: "MYSQL_ROOT_PASSWORD"
+          value: "password"
+        - name: "MYSQL_DATABASE"
+          value: "drupal"
+        - name: "MYSQL_USER"
+          value: "drupal"
+        - name: "MYSQL_PASSWORD"
+          value: "drupal"
+    - name: solr
+      image: "{{ project_image_solr_name }}:{{ project_image_solr_tag }}"
+      memory: 256
+      cpu: 32
+      essential: true
+      entryPoint:
+        - docker-entrypoint.sh
+        - solr-precreate
+        - core1
+    - name: php
+      image: "{{ project_image_php_name }}:{{ project_image_php_tag }}"
+      essential: true
+      cpu: 32
+      memory: 256
+      links:
+        - mysql
+        - solr
+      volumesFrom:
+        - sourceContainer: data_drupal
+      environment:
+        - name: "PHP_FPM_LOG_LEVEL"
+          value: "debug"
+    - name: "{{ project_aws_ecs_http_container_name }}"
+      image: "{{ project_image_php_apache_name }}:{{ project_image_php_apache_tag }}"
+      essential: true
+      cpu: 10
+      memory: 128
+      portMappings:
+        - hostPort: 0
+          containerPort: 80
+          protocol: tcp
+      links:
+        - mysql
+        - php
+      volumesFrom:
+        - sourceContainer: data_drupal
+      environment:
+        - name: "APACHE_BACKEND_HOST"
+          value: "php"
+        - name: "APACHE_LOG_LEVEL"
+          value: "debug"
+        - name: "APACHE_FCGI_PROXY_TIMEOUT"
+          value: "600"
+    - name: data_action
+      image: "{{ project_image_action_name }}:{{ project_image_action_tag }}"
+      memory: 128
+      cpu: 16
+      essential: false
+      links:
+        - php_apache
+        - php
+        - mysql
+        - solr
+      volumesFrom:
+        - sourceContainer: data_drupal
+    family: "{{ project_aws_ecs_task_definition_name }}"
+    state: present
+  register: tmp_task_definition
+
+- name: Store task definition ARN
+  set_fact: project_aws_ecs_task_definition_arn={{ tmp_task_definition.taskdefinition.taskDefinitionArn }}

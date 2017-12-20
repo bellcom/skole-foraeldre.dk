@@ -1,0 +1,24 @@
+/*.retry
+/vendor
+/ec2.*
+/install
+/build-test.yml
+/build-deploy.yml
+/build-test-deploy.yml
+
+/roles/*
+!/roles/ffwcs_aws_ecs_task_definition
+!/roles/ffwcs_prepare
+!/roles/ffwcs_project_images_build
+!/roles/ffwcs_project_images_test
+!/roles/ffwcs_project_images_deploy
+# In case of defining custom roles, define the exclusions below:
+# For example:
+# !/roles/ffwcs_some_role_name
+
+/vars/*
+!/vars/local_custom.yml
+!/vars/local_project.yml
+# In case of defining custom vars, define the exclusions below:
+# For example:
+# !/vars/some_vars.yml

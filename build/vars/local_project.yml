@@ -1,0 +1,5 @@
+project_name: "sof"
+project_path: "{{ playbook_dir }}/.."
+project_db_filename_pattern: "*sof-prod*"
+project_aws_ecs_http_container_name: "php_apache"
+project_aws_elb_target_group_health_check_path: "/"

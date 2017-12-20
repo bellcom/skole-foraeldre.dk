@@ -1,0 +1,16 @@
+- debug: msg="Included role '{{ role_path | basename }}' from '{{ role_path }}'"
+
+- include_role: name=ffwcs_aws_ecr_login
+- include_role: name=ffwcs_aws_elb_fetch_rule_priorities
+- include_role: name=ffwcs_project_fetch_ref
+- include_role: name=ffwcs_project_fetch_db_dump_info
+- set_fact: project_variant={{ project_branch_normalized }}
+- set_fact:
+    project_image_db_tag: "{{ project_db_dump_date }}"
+    project_image_drupal_tag: "{{ project_ref_abbr }}"
+    project_image_action_tag: "{{ project_ref_abbr }}"
+    project_aws_domain: "{{ project_name }}-{{ project_variant }}.ffw-cs.com"
+    project_aws_ecs_service_name: "{{ project_name }}-{{ project_variant }}"
+    project_aws_ecs_task_definition_name: "{{ project_name }}-{{ project_variant }}"
+    project_aws_elb_target_group_name: "{{ project_name }}-{{ project_variant }}"
+    project_aws_elb_listener_rule_priority_range: "{{ range(1, 50000) | list }}"

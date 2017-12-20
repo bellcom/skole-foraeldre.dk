@@ -1,0 +1,25 @@
+#######################################################################
+# Allows to build a docker "action" image.
+#
+# The action image is supposed to perform initialization on Amazon ECS.
+#
+# Required roles:
+# - aws_ecr_login
+#
+# Returns: None
+#######################################################################
+
+- fail: msg="Required variable '{{ item }}' is not defined in role '{{role_path | basename}}'"
+  when: item not in vars
+  with_items:
+    - project_name
+    - project_image_action_name
+    - project_image_action_tag
+
+- set_fact:
+    default_project_image_action_path: "{{ role_path }}/files/action"
+
+- name: Build database docker image
+  shell: "docker build -t {{ project_image_action_name }}:{{ project_image_action_tag }} ."
+  args:
+    chdir: "{{ project_image_action_path | default(default_project_image_action_path) }}"
