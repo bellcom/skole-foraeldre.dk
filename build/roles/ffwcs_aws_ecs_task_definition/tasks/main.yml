@@ -35,6 +35,15 @@
           value: "drupal"
         - name: "MYSQL_PASSWORD"
           value: "drupal"
+    - name: solr
+      image: "{{ project_image_solr_name }}:{{ project_image_solr_tag }}"
+      memory: 256
+      cpu: 32
+      essential: true
+      entryPoint:
+        - docker-entrypoint.sh
+        - solr-precreate
+        - core1
     - name: php
       image: "{{ project_image_php_name }}:{{ project_image_php_tag }}"
       essential: true
@@ -42,6 +51,7 @@
       memory: 256
       links:
         - mysql
+        - solr
       volumesFrom:
         - sourceContainer: data_drupal
       environment:
@@ -77,6 +87,7 @@
         - php_apache
         - php
         - mysql
+        - solr
       volumesFrom:
         - sourceContainer: data_drupal
     family: "{{ project_aws_ecs_task_definition_name }}"

@@ -19,11 +19,14 @@ mv /var/www/html/_index.php /var/www/html/index.php
 echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Removing entries from cache table"
 mysql -udrupal -pdrupal -hmysql -e 'TRUNCATE cache;' drupal
 
+echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Rebuilding registry"
+gosu www-data:www-data drush rr
+
 echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Disable memcache_admin"
 gosu www-data:www-data drush dis memcache_admin -y
 
-echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Rebuilding registry"
-gosu www-data:www-data drush rr
+echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Set SOLR core URL"
+gosu www-data:www-data drush solr-set-env-url --id=solr http://solr:8983/solr/core1
 
 echo "[INFO]["`date '+%Y-%m-%d %H:%M:%S'`"] Clearing all caches"
 gosu www-data:www-data drush cc all

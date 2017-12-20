@@ -35,29 +35,16 @@ $conf["mail_system"] = array(
     "webform" => "TestingMailSystem",
 );
 
-/**
- * Memcached configuration examples.
- */
-$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
-$conf['cache_default_class'] = 'MemCacheDrupal';
-$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-$conf['memcache_servers'] = array('127.0.0.1:11211' => 'default');
-$conf['memcache_key_prefix'] = $databases["default"]["default"]["database"];
+// Overrides solr url variable used to set solr endpoint.
+$conf['apachesolr_environment']['solr']['url'] = 'http://solr:8983/solr/core1';
 
 /**
- * Database Danish collation configuration example.
+ * Cache configuration example.
  */
-$databases['default']['default']['collation'] = 'utf8_danish_ci';
-
-/**
- * Syslog configuration example.
- */
-$conf['syslog_identity'] = $databases["default"]["default"]["database"];
-
-/**
- * Prevent notifications configuration example.
- */
-$conf['update_notify_emails'] = array();
+$conf['cache'] = 0;
+$conf['page_compression'] = 0;
+$conf['preprocess_css'] = 0;
+$conf['preprocess_js'] = 0;
 
 /**
  * Add the domain module setup routine.

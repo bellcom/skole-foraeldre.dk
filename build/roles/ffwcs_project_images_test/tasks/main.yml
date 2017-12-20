@@ -6,6 +6,7 @@
     - php
     - php_apache
     - data_action
+    - solr
 
 - name: Build containers
   docker_service:
@@ -23,6 +24,7 @@
           image: "{{ project_image_php_name }}:{{ project_image_php_tag }}"
           links:
             - mysql
+            - solr
           volumes_from:
             - data_drupal
           environment:
@@ -39,11 +41,18 @@
           environment:
             APACHE_BACKEND_HOST: "php"
             APACHE_LOG_LEVEL: "debug"
+        solr:
+          image: "{{ project_image_solr_name }}:{{ project_image_solr_tag }}"
+          entrypoint:
+            - docker-entrypoint.sh
+            - solr-precreate
+            - core1
         data_action:
           image: "{{ project_image_action_name }}:{{ project_image_action_tag }}"
           links:
             - php_apache
             - php
             - mysql
+            - solr
           volumes_from:
             - data_drupal
