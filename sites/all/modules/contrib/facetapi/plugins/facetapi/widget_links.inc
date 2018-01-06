@@ -51,7 +51,7 @@ class FacetapiWidgetLinks extends FacetapiWidget {
   /**
    * Recursive function that sets each item's theme hook.
    *
-   * The indivual items will be rendered by different theme hooks depending on
+   * The individual items will be rendered by different theme hooks depending on
    * whether or not they are active.
    *
    * @param array &$build
@@ -88,13 +88,14 @@ class FacetapiWidgetLinks extends FacetapiWidget {
   function buildListItems($build) {
     $settings = $this->settings->settings;
 
-    // Initializes links attributes, adds rel="nofollow" if configured.
-    $attributes = ($settings['nofollow']) ? array('rel' => 'nofollow') : array();
-    $attributes += array('class' => $this->getItemClasses());
+    $attributes_init = array('class' => $this->getItemClasses());
 
     // Builds rows.
     $items = array();
     foreach ($build as $value => $item) {
+      // Reset attributes for each item.
+      $attributes = $attributes_init;
+
       $row = array('class' => array());
 
       // Allow adding classes via altering.
@@ -105,11 +106,9 @@ class FacetapiWidgetLinks extends FacetapiWidget {
       $variables = array(
         'text' => $item['#markup'],
         'path' => $item['#path'],
-        'count' => $item['#count'],
+        'count' => $settings['display_count'] ? $item['#count'] : NULL,
         'options' => array(
           'attributes' => $attributes,
-          'html' => $item['#html'],
-          'query' => $item['#query'],
         ),
       );
 
@@ -117,9 +116,25 @@ class FacetapiWidgetLinks extends FacetapiWidget {
       if (!$item['#count']) {
         $variables['options']['attributes']['class'][] = 'facetapi-zero-results';
       }
+      // If count more than 0.
+      else {
+        // We need nofollow only for items with non zero results.
+        if ($settings['nofollow']) {
+          // Initializes links attributes, adds rel="nofollow" if configured.
+          $attributes['rel'] = 'nofollow';
+        }
+        // Add an ID to identify this link.
+        $variables['options']['attributes']['id'] = drupal_html_id('facetapi-link');
+        $variables['options'] += array(
+          'html' => $item['#html'],
+          'query' => $item['#query'],
+        );
+      }
 
-      // Add an ID to identify this link.
-      $variables['options']['attributes']['id'] = drupal_html_id('facetapi-link');
+      // If the item is active, the li is active
+      if ($item['#active']) {
+        $row['class'][] = 'active';
+      }
 
       // If the item has no children, it is a leaf.
       if (empty($item['#item_children'])) {
@@ -152,7 +167,7 @@ class FacetapiWidgetLinks extends FacetapiWidget {
   /**
    * Gets the base class array for a facet item.
    *
-   * Classes that extend FacetapiWidgetLinks will often overide this method to
+   * Classes that extend FacetapiWidgetLinks will often override this method to
    * alter the link displays via CSS without having to touch the render array.
    *
    * @return array
