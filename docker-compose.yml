@@ -43,7 +43,7 @@ services:
     labels:
       - 'traefik.backend=apache'
       - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:sof.dev'
+      - 'traefik.frontend.rule=Host:sof.loc'
 
   varnish:
     image: wodby/drupal-varnish:4.1-2.2.0
