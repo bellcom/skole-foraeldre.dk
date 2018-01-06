@@ -968,3 +968,15 @@ function propeople_update_7014() {
   apachesolr_environment_save($environment);
   cache_clear_all('apachesolr:environments', 'cache_apachesolr');
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable 'Imagecache token' used by Metatag.
+ */
+function propeople_update_7015() {
+  $modules = array('imagecache_token');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}

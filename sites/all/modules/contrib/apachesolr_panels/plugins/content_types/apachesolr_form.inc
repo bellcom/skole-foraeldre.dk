@@ -136,11 +136,13 @@ function apachesolr_panels_form_apachesolr_panels_search_form_alter(&$form, &$fo
   //$form['#submit'] = array('search_form_submit');
 
   // Set the default keys
-  $keys = $form_state['args'][1];
-  $form['apachesolr_panels_search_form']['#default_value'] = $keys;
+  if (!empty($form_state['args'][1])) {
+    $keys = $form_state['args'][1];
+    $form['apachesolr_panels_search_form']['#default_value'] = $keys;
+  }
 
   // Set the prompt:
-  if (!is_null($form_state['args'][3])) {
+  if (!empty($form_state['args'][3])) {
     $form['apachesolr_panels_search_form']['#attributes']['title'] = $form_state['args'][3];
   }
 
