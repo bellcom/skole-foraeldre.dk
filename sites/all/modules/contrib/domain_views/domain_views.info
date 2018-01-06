@@ -21,9 +21,9 @@ files[] = includes/domain_views_plugin_access.inc
 files[] = includes/domain_views_plugin_argument_default_current.inc
 files[] = includes/domain_views_plugin_cache_time.inc
 
-; Information added by drupal.org packaging script on 2012-09-28
-version = "7.x-1.5"
+; Information added by Drupal.org packaging script on 2016-06-25
+version = "7.x-1.5+3-dev"
 core = "7.x"
 project = "domain_views"
-datestamp = "1348846266"
+datestamp = "1466879640"
 
