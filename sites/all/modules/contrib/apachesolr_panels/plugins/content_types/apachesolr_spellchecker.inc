@@ -26,23 +26,21 @@ function apachesolr_panels_apachesolr_spellchecker_content_type_render($subtype,
   $block->module = 'apachesolr_panels';
   $block->delta = 'spellchecker';
 
-  $query = apachesolr_current_query(variable_get('apachesolr_default_environment', 'default'));
+  $env_id =  apachesolr_default_environment();
+
+  $query = apachesolr_current_query($env_id);
   if ($query) {
     $searcher = $query->getSearcher();
   }
 
-  $env_id =  variable_get('apachesolr_default_environment', 'default');
   if (variable_get('apachesolr_search_spellcheck', TRUE) && apachesolr_has_searched($env_id) && ($response = apachesolr_static_response_cache($searcher))) {
     // Get spellchecker suggestions into an array.
     if (isset($response->spellcheck->suggestions) && $response->spellcheck->suggestions) {
       $suggestions = get_object_vars($response->spellcheck->suggestions);
-      $env_id = apachesolr_default_environment();
       // Allow modules to alter the spelling suggestions (for things like extended results).
       drupal_alter('apachesolr_suggestions', $suggestions, $env_id);
       if ($suggestions) {
         $replacements = array();
-        // Get the original query and replace words.
-        $query = apachesolr_current_query(variable_get('apachesolr_default_environment', 'default'));
 
         foreach ($suggestions as $word => $value) {
           // We need to check if it's an object as setting the spellcheck.extendedResults query parameter to true makes words
