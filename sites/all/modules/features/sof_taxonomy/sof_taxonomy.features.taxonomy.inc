@@ -18,6 +18,8 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'magazine_categories' => array(
       'name' => 'Magazine categories',
@@ -28,6 +30,8 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'media_folders' => array(
       'name' => 'Media Folders',
@@ -38,6 +42,8 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'publication_category' => array(
       'name' => 'Publication category',
@@ -48,6 +54,8 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'tags' => array(
       'name' => 'Tags',
@@ -58,6 +66,8 @@ function sof_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
   );
 }

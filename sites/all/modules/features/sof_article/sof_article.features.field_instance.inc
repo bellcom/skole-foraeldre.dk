@@ -550,6 +550,7 @@ function sof_article_field_default_field_instances() {
     'label' => 'Related topics',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,

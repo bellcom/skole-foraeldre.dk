@@ -6,6 +6,7 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = link
 dependencies[] = media
+dependencies[] = node
 dependencies[] = sof_field_bases
 dependencies[] = strongarm
 dependencies[] = text

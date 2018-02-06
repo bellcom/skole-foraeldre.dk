@@ -41,6 +41,7 @@ function sof_text_formats_filter_default_formats() {
         'settings' => array(
           'local_paths' => '',
           'protocol_style' => 'full',
+          'settings_source' => 'global',
         ),
       ),
     ),

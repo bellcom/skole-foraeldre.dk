@@ -8,6 +8,7 @@ dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = i18n_taxonomy
 dependencies[] = jquery_update
+dependencies[] = node
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = selectmenu

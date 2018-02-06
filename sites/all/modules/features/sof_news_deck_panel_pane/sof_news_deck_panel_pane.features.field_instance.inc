@@ -40,6 +40,7 @@ function sof_news_deck_panel_pane_field_default_field_instances() {
     'label' => 'All news link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,

@@ -156,6 +156,7 @@ function sof_external_article_field_default_field_instances() {
     'label' => 'External link',
     'required' => 1,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,

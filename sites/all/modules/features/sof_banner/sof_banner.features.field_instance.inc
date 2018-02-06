@@ -135,6 +135,7 @@ function sof_banner_field_default_field_instances() {
     'label' => 'Link',
     'required' => 1,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,
