@@ -102,6 +102,7 @@ function sof_slider_field_default_field_instances() {
     'label' => 'Url',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,

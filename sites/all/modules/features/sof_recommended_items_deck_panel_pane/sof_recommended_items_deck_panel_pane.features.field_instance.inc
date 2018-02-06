@@ -35,6 +35,7 @@ function sof_recommended_items_deck_panel_pane_field_default_field_instances() {
     'label' => 'We recommend‎',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_class' => 0,

@@ -980,3 +980,15 @@ function propeople_update_7015() {
 
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable 'SOF Cache Expire' feature and the Cache Expire module.
+ */
+function propeople_update_7016() {
+  $modules = array('expire', 'sof_cache_expire');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}

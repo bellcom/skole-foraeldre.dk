@@ -823,7 +823,7 @@ function sof_home_page_default_page_manager_pages() {
   $pane->pid = 'new-dde8d3d0-ccc7-4135-af77-c967ca358ba9';
   $pane->panel = 'main';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'uuid:99ef7127-0cab-4b60-977f-a2775c648a9c';
+  $pane->subtype = 'current:200';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
