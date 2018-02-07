@@ -21,5 +21,5 @@ $databases = array (
 );
 
 // Common settings for all installations.
-require('common.settings.php');
 require('cache.settings.php');
+require('common.settings.php');

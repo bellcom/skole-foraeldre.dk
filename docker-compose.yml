@@ -18,6 +18,10 @@ services:
     container_name: sof_php
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+      PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+      PHP_XDEBUG_AUTOSTART: 1 # Set 1 to enable.
+      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # Disabled for remote.host to work (enabled by default)
+      PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # Setting the host (localhost by default)
       PHP_FPM_CLEAR_ENV: "no"
       DB_HOST: mariadb
       DB_USER: drupal

@@ -21,8 +21,8 @@ $databases = array(
 );
 
 // Common settings for all installations.
-require 'common.settings.php';
 require 'cache.settings.php';
+require 'common.settings.php';
 
 // Stage File Proxy config - to get images from prod.
 $conf["stage_file_proxy_origin"] = "http://skole-foraeldre.dk";
@@ -52,7 +52,7 @@ $conf['apachesolr_environment']['solr']['url'] = 'http://solr:8983/solr/core1';
 /**
  * Cache configuration example.
  */
-$conf['cache'] = 0;
-$conf['page_compression'] = 0;
-$conf['preprocess_css'] = 0;
-$conf['preprocess_js'] = 0;
+$conf['cache'] = 1;
+$conf['page_compression'] = 1;
+$conf['preprocess_css'] = 1;
+$conf['preprocess_js'] = 1;
