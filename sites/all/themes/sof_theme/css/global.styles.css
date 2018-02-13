@@ -561,7 +561,7 @@ body.node-type-slider #main-content {
   background: #f0f0f0;
 }
 .toolbox-search-wrapper:after {
-   content: "î ";
+   content: "\e801";
    font-family: "fontello";
    font-size: 30px;
    text-align: center;
@@ -2646,7 +2646,7 @@ article.node-publication .field-type-image.field-label-above h2 {
   position: absolute;
   left: 0;
   padding: 0px 0 0 2%;
-  content: "î ";
+  content: "\e801";
   font-family: "fontello";
   font-size: 22px;
   text-align: center;
@@ -5081,7 +5081,7 @@ body.page-taxonomy-term #content h2 {
   position: absolute;
   left: 0;
   padding:5px 0 0 2%;
-  content: "î ";
+  content: "\e801";
   font-family: "fontello";
   font-size: 30px;
   text-align: center;
