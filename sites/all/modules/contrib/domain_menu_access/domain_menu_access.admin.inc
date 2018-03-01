@@ -16,11 +16,11 @@ function domain_menu_access_form_menu_edit_item_alter(&$form, &$form_state) {
     // If any of domain boxes are selected, display fieldset as expanded.
     $collapsed = (count($show_default_value) || count($hide_default_value)) ? FALSE : TRUE;
     $form['domain_menu_access']['manage'] = array(
-      '#type'           => 'fieldset',
-      '#title'          => t('Manage item visibility per domain'),
-      '#collapsible'    => TRUE,
-      '#collapsed'      => $collapsed,
-      '#description'    => '<p>' . t('This section allows to show or hide this menu item on selected domains. See <a href="@help_url">module help</a> for more information.', array('@help_url' => url('admin/help/domain_menu_access'))) . '</p>',
+      '#type' => 'fieldset',
+      '#title' => t('Manage item visibility per domain'),
+      '#collapsible' => TRUE,
+      '#collapsed' => $collapsed,
+      '#description' => '<p>' . t('This section allows to show or hide this menu item on selected domains. See <a href="@help_url">module help</a> for more information.', array('@help_url' => url('admin/help/domain_menu_access'))) . '</p>',
     );
     // Get list of all available domains.
     // Add 'd' to array keys so it is saved properly even for domain_id = 0.
@@ -30,19 +30,19 @@ function domain_menu_access_form_menu_edit_item_alter(&$form, &$form_state) {
     }
     // Show menu item per domain config.
     $form['domain_menu_access']['manage']['domain_menu_access_show'] = array(
-      '#type'           => 'checkboxes',
-      '#title'          => t('Show menu item only on selected domains'),
-      '#options'        => $options,
-      '#default_value'  => $show_default_value,
-      '#description'    => t('Show this menu item only on selected domain(s). If you select no domains, the menu item will be visible on all domains.'),
+      '#type' => 'checkboxes',
+      '#title' => t('Show menu item only on selected domains'),
+      '#options' => $options,
+      '#default_value' => $show_default_value,
+      '#description' => t('Show this menu item only on selected domain(s). If you select no domains, the menu item will be visible on all domains.'),
     );
     // Hide menu item per domain config.
     $form['domain_menu_access']['manage']['domain_menu_access_hide'] = array(
-      '#type'           => 'checkboxes',
-      '#title'          => t('Hide menu item on selected domains'),
-      '#options'        => $options,
-      '#default_value'  => $hide_default_value,
-      '#description'    => t('Hide this menu item on selected domain(s). If you select no domains, the menu item will be visible on all domains.'),
+      '#type' => 'checkboxes',
+      '#title' => t('Hide menu item on selected domains'),
+      '#options' => $options,
+      '#default_value' => $hide_default_value,
+      '#description' => t('Hide this menu item on selected domain(s). If you select no domains, the menu item will be visible on all domains.'),
     );
     // Add weight to Submit button, as it is not set by default by menu.module,
     // and because it sets weight of Delete button, it could happen that our
