@@ -25,12 +25,15 @@ INTRODUCTION
 
 INSTALLATION
 ------------
-Install as you would normally install a contributed Drupal module. See:
-https://drupal.org/documentation/install/modules-themes/modules-7
-for further information.
+ * Install as you would normally install a contributed Drupal module. See:
+   https://drupal.org/documentation/install/modules-themes/modules-7
+   for further information.
 
 CONFIGURATION
 -------------
-Customize the menu settings in Administration » Configuration and modules »
-Administration » Administration menu.
-Path:admin/config/system/globalredirect
+ * Customize the module settings in Administration » Configuration »
+   System » Global Redirect (/admin/config/system/globalredirect)
+ * The module can check whether the user has access to a path before
+   redirecting. However, this has a performance impact, so the option is
+   disabled by default. If this is a concern for your site, enable
+   "Menu Access Checking".

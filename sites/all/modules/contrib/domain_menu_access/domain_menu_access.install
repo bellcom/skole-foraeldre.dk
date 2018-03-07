@@ -15,8 +15,8 @@ function domain_menu_access_uninstall() {
     if (isset($options['domain_menu_access'])) {
       unset($options['domain_menu_access']);
       db_update('menu_links')->fields(array('options' => serialize($options)))
-                             ->condition('mlid', $row->mlid)
-                             ->execute();
+        ->condition('mlid', $row->mlid)
+        ->execute();
     }
   }
 }

@@ -5,9 +5,9 @@ core = 7.x
 files[] = globalredirect.test
 configure = admin/config/system/globalredirect
 
-; Information added by Drupal.org packaging script on 2017-11-09
-version = "7.x-1.6-beta1"
+; Information added by Drupal.org packaging script on 2018-02-15
+version = "7.x-1.6"
 core = "7.x"
 project = "globalredirect"
-datestamp = "1510231397"
+datestamp = "1518719584"
 
