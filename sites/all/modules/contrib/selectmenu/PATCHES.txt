@@ -1,0 +1,2 @@
+The following patches from the following thread: https://www.drupal.org/project/selectmenu/issues/2537748 have been applied to this project:
+- https://www.drupal.org/files/issues/2018-03-15/selectmenu-disable_modal_jquery1.7-2537748-5.patch
