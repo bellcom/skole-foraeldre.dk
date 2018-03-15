@@ -30,7 +30,7 @@ services:
       DB_DRIVER: mysql
     volumes:
       # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-      - docker-sof-sync:/var/www/html # Docker-sync
+      - ./:/var/www/html # Docker-sync
 
   apache:
     image: wodby/php-apache:2.4-2.0.0
@@ -43,7 +43,7 @@ services:
       APACHE_SERVER_ROOT: /var/www/html
     volumes:
       # Options for macOS users (https://docker4drupal.readthedocs.io/en/latest/macos)
-      - docker-sof-sync:/var/www/html # Docker-sync
+      - ./:/var/www/html # Docker-sync
     labels:
       - 'traefik.backend=apache'
       - 'traefik.port=80'
@@ -93,9 +93,3 @@ services:
       - '8000:80'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-volumes:
-  codebase:
-  # Docker-sync for macOS users
-  docker-sof-sync:
-    external: true
