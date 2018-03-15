@@ -10,14 +10,15 @@
     attach: function(context, settings) {
       if (settings.sofGeneralTweaksCommerce) {
         var cart = settings.sofGeneralTweaksCommerce;
-        $('.sof-commerce-quantity').change(function() {
+
+        $('.sof-commerce-quantity').focusout(function() {
           var quantity = $(this).find(':input').val(),
           id = $(this).find(':input').attr('id'),
           dq = $(this).find(':input').attr('defaultValue'),
           splitId = id.split('-'),
 
           key = splitId[3];
-          if (quantity < cart[key]) {
+          if (parseInt(quantity) < parseInt(cart[key])) {
             $(this).find(':input').val(dq);
             alert(Drupal.t('The minimal product quantity is:' + ' ' + cart[key]));
           }
