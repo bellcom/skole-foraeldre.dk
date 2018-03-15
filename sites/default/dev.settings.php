@@ -52,7 +52,7 @@ $conf['apachesolr_environment']['solr']['url'] = 'http://solr:8983/solr/core1';
 /**
  * Cache configuration example.
  */
-$conf['cache'] = 1;
-$conf['page_compression'] = 1;
-$conf['preprocess_css'] = 1;
-$conf['preprocess_js'] = 1;
+$conf['cache'] = 0;
+$conf['page_compression'] = 0;
+$conf['preprocess_css'] = 0;
+$conf['preprocess_js'] = 0;
