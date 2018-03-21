@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Update hook for disabling coupons in the checkout form/pane
+ */
+function sof_general_tweaks_update_7001() {
+  $query = db_update('commerce_checkout_pane')
+    ->fields(array('page' => 'disabled'))
+    ->condition('pane_id', 'commerce_coupon');
+  $query->execute();
+}

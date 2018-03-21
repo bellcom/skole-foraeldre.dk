@@ -72,6 +72,7 @@ function sof_commerce_settings_default_rules_configuration() {
   $items['commerce_payment_sof_dibs'] = entity_import('rules_config', '{ "commerce_payment_sof_dibs" : {
       "LABEL" : "Sof DIBS",
       "PLUGIN" : "reaction rule",
+      "WEIGHT" : "1",
       "OWNER" : "rules",
       "TAGS" : [ "SOF" ],
       "REQUIRES" : [ "commerce_payment" ],

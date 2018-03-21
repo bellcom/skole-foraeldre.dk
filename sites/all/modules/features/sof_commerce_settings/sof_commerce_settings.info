@@ -241,3 +241,4 @@ features[variable][] = sof_order_admin_message
 features[variable][] = sof_order_user_message
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][number] = number
+project path = sites/all/modules/features
