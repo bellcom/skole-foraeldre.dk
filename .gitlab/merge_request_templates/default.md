@@ -1,4 +1,4 @@
-## [Jira Issue Number]: [Pull request title]
+## [Link to Jira task]
   
 ### Changes
 - [Description for non-developers.]
