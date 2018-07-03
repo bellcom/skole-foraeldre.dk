@@ -169,6 +169,24 @@ function domain_conf_domain_batch() {
     '#update_all' => TRUE,
     '#group' => t('Administrative theme'),
   );
+  // Choose whether the admin theme is used when creating/editing content
+  $batch['node_admin_theme'] = array(
+    '#form' => array(
+      '#type' => 'checkbox',
+      '#title' => t('Use the administration theme when editing or creating content'),
+      '#description' => t('Choose whether to use the administrative theme on node add and edit pages on this domain.'),
+    ),
+    '#permission' => 'administer themes',
+    '#domain_action' => 'domain_conf',
+    '#system_default' => variable_get('node_admin_theme', 0),
+    '#variable' => 'node_admin_theme',
+    '#meta_description' => t('Choose whether to use the administrative theme when editing or creating content on all domains.'),
+    '#data_type' => 'boolean',
+    '#weight' => -7,
+    '#update_all' => TRUE,
+    '#group' => t('Administrative theme'),
+  );
+  
   // Change the timezone.
   $zones = system_time_zones();
   $batch['date_default_timezone'] = array(
@@ -389,25 +407,6 @@ function domain_conf_domain_batch() {
       );
     }
   }
-  if (function_exists('apachesolr_site_hash')) {
-    $batch['apachesolr_site_hash'] = array(
-      '#form' => array(
-        '#title' => t('Apache Solr site hash'),
-        '#type' => 'textfield',
-        '#description' => t('Unique site hash for Apache Solr.'),
-      ),
-      '#domain_action' => 'domain_conf',
-      '#permission' => 'administer site configuration',
-      '#system_default' => apachesolr_site_hash(),
-      '#meta_description' => t('Set Apache Solr site hash for each domain.'),
-      '#variable' => 'apachesolr_site_hash',
-      '#data_type' => 'string',
-      '#weight' => 10,
-      '#group' => t('Apache Solr'),
-      '#update_all' => TRUE,
-      '#module' => t('Apache Solr'),
-    );
-  }
   foreach ($batch as $key => $value) {
     if (!isset($batch[$key]['#module'])) {
       $batch[$key]['#module'] = t('Domain Configuration');
@@ -421,9 +420,7 @@ function domain_conf_domain_batch() {
  * Implements hook_domain_delete().
  */
 function domain_conf_domain_delete($domain, $form_values = array()) {
-  db_delete('domain_conf')
-    ->condition('domain_id', $domain['domain_id'])
-    ->execute();
+  domain_conf_data_delete($domain['domain_id']);
   cache_clear_all('variables', 'cache_bootstrap');
 }
 
