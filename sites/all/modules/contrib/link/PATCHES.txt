@@ -1,2 +1,0 @@
-The following patches from the following thread: https://www.drupal.org/project/link/issues/1321094 have been applied to this project:
-- https://www.drupal.org/files/issues/link-default_title-1321094-21.patch
