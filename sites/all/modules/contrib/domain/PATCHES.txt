@@ -1,2 +1,0 @@
-The following patches has been applied:
-- https://www.drupal.org/files/2004434-domain-conf-apachesolr-site-hash-setting.patch
