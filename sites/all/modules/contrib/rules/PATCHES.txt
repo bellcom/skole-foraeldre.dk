@@ -1,2 +1,0 @@
-The following patches has been applied:
-- https://www.drupal.org/files/issues/fix_errors_on_update-2090511-224.patch
