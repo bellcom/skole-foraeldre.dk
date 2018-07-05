@@ -908,7 +908,7 @@ function propeople_update_7012() {
 /**
  * Implements hook_update_N().
  *
- * Disable module facebook_tracking_pixel. 
+ * Disable module facebook_tracking_pixel.
  * Add variables facebook_pixel_id, facebook_pixel_exclude_admin_paths
  */
 function propeople_update_7013() {
@@ -991,4 +991,16 @@ function propeople_update_7016() {
   $enable_dependencies = TRUE;
 
   module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Disable and uninstall 'Devel' and 'Stage file proxy' modules.
+ */
+function propeople_update_7017() {
+  $modules = array('devel', 'stage_file_proxy');
+
+  module_disable($modules);
+  drupal_uninstall_modules($modules);
 }
