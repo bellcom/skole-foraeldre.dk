@@ -13,3 +13,5 @@ sites/*/private
 # Hide env.settings.php
 sites/*/env.settings.php
 !sites/*/settings.php
+/sites/all/modules/contrib/stage_file_proxy/
+/sites/all/modules/contrib/devel/
