@@ -1,0 +1,387 @@
+/*
+ * @file
+ * Print Styles
+ * This probably needs work, but it's a good starting point.
+ */
+/*
+ * Body
+ */
+body {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 20pt !important;
+  line-height: 1.4;
+  word-spacing: 1.1pt;
+  letter-spacing: 0.2pt;
+  /*font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+  font-family: "conduit_itclight",sans-serif;
+  font-weight: 300;
+  color: #454545;
+  background: none;
+  font-size: 14pt;
+  box-sizing: border-box;
+}
+
+/*
+ * Links
+ */
+a {
+  background: transparent;
+  font-weight: 400;
+  text-decoration: none;
+  color: #0000ee;
+}
+/*a[href^="http://"]:after, a[href^="http://"]:visited:after {
+  content: "(" attr(href) ")";
+  font-size: 10pt;
+}*/
+
+/*
+ * Strip background from likely candidates
+ */
+div[id*="wrapper"],
+[class*="title"],
+[class*="inner"],
+header,
+footer,
+#branding,
+#container,
+#columns,
+.columns-inner,
+#content-column,
+.content-inner,
+.region,
+.region-header,
+.region-content,
+.article,
+.article-title,
+.article-content,
+.comment,
+.comment-title,
+.comment-content,
+.block,
+.block-inner,
+.block-title,
+.block-content,
+table,
+table * {
+  background: none !important;
+}
+
+/*
+ * Hide various bits of the page, .noprint reusable class for hiding stuff.
+ */
+.noprint,
+.sidebar,
+#breadcrumb,
+.nav,
+.field-type-taxonomy-term-reference,
+ul.links,
+.feed-icon,
+.poll .bar,
+.poll .foreground,
+.comment-form,
+#comment-form,
+.book-navigation,
+.tabs,
+.action-links,
+.pager,
+.messages,
+.help {
+  display: none;
+}
+
+/*
+ * Ensure the display the main content region
+ */
+#content {
+  display: block !important;
+}
+
+/*
+ * Layout
+ */
+#header {
+  margin-bottom: 20px;
+}
+
+.content-inner {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/*
+ * HTML elements
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333333;
+  margin: 20pt 0;
+  padding: 0;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 14pt;
+}
+
+h2 {
+  font-size: 13pt;
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 11pt;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+#site-name a,
+#site-slogan {
+  text-decoration: none !important;
+  color: #333333;
+}
+
+.h-group a:link, .h-group a:visited {
+  text-decoration: none;
+}
+
+#page-title {
+  margin-top: 20px;
+}
+
+pre,
+code,
+tt,
+samp,
+kbd,
+var {
+  font-size: 10pt;
+  font-family: Consolas, "Lucida Console", Menlo, Monaco, "DejaVu Sans Mono", monospace, sans-serif;
+}
+
+blockquote {
+  margin: 20px;
+  padding: 10px;
+  background: white;
+  font-family: 'Georgia';
+  font-size: 18pt;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 100%;
+  padding-left: 70px;
+}
+blockquote p {
+}
+
+blockquote:before {
+  content: '\e802';
+  font-family: 'fontello';
+  font-size: 30px;
+  display: block;
+  height: 100%;
+  float: left;
+  margin-left: -70px;
+}
+
+hr {
+  background-color: #666666;
+}
+
+/*
+ * Header, Logo, Site name
+ */
+#header {
+  padding-bottom: 20px;
+}
+
+#logo img {
+  padding: 0 10px 0 0;
+  margin: 0 !important;
+  float: none !important;
+}
+
+/*
+ * Images
+ */
+img {
+  float: left;
+  margin: 4px 20px 10px 0;
+  page-break-inside: avoid;
+}
+
+a img {
+  border: none;
+}
+
+/*
+ * Tables
+ */
+table {
+  margin: 1px;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px solid #333333;
+  font-weight: 700;
+}
+
+td {
+  border-bottom: 1px solid #333333;
+}
+
+th,
+td {
+  padding: 4px 10px 4px 0;
+}
+
+tfoot {
+  font-style: italic;
+}
+
+caption {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+/*
+ * Forms
+ */
+form {
+  margin-bottom: 10px;
+}
+
+/*
+ * Poll module
+ */
+.poll .text,
+.poll .percent,
+.poll .total {
+  text-align: left;
+}
+.poll form {
+  margin-bottom: 0;
+}
+
+/*
+ * Articles
+ */
+.node,
+.comment {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.submitted {
+  color: #666666;
+  text-decoration: none;
+  font-size: 9pt;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+.submitted a {
+  color: #666666;
+  text-decoration: none;
+  font-size: 9pt;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* Print Article Styling */
+.header-navigation-container,
+.region-top-header-navigation,
+.top-sharing-printing-links,
+.pane-bundle-banner-pane,
+#page-title,
+/*.submitedby-main-container,*/
+.right-article-region,
+.bottom-article-region,
+.footer-main-container,
+.element-invisible
+ {
+  display: none;
+}
+#logo {
+  width: 25%;
+}
+#logo img {
+  width: 100%;
+}
+img {
+    page-break-before: avoid; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+    page-break-inside: avoid; /* or 'auto' */
+    display: block;
+}
+hr {
+  border: 0;
+}
+hr:after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #b2b2b2;
+}
+
+.flexslider {
+  border: 0px;
+  box-shadow: none;
+}
+.flexslider { 
+  margin: 0;
+}
+
+.submitedby-main-container {
+  border-bottom: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
+  padding: 10pt;
+}
+.submitedby-main-container:after,
+blockquote:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.submitedby-main-container .pane-title,
+.submitedby-main-container .block-content {
+  float: left;
+  margin: 0 10px 0 0;
+  font-size: 10pt;
+  font-weight: 300;
+  line-height: 100%;
+}
+.submitedby-main-container section {
+  float: left;
+}
+
+.pane-page-title h1 {
+  font-size: 28pt;
+}
+.pane-node-field-teaser {
+  font-size: 22pt;
+  line-height: 100%;
+  margin-bottom: 30pt;
+}
