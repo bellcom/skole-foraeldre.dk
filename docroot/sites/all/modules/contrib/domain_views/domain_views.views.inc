@@ -259,14 +259,13 @@ function domain_views_views_data() {
   // Define available on current domain field
   $data['domain_access']['current_all'] = array(
     'title' => t('Available on current domain'),
+    'help' => t('Filters out nodes not available on current domain (published to current domain or all affiliates)'),
     'field' => array(
-      'help' => t('A boolean flag indicating whether this content available for current domain (published to current domain or all affiliates)'),
       'field' => 'gid',
       'handler' => 'views_handler_field_boolean',
       'click sortable' => TRUE,
     ),
     'filter' => array(
-      'help' => t('Filters out nodes not available on current domain (published to current domain or all affiliates)'),
       'field' => 'gid',
       'handler' => 'domain_views_handler_filter_domain_access_current_all',
       'label' => t('Available on current domain'),
@@ -391,17 +390,11 @@ function domain_views_views_plugins() {
 function domain_views_views_query_substitutions($view) {
   $domain = domain_get_domain();
   $default = domain_default();
-
-  $return = array(
+  return array(
     '***CURRENT_DOMAIN***' => $domain['domain_id'],
     '***PRIMARY_DOMAIN***' => $default['domain_id'],
+    '***CURRENT_DOMAIN_MACHINE_NAME***' => $domain['machine_name'],
+    '***PRIMARY_DOMAIN_MACHINE_NAME***' => $default['machine_name'],
   );
-  // Ensure compatibility with 7.x.2 and 7.x.3.
-  if (isset($domain['machine_name'])) {
-    $return['***CURRENT_DOMAIN_MACHINE_NAME***'] = $domain['machine_name'];
-    $return['***PRIMARY_DOMAIN_MACHINE_NAME***'] = $default['machine_name'];
-  }
-
-  return $return;
 }
 
