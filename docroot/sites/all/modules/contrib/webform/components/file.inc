@@ -197,8 +197,7 @@ function _webform_edit_file($component) {
   '#type' => 'textfield',
   '#title' => t('Width'),
   '#default_value' => $component['extra']['width'],
-  '#description' => t('Width of the file field.') . ' ' .
-    t('Leaving blank will use the default size.'),
+  '#description' => t('Width of the file field.') . ' ' . t('Leaving blank will use the default size.'),
   '#size' => 5,
   '#maxlength' => 10,
   '#weight' => 4,
@@ -430,9 +429,8 @@ function _webform_submit_file($component, $value) {
   $fid = is_array($value)
             ? (!empty($value['fid']) ? $value['fid'] : '')
             : (!empty($value) ? $value : '');
-  // Extend access to this file, even if the submission has not been saved yet.
-  // This may happen when previewing a private file which was selected but not
-  // explicitly uploaded, and then previewed.
+  // Extend access to this file, even if the submission has not been saved yet. This may happen when
+  // previewing a private file which was selected but not explicitly uploaded, and then previewed.
   if ($fid) {
     $_SESSION['webform_files'][$fid] = $fid;
   }
