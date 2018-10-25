@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * sof_pdf_generator.module
+ *
  * SOF pdf gerenator for publications and news/articles.
  *
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
@@ -51,6 +53,7 @@ function sof_pdf_generator_menu() {
   return $items;
 }
 
+// @codingStandardsIgnoreStart
 /**
  * SOF pdf generator callback for publication.
  *
@@ -58,6 +61,7 @@ function sof_pdf_generator_menu() {
  *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_nodes($nid) {
+  // @codingStandardsIgnoreEnd
   if (!isset($nid)) {
     return;
   }
@@ -97,6 +101,7 @@ function sof_generate_pdf_from_nodes($nid) {
   }
 }
 
+// @codingStandardsIgnoreStart
 /**
  * SOF pdf generator callback for articles and news.
  *
@@ -104,6 +109,7 @@ function sof_generate_pdf_from_nodes($nid) {
  *   node id from wich content the pdf will be generated.
  */
 function sof_generate_pdf_from_node($nid) {
+  // @codingStandardsIgnoreEnd
   if (!isset($nid)) {
     return;
   }
@@ -156,13 +162,15 @@ function sof_generate_pdf_from_node($nid) {
           'no-outline',
           'disable-smart-shrinking',
           'no-stop-slow-scripts',
+          // @codingStandardsIgnoreStart
           'dpi' => 75,
+          // @codingStandardsIgnoreEnd
           'encoding' => 'UTF-8',
           'javascript-delay' => 1000,
           'footer-center' => '[page]',
           'footer-font-size' => 9,
         ));
-        // set header options
+        // Set header options.
         sof_pdf_generator_set_header($node_obj, $pdf);
 
         // Add a HTML file, a HTML string or a page from a URL.
@@ -271,7 +279,9 @@ function sof_pdf_generator_preprocess_field(&$vars) {
   switch ($element['#field_name']) {
     case'body':{
       drupal_add_js(drupal_get_path('module', 'sof_pdf_generator') . '/js/sof_pdf_generator.js');
+      // @codingStandardsIgnoreStart
       }
+      // @codingStandardsIgnoreEnd
     break;
   }
 }
@@ -282,34 +292,39 @@ function sof_pdf_generator_preprocess_field(&$vars) {
  * @param object $node
  *   Node object from which to show the title and change date.
  * @param object $pdf
- *   The WkHtmlToPdf object from phpwkhtmltopdf library on which the header options will be set.
+ *   The WkHtmlToPdf object from phpwkhtmltopdf
+ *    library on which the header options will be set.
  */
 function sof_pdf_generator_set_header($node, $pdf) {
   // The header-left/header-right options have trouble with Unicode characters
   // So we will use header-html instead.
   // As a bonus that also lets us use fancier formatting and custom fonts.
-
   $current_domain = domain_get_domain();
   $current_domain['path'] = parse_url($current_domain['path'], PHP_URL_HOST);
 
-  // TODO we can even try to bold the node title as in the sample PDF but that'll require @font-face definitions for bold, without them wkhtmltopdf does a weird 'faux-bold' by doubling the text.
+  // TODO we can even try to bold the node title as in the sample PDF
+  // but that'll require @font-face definitions for bold, without them
+  // wkhtmltopdf does a weird 'faux-bold' by doubling the text.
   $header_left = check_plain(drupal_strtoupper($node->title)) . ' / ' . check_plain(drupal_strtoupper(format_date($node->changed, 'custom', 'j. F Y')));
   $header_right = check_plain(drupal_strtoupper($current_domain['path']));
   // It must have doctype and charset metatag.
   $header_html = "<!DOCTYPE html>\n<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />\n";
-  // Because we have weird user style sheet, we need to reset some styles on the html and body tags; also set font
+  // Because we have weird user style sheet,
+  // we need to reset some styles on the html and body tags; also set font.
   $header_html .= "<html style='height:auto;margin:0;padding:0'><body style='width:500px;height:auto;margin:0 auto;padding:0;font:6pt conduit_itcregular,sans-serif'>\n";
   $header_html .= "<div style='float:left;white-space:nowrap;'>" . $header_left . "</div><div style='float:right;white-space:nowrap'>" . $header_right . "</div>";
   $header_html .= "</body></html>";
 
   $pdf->setOptions(array(
     'header-html' => $header_html,
-    // adding a header-html changes the implicit margin-top from 10mm to 0, we bring it back.
+    // Adding a header-html changes the implicit margin-top from 10mm to
+    // 0, we bring it back.
     // we add additional top margin by applying padding-top to the page divs,
     // because if we added it here it would affect the cover page too.
     'margin-top' => '10mm',
-    // the meaning of header-spacing also changes slightly, it is the distance
-    // from the top of the content to the top of the header now, instead of to the bottom.
+    // The meaning of header-spacing also changes slightly, it is the distance
+    // from the top of the content to the top of the header now,
+    // instead of to the bottom.
     'header-spacing' => 0,
   ));
 }
@@ -317,7 +332,7 @@ function sof_pdf_generator_set_header($node, $pdf) {
 /**
  * Helper function for generating pdf files of the publication.
  *
- * @param array $node_view
+ * @param mixed $node_view
  *   Received from node_view().
  */
 function sof_pdf_generator_publication_pdf($node_view) {
@@ -329,7 +344,9 @@ function sof_pdf_generator_publication_pdf($node_view) {
       'no-outline',
       'disable-smart-shrinking',
       'no-stop-slow-scripts',
+      // @codingStandardsIgnoreStart
       'dpi' => 75,
+      // @codingStandardsIgnoreEnd
       'encoding' => 'UTF-8',
       'javascript-delay' => 1000,
       'user-style-sheet' => drupal_get_path('theme', 'sof_theme') . '/css/global.styles.css',
@@ -337,12 +354,13 @@ function sof_pdf_generator_publication_pdf($node_view) {
       'footer-center' => '[page]',
       'footer-font-size' => 9,
 
-      // the following two lines work around a bug in wkhtmltopdf when loading the same css/font resource multiple times
+      // The following two lines work around a bug in wkhtmltopdf
+      // when loading the same css/font resource multiple times
       // https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1865
       'run-script' => 'setInterval(function(){if(document.readyState=="complete") window.status="done";},100)',
       'window-status' => 'done',
     ));
-    // set header options
+    // Set header options.
     sof_pdf_generator_set_header($node_view['#node'], $pdf);
 
     // Add Template css.

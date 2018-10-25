@@ -2,7 +2,10 @@
 
 /**
  * @file
- * Theme implementation SOF pdf generator. This html will be converted to pdf file
+ * sof_pdf_generator_main.tpl.php
+ *
+ * Theme implementation SOF pdf generator. This html will be converted to pdf
+ * file.
  *
  * Variables:
  * - $css:  An array of CSS files for the current page.
@@ -12,7 +15,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
 ?>
 
 <!DOCTYPE html>

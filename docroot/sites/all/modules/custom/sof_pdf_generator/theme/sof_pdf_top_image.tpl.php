@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * sof_pdf_top_image.tpl.php
+ *
  * Theme implementation for image on the top of the pdf file.
  *
  * Variables:
@@ -10,7 +12,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
 ?>
 
 <div class="sof-pdf-top-image">
