@@ -7,7 +7,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
 ?>
 
 <div class="sof_toolbox_wrapper" >
