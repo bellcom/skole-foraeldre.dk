@@ -22,7 +22,7 @@ function rules_terms_tree_all() {
     'package_preprocess' => array(
       'article_build_url',
     ),
-    // 'map_parent_key' => array('*' => 'site-tree'),
+    // 'map_parent_key' => array('*' => 'site-tree'),.
     'progress' => array(
       'message' => TRUE,
       'save' => TRUE,
@@ -36,8 +36,7 @@ function rules_terms_tree_all() {
 /**
  * Article build URL.
  */
-function article_build_url($file_path, $file_contents, $template,
-    array $rules) {
+function article_build_url($file_path, $file_contents, $template, array $rules) {
   $cwd = getcwd();
 
   if ($template === 'blogindlaeg') {
@@ -69,7 +68,7 @@ function article_build_url($file_path, $file_contents, $template,
       }
 
       // /master/sitecore/content/
-      // Home/OmOs/FormalVedtagter/{FFAC42F9-9EF7-4FC5-B818-7828CDA4D139}/da/1/
+      // Home/OmOs/FormalVedtagter/{FFAC42F9-9EF7-4FC5-B818-7828CDA4D139}/da/1/.
       $file_contents = $doc->saveXML($item);
     }
   }
