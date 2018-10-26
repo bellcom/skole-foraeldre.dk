@@ -6,12 +6,12 @@ docroot/sites/*/files
 docroot/sites/*/private
 
 # Hidden files and folders
-#.*
+
 .DS_Store
 .idea
 
 # Hide env.settings.php
 docroot/sites/*/env.settings.php
-!sites/*/settings.php
+!docroot/sites/*/settings.php
 docroot/sites/all/modules/contrib/stage_file_proxy/
 docroot/sites/all/modules/contrib/devel/
