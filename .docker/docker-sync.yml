@@ -7,5 +7,9 @@ options:
 syncs:
   docker-sof-sync:
     src: '../'
-    sync_userid: '1000'
-    sync_excludes: ['.idea/']
+    sync_userid: '501'
+    sync_excludes: ['.gitignore', '.git/', '.idea/']
+  docker-sof-files:
+    src: '../.docker_files'
+    sync_userid: '501'
+    sync_excludes: ['.gitignore', '.git/', '.idea/']
