@@ -56,3 +56,5 @@ $conf['cache'] = 0;
 $conf['page_compression'] = 0;
 $conf['preprocess_css'] = 0;
 $conf['preprocess_js'] = 0;
+
+$conf["file_temporary_path"] = "sites/default/files/tmp";
