@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * sof_pdf_generator_pages.tpl.php
+ *
  * Theme implementation for rest of the content of the pdf file.
  *
  * Variables:
@@ -10,7 +12,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
 ?>
 
 <div class="sof-pdf-page-template">

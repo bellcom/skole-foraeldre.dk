@@ -22,14 +22,14 @@ $plugin = array(
 /**
  * Form plugin.
  *
- * @param array $importer
+ * @param mixed $importer
  *   Should be filled with proper information.
- * @param array $element_key
+ * @param mixed $element_key
  *   Should be filled with proper information.
- * @param array $settings
+ * @param mixed $settings
  *   Should be filled with proper information.
  *
- * @return array
+ * @return mixed
  *   The form array.
  */
 function sof_richtext_links_form($importer, $element_key, $settings) {
@@ -45,17 +45,17 @@ function sof_richtext_links_form($importer, $element_key, $settings) {
 /**
  * Regular expression matching callback.
  *
- * @param array $result
+ * @param mixed $result
  *   Should be filled with proper information.
- * @param array $item_key
+ * @param mixed $item_key
  *   Should be filled with proper information.
- * @param array $element_key
+ * @param mixed $element_key
  *   Should be filled with proper information.
- * @param array $field
+ * @param mixed $field
  *   Should be filled with proper information.
- * @param array $settings
+ * @param mixed $settings
  *   Should be filled with proper information.
- * @param array $source
+ * @param mixed $source
  *   Should be filled with proper information.
  */
 function sof_richtext_links_callback($result, $item_key, $element_key, &$field, $settings, $source) {

@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * sof_pdf_generator_cover.tpl.php
+ *
  * Theme implementation for cover page of the pdf file.
  *
  * Variables:
@@ -13,7 +15,6 @@
  * @author Goce Shutinoski <gsutinoski@propeople.dk>
  * @author Lachezar Valchev <lachezar@propeople.dk>
  */
-
 ?>
 
 <div class="sof-pdf-cover" style="background: <?php print $color; ?>" >

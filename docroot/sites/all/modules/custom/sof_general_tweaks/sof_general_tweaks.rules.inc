@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * sof_general_tweaks.rules.inc
+ *
  * Copying the commerce coupon rule,
  * but without applying the tax to the line items.
  * @see commerce_coupon_pct.rules.inc
@@ -57,7 +59,7 @@ function sof_general_commerce_coupon_apply_to_product_line_item($line_item, $cou
       && isset($fields['commerce_coupon_percent_amount']) && $coupon_wrapper->commerce_coupon_percent_amount->value() > 0) {
     $rate = $coupon_wrapper->commerce_coupon_percent_amount->value();
     if ($rate > 1) {
-      // Ensure that the rate is never bigger then 100%
+      // Ensure that the rate is never bigger then 100%.
       $rate = $rate / 100;
     }
     else {

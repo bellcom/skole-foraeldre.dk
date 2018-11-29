@@ -24,12 +24,12 @@ function sof_migration_post_migrate($form, &$form_state) {
 /**
  * Submit handler.
  *
- * @param array $form
+ * @param mixed $form
  *   Should be filled with proper information.
- * @param array $form_state
+ * @param mixed $form_state
  *   Should be filled with proper information.
  *
- * @return array
+ * @return mixed
  *   Should be filled with proper information.
  */
 function sof_migration_fix_links_submit(&$form, &$form_state) {
@@ -57,14 +57,14 @@ function sof_migration_fix_links_submit(&$form, &$form_state) {
 /**
  * Batch operation 1.
  *
- * @param array $arg1
+ * @param mixed $arg1
  *   Should be filled with proper information.
- * @param array $arg2
+ * @param mixed $arg2
  *   Should be filled with proper information.
- * @param array $context
+ * @param mixed $context
  *   Should be filled with proper information.
  *
- * @return array
+ * @return mixed
  *   Should be filled with proper information.
  */
 function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
@@ -179,19 +179,21 @@ function sof_migration_fix_links_batch($arg1, $arg2, &$context) {
 /**
  * Finished batch callback.
  *
- * @param array $success
+ * @param mixed $success
  *   Should be filled with proper information.
- * @param array $results
+ * @param mixed $results
  *   Should be filled with proper information.
- * @param array $operations
+ * @param mixed $operations
  *   Should be filled with proper information.
  *
- * @return array
+ * @return mixed
  *   Should be filled with proper information.
  */
+
+// @codingStandardsIgnoreStart
 function sof_migration_fix_links_batch_finished($success, array $results, array $operations) {
   $message = '';
-
+// @codingStandardsIgnoreEnd
   if (isset($results['count'])) {
     $message .= format_plural($results['count'], '1 nodes processed successfully. ', '@count nodes successfully processed. ');
   }

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * templates-tree.php
+ */
+
 $export = array(
   'artikel' => array(
     'level' => 0,

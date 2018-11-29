@@ -521,7 +521,7 @@ function sof_general_tweaks_commerse_validation($element, &$form_state) {
         if ($value && (!is_numeric($value) || drupal_strlen($value) < 13)) {
           form_error($element, t('Udfyld EAN Number.'));
         }
-        // Validate if empty, the field is required;
+        // Validate if empty, the field is required;.
         if ($billing['field_sof_commerce_customer_type'][$lang] == 'public') {
           if (!$value) {
             form_error($element, t('EAN field is required.'));
@@ -664,6 +664,7 @@ function sof_general_tweaks_panels_pane_content_alter($content, $pane, $args, $c
  * Implements hook_views_default_views_alter().
  *
  * Add additioanl view filters for admin_views_node view.
+ *
  * @see views.api.php
  */
 function sof_general_tweaks_views_default_views_alter(&$views) {
@@ -746,15 +747,18 @@ function sof_general_tweaks_page_alter(&$page) {
 
   }
 }
+
 /**
- * Implements hook_facebook_pixel_data_ACTION_alter()
-*/
+ * Implements hook_facebook_pixel_data_ACTION_alter().
+ */
+// @codingStandardsIgnoreStart
 function sof_general_tweaks_facebook_pixel_data_ViewContent_alter(&$data, $order_id) {
+// @codingStandardsIgnoreEnd
   $data = array();
 }
 
 /**
- * Implements hook_module_implements_alter
+ * Implements hook_module_implements_alter().
  */
 function sof_general_tweaks_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'menu_alter') {

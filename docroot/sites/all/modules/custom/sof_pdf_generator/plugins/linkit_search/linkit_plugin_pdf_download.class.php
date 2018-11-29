@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * linkit_plugin_pdf_download.class.php
+ *
  * Define Linkit node plugin class update.
  * Ment for links to pdf files of the publication.
  *
