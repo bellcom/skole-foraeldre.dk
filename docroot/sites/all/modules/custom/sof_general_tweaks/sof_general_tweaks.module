@@ -727,6 +727,7 @@ function sof_general_tweaks_views_default_views_alter(&$views) {
  * Hide block by domain_block rule.
  */
 function sof_general_tweaks_page_alter(&$page) {
+  global $base_url;
   if (isset($page['social_media_region'])) {
     $domain = domain_get_domain();
     $domains_on_block = array();
@@ -745,6 +746,11 @@ function sof_general_tweaks_page_alter(&$page) {
     }
 
   }
+
+  if ($base_url == 'http://skole-foraeldre.dk') {
+    drupal_add_js(drupal_get_path('theme', 'sof_theme') . '/scripts/formilla-chatbot.js');
+  }
+
 }
 /**
  * Implements hook_facebook_pixel_data_ACTION_alter()
