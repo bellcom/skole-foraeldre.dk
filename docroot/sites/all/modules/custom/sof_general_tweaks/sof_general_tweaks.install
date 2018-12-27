@@ -14,3 +14,15 @@ function sof_general_tweaks_update_7001() {
     ->condition('pane_id', 'commerce_coupon');
   $query->execute();
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable modules media_ckeditor and ckeditor_media.
+ */
+function sof_general_tweaks_update_7002(&$sandbox) {
+  module_enable(array(
+      'media_ckeditor', 'ckeditor_media',
+    )
+  );
+}
