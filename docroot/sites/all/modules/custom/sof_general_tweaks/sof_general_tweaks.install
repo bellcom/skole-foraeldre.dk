@@ -22,7 +22,7 @@ function sof_general_tweaks_update_7001() {
  */
 function sof_general_tweaks_update_7002(&$sandbox) {
   module_enable(array(
-      'media_ckeditor', 'ckeditor_media',
-    )
+    'media_ckeditor', 'ckeditor_media',
+  )
   );
 }
