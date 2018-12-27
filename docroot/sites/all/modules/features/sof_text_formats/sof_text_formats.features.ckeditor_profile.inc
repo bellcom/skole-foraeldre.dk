@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_text_formats.features.ckeditor_profile.inc
@@ -143,9 +144,9 @@ function sof_text_formats_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'none',
-        'filebrowser_image' => '',
-        'filebrowser_flash' => '',
+        'filebrowser' => 'ckeditor_media',
+        'filebrowser_image' => 'ckeditor_media',
+        'filebrowser_flash' => 'ckeditor_media',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
         'forcePasteAsPlainText' => 'f',
@@ -176,6 +177,35 @@ function sof_text_formats_ckeditor_profile_defaults() {
                 'icon' => 'icons/linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
+            'buttons' => array(
+              'Media' => array(
+                'icon' => 'icons/media.png',
+                'label' => 'Add media',
+              ),
+            ),
+            'default' => 'f',
+          ),
+          'mediaBrowser' => array(
+            'name' => 'mediaBrowser',
+            'desc' => 'Media Browser for File Upload/Browsing',
+            'path' => '/sites/all/modules/contrib/ckeditor_media/plugins/mediaBrowser/',
+          ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for embedding HTML snippets',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
+              ),
+            ),
+            'default' => 'f',
           ),
           'tableresize' => array(
             'name' => 'tableresize',
