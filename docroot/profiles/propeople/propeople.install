@@ -1004,3 +1004,22 @@ function propeople_update_7017() {
   module_disable($modules);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Fix missing module warning message-devel,purge.
+ */
+function propeople_update_7018() {
+  $modules = array(
+    'purge',
+    'devel',
+  );
+
+  db_delete('system')
+    ->condition('name', $modules, 'IN')
+    ->condition('type', 'module')
+    ->condition('status', 0)
+    ->execute();
+}
+
