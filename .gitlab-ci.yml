@@ -11,7 +11,7 @@ stages:
   - deploy
 
 variables:
-  PROJECT_NAME: "bbstockholm"
+  PROJECT_NAME: "sof"
   REPO_PATH: "/FFW-CSO/D7/skoleforaeldre"
 
 code-quality-checks:
