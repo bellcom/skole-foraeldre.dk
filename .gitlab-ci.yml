@@ -40,7 +40,7 @@ deploy:develop:
     PURL: "$CI_COMMIT_REF_SLUG"
   environment:
     name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "https://$PROJECT_NAME.demo.ffw-cs.com"
+    url: "http://$PROJECT_NAME.demo.ffw-cs.com"
   only:
     - develop
   script:
@@ -53,7 +53,7 @@ deploy:feature:
     PURL: "$CI_COMMIT_REF_SLUG"
   environment:
     name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "https://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    url: "http://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
     on_stop: stop:feature
   only:
     - /^feature.*$/
@@ -70,7 +70,7 @@ stop:feature:
     - /^feature.*$/
   environment:
     name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "https://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    url: "http://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
     action: stop
   script:
     - /bin/bash ecsrun.sh $PNAME $PURL stopfeat
