@@ -46,6 +46,13 @@
   */
   Drupal.behaviors.sofHeader = {
     attach: function (context, settings) {
+        jQuery.each(jQuery("#block-views-sof-shopping-cart-block-block .block-content .view-empty"), function (i, e) {
+          var element = jQuery(e);
+          var regexp = /(.*)(<div.*)/gms;
+          var match = regexp.exec(element.html());
+          element.empty();
+          element.append("<p>"+jQuery.trim(match[1])+"</p>"+match[2])
+        });
       //Show Hide navigation script	for submenu
 	  if( /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         //Magazine deck changes
