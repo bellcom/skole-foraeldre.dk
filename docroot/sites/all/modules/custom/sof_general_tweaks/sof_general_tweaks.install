@@ -35,3 +35,12 @@ function sof_general_tweaks_update_7002(&$sandbox) {
 function sof_general_tweaks_update_7003(&$sandbox) {
   features_revert_module('sof_text_formats');
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Revert feature with permissions and roles.
+ */
+function sof_general_tweaks_update_7004(&$sandbox) {
+    features_revert_module('sof_permissions_and_roles');
+}
