@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_permissions_and_roles.features.user_permission.inc
@@ -103,15 +104,6 @@ function sof_permissions_and_roles_user_default_permissions() {
       'site editor' => 'site editor',
     ),
     'module' => 'dashboard',
-  );
-
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'access domain navigation'.
@@ -2483,15 +2475,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'generate features'.
   $permissions['generate features'] = array(
     'name' => 'generate features',
@@ -2589,16 +2572,6 @@ function sof_permissions_and_roles_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'schedule (un)publishing of nodes'.
-  $permissions['schedule (un)publishing of nodes'] = array(
-    'name' => 'schedule (un)publishing of nodes',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'scheduler',
-  );
-
   // Exported permission: 'search content'.
   $permissions['search content'] = array(
     'name' => 'search content',
@@ -2677,15 +2650,6 @@ function sof_permissions_and_roles_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'shortcut',
-  );
-
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'translate admin strings'.
