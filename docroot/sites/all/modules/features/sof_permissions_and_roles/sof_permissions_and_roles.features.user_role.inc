@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_permissions_and_roles.features.user_role.inc
