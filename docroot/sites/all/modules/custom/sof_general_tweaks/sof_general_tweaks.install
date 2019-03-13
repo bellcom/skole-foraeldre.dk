@@ -51,6 +51,5 @@ function sof_general_tweaks_update_7004(&$sandbox) {
  * Revert feature with fields bases.
  */
 function sof_general_tweaks_update_7005(&$sandbox) {
-    features_revert_module('sof_field_bases');
+  features_revert_module('sof_field_bases');
 }
-
