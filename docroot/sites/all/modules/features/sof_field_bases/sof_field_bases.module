@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * @file
+ * Code for the SOF field bases feature.
+ */
+
+include_once 'sof_field_bases.features.inc';
 /**
  * @file
  * Drupal needs this blank file.
