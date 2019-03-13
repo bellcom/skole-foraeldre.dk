@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_field_bases.features.field_base.inc
@@ -281,7 +282,7 @@ function sof_field_bases_field_default_field_bases() {
 #42D692,#16A765,#7BD148,#B3DC6C,#FBE983
 #92E1C0,#9FE1E7,#9FC6E7,#4986E7,#9A9CFF
 #B99AFF,#C2C2C2,#CABDBF,#CCA6AC,#F691B2
-#CD74E6,#A47AE2
+#CD74E6,#A47AE2,#00738A
         ',
     ),
     'translatable' => 0,
@@ -519,6 +520,8 @@ function sof_field_bases_field_default_field_bases() {
         'publications' => 'Publications',
         'school_board_manual' => 'School board manual',
         'newsletter' => 'Newsletter',
+        'book' => 'Book',
+        'sign' => 'Sign',
       ),
       'allowed_values_function' => '',
     ),
@@ -816,7 +819,7 @@ function sof_field_bases_field_default_field_bases() {
     'locked' => 0,
     'module' => 'color_field',
     'settings' => array(
-      'default_colors' => '#EBECEC,#00A0ED,#6CCDBB,#FCE470',
+      'default_colors' => '#EBECEC,#00A0ED,#6CCDBB,#FCE470, #00738A',
     ),
     'translatable' => 0,
     'type' => 'color_field_rgb',

@@ -44,3 +44,12 @@ function sof_general_tweaks_update_7003(&$sandbox) {
 function sof_general_tweaks_update_7004(&$sandbox) {
   features_revert_module('sof_permissions_and_roles');
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Revert feature with fields bases.
+ */
+function sof_general_tweaks_update_7005(&$sandbox) {
+  features_revert_module('sof_field_bases');
+}
