@@ -237,7 +237,7 @@
         <?php global $base_url; ?>
       <!-- Social media region -->
 	    <?php  if (count($page['social_media_region']) > 3) : ?>
-      <div class="footer-social-region" <?php if ($base_url == 'http://foraeldreraadgivningen.dk') : echo 'style="display: none;"'?> <?php endif; ?>>
+      <div class="footer-social-region" <?php if ($base_url != 'http://skole-foraeldre.dk') : echo 'style="display: none;"'?> <?php endif; ?>>
       	<h2><?php print t('follow with'); ?></h2>
       	<?php print render($page['social_media_region']); ?>
       </div>
