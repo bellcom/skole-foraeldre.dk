@@ -49,7 +49,7 @@
       jQuery.each(jQuery("#block-views-sof-shopping-cart-block-block .block-content .view-empty"), function (i, e) {
         var element = jQuery(e);
         str = element.html().replace(/\r/g, "").replace(/\n/g, "");;
-        var regexp = /(.*)(?=<div)(.*)$/gimuy;
+        var regexp = /(.*)(?=<div)(.*)$/gim;
         var match = regexp.exec(str);
         element.empty();
         element.append("<p>"+jQuery.trim(match[1])+"</p>"+match[2])
