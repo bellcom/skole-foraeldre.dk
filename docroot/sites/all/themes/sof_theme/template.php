@@ -50,6 +50,7 @@ function sof_theme_process_page(&$variables) {
     }
   }
   global $base_path;
+  global $base_url;
   $theme = "sof_theme";
   // Hook into color.module.
   if (module_exists('color')) {
@@ -97,6 +98,11 @@ function sof_theme_process_page(&$variables) {
   $footerlogo_image = theme_get_setting('footerlogo_image', $theme);
   $variables['footerlogo_image'] = file_create_url(!empty($footerlogo_image) ? $footerlogo_image : $default_footerlogo_image);
   $variables['footerlogo_image'] = file_create_url($footerlogo_image);
+  if ($base_url != 'http://foraeldreraadgivningen.dk') {
+      $variables['display_social_menu'] = true;
+  }
+    $variables['display_social_menu'] = false;
+
 }
 /**
  * Override related content field in article node and in news node.
