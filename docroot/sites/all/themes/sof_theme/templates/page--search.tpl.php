@@ -216,7 +216,7 @@
 	<div class="footer-main-container">
 		<!-- Social media region -->
 		<?php  if (count($page['social_media_region']) > 3) : ?>
-            <div class="footer-social-region" <?php if (!$page['display_social_menu']) : echo 'style="display: none;"'?> <?php endif; ?>>
+            <div class="footer-social-region" <?php if ($display_social_menu == false) : echo 'style="display: none;"'?> <?php endif; ?>>
 				<h2><?php print t('follow with'); ?></h2>
 				<?php print render($page['social_media_region']); ?>
 			</div>

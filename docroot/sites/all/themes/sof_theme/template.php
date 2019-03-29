@@ -101,7 +101,9 @@ function sof_theme_process_page(&$variables) {
   if ($base_url != 'http://foraeldreraadgivningen.dk') {
       $variables['display_social_menu'] = true;
   }
-    $variables['display_social_menu'] = false;
+  else {
+      $variables['display_social_menu'] = false;
+  }
 
 }
 /**
