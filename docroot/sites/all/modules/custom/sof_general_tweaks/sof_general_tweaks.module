@@ -399,7 +399,7 @@ function sof_order_user_message(Message $message) {
 /**
  * Implements hook_mail_alter().
  *
- * Alter the mail send to the user in order to attach pdfs bought by him.
+ * Alter the mail send to the user in order to attach pdfs bought by user.
  */
 function sof_general_tweaks_mail_alter(&$message) {
   $attachments = array();
