@@ -6,23 +6,23 @@
  */
 
 // Database config.
-$databases = array(
-  "default" => array(
-    "default" => array(
-      "database" => "sof",
-      "username" => "drupal",
-      "password" => "drupal",
-      "host" => "mariadb",
-      "port" => "",
-      "driver" => "mysql",
-      "prefix" => "",
+$databases = array (
+  'default' => array (
+    'default' => array (
+      'database' => '__DB_NAME__',
+      'username' => 'drupal',
+      'password' => 'drupal',
+      'host' => 't-4995b7752f288434.elb.eu-west-1.amazonaws.com',
+      'port' => '3306',
+      'driver' => 'mysql',
+      'prefix' => '',
     ),
   ),
 );
 
 // Common settings for all installations.
-require 'cache.settings.php';
-require 'common.settings.php';
+require('common.settings.php');
+require('cache.settings.php');
 
 // Stage File Proxy config - to get images from prod.
 $conf["stage_file_proxy_origin"] = "http://skole-foraeldre.dk";
@@ -34,27 +34,24 @@ $conf["mail_system"] = array(
 );
 
 // Disable core search index.
-$conf['search_cron_limit'] = '0';
+$conf["search_cron_limit"] = "0";
 
 // Cache override.
-$conf['memcache_servers'] = array(
-  'memcached:11211' => 'default',
+$conf["memcache_servers"] = array(
+  "memcached:11211" => "default",
 );
-
-// Varnish DEV settings.
-$conf['varnish_version'] = 4;
-$conf['varnish_control_terminal'] = 'varnish:6082';
-$conf['varnish_control_key'] = 'secret';
+$conf["varnish_version"] = 4;
+$conf["varnish_control_terminal"] = "varnish:6082";
+$conf["varnish_control_key"] = "secret";
 
 // Overrides solr url variable used to set solr endpoint.
-$conf['apachesolr_environment']['solr']['url'] = 'http://solr:8983/solr/core1';
+$conf["apachesolr_environment"]["solr"]["url"] = "http://solr:8983/solr/core1";
 
-/**
- * Cache configuration example.
- */
-$conf['cache'] = 0;
-$conf['page_compression'] = 0;
-$conf['preprocess_css'] = 0;
-$conf['preprocess_js'] = 0;
+// Cache configuration.
+$conf["cache"] = 0;
+$conf["page_compression"] = 0;
+$conf["preprocess_css"] = 0;
+$conf["preprocess_js"] = 0;
 
 $conf["file_temporary_path"] = "sites/default/files/tmp";
+
