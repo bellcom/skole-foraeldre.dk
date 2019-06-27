@@ -1,0 +1,2 @@
+The following patches have been applied to this project:
+- repository://docroot/sites/all/patches/commerce/fix-warning-illegal-offset-type-in-isset-or-empty.patch
