@@ -51,6 +51,7 @@ else
     aws elbv2 create-target-group --name ${TGNAME} --region $AWSREGION --protocol "$TG_PROTOCOL" --port ${CONT_PORT} --vpc-id "$AWS_VPC_ID" --health-check-protocol "$TG_HEALTH_CHECK_PROTOCOL" --health-check-port "$TG_HEALTH_CHECK_PORT" --health-check-path "$TG_HEALTH_CHECK_PATH" --health-check-interval-seconds ${TG_HEALTH_CHECK_INTERVAL_SEC} --health-check-timeout-seconds ${TG_HEALTH_CHECK_TIMEOUT_SEC} --healthy-threshold-count ${TG_HEALTHY_THRESHOLD_COUNT} --unhealthy-threshold-count ${TG_UNHEALTHY_THRESHOLD_COUNT} --matcher HttpCode="$TG_SUCCESS_CODE"
   fi
   TGARN=$(aws elbv2 describe-target-groups --names "${TGNAME}" --region $AWSREGION | egrep "TargetGroupArn" | awk '{print $2}' | sed 's/,$//' | sed 's/"//g')
+  aws elbv2 modify-target-group-attributes --target-group-arn $TGARN --region $AWSREGION --attributes Key=deregistration_delay.timeout_seconds,Value=$TG_DEREG_DELAY
   #aws autoscaling attach-load-balancer-target-groups --auto-scaling-group-name "${SERVICE_NAME}" --target-group-arns "${TGARN} --region $AWSREGION "
   #create rule for 80 and 443 in elb "i"
   for LISTENER in ${LISTENERS} 
@@ -75,7 +76,7 @@ else
 fi
 echo "$(date -Is) Creating a new task definition of ${TASK_FAMILY} for this build: ${BUILD_NUMBER} . PHPinit will execute: ${DRUSHCMD}"
 
-sed -e "s;%DOCKER_TAG%;${BUILD_NUMBER};g" -e "s,%DRUSH_CMD%,${DRUSHCMD},g" -e "s;%PROJ_DB_CONT_NAME%;${PROJ_CONT_DB_NAME};g" -e "s;%PHP_CONT_ECR_VER%;${PROJ_CONT_PHP_VER};g" -e "s;%AWS_ECR_REPO%;${ECRURLREPO};g" -e "s;%CODE_REPO_PREFIX%;${CODEPREFIX};g" -e "s;%DOCROOT_DIR%;${PROJ_DOCROOT_DIR};g" -e "s;%PROJECT_NAME_CI%;${PROJ_CI_BRANCH_DB_NAME};g" -e "s;%SERV_FAMILY%;${TASK_FAMILY};g" -e "s;%CODE_BRANCH%;${BRANCH_DOCK_TAG};g" ${TASK_DEF_FILE} > ffw-cs-${TASK_FAMILY}-${BUILD_NUMBER}.json
+sed -e "s;%DOCKER_TAG%;${BUILD_NUMBER};g" -e "s,%DRUSH_CMD%,${DRUSHCMD},g" -e "s;%PROJ_DB_CONT_NAME%;${PROJ_CONT_DB_NAME};g" -e "s;%PHP_CONT_ECR_VER%;${PROJ_CONT_PHP_VER};g" -e "s;%AWS_ECR_REPO%;${ECRURLREPO};g" -e "s;%CODE_REPO_PREFIX%;${CODEPREFIX};g" -e "s;%DOCROOT_DIR%;${PROJ_DOCROOT_DIR};g" -e "s;%PROJECT_DB_NAME_CI%;${PROJ_CI_BRANCH_DB_NAME};g" -e "s;%SERV_FAMILY%;${TASK_FAMILY};g" -e "s;%CODE_BRANCH%;${BRANCH_DOCK_TAG};g" -e "s;%PROJECT_NAME_CI%;${PROJ_NAME};g" ${TASK_DEF_FILE} > ffw-cs-${TASK_FAMILY}-${BUILD_NUMBER}.json
 aws ecs register-task-definition --family ${TASK_FAMILY} --region $AWSREGION --cli-input-json file://ffw-cs-${TASK_FAMILY}-${BUILD_NUMBER}.json
 # Create new service if it doesn't exists (doublecheck on reloading inactive services)
 SERVICEINACTIVE=$(aws ecs describe-services --services ${SERVICE_NAME} --cluster ${CLUSTER_NAME} --region $AWSREGION | egrep "status" | egrep "INACTIVE")

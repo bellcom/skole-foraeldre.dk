@@ -108,7 +108,7 @@
         },
         {
           "name": "DB_NAME",
-          "value": "%PROJECT_NAME_CI%"
+          "value": "%PROJECT_DB_NAME_CI%"
         },
         {
           "name": "DB_PASSWORD",
@@ -159,7 +159,7 @@
         },
         {
           "name": "DB_NAME",
-          "value": "%PROJECT_NAME_CI%"
+          "value": "%PROJECT_DB_NAME_CI%"
         },
         {
           "name": "DB_PASSWORD",
