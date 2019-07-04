@@ -1,7 +1,7 @@
 image: docker:latest
 
 before_script:
-  - apk add --no-cache curl jq python py-pip bash findutils git zlib-dev openssh-client php7 php7-json php7-phar php7-iconv php7-openssl php7-mbstring php7-simplexml php7-tokenizer php7-xmlwriter php7-ctype php7-curl php7-dom php7-fileinfo mariadb-client php7-gd php7-intl php7-xsl php7-pdo php7-session php7-xml
+  - apk add --no-cache curl jq python py-pip bash findutils git zlib-dev openssh-client php7 php7-json php7-phar php7-iconv php7-openssl php7-mbstring php7-simplexml php7-tokenizer php7-xmlwriter php7-ctype php7-curl php7-dom patch php7-fileinfo mariadb-client php7-gd php7-intl php7-xsl php7-pdo php7-session php7-xml ruby ruby-io-console ruby-irb ruby-json ruby-rake ruby-rdoc
   - pip install --upgrade pip
   - pip install awscli
   - curl --silent --show-error https://getcomposer.org/installer | php
@@ -10,10 +10,6 @@ stages:
   - build
   - deploy
   - test
-
-#variables:
-#  REPO_PATH: "FFW-CSO/D7/skoleforaeldre"
-#  PROJECT_DOCROOT: "docroot"
 
 build:ProjectContainer:
   stage: build
@@ -28,18 +24,7 @@ build:ProjectContainer:
     - develop
     - /^feature.*$/
 
-build:featureDB:
-  stage: build
-  variables:
-    PURL: "$CI_COMMIT_REF_SLUG"
-  script:
-    - cp .ci/ecsbuildpush.sh ./ecsbuildpush.sh
-    - chmod +x ecsbuildpush.sh
-    - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build db
-  only:
-    - /^feature.*$/
-
-build:developDB:
+build:ProjectDB:
   stage: build
   variables:
     PURL: "$CI_COMMIT_REF_SLUG"
@@ -49,6 +34,7 @@ build:developDB:
     - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build db
   only:
     - develop
+    - /^feature.*$/
 
 stop:featureDB:
   stage: build
