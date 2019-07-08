@@ -35,8 +35,7 @@ echo -e "\e[32m$(date -Is) URL built: ${FULLURL}  Link is generated on deploy, a
 # FIX DB NAME AND ADD IT TO CI.SETTINGS.PHP
 if [[ ${PROJ_SUBSTAGE} == "proj" ]] ; then
 	# ADD BASE_URL IN TESTS/BEHAT/BEHAT.YML
-	BEHAT_YML="tests/behat/behat.yml"
-	sed -iE 's;base_url:.*$;base_url: '"$FULLURL"';g' $BEHAT_YML
+	sed -iE 's;base_url:.*$;base_url: '"$FULLURL"';g' $PROJ_BEHAT_LOC
 	# ADD DB NAME TO CI.SETTINGS.PHP
 	sed -i "s;__DB_NAME__;$PROJ_CI_BRANCH_DB_NAME;g" $CIPHPSETTFILE
 	if [[ ${NEEDSCOMPOSERINSTALL} == "yes" ]] ; then
@@ -68,10 +67,17 @@ if [[ ${PROJ_SUBSTAGE} == "proj" ]] ; then
 	else
 		echo -e "\e[32m$(date -Is) ${PROJ_NAME} needs compass compile is set to: ${NEEDSCOMPASSCOMPILE}, so we are skipping it.\e[0m"
 	fi
-	aws ecr create-repository --repository-name $IMAGENAME --region $AWSREGION
-	docker build -t $IMAGE_URL -f Dockerfile .
-	docker push $IMAGE_URL
-	echo -e "\e[32m$(date -Is) Build and push finished.\e[0m"
+	CREATEECR=$(aws ecr create-repository --repository-name $IMAGENAME --region $AWSREGION | grep -v "RepositoryAlreadyExistsException")
+	# TODO: also grep -v "CREATED" !!!
+	if [ "${CREATEECR:-0}" == 0 ] ; then
+		echo -e "\e[32m$(date -Is) Proceeding with build and push of ${IMAGE_URL}\e[0m"
+		docker build -t $IMAGE_URL -f Dockerfile .
+		docker push $IMAGE_URL
+		echo -e "\e[32m$(date -Is) Build and push finished.\e[0m"
+	else
+		echo -e "\e[36m$(date -Is) Build and push FAILED. Erron on create ECR: ${CREATEECR}\e[0m"
+		exit 1
+	fi
 elif [[ ${PROJ_SUBSTAGE} == "db" ]] ; then
 	# Overwrite source db w/ newest and sanitize envar
 	if [[ ${PROJ_CI_DB_SOURCE} == "" ]] ; then
@@ -87,7 +93,7 @@ elif [[ ${PROJ_SUBSTAGE} == "db" ]] ; then
 
 	# check and create mysql container if missing
 	echo -e "\e[32m$(date -Is) Loading database in $PROJ_CI_BRANCH_DB_NAME from $PROJ_CI_DB_SOURCEFILE\e[0m"
-	CURRENTDB=$(mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"SHOW DATABASES;" | grep $PROJ_CI_BRANCH_DB_NAME | grep -v "${PROJ_CI_BRANCH_DB_NAME}_")
+	CURRENTDB=$(mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"SHOW DATABASES;" | grep $PROJ_CI_BRANCH_DB_NAME | grep -v "${PROJ_CI_BRANCH_DB_NAME}_" | grep -v "${PROJ_CI_BRANCH_DB_NAME}[A-Za-z0-9]")
 	echo "Contens of CURRENTDB: $CURRENTDB"
 	INSTANCEIP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 	echo "IP: $INSTANCEIP DB: $CURRENTDB"
@@ -119,12 +125,12 @@ elif [[ ${PROJ_SUBSTAGE} == "db" ]] ; then
 		mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"CREATE DATABASE $PROJ_CI_BRANCH_DB_NAME;"
 		mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"GRANT ALL PRIVILEGES ON $PROJ_CI_BRANCH_DB_NAME.* TO '$PROJ_CI_DB_USER'@'%' IDENTIFIED BY '$PROJ_CI_DB_PASS';"
 		mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"FLUSH PRIVILEGES;"
-		echo -e "\e[32m$(date -Is) User and DB added, \e[5mloading\e[32m database from $PROJ_CI_DB_SOURCEFILE (be patient please)\e[5m...\e[32m Tables before:\e[0m"
+		echo -e "\e[32m$(date -Is) User and DB added, \e[0m\e[5mloading\e[0m\e[32m database from $PROJ_CI_DB_SOURCEFILE (be patient please)\e[5m...\e[32m Tables before:\e[0m"
 		mysql -u$PROJ_CI_DB_USER -p$PROJ_CI_DB_PASS -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT $PROJ_CI_BRANCH_DB_NAME -e"SHOW TABLES;"
 		# Load database
 		zcat $PROJ_CI_DB_SOURCEFILE | mysql -u$PROJ_CI_DB_USER -p$PROJ_CI_DB_PASS -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT $PROJ_CI_BRANCH_DB_NAME
 		LOADRESULT=$?
-		DBCREATED=$(mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"SHOW DATABASES;" | grep $PROJ_CI_BRANCH_DB_NAME | grep -v "${PROJ_CI_BRANCH_DB_NAME}_")
+		DBCREATED=$(mysql -uroot -p$PROJ_CI_DB_ROOT -h$PROJ_CI_DB_HOST -P$PROJ_CI_DB_PORT -e"SHOW DATABASES;" | grep $PROJ_CI_BRANCH_DB_NAME | grep -v "${PROJ_CI_BRANCH_DB_NAME}_" | grep -v "${PROJ_CI_BRANCH_DB_NAME}[A-Za-z0-9]")
 		echo -e "\e[32m$(date -Is) Result from loading: $LOADRESULT\e[0m"
 		echo -e "\e[32m$(date -Is) New database created: $DBCREATED\e[0m"
 		if [[ "${SANITIZEDBONLOAD}" == "yes" ]]; then
