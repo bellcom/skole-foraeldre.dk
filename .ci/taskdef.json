@@ -1,0 +1,267 @@
+{
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [],
+      "command": [],
+      "cpu": 10,
+      "environment": [],
+      "mountPoints": [
+        {
+          "containerPath": "/var/www/html%DOCROOT_DIR%/sites/default/files",
+          "sourceVolume": "efs4files",
+          "readOnly": false
+        }
+      ],
+      "memory": 100,
+      "memoryReservation": 10,
+      "volumesFrom": [],
+      "image": "%AWS_ECR_REPO%/%CODE_REPO_PREFIX%%PROJECT_NAME_CI%:%CODE_BRANCH%",
+      "essential": false,
+      "name": "drupal"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": [],
+      "cpu": 20,
+      "environment": [
+        {
+          "name": "APACHE_BACKEND_HOST",
+          "value": "php"
+        },
+        {
+          "name": "APACHE_LOG_LEVEL",
+          "value": "debug"
+        },
+        {
+          "name": "APACHE_SERVER_ROOT",
+          "value": "/var/www/html%DOCROOT_DIR%"
+        },
+        {
+          "name": "APACHE_VHOST_PRESET",
+          "value": "php"
+        },
+        {
+          "name": "APACHE_USER",
+          "value": "apache"
+        },
+        {
+          "name": "APACHE_GROUP",
+          "value": "apache"
+        },
+        {
+          "name": "APACHE_FCGI_PROXY_TIMEOUT",
+          "value": "60"
+        },
+        {
+          "name": "APACHE_TIMEOUT",
+          "value": "60"
+        }
+      ],
+      "mountPoints": [],
+      "memory": 520,
+      "memoryReservation": 50,
+      "volumesFrom": [
+        {
+          "sourceContainer": "drupal",
+          "readOnly": false
+        }
+      ],
+      "image": "wodby/apache:2.4-4.0.2",
+      "essential": true,
+      "links": [
+        "php"
+      ],
+      "name": "apache"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 9000
+        }
+      ],
+      "cpu": 30,
+      "environment": [
+        {
+          "name": "DB_DRIVER",
+          "value": "mysql"
+        },
+        {
+          "name": "DB_HOST",
+          "value": "t-4995b7752f288434.elb.eu-west-1.amazonaws.com"
+        },
+        {
+          "name": "DB_NAME",
+          "value": "%PROJECT_DB_NAME_CI%"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "value": "drupal"
+        },
+        {
+          "name": "DB_USER",
+          "value": "drupal"
+        },
+        {
+          "name": "PHP_SENDMAIL_PATH",
+          "value": "/usr/sbin/sendmail -t -i -S mailhog:1025"
+        }
+      ],
+      "mountPoints": [],
+      "memory": 1030,
+      "memoryReservation": 100,
+      "volumesFrom": [
+        {
+          "sourceContainer": "drupal",
+          "readOnly": false
+        }
+      ],
+      "image": "%AWS_ECR_REPO%/php_%PHP_CONT_ECR_VER%:latest",
+      "essential": true,
+      "links": [ "solr", "memcached" ],
+      "name": "php"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 9000
+        }
+      ],
+      "cpu": 30,
+      "environment": [
+        {
+          "name": "DB_DRIVER",
+          "value": "mysql"
+        },
+        {
+          "name": "DB_HOST",
+          "value": "mariadb"
+        },
+        {
+          "name": "DB_NAME",
+          "value": "%PROJECT_DB_NAME_CI%"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "value": "drupal"
+        },
+        {
+          "name": "DB_USER",
+          "value": "drupal"
+        },
+        {
+          "name": "PHP_SENDMAIL_PATH",
+          "value": "/usr/sbin/sendmail -t -i -S mailhog:1025"
+        }
+      ],
+      "mountPoints": [],
+      "memory": 512,
+      "memoryReservation": 10,
+      "volumesFrom": [
+        {
+          "sourceContainer": "drupal",
+          "readOnly": false
+        }
+      ],
+      "image": "%AWS_ECR_REPO%/php_%PHP_CONT_ECR_VER%:latest",
+      "essential": false,
+      "links": [ "solr", "memcached" ],
+      "command": [
+        "/bin/bash -c \"%DRUSH_CMD%\""
+      ],
+      "entryPoint": [
+        "bash",
+        "-c"
+      ],
+      "name": "phpinit"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 8983
+        }
+      ],
+      "command": [],
+      "cpu": 10,
+      "environment": [
+        {
+          "name": "SOLR_HEAP",
+          "value": "1024m"
+        },
+        {
+          "name": "SOLR_DEFAULT_CONFIG_SET",
+          "value": "search_api_solr_8.x-2.1"
+        }
+      ],
+      "mountPoints": [],
+      "memory": 1030,
+      "memoryReservation": 50,
+      "volumesFrom": [],
+      "image": "wodby/solr:7.4-3.0.6",
+      "essential": false,
+      "links": [],
+      "name": "solr"
+    },
+    {
+      "logConfiguration": {
+        "logDriver": "json-file"
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 11211
+        }
+      ],
+      "command": [],
+      "cpu": 10,
+      "environment": [],
+      "mountPoints": [],
+      "memory": 300,
+      "memoryReservation": 20,
+      "volumesFrom": [],
+      "image": "wodby/memcached:1-2.2.0",
+      "essential": false,
+      "links": [],
+      "name": "memcached"
+    }
+  ],
+  "placementConstraints": [],
+  "family": "%SERV_FAMILY%",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "volumes": [
+    {
+      "host": {
+        "sourcePath": "/storage/efs/data_persist/ci_files/%PROJECT_NAME_CI%"
+      },
+      "name": "efs4files"
+    }
+  ]
+}

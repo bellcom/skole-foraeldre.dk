@@ -1,76 +1,144 @@
 image: docker:latest
 
 before_script:
-  - apk add --no-cache curl jq python py-pip bash findutils git zlib-dev openssh-client php7 php7-json php7-phar php7-iconv php7-openssl php7-mbstring php7-simplexml php7-tokenizer php7-xmlwriter php7-ctype php7-curl php7-dom
+  - apk add --no-cache curl jq python py-pip bash findutils git zlib-dev openssh-client php7 php7-json php7-phar php7-iconv php7-openssl php7-mbstring php7-simplexml php7-tokenizer php7-xmlwriter php7-ctype php7-curl php7-dom patch php7-fileinfo mariadb-client php7-gd php7-intl php7-xsl php7-pdo php7-session php7-xml ruby ruby-io-console ruby-irb ruby-json ruby-rake ruby-rdoc
   - pip install --upgrade pip
   - pip install awscli
+  - curl --silent --show-error https://getcomposer.org/installer | php
 
 stages:
-  - test
   - build
   - deploy
+  - test
 
-variables:
-  PROJECT_NAME: "sof"
-  REPO_PATH: "/FFW-CSO/D7/skoleforaeldre"
-
-code-quality-checks:
-  stage: test
-  variables:
-    BUILDS_PATH: "$REPO_PATH"
-  script:
-    - curl --silent --show-error https://getcomposer.org/installer | php
-    - echo "Code Sniffer"
-    - php composer.phar require drupal/coder
-    - ./vendor/bin/phpcs --config-set installed_paths /builds$REPO_PATH/vendor/drupal/coder/coder_sniffer
-    - ./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme /builds$REPO_PATH/docroot/sites/all/modules/custom/
-
-build:
+build:ProjectContainer:
   stage: build
   variables:
-    PNAME: "$PROJECT_NAME"
     PURL: "$CI_COMMIT_REF_SLUG"
   script:
-    - /bin/bash ecsrun.sh $PNAME $PURL build
-
-deploy:develop:
-  stage: deploy
-  variables:
-    PNAME: "$PROJECT_NAME"
-    PURL: "$CI_COMMIT_REF_SLUG"
-  environment:
-    name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "http://$PROJECT_NAME.demo.ffw-cs.com"
+    - cp .ci/Dockerfile ./Dockerfile
+    - cp .ci/ecsbuildpush.sh ./ecsbuildpush.sh
+    - chmod +x ecsbuildpush.sh
+    - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build proj
   only:
     - develop
-  script:
-    - /bin/bash ecsrun.sh $PNAME $PURL deploydev
-
-deploy:feature:
-  stage: deploy
-  variables:
-    PNAME: "$PROJECT_NAME"
-    PURL: "$CI_COMMIT_REF_SLUG"
-  environment:
-    name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "http://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
-    on_stop: stop:feature
-  only:
     - /^feature.*$/
-  script:
-    - /bin/bash ecsrun.sh $PNAME $PURL deployfeat 
 
-stop:feature:
-  stage: deploy
+build:ProjectDB:
+  stage: build
   variables:
-    PNAME: "$PROJECT_NAME"
+    PURL: "$CI_COMMIT_REF_SLUG"
+  script:
+    - cp .ci/ecsbuildpush.sh ./ecsbuildpush.sh
+    - chmod +x ecsbuildpush.sh
+    - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build db
+  only:
+    - develop
+    - /^feature.*$/
+
+stop:featureDB:
+  stage: build
+  variables:
     PURL: "$CI_COMMIT_REF_SLUG"
   when: manual
   only:
     - /^feature.*$/
   environment:
-    name: "$PROJECT_NAME-$CI_COMMIT_REF_SLUG"
-    url: "http://$PROJECT_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    name: "$PROJ_NAME/$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
     action: stop
   script:
-    - /bin/bash ecsrun.sh $PNAME $PURL stopfeat
+    - cp .ci/ecsbuildpush.sh ./ecsbuildpush.sh
+    - chmod +x ecsbuildpush.sh
+    - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build dropdb
+    - cp .ci/ecsstop.sh ./ecsstop.sh
+    - chmod +x ecsstop.sh
+    - /bin/bash ecsstop.sh $PROJ_NAME $PURL stopfeat
+
+stop:developDB:
+  stage: build
+  variables:
+    PURL: "$CI_COMMIT_REF_SLUG"
+  when: manual
+  only:
+    - develop
+  environment:
+    name: "$PROJ_NAME-$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME.demo.ffw-cs.com"
+    action: stop
+  script:
+    - cp .ci/ecsbuildpush.sh ./ecsbuildpush.sh
+    - chmod +x ecsbuildpush.sh
+    - /bin/bash ecsbuildpush.sh $PROJ_NAME $PURL build dropdb
+    - cp .ci/ecsstop.sh ./ecsstop.sh
+    - chmod +x ecsstop.sh
+    - /bin/bash ecsstop.sh $PROJ_NAME $PURL stopfeat
+
+code-quality-checks:
+  stage: test
+  script:
+    - echo "Code Sniffer"
+    - php composer.phar global require drupal/coder
+    - ~/.composer/vendor/bin/phpcs --config-set installed_paths ~/.composer/vendor/drupal/coder/coder_sniffer
+    - ~/.composer/vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme $BUILDSDIR/$PROJ_DOCROOT/sites/all/modules/custom/
+
+deploy:develop:
+  stage: deploy
+  variables:
+    PURL: "$CI_COMMIT_REF_SLUG"
+  environment:
+    name: "$PROJ_NAME-$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME.demo.ffw-cs.com"
+  only:
+    - develop
+  script:
+    - cp .ci/ecsdeploy.sh ecsdeploy.sh
+    - chmod +x ecsdeploy.sh
+    - /bin/bash ecsdeploy.sh $PROJ_NAME $PURL deploydev
+
+deploy:feature:
+  stage: deploy
+  variables:
+    PURL: "$CI_COMMIT_REF_SLUG"
+  environment:
+    name: "$PROJ_NAME/$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    on_stop: stop:feature
+  only:
+    - /^feature.*$/
+  script:
+    - cp .ci/ecsdeploy.sh ./ecsdeploy.sh
+    - chmod +x ecsdeploy.sh
+    - /bin/bash ecsdeploy.sh $PROJ_NAME $PURL deployfeat
+
+stop:develop:
+  stage: deploy
+  variables:
+    PURL: "$CI_COMMIT_REF_SLUG"
+  when: manual
+  only:
+    - develop
+  environment:
+    name: "$PROJ_NAME-$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    action: stop
+  script:
+    - cp .ci/ecsstop.sh ./ecsstop.sh
+    - chmod +x ecsstop.sh
+    - /bin/bash ecsstop.sh $PROJ_NAME $PURL stopfeat
+
+stop:feature:
+  stage: deploy
+  variables:
+    PURL: "$CI_COMMIT_REF_SLUG"
+  when: manual
+  only:
+    - /^feature.*$/
+  environment:
+    name: "$PROJ_NAME/$CI_COMMIT_REF_SLUG"
+    url: "https://$PROJ_NAME-$CI_COMMIT_REF_SLUG.demo.ffw-cs.com"
+    action: stop
+  script:
+    - cp .ci/ecsstop.sh ./ecsstop.sh
+    - chmod +x ecsstop.sh
+    - /bin/bash ecsstop.sh $PROJ_NAME $PURL stopfeat
