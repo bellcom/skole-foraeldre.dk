@@ -282,3 +282,15 @@
    }
   };
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  var form = document.getElementById("mailchimp-signup-subscribe-block-sof-mailchimp-form-form");
+  var newElement = document.createElement("DIV");
+
+  newElement.classList.add("mailchimp-privacy-policy");
+  newElement.innerHTML = "Når du tilmelder dig, accepterer du <a href=\"http://skole-foraeldre.dk/artikel/privatlivspolitik\">Skole og Forældre privatlivspolitik</a>, samt <a href=\"https://mailchimp.com/legal/privacy/\">Mailchimps privatlivspolitik</a>";
+
+  form.appendChild(newElement);
+});
+
+
