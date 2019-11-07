@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_image_styles.features.inc
@@ -59,22 +60,22 @@ function sof_image_styles_image_default_styles() {
 
   // Exported image style: publication_related.
   $styles['publication_related'] = array(
-    'label' => 'Publication related image(422x561)',
+    'label' => 'Publication related image(380x520)',
     'effects' => array(
-      4 => array(
+      2 => array(
         'name' => 'image_scale',
         'data' => array(
-          'width' => 422,
-          'height' => 561,
+          'width' => 380,
+          'height' => 520,
           'upscale' => 0,
         ),
         'weight' => -10,
       ),
-      5 => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 422,
-          'height' => 561,
+          'width' => 380,
+          'height' => 520,
         ),
         'weight' => 3,
       ),
@@ -90,6 +91,21 @@ function sof_image_styles_image_default_styles() {
         'data' => array(
           'width' => 690,
           'height' => 460,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: teaser_image.
+  $styles['teaser_image'] = array(
+    'label' => 'Teaser image (360x240)',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 380,
+          'height' => 260,
         ),
         'weight' => 1,
       ),

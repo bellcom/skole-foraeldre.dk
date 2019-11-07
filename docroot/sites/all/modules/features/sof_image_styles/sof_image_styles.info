@@ -9,3 +9,4 @@ features[image][] = magazine_deck_background
 features[image][] = publication_default_image_393x522_
 features[image][] = publication_related
 features[image][] = related_content_reference_image
+features[image][] = teaser_image
