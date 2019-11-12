@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_external_article.features.field_instance.inc
@@ -239,7 +240,7 @@ function sof_external_article_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
           'field_multiple_limit_order' => 0,
           'image_link' => '',
-          'image_style' => 'article_top_slider',
+          'image_style' => 'teaser_image',
         ),
         'type' => 'image',
         'weight' => 0,
