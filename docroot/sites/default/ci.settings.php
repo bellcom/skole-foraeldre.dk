@@ -60,7 +60,7 @@ if (isset($_SERVER["HTTPS"]) && strtolower($_SERVER["HTTPS"]) == "on" && isset($
 
 
 // Stage File Proxy config - to get images from prod.
-$conf["stage_file_proxy_origin"] = "http://skole-foraeldre.dk";
+$conf["stage_file_proxy_origin"] = "http://www.skole-foraeldre.dk";
 
 $conf["file_temporary_path"] = "/tmp";
 
