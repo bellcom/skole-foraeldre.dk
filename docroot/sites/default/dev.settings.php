@@ -25,7 +25,7 @@ require 'cache.settings.php';
 require 'common.settings.php';
 
 // Stage File Proxy config - to get images from prod.
-$conf["stage_file_proxy_origin"] = "http://skole-foraeldre.dk";
+$conf["stage_file_proxy_origin"] = "http://www.skole-foraeldre.dk";
 
 // Change mail system with the test one to prevent sending not wanted emails.
 $conf["mail_system"] = array(
