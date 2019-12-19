@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * sof_views_contents.features.inc

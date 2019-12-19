@@ -1,3 +1,29 @@
+#mailchimp-signup-subscribe-block-sof-mailchimp-form-form {
+}
+
+#mailchimp-signup-subscribe-block-sof-mailchimp-form-form > div:before,
+#mailchimp-signup-subscribe-block-sof-mailchimp-form-form > div:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+#mailchimp-signup-subscribe-block-sof-mailchimp-form-form > div:after {
+  clear: both;
+}
+
+.mailchimp-privacy-policy {
+  font-size: 14px !important;
+}
+
+.mailchimp-privacy-policy a {
+  color: #00a2eb;
+}
+
+.footer_social_media_facebook p, .footer_social_media_twitter p, .mailchimp-signup-sof div {
+  height: auto;
+  min-height: 64px;
+}
+
 /* Ticket: GVL-934-71151 */
 .pane-node-download-as-pdf {
   display: none;

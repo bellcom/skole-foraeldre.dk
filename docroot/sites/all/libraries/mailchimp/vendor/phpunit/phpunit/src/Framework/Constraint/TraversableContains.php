@@ -7,14 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace PHPUnit\Framework\Constraint;
+
+use PHPUnit\Util\InvalidArgumentHelper;
+use SplObjectStorage;
 
 /**
  * Constraint that asserts that the Traversable it is applied to contains
  * a given value.
- *
- * @since Class available since Release 3.0.0
  */
-class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework_Constraint
+class TraversableContains extends Constraint
 {
     /**
      * @var bool
@@ -36,18 +38,18 @@ class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework
      * @param bool  $checkForObjectIdentity
      * @param bool  $checkForNonObjectIdentity
      *
-     * @throws PHPUnit_Framework_Exception
+     * @throws \PHPUnit\Framework\Exception
      */
     public function __construct($value, $checkForObjectIdentity = true, $checkForNonObjectIdentity = false)
     {
         parent::__construct();
 
-        if (!is_bool($checkForObjectIdentity)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(2, 'boolean');
+        if (!\is_bool($checkForObjectIdentity)) {
+            throw InvalidArgumentHelper::factory(2, 'boolean');
         }
 
-        if (!is_bool($checkForNonObjectIdentity)) {
-            throw PHPUnit_Util_InvalidArgumentHelper::factory(3, 'boolean');
+        if (!\is_bool($checkForNonObjectIdentity)) {
+            throw InvalidArgumentHelper::factory(3, 'boolean');
         }
 
         $this->checkForObjectIdentity    = $checkForObjectIdentity;
@@ -69,21 +71,23 @@ class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework
             return $other->contains($this->value);
         }
 
-        if (is_object($this->value)) {
+        if (\is_object($this->value)) {
             foreach ($other as $element) {
-                if (($this->checkForObjectIdentity &&
-                     $element === $this->value) ||
-                    (!$this->checkForObjectIdentity &&
-                     $element == $this->value)) {
+                if ($this->checkForObjectIdentity && $element === $this->value) {
+                    return true;
+                }
+
+                if (!$this->checkForObjectIdentity && $element == $this->value) {
                     return true;
                 }
             }
         } else {
             foreach ($other as $element) {
-                if (($this->checkForNonObjectIdentity &&
-                     $element === $this->value) ||
-                    (!$this->checkForNonObjectIdentity &&
-                     $element == $this->value)) {
+                if ($this->checkForNonObjectIdentity && $element === $this->value) {
+                    return true;
+                }
+
+                if (!$this->checkForNonObjectIdentity && $element == $this->value) {
                     return true;
                 }
             }
@@ -99,11 +103,11 @@ class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework
      */
     public function toString()
     {
-        if (is_string($this->value) && strpos($this->value, "\n") !== false) {
+        if (\is_string($this->value) && \strpos($this->value, "\n") !== false) {
             return 'contains "' . $this->value . '"';
-        } else {
-            return 'contains ' . $this->exporter->export($this->value);
         }
+
+        return 'contains ' . $this->exporter->export($this->value);
     }
 
     /**
@@ -118,9 +122,9 @@ class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework
      */
     protected function failureDescription($other)
     {
-        return sprintf(
+        return \sprintf(
             '%s %s',
-            is_array($other) ? 'an array' : 'a traversable',
+            \is_array($other) ? 'an array' : 'a traversable',
             $this->toString()
         );
     }
