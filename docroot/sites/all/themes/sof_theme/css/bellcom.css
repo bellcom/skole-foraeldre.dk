@@ -24,3 +24,7 @@
   min-height: 64px;
 }
 
+/* Ticket: GVL-934-71151 */
+.pane-node-download-as-pdf {
+  display: none;
+}
