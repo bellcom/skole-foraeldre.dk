@@ -749,7 +749,7 @@ function sof_general_tweaks_page_alter(&$page) {
   }
 
   if ($base_url == 'http://skole-foraeldre.dk' || $base_url == 'http://www.skole-foraeldre.dk') {
-    drupal_add_js(drupal_get_path('theme', 'sof_theme') . '/scripts/formilla-chatbot.js');
+    //drupal_add_js(drupal_get_path('theme', 'sof_theme') . '/scripts/formilla-chatbot.js');
   }
 
 }
