@@ -75,6 +75,7 @@
   ; following as a guide:
 
   ; ie_scripts[lte IE 8][] = scripts/my-script.js
+  scripts[] = scripts/bot-detector.js
   scripts[] = scripts/custom.js
 
 ;----------// Regions
