@@ -293,4 +293,21 @@ document.addEventListener('DOMContentLoaded', function(event) {
   form.appendChild(newElement);
 });
 
+// Prevent bots from subscribing to newsletter.
+document.addEventListener('DOMContentLoaded', function(event) {
+  var submitButton = document.querySelector('.mailchimp-signup-subscribe-form .form-submit');
 
+  if (submitButton) {
+    submitButton.disabled = true;
+
+    new BotDetector({
+      timeout: 500,
+      callback: function(result) {
+
+        if (!result.isBot) {
+          submitButton.disabled = false;
+        }
+      }
+    }).monitor();
+  }
+});
