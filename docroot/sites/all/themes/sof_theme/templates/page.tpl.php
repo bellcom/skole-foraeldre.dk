@@ -257,3 +257,7 @@
     </div>
   </div>
 </div>
+
+<!-- Begin - popup -->
+<?php if ($popup): print $popup; endif; ?>
+<!-- End - popup -->
