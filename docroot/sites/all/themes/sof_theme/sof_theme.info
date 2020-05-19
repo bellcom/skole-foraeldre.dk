@@ -18,6 +18,7 @@
   stylesheets[all][]    = css/colors.css
   stylesheets[all][]    = css/global.font.css
   stylesheets[all][]    = css/bellcom.css
+  stylesheets[all][]    = css/popup.css
 
 
   ; Print - uncomment to load basic print styles.
@@ -77,6 +78,7 @@
   ; ie_scripts[lte IE 8][] = scripts/my-script.js
   scripts[] = scripts/bot-detector.js
   scripts[] = scripts/custom.js
+  scripts[] = scripts/popup.js
 
 ;----------// Regions
 
