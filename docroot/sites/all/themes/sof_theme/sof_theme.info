@@ -100,7 +100,6 @@
   regions[page_bottom]              = Page bottom
   regions[social_media_region]      = Social Media Region
   regions[global_search_top_region] = Global Search Top Region
-  regions[popup]                    = Popup region
 
 
 ;----------// Gpanel Regions
