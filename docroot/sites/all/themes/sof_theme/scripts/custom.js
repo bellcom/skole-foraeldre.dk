@@ -294,20 +294,28 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 // Prevent bots from subscribing to newsletter.
-document.addEventListener('DOMContentLoaded', function(event) {
-  var submitButton = document.querySelector('.mailchimp-signup-subscribe-form .form-submit');
+(function() {
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var submits = document.querySelectorAll('.form-submit');
 
-  if (submitButton) {
-    submitButton.disabled = true;
+    for (var i = 0; i < submits.length; i++) {
+      console.log('submit found');
+      var submit = submits[i];
 
-    new BotDetector({
-      timeout: 500,
-      callback: function(result) {
+      submit.disabled = true;
 
-        if (!result.isBot) {
-          submitButton.disabled = false;
+      new BotDetector({
+        timeout: 300,
+        callback: function(result) {
+
+          if (!result.isBot) {
+            console.log('not a bot')
+            submit.disabled = false;
+          } else {
+            console.log('a bot')
+          }
         }
-      }
-    }).monitor();
-  }
-});
+      }).monitor();
+    }
+  });
+})();
