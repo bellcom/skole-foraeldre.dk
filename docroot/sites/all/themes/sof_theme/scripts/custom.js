@@ -299,7 +299,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var submits = document.querySelectorAll('.form-submit');
 
     for (var i = 0; i < submits.length; i++) {
-      console.log('submit found');
       var submit = submits[i];
 
       submit.disabled = true;
@@ -309,10 +308,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         callback: function(result) {
 
           if (!result.isBot) {
-            console.log('not a bot')
             submit.disabled = false;
-          } else {
-            console.log('a bot')
           }
         }
       }).monitor();
