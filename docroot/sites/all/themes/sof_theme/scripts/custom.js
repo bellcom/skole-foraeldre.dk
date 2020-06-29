@@ -300,7 +300,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     for (var i = 0; i < submits.length; i++) {
       var submit = submits[i];
-
+      if (submit.value == 'Log ind') {
+        continue;
+      }
       submit.disabled = true;
 
       new BotDetector({
