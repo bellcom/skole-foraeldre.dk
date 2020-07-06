@@ -296,13 +296,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
 // Prevent bots from subscribing to newsletter.
 (function() {
   document.addEventListener('DOMContentLoaded', function(event) {
-    var submits = document.querySelectorAll('.form-submit');
+    var submits = document.querySelectorAll('.mailchimp-signup-subscribe-form .form-submit');
 
     for (var i = 0; i < submits.length; i++) {
       var submit = submits[i];
-      if (submit.value == 'Log ind') {
-        continue;
-      }
       submit.disabled = true;
 
       new BotDetector({
