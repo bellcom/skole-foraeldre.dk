@@ -78,6 +78,11 @@ function commerce_dibs_dibsapi($op = 'info', $delta = NULL, &$transaction = NULL
         $status = COMMERCE_PAYMENT_STATUS_SUCCESS;
       }
 
+      // Minor hack. See: #QNL-808-40493 in Bellcom support system.
+      // We always want to trigger this and not only in transaction_accept callback or when capture now is enabled.
+      // We are doing this to avoid "capturenow".
+      $status = COMMERCE_PAYMENT_STATUS_SUCCESS;
+
       $commerce_transactions = commerce_payment_transaction_load_multiple(FALSE, array('remote_id' => $transaction['tid']));
       // Update transaction(s).
       if ($commerce_transactions) {
