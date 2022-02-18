@@ -9,11 +9,11 @@
 $databases = array (
   'default' => array (
     'default' => array (
-      'database' => 'sof',
-      'username' => 'sof',
-      'password' => 'fLA3DXMA',
-      'host' => '127.0.0.1',
-      'port' => '',
+      'database' => 'skole_foraeldre_dk',
+      'username' => 'skole_foraeldre',
+      'password' => 'yubWoeg6Qv',
+      'host' => 'localhost',
+      'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
     ),
