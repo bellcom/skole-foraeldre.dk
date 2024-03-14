@@ -71,6 +71,7 @@
 <?php print $head; ?>
 <title><?php print $head_title; ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script id="CookieConsent" src=https://policy.app.cookieinformation.com/uc.js data-culture="DA" data-gcm-version="2.0" type="text/javascript"></script>
 <?php print $styles; ?>
 <?php print $scripts; ?>
 <?php print $polyfills; ?>
